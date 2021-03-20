@@ -32,4 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
-/nbproject/private/
+
+#Editors
+/nbproject/
+.projectile
