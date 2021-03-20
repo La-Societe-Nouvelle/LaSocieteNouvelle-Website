@@ -12,7 +12,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://la-societe-nouvelle.fr">La Société Nouvelle</a>
+          Bienvenue à <a href="https://la-societe-nouvelle.fr">La Société Nouvelle</a>
         </h1>
         <p className={styles.description}>
           Get started by editing{' '}
