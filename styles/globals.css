@@ -289,4 +289,14 @@ a {
   margin: 2px 10px 2px 10px;
 }
 
+/* ----- Mentions légales ----- */
 
+#mentions-legales {
+  width: 100%;
+}
+
+#mentions-societe,
+#mentions-hebergement {
+  justify-content: left;
+  text-align: left;
+}
