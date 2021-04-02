@@ -6,11 +6,287 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1 {
+  color: #616161;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
 * {
+  color: #616161;
   box-sizing: border-box;
+  font-family: Helvetica;
 }
+
+.Header {
+  display: block;
+  width: 100%;
+}
+
+.header-strip-item {
+  display: inline-block;
+  margin: auto 0;
+}
+
+.strip {
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 1000px;
+  width: 80%;
+}
+
+/* ----- header ----- */
+
+#header {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #616161;
+}
+
+#header-strip {
+  display: block flex;
+  margin : 5px 0 10px 0;
+  justify-content: center;
+}
+
+#logo-header {
+  height: 75px;
+  margin: 10px 25px 10px 50px;
+  display: inline-block;
+}
+
+#header-name-company {
+  display: inline-block;
+  margin: auto 0;
+  padding-right: 25px;
+}
+#company-name-header {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 30px;
+}
+#text-header {
+  margin-top: 0px;
+  margin-bottom:0px;
+  font-size: 16px;
+}
+
+#menu {
+  display: block;
+  background-color: #616161;
+}
+#menu-item {
+  display: inline;
+  color: white;
+  margin: 7px 0 7px 0;
+  padding: 3px 50px 3px 50px;
+  border-left: solid white 1px;
+  border-right: solid white 1px;
+}
+#menu-items {
+  margin: 0;
+  padding: 5px 0 5px 0;
+}
+
+#header-text2 {
+  padding: 10px 0px 10px 25px;
+  border-left: solid #616161 1px;;
+}
+
+/* ----- accueil ----- */
+
+.head-accueil {
+  text-align: left;
+  justify-content: left;
+  display: block;
+  margin: 5px 0 5px 0;
+}
+#head-accueil {
+  justify-content: left;
+  width: 100%;
+}
+
+#head-accueil-h3 {
+  color: #8B0000;
+}
+
+#logo-accueil {
+  width: 30%;
+  margin: 100px 0 50px 0;
+}
+
+#titre-logo-accueil {
+  margin-bottom: 10px;
+}
+
+/* ----- indicateur ----- */
+
+.indic-strip-title {
+  padding: 5px 0 5px 0;
+  border-top: solid #616161 1px;
+  border-bottom: solid #616161 1px;
+  text-align: center;
+}
+
+#indic-label {
+  border-top: solid #616161 1px;
+  border-bottom: solid #616161 1px;
+  text-align: center;
+}
+
+#logo-odd {
+  text-align: left;
+  margin: 0;
+  height: 50px;
+}
+
+/* ----- demarches ----- */
+
+.services-item {
+  display: inline-block;
+  margin: 0 25px 0 25px;
+  max-width: 25%;
+  vertical-align: top;
+}
+
+#services {
+  display: inline;
+  padding: 0;
+  width: 100%;
+}
+#services-strip {
+  text-align: center;
+  width: 100%;
+}
+
+/* ----- portail ----- */
+
+#input-strip {
+  margin: 50px 0 50px 0;
+  display: inline;
+  text-align: center;
+  width: 100%;
+}
+#search-bar {
+  display: inline;
+  text-align: center;
+  width: 80%;
+}
+#search-input {
+  margin-right: 25px;
+  width: 60%;
+}
+.line-separator {
+  width: 500px;
+  border: solid #616161 1px;
+}
+
+.result-item-container {
+  list-style-type: none;
+  margin-bottom: 10px;
+  width: 750px;
+  border-top: solid #616161 1px;
+  border-bottom: solid #616161 1px;
+}
+
+#result-item-data {
+  margin: 10px 10px 10px 10px;
+}
+#result-item-denomination {
+  font-weight: bold;
+}
+
+/* ----- ESE ----- */
+
+#sfp-company-data {
+  padding-left: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.MenuEmpreinteSocietale {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  border-top: solid #616161 1px;
+  border-bottom: solid #616161 1px;
+  max-width: 990px;
+}
+
+.sfp-menu-items {
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.sfp-menu-button {
+  display: inline-block;
+  padding: 5px 25px 5px 25px;
+  color: #616161;
+  background-color: transparent;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: solid #616161 1px;
+  width: 330px;
+}
+#sfp-menu-button1,
+#sfp-menu-button2 {
+  border-right: 0;
+}
+#sfp-menu-button3 {
+  border-right: solid #616161 1px;
+}
+.sfp-menu-button:hover {
+  color: white;
+  background-color: #616161;
+}
+
+
+#sfp-view {
+  display: inline;
+  text-align: center;
+}
+
+.VueIndicateur {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  padding: 5px 5px 5px 5px;
+  margin: 20px 20px 0 20px ;
+  width: 300px;
+  border: solid #616161 0px;
+}
+
+#indic-view-label {
+  font-size: 16px;
+  height: 50px;
+}
+
+#indic-value {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 25px 0 25px 0;
+}
+
+.indic-subdata {
+  font-size: 12px;
+  margin: 2px 10px 2px 10px;
+}
+
+
