@@ -1,3 +1,4 @@
+/* ----- header ----- */
 
 #header {
     display: block;
@@ -56,3 +57,29 @@
     padding: 10px 0px 10px 25px;
     border-left: solid #616161 1px;;
   }
+
+  /* ----- footer ----- */
+
+.Footer {
+  background-color: #616161;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border-top: solid #616161 1px;
+  width: 100%;
+  height: 25px;
+}
+
+#links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.link-footer {
+  color: white;
+  font-size: 13px;
+  margin-left: 25px;
+  margin-right: 25px;
+}

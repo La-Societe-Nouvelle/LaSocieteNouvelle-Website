@@ -1,7 +1,6 @@
 .container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 500px;
+  display: block;
   justify-content: center;
   align-items: center;
 }
@@ -14,7 +13,7 @@
   margin-left: 150px;
   margin-right: 150px;
   width: 75%;
-  min-height: 500px;
+  overflow: auto;
 }
 
 .footer {

@@ -61,14 +61,14 @@ function build(indic) {
 
       <main className={styles.main}>
 
-        <div class="strip">
+        <div id="strip-odd" class="strip">
           <img id="logo-odd" src={indic.odd_img} alt="logo" />
         </div>
 
         <div class="strip">
-          <h1 class="indic-strip-title" id="indic-label">
+          <h2 class="indic-strip-title" id="indic-label">
           {indic.libelle}
-          </h1>
+          </h2>
           <ul>
             <li>Code : {indic.code}</li>
             <li>Description : {indic.description}</li>
@@ -80,9 +80,9 @@ function build(indic) {
         </div>
 
         <div className="strip">
-          <h2 class="indic-strip-title">
+          <h3 class="indic-strip-title">
           IMPACT DIRECT
-          </h2>
+          </h3>
           <p>
           Grandeur mesurée : {indic.impactDirect.mesure}
           </p>
@@ -95,9 +95,9 @@ function build(indic) {
         </div>
 
         <div className="strip">
-          <h2 class="indic-strip-title">
+          <h3 class="indic-strip-title">
           DONNEES PAR DEFAUT
-          </h2>
+          </h3>
           {buildParagraph(indic.donneesParDefaut.texts)}
           {buildSources(indic.donneesParDefaut.sources)}
         </div>

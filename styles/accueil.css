@@ -1,26 +1,39 @@
 
 #head-accueil {
-    justify-content: left;
-    margin: 20px 10px 10px 10px;
-    width: 100%;
-  }
+  justify-content: left;
+  margin: 20px 10px 10px 10px;
+  width: 100%;
+}
   
-  .head-accueil-item {
-    text-align: left;
-    justify-content: left;
-    display: block;
-    margin: 5px 0px;
-  }
+.head-accueil-item {
+  text-align: left;
+  justify-content: left;
+  display: block;
+  margin: 5px 0px;
+}
+#head-accueil-h3 {
+  color: #8B0000;
+}
   
-  #head-accueil-h3 {
-    color: #8B0000;
-  }
-  
-  #logo-accueil {
-    width: 30%;
-    margin: 100px 0 50px 0;
-  }
-  
-  #titre-logo-accueil {
-    margin-bottom: 10px;
-  }
+#front-page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#logo-accueil {
+  width: 30%;
+  margin-bottom: 25px;
+}
+
+#texte-logo-accueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}  
+#titre-logo-accueil {
+  margin-bottom: 10px;
+}

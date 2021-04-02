@@ -1,5 +1,6 @@
 import Head from 'next/Head'
 import Header from './header.js'
+import Footer from './footer.js'
 
 import styles from '../styles/Home.module.css'
 
@@ -40,13 +41,7 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
-        <a>
-          <p>
-            Bas de Page
-          </p>
-        </a>
-      </footer>
+      <Footer/>
 
     </div>
   )
