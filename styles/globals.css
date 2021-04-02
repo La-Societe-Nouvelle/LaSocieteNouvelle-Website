@@ -8,9 +8,14 @@ body {
 
 h1 {
   color: #616161;
+  margin: 50px auto;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 50px;
 }
 
 h2 {
+  margin: 0px 10px 20px 0;
   font-size: 1.5rem;
   text-align: left;
 }
@@ -31,6 +36,29 @@ a {
   font-family: Helvetica;
 }
 
+button {
+  color: white;
+  background-color: #616161;
+  border: 0;
+  height: 25px;
+  width: 150px;
+}
+button:hover {
+  background-color: #818181;
+}
+
+input {
+  height: 25px;
+  border-color: #616161 1px;
+}
+
+li {
+  list-style-type: square;
+  list-style: #616161;
+}
+
+/* ----- class ----- */
+
 .Header {
   display: block;
   width: 100%;
@@ -42,96 +70,11 @@ a {
 }
 
 .strip {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1000px;
   width: 80%;
-}
-
-/* ----- header ----- */
-
-#header {
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #616161;
-}
-
-#header-strip {
-  display: block flex;
-  margin : 5px 0 10px 0;
-  justify-content: center;
-}
-
-#logo-header {
-  height: 75px;
-  margin: 10px 25px 10px 50px;
-  display: inline-block;
-}
-
-#header-name-company {
-  display: inline-block;
-  margin: auto 0;
-  padding-right: 25px;
-}
-#company-name-header {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: bold;
-  font-size: 30px;
-}
-#text-header {
-  margin-top: 0px;
-  margin-bottom:0px;
-  font-size: 16px;
-}
-
-#menu {
-  display: block;
-  background-color: #616161;
-}
-#menu-item {
-  display: inline;
-  color: white;
-  margin: 7px 0 7px 0;
-  padding: 3px 50px 3px 50px;
-  border-left: solid white 1px;
-  border-right: solid white 1px;
-}
-#menu-items {
-  margin: 0;
-  padding: 5px 0 5px 0;
-}
-
-#header-text2 {
-  padding: 10px 0px 10px 25px;
-  border-left: solid #616161 1px;;
-}
-
-/* ----- accueil ----- */
-
-.head-accueil {
-  text-align: left;
-  justify-content: left;
-  display: block;
-  margin: 5px 0 5px 0;
-}
-#head-accueil {
-  justify-content: left;
-  width: 100%;
-}
-
-#head-accueil-h3 {
-  color: #8B0000;
-}
-
-#logo-accueil {
-  width: 30%;
-  margin: 100px 0 50px 0;
-}
-
-#titre-logo-accueil {
-  margin-bottom: 10px;
 }
 
 /* ----- indicateur ----- */
@@ -176,28 +119,44 @@ a {
 
 /* ----- portail ----- */
 
-#input-strip {
-  margin: 50px 0 50px 0;
-  display: inline;
-  text-align: center;
-  width: 100%;
-}
-#search-bar {
-  display: inline;
-  text-align: center;
-  width: 80%;
-}
-#search-input {
-  margin-right: 25px;
-  width: 60%;
-}
 .line-separator {
   width: 500px;
   border: solid #616161 1px;
 }
 
+#portail-view {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#search-bar {
+  display: inline;
+  width: 100%;
+}
+#search-input {
+  margin-right: 25px;
+  width: 50%;
+}
+
+
+#results-strip {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .result-item-container {
-  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 10px;
   width: 750px;
   border-top: solid #616161 1px;
@@ -205,10 +164,21 @@ a {
 }
 
 #result-item-data {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
   margin: 10px 10px 10px 10px;
+  width: 500px;
 }
 #result-item-denomination {
   font-weight: bold;
+}
+
+#button-consulter {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 26px;
+  height: 25px;
 }
 
 /* ----- ESE ----- */

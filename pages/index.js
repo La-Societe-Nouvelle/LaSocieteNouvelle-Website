@@ -17,13 +17,13 @@ export default function Home() {
       <main className={styles.main}>
 
         <div id="head-accueil">
-          <h2 className="head-accueil">
+          <h2 id="head-accueil-h4" class="head-accueil-item">
             Système d'Information extra-financière
           </h2>
-          <h2 className="head-accueil">
+          <h2 id="head-accueil-h2" class="head-accueil-item">
             Faire évoluer la comptabilité
           </h2>
-          <h2 id="head-accueil-h3" className="head-accueil">
+          <h2 id="head-accueil-h3" class="head-accueil-item">
             Construire une économie durable
           </h2>
         </div>
@@ -45,7 +45,7 @@ export default function Home() {
           </p>
         </a>
       </footer>
-      
+
     </div>
   )
 }

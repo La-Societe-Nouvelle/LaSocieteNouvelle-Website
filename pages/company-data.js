@@ -7,6 +7,7 @@ import React from 'react';
 
 export default function Home() {
   const router = useRouter();
+  console.log(router.asPath);
   const siren = router.query.siren;
   Home.getInitialProps = async () => {return {};};
   return(

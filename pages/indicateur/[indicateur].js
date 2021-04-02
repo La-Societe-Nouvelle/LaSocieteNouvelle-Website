@@ -3,7 +3,6 @@ import Header from '../../pages/header.js'
 import styles from '../../styles/Home.module.css'
 
 var React = require('react');
-import qs from 'qs'
 
 import * as indic_data from '../../public/indic-data/indic_data.js'
 
@@ -12,7 +11,6 @@ export default function Post({postData}) {
     <div>
       {build(postData)}
     </div>
-    
   )
 }
 

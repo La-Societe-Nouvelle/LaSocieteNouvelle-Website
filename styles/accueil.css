@@ -1,0 +1,26 @@
+
+#head-accueil {
+    justify-content: left;
+    margin: 20px 10px 10px 10px;
+    width: 100%;
+  }
+  
+  .head-accueil-item {
+    text-align: left;
+    justify-content: left;
+    display: block;
+    margin: 5px 0px;
+  }
+  
+  #head-accueil-h3 {
+    color: #8B0000;
+  }
+  
+  #logo-accueil {
+    width: 30%;
+    margin: 100px 0 50px 0;
+  }
+  
+  #titre-logo-accueil {
+    margin-bottom: 10px;
+  }

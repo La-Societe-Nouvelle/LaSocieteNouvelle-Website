@@ -14,11 +14,11 @@ export default function Home() {
 
       <main className={styles.main}>
 
-        <h1 className={styles.title}>
+        <h1>
           A propos - La Société Nouvelle
         </h1>
 
-        <div className="strip">
+        <div class="strip">
           <h2>
           La Société Nouvelle
           </h2>
@@ -39,7 +39,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="strip">
+        <div class="strip">
           <h2>
           Notre objectif
           </h2>
@@ -51,7 +51,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="strip">
+        <div class="strip">
           <h2>
           Nos activités
           </h2>
@@ -88,7 +88,7 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
+      <footer class={styles.footer}>
         <a>
           <p>
             Bas de Page

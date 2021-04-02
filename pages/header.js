@@ -1,6 +1,3 @@
-import Head from 'next/Head'
-import styles from '../styles/Home.module.css'
-
 var React = require('react');
 
 export default class Header extends React.Component {
@@ -26,10 +23,10 @@ export default class Header extends React.Component {
 
         <div id="menu">
           <ul id="menu-items">
-            <li id="menu-item"><a href="a-propos">A Propos</a></li>
-            <li id="menu-item"><a href="empreinte-societale">Empreinte Societale</a></li>
-            <li id="menu-item"><a href="portail">Portail</a></li>
-            <li id="menu-item"><a href="services">Services</a></li>
+            <li id="menu-item"><a href="/a-propos">A Propos</a></li>
+            <li id="menu-item"><a href="/empreinte-societale">Empreinte Societale</a></li>
+            <li id="menu-item"><a href="/portail">Portail</a></li>
+            <li id="menu-item"><a href="/services">Services</a></li>
             <li id="menu-item">Ressources</li>
             <li id="menu-item">Contact</li>
           </ul>

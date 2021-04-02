@@ -1,5 +1,6 @@
 import Head from 'next/Head'
 import Header from './header.js'
+
 import styles from '../styles/Home.module.css'
 
 import React from 'react';
@@ -16,11 +17,11 @@ export default function Home() {
 
       <main className={styles.main}>
 
-        <h1 className={styles.title}>
-          Portail d'accès aux données
+        <h1>
+        Portail d'accès aux données
         </h1>
 
-        <div className="strip">
+        <div id="portail-informations" className="strip">
           <h2>
           Informations
           </h2>
@@ -35,7 +36,7 @@ export default function Home() {
           </p>
         </div>
 
-        <Search/>
+        <PortailView/>
 
       </main>
 
@@ -52,7 +53,7 @@ export default function Home() {
 
 }
 
-class Search extends React.Component {
+class PortailView extends React.Component {
 
   constructor(props) {
     super(props);
@@ -92,43 +93,17 @@ class Search extends React.Component {
     const {input,isLoading,isLoaded,results} = this.state;
     if (!isLoaded) {
       return (
-        <div>
-          <div id="input-strip">
-
-            <div id="search-bar">
-              <input id="search-input" type="text" value={input} onChange={this.inputChange}></input>
-              <button id="search-button" type="submit" onClick={this.handleClick}>Rechercher</button>
-            </div>
-
-          </div>
-
-          <hr class="line-separator"/>
-
-          <div id="results-strip">
-
-            <p>Euh...</p>
-
-          </div>
+        <div id="portail-view">
+            {buildSearchBar(this)}
         </div>
       )
     } else {
       return (
-        <div>
-          <div id="input-strip">
-
-            <div id="search-bar">
-              <input id="search-input" type="text" value={input} onChange={this.inputChange}></input>
-              <button id="search-button" type="submit" onClick={this.handleClick}>Rechercher</button>
-            </div>
-
-          </div>
-
+        <div id="portail-view">
+          {buildSearchBar(this)}
           <hr class="line-separator"/>
-
           <div id="results-strip">
-
             {buildResultItems(results)}
-
           </div>
         </div>
       );
@@ -137,15 +112,32 @@ class Search extends React.Component {
 
 }
 
+function buildSearchBar(parent) {
+  return (
+    <div id="search-bar">
+      <input id="search-input" type="text" value={parent.state.input} onChange={parent.inputChange}></input>
+      <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
+    </div>
+  )
+}
+
 function buildResultItems(items) {
   return items.map((item) =>
-      <li class="result-item-container">
+      <div class="result-item-container">
           <div id="result-item-data">
               <p id="result-item-denomination">{item.denomination}</p>
               <p>siren : {item.siren}</p>
-              <p>Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})</p>
-              <p>Domiciliation : {item.communeSiege} ({item.codePostalSiege})</p>
+              <p>
+              Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
+              <br/>
+              Domiciliation : {item.communeSiege} ({item.codePostalSiege})
+              </p>
           </div>
-      </li>
+          <button id="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+      </div>
   )
+}
+
+function showCompanyData(siren) {
+  window.open('http://localhost:3000/company-data?siren='+encodeURI(siren));
 }
