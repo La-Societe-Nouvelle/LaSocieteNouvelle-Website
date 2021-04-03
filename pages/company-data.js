@@ -1,8 +1,6 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useParams, useLocation } from 'react-router-dom';
 import Head from 'next/Head'
 import Header from './header.js'
+import Footer from './footer.js'
 import styles from '../styles/Home.module.css'
 
 import React from 'react';
@@ -16,7 +14,7 @@ export default function Home({siren}) {
       <div className={styles.container}>  
         <Head>
           <title>La Société Nouvelle</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/resources/logo_miniature.jpg" />
         </Head> 
 
         <Header/>
@@ -25,9 +23,11 @@ export default function Home({siren}) {
           <h1 className={styles.title}>
           Empreinte Sociétale
           </h1>
+
+          <EmpreinteSocietale siren={siren}/>
         
         </main>
-        <EmpreinteSocietale siren={siren}/>
+        <Footer/>
       </div>
   )
 }
@@ -109,23 +109,32 @@ class MenuEmpreinteSocietale extends React.Component {
   getEmpreinteEconomique(event) {
     let empreinteSocietale = this.parent.state.empreinteSocietale;
     this.parent.setState({view:[empreinteSocietale.ECO,empreinteSocietale.ART,empreinteSocietale.SOC,,empreinteSocietale.KNW]});
+    document.getElementById('sfp-menu-button1').className = 'sfp-menu-button-inverse';
+    document.getElementById('sfp-menu-button2').className = 'sfp-menu-button';
+    document.getElementById('sfp-menu-button3').className = 'sfp-menu-button';
   }
   getEmpreinteEnvironnementale(event) {
     let empreinteSocietale = this.parent.state.empreinteSocietale;
     this.parent.setState({view:[empreinteSocietale.GHG,empreinteSocietale.MAT,empreinteSocietale.WAS,empreinteSocietale.NRG,empreinteSocietale.WAT,empreinteSocietale.HAZ]});
+    document.getElementById('sfp-menu-button1').className = 'sfp-menu-button';
+    document.getElementById('sfp-menu-button2').className = 'sfp-menu-button-inverse';
+    document.getElementById('sfp-menu-button3').className = 'sfp-menu-button';
   }
   getEmpreinteSociale(event) {
     let empreinteSocietale = this.parent.state.empreinteSocietale;
     this.parent.setState({view:[empreinteSocietale.DIS,empreinteSocietale.GEQ]});
+    document.getElementById('sfp-menu-button1').className = 'sfp-menu-button';
+    document.getElementById('sfp-menu-button2').className = 'sfp-menu-button';
+    document.getElementById('sfp-menu-button3').className = 'sfp-menu-button-inverse';
   }
 
   render() {
     return (
     <div className="MenuEmpreinteSocietale">
           <div id="sfp-menu-items">
-            <button id="sfp-menu-button1" class="sfp-menu-button" onClick={this.getEmpreinteEconomique}>Création de la valeur</button>
-            <button id="sfp-menu-button2" class="sfp-menu-button" onClick={this.getEmpreinteEnvironnementale}>Empreinte environnementale</button>
-            <button id="sfp-menu-button3" class="sfp-menu-button" onClick={this.getEmpreinteSociale}>Externalités sociales</button>
+            <button id="sfp-menu-button1" className="sfp-menu-button-inverse" onClick={this.getEmpreinteEconomique}>Création de la valeur</button>
+            <button id="sfp-menu-button2" className="sfp-menu-button" onClick={this.getEmpreinteEnvironnementale}>Empreinte environnementale</button>
+            <button id="sfp-menu-button3" className="sfp-menu-button" onClick={this.getEmpreinteSociale}>Externalités sociales</button>
           </div>
     </div>
     );
@@ -140,13 +149,13 @@ function buildVueIndicateurs(indicateurs) {
 function buildVueIndicateur (data) {
   console.log(data);
   return (
-    <div className="VueIndicateur">
+    <div key={data.code} className="VueIndicateur">
       <h4 id="indic-view-label">{data.libelle}</h4>
       <p id="indic-value">{data.value} {data.unit}</p>
-      <p class="indic-subdata">Source : {data.libelleFlag}</p>
-      <p class="indic-subdata">Incertitude : {data.uncertainty} %</p>
-      <p class="indic-subdata">Dernière mise à jour : {data.year}</p>
-      <p class="indic-subdata">Valeur de référence : {data.value} {data.unit}</p>
+      <p className="indic-subdata">Source : {data.libelleFlag}</p>
+      <p className="indic-subdata">Incertitude : {data.uncertainty} %</p>
+      <p className="indic-subdata">Dernière mise à jour : {data.year}</p>
+      <p className="indic-subdata">Valeur de référence : {data.value} {data.unit}</p>
     </div>
   );
 }

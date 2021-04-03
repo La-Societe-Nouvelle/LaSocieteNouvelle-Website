@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>La Société Nouvelle | A propos</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
 
       <Header/>

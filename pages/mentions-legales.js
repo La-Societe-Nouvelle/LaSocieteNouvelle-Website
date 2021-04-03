@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>La Société Nouvelle | Mentions légales</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
 
       <Header/>

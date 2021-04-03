@@ -216,22 +216,24 @@ li {
   max-width: 990px;
 }
 
-.sfp-menu-items {
+#sfp-menu-items {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
   text-align: justify;
 }
 
 .sfp-menu-button {
-  display: inline-block;
+  flex-grow: 1;
   padding: 5px 25px 5px 25px;
   color: #616161;
   background-color: transparent;
   border-top: 0;
   border-bottom: 0;
   border-left: solid #616161 1px;
-  width: 330px;
 }
+
 #sfp-menu-button1,
 #sfp-menu-button2 {
   border-right: 0;
@@ -241,13 +243,25 @@ li {
 }
 .sfp-menu-button:hover {
   color: white;
+  background-color: #818181;
+}
+
+.sfp-menu-button-inverse {
+  flex-grow: 1;
+  padding: 5px 25px 5px 25px;
+  color: white;
   background-color: #616161;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: solid #616161 1px;
 }
 
 
 #sfp-view {
-  display: inline;
+  display: inline-block;
   text-align: center;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .VueIndicateur {
@@ -255,14 +269,15 @@ li {
   text-align: center;
   vertical-align: top;
   padding: 5px 5px 5px 5px;
-  margin: 20px 20px 0 20px ;
-  width: 300px;
+  margin: 20px 10px 0 10px ;
+  width: 30%;
   border: solid #616161 0px;
 }
 
 #indic-view-label {
   font-size: 16px;
   height: 50px;
+  width: 90%;
 }
 
 #indic-value {
