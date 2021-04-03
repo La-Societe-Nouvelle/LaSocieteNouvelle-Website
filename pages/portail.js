@@ -96,7 +96,7 @@ class PortailView extends React.Component {
       return (
         <div id="portail-view">
           {buildSearchBar(this)}
-          <hr class="line-separator"/>
+          <hr className="line-separator"/>
           <div id="results-strip">
             {buildResultItems(results)}
           </div>
@@ -118,9 +118,9 @@ function buildSearchBar(parent) {
 
 function buildResultItems(items) {
   return items.map((item) =>
-      <div class="result-item-container">
-          <div id="result-item-data">
-              <p id="result-item-denomination">{item.denomination}</p>
+      <div key={'item-'+item.siren} className="result-item-container">
+          <div className="result-item-data">
+              <p className="result-item-denomination">{item.denomination}</p>
               <p>siren : {item.siren}</p>
               <p>
               Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
@@ -128,7 +128,7 @@ function buildResultItems(items) {
               Domiciliation : {item.communeSiege} ({item.codePostalSiege})
               </p>
           </div>
-          <button id="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+          <button className="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
       </div>
   )
 }

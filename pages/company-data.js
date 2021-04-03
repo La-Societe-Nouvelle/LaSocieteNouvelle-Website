@@ -1,25 +1,33 @@
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useParams, useLocation } from 'react-router-dom';
 import Head from 'next/Head'
 import Header from './header.js'
 import styles from '../styles/Home.module.css'
 
 import React from 'react';
 
-export default function Home() {
-  const router = useRouter();
-  console.log(router.asPath);
-  const siren = router.query.siren;
-  Home.getInitialProps = async () => {return {};};
+Home.getInitialProps = async (ctx) => {
+  return {siren: ctx.query.siren}
+}
+
+export default function Home({siren}) {
   return(
       <div className={styles.container}>  
         <Head>
           <title>La Société Nouvelle</title>
           <link rel="icon" href="/favicon.ico" />
         </Head> 
+
         <Header/>
-  
+        <main className={styles.main}>
+
+          <h1 className={styles.title}>
+          Empreinte Sociétale
+          </h1>
+        
+        </main>
         <EmpreinteSocietale siren={siren}/>
- 
       </div>
   )
 }
@@ -59,13 +67,7 @@ class  EmpreinteSocietale extends React.Component {
       return <p></p>
     } else {
       return (
-        <div className={styles.container}>
-
-          <main className={styles.main}>
-
-            <h1 className={styles.title}>
-            Empreinte Sociétale
-            </h1>
+        <div className="strip">
 
             <div id="sfp-company-data" className="strip">
               <h2>
@@ -86,16 +88,6 @@ class  EmpreinteSocietale extends React.Component {
             <div id="sfp-view">
             {buildVueIndicateurs(view)}
             </div>
-        
-          </main>
-
-          <footer className={styles.footer}>
-            <a>
-              <p>
-                Bas de Page
-              </p>
-            </a>
-          </footer>
 
         </div>
       )

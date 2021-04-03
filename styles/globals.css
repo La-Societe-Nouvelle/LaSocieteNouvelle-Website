@@ -180,18 +180,18 @@ li {
   border-top: solid #616161 1px;
 }
 
-#result-item-data {
+.result-item-data {
   display: inline-block;
   vertical-align: top;
   text-align: center;
   margin: 0 25px 0 50px;
   width: 500px;
 }
-#result-item-denomination {
+.result-item-denomination {
   font-weight: bold;
 }
 
-#button-consulter {
+.button-consulter {
   position: relative;
   right: 0;
   display: inline-block;
