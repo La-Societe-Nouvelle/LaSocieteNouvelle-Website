@@ -10,10 +10,17 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
+    "fs": "0.0.1-security",
+    "html-loader": "^2.1.2",
+    "markdown-loader": "^6.0.0",
+    "marked": "^2.0.1",
     "next": "10.0.9",
     "qs": "^6.10.1",
+    "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react-markdown": "^5.0.3",
+    "react-router-dom": "^5.2.0",
+    "remark-html": "^13.0.1"
   }
 }

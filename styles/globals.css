@@ -109,6 +109,14 @@ li {
   height: 50px;
 }
 
+.ReactMarkdown {
+  display: flex;
+}
+
+.content-strip {
+  width: 80%;
+}
+
 /* ----- demarches ----- */
 
 .services-item {

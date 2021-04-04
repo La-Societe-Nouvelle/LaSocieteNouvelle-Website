@@ -19,7 +19,7 @@ export default function Home() {
         Empreinte Sociétale de l'Entreprise
         </h1>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           Introduction
           </h2>
@@ -42,7 +42,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           Indicateurs
           </h2>
@@ -86,7 +86,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           Pourquoi mesurer son Empreinte Sociétale ?
           </h2>

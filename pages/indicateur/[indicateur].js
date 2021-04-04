@@ -1,10 +1,18 @@
 import Head from 'next/Head'
 import Header from '../../pages/header.js'
+import Footer from '../../pages/footer.js'
+
 import styles from '../../styles/Home.module.css'
+
+import fs from 'fs'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import html from 'remark-html'
 
 var React = require('react');
 
-import * as indic_data from '../../public/indic-data/indic_data.js'
+import * as data from '../../public/indic-data/data.js'
+import ReactMarkdown from 'react-markdown'
 
 export default function Post({postData}) {
   return (
@@ -36,20 +44,21 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const postData = getIndicData(params.indicateur);
+  const mdFile = await unified()
+    .use(markdown)
+    .use(html)
+    .process(fs.readFileSync('./public/indic-data/'+params.indicateur.toUpperCase()+'.md'));
+  const postData = {
+      indic: params.indicateur,
+      data: data.indicateurs,
+      content: String(mdFile)}
   return {
     props: {postData}
   }
 }
-export function getIndicData(indic) {
-  if (indic==="eco") {
-    return indic_data.eco_data;
-  } else {
-    return indic_data.eco_data;
-  }
-}
 
-function build(indic) {
+function build(postData) {
+  const {indic,data,content} = postData;
   return (
     <div className={styles.container}>
       <Head>
@@ -58,70 +67,30 @@ function build(indic) {
       </Head>
 
       <Header/>
-
       <main className={styles.main}>
 
         <div id="strip-odd" class="strip">
-          <img id="logo-odd" src={indic.odd_img} alt="logo" />
+          <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
         </div>
 
-        <div class="strip">
-          <h2 class="indic-strip-title" id="indic-label">
-          {indic.libelle}
+        <div className="strip">
+          <h2 className="indic-strip-title" id="indic-label">
+          {data.libelle[indic]}
           </h2>
           <ul>
-            <li>Code : {indic.code}</li>
-            <li>Description : {indic.description}</li>
-            <li>Unité par défaut : {indic.unit}</li>
+            <li>Code : {data.code[indic]}</li>
+            <li>Description : {data.description[indic]}</li>
+            <li>Unité par défaut : {data.unit[indic]}</li>
           </ul>
           <p>
-            Notes
+            {data.note[indic]}
           </p>
         </div>
 
-        <div className="strip">
-          <h3 class="indic-strip-title">
-          IMPACT DIRECT
-          </h3>
-          <p>
-          Grandeur mesurée : {indic.impactDirect.mesure}
-          </p>
-          <p>
-          {indic.impactDirect.texte}
-          </p>
-          <p>
-          Notes
-          </p>
-        </div>
-
-        <div className="strip">
-          <h3 class="indic-strip-title">
-          DONNEES PAR DEFAUT
-          </h3>
-          {buildParagraph(indic.donneesParDefaut.texts)}
-          {buildSources(indic.donneesParDefaut.sources)}
-        </div>
-
+        <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
+        
       </main>
-
-      <footer className={styles.footer}>
-        <a>
-          <p>
-            Bas de Page
-          </p>
-        </a>
-      </footer>
+      <Footer/>
     </div>
   )
 }
-
-function buildParagraph(texts) {
-  return texts.map((text) => <p>{text}</p>);
-}
-function buildLinks(links) {
-  return links.map((link) => <li><a href={link.ref} target="_blank">{link.title}</a></li>);
-}
-function buildSources(sources) {
-  return sources.map((source) => <div><p>{source.title}</p><ul>{buildLinks(source.links)}</ul></div>);
-}
-
