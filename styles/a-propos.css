@@ -1,0 +1,36 @@
+
+.contributeurs {
+    padding: 25px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contributeur > img {
+    height: 100px;
+    filter: grayscale(100%);
+}
+
+.contributeur p {
+    margin: 5px 0 10px 25px;
+}
+
+.contributeur {
+    display: flex;
+}
+
+#ecosystem-label {
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+.ecosystem-list-logo {
+    padding: 25px 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: solid #616161 1px;
+}
+.ecosystem-list-logo img {
+    height: 40px;
+}

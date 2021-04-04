@@ -151,9 +151,9 @@ function buildVueIndicateur (data) {
   return (
     <div key={data.code} className="VueIndicateur">
       <h4 id="indic-view-label">{data.libelle}</h4>
-      <p id="indic-value">{data.value} {data.unit}</p>
+      <p id="indic-value">{Math.round(data.value*10)/10} {data.unit}</p>
       <p className="indic-subdata">Source : {data.libelleFlag}</p>
-      <p className="indic-subdata">Incertitude : {data.uncertainty} %</p>
+      <p className="indic-subdata">Incertitude : {Math.round(data.uncertainty)} %</p>
       <p className="indic-subdata">Dernière mise à jour : {data.year}</p>
       <p className="indic-subdata">Valeur de référence : {data.value} {data.unit}</p>
     </div>

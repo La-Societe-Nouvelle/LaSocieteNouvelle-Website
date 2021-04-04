@@ -24,3 +24,27 @@ Institut National de Recherche et de Sécurité (INRS)
 
 European Chemicals Agency (ECHA)  
 [*https://echa.europa.eu/fr/home*](https://echa.europa.eu/fr/home)
+
+### SUIVI MACRO-ECONOMIQUE
+
+<div class="references-blocks">
+    <div id="block-1">
+    <p id="titre-block">situation 2019</p>
+    <p id="value-block">16.7</p>
+    <p id="unit-block">g/€</p>
+    </div>
+    <div id="block-2">
+    <p id="titre-block">objectif 2021</p>
+    <p id="value-block">14.4</p>
+    <p id="unit-block">g/€</p>
+    </div>
+    <div id="block-3">
+    <p id="titre-block">situation 2030</p>
+    <p id="value-block">4.8</p>
+    <p id="unit-block">g/€</p>
+    </div>
+</div>
+
+**Objectif :** Intensité < 4.8 g/€ d’ici 2030 
+
+L’objectif est fixé par La Société Nouvelle. Il s'inscrit dans une trajectoire visant une intensité inférieure à 0.4 g/€ d'ici 2050, équivalente à une utilisation de 10 Mt de produits dangereux à l'échelle européenne.

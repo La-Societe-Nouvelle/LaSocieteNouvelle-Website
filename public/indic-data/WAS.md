@@ -24,3 +24,27 @@ Ministère de la Transition écologique
 
 Agence de la Transition écologique (ADEME)  
 [*https://www.ademe.fr/expertises/dechets*](https://www.ademe.fr/expertises/dechets)
+
+### SUIVI MACRO-ECONOMIQUE
+
+<div class="references-blocks">
+    <div id="block-1">
+    <p id="titre-block">situation 2018</p>
+    <p id="value-block">149</p>
+    <p id="unit-block">g/€</p>
+    </div>
+    <div id="block-2">
+    <p id="titre-block">objectif 2021</p>
+    <p id="value-block">111</p>
+    <p id="unit-block">g/€</p>
+    </div>
+    <div id="block-3">
+    <p id="titre-block">situation 2030</p>
+    <p id="value-block">33</p>
+    <p id="unit-block">g/€</p>
+    </div>
+</div>
+
+**Objectif :** Intensité < 32,8 g/€ d’ici 2030
+
+L’objectif est fixé par La Société Nouvelle. Il est défini en accord avec une trajectoire visant une économie zéro déchets (volume < 10 Mt) en 2050.

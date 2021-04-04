@@ -1,6 +1,7 @@
 import Head from 'next/Head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
           A propos - La Société Nouvelle
         </h1>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           La Société Nouvelle
           </h2>
@@ -40,7 +41,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           Notre objectif
           </h2>
@@ -52,7 +53,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div class="strip">
+        <div className="strip">
           <h2>
           Nos activités
           </h2>
@@ -85,6 +86,42 @@ export default function Home() {
               </p>
             </li>
           </ul>
+        </div>
+
+        <div className="strip">
+          <h2>
+          Principaux contributeurs
+          </h2>
+          <div className="contributeurs">
+          <div className="contributeur">
+            <img src="/resources/photo_sh.jpg" alt="photo_sh"/>
+            <div id="contributeur-data">
+              <p className="identite" >
+                <strong>Sylvain HUMILIERE</strong><br/>
+                Président - La Société Nouvelle
+              </p>
+            </div>
+          </div>
+          <div className="contributeur">
+            <img src="/resources/photo_ld.jpg" alt="photo_sh"/>
+            <div id="contributeur-data">
+              <p className="identite" >
+                <strong>Lyderic DUTILLIEUX</strong><br/>
+                Président - Origénial
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div className="strip">
+          <p id="ecosystem-label">Ecosystème - La Société Nouvelle</p>
+          <div className="ecosystem-list-logo">
+            <img src="/resources/mif-logo.png" alt="logo"/>
+            <img src="/resources/r-alliances-logo.png" alt="logo"/>
+            <img src="/resources/euratechnologies-logo.jpg" alt="logo"/>
+            <img src="/resources/wa4e-logo.png" alt="logo"/>
+          </div>
         </div>
 
       </main>

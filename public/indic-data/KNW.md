@@ -33,3 +33,27 @@ Ministère du Travail, de l’Emploi et de l’Insertion
 
 Ministère de l’Economie, des Finances et de la Relance  
 [*https://www.economie.gouv.fr/entreprises/innovation-et-data*](https://www.economie.gouv.fr/entreprises/innovation-et-data)
+
+### SUIVI MACRO-ECONOMIQUE
+
+<div class="references-blocks">
+    <div id="block-1">
+    <p id="titre-block">situation 2015</p>
+    <p id="value-block">2.5</p>
+    <p id="unit-block">%</p>
+    </div>
+    <div id="block-2">
+    <p id="titre-block">objectif 2021</p>
+    <p id="value-block">2.8</p>
+    <p id="unit-block">%</p>
+    </div>
+    <div id="block-3">
+    <p id="titre-block">situation 2030</p>
+    <p id="value-block">5.0</p>
+    <p id="unit-block">%</p>
+    </div>
+</div>
+
+**Objectif :** Contribution > 5.0 % d’ici 2030 
+
+L’objectif est fixé La Société Nouvelle. Il est défini pour incitation au financement de la recherche et à la formation. Il est alimenté par l’objectif de l’Union Européenne d’un financement de la R&D à hauteur de 3% du PIB.

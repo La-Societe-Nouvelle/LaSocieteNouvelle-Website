@@ -69,7 +69,7 @@ function build(postData) {
       <Header/>
       <main className={styles.main}>
 
-        <div id="strip-odd" class="strip">
+        <div id="strip-odd" className="strip">
           <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
         </div>
 

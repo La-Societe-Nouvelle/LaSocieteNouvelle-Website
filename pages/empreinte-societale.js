@@ -53,33 +53,33 @@ export default function Home() {
           Emplois des ressources :
           </p>
           <ul>
-            <li><a href="indicateur/eco">Contribution à l'économie nationale</a></li>
-            <li><a href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire</a></li>
-            <li><a href="indicateur/soc">Contribution aux acteurs d'intérêt social</a></li>
-            <li><a href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances</a></li>
+            <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale</a></li>
+            <li><a className="text-link" href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire</a></li>
+            <li><a className="text-link" href="indicateur/soc">Contribution aux acteurs d'intérêt social</a></li>
+            <li><a className="text-link" href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances</a></li>
           </ul>
           <p>
           Impacts environnementaux :
           </p>
           <ul>
-            <li><a href="indicateur/ghg">Intensité d'émission de gaz à effet de serre</a></li>
-            <li><a href="indicateur/was">Intensité de production de déchets</a></li>
-            <li><a href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement</a></li>
+            <li><a className="text-link" href="indicateur/ghg">Intensité d'émission de gaz à effet de serre</a></li>
+            <li><a className="text-link" href="indicateur/was">Intensité de production de déchets</a></li>
+            <li><a className="text-link" href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement</a></li>
           </ul>
           <p>
           Ressources naturelles :
           </p>
           <ul>
-            <li><a href="indicateur/mat">Intensité d'extraction de matières premières</a></li>
-            <li><a href="indicateur/nrg">Intensité de consommation d'énergie</a></li>
-            <li><a href="indicateur/wat">Intensité de consommation d'eau</a></li>
+            <li><a className="text-link" href="indicateur/mat">Intensité d'extraction de matières premières</a></li>
+            <li><a className="text-link" href="indicateur/nrg">Intensité de consommation d'énergie</a></li>
+            <li><a className="text-link" href="indicateur/wat">Intensité de consommation d'eau</a></li>
           </ul>
           <p>
           Partage de la valeur :
           </p>
           <ul>
-            <li><a href="indicateur/dis">Indice de répartition des rémunérations</a></li>
-            <li><a href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes</a></li>
+            <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations</a></li>
+            <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes</a></li>
           </ul>
           <p>
           La gouvernance de l’ESE est actuellement assurée par La Société Nouvelle. La volonté reste cependant d’ouvrir cette gouvernance à des acteurs publics et privés afin de créer un outil partagé par l’ensemble des acteurs économiques et favoriser sa diffusion. Cette gouvernance comprend la sélection des indicateurs (méthodologies, valeurs par défaut, etc.) et la surveillance concernant l’administration de la base de données ouverte.
@@ -88,7 +88,7 @@ export default function Home() {
 
         <div className="strip">
           <h2>
-          Pourquoi mesurer son Empreinte Sociétale ?
+          Les apports de l'Empreinte Sociétale pour l'Entreprise
           </h2>
           <p>
           Du point de vue de l’entreprise, les intérêts de l’ESE sont multiples :
