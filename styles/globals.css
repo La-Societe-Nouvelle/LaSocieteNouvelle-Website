@@ -90,6 +90,10 @@ li {
   margin-top: 25px;
 }
 
+#strip-header {
+  margin-bottom: 0;
+}
+
 .indic-strip-title {
   padding: 5px 0 5px 0;
   border-top: solid #616161 1px;
@@ -115,6 +119,21 @@ li {
 
 .content-strip {
   width: 80%;
+  margin-bottom: 50px;
+}
+
+.content-strip > h3 {
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 50px;
+  border-top: solid #616161 1px;
+  border-bottom: solid #616161 1px;
+}
+
+#lien-github {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
 }
 
 /* ----- demarches ----- */

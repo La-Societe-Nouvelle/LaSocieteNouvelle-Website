@@ -51,7 +51,7 @@ export async function getStaticProps({params}) {
   const postData = {
       indic: params.indicateur,
       data: data.indicateurs,
-      content: String(mdFile)}
+      content: String(mdFile).replace(/href/g,'target="_blank" href')}
   return {
     props: {postData}
   }
@@ -73,7 +73,7 @@ function build(postData) {
           <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
         </div>
 
-        <div className="strip">
+        <div id="strip-header" className="strip">
           <h2 className="indic-strip-title" id="indic-label">
           {data.libelle[indic]}
           </h2>
@@ -89,6 +89,10 @@ function build(postData) {
 
         <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
         
+        <div className="strip">
+          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/indic-data/"+indic.toUpperCase()+".md"} target="_blanck">Proposer une amélioration de la page</a></p>
+        </div>
+
       </main>
       <Footer/>
     </div>
