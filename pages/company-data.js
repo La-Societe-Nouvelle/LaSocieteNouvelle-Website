@@ -1,4 +1,4 @@
-import Head from 'next/Head'
+import Head from 'next/head'
 import Header from './header.js'
 import Footer from './footer.js'
 import styles from '../styles/Home.module.css'
@@ -11,11 +11,11 @@ Home.getInitialProps = async (ctx) => {
 
 export default function Home({siren}) {
   return(
-      <div className={styles.container}>  
+      <div className={styles.container}>
         <Head>
           <title>La Société Nouvelle</title>
           <link rel="icon" href="/resources/logo_miniature.jpg" />
-        </Head> 
+        </Head>
 
         <Header/>
         <main className={styles.main}>
@@ -25,7 +25,7 @@ export default function Home({siren}) {
           </h1>
 
           <EmpreinteSocietale siren={siren}/>
-        
+
         </main>
         <Footer/>
       </div>
@@ -33,7 +33,7 @@ export default function Home({siren}) {
 }
 
 class  EmpreinteSocietale extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
