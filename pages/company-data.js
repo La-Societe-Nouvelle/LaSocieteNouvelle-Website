@@ -3,6 +3,8 @@ import Header from './header.js'
 import Footer from './footer.js'
 import styles from '../styles/Home.module.css'
 import React, {useState} from 'react';
+import { Chart } from "react-google-charts";
+
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -16,16 +18,22 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 const viewsForESE = {
   empreinteEconomique: {
     name: "Création de la valeur",
-    indicators: ["ECO", "ART", "SOC", "KNW"]
-  },
+    indicators: {"ECO": {min:0, max:100},
+                 "ART": {min:0, max:100},
+                 "SOC": {min:0, max:100},
+                 "KNW": {min:0, max:100}}},
   empreinteEnvironnementale: {
     name: "Empreinte environnementale",
-    indicators: ["GHG", "MAT","WAS","NRG","WAT","HAZ"]
-  },
+    indicators: {"GHG": {min:0},
+                 "MAT": {min:0},
+                 "WAS": {min:0},
+                 "NRG": {min:0},
+                 "WAT": {min:0},
+                 "HAZ": {min:0}}},
   empreinteSociale: {
     name: "Empreinte sociale",
-    indicators:  ["DIS", "GEC"]
-  }
+    indicators:  {"DIS":{min:0, max:60},
+                  "GEC":{min:0, max:100}}}
 }
 
 /* Fetch (on server side) the profile of the company given its SIREN number */
@@ -79,7 +87,7 @@ function EmpreinteSocietale ({siren,isLoaded,uniteLegale,empreinteSocietale}){
       <ESEViewMenu selected={selectedView} selector={setSelectedView} views={viewsForESE}/>
 
       <Indicators
-        selectedCodes={viewsForESE[selectedView].indicators}
+        selectedIndicators={viewsForESE[selectedView].indicators}
         ESE={empreinteSocietale}/>
     </div>
   )
@@ -107,7 +115,8 @@ function ESEViewMenu({selected, selector, views}){
       <div id="sfp-menu-items">
         {Object.entries(views).map(
           ([viewKey,viewValue],_) => (
-            <button onClick = {() => selector(viewKey)}
+            <button key={viewKey}
+                    onClick = {() => selector(viewKey)}
                     className={ (viewKey == selected) ? "sfp-menu-button" : "sfp-menu-button-inverse"}>
               {viewValue.name}
             </button>
@@ -118,12 +127,13 @@ function ESEViewMenu({selected, selector, views}){
 }
 
 /* Takes the ESE and outputs some indicators given their codes */
-function Indicators({selectedCodes, ESE}) {
-  const selectedIndicators = selectedCodes.map(code => ESE[code]);
+function Indicators({selectedIndicators, ESE}) {
+  const selectedIndicatorDetails = Object.entries(selectedIndicators)
+        .map(([code,viewWindow],_) => ({...ESE[code], viewWindow}));
   return (
     <div id="sfp-view">
-      {selectedIndicators.map(indicator => (
-        <IndicatorDetails {...indicator}/>
+      {selectedIndicatorDetails.map(details => (
+        <IndicatorDetails key={details.code} {...details}/>
       ))}
     </div>
   )
@@ -131,11 +141,13 @@ function Indicators({selectedCodes, ESE}) {
 
 /* Basic indicator view */
 function IndicatorDetails
-({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared}){
+({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, viewWindow}){
   const displayedValue = Math.round(10*(valueDeclared || value))/10;
   return (
     <div key={code} className="VueIndicateur">
       <h4 id="indic-view-label">{libelle}</h4>
+      <ColumnChart title={libelle} viewWindow={viewWindow}
+                performance={displayedValue} reference={value}/>
       <p id="indic-value">{displayedValue} {unit}</p>
       <p className="indic-subdata">Source : {libelleFlag}</p>
       <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
@@ -143,4 +155,31 @@ function IndicatorDetails
       <p className="indic-subdata">Valeur de référence : {value} {unit}</p>
     </div>
   );
+}
+
+
+function ColumnChart({title, performance, reference, viewWindow = {}}) {
+  return (
+    <div align="center">
+      <Chart
+        width={"80%"}
+        height={"250px"}
+        chartType="ColumnChart"
+        loader={<div>Chargement</div>}
+        data={
+          (performance != NaN && reference != NaN && title)
+            ? [
+              ["", title, { role: "style" }],
+              ["Référence", reference, "#4285f4"],
+              ["Unité légale", performance, "#db4437"],
+            ]
+          : []}
+        options={{
+          legend: {position: 'none'},
+          vAxis: {viewWindow: viewWindow, viewWindowMode: "explicit"},
+          enableInteractivity: false,
+          animation:{duration:600, easing:"inAndOut"}
+        }}
+      />
+    </div>)
 }
