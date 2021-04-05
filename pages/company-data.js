@@ -20,8 +20,7 @@ const viewsForESE = {
     name: "Création de la valeur",
     indicators: {"ECO": {min:0, max:100},
                  "ART": {min:0, max:100},
-                 "SOC": {min:0, max:100},
-                 "KNW": {min:0, max:100}}},
+                 "SOC": {min:0, max:100}}},
   empreinteEnvironnementale: {
     name: "Empreinte environnementale",
     indicators: {"GHG": {min:0},
@@ -32,8 +31,9 @@ const viewsForESE = {
                  "HAZ": {min:0}}},
   empreinteSociale: {
     name: "Empreinte sociale",
-    indicators:  {"DIS":{min:0, max:60},
-                  "GEC":{min:0, max:100}}}
+    indicators:  {"DIS":{min:0, max:100},
+                  "GEQ":{min:0, max:100},
+                  "KNW": {min:0, max:100}}}
 }
 
 /* Fetch (on server side) the profile of the company given its SIREN number */
@@ -141,37 +141,37 @@ function Indicators({selectedIndicators, ESE}) {
 
 /* Basic indicator view */
 function IndicatorDetails
-({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, viewWindow}){
-  const displayedValue = Math.round(10*(valueDeclared || value))/10;
+({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, valueReference, viewWindow}){
+  const displayedValue = Math.round(10*value)/10;
+  const displayedValueReference = Math.round(10*valueReference)/10;
   return (
     <div key={code} className="VueIndicateur">
       <h4 id="indic-view-label">{libelle}</h4>
       <ColumnChart title={libelle} viewWindow={viewWindow}
-                performance={displayedValue} reference={value}/>
-      <p id="indic-value">{displayedValue} {unit}</p>
+                performance={displayedValue} reference={displayedValueReference}/>
+      <p id={valueDeclared ? "indic-value" : "indic-value-default"}>{Math.round(displayedValue)} {unit}</p>
       <p className="indic-subdata">Source : {libelleFlag}</p>
       <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
       <p className="indic-subdata">Dernière mise à jour : {year}</p>
-      <p className="indic-subdata">Valeur de référence : {value} {unit}</p>
+      <p className="indic-subdata">Valeur de référence : {Math.round(valueReference)} {unit}</p>
     </div>
   );
 }
-
 
 function ColumnChart({title, performance, reference, viewWindow = {}}) {
   return (
     <div align="center">
       <Chart
         width={"80%"}
-        height={"250px"}
+        height={"150px"}
         chartType="ColumnChart"
         loader={<div>Chargement</div>}
         data={
           (performance != NaN && reference != NaN && title)
             ? [
               ["", title, { role: "style" }],
-              ["Référence", reference, "#4285f4"],
-              ["Unité légale", performance, "#db4437"],
+              ["Référence", reference, "#B0B0B0"],
+              ["Unité légale", performance, "#616161"],
             ]
           : []}
         options={{
