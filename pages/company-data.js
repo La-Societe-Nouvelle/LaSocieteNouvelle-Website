@@ -131,11 +131,12 @@ function Indicators({selectedCodes, ESE}) {
 
 /* Basic indicator view */
 function IndicatorDetails
-({code, libelle, libelleFlag, uncertainty, year, value, unit}){
+({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared}){
+  const displayedValue = Math.round(10*(valueDeclared || value))/10;
   return (
     <div key={code} className="VueIndicateur">
       <h4 id="indic-view-label">{libelle}</h4>
-      <p id="indic-value">{Math.round(value*10)/10} {unit}</p>
+      <p id="indic-value">{displayedValue} {unit}</p>
       <p className="indic-subdata">Source : {libelleFlag}</p>
       <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
       <p className="indic-subdata">Dernière mise à jour : {year}</p>
