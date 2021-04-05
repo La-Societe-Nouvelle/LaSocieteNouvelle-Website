@@ -19,8 +19,8 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de la Transition Ecologique  
-[*https://www.ecologie.gouv.fr/politiques/energies*](https://www.ecologie.gouv.fr/politiques/energies)
+**Ministère de la Transition Ecologique**  
+[*Politiques publiques - Energies*](https://www.ecologie.gouv.fr/politiques/energies)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -36,10 +36,14 @@ Ministère de la Transition Ecologique
     <p id="unit-block">kJ/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">1868</p>
     <p id="unit-block">kJ/€</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/NRG_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 1 868 kJ/€ d’ici 2030

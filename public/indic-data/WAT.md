@@ -20,17 +20,17 @@ L’intervalle de confiance associé à l’utilisation des données est de 1000
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de la transition écologique  
-[*https://www.ecologie.gouv.fr/politiques/eau*](https://www.ecologie.gouv.fr/politiques/eau)
+**Ministère de la transition écologique**  
+[*Politiques publiques - Eau*](https://www.ecologie.gouv.fr/politiques/eau)
 
-Eau France  
-[*https://www.eaufrance.fr/*](https://www.eaufrance.fr/)
+**Eau France**  
+[*Eau France (site web)*](https://www.eaufrance.fr/)
 
-Agences de l’eau  
-[*http://www.lesagencesdeleau.fr/*](http://www.lesagencesdeleau.fr/)
+**Agences de l’eau**  
+[*Agences de l'eau (site web)*](http://www.lesagencesdeleau.fr/)
 
-European Environnement Agency (EEA)  
-[*https://water.europa.eu/freshwater*](https://water.europa.eu/freshwater)
+**European Environnement Agency (EEA)**  
+[*WISE Freshwater*](https://water.europa.eu/freshwater)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -46,10 +46,14 @@ European Environnement Agency (EEA)
     <p id="unit-block">L/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">7.1</p>
     <p id="unit-block">L/€</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/WAT_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 7.4 L/€ d’ici 2030

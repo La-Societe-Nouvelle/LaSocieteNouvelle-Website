@@ -16,14 +16,14 @@ Elles sont obtenues à partir des apports directs (extractions intérieures et i
 
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
 
-Données EUROSTAT  
-[*https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr)  
-[*https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr)
+**Données EUROSTAT :**  
+[*Comptes de flux de matières*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr)  
+[*Comptes de flux de matières en équivalent matières premières par consommation finale de produits - modélisation*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr)
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de la Transition écologique  
-[*https://www.ecologie.gouv.fr/productivite-des-ressources*](https://www.ecologie.gouv.fr/productivite-des-ressources)
+**Ministère de la Transition écologique**  
+[*La productivité des ressources*](https://www.ecologie.gouv.fr/productivite-des-ressources)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -39,10 +39,14 @@ Ministère de la Transition écologique
     <p id="unit-block">g/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">284</p>
     <p id="unit-block">g/€</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/MAT_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 247 g/€ d’ici 2030 

@@ -6,8 +6,8 @@ Critères :
 * Activité principale répertoriée au registre des métiers / au sein de la Nomenclature d’Activités Française de secteur des métiers de l’Artisanat  
 * Labellisation Entreprise du Patrimoine Vivant (EPV)
 
-NAFA : [*https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/la-nomenclature-d-activites-francaise-de-l-artisanat*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/la-nomenclature-d-activites-francaise-de-l-artisanat)  
-EPV : [*https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/dispositifs-et-labels/label-entreprise-du-patrimoine-vivant*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/dispositifs-et-labels/label-entreprise-du-patrimoine-vivant)
+[*La Nomenclature d'Activités Française de l'Artisanat*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/la-nomenclature-d-activites-francaise-de-l-artisanat)  
+[*Le label Entreprise du Patrimoine Vivant*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/dispositifs-et-labels/label-entreprise-du-patrimoine-vivant)
 
 La valeur nette créée correspond à la valeur créée hors dotations aux amortissements.
 
@@ -21,19 +21,19 @@ Les taux de valeur ajoutée, de consommation et d’importation sont obtenus à 
 
 L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du taux de valeur ajoutée de l'entreprise. Pour une unité légale non reconnue, l’intervalle de confiance est de 500%.
 
-Données DGE :  
-[*https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat*](https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat)
+**Données DGE :**  
+[*Les chiffres clés de l'artisanat*](https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat)
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de l’Economie, des Finances et de la Relance  
-[*https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire*](https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire)
+**Ministère de l’Economie, des Finances et de la Relance**  
+[*Labels et reconnaissance de savoir-faire*](https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire)
 
-Institut National des Métiers d'Art (INMA)  
-[*https://www.institut-metiersdart.org*](https://www.institut-metiersdart.org)
+**Institut National des Métiers d'Art (INMA)**  
+[*Institut National des Métiers d'Art (site web)*](https://www.institut-metiersdart.org)
 
-INSEE  
-[*https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291*](https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291)
+**INSEE**  
+[*Tableaux de l'économie française (2020) - Artisanat*](https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -49,10 +49,14 @@ INSEE
     <p id="unit-block">%</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">11.5</p>
     <p id="unit-block">%</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/ART_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Contribution > 25 % d’ici 2030

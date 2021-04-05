@@ -20,19 +20,19 @@ Les jeux de données ouvertes du ministère de l’Enseignement supérieur, de l
 
 L’intervalle de confiance si situe aux alentours de 25 % pour les valeurs ajustées (branches spécifiques) et de 500 % dans les autres cas i.e. une contribution entre 0.1 % et 10 %.
 
-Données EUROSTAT  
-[*https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr)
+**Données EUROSTAT :**  
+[*Coûts des cours FPC par type et activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr)
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation  
-[*https://www.enseignementsup-recherche.gouv.fr/*](https://www.enseignementsup-recherche.gouv.fr/)
+**Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation**  
+[*Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation (site web)*](https://www.enseignementsup-recherche.gouv.fr/)
 
-Ministère du Travail, de l’Emploi et de l’Insertion  
-[*https://travail-emploi.gouv.fr/formation-professionnelle/*](https://travail-emploi.gouv.fr/formation-professionnelle/)
+**Ministère du Travail, de l’Emploi et de l’Insertion**  
+[*Formation professionnelle*](https://travail-emploi.gouv.fr/formation-professionnelle/)
 
-Ministère de l’Economie, des Finances et de la Relance  
-[*https://www.economie.gouv.fr/entreprises/innovation-et-data*](https://www.economie.gouv.fr/entreprises/innovation-et-data)
+**Ministère de l’Economie, des Finances et de la Relance**  
+[*Innovation et data*](https://www.economie.gouv.fr/entreprises/innovation-et-data)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -48,10 +48,14 @@ Ministère de l’Economie, des Finances et de la Relance
     <p id="unit-block">%</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">5.0</p>
     <p id="unit-block">%</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/KNW_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Contribution > 5.0 % d’ici 2030 

@@ -16,14 +16,14 @@ L’intervalle de confiance associé à l’utilisation de la valeur est à 1000
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de la Transition Ecologique  
-[*https://www.ecologie.gouv.fr/politiques/produits-chimiques*](https://www.ecologie.gouv.fr/politiques/produits-chimiques)
+**Ministère de la Transition Ecologique**  
+[*Politiques publiques - Produits chimiques*](https://www.ecologie.gouv.fr/politiques/produits-chimiques)
 
-Institut National de Recherche et de Sécurité (INRS)  
-[*https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html*](https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html)
+**Institut National de Recherche et de Sécurité (INRS)**  
+[*Agents chimiques CMR*](https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html)
 
-European Chemicals Agency (ECHA)  
-[*https://echa.europa.eu/fr/home*](https://echa.europa.eu/fr/home)
+**European Chemicals Agency (ECHA)**  
+[*ECHA (site web)*](https://echa.europa.eu/fr/home)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -39,10 +39,14 @@ European Chemicals Agency (ECHA)
     <p id="unit-block">g/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">4.8</p>
     <p id="unit-block">g/€</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/HAZ_Graphe-eu-pi.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 4.8 g/€ d’ici 2030 

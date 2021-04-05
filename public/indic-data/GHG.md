@@ -17,16 +17,16 @@ Elles sont obtenues à partir des comptes macroéconomiques des branches économ
 
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
 
-Données EUROSTAT :  
-[*https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
+**Données EUROSTAT :**  
+[*Compte d'émissions atmosphériques par activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
 
 ### POUR ALLER PLUS LOIN
 
 Ministère de la Transition écologique  
-[*https://www.ecologie.gouv.fr/politiques/climat*](https://www.ecologie.gouv.fr/politiques/climat)
+[*Politiques publiques - Climat*](https://www.ecologie.gouv.fr/politiques/climat)
 
 Centre technique de référence en matière de pollution atmosphérique et de changement climatique (CITEPA)  
-[*https://www.citepa.org/fr/*](https://www.citepa.org/fr/)
+[*CITEPA (site web)*](https://www.citepa.org/fr/)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -42,7 +42,7 @@ Centre technique de référence en matière de pollution atmosphérique et de ch
     <p id="unit-block">gCO2e/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">63</p>
     <p id="unit-block">gCO2e/€</p>
     </div>

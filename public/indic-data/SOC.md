@@ -5,9 +5,13 @@
 L’impact direct à l’échelle d’une unité légale est nul ou équivalent à la valeur ajoutée nette en fonction de la définition ou non d’un intérêt social.
 
 Critères :
-* Structure de l’ESS (Economie Sociale et Solidaire) [*info*](https://www.economie.gouv.fr/cedef/economie-sociale-et-solidaire)
-* Agrément ESUS (Entreprise  Solidaire d'Utilité Sociale) [*info*](https://www.economie.gouv.fr/entreprises/agrement-entreprise-solidaire-utilite-sociale-ess)
-* Entreprise à mission / Raison d’être inscrite dans les statuts de l’entreprise [*info*](https://www.economie.gouv.fr/cedef/societe-mission)
+* Structure de l’ESS (Economie Sociale et Solidaire) 
+* Agrément ESUS (Entreprise  Solidaire d'Utilité Sociale) 
+* Entreprise à mission / Raison d’être inscrite dans les statuts de l’entreprise 
+
+[*Qu'est-ce que l'économie sociale et solidaire ?*](https://www.economie.gouv.fr/cedef/economie-sociale-et-solidaire)  
+[*Qu’est-ce que l’agrément « Entreprise solidaire d’utilité sociale » ?*](https://www.economie.gouv.fr/entreprises/agrement-entreprise-solidaire-utilite-sociale-ess)  
+[*Que sont les sociétés à mission ?*](https://www.economie.gouv.fr/cedef/societe-mission)
 
 La valeur ajoutée nette correspond à la valeur ajoutée hors dotations aux amortissements.
 
@@ -21,19 +25,19 @@ Dès son apparition au sein du répertoire SIRENE, la qualité "Société à Mis
 
 L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du taux de valeur ajoutée de l'entreprise. Pour une unité légale non reconnue, l’intervalle de confiance est de 500%.
 
-Données ESS France :  
-[*https://ess-france.org/fr/less-en-chiffres*](https://ess-france.org/fr/less-en-chiffres)
+**Données ESS France :**  
+[*L'ESS en chiffres*](https://ess-france.org/fr/less-en-chiffres)
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de l’Economie, des Finances et de la Relance  
-[*https://www.economie.gouv.fr/*](https://www.economie.gouv.fr/)
+**Ministère de l’Economie, des Finances et de la Relance**  
+[*Redéfinir la raison d'être des entreprises*](https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises)
 
-ESS France (Chambre française de l’ESS)  
-[*https://ess-france.org/fr*](https://ess-france.org/fr)
+**ESS France (Chambre française de l’ESS)**  
+[*ESS France (site web)*](https://ess-france.org/fr)
 
-Conseil National des Chambres Régionales de l’ESS  
-[*http://www.esspace.fr/index.html*](http://www.esspace.fr/index.html)
+**Conseil National des Chambres Régionales de l’ESS**  
+[*CNCRESS (site web)*](http://www.esspace.fr/index.html)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -49,10 +53,14 @@ Conseil National des Chambres Régionales de l’ESS
     <p id="unit-block">%</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">25.0</p>
     <p id="unit-block">%</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/SOC_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Contribution > 75.0 % d’ici 2030

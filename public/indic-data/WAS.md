@@ -19,11 +19,11 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 
 ### POUR ALLER PLUS LOIN
 
-Ministère de la Transition écologique  
-[*https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets*](https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets)
+**Ministère de la Transition écologique**  
+[*Politiques publiques - Économie circulaire et déchets*](https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets)
 
-Agence de la Transition écologique (ADEME)  
-[*https://www.ademe.fr/expertises/dechets*](https://www.ademe.fr/expertises/dechets)
+**Agence de la Transition écologique (ADEME)**  
+[*Expertises - Déchets*](https://www.ademe.fr/expertises/dechets)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -39,10 +39,14 @@ Agence de la Transition écologique (ADEME)
     <p id="unit-block">g/€</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">33</p>
     <p id="unit-block">g/€</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/WAS_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 32,8 g/€ d’ici 2030

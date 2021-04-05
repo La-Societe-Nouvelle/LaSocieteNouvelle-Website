@@ -14,13 +14,13 @@ La valeur par défaut est appliquée à l’ensemble des unités légales dont l
 
 L’intervalle de confiance est de 50 %.
 
-Données EUROSTAT  
-[*https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr)
+**Données EUROSTAT :**  
+[*Enquête sur la structure des salaires : salaires horaires*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr)
 
 ### REFERENCES & COMPLEMENTS
 
-Ministère du Travail, de l’Emploi et de l’Insertion  
-[*https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533)  
+**Ministère du Travail, de l’Emploi et de l’Insertion**  
+[*L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533)  
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -36,7 +36,7 @@ Ministère du Travail, de l’Emploi et de l’Insertion
     <p id="unit-block">/100</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">5.0</p>
     <p id="unit-block">%</p>
     </div>

@@ -14,11 +14,11 @@ L’intervalle de confiance est de 50 %.
 
 ### POUR ALLER PLUS LOIN
 
-Ministère du Travail, de l’Emploi et de l’Insertion  
-[*https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement)
+**Ministère du Travail, de l’Emploi et de l’Insertion**  
+[*Le salaire : fixation et paiement*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement)
 
-Ministère de l’Economie, des Finances et de la Relance  
-[*https://www.economie.gouv.fr/entreprises/remuneration-salaries*](https://www.economie.gouv.fr/entreprises/remuneration-salaries)
+**Ministère de l’Economie, des Finances et de la Relance**  
+[*Rémunération de vos salariés*](https://www.economie.gouv.fr/entreprises/remuneration-salaries)
 
 ### SUIVI MACRO-ECONOMIQUE
 
@@ -34,10 +34,14 @@ Ministère de l’Economie, des Finances et de la Relance
     <p id="unit-block">/100</p>
     </div>
     <div id="block-3">
-    <p id="titre-block">situation 2030</p>
+    <p id="titre-block">objectif 2030</p>
     <p id="value-block">33.3</p>
     <p id="unit-block">/100</p>
     </div>
+</div>
+
+<div id="graph">
+    <img id="graph-img" src="/graphics/DIS_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Indice de GINI < 25/100 d’ici 2030
