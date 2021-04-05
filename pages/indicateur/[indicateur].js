@@ -1,4 +1,4 @@
-import Head from 'next/Head'
+import Head from 'next/head'
 import Header from '../../pages/header.js'
 import Footer from '../../pages/footer.js'
 
@@ -88,7 +88,7 @@ function build(postData) {
         </div>
 
         <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
-        
+
         <div className="strip">
           <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/indic-data/"+indic.toUpperCase()+".md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>

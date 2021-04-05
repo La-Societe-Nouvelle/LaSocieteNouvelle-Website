@@ -1,4 +1,4 @@
-import Head from 'next/Head'
+import Head from 'next/head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
 import styles from '../styles/Home.module.css'
@@ -106,7 +106,7 @@ export default function Home() {
       </main>
 
       <Footer/>
-      
+
     </div>
   )
 }
