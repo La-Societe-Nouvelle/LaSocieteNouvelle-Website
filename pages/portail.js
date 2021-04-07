@@ -134,5 +134,5 @@ function buildResultItems(items) {
 }
 
 function showCompanyData(siren) {
-  window.open('lasocietenouvelle.org/company-data?siren='+encodeURI(siren));
+  window.open('http://lasocietenouvelle.org/company-data?siren='+encodeURI(siren));
 }
