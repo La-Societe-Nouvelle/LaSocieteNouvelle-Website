@@ -50,12 +50,17 @@ button:hover {
 
 input {
   height: 25px;
+  font-size: 14px;
   border-color: #616161 1px;
 }
 
 li {
   list-style-type: square;
   list-style: #616161;
+}
+
+textarea {
+  font-size: 14px;
 }
 
 /* ----- class ----- */
@@ -324,4 +329,9 @@ li {
 
 #submit-form {
   width: 100%;
+}
+#submit-form.disabled {
+  background-color: white;
+  color: #616161;
+  border: solid #616161 1px;
 }

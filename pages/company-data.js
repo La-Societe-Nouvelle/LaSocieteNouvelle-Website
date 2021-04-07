@@ -43,10 +43,11 @@ Home.getInitialProps = async (ctx) => {
     const endpoint = `${apiBaseUrl}/siren/${siren}`;
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
+    const profil = data.profil;
     return {
       siren,
-      uniteLegale: data.profil.descriptionUniteLegale,
-      empreinteSocietale: data.profil.empreinteSocietale
+      uniteLegale: profil!==null ? profil.descriptionUniteLegale : "",
+      empreinteSocietale: profil!==null ? profil.empreinteSocietale : ""
     };
   }
   catch(error){
