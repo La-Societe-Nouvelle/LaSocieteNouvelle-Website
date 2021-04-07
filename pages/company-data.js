@@ -43,9 +43,11 @@ Home.getInitialProps = async (ctx) => {
     const endpoint = `${apiBaseUrl}/siren/${siren}`;
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
+    const isLoaded = data.profil!==null;
     const profil = data.profil;
     return {
       siren,
+      isLoaded,
       uniteLegale: profil!==null ? profil.descriptionUniteLegale : "",
       empreinteSocietale: profil!==null ? profil.empreinteSocietale : ""
     };
@@ -66,15 +68,39 @@ export default function Home(props){
       </Head>
       <Header/>
       <main className={styles.main}>
-        <h1 className={styles.title}> Empreinte Sociétale </h1>
-        <EmpreinteSocietale {...props}/>
+        <h1 className={styles.title}> Empreinte Sociétale #{props.siren}</h1>
+        <ContentPage {...props}/>
       </main>
       <Footer/>
     </div>
   )
 }
 
-/* Body of the page : Viewing the "EpreinteSocietale" aka "ESE" */
+/* Test if the profile (company data) is known */
+function ContentPage (props) {
+  if (props.isLoaded) {
+    return (
+      <EmpreinteSocietale {...props}/>
+    )
+  } else {
+    return (
+      <EmpreinteSocietaleDefault />
+    )
+  }
+}
+
+/* default body of the page */
+function EmpreinteSocietaleDefault () {
+  return (
+    <div id="default-message" className="strip">
+        <p>
+          404 | Empreinte Sociétale non trouvée
+        </p>
+    </div>
+  )
+}
+
+/* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
 function EmpreinteSocietale ({siren,isLoaded,uniteLegale,empreinteSocietale}){
 
   /* Use a state Hook with a default value */
