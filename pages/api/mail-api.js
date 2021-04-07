@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export const sendContactMail = async (recipientMail,objet,message,coordonnees) => {
     const data = {
         recipientMail,
@@ -8,14 +6,15 @@ export const sendContactMail = async (recipientMail,objet,message,coordonnees) =
         coordonnees
     }
     try {
-        const res = await axios({
-            method: "post",
-            url: "../api/mail-sender",
+        
+        const res = await fetch('/api/mail-sender', {
+            body: JSON.stringify(data),
             headers: {
-                "Content-Type": "application/json"
+              'Content-Type': 'application/json'
             },
-            data
-        });
+            method: 'POST'
+          })
+
         return res;
     } catch (error) {
         return error;
