@@ -134,5 +134,5 @@ function buildResultItems(items) {
 }
 
 function showCompanyData(siren) {
-  window.open('http://localhost:3000/company-data?siren='+encodeURI(siren));
+  window.open('lasocietenouvelle.org/company-data?siren='+encodeURI(siren));
 }
