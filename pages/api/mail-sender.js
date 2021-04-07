@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
-    host: process.env.FORM_SERVER_SMTP,
-    port: process.env.FORM_SERVER_PORT,
+    host: "smtp.sfr.fr",
+    port: "465",
     auth: {
         user: process.env.FORM_SENDER_MAIL,
         pass: process.env.FORM_SENDER_PASSWD
@@ -22,7 +22,7 @@ export default async (req,res) => {
 
 const mailer = ({objet,text,recipientMail}) => {
     const mail = {
-        from: process.env.FORM_SENDER_MAIL,
+        from: " Formulaire de contact - Website <"+process.env.FORM_SENDER_MAIL+">",
         to: recipientMail,
         subject: objet,
         text

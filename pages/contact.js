@@ -3,7 +3,7 @@ import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
 import styles from '../styles/Home.module.css'
 
-import {sendContactMail} from '../components/mail-api.js'
+import {sendContactMail} from '../pages/api/mail-api.js'
 
 var React = require('react');
 

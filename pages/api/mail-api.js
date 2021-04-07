@@ -10,7 +10,7 @@ export const sendContactMail = async (recipientMail,objet,message,coordonnees) =
     try {
         const res = await axios({
             method: "post",
-            url: "../api/contact",
+            url: "../api/mail-sender",
             headers: {
                 "Content-Type": "application/json"
             },
