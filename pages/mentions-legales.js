@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../pages/header.js'
+import Footer from '../pages/footer.js'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
           La Société Nouvelle
           </h2>
           <p>
-          SAS au capital de 1000 €<br/>
+          SAS au capital de 1 000 €<br/>
           Siège social : 31/33 rue Adolphe 59000 LILLE<br/>
           SIREN : 889 182 770<br/>
           Responsable : Sylvain HUMILIERE<br/>
@@ -36,19 +37,21 @@ export default function Home() {
           Hébergement
           </h2>
           <p>
-          Publication prévue le 06/04/2021
+          VERCEL
+          </p>
+          <p>
+          Vercel Inc.<br/>
+          340 S Lemon Ave #4133<br/>
+          Walnut, CA 91789 
+          </p>
+          <p>
+          <a href="https://vercel.com" target="_blank">https://vercel.com</a> 
           </p>
         </div>
 
       </main>
 
-      <footer className={styles.footer}>
-        <a>
-          <p>
-            Bas de Page
-          </p>
-        </a>
-      </footer>
+      <Footer />
 
     </div>
   )
