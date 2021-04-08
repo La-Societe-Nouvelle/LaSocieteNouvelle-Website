@@ -31,11 +31,22 @@ export default function Home() {
           </p>
           <p>
           Ainsi, l’usage de l’ESE est double :
-            Elément d’information comparable sur la performance sociale et environnementale d’une entreprise : pour guider nos choix de consommations, intermédiaires ou finaux ;
-            Donnée de mesure de l’empreinte sociétale de ses clients : pour mesurer notre impact et mettre en place une traçabilité.
+          <ul>
+            <li>Elément d’information comparable sur la performance sociale et environnementale d’une entreprise ;</li>
+            <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
+          </ul>
+          </p>
+        </div>
+
+        <div className="strip">
+          <h2>
+          Ambition
+          </h2>
+          <p>
+          Au-delà de l’intelligence produite, la démarche présente un réel potentiel de faire évoluer notre modèle économique à travers la notion de qualité de la valeur économique. Cette dernière permet d’ajouter de nouvelles dimensions – sociales et environnementales – à la valeur économique, et d’apprécier de manière plus juste et plus complète le chiffre d'affaires réalisé par une entreprise. 
           </p>
           <p>
-          Au-delà de l’intelligence produite, la démarche présente un réel potentiel de faire évoluer notre modèle économique à travers la notion de qualité de la valeur économique. Cette dernière permet d’ajouter de nouvelles dimensions – sociales et environnementales – à la valeur économique, et d’apprécier de manière plus juste et plus complète le chiffre d'affaires réalisé par une entreprise. L'ESE offre une réponse efficace aux besoins d’intégration des problématiques sociales et environnementales au cœur des entreprises, et d’information sur les impacts de nos dépenses.
+          L'ESE offre ainsi une réponse efficace aux besoins d’intégration des problématiques sociales et environnementales au cœur des entreprises, et d’information sur les impacts de nos dépenses.
           </p>
           <p>
           L’ambition est d’en faire un outil standardisé, piloté conjointement avec des acteurs publics et privés, afin de mobiliser l’ensemble des entreprises pour l’atteinte d’un développement durable. Les indicateurs proposés sont voués à évoluer, pour maintenir une pertinence avec les enjeux sociaux et environnementaux, l’entreprise et le consommateur final.
@@ -53,54 +64,46 @@ export default function Home() {
           Emplois des ressources :
           </p>
           <ul>
-            <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale</a></li>
-            <li><a className="text-link" href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire</a></li>
-            <li><a className="text-link" href="indicateur/soc">Contribution aux acteurs d'intérêt social</a></li>
-            <li><a className="text-link" href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances</a></li>
+            <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale </a><img className="odd-indic" src="/resources/odd_eco.png" /></li>
+            <li><a className="text-link" href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire </a><img className="odd-indic" src="/resources/odd_art.png" /></li>
+            <li><a className="text-link" href="indicateur/soc">Contribution aux acteurs d'intérêt social </a><img className="odd-indic" src="/resources/odd_soc.png" /></li>
+            <li><a className="text-link" href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances </a><img className="odd-indic" src="/resources/odd_knw.png" /></li>
           </ul>
           <p>
           Impacts environnementaux :
           </p>
           <ul>
-            <li><a className="text-link" href="indicateur/ghg">Intensité d'émission de gaz à effet de serre</a></li>
-            <li><a className="text-link" href="indicateur/was">Intensité de production de déchets</a></li>
-            <li><a className="text-link" href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement</a></li>
+            <li><a className="text-link" href="indicateur/ghg">Intensité d'émission de gaz à effet de serre </a><img className="odd-indic" src="/resources/odd_ghg.png" /></li>
+            <li><a className="text-link" href="indicateur/was">Intensité de production de déchets </a><img className="odd-indic" src="/resources/odd_was.png" /></li>
+            <li><a className="text-link" href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement </a><img className="odd-indic" src="/resources/odd_haz.png" /></li>
           </ul>
           <p>
           Ressources naturelles :
           </p>
           <ul>
-            <li><a className="text-link" href="indicateur/mat">Intensité d'extraction de matières premières</a></li>
-            <li><a className="text-link" href="indicateur/nrg">Intensité de consommation d'énergie</a></li>
-            <li><a className="text-link" href="indicateur/wat">Intensité de consommation d'eau</a></li>
+            <li><a className="text-link" href="indicateur/mat">Intensité d'extraction de matières premières </a><img className="odd-indic" src="/resources/odd_mat.png" /></li>
+            <li><a className="text-link" href="indicateur/nrg">Intensité de consommation d'énergie </a><img className="odd-indic" src="/resources/odd_nrg.png" /></li>
+            <li><a className="text-link" href="indicateur/wat">Intensité de consommation d'eau </a><img className="odd-indic" src="/resources/odd_wat.png" /></li>
           </ul>
           <p>
           Partage de la valeur :
           </p>
           <ul>
-            <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations</a></li>
-            <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes</a></li>
+            <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a><img className="odd-indic" src="/resources/odd_dis.png" /></li>
+            <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a><img className="odd-indic" src="/resources/odd_geq.png" /></li>
           </ul>
-          <p>
-          La gouvernance de l’ESE est actuellement assurée par La Société Nouvelle. La volonté reste cependant d’ouvrir cette gouvernance à des acteurs publics et privés afin de créer un outil partagé par l’ensemble des acteurs économiques et favoriser sa diffusion. Cette gouvernance comprend la sélection des indicateurs (méthodologies, valeurs par défaut, etc.) et la surveillance concernant l’administration de la base de données ouverte.
-          </p>
         </div>
 
         <div className="strip">
           <h2>
-          Les apports de l'Empreinte Sociétale pour l'Entreprise
+          Gouvernance
           </h2>
           <p>
-          Du point de vue de l’entreprise, les intérêts de l’ESE sont multiples :
+          La gouvernance de l’ESE est actuellement assurée par La Société Nouvelle. Elle comprend la sélection des indicateurs (méthodologies, valeurs par défaut, etc.) et la surveillance concernant l’administration de la base de données ouverte.
           </p>
-          <ul>
-            <li>Se positionner vis-à-vis des enjeux de développement durable ;</li>
-            <li>Rendre compte de ses impacts</li>
-            <li>Connaître son degré d’exposition et de risque pour la pérennité des activités, pour ajuster sa stratégie ;</li>
-            <li>Participation à la transformation de notre modèle économique ;</li>
-            <li>Justifier son action pour un développement durable et valoriser les résultats de sa démarche RSE ;</li>
-            <li>Fournir une information utile à ses clients pour la mesure de leurs impacts indirects</li>
-          </ul>
+          <p>
+          La volonté reste cependant d’ouvrir cette gouvernance à des acteurs publics et privés afin de créer un outil partagé par l’ensemble des acteurs économiques et favoriser sa diffusion.
+          </p>
         </div>
 
       </main>
