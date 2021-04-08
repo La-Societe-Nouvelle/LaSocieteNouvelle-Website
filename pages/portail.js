@@ -95,7 +95,6 @@ class PortailView extends React.Component {
 
   render() {
     const {input,isLoading,isLoaded,results} = this.state;
-    console.log(isLoading,isLoaded);
     // if results are loaded
     if (!isLoaded & !isLoading) {
       return (
