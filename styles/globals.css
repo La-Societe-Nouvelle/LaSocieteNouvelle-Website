@@ -97,6 +97,24 @@ textarea {
   height: 15px;
 }
 
+/* --- md content --- */
+
+.content-md h2 {
+  margin-top: 50px;
+}
+.content-md table {
+  width: 100%;
+  table-layout: auto;
+  border-bottom: solid #616161 1px;
+}
+.content-md th {
+  border-bottom: solid #616161 1px;
+}
+.content-md thead tr th:first-child,
+.content-md tbody tr td:first-child {
+  width: 250px;
+}
+
 /* ----- demarches ----- */
 
 .services-item {
@@ -191,6 +209,11 @@ textarea {
 
 /* ----- ESE ----- */
 
+#note-info {
+  font-size: 15px;
+  font-style: italic;
+}
+
 #default-message {
   flex-grow: 1;
   display: flex;
@@ -212,6 +235,7 @@ textarea {
   width: 100%;
   border-top: solid #616161 1px;
   border-bottom: solid #616161 1px;
+  border-right: solid #616161 1px;
   max-width: 990px;
 }
 
@@ -233,13 +257,6 @@ textarea {
   border-left: solid #616161 1px;
 }
 
-#sfp-menu-button1,
-#sfp-menu-button2 {
-  border-right: 0;
-}
-#sfp-menu-button3 {
-  border-right: solid #616161 1px;
-}
 .sfp-menu-button:hover {
   color: white;
   background-color: #818181;

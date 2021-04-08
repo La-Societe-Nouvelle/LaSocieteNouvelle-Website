@@ -33,7 +33,10 @@ export default function Home() {
           En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.
           </p>
           <p>
-          La base de données s'appuie sur le répertoire sirene. Pour toute mise à jour ou retrait, contactez-nous.
+          La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 22/03/2021).
+          </p>
+          <p>
+          Pour toute publication, mise à jour ou retrait, contactez-nous.
           </p>
         </div>
 

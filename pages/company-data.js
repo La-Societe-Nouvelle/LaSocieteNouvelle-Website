@@ -43,11 +43,13 @@ Home.getInitialProps = async (ctx) => {
     const endpoint = `${apiBaseUrl}/siren/${siren}`;
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
-    const isLoaded = data.profil!==null;
+    const isLoaded = data.header.statut===200;
+    const header = data.header;
     const profil = data.profil;
     return {
       siren,
       isLoaded,
+      header,
       uniteLegale: profil!==null ? profil.descriptionUniteLegale : "",
       empreinteSocietale: profil!==null ? profil.empreinteSocietale : ""
     };
@@ -84,17 +86,20 @@ function ContentPage (props) {
     )
   } else {
     return (
-      <EmpreinteSocietaleDefault />
+      <EmpreinteSocietaleDefault {...props} />
     )
   }
 }
 
 /* default body of the page */
-function EmpreinteSocietaleDefault () {
+function EmpreinteSocietaleDefault ({header}) {
   return (
     <div id="default-message" className="strip">
         <p>
           404 | Empreinte Sociétale non trouvée
+        </p>
+        <p>
+          Error : {header.message}
         </p>
     </div>
   )
@@ -109,6 +114,13 @@ function EmpreinteSocietale ({siren,isLoaded,uniteLegale,empreinteSocietale}){
   return (
     <div className="strip">
       <UniteLegale {...uniteLegale}/>
+
+      <p id="note-info">
+      /!\ Les valeurs affichées peuvent correspondre à des données par défaut non spécifique à l'entreprise, et peuvent donc être éloignées de la réalité de l'entreprise.
+      Merci de prendre ces données avec précaution.
+      </p><p id="note-info">
+      La valeur de référence correspond à la valeur de l'indicateur pour l'agrégat macroéconomique le plus proche.
+      </p>
 
       {/* Forward state and state handler to the menu */}
       <ESEViewMenu selected={selectedView} selector={setSelectedView} views={viewsForESE}/>
@@ -144,7 +156,7 @@ function ESEViewMenu({selected, selector, views}){
           ([viewKey,viewValue],_) => (
             <button key={viewKey}
                     onClick = {() => selector(viewKey)}
-                    className={ (viewKey == selected) ? "sfp-menu-button" : "sfp-menu-button-inverse"}>
+                    className={ (viewKey == selected) ? "sfp-menu-button-inverse" : "sfp-menu-button"}>
               {viewValue.name}
             </button>
           ))}

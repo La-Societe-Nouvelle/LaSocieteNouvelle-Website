@@ -24,6 +24,7 @@
     "react-google-charts": "^3.0.15",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
+    "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1"
   }
 }
