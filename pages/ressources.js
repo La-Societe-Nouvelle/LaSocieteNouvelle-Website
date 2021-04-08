@@ -34,7 +34,7 @@ export default function Home() {
           <a href="../documentation-api">Lien vers la documentation</a>
           </p>
           <p>
-          /!\ Merci de nous contacter en cas d'utilisation intensite de l'API.
+          /!\ Merci de nous contacter en cas d'utilisation intensive de l'API.
           </p>
         </div>
 
