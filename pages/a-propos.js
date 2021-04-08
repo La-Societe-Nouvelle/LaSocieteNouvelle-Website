@@ -22,40 +22,22 @@ export default function Home() {
 
         <div className="strip">
           <h2>
-          La Société Nouvelle
+          Mission
           </h2>
           <p>
-          La Société Nouvelle est une société créée à Lille en août 2020 dont la mission est de mettre en oeuvre  un système d'information sur les impacts sociaux et environnementaux des entreprises.
+          La Société Nouvelle est une société créée à Lille en août 2020 dont la mission est de déployer un système d'information sur les impacts sociaux et environnementaux des entreprises.
           </p>
           <p>
-          Notre démarche vise à fournir, de manière ouverte, les informations nécessaires pour connaître et mesurer l'empreinte de la production des entreprises sur des enjeux majeurs de développement durable. Elle s'inscrit également dans la volonté de faire évoluer le modèle de gestion des entreprises en intégrant aux éléments comptables une information sur ses externalités.
+          Notre objectif est de fournir, de manière ouverte, les informations nécessaires pour connaître et mesurer l'empreinte de la production des entreprises sur des enjeux majeurs de développement durable. Elle s'inscrit également dans la volonté de faire évoluer le modèle de gestion des entreprises en intégrant aux éléments comptables une information sur leurs externalités.
           </p>
           <p>
-          Nous promouvons un modèle d'indicateurs basé sur la notion de qualité de la valeur économique et sur la traçabilité des flux économiques. Ce modèle est à l'origine d'un panel normalisé d'indicateurs associé au chiffre d'affaires des entreprises : l'Empreinte Sociétale de l'Entreprise (ESE). Les données sont centralisées au sein d'une base de données ouverte et une API est disponible pour faciliter leur exploitation.
-          </p>
-          <p>
-          L'ensemble des documents et outils est en cours de publication afin de rendre le système d'information entièrement OpenSource.
-          </p>
-          <p>
-          Le financement de la maintenance et du développement du système d'informations s'appuie sur des frais de publication des données au sein de notre base de données. En complément, un service d'audit est proposé pour la mesure des indicateurs.
+          Les documents, outils et autres éléments développés par La Société Nouvelle sont open source et réutilisables librement.
           </p>
         </div>
 
         <div className="strip">
           <h2>
-          Notre objectif
-          </h2>
-          <p>
-          Notre mission est de contribuer à rendre notre économie compatible avec un développement durable par la transparence.
-          </p>
-          <p>
-          Notre souhaitons permettre à l'ensemble des agents économiques de mesurer et de rendre compte de leurs impacts. Notre objectif est que chaque entreprise française publie annuellement ces indicateurs en fin d'exercice comptable d'ici 2030.
-          </p>
-        </div>
-
-        <div className="strip">
-          <h2>
-          Nos activités
+          Activités
           </h2>
           <p>
           Nos activités s'organisent autour de trois axes :
@@ -66,26 +48,62 @@ export default function Home() {
               Gouvernance des Indicateurs
               </h3>
               <p>
-              Nous travaillons en continu sur les indicateurs de l'Empreinte Sociétale : choix méthodologiques, données utilisées, outils supports, suivi à l'échelle macroéconomique, définition des objectifs, etc. La gouvernance a vocation à être partagée avec des organismes publics et privés.
+              Nous travaillons en continu sur les indicateurs de l'Empreinte Sociétale : choix méthodologiques, données utilisées, outils supports, suivi à l'échelle macroéconomique, définition des objectifs, etc. La gouvernance a vocation à être externalisée et partagée avec des organismes publics et privés.
               </p>
             </li>
             <li>
               <h3>
-              Administration de la base de données
+              Administration et enrichissement de la base de données
               </h3>
               <p>
-              Nous centralisons les données relatives aux indicateurs au sein d'une base de données ouverte accessible via le portail web ou une API pour faciliter l'exploitation des données. Les données sont fournies par les entreprises, obtenues à partir de publication ou correspondent à des données par défaut issus de travaux statistiques.
+              Nous centralisons les données relatives aux indicateurs au sein d'une base de données ouverte accessible via le portail web ou une API pour faciliter l'exploitation des données. Les données sont fournies par les entreprises, obtenues à partir de publication ou correspondent à des données par défaut issus de travaux statistiques. Nous travaillons à enrichir le plus possible la base de données.
               </p>
             </li>
             <li>
               <h3>
-              Service d'audit
+              Supports de comptabilité &amp; Service d'audit
               </h3>
               <p>
-              Nous proposons un service de diagnostic pour la mesure des indicateurs.
+              Nous mettons à disposition des documentations et développons des outils libres pour la mesure des indicateurs. En complément, nous proposons un service de diagnostic pour la mesure des indicateurs.
               </p>
             </li>
           </ul>
+        </div>
+
+        <div className="strip">
+          <h2>
+          Modèle
+          </h2>
+          <p>
+          La pérennité et le développement du système d'information reposent sur une participation libre lors de la publications des données.
+          </p>
+          <p>
+          Les revenus financent l'hébergement et la maintenance des supports techniques, l'amélioration des données disponibles et des ressoures mises à disposition, ainsi que la promotion du modèle et des indicateurs.
+          </p>
+        </div>
+
+        <div className="strip">
+          <h2>
+          Gouvernance
+          </h2>
+          <p>
+          La gouvernance de la société est assurée par Sylvain HUMILIERE.
+          </p>
+        </div>
+
+        <div className="strip">
+          <h2>
+          Démarche
+          </h2>
+          <p>
+          Nous promouvons un modèle d'indicateurs basé sur la notion de qualité de la valeur économique et sur la traçabilité des flux économiques. Ce modèle est à l'origine d'un panel normalisé d'indicateurs associé au chiffre d'affaires des entreprises : l'Empreinte Sociétale de l'Entreprise (ESE). Les données sont centralisées au sein d'une base de données ouverte et une API est disponible pour faciliter leur exploitation.
+          </p>
+          <p>
+          Notre compter ainsi contribuer à rendre notre économie compatible avec un développement durable par la transparence.
+          </p>
+          <p>
+          Notre souhaitons permettre à l'ensemble des agents économiques de mesurer et de rendre compte de leurs impacts. Notre objectif est que chaque entreprise française publie annuellement ces indicateurs en fin d'exercice comptable d'ici 2030.
+          </p>
         </div>
 
         <div className="strip">
@@ -114,7 +132,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="strip">
+        <div id="strip-ecosystem" className="strip">
           <p id="ecosystem-label">Ecosystème - La Société Nouvelle</p>
           <div className="ecosystem-list-logo">
             <img src="/resources/mif-logo.png" alt="logo"/>

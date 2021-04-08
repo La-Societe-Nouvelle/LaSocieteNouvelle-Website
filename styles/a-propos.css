@@ -19,6 +19,9 @@
     display: flex;
 }
 
+#strip-ecosystem {
+    margin-top: 25px;
+}
 #ecosystem-label {
     font-size: 15px;
     text-align: center;
