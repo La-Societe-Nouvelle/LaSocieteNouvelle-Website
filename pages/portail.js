@@ -65,8 +65,13 @@ class PortailView extends React.Component {
   inputChange(event) {
     this.setState({input: event.target.value});
   }
+
   handleClick(event) {
     if (this.state.input!==undefined & this.state.input!=='') {
+      this.setState({
+        isLoaded: false,
+        isLoading: true
+      });
       this.getResults(this.state.input);
     }
   }
@@ -78,6 +83,7 @@ class PortailView extends React.Component {
             (data) => {
                 this.setState({
                     isLoaded: true,
+                    isLoading: false,
                     results: Object.values(data.results),
                 });
             }
@@ -86,12 +92,26 @@ class PortailView extends React.Component {
 
   render() {
     const {input,isLoading,isLoaded,results} = this.state;
-    if (!isLoaded) {
+    console.log(isLoading,isLoaded);
+    // if results are loaded
+    if (!isLoaded & !isLoading) {
       return (
         <div id="portail-view">
             {buildSearchBar(this)}
         </div>
       )
+    // if waiting for results
+    } else if (isLoading) {
+      return (
+        <div id="portail-view">
+          {buildSearchBar(this)}
+          <hr className="line-separator"/>
+          <div id="results-strip">
+            <p>Recherche en cours...</p>
+          </div>
+        </div>
+      )
+    // default page
     } else {
       return (
         <div id="portail-view">
