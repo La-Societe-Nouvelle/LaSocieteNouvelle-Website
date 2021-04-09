@@ -99,7 +99,7 @@ export default function Home() {
           Nous promouvons un modèle d'indicateurs basé sur la notion de qualité de la valeur économique et sur la traçabilité des flux économiques. Ce modèle est à l'origine d'un panel normalisé d'indicateurs associé au chiffre d'affaires des entreprises : l'Empreinte Sociétale de l'Entreprise (ESE). Les données sont centralisées au sein d'une base de données ouverte et une API est disponible pour faciliter leur exploitation.
           </p>
           <p>
-          Notre compter ainsi contribuer à rendre notre économie compatible avec un développement durable par la transparence.
+          Nous comptons ainsi contribuer à rendre notre économie compatible avec un développement durable par la transparence.
           </p>
           <p>
           Notre souhaitons permettre à l'ensemble des agents économiques de mesurer et de rendre compte de leurs impacts. Notre objectif est que chaque entreprise française publie annuellement ces indicateurs en fin d'exercice comptable d'ici 2030.
