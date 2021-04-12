@@ -36,6 +36,9 @@ export default function Home() {
             <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
           </ul>
           </p>
+          <p>
+            <a className="text-link" href="modele-indicateurs">Description du Modèle</a>
+          </p>
         </div>
 
         <div className="strip">
