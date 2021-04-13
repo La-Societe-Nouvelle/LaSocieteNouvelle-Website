@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from '../../pages/header.js'
 import Footer from '../../pages/footer.js'
 
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 
 import fs from 'fs'
 import unified from 'unified'

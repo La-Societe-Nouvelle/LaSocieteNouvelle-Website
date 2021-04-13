@@ -6,19 +6,19 @@
     text-align: center;
     color: #616161;
   }
-  
+
   #header-strip {
     display: block flex;
     margin : 5px 0 10px 0;
     justify-content: center;
   }
-  
+
   #logo-header {
     height: 75px;
     margin: 10px 25px 10px 50px;
     display: inline-block;
   }
-  
+
   #header-name-company {
     display: inline-block;
     margin: auto 0;
@@ -35,24 +35,29 @@
     margin-bottom:0px;
     font-size: 16px;
   }
-  
+
   #menu {
     display: block;
     background-color: #616161;
+    width:100%;
   }
-  #menu-item {
-    display: inline;
+  #menu ul {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: stretched;
+    margin: 0;
+    padding: 5px 0 5px 0;
+    width:100%;
+  }
+  .menu-item {
+    background-color: #616161;
+    list-style: none;
     color: white;
-    margin: 7px 0 7px 0;
-    padding: 3px 50px 3px 50px;
     border-left: solid white 1px;
     border-right: solid white 1px;
   }
-  #menu-items {
-    margin: 0;
-    padding: 5px 0 5px 0;
-  }
-  
+
   #header-text2 {
     padding: 10px 0px 10px 25px;
     border-left: solid #616161 1px;;

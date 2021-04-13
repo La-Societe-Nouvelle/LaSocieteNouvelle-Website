@@ -1,9 +1,9 @@
-import '../styles/globals.css'
-import '../styles/header.css'
+import '../styles/globals.scss'
+import '../styles/header.scss'
 
-import '../styles/accueil.css'
-import '../styles/a-propos.css'
-import '../styles/indicateur.css'
+import '../styles/accueil.scss'
+import '../styles/a-propos.scss'
+import '../styles/indicateur.scss'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
