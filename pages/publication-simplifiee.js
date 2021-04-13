@@ -4,7 +4,7 @@ import Footer from './footer.js'
 
 import React, {useState} from 'react';
 
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 import {sendDeclarationMail} from './api/mail-api.js'
 import { render } from 'react-dom';
