@@ -87,11 +87,18 @@ libelleFlag | string | Libellé de l'indicateur d'appréciation
 
 ## Metadonnées
 
-#### Flag
+#### Flag - Origine de la valeur
 
 code | description
 :--: | -----------
-d | default value
+"p" | Valeur publiée
+"h" | Valeur publiée (procédure simplifiée)
+"r" | Valeur publique (reporting de l'entreprise, bases de données publiques)
+"e" | Valeur estimée à partir de données publiques
+"a" | Valeur ajustée, utilisation de données publiques (insuffisantes à l'échelle de la production)
+"s" | Valeur par défaut sectorielle, dans la majorité des cas, relative à la branche économique à laquelle l'entreprise appartient
+"d" | Valeur par défaut, dans la majorité des cas, relative à la production disponible en France
+"n" | Valeur non applicable (indicateur non pertinent, confidentialité, etc.)
 
 ## Exemple de réponse
 

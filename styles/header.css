@@ -41,16 +41,20 @@
     background-color: #616161;
   }
   #menu-item {
-    display: inline;
+    list-style: none;
     color: white;
-    margin: 7px 0 7px 0;
+    margin: 0px 0 0px 0;
     padding: 3px 50px 3px 50px;
     border-left: solid white 1px;
     border-right: solid white 1px;
   }
   #menu-items {
+    display: flex;
+    flex-direction:  row;
+    justify-content: center;
+    align-items: stretch;
     margin: 0;
-    padding: 5px 0 5px 0;
+    padding: 2px 0 2px 0;
   }
   
   #header-text2 {

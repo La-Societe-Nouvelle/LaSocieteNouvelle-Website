@@ -1,0 +1,133 @@
+.declarationForm {
+    margin-bottom: 100px;
+}
+
+.declarationForm .strip {
+    width: 100%;
+}
+
+.declarationForm .input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+}
+.declarationForm .input p {
+    margin: 0 5px;
+    min-width: 200px;
+}
+.declarationForm .input input {
+    text-align: right;
+}
+
+
+.declarationForm #general-data {
+    margin-top: 50px;
+    min-height: 150px;
+}
+.declarationForm #note {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.declarationForm .menu {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    border-top: solid #616161 1px;
+    border-bottom: solid #616161 1px;
+    border-right: solid #616161 1px;
+    max-width: 990px;
+  }
+  
+.declarationForm #menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: justify;
+    padding: 0 0;
+  }
+  
+.declarationForm .menu-button {
+    flex-grow: 1;
+    padding: 5px 25px 5px 25px;
+    color: #616161;
+    background-color: transparent;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: solid #616161 1px;
+  }
+  
+.declarationForm .menu-button:hover {
+    color: white;
+    background-color: #818181;
+  }
+  
+.declarationForm .menu-button-inverse {
+    flex-grow: 1;
+    padding: 5px 25px 5px 25px;
+    color: white;
+    background-color: #616161;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: solid #616161 1px;
+  }
+
+.declarationForm #indicator-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.declarationForm #indicator-view .input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.declarationForm .quality-boxes {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom: solid #616161 1px;
+}
+.declarationForm .quality-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 200px;
+}
+.declarationForm .quality-title {
+    min-height: 50px;
+}
+.declarationForm .quality-value {
+    padding: 20px 10px;
+    min-width: 150px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.declarationForm #declared-value {
+    border: solid #616161 1px;
+}
+.declarationForm .quality-box p {
+    text-align: center;
+    margin: 0;
+}
+.declarationForm .uncertainty {
+    font-size: 12px;
+}
+
+#submit-assessment {
+    margin: 20px 0;
+    width: 100%;
+}
+#submit-assessment.disabled {
+    background-color: white;
+    color: #616161;
+    border: solid #616161 1px;
+  }

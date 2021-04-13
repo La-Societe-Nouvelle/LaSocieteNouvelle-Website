@@ -11,9 +11,12 @@ const transporter = nodemailer.createTransport({
 
 export default async (req,res) => {
     const {objet,message,coordonnees,recipientMail} = req.body;
-    if (objet==="" || message==="" || coordonnees==="") {
+
+    if (objet==="" || message==="" ||coordonnees==="") {
         res.status(403).send("");
+        return
     }
+
     const content = message + " \r\r ## Coordonnées ## \r\r" + coordonnees;
     const mailerRes = await mailer({objet,text:content,recipientMail});
     res.send(mailerRes);
@@ -27,7 +30,7 @@ const mailer = ({objet,text,recipientMail}) => {
         subject: objet,
         text
     }
-    
+
     return new Promise((resolve,reject) => {
         transporter.sendMail(mail, (error,info) =>
             error ? reject(error) : resolve(info))

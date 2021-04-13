@@ -209,7 +209,7 @@ function ColumnChart({title, performance, reference, viewWindow = {}}) {
           (performance != NaN && reference != NaN && title)
             ? [
               ["", title, { role: "style" }],
-              ["Référence", reference, "#B0B0B0"],
+              ["Valeur comparative", reference, "#B0B0B0"],
               ["Unité légale", performance, "#616161"],
             ]
           : []}

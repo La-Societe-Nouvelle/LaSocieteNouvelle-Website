@@ -8,6 +8,7 @@ var React = require('react');
 export default function Home() {
   return (
     <div className={styles.container}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -33,7 +34,7 @@ export default function Home() {
 
           <img id="logo-accueil" src="/resources/logo.jpg" alt="logo"/>
           <div id="texte-logo-accueil">
-            <h1 id="titre-logo-accueil" className={styles.title}>
+            <h1 id="titre-logo-accueil">
             LA SOCIETE NOUVELLE
             </h1>
             <p>
