@@ -6,7 +6,7 @@ export const sendContactMail = async (recipientMail,objet,message,coordonnees) =
         coordonnees
     }
     try {
-        
+
         const res = await fetch('/api/mail-sender', {
             body: JSON.stringify(data),
             headers: {
