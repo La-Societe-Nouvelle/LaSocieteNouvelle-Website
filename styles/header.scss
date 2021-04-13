@@ -1,3 +1,5 @@
+@import 'base';
+
 /* ----- header ----- */
 
 #header {
@@ -40,22 +42,31 @@
     display: block;
     background-color: #616161;
     width:100%;
-  }
-  #menu ul {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-    align-items: stretched;
-    margin: 0;
-    padding: 5px 0 5px 0;
-    width:100%;
-  }
-  .menu-item {
-    background-color: #616161;
-    list-style: none;
-    color: white;
-    border-left: solid white 1px;
-    border-right: solid white 1px;
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: stretched;
+      margin: 0;
+      padding: 5px 0 5px 0;
+      width:100%;
+
+      @include xs{
+        flex-flow: column wrap;
+      }
+    }
+    .menu-item {
+      background-color: #616161;
+      list-style: none;
+      color: white;
+      padding: 5px 0px;
+      flex-grow:1;
+      @include sm{
+        border-left: solid white 1px;
+        border-right: solid white 1px;
+      }
+    }
   }
 
   #header-text2 {
