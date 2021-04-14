@@ -99,36 +99,6 @@ textarea {
   height: 100%;
 }
 
-.title {
-  margin: 0;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  line-height: 1.15;
-  font-size: 3.0rem;
-  text-align: center;
-
-  a {
-    color: grey;
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: underline;
-  }
-}
-
-.Header {
-  display: block;
-  width: 100%;
-}
-
-.header-strip-item {
-  display: inline-block;
-  margin: auto 0;
-}
-
 .strip {
   margin-bottom: 50px;
   margin-left: auto;
@@ -153,21 +123,28 @@ textarea {
 
 /* --- md content --- */
 
-.content-md h2 {
-  margin-top: 50px;
+.content-md {
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  table {
+    width: 100%;
+    table-layout: auto;
+    border-bottom: solid #616161 1px;
+  }
+  th {
+    border-bottom: solid #616161 1px;
+  }
+  thead tr th:first-child,
+  tbody tr td:first-child {
+    min-width: 250px;
+  }
+
 }
-.content-md table {
-  width: 100%;
-  table-layout: auto;
-  border-bottom: solid #616161 1px;
-}
-.content-md th {
-  border-bottom: solid #616161 1px;
-}
-.content-md thead tr th:first-child,
-.content-md tbody tr td:first-child {
-  min-width: 250px;
-}
+
+
 
 /* ----- demarches ----- */
 
@@ -188,78 +165,6 @@ textarea {
   width: 100%;
 }
 
-/* ----- portail ----- */
-
-.line-separator {
-  width: 500px;
-  border: solid #616161 1px;
-  margin: 25px 0 25px 0;
-}
-
-#portail-informations {
-  margin-bottom: 0;
-}
-
-#portail-view {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-
-#search-bar {
-  display: inline;
-  margin: 50px 0 25px 0;
-  width: 80%;
-}
-#search-input {
-  margin-right: 25px;
-  width: 50%;
-}
-
-
-#results-strip {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.result-item-container {
-  display: flex;
-  vertical-align: top;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 25px;
-  width: 80%;
-  border-top: solid #616161 1px;
-}
-
-.result-item-data {
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  margin: 0 25px 0 50px;
-  width: 500px;
-}
-.result-item-denomination {
-  font-weight: bold;
-}
-
-.button-consulter {
-  position: relative;
-  right: 0;
-  display: inline-block;
-  vertical-align: top;
-  margin: 16px 50px 0 25px;
-}
 
 /* ----- ESE ----- */
 

@@ -14,7 +14,7 @@ export default function Home() {
 
       <main id="mentions-legales" className="main">
 
-        <h1 className="title">
+        <h1>
           Mentions légales
         </h1>
 

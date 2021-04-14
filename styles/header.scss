@@ -2,6 +2,16 @@
 
 /* ----- header ----- */
 
+.Header {
+  display: block;
+  width: 100%;
+}
+
+.header-strip-item {
+  display: inline-block;
+  margin: auto 0;
+}
+
 #header {
     display: block;
     width: 100%;
