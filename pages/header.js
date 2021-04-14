@@ -23,12 +23,12 @@ export default class Header extends React.Component {
 
         <div id="menu">
           <ul>
-            <li class="menu-item"><a href="/a-propos">A Propos</a></li>
-            <li class="menu-item"><a href="/empreinte-societale">Empreinte Societale</a></li>
-            <li class="menu-item"><a href="/portail">Portail</a></li>
-            <li class="menu-item"><a href="/services">Services</a></li>
-            <li class="menu-item"><a href="/ressources">Ressources</a></li>
-            <li class="menu-item"><a href="/contact">Contact</a></li>
+            <li className="menu-item"><a href="/a-propos">A Propos</a></li>
+            <li className="menu-item"><a href="/empreinte-societale">Empreinte Societale</a></li>
+            <li className="menu-item"><a href="/portail">Portail</a></li>
+            <li className="menu-item"><a href="/services">Services</a></li>
+            <li className="menu-item"><a href="/ressources">Ressources</a></li>
+            <li className="menu-item"><a href="/contact">Contact</a></li>
           </ul>
         </div>
 
