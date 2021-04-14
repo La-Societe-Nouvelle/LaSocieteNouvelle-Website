@@ -2,8 +2,6 @@ import Head from 'next/head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
 
-import styles from '../styles/Home.module.scss'
-
 import fs from 'fs'
 import unified from 'unified'
 import remarkParse from 'remark-parse'
@@ -27,14 +25,14 @@ export async function getStaticProps() {
 
 export default function Home({data}) {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
 
       <Header/>
-      <main className={styles.main}>
+      <main className="main">
 
         <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
 

@@ -2,13 +2,11 @@ import Head from 'next/head'
 import Header from './header.js'
 import Footer from './footer.js'
 
-import styles from '../styles/Home.module.scss'
-
 import React from 'react';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle | Portail</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -16,7 +14,7 @@ export default function Home() {
 
       <Header/>
 
-      <main className={styles.main}>
+      <main className="main">
 
         <h1>
         Portail d'accès aux données

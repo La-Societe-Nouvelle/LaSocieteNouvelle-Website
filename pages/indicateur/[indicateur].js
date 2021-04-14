@@ -2,8 +2,6 @@ import Head from 'next/head'
 import Header from '../../pages/header.js'
 import Footer from '../../pages/footer.js'
 
-import styles from '../../styles/Home.module.scss'
-
 import fs from 'fs'
 import unified from 'unified'
 import markdown from 'remark-parse'
@@ -60,14 +58,14 @@ export async function getStaticProps({params}) {
 function build(postData) {
   const {indic,data,content} = postData;
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
 
       <Header/>
-      <main className={styles.main}>
+      <main className="main">
 
         <div id="strip-odd" className="strip">
           <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />

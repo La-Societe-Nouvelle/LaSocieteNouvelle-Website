@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
-import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -13,7 +12,7 @@ export default function Home() {
 
       <Header/>
 
-      <main className={styles.main}>
+      <main className="main">
 
         <h1>
         Empreinte Sociétale de l'Entreprise

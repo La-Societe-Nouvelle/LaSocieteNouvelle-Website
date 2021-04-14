@@ -4,8 +4,6 @@ import Footer from './footer.js'
 
 import React, {useState} from 'react';
 
-import styles from '../styles/Home.module.scss'
-
 import {sendDeclarationMail} from './api/mail-api.js'
 import { render } from 'react-dom';
 
@@ -51,7 +49,7 @@ Home.getInitialProps = async () => {
 
 export default function Home(props) {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -59,7 +57,7 @@ export default function Home(props) {
 
       <Header/>
 
-      <main className={styles.main}>
+      <main className="main">
 
         <h1>
         Declaration - Procédure simplifiée

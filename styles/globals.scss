@@ -78,6 +78,47 @@ textarea {
 
 /* ----- class ----- */
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  width: 75%;
+  overflow: auto;
+  height: 100%;
+}
+
+.title {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 1.15;
+  font-size: 3.0rem;
+  text-align: center;
+
+  a {
+    color: grey;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline;
+  }
+}
+
 .Header {
   display: block;
   width: 100%;

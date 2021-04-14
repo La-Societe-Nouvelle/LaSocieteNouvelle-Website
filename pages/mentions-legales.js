@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
-import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle | Mentions légales</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -13,9 +12,9 @@ export default function Home() {
 
       <Header/>
 
-      <main id="mentions-legales" className={styles.main}>
+      <main id="mentions-legales" className="main">
 
-        <h1 className={styles.title}>
+        <h1 className="title">
           Mentions légales
         </h1>
 

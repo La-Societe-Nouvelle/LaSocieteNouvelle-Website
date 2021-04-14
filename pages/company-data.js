@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from './header.js'
 import Footer from './footer.js'
-import styles from '../styles/Home.module.scss'
 import React, {useState} from 'react';
 import { Chart } from "react-google-charts";
 
@@ -63,14 +62,14 @@ Home.getInitialProps = async (ctx) => {
 /* General Page Layout */
 export default function Home(props){
   return(
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
       <Header/>
-      <main className={styles.main}>
-        <h1 className={styles.title}> Empreinte Sociétale #{props.siren}</h1>
+      <main className="main">
+        <h1 className="title"> Empreinte Sociétale #{props.siren}</h1>
         <ContentPage {...props}/>
       </main>
       <Footer/>
