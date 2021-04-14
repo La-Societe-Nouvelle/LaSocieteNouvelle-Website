@@ -1,3 +1,5 @@
+@import 'base';
+
 .declarationForm {
     margin-bottom: 100px;
 }
@@ -34,12 +36,12 @@
     text-align: center;
     background-color: white;
     width: 100%;
-    border-top: solid #616161 1px;
-    border-bottom: solid #616161 1px;
-    border-right: solid #616161 1px;
+    border-top: solid $primary-color 1px;
+    border-bottom: solid $primary-color 1px;
+    border-right: solid $primary-color 1px;
     max-width: 990px;
   }
-  
+
 .declarationForm #menu-items {
     display: flex;
     flex-direction: row;
@@ -48,30 +50,30 @@
     text-align: justify;
     padding: 0 0;
   }
-  
+
 .declarationForm .menu-button {
     flex-grow: 1;
     padding: 5px 25px 5px 25px;
-    color: #616161;
+    color: $primary-color;
     background-color: transparent;
     border-top: 0;
     border-bottom: 0;
-    border-left: solid #616161 1px;
+    border-left: solid $primary-color 1px;
   }
-  
+
 .declarationForm .menu-button:hover {
     color: white;
-    background-color: #818181;
+    background-color: $secondary-color;
   }
-  
+
 .declarationForm .menu-button-inverse {
     flex-grow: 1;
     padding: 5px 25px 5px 25px;
     color: white;
-    background-color: #616161;
+    background-color: $primary-color;
     border-top: 0;
     border-bottom: 0;
-    border-left: solid #616161 1px;
+    border-left: solid $primary-color 1px;
   }
 
 .declarationForm #indicator-view {
@@ -92,7 +94,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    border-bottom: solid #616161 1px;
+    border-bottom: solid $primary-color 1px;
 }
 .declarationForm .quality-box {
     display: flex;
@@ -112,7 +114,7 @@
     font-weight: bold;
 }
 .declarationForm #declared-value {
-    border: solid #616161 1px;
+    border: solid $primary-color 1px;
 }
 .declarationForm .quality-box p {
     text-align: center;
@@ -128,6 +130,6 @@
 }
 #submit-assessment.disabled {
     background-color: white;
-    color: #616161;
-    border: solid #616161 1px;
+    color: $primary-color;
+    border: solid $primary-color 1px;
   }

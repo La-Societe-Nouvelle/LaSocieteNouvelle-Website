@@ -1,3 +1,5 @@
+@import 'base';
+
 html,
 body {
   padding: 0;
@@ -9,7 +11,7 @@ body {
 }
 
 h1 {
-  color: #616161;
+  color: $primary-color;
   margin: 40px auto;
   text-align: center;
   line-height: 1.15;
@@ -33,31 +35,31 @@ a {
 }
 
 * {
-  color: #616161;
+  color: $primary-color;
   box-sizing: border-box;
   font-family: Helvetica;
 }
 
 button {
   color: white;
-  background-color: #616161;
+  background-color: $primary-color;
   border: 0;
   height: 25px;
   width: 150px;
 }
 button:hover {
-  background-color: #818181;
+  background-color: $secondary-color;
 }
 
 input {
   height: 25px;
   font-size: 14px;
-  border-color: #616161 1px;
+  border-color: $primary-color 1px;
 }
 
 li {
   list-style-type: square;
-  list-style: #616161;
+  list-style: $primary-color;
 }
 
 textarea {
@@ -65,7 +67,7 @@ textarea {
 }
 
 @media screen and (max-width: 600px) {
-  
+
   h1 {
     font-size: 20px;
   }
@@ -123,25 +125,20 @@ textarea {
 
 /* --- md content --- */
 
-.content-md {
-
-  h2 {
-    margin-top: 50px;
-  }
-
-  table {
-    width: 100%;
-    table-layout: auto;
-    border-bottom: solid #616161 1px;
-  }
-  th {
-    border-bottom: solid #616161 1px;
-  }
-  thead tr th:first-child,
-  tbody tr td:first-child {
-    min-width: 250px;
-  }
-
+.content-md h2 {
+  margin-top: 50px;
+}
+.content-md table {
+  width: 100%;
+  table-layout: auto;
+  border-bottom: solid $primary-color 1px;
+}
+.content-md th {
+  border-bottom: solid $primary-color 1px;
+}
+.content-md thead tr th:first-child,
+.content-md tbody tr td:first-child {
+  min-width: 250px;
 }
 
 
@@ -165,6 +162,78 @@ textarea {
   width: 100%;
 }
 
+/* ----- portail ----- */
+
+.line-separator {
+  width: 500px;
+  border: solid $primary-color 1px;
+  margin: 25px 0 25px 0;
+}
+
+#portail-informations {
+  margin-bottom: 0;
+}
+
+#portail-view {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#search-bar {
+  display: inline;
+  margin: 50px 0 25px 0;
+  width: 80%;
+}
+#search-input {
+  margin-right: 25px;
+  width: 50%;
+}
+
+
+#results-strip {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.result-item-container {
+  display: flex;
+  vertical-align: top;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 80%;
+  border-top: solid $primary-color 1px;
+}
+
+.result-item-data {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  margin: 0 25px 0 50px;
+  width: 500px;
+}
+.result-item-denomination {
+  font-weight: bold;
+}
+
+.button-consulter {
+  position: relative;
+  right: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 16px 50px 0 25px;
+}
 
 /* ----- ESE ----- */
 
@@ -192,9 +261,9 @@ textarea {
   text-align: center;
   background-color: white;
   width: 100%;
-  border-top: solid #616161 1px;
-  border-bottom: solid #616161 1px;
-  border-right: solid #616161 1px;
+  border-top: solid $primary-color 1px;
+  border-bottom: solid $primary-color 1px;
+  border-right: solid $primary-color 1px;
   max-width: 990px;
 }
 
@@ -209,26 +278,26 @@ textarea {
 .sfp-menu-button {
   flex-grow: 1;
   padding: 5px 25px 5px 25px;
-  color: #616161;
+  color: $primary-color;
   background-color: transparent;
   border-top: 0;
   border-bottom: 0;
-  border-left: solid #616161 1px;
+  border-left: solid $primary-color 1px;
 }
 
 .sfp-menu-button:hover {
   color: white;
-  background-color: #818181;
+  background-color: $secondary-color;
 }
 
 .sfp-menu-button-inverse {
   flex-grow: 1;
   padding: 5px 25px 5px 25px;
   color: white;
-  background-color: #616161;
+  background-color: $primary-color;
   border-top: 0;
   border-bottom: 0;
-  border-left: solid #616161 1px;
+  border-left: solid $primary-color 1px;
 }
 
 
@@ -323,6 +392,6 @@ textarea {
 }
 #submit-form.disabled {
   background-color: white;
-  color: #616161;
-  border: solid #616161 1px;
+  color: $primary-color;
+  border: solid $primary-color 1px;
 }
