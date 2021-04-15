@@ -173,18 +173,20 @@ class Form extends React.Component {
               <p id="note">* Les valeur sont utilisées uniquement sur la page pour obtenir les valeurs. Elles ne sont ni transmises, ni enregistrées.</p>
             </div>
 
+            <div id="indicators" className="strip">
             <h2>
               Indicateurs
             </h2>
             <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
-            
             <IndicatorView indic={selectedIndicator}
                        indicData={indicData}
                        valueImpact={valueImpact}
                        setValue={this.setValue}
                        donneesComptables={donneesComptables}
                        reference={reference}/>
+            </div>
 
+            <div id="further-info" className="strip">
             <h2>
               Informations complémentaires
             </h2>
@@ -207,7 +209,7 @@ class Form extends React.Component {
             </div>
 
             <button className={btnClass} id="submit-assessment" onClick={this.submitForm}>Valider la publication</button>
-
+            </div>
           </div>
 
     )
