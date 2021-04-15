@@ -11,9 +11,11 @@
     align-items: center;
     margin: 5px 0;
 }
-.declarationForm .input p {
+.declarationForm .input {
+  p, label{
     margin: 0 5px;
     min-width: 200px;
+  }
 }
 
 .declarationForm #general-data {

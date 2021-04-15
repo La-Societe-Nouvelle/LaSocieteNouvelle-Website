@@ -91,7 +91,7 @@ class Form extends React.Component {
       coordonnees: "",
       certificationAutorisation: false,
       declarationSend: false,
-      
+
       // Legal entity data
       siren: "",
       messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
@@ -120,8 +120,8 @@ class Form extends React.Component {
            siren,uniteLegaleDataLoaded,uniteLegaleData,defaultCSF,
            donneesComptables,donneesImpacts,
            defaultData} = this.state;
-    
-    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";       
+
+    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";
     const reference = uniteLegaleDataLoaded ? defaultCSF[selectedIndicator.toUpperCase()] : undefined;
     const indicData = defaultData[selectedIndicator.toUpperCase()];
 
@@ -130,7 +130,7 @@ class Form extends React.Component {
     return (
 
           <div className="declarationForm">
-            
+
             <div id="general-data" className="strip">
               <h2>
               Informations légales
@@ -145,7 +145,7 @@ class Form extends React.Component {
                 <p>{uniteLegaleDataLoaded ? uniteLegaleData.activitePrincipaleLibelle : ""}</p>
               </div>
             </div>
-            
+
             <div id="accounting-data" className="strip">
               <h2>
               Informations comptables
@@ -161,15 +161,27 @@ class Form extends React.Component {
                 </div>
               </div>
               <div className="input">
-                <p>Chiffre d'Affaires* </p>
+                <p>Chiffre d'Affaires*</p>
                 <input type="text" value={donneesComptables.chiffreAffaires!==undefined ? donneesComptables.chiffreAffaires : ""} onChange={this.onChiffreAffairesChange} />
                 <p>  €</p>
               </div>
               <div className="input">
-                <p>Valeur Ajoutée Nette* </p>
-                <input type="text" value={donneesComptables.valeurAjouteeNette!==undefined ? donneesComptables.valeurAjouteeNette : ""} onChange={this.onValeurAjouteeNetteChange} />
-                <p>  € (taux de Valeur Ajoutée : {(donneesComptables.chiffreAffaires!==undefined & donneesComptables.valeurAjouteeNette!==undefined) ? Math.round(donneesComptables.valeurAjouteeNette/donneesComptables.chiffreAffaires*100) : " - "} %)</p>
+                <label for="valeur-ajoutee-nette">Valeur Ajoutée Nette*</label>
+                <input type="text"
+                       id="valeur-ajoutee-nette"
+                       placeholder=""
+                       value={donneesComptables.valeurAjouteeNette!==undefined ? donneesComptables.valeurAjouteeNette : ""}
+                       onChange={this.onValeurAjouteeNetteChange} />
+                <span>&nbsp;€</span>
               </div>
+                  <div className="input">
+                    <p>Taux de Valeur Ajoutée</p>
+                    <input type="text"
+                           disabled="true"
+                           value={
+                             (donneesComptables.chiffreAffaires!==undefined & donneesComptables.valeurAjouteeNette!==undefined)
+                               ? Math.round(donneesComptables.valeurAjouteeNette/donneesComptables.chiffreAffaires*100) +" %": " - %"} />
+                  </div>
               <p id="note">* Les valeur sont utilisées uniquement sur la page pour obtenir les valeurs. Elles ne sont ni transmises, ni enregistrées.</p>
             </div>
 
@@ -336,7 +348,7 @@ class Form extends React.Component {
 
 /* Quality */
 function getQuality(indic,impactDirect,valeurAjouteeNette,defaultValue,chiffreAffaires) {
-  if (impactDirect!==null & impactDirect!=="" 
+  if (impactDirect!==null & impactDirect!==""
       & valeurAjouteeNette!==null & valeurAjouteeNette!==""
       & chiffreAffaires!=null & chiffreAffaires!==""
       & defaultValue!==null) {
@@ -398,13 +410,13 @@ function IndicatorViewMenu({selected, parent}){
   );
 }
 
-/* Indicator Declaration View */ 
+/* Indicator Declaration View */
 function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,reference}){
 
     const [valueAddedQuality,valueAddedUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjouteeNette,0.0,donneesComptables.valeurAjouteeNette);
     const [revenueQuality,revenueUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjouteeNette,indicData.value,donneesComptables.chiffreAffaires);
     const valueReference = reference!==undefined ? reference.valueReference : indicData.value;
-    
+
     return (
       <div id="indicator-view">
         <h3>
