@@ -105,7 +105,7 @@ class PortailView extends React.Component {
       return (
         <div id="portail-view">
           {buildSearchBar(this)}
-          <hr className="line-separator"/>
+          <hr className="h-line"/>
           <div id="results-strip">
             <p>Recherche en cours...</p>
           </div>

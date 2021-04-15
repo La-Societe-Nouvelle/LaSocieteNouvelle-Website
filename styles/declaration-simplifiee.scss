@@ -1,3 +1,5 @@
+@import 'base';
+
 .declarationForm {
     width: 100%;
     margin-bottom: 100px;
@@ -31,18 +33,18 @@
   }
     
 .declarationForm .menu-button {
-    color: #616161;
+    color: $primary-color;
     background-color: transparent;
   }
-  
+
 .declarationForm .menu-button:hover {
     color: white;
-    background-color: #818181;
+    background-color: $secondary-color;
   }
-  
+
 .declarationForm .menu-button-inverse {
     color: white;
-    background-color: #616161;
+    background-color: $primary-color;
   }
 
 .declarationForm #indicator-menu {
@@ -69,7 +71,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    border-bottom: solid #616161 1px;
+    border-bottom: solid $primary-color 1px;
 }
 .declarationForm .quality-box {
     display: flex;
@@ -89,7 +91,7 @@
     font-weight: bold;
 }
 .declarationForm #declared-value {
-    border: solid #616161 1px;
+    border: solid $primary-color 1px;
 }
 .declarationForm .quality-box p {
     text-align: center;
@@ -105,6 +107,6 @@
 }
 #submit-assessment.disabled {
     background-color: white;
-    color: #616161;
-    border: solid #616161 1px;
+    color: $primary-color;
+    border: solid $primary-color 1px;
   }

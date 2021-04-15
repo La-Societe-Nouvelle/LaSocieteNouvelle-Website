@@ -1,23 +1,25 @@
+@import 'base';
+
 /* ----- indicateur ----- */
 
 #strip-odd {
    margin-top: 25px;
 }
-  
+
 #strip-header {
   margin-bottom: 0;
 }
-  
+
 .indic-strip-title {
   padding: 5px 0 5px 0;
-  border-top: solid #616161 1px;
-  border-bottom: solid #616161 1px;
+  border-top: solid $primary-color 1px;
+  border-bottom: solid $primary-color 1px;
   text-align: center;
 }
 
 #indic-label {
-  border-top: solid #616161 1px;
-  border-bottom: solid #616161 1px;
+  border-top: solid $primary-color 1px;
+  border-bottom: solid $primary-color 1px;
   text-align: center;
 }
 
@@ -40,8 +42,8 @@
   text-align: center;
   padding: 5px 0;
   margin-top: 50px;
-  border-top: solid #616161 1px;
-  border-bottom: solid #616161 1px;
+  border-top: solid $primary-color 1px;
+  border-bottom: solid $primary-color 1px;
 }
 
 #lien-github {
@@ -66,10 +68,10 @@
     text-align: center;
     height: 120px;
     width: 150px;
-    border: solid #616161 1px;
+    border: solid $primary-color 1px;
 }
 #block-1 {
-    background-color: #616161;
+    background-color: $primary-color;
 }
 #block-1 p {
     color: white;

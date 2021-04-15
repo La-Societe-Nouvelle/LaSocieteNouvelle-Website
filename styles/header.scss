@@ -2,11 +2,21 @@
 
 /* ----- header ----- */
 
+.Header {
+  display: block;
+  width: 100%;
+}
+
+.header-strip-item {
+  display: inline-block;
+  margin: auto 0;
+}
+
 #header {
     display: block;
     width: 100%;
     text-align: center;
-    color: #616161;
+    color: $primary-color;
   }
 
   #header-strip {
@@ -40,7 +50,7 @@
 
   #menu {
     display: block;
-    background-color: #616161;
+    background-color: $primary-color;
     width:100%;
 
     ul {
@@ -57,7 +67,7 @@
       }
     }
     .menu-item {
-      background-color: #616161;
+      background-color: $primary-color;
       list-style: none;
       color: white;
       padding: 5px 0px;
@@ -70,17 +80,17 @@
   }
   #header-text2 {
     padding: 10px 0px 10px 25px;
-    border-left: solid #616161 1px;;
+    border-left: solid $primary-color 1px;;
   }
 
   /* ----- footer ----- */
 
 .Footer {
-  background-color: #616161;
+  background-color: $primary-color;
   color: white;
   display: flex;
   justify-content: center;
-  border-top: solid #616161 1px;
+  border-top: solid $primary-color 1px;
   width: 100%;
   height: 25px;
 }
