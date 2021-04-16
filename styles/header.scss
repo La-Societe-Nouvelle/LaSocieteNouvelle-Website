@@ -53,6 +53,10 @@
     background-color: $primary-color;
     width:100%;
 
+    * {
+      color: white;
+    }
+
     ul {
       display: flex;
       flex-flow: row wrap;
@@ -69,7 +73,6 @@
     .menu-item {
       background-color: $primary-color;
       list-style: none;
-      color: white;
       padding: 5px 0px;
       flex-grow:1;
       @include sm{
