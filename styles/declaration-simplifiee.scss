@@ -1,11 +1,8 @@
 @import 'base';
 
 .declarationForm {
-    margin-bottom: 100px;
-}
-
-.declarationForm .strip {
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .declarationForm .input {
@@ -14,14 +11,12 @@
     align-items: center;
     margin: 5px 0;
 }
-.declarationForm .input p {
+.declarationForm .input {
+  p, label{
     margin: 0 5px;
     min-width: 200px;
+  }
 }
-.declarationForm .input input {
-    text-align: right;
-}
-
 
 .declarationForm #general-data {
     margin-top: 50px;
@@ -32,33 +27,16 @@
     font-style: italic;
 }
 
-.declarationForm .menu {
-    text-align: center;
+.declarationForm .menu-items {
+    display: grid;
+    grid-auto-columns: repeat(6, 1fr);
     background-color: white;
     width: 100%;
-    border-top: solid $primary-color 1px;
-    border-bottom: solid $primary-color 1px;
-    border-right: solid $primary-color 1px;
-    max-width: 990px;
   }
-
-.declarationForm #menu-items {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    text-align: justify;
-    padding: 0 0;
-  }
-
+    
 .declarationForm .menu-button {
-    flex-grow: 1;
-    padding: 5px 25px 5px 25px;
     color: $primary-color;
     background-color: transparent;
-    border-top: 0;
-    border-bottom: 0;
-    border-left: solid $primary-color 1px;
   }
 
 .declarationForm .menu-button:hover {
@@ -67,14 +45,15 @@
   }
 
 .declarationForm .menu-button-inverse {
-    flex-grow: 1;
-    padding: 5px 25px 5px 25px;
     color: white;
     background-color: $primary-color;
-    border-top: 0;
-    border-bottom: 0;
-    border-left: solid $primary-color 1px;
   }
+
+.declarationForm #indicator-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .declarationForm #indicator-view {
     display: flex;
