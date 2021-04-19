@@ -75,6 +75,17 @@
       list-style: none;
       padding: 5px 0px;
       flex-grow:1;
+
+      .active{
+        background-color:$secondary-color;
+      }
+      .dropdown-items
+      {
+        a {
+        color: white;
+        }
+      }
+
       @include sm{
         border-left: solid white 1px;
         border-right: solid white 1px;

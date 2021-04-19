@@ -20,8 +20,8 @@
 
 /* Theming */
 
-$primary-color: #616161;    /* Light-grey */
-$secondary-color: #818181;  /* Dark-grey */
+$primary-color: #616161;    /* Dark-grey */
+$secondary-color: #818181;  /* Light-grey */
 $highlight-color: #8B0000;  /* Burgunby */
 
 
@@ -34,15 +34,18 @@ $highlight-color: #8B0000;  /* Burgunby */
   }
 
   .dropdown-items{
-    background-color : $secondary-color;
+    border-bottom: 1px solid $primary-color;
+    border-left: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    background-color: $secondary-color;
     display:flex;
     flex-flow:column nowrap;
     position:absolute;
     padding:10px;
-    width:250px;
+    min-width:100%;
+    top:28px;
+    text-align:left;
+    white-space: nowrap;
 
-    & > * {
-      width:10%;
-    }
   }
 }

@@ -33,6 +33,7 @@ export default class Header extends React.Component {
                 <div><a href="/">ECO</a></div>
                 <div><a href="/">MAT</a></div>
                 <div><a href="/">WAS</a></div>
+                <div><a href="/">Empreinte Sociale avec plusieurs mots toujours plus de mots</a></div>
               </DropDown>
             </li>
             <li className="menu-item"><a href="/portail">Portail</a></li>
