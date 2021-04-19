@@ -19,12 +19,12 @@ class DropDown extends Component {
     const {showMenu} = this.state;
     return (
       <div className="dropdown">
-        <div
+        <a href="#"
           onClick={e => this.toggleMenu(e)}
           className={"dropdown-title "
                      + (showMenu ? "active" : "")}>
-          {title}
-        </div>
+          <div class="space-around"></div>{title}<span class="arrow"></span>          
+        </a>
         {showMenu
          ? (<div className="dropdown-items">
              {children}

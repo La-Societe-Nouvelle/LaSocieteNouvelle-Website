@@ -30,6 +30,7 @@ export default class Header extends React.Component {
               <DropDown
                 title="Empreinte Societale"
                 href="/empreinte-societale">
+                <div><a href="/empreinte-societale">Général</a></div>
                 <div><a href="/">ECO</a></div>
                 <div><a href="/">MAT</a></div>
                 <div><a href="/">WAS</a></div>
