@@ -34,18 +34,24 @@ $highlight-color: #8B0000;  /* Burgunby */
   }
 
   .dropdown-items{
-    border-bottom: 1px solid $primary-color;
-    border-left: 1px solid $primary-color;
-    border-right: 1px solid $primary-color;
-    background-color: $secondary-color;
     display:flex;
     flex-flow:column nowrap;
-    position:absolute;
-    padding:10px;
+    background-color: $secondary-color;
     min-width:100%;
-    top:28px;
-    text-align:left;
-    white-space: nowrap;
+    padding:10px;
+
+    @include xs {
+      text-align:center;
+    }
+    @include sm{
+      position:absolute;
+      top:28px;
+      border-bottom: 1px solid $primary-color;
+      border-left: 1px solid $primary-color;
+      border-right: 1px solid $primary-color;
+      white-space: nowrap;
+      text-align:left;
+    }
 
   }
 }
