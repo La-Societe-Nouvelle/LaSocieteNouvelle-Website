@@ -43,6 +43,7 @@ export default function Home() {
           <p>
           Tableur de mesure des indicateurs liés aux rémunérations (répartition et écart Femmes/Hommes)
           </p>
+          
         </div>
 
         <div className="strip">

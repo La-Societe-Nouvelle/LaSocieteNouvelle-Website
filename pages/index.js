@@ -37,7 +37,7 @@ export default function Home() {
             LA SOCIETE NOUVELLE
             </h1>
             <p>
-            Working for an OpenEconomy
+              Utopique &amp; Pragmatique
             </p>
           </div>
 
