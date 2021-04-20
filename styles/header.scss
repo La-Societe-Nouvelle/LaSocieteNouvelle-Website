@@ -118,6 +118,13 @@
           background-color: $secondary-color;
           min-width:100%;
           transform: translate3d(0,0,0);
+          max-height:100vh;
+          transition: max-height 0.5s linear;
+          overflow:hidden;
+
+          &.reduced{
+            max-height:0px;
+          }
 
           :hover{
             background-color:$primary-color;
