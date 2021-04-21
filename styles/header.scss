@@ -49,34 +49,120 @@
   }
 
   #menu {
+
     display: block;
     background-color: $primary-color;
     width:100%;
+
+    * {
+      color: white;
+    }
+
+    
 
     ul {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      align-items: stretched;
-      margin: 0 10% 0 10%;
-      padding: 2px 0;
+      padding: 0 10%;
+      width:100%;
+
+      .v-line {
+        margin: auto;
+        height: 15px;
+        border-right: solid white 1px;
+      }
+
+      :hover{
+        background-color:$secondary-color;
+      }
+      .active{
+        background-color:$secondary-color;
+
+        span{
+        transform: rotate(540deg);
+        }
+      }
 
       @include xs{
         flex-flow: column wrap;
       }
     }
+
     .menu-item {
+
+      width: auto;
       background-color: $primary-color;
       list-style: none;
-      color: white;
-      padding: 2px 0px;
       flex-grow:1;
+      cursor: pointer;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        padding: 3px 5px;
+
+        span {
+          display: block;
+          position: relative;
+          z-index: 10;
+          background-color: white;
+          width: 10px;
+          height: 10px;
+          clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+          transition: transform 500ms;}
+      }
+
+      .dropdown{
+        position:relative;
+        justify-content: left;
+        
+        .dropdown-items{
+          display:flex;
+          flex-flow:column nowrap;
+          background-color: $secondary-color;
+          min-width:100%;
+          transform: translate3d(0,0,0);
+          max-height:100vh;
+          transition: max-height 0.5s linear;
+          overflow:hidden;
+
+          &.reduced{
+            max-height:0px;
+          }
+
+          :hover{
+            background-color:$primary-color;
+          }
+
+          a {
+            color: white;
+          }
+
+          @include xs {
+            text-align:center;
+          }
+          @include sm{
+            position:absolute;
+            top:25px;
+            left: 0px;
+            white-space: nowrap;
+
+            a {
+              justify-content: left;
+            }
+          }
+        }
+      }
       @include sm{
-        border-left: solid white 1px;
-        border-right: solid white 1px;
+        //border-left: solid white 1px;
+        //border-right: solid white 1px;
       }
     }
   }
+
   #header-text2 {
     padding: 10px 0px 10px 25px;
     border-left: solid $primary-color 1px;;

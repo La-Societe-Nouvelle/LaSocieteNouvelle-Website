@@ -73,6 +73,28 @@
     font-style: italic;
 }
 
+.declarationForm .menu-items {
+    display: grid;
+    grid-auto-columns: repeat(6, 1fr);
+    background-color: white;
+    width: 100%;
+  }
+
+.declarationForm .menu-button {
+    color: $primary-color;
+    background-color: transparent;
+  }
+
+.declarationForm .menu-button:hover {
+    color: white;
+    background-color: $secondary-color;
+  }
+
+.declarationForm .menu-button-inverse {
+    color: white;
+    background-color: $primary-color;
+  }
+
 .declarationForm #indicator-menu {
     display: flex;
     flex-direction: column;
