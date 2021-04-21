@@ -3,19 +3,65 @@
 .declarationForm {
     width: 100%;
     margin-bottom: 100px;
-}
+    
+    .input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5px 0;
+        
 
-.declarationForm .input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 5px 0;
-}
-.declarationForm .input {
-  p, label{
-    margin: 0 5px;
-    min-width: 200px;
-  }
+        p, label{
+        margin: 0 5px;
+        min-width: 200px;
+        }
+    }
+
+    input {
+        text-align: right;
+    }
+
+    .menu {
+
+        border-top: solid $primary-color 1px;
+        border-bottom: solid $primary-color 1px;
+
+        .menu-items {
+            display: grid;
+            grid-auto-columns: repeat(6, 1fr);
+            background-color: white;
+            width: 100%;
+        }
+        .menu-button {
+            color: $primary-color;
+            background-color: transparent;
+        }
+        .menu-button:hover {
+            color: white;
+            background-color: $secondary-color;
+        }
+        .menu-button-inverse {
+            color: white;
+            background-color: $primary-color;
+        }
+
+    }
+
+    #indicator-view {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        #info-indicateur {
+            text-align: left;
+            width: 100%;
+            a {
+                font-style: italic;
+            }
+        }
+    }
+
+
 }
 
 .declarationForm #general-data {
@@ -55,11 +101,6 @@
     align-items: center;
 }
 
-.declarationForm #indicator-view {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .declarationForm #indicator-view .input {
     margin-top: 10px;
@@ -112,3 +153,10 @@
     color: $primary-color;
     border: solid $primary-color 1px;
   }
+
+#indicators-assessments {
+    margin-left: 20px;
+}
+#assessment {
+    justify-content: left;
+}

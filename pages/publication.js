@@ -5,7 +5,6 @@ import Footer from './footer.js'
 import React, {useState} from 'react';
 
 import {sendDeclarationMail} from './api/mail-api.js'
-import { render } from 'react-dom';
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -21,12 +20,6 @@ const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg",
 // put in other file
 const impactsDirectsUnits = {
   eco:"€", art:"€", soc:"€", knw:"€", dis:"/100", geq:"%", ghg:"kgCO2e", mat:"kg", was:"kg", nrg:"MJ", wat:"m3", haz:"kg"
-}
-const impactsDirectsIncertitudes = {
-  eco:0, art:0, soc:0, knw:0, dis:0, geq:0, ghg:50, mat:50, was:50, nrg:50, wat:25, haz:50
-}
-const defaultIncertitudes = {
-  eco:75, art:100, soc:100, knw:100, dis:50, geq:75, ghg:1000, mat:1000, was:1000, nrg:1000, wat:1000, haz:10000
 }
 
 /* Fetch default data */
@@ -51,15 +44,14 @@ export default function Home(props) {
   return (
     <div className="container">
       <Head>
-        <title>La Société Nouvelle | Publication simplifiée</title>
+        <title>La Société Nouvelle | Publication</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
       <Header/>
       <main className="main">
 
-        <h1>Declaration - Procédure simplifiée</h1>
-        <p>La déclaration simplifiée permet d'ajuster votre Empreinte Sociétale en déclarant vos impacts directs.</p>
-        <p>La qualité de la production disponible en France (PIB et Importations) est affectée aux charges externes. Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées, notamment sur les indicateurs environnementaux.</p>
+        <h1>Declaration - Empreinte Sociétale</h1>
+        <p>Merci de vérifier que les valeurs déclarées correspondent bien à la définition des indicateurs.</p>
 
         <Form defaultData={props.defaultData}/>
 
@@ -88,18 +80,16 @@ class Form extends React.Component {
       siren: "", messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
       uniteLegaleDataLoaded:false,
       uniteLegaleData: {}, defaultCSF: {},
-
-      // Accounting data
-      donneesComptables: {
-        anneeExercice: undefined,
-        chiffreAffaires: undefined,
-        valeurAjoutee: undefined},
+      anneeExercice: undefined,
 
       // ES impacts
-      donneesImpacts: {
+      valeurs: {
+        eco: undefined, art: undefined, soc: undefined, knw: undefined, dis: undefined, geq: undefined,
+        ghg: undefined, mat: undefined, was: undefined, nrg: undefined, wat: undefined, haz: undefined},
+      incertitudes: {
         eco: undefined, art: undefined, soc: undefined, knw: undefined, dis: undefined, geq: undefined,
         ghg: undefined, mat: undefined, was: undefined, nrg: undefined, wat: undefined, haz: undefined}
-    };
+      };
   }
 
   render() {
@@ -108,12 +98,12 @@ class Form extends React.Component {
            certificationAutorisation,declarationSend,
            prixLibre,prix,
            messageButton,
-           siren,uniteLegaleDataLoaded,uniteLegaleData,defaultCSF,
-           donneesComptables,donneesImpacts,
+           siren,uniteLegaleDataLoaded,uniteLegaleData,anneeExercice,
+           valeurs,incertitudes,
            defaultData} = this.state;
     
-    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";       
-    const reference = uniteLegaleDataLoaded ? defaultCSF[selectedIndicator.toUpperCase()] : undefined; // use default Data if defaultCSF undefined
+    const value = valeurs[selectedIndicator]!==undefined ? valeurs[selectedIndicator] : "";
+    const uncertainty = incertitudes[selectedIndicator]!==undefined ? incertitudes[selectedIndicator] : "";       
     const indicData = defaultData[selectedIndicator.toUpperCase()];
 
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
@@ -126,49 +116,17 @@ class Form extends React.Component {
               <div className="input">
                 <p>Numéro de siren </p><input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} /><p> {this.state.messageSIRENE}</p>
               </div>
-              <div>
-                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.denomination : " - "}</p>
-                <p>{uniteLegaleDataLoaded ? uniteLegaleData.activitePrincipaleLibelle : ""}</p>
-              </div>
-            </div>
-
-            <div id="accounting-data" className="strip">
-              <h2>Informations comptables</h2>
-              <div id="dates-exercices">
-                <div className="input">
+              <div className="input">
                   <label htmlFor="annee-exercice">Année de l'exercice</label>
                   <input type="text"
                          id="annee-exercice"
-                         value={donneesComptables.anneeExercice!==undefined ? donneesComptables.anneeExercice : ""} 
+                         value={anneeExercice!==undefined ? anneeExercice : ""} 
                          onChange={this.onAnneeExerciceChange} />
                 </div>
+                <div>
+                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.denomination : " - "}</p>
+                <p>{uniteLegaleDataLoaded ? uniteLegaleData.activitePrincipaleLibelle : ""}</p>
               </div>
-              <div className="input">
-                <label>Chiffre d'Affaires*</label>
-                <input type="text" 
-                       id="chiffre-affaires"
-                       value={donneesComptables.chiffreAffaires!==undefined ? donneesComptables.chiffreAffaires : ""} onChange={this.onChiffreAffairesChange} />
-                <span> &nbsp;€</span>
-              </div>
-              <div className="input">
-                <label htmlFor="valeur-ajoutee">Valeur Ajoutée Nette*</label>
-                <input type="text"
-                       id="valeur-ajoutee"
-                       placeholder=""
-                       value={donneesComptables.valeurAjoutee!==undefined ? donneesComptables.valeurAjoutee : ""}
-                       onChange={this.onValeurAjouteeChange} />
-                <span> &nbsp;€</span>
-              </div>
-                  <div className="input">
-                    <label htmlFor="taux-valeur-ajoutee">Taux de Valeur Ajoutée</label>
-                    <input type="text"
-                           id="taux-valeur-ajoutee"
-                           disabled={true}
-                           value={
-                             (donneesComptables.chiffreAffaires!==undefined & donneesComptables.valeurAjoutee!==undefined)
-                               ? Math.round(donneesComptables.valeurAjoutee/donneesComptables.chiffreAffaires*100) +" %": " - %"} />
-                  </div>
-              <p id="note">* Les données comptables sont utilisées uniquement sur la page pour obtenir les valeurs des indicateurs. Elles ne sont ni transmises, ni enregistrées.</p>
             </div>
 
             <div id="indicators" className="strip">
@@ -180,10 +138,10 @@ class Form extends React.Component {
 
             <IndicatorView indic={selectedIndicator}
                        indicData={indicData}
-                       valueImpact={valueImpact}
+                       value={value}
+                       uncertainty={uncertainty}
                        setValue={this.setValue}
-                       donneesComptables={donneesComptables}
-                       reference={reference}/>
+                       setUncertainty={this.setUncertainty}/>
             </div>
 
             <div id="further-info" className="strip">
@@ -256,23 +214,10 @@ class Form extends React.Component {
 
   // Données comptables
   onAnneeExerciceChange = (event) => {
-    let donneesComptables = this.state.donneesComptables;
+    let anneeExercice = this.state.anneeExercice;
     let input = parseInt(event.target.value);
-    console.log(input);
-    donneesComptables.anneeExercice = isNaN(input) | !/^[0-9]*$/.test(event.target.value) ? undefined : input.toString().substring(0,4);
-    this.setState({donneesComptables});
-  }
-  onChiffreAffairesChange = (event) => {
-    let donneesComptables = this.state.donneesComptables;
-    let input = parseInt(event.target.value);
-    donneesComptables.chiffreAffaires = isNaN(input) ? undefined : input;
-    this.setState({donneesComptables});
-  }
-  onValeurAjouteeChange = (event) => {
-    let donneesComptables = this.state.donneesComptables;
-    let input = parseInt(event.target.value);
-    donneesComptables.valeurAjoutee = isNaN(input) ? undefined : input;
-    this.setState({donneesComptables});
+    anneeExercice = isNaN(input) | !/^[0-9]*$/.test(event.target.value) ? undefined : input.toString().substring(0,4);
+    this.setState({anneeExercice: anneeExercice});
   }
 
   // Message & Coordonnees
@@ -298,30 +243,35 @@ class Form extends React.Component {
 
   // Données - Impacts directs
   setValue = (event) => {
-    let donneesImpacts = this.state.donneesImpacts;
+    let valeurs = this.state.valeurs;
     let value = parseFloat(event.target.value.replace(",","."));
-    donneesImpacts[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
-    this.setState({donneesImpacts});
+    valeurs[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
+    this.setState({valeurs});
+  }
+  setUncertainty = (event) => {
+    let incertitudes = this.state.incertitudes;
+    let value = parseFloat(event.target.value.replace(",","."));
+    incertitudes[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
+    this.setState({incertitudes});
   }
 
   submitForm = async(event) => {
     event.preventDefault();
     const objet = "Déclaration simplifiée (via website)";
-    const siren = this.state.siren + " ("+this.state.donneesComptables.anneeExercice+")";
+    const siren = this.state.siren + " ("+this.state.anneeExercice+")";
     const note = this.state.message;
     const coordonnees = this.state.coordonnees;
     const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
 
     // Obtention des valeurs
-    const {valeurAjoutee,chiffreAffaires} = this.state.donneesComptables;
-    const donneesImpacts = this.state.donneesImpacts;
-    const defaultData = this.state.defaultData;
+    const valeurs = this.state.valeurs;
+    const incertitudes = this.state.incertitudes;
     const values = {};
-    Object.entries(this.state.donneesImpacts).map(([indicateur],_) => {
-      let [quality,uncertainty] = getQuality(indicateur,donneesImpacts[indicateur],valeurAjoutee,defaultData[indicateur.toUpperCase()].value,chiffreAffaires);
-      if (!isNaN(quality)) { values[indicateur] = {
-        valeur: quality,
-        incertitude: uncertainty
+    Object.entries(indicators).map(([index,indicator],_) => {
+      if (!isNaN(valeurs[indicator])) { 
+        values[indicator] = {
+          valeur: valeurs[indicator],
+          incertitude: incertitudes[indicator]
       }}
     });
 
@@ -347,52 +297,6 @@ class Form extends React.Component {
 
 }
 
-/* Quality */
-function getQuality(indic,impactDirect,valeurAjoutee,defaultValue,chiffreAffaires) {
-  if (impactDirect!==undefined & impactDirect!==""
-      & valeurAjoutee!==undefined & valeurAjoutee!==""
-      & chiffreAffaires!=undefined & chiffreAffaires!==""
-      & defaultValue!==undefined) {
-
-    let NVAi = impactsDirectsIncertitudes[indic];
-    let Ci = defaultIncertitudes[indic];
-    let precision = 1;
-    let NVAq = undefined;
-
-    if (["eco","art","soc","knw"].indexOf(indic) > -1) {
-      NVAq = impactDirect*100/valeurAjoutee;
-      precision = 10;
-    } else if (["dis","geq"].indexOf(indic) > -1) {
-      NVAq = impactDirect;
-      precision = 10;
-    } else if (["wat","haz"].indexOf(indic) > -1) {
-      NVAq = impactDirect*1000/valeurAjoutee;
-      precision = 10;
-    } else {
-      NVAq = impactDirect*1000/valeurAjoutee;
-    }
-
-    let quality = (NVAq*valeurAjoutee + defaultValue*(chiffreAffaires-valeurAjoutee))/chiffreAffaires ;
-    let qualityMax = (NVAq*coefUp(NVAi,indic)*valeurAjoutee + defaultValue*coefUp(Ci,indic)*(chiffreAffaires-valeurAjoutee))/chiffreAffaires;
-    let qualityMin = (NVAq*coefDown(NVAi)*valeurAjoutee + defaultValue*coefDown(Ci)*(chiffreAffaires-valeurAjoutee))/chiffreAffaires;
-    let uncertainty = Math.max(qualityMax-quality,quality-qualityMin)/quality*100;
-    return[Math.round(quality*precision)/precision,Math.round(uncertainty)];
-
-  } else {
-    return[undefined,undefined];
-  }
-}
-function coefUp(value,indic) {
-  if (["eco","art","soc","knw","dis","geq"].indexOf(indic) > -1) {
-    return Math.min((100+value)/100,100);
-  } else {
-    return (100+value)/100;
-  }
-}
-function coefDown(value) {
-  return Math.max((100-value)/100,0);
-}
-
 /* ViewMenu : Controls the selected view that must be displayed */
 function IndicatorViewMenu({selected, parent}){
   return (
@@ -412,11 +316,7 @@ function IndicatorViewMenu({selected, parent}){
 }
 
 /* Indicator Declaration View */
-function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,reference}){
-
-    const [valueAddedQuality,valueAddedUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjoutee,0.0,donneesComptables.valeurAjoutee);
-    const [revenueQuality,revenueUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjoutee,indicData.value,donneesComptables.chiffreAffaires);
-    const valueReference = reference!==undefined ? reference.valueReference : indicData.value;
+function IndicatorView({indic,indicData,value,uncertainty,setValue,setUncertainty}){
 
     return (
       <div id="indicator-view">
@@ -427,30 +327,14 @@ function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,r
           <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
         </div>
         <div className="input">
-          <p>Impact direct : </p>
-          <input type="text" value={valueImpact} onChange={setValue} />
-          <p>  {impactsDirectsUnits[indic]}</p>
+          <p>Valeur : </p>
+          <input type="text" value={value} onChange={setValue} />
+          <p>  {indicData.unit}</p>
         </div>
-        <div className="quality-boxes">
-          <div className="quality-box">
-            <p className="quality-title">Qualité de la Valeur Ajoutée</p>
-            <p className="quality-value">{valueAddedQuality!== undefined ? valueAddedQuality : "-"}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {valueAddedUncertainty!==undefined ? valueAddedUncertainty : "-"} %</p>
-          </div>
-          <div className="quality-box">
-            <p className="quality-title">Qualité du Chiffre d'Affaires<br/>
-               (Valeur publiée)</p>
-            <p id={revenueQuality!==undefined ? "declared-value" : ""} className="quality-value">{revenueQuality!==undefined ? revenueQuality : "-"}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {revenueUncertainty!==undefined ? revenueUncertainty : "-"} %</p>
-          </div>
-          <div className="quality-box">
-            <p className="quality-title">Valeur comparative</p>
-            <p className="quality-value">{valueReference}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {defaultIncertitudes[indic]} %</p>
-          </div>
+        <div className="input">
+          <p>Incertitude : </p>
+          <input type="text" value={uncertainty} onChange={setUncertainty} />
+          <p>  %</p>
         </div>
       </div>
     )
