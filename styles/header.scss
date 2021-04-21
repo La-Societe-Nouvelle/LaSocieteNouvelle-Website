@@ -7,11 +7,6 @@
   width: 100%;
 }
 
-.header-strip-item {
-  display: inline-block;
-  margin: auto 0;
-}
-
 #header {
     display: block;
     width: 100%;
@@ -20,21 +15,48 @@
   }
 
   #header-strip {
-    display: block flex;
+    display: flex;
+    flex-flow:row wrap;
+    width:100%;
     margin : 5px 0 10px 0;
-    justify-content: center;
+    justify-content:center;
+    align-content: center;
+
+    @include xs {
+      flex-direction:column nowrap;
+    }
+
+    hr{
+      @include xs {
+        display: none;
+      }
+
+      @include sm {
+        width:60%
+      }
+      @include lg {
+        display:none;
+      }
+    }
   }
 
   #logo-header {
     height: 75px;
-    margin: 10px 25px 10px 50px;
-    display: inline-block;
+    margin: 10px 25px;
+    @include xs {
+      margin:auto;
+    }
   }
 
   #header-name-company {
     display: inline-block;
     margin: auto 0;
-    padding-right: 25px;
+    padding: 0px 25px;
+    min-width:335px;
+
+    @include sm{
+      text-align:left;
+    }
   }
   #company-name-header {
     margin-top: 0px;
@@ -42,7 +64,27 @@
     font-weight: bold;
     font-size: 30px;
   }
+
+  #header-text2 {
+    font-weight: bold;
+    color: $highlight-color;
+    padding: 10px 25px;
+    @include xs{
+      text-align:center;
+    }
+    @include sm {
+      margin: auto 0;
+      min-width:90%;
+    }
+    @include lg{
+      border-left : 1px solid $primary-color;
+      min-width:330px;
+    }
+  }
+
   #text-header {
+    position: relative;
+    left : 2px;
     margin-top: 0px;
     margin-bottom:0px;
     font-size: 16px;
@@ -76,6 +118,7 @@
       :hover{
         background-color:$secondary-color;
       }
+
       .active{
         background-color:$secondary-color;
 
@@ -86,11 +129,16 @@
 
       @include xs{
         flex-flow: column wrap;
+        border-left: 5px solid $primary-color;
+        border-right: 5px solid $primary-color;
+      }
+      @include sm {
+        border-top: 5px solid $primary-color;
+        border-bottom: 5px solid $primary-color;
       }
     }
 
     .menu-item {
-
       width: auto;
       background-color: $primary-color;
       list-style: none;
@@ -98,13 +146,14 @@
       cursor: pointer;
 
       a {
+        background-color: $primary-color;
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 100%;
         padding: 3px 5px;
-
-        span {
+      
+        .arrow {
           display: block;
           position: relative;
           z-index: 10;
@@ -112,7 +161,8 @@
           width: 10px;
           height: 10px;
           clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
-          transition: transform 500ms;}
+          transition: transform 500ms;
+        }
       }
 
       .dropdown{
@@ -137,6 +187,7 @@
             background-color:$primary-color;
           }
 
+
           a {
             color: white;
           }
@@ -156,16 +207,22 @@
           }
         }
       }
+
       @include sm{
-        //border-left: solid white 1px;
-        //border-right: solid white 1px;
+        border-left: solid white 1px;
+        border-right: solid white 1px;
+        &.first {border-left: none;}
+        &.last {border-right: none;}
+      }
+
+      @include xs{
+        border-top: solid white 1px;
+        border-bottom: solid white 1px;
+        &.first {border-top: none;}
+        &.last {border-bottom: none;}
+
       }
     }
-  }
-
-  #header-text2 {
-    padding: 10px 0px 10px 25px;
-    border-left: solid $primary-color 1px;;
   }
 
   /* ----- footer ----- */
@@ -177,27 +234,48 @@
   justify-content: center;
   border-top: solid $primary-color 1px;
   width: 100%;
-  @include xs{
-    flex-flow: column wrap;
-  }
+  height: auto;
+
 }
 
 #links {
   display: flex;
-  justify-content: center;
+  width: 100%;
   align-items: center;
-  text-align: center;
-  
+
   @include xs{
-    flex-flow: column wrap;
+    flex-flow: column;
+    border-left: 5px solid $primary-color;
+    border-right: 5px solid $primary-color;
+  }
+  @include sm {
+    border-top: 5px solid $primary-color;
+    border-bottom: 5px solid $primary-color;
   }
   
 }
 
 .link-footer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-size: 13px;
-  margin-left: 25px;
-  margin-right: 25px;
-  padding: 2px 0;
+
+  @include sm{
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    &.first {border-left: none;}
+    &.last {border-right: none;}
+  }
+
+  @include xs{
+    border-top: solid white 1px;
+    border-bottom: solid white 1px;
+    &.first {border-top: none;}
+    &.last {border-bottom: none;}
+  }
+
 }
