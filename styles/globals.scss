@@ -99,8 +99,6 @@ textarea {
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  margin-left: 150px;
-  margin-right: 150px;
   width: 75%;
   overflow: auto;
   height: 100%;
@@ -148,24 +146,63 @@ textarea {
 
 
 
-/* ----- demarches ----- */
+/* ----- services ----- */
 
-.services-item {
-  display: inline-block;
-  margin: 0 25px 0 25px;
-  max-width: 25%;
-  vertical-align: top;
-}
-
-#services {
-  display: inline;
-  padding: 0;
-  width: 100%;
-}
 #services-strip {
   text-align: center;
   width: 100%;
 }
+
+#services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+  padding: 0;
+}
+
+.services-item {
+  display: inline-block;
+  padding: 25px;
+  margin: 25px;
+  vertical-align: top;
+  border: solid $primary-color 1px;
+
+  .button {
+    width: 100%;
+    padding: 5px;
+    margin: 25px 0;
+    color: white;
+    background: $primary-color;
+  }
+
+  .button-disabled {
+    width: 100%;
+    padding: 5px;
+    margin: 25px 0;
+    color: $primary-color;
+    background: white;
+    border: solid $primary-color 1px;
+  }
+
+}
+ #declaration-simplifiee {
+   grid-column: 2;
+   grid-row: 1;
+ }
+ #declaration {
+   grid-column: 1;
+   grid-row: 1;
+ }
+ #acces-donnees {
+   grid-column: 1;
+   grid-row: 2;
+ }
+ #mesure-indicateurs {
+   grid-column: 2;
+   grid-row: 2;
+ }
+
+
 
 /* ----- ESE ----- */
 

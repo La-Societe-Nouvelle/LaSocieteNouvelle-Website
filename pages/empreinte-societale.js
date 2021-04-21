@@ -36,7 +36,8 @@ export default function Home() {
           </ul>
           </p>
           <p>
-            <a className="text-link" href="modele-indicateurs">Description du Modèle</a>
+            <a className="text-link" href="modele-indicateurs">Description du Modèle</a><br/>
+            <a className="text-link" href="guide">Guide méthodologique</a>
           </p>
         </div>
 

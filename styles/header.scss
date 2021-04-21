@@ -91,6 +91,7 @@
   }
 
   #menu {
+
     display: block;
     background-color: $primary-color;
     width:100%;
@@ -99,14 +100,20 @@
       color: white;
     }
 
+    
+
     ul {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      align-items: stretched;
-      margin: 0;
-      padding: 0px 0 ;
+      padding: 0 10%;
       width:100%;
+
+      .v-line {
+        margin: auto;
+        height: 15px;
+        border-right: solid white 1px;
+      }
 
       :hover{
         background-color:$secondary-color;
@@ -118,7 +125,7 @@
         span{
         transform: rotate(540deg);
         }
-      } 
+      }
 
       @include xs{
         flex-flow: column wrap;
@@ -132,8 +139,11 @@
     }
 
     .menu-item {
+      width: auto;
+      background-color: $primary-color;
       list-style: none;
       flex-grow:1;
+      cursor: pointer;
 
       a {
         background-color: $primary-color;
@@ -141,7 +151,7 @@
         align-items: center;
         justify-content: space-around;
         width: 100%;
-        padding: 5px 0;
+        padding: 3px 5px;
       
         .arrow {
           display: block;
@@ -154,40 +164,46 @@
           transition: transform 500ms;
         }
       }
-      
+
       .dropdown{
         position:relative;
-      
+        justify-content: left;
+        
         .dropdown-items{
           display:flex;
           flex-flow:column nowrap;
           background-color: $secondary-color;
           min-width:100%;
           transform: translate3d(0,0,0);
+          max-height:100vh;
+          transition: max-height 0.5s linear;
+          overflow:hidden;
+
+          &.reduced{
+            max-height:0px;
+          }
 
           :hover{
             background-color:$primary-color;
           }
-            
+
+
           a {
-          color: white;
-          padding:10px;
+            color: white;
           }
-      
+
           @include xs {
             text-align:center;
           }
           @include sm{
             position:absolute;
-            top:28px;
-            left: -5px;
-            border-bottom: 5px solid $primary-color;
-            border-left: 5px solid $primary-color;
-            border-right: 5px solid $primary-color;
+            top:25px;
+            left: 0px;
             white-space: nowrap;
 
-            a {justify-content: left;}
-            
+            a {
+              justify-content: left;
+            }
           }
         }
       }
@@ -197,7 +213,6 @@
         border-right: solid white 1px;
         &.first {border-left: none;}
         &.last {border-right: none;}
-
       }
 
       @include xs{
@@ -205,12 +220,9 @@
         border-bottom: solid white 1px;
         &.first {border-top: none;}
         &.last {border-bottom: none;}
+
       }
     }
-
-    
-
-    
   }
 
   /* ----- footer ----- */
@@ -223,6 +235,7 @@
   border-top: solid $primary-color 1px;
   width: 100%;
   height: auto;
+
 }
 
 #links {
@@ -264,4 +277,5 @@
     &.first {border-top: none;}
     &.last {border-bottom: none;}
   }
+
 }
