@@ -49,6 +49,7 @@
   }
 
   #menu {
+
     display: block;
     background-color: $primary-color;
     width:100%;
@@ -57,16 +58,20 @@
       color: white;
     }
 
+    
+
     ul {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      align-items: stretched;
-      margin: 0;
-      padding: 0px 0 ;
+      padding: 0 10%;
       width:100%;
-      border-top: 5px solid $primary-color;
-      border-bottom: 5px solid $primary-color;
+
+      .v-line {
+        margin: auto;
+        height: 15px;
+        border-right: solid white 1px;
+      }
 
       :hover{
         background-color:$secondary-color;
@@ -85,6 +90,7 @@
     }
 
     .menu-item {
+
       width: auto;
       background-color: $primary-color;
       list-style: none;
@@ -96,7 +102,7 @@
         align-items: center;
         justify-content: space-around;
         width: 100%;
-        padding: 5px 0;
+        padding: 3px 5px;
 
         span {
           display: block;
@@ -111,7 +117,8 @@
 
       .dropdown{
         position:relative;
-
+        justify-content: left;
+        
         .dropdown-items{
           display:flex;
           flex-flow:column nowrap;
@@ -132,7 +139,6 @@
 
           a {
             color: white;
-            padding:10px;
           }
 
           @include xs {
@@ -140,11 +146,8 @@
           }
           @include sm{
             position:absolute;
-            top:28px;
-            left: -5px;
-            border-bottom: 5px solid $primary-color;
-            border-left: 5px solid $primary-color;
-            border-right: 5px solid $primary-color;
+            top:25px;
+            left: 0px;
             white-space: nowrap;
 
             a {
@@ -154,8 +157,8 @@
         }
       }
       @include sm{
-        border-left: solid white 1px;
-        border-right: solid white 1px;
+        //border-left: solid white 1px;
+        //border-right: solid white 1px;
       }
     }
   }
