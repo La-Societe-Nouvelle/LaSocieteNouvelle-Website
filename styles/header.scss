@@ -7,11 +7,6 @@
   width: 100%;
 }
 
-.header-strip-item {
-  display: inline-block;
-  margin: auto 0;
-}
-
 #header {
     display: block;
     width: 100%;
@@ -20,21 +15,48 @@
   }
 
   #header-strip {
-    display: block flex;
+    display: flex;
+    flex-flow:row wrap;
+    width:100%;
     margin : 5px 0 10px 0;
-    justify-content: center;
+    justify-content:center;
+    align-content: center;
+
+    @include xs {
+      flex-direction:column nowrap;
+    }
+
+    hr{
+      @include xs {
+        display: none;
+      }
+
+      @include sm {
+        width:60%
+      }
+      @include lg {
+        display:none;
+      }
+    }
   }
 
   #logo-header {
     height: 75px;
-    margin: 10px 25px 10px 50px;
-    display: inline-block;
+    margin: 10px 25px;
+    @include xs {
+      margin:auto;
+    }
   }
 
   #header-name-company {
     display: inline-block;
     margin: auto 0;
-    padding-right: 25px;
+    padding: 0px 25px;
+    min-width:335px;
+
+    @include sm{
+      text-align:left;
+    }
   }
   #company-name-header {
     margin-top: 0px;
@@ -42,7 +64,27 @@
     font-weight: bold;
     font-size: 30px;
   }
+
+  #header-text2 {
+    font-weight: bold;
+    color: $highlight-color;
+    padding: 10px 25px;
+    @include xs{
+      text-align:center;
+    }
+    @include sm {
+      margin: auto 0;
+      min-width:90%;
+    }
+    @include lg{
+      border-left : 1px solid $primary-color;
+      min-width:330px;
+    }
+  }
+
   #text-header {
+    position: relative;
+    left : 2px;
     margin-top: 0px;
     margin-bottom:0px;
     font-size: 16px;
@@ -58,24 +100,19 @@
       color: white;
     }
 
-    
+
 
     ul {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      padding: 0 10%;
       width:100%;
-
-      .v-line {
-        margin: auto;
-        height: 15px;
-        border-right: solid white 1px;
-      }
+      padding:0 5%;
 
       :hover{
         background-color:$secondary-color;
       }
+
       .active{
         background-color:$secondary-color;
 
@@ -86,16 +123,30 @@
 
       @include xs{
         flex-flow: column wrap;
+        padding: 0px;
+      }
+      @include md{
+        padding: 0 10%;
       }
     }
 
     .menu-item {
-
       width: auto;
       background-color: $primary-color;
       list-style: none;
+      display:flex;
+      flex-flow:row nowrap;
       flex-grow:1;
       cursor: pointer;
+
+      @include sm{
+        &::before, &:last-of-type::after{
+          content:' ';
+          margin: auto;
+          height: 15px;
+          border-right: solid white 1px;
+        }
+      }
 
       a {
         display: flex;
@@ -103,22 +154,33 @@
         justify-content: space-around;
         width: 100%;
         padding: 3px 5px;
-
-        span {
-          display: block;
-          position: relative;
-          z-index: 10;
-          background-color: white;
-          width: 10px;
-          height: 10px;
-          clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
-          transition: transform 500ms;}
       }
 
       .dropdown{
         position:relative;
-        justify-content: left;
-        
+        width:100%;
+
+        .dropdown-title{
+          width:100%;
+          &::before{
+            content:' ';
+          }
+          &.active::after{
+            transform:rotate(540deg);
+          }
+          &::after{
+            content:' ';
+            display: block;
+            position: relative;
+            z-index: 10;
+            background-color: white;
+            width: 10px;
+            height: 10px;
+            clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+            transition: transform 500ms;
+          }
+        }
+
         .dropdown-items{
           display:flex;
           flex-flow:column nowrap;
@@ -156,48 +218,15 @@
           }
         }
       }
+
       @include sm{
-        //border-left: solid white 1px;
-        //border-right: solid white 1px;
+        &:first-of-type {border-left: none;}
+        &:last-of-type {border-right: none;}
+      }
+
+      @include xs{
+        &:first-of-type {border-top: none;}
+        &:last-of-type {border-bottom: none;}
       }
     }
   }
-
-  #header-text2 {
-    padding: 10px 0px 10px 25px;
-    border-left: solid $primary-color 1px;;
-  }
-
-  /* ----- footer ----- */
-
-.Footer {
-  background-color: $primary-color;
-  color: white;
-  display: flex;
-  justify-content: center;
-  border-top: solid $primary-color 1px;
-  width: 100%;
-  @include xs{
-    flex-flow: column wrap;
-  }
-}
-
-#links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
-  @include xs{
-    flex-flow: column wrap;
-  }
-  
-}
-
-.link-footer {
-  color: white;
-  font-size: 13px;
-  margin-left: 25px;
-  margin-right: 25px;
-  padding: 2px 0;
-}

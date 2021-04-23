@@ -1,0 +1,31 @@
+@import "base";
+
+/* ----- footer ----- */
+
+.Footer {
+  background-color: $primary-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border-top: solid $primary-color 1px;
+  width: 100%;
+  height: auto;
+
+  #links {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:space-around;
+
+    .link-footer {
+      height: 100%;
+      color: white;
+      font-size: 13px;
+    }
+
+    @include xs{
+      flex-flow: column;
+    }
+  }
+
+}

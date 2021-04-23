@@ -16,18 +16,17 @@ export default class Header extends React.Component {
           </a>
           <div id="header-name-company">
             <h1 id="company-name-header">La Société Nouvelle</h1>
-            <p id="text-header">L'OpenData au service de l'économie</p>
+            <span id="text-header">L'OpenData au service de l'économie</span>
           </div>
-          <p className="header-strip-item" id="header-text2">
+          <hr/>
+          <div className="header-strip-item" id="header-text2">
             Système d'Information extra-financière
-          </p>
+          </div>
         </div>
 
         <div id="menu">
           <ul>
-          <div className="v-line"/>
             <li className="menu-item"><a href="/a-propos">A Propos</a></li>
-            <div className="v-line"/>
             <li className="menu-item">
               <DropDown
                 title="Empreinte Societale"
@@ -47,15 +46,10 @@ export default class Header extends React.Component {
                 <div><a href="/indicateur/haz">Produits dangereux</a></div>
               </DropDown>
             </li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/portail">Portail</a></li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/services">Services</a></li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/ressources">Ressources</a></li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/contact">Contact</a></li>
-            <div className="v-line"/>
           </ul>
         </div>
 
