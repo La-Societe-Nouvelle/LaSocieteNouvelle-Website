@@ -23,7 +23,7 @@ class DropDown extends Component {
           onClick={e => this.toggleMenu(e)}
           className={"dropdown-title "
                      + (showMenu ? "active" : "")}>
-          <div class="space-around"></div>{title}<span class="arrow"></span>
+          {title}
         </a>
         <div className={"dropdown-items " + (!showMenu ? "reduced" :"")}>
           {children}

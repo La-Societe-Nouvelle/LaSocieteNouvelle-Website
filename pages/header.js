@@ -26,9 +26,7 @@ export default class Header extends React.Component {
 
         <div id="menu">
           <ul>
-            <div className="v-line"/>
-            <li className="menu-item first"><a href="/a-propos">A Propos</a></li>
-            <div className="v-line"/>
+            <li className="menu-item"><a href="/a-propos">A Propos</a></li>
             <li className="menu-item">
               <DropDown
                 title="Empreinte Societale"
@@ -48,15 +46,10 @@ export default class Header extends React.Component {
                 <div><a href="/indicateur/haz">Produits dangereux</a></div>
               </DropDown>
             </li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/portail">Portail</a></li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/services">Services</a></li>
-            <div className="v-line"/>
             <li className="menu-item"><a href="/ressources">Ressources</a></li>
-            <div className="v-line"/>
-            <li className="menu-item last"><a href="/contact">Contact</a></li>
-            <div className="v-line"/>
+            <li className="menu-item"><a href="/contact">Contact</a></li>
           </ul>
         </div>
 

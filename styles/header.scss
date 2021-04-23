@@ -100,20 +100,14 @@
       color: white;
     }
 
-    
+
 
     ul {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      padding: 0 10%;
       width:100%;
-
-      .v-line {
-        margin: auto;
-        height: 15px;
-        border-right: solid white 1px;
-      }
+      padding:0 5%;
 
       :hover{
         background-color:$secondary-color;
@@ -129,12 +123,10 @@
 
       @include xs{
         flex-flow: column wrap;
-        border-left: 5px solid $primary-color;
-        border-right: 5px solid $primary-color;
+        padding: 0px;
       }
-      @include sm {
-        border-top: 5px solid $primary-color;
-        border-bottom: 5px solid $primary-color;
+      @include md{
+        padding: 0 10%;
       }
     }
 
@@ -142,33 +134,53 @@
       width: auto;
       background-color: $primary-color;
       list-style: none;
+      display:flex;
+      flex-flow:row nowrap;
       flex-grow:1;
       cursor: pointer;
 
+      @include sm{
+        &::before, &:last-of-type::after{
+          content:' ';
+          margin: auto;
+          height: 15px;
+          border-right: solid white 1px;
+        }
+      }
+
       a {
-        background-color: $primary-color;
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 100%;
         padding: 3px 5px;
-      
-        .arrow {
-          display: block;
-          position: relative;
-          z-index: 10;
-          background-color: white;
-          width: 10px;
-          height: 10px;
-          clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
-          transition: transform 500ms;
-        }
       }
 
       .dropdown{
         position:relative;
-        justify-content: left;
-        
+        width:100%;
+
+        .dropdown-title{
+          width:100%;
+          &::before{
+            content:' ';
+          }
+          &.active::after{
+            transform:rotate(540deg);
+          }
+          &::after{
+            content:' ';
+            display: block;
+            position: relative;
+            z-index: 10;
+            background-color: white;
+            width: 10px;
+            height: 10px;
+            clip-path: polygon(50% 50%, 100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+            transition: transform 500ms;
+          }
+        }
+
         .dropdown-items{
           display:flex;
           flex-flow:column nowrap;
@@ -186,7 +198,6 @@
           :hover{
             background-color:$primary-color;
           }
-
 
           a {
             color: white;
@@ -209,73 +220,13 @@
       }
 
       @include sm{
-        border-left: solid white 1px;
-        border-right: solid white 1px;
-        &.first {border-left: none;}
-        &.last {border-right: none;}
+        &:first-of-type {border-left: none;}
+        &:last-of-type {border-right: none;}
       }
 
       @include xs{
-        border-top: solid white 1px;
-        border-bottom: solid white 1px;
-        &.first {border-top: none;}
-        &.last {border-bottom: none;}
-
+        &:first-of-type {border-top: none;}
+        &:last-of-type {border-bottom: none;}
       }
     }
   }
-
-  /* ----- footer ----- */
-
-.Footer {
-  background-color: $primary-color;
-  color: white;
-  display: flex;
-  justify-content: center;
-  border-top: solid $primary-color 1px;
-  width: 100%;
-  height: auto;
-
-}
-
-#links {
-  display: flex;
-  width: 100%;
-  align-items: center;
-
-  @include xs{
-    flex-flow: column;
-    border-left: 5px solid $primary-color;
-    border-right: 5px solid $primary-color;
-  }
-  @include sm {
-    border-top: 5px solid $primary-color;
-    border-bottom: 5px solid $primary-color;
-  }
-  
-}
-
-.link-footer {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 13px;
-
-  @include sm{
-    border-left: solid white 1px;
-    border-right: solid white 1px;
-    &.first {border-left: none;}
-    &.last {border-right: none;}
-  }
-
-  @include xs{
-    border-top: solid white 1px;
-    border-bottom: solid white 1px;
-    &.first {border-top: none;}
-    &.last {border-bottom: none;}
-  }
-
-}

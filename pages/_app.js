@@ -1,5 +1,6 @@
 import '../styles/globals.scss'
 import '../styles/header.scss'
+import '../styles/footer.scss'
 
 // CSS specific to pages
 import '../styles/accueil.scss'
