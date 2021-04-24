@@ -10,7 +10,7 @@ import '../styles/portail.scss'
 import '../styles/declaration-simplifiee.scss'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (<Component {...pageProps} />)
 }
 
 export default MyApp
