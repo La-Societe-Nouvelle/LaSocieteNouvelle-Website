@@ -24,18 +24,10 @@ export default function Home() {
           <h2>
           Informations
           </h2>
-          <p>
-          Retrouvez les indicateurs de l'Empreinte Sociétale pour l'ensemble des entreprises françaises.
-          </p>
-          <p>
-          En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.
-          </p>
-          <p>
-          La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 15/04/2021).
-          </p>
-          <p>
-          Pour toute publication, mise à jour ou retrait, contactez-nous.
-          </p>
+          <p>Retrouvez les indicateurs de l'Empreinte Sociétale pour l'ensemble des entreprises françaises.</p>
+          <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
+          <p>La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 15/04/2021).</p>
+          <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
         </div>
 
         <PortailView/>
@@ -57,6 +49,7 @@ class PortailView extends React.Component {
         input: '',
         isLoading: false,
         isLoaded: false,
+        infoResults: {},
         results: {}
     };
     this.inputChange = this.inputChange.bind(this);
@@ -85,6 +78,7 @@ class PortailView extends React.Component {
                 this.setState({
                     isLoaded: true,
                     isLoading: false,
+                    infoResults: data.infoResults,
                     results: Object.values(data.results),
                 });
             }
@@ -92,7 +86,8 @@ class PortailView extends React.Component {
   }
 
   render() {
-    const {input,isLoading,isLoaded,results} = this.state;
+    const {input,isLoading,isLoaded,infoResults,results} = this.state;
+    const nbResults = infoResults.nbResults;
     // if results are loaded
     if (!isLoaded & !isLoading) {
       return (
@@ -108,6 +103,17 @@ class PortailView extends React.Component {
           <hr className="h-line"/>
           <div id="results-strip">
             <p>Recherche en cours...</p>
+          </div>
+        </div>
+      )
+    // if waiting for results
+    } else if (nbResults===0) {
+      return (
+        <div id="portail-view">
+          {buildSearchBar(this)}
+          <hr className="h-line"/>
+          <div id="results-strip">
+            <p>Aucun résultat</p>
           </div>
         </div>
       )
