@@ -36,9 +36,6 @@ export default function Home() {
             <h1 id="titre-logo-accueil">
             LA SOCIETE NOUVELLE
             </h1>
-            <p>
-              Utopique &amp; Pragmatique
-            </p>
           </div>
 
         </div>
