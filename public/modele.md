@@ -16,13 +16,14 @@ Les indicateurs de type contribution et intensité peuvent être considérés co
 
 ## METHODE DE CALCUL
 
-Dans le cas de l'ESE, les indicateurs sont relatifs à la production vendue (Chiffre d'affaires). Leur mesure s’appuie sur la production de l’entreprise et ses composantes : 
+Dans le cas de l'ESE, les indicateurs sont relatifs à la production vendue (Chiffre d'affaires). Leur mesure s’appuie sur donc la production de l’entreprise et ses composantese en traçant les flux sortants : 
 
 Solde comptable | Valeurs des indicateurs
 --------------- | -----------------------
-Chiffre d'affaires | Déduites de 1, 2 et 3
-\+ Production stockée (1) | Identiques à 3 (exercice courant si stockage, exercice précédent si déstockage)
-\+ Production immobilisée (2) | Identiques à 3
+Chiffre d'affaires (1) | Déduites de 2 (si mesure existante) et 3
+\+ Production stockée | Identiques à 3
+\- Production déstockée (2) | ESE de l'exercice précédent (sinon identiques à 3)
+\+ Production immobilisée | Identiques à 3
 = Production (3) | Déduites de 4 et 5
 \- Charges externes(4) | ESE des entreprises sollicitées
 = Valeur Ajoutée (5) | Déduites de 6 et 7
