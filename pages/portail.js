@@ -136,7 +136,9 @@ class PortailView extends React.Component {
 function buildSearchBar(parent) {
   return (
     <div id="search-bar">
-      <input id="search-input" type="text" value={parent.state.input} onChange={parent.inputChange}></input>
+      <input id="search-input" type="text"
+             placeholder="siren ou dénomination sociale"
+             value={parent.state.input} onChange={parent.inputChange}></input>
       <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
     </div>
   )
