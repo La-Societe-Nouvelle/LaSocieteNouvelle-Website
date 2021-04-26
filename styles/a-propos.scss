@@ -26,20 +26,23 @@
 }
 
 #strip-ecosystem {
-    margin-top: 25px;
-}
-#ecosystem-label {
+  margin-top: 25px;
+
+  #ecosystem-label {
     font-size: 15px;
     text-align: center;
     margin: 0;
-}
-.ecosystem-list-logo {
-    padding: 25px 150px;
+  }
+  .ecosystem-list-logo {
+    padding: 25px 0px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     border-top: solid $primary-color 1px;
-}
-.ecosystem-list-logo img {
-    height: 40px;
+
+    img {
+      padding:5px 0px;
+      height: 40px;
+    }
+  }
 }
