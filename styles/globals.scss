@@ -99,9 +99,13 @@ textarea {
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  width: 75%;
+  width: 95%;
   overflow: auto;
   height: 100%;
+
+  @include lg{
+    width:75%;
+  }
 }
 
 .strip {
