@@ -1,23 +1,28 @@
 @import 'base';
 
 .contributeurs {
-    padding: 25px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 0px;
 
-.contributeur > img {
-    height: 100px;
-    filter: grayscale(100%);
-}
+    .contributeur {
+      min-width:250px;
+      display: flex;
+      flex-flow: column;
+      align-items:center;
 
-.contributeur p {
-    margin: 5px 0 10px 25px;
-}
+      & > img {
+        margin: 10px;
+        height: 100px;
+        width: 100px;
+        filter: grayscale(100%);
+      }
 
-.contributeur {
-    display: flex;
+      figurecaption {
+        text-align: center;
+      }
+    }
 }
 
 #strip-ecosystem {
