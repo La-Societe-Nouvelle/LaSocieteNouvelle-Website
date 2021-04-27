@@ -23,7 +23,7 @@ export default function Home() {
           Mission
           </h2>
           <p>
-          La Société Nouvelle est une société créée à Lille en août 2020 dont la mission est de déployer un système d'information sur les impacts sociaux et environnementaux des entreprises.
+          La Société Nouvelle est une structure indépendante créée à Lille en août 2020 dont la mission est de déployer un système d'information sur les impacts sociaux et environnementaux des entreprises.
           </p>
           <p>
           Notre objectif est de fournir, de manière ouverte, les informations nécessaires pour connaître et mesurer l'empreinte de la production des entreprises sur des enjeux majeurs de développement durable. Elle s'inscrit également dans la volonté de faire évoluer le modèle de gestion des entreprises en intégrant aux éléments comptables une information sur leurs externalités.
