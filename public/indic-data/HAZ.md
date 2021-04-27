@@ -8,6 +8,8 @@ Les dangers considérés sont :
 * Produit dangereux pour la santé
 * Toxique
 
+*Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
+
 ### DONNEES PAR DEFAUT
 
 Les données disponibles se limite à l’intensité d’utilisation de produits dangereux à l’échelle de la production intérieure européenne. Elle est affectée à l’ensemble des unités légales.

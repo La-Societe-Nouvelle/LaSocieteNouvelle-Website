@@ -4,6 +4,8 @@
 
 Les prélèvements d’eau avec restitution dans le milieu d’origine, sans traitement, ne sont pas comptabilisés.
 
+*Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
+
 ### DONNEES PAR DEFAUT
 
 Les données disponibles sont ventilées selon quatre secteurs : 

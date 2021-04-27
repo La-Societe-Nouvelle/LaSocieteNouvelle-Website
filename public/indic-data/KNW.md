@@ -8,6 +8,8 @@ Les postes de charges sont les suivants :
 * Rémunérations liées à des travaux de recherche
 * Rémunérations liées à des partenariats avec des établissements de formation
 
+*Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
+
 ### DONNEES PAR DEFAUT
 
 Les données macroéconomiques disponibles se limitent à la part du PIB dédiée à la formation professionnelle à l’échelle nationale, pour les pays de l'Union Européenne.

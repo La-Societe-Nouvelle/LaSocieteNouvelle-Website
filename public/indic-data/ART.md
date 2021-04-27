@@ -11,6 +11,8 @@ Critères :
 
 La valeur nette créée correspond à la valeur créée hors dotations aux amortissements.
 
+*Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
+
 ### DONNEES PAR DEFAUT
 
 Les données disponibles à l’échelle macroéconomique se limitent à la valeur ajoutée des entreprises artisanales. Elle est obtenue à partir du rapport de la DGE (Direction Générale des Entreprises) sur l’artisanat.

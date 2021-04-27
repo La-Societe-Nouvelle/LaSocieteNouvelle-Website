@@ -4,6 +4,8 @@
 
 Tableur de calcul bientôt disponible.
 
+*Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
+
 ### DONNEES PAR DEFAUT
 
 Les données disponibles se limitent à l’écart de rémunération à l’échelle nationale pour les revenus des ménages avant transferts sociaux.
