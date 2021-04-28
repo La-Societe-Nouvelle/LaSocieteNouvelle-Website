@@ -1,5 +1,3 @@
-import express from 'express'
-
 var fs = require('fs');
 
 export default async (req,res) => {
