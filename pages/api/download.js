@@ -1,7 +1,5 @@
 var fs = require('fs');
 
-var path = require('path');
-
 export default async (req,res) => {
 
     const filePath = req.query.filename;     
@@ -10,7 +8,7 @@ export default async (req,res) => {
     // set header
     res.setHeader("content-disposition", "attachment; filename="+fileName);
     //res.download(filePath);
-    var filestream = fs.createReadStream(path.join(__dirname,'public/Tableau-Indicateurs-RH.xlsx'));
+    var filestream = fs.createReadStream(process.env.HOME + '/public/Tableau-Indicateurs-RH.xlsx');
     filestream.pipe(res);
 
 }

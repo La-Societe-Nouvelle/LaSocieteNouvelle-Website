@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "html-loader": "^2.1.2",
     "markdown-loader": "^6.0.0",
