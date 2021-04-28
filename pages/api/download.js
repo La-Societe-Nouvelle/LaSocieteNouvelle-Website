@@ -1,5 +1,7 @@
 var fs = require('fs');
 
+const path = require('path')
+
 export default async (req,res) => {
 
     const filePath = req.query.filename;     
@@ -8,7 +10,7 @@ export default async (req,res) => {
     // set header    
     res.setHeader("content-disposition", "attachment; filename="+fileName);
     
-    var filestream = fs.createReadStream(filePath);
+    var filestream = fs.createReadStream(path.join(process.cwd(),filePath));
     filestream.pipe(res);
 
 }
