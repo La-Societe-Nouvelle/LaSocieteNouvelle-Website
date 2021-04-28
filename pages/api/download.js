@@ -1,3 +1,5 @@
+import express from 'express'
+
 var fs = require('fs');
 
 export default async (req,res) => {
@@ -8,6 +10,8 @@ export default async (req,res) => {
     // set header
     res.setHeader("content-disposition", "attachment; filename="+fileName);
     //res.download(filePath);
+    console.log(process.cwd());
+    console.log(__dirname);
     var filestream = fs.createReadStream(filePath);
     filestream.pipe(res);
 
