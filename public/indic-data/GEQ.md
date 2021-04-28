@@ -2,7 +2,7 @@
 
 **Grandeur mesurée :** Ecart absolu entre le taux horaires moyens bruts des femmes et celui des hommes, en pourcentage du taux horaire brut moyen
 
-Tableur de calcul bientôt disponible.
+Tableau de calcul disponible (onglet Ressources).
 
 *Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées*
 
