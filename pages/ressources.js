@@ -29,7 +29,7 @@ export default function Home() {
         <div className="strip">
           <h2>Tableur - Indicateurs RH</h2>
           <p>Tableur de mesure des indicateurs liés aux rémunérations (répartition et écart Femmes/Hommes)</p>
-          <a href="/api/download?filename=./public/Tableur-Indicateurs-RH.xlsx">Lien de téléchargement</a>
+          <a href="/api/download?filename=/public/Tableur-Indicateurs-RH.xlsx">Lien de téléchargement</a>
           
         </div>
 
