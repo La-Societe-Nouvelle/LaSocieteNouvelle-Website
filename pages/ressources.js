@@ -14,43 +14,27 @@ export default function Home() {
 
       <main className="main">
 
-        <h1>
-          Ressources mises à disposition
-        </h1>
+        <h1>Ressources mises à disposition</h1>
 
         <div className="strip">
-          <h2>
-          API - La Societe Nouvelle
-          </h2>
-          <p>
-          L'API permet une intégration des données au sein des logiciels de comptabilité et ERP. L'accès est libre.
-          </p>
-          <p>
-            URL de l'API : <a href="http://api.lasocietenouvelle.org">api.lasocietenouvelle.org</a>
-          </p>
-          <p>
-          <a href="../documentation-api">Lien vers la documentation</a>
-          </p>
+          <h2>API - La Societe Nouvelle</h2>
+          <p>L'API permet une intégration des données au sein des logiciels de comptabilité et ERP. L'accès est libre.</p>
+          <p>URL de l'API : <a href="http://api.lasocietenouvelle.org">api.lasocietenouvelle.org</a></p>
+          <p><a href="../documentation-api">Lien vers la documentation</a></p>
           <p>
           /!\ Merci de nous contacter en cas d'utilisation intensive de l'API.
           </p>
         </div>
 
         <div className="strip">
-          <h2>
-          Tableur - Indicateurs RH (à venir)
-          </h2>
-          <p>
-          Tableur de mesure des indicateurs liés aux rémunérations (répartition et écart Femmes/Hommes)
-          </p>
-          <a href="/files/Tableur-Indicateurs-RH">Lien de téléchargement</a>
+          <h2>Tableur - Indicateurs RH</h2>
+          <p>Tableur de mesure des indicateurs liés aux rémunérations (répartition et écart Femmes/Hommes)</p>
+          <a href="/api/download?filename=public/Tableur-Indicateurs-RH.xlsx">Lien de téléchargement</a>
           
         </div>
 
         <div className="strip">
-          <h2>
-          METRIZ (à venir)
-          </h2>
+          <h2>METRIZ (à venir)</h2>
           <p>
           Application pour la mesure des indicateurs.
           </p>
