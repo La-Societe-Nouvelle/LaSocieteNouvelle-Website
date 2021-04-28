@@ -1,6 +1,3 @@
-var express = require('express');
-var app = express();
-
 var fs = require('fs');
 
 export default async (req,res) => {
