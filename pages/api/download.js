@@ -8,7 +8,7 @@ export default async (req,res) => {
     // set header
     res.setHeader("content-disposition", "attachment; filename="+fileName);
     //res.download(filePath);
-    var filestream = fs.createReadStream(process.cwd()+filePath);
+    var filestream = fs.createReadStream(filePath);
     filestream.pipe(res);
 
 }
