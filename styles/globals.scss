@@ -360,3 +360,9 @@ textarea {
   color: $primary-color;
   border: solid $primary-color 1px;
 }
+
+.content-md {
+  :not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background-color: #ffffff;
+  }
+}
