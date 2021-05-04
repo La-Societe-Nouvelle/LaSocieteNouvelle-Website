@@ -15,12 +15,15 @@ Postes d'émissions directes :
 
 Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
 
-Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives aux émissions de gaz à effet de serre. Les émissions directes sont associées à la valeur ajoutée nette, les intensités d’émission de la production française et mondiale sont affectées aux consommations domestiques et aux importations.
+Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives aux émissions de gaz à effet de serre. Les émissions directes des branches sont associées au volume de la valeur ajoutée. Les émissions indirectes liées aux consommations intermédiaires sont obtenues à partir de la ventilation des consommations par branche (cf. TES INSEE).
 
-L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
+L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 500 % pour les valeurs sectorielles. (Travaux en cours)
 
 **Données EUROSTAT :**  
 [*Compte d'émissions atmosphériques par activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
+
+**Données INSEE :**
+[*Tableaux de synthèse : TES et TEE en 2019*](https://www.insee.fr/fr/statistiques/4494213)
 
 ### POUR ALLER PLUS LOIN
 
