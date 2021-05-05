@@ -14,9 +14,7 @@ export default function Home() {
 
       <main className="main">
 
-        <h1>
-        Services disponibles
-        </h1>
+        <h1>Services disponibles</h1>
 
         <div id="services-strip" className="strip">
           <ul id="services">
@@ -48,10 +46,28 @@ export default function Home() {
               <p>L'ensemble des documentations, outils et autres supports pour la mesure des indicateurs sont mis à disposition librement. (cf. Ressources)</p>
               <p>Les informations relatives aux indicateurs (description, données par défaut, etc.) sont disponibles à partir de la page Empreinte Sociétale.</p>
               <p>Nous proposons également un service d'audit pour la mesure des indicateurs</p>
-              <a className="button-disabled">Téléchargement Logiciel (bientôt)</a>
+              <a className="button" href="https://github.com/SylvainH-LSN/LaSocieteNouvelle-METRIZ" target="_blank">Téléchargement Logiciel</a>
             </li>
-            
           </ul>
+        </div>
+
+        <div id="services-partenaires-strip" className="strip">
+          <h1>Partenaires</h1>
+          <div className="partenaires">
+            <img src="/resources/mestawet-logo.jpg" alt="mestawet-logo"/>
+            <div className="partenaire-box">
+              <p className="partenaire-title">MESTAWET</p>
+              <p className="partenaire-presentation">
+              Mestawet accompagne les entreprises pour développer des projets à impact positif.<br/>
+              La méthode s’appuie sur 4 piliers :<br/>
+              - Identifier (Assessment BCorp, Empreinte Sociétale, etc.)<br/>
+              - Eclairer : inspirer, montrer les choses qui fonctionnent ailleurs, autour de soi<br/>
+              - Concevoir : passer à l’action et tester des choses<br/>
+              - Développer : faire grandir les projets, passer à l’échelle<br/>
+              </p>
+              <p><a href="https://www.mestawet.fr" target="_blank">www.mestawet.fr</a></p>
+            </div>
+          </div>
         </div>
 
       </main>
