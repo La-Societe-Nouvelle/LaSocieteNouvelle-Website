@@ -15,14 +15,17 @@ Produits énergétiques comptabilisés :
 
 Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
 
-Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives à la consommation d’énergie. La consommation finale d’énergie est associée à la valeur ajoutée nette, les intensités énergétiques de la production française et mondiale sont affectées aux consommations domestiques et aux importations.
+Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives à la consommation d'énergie. La consommation finale d’énergie des branches est associée au volume de la valeur ajoutée. La consommation indirecte liée aux consommations intermédiaires est obtenue à partir de la ventilation des consommations par branche (cf. TES INSEE).
 
-L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
+L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 500 % pour les valeurs sectorielles. (Travaux en cours)
 
 ### POUR ALLER PLUS LOIN
 
 **Ministère de la Transition Ecologique**  
 [*Politiques publiques - Energies*](https://www.ecologie.gouv.fr/politiques/energies)
+
+**Données INSEE :**
+[*Tableaux de synthèse : TES et TEE en 2019*](https://www.insee.fr/fr/statistiques/4494213)
 
 ### SUIVI MACRO-ECONOMIQUE
 
