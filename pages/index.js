@@ -18,15 +18,9 @@ export default function Home() {
       <main className="main">
 
         <div id="head-accueil">
-          <h2 id="head-accueil-h4" className="head-accueil-item">
-            Système d'Information extra-financière
-          </h2>
-          <h2 id="head-accueil-h2" className="head-accueil-item">
-            Faire évoluer la comptabilité
-          </h2>
-          <h2 id="head-accueil-h3" className="head-accueil-item">
-            Construire une économie durable
-          </h2>
+          <h2 id="head-accueil-h4" className="head-accueil-item">Base de données ouverte des impacts des entreprises</h2>
+          <h2 id="head-accueil-h2" className="head-accueil-item">Indicateurs extra-financiers associés à la valeur économique</h2>
+          <h2 id="head-accueil-h3" className="head-accueil-item">Outils libres et OpenSource</h2>
         </div>
 
         <div id="front-page">
