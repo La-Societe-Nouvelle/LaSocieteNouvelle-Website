@@ -10,24 +10,24 @@ const transporter = nodemailer.createTransport({
 })
 
 export default async (req,res) => {
-    const {objet,message,coordonnees,recipientMail} = req.body;
+    const {recipientMail, objetMail, messageMail} = req.body;
 
-    if (objet==="" || message==="" ||coordonnees==="") {
+    if (objetMail==="" || messageMail==="") {
         res.status(403).send("");
         return
     }
 
-    const content = message + " \r\r ## Coordonnées ## \r\r" + coordonnees;
-    const mailerRes = await mailer({objet,text:content,recipientMail});
+    const mailerRes = await mailer({objetMail,text:messageMail,recipientMail});
     res.send(mailerRes);
 
 }
 
-const mailer = ({objet,text,recipientMail}) => {
+const mailer = ({objetMail,text,recipientMail}) => {
+    
     const mail = {
         from: " Formulaire de contact - Website <"+process.env.FORM_SENDER_MAIL+">",
         to: recipientMail,
-        subject: objet,
+        subject: objetMail,
         text
     }
 

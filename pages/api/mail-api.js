@@ -1,14 +1,16 @@
 export const sendContactMail = async (recipientMail,objet,message,coordonnees) => {
-    const data = {
-        recipientMail,
-        objet,
-        message,
-        coordonnees
-    }
+    
+    const objetMail = objet;
+    const messageMail = message
+            + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
+            + coordonnees;
+
+    const contentMail = { recipientMail, objetMail, messageMail }
+
     try {
 
         const res = await fetch('/api/mail-sender', {
-            body: JSON.stringify(data),
+            body: JSON.stringify(contentMail),
             headers: {
               'Content-Type': 'application/json'
             },
@@ -21,27 +23,55 @@ export const sendContactMail = async (recipientMail,objet,message,coordonnees) =
     }
 }
 
-export const sendDeclarationMail = async (objet,siren,values,note,participation,coordonnees) => {
+export const sendAssessment = async (siren,data,message,coordonnees,participation) => {
+
     const recipientMail= "sylvain.humiliere@la-societe-nouvelle.fr";
-    const message = "Déclaration simplifiée pour unité légale : "+siren
-            + " \r\r ## Valeurs déclarées ## \r\r "
-            + Object.entries(values).map(([indicateur],_) => {
-                return("\r"+indicateur+" : "+values[indicateur].valeur+" (+/- "+values[indicateur].incertitude+" %) ")
-            })
-            + " \r\r ## Note ## \r\r "
-            + note
-            + " \r\r ## Participation ## \r\r "
-            + participation;
-    const data = {
-        recipientMail,
-        objet,
-        message,
-        coordonnees
-    }
+    const objetMail= "Déclaration en ligne";
+    const messageMail = "Unité légale : "+siren
+            + " \r\r ----------------------- \r ## Valeurs déclarées ## \r ----------------------- \r "
+            + Object.entries(data).map(([indic],_) => { return("\r"+indic+" : "+data[indic].value+" (+/- "+data[indic].uncertainty+" %) ") })
+            + " \r\r ------------- \r ## Message ## \r ------------- \r "
+            + message
+            + " \r\r ------------------- \r ## Participation ## \r ------------------- \r "
+            + participation
+            + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
+            + coordonnees;
+
+    const contentMail = { recipientMail, objetMail, messageMail }
     
     try {
         const res = await fetch('/api/mail-sender', {
-            body: JSON.stringify(data),
+            body: JSON.stringify(contentMail),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST'
+          })
+        return res;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const sendSimplifiedAssessment = async (siren,data,message,coordonnees,participation) => {
+
+    const recipientMail= "sylvain.humiliere@la-societe-nouvelle.fr";
+    const objetMail= "Déclaration en ligne (simplfiiée)";
+    const messageMail = "Unité légale : "+siren
+            + " \r\r ----------------------- \r ## Valeurs déclarées ## \r ----------------------- \r "
+            + Object.entries(data).map(([indic],_) => { return("\r"+indic+" : "+data[indic].value+" (+/- "+data[indic].uncertainty+" %) ") })
+            + " \r\r ------------- \r ## Message ## \r ------------- \r "
+            + message
+            + " \r\r ------------------- \r ## Participation ## \r ------------------- \r "
+            + participation
+            + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
+            + coordonnees;
+
+    const contentMail = { recipientMail, objetMail, messageMail }
+    
+    try {
+        const res = await fetch('/api/mail-sender', {
+            body: JSON.stringify(contentMail),
             headers: {
               'Content-Type': 'application/json'
             },

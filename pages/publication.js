@@ -4,7 +4,7 @@ import Footer from './footer.js'
 
 import React, {useState} from 'react';
 
-import {sendDeclarationMail} from './api/mail-api.js'
+import {sendAssessment, sendDeclarationMail} from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -16,11 +16,6 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
-
-// put in other file
-const impactsDirectsUnits = {
-  eco:"€", art:"€", soc:"€", knw:"€", dis:"/100", geq:"%", ghg:"kgCO2e", mat:"kg", was:"kg", nrg:"MJ", wat:"m3", haz:"kg"
-}
 
 /* Fetch default data */
 Home.getInitialProps = async () => {
@@ -35,7 +30,6 @@ Home.getInitialProps = async () => {
     })
   }
   catch(error){
-    console.log(error);
     throw error;
   }
 }
@@ -49,12 +43,9 @@ export default function Home(props) {
       </Head>
       <Header/>
       <main className="main">
-
         <h1>Declaration - Empreinte Sociétale</h1>
         <p>Merci de vérifier que les valeurs déclarées correspondent bien à la définition des indicateurs.</p>
-
         <Form defaultData={props.defaultData}/>
-
       </main>
       <Footer/>
     </div>
@@ -71,41 +62,48 @@ class Form extends React.Component {
 
       // general experience state
       selectedIndicator: "eco",
-      message: "", coordonnees: "",
-      certificationAutorisation: false, declarationSend: false,
+      message: "", 
+      coordonnees: "",
       prixLibre: false,prix: "",
-      messageButton: "Valider la publication",
+      certificationAutorisation: false, 
+      declarationSend: false,
       
       // Legal entity data
-      siren: "", messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
-      uniteLegaleDataLoaded:false,
-      uniteLegaleData: {}, defaultCSF: {},
+      siren: "",
       anneeExercice: undefined,
+      uniteLegaleDataLoaded:false,
+      uniteLegaleData: {},
 
       // ES impacts
-      valeurs: {
-        eco: undefined, art: undefined, soc: undefined, knw: undefined, dis: undefined, geq: undefined,
-        ghg: undefined, mat: undefined, was: undefined, nrg: undefined, wat: undefined, haz: undefined},
-      incertitudes: {
-        eco: undefined, art: undefined, soc: undefined, knw: undefined, dis: undefined, geq: undefined,
-        ghg: undefined, mat: undefined, was: undefined, nrg: undefined, wat: undefined, haz: undefined}
-      };
+      assessment: {
+        art: {value:undefined, uncertainty:undefined},
+        dis: {value:undefined, uncertainty:undefined},
+        eco: {value:undefined, uncertainty:undefined},
+        geq: {value:undefined, uncertainty:undefined},
+        ghg: {value:undefined, uncertainty:undefined},
+        haz: {value:undefined, uncertainty:undefined},
+        knw: {value:undefined, uncertainty:undefined},
+        mat: {value:undefined, uncertainty:undefined},
+        nrg: {value:undefined, uncertainty:undefined},
+        soc: {value:undefined, uncertainty:undefined},
+        was: {value:undefined, uncertainty:undefined},
+        wat: {value:undefined, uncertainty:undefined}
+      }
+    }
   }
 
   render() {
     const {selectedIndicator,
-           message,coordonnees,
-           certificationAutorisation,declarationSend,
-           prixLibre,prix,
-           messageButton,
-           siren,uniteLegaleDataLoaded,uniteLegaleData,anneeExercice,
-           valeurs,incertitudes,
+           message,coordonnees,certificationAutorisation,prixLibre,prix,
+           declarationSend,
+           siren,anneeExercice,
+           uniteLegaleDataLoaded,uniteLegaleData,
+           assessment,
            defaultData} = this.state;
     
-    const value = valeurs[selectedIndicator]!==undefined ? valeurs[selectedIndicator] : "";
-    const uncertainty = incertitudes[selectedIndicator]!==undefined ? incertitudes[selectedIndicator] : "";       
+    const value = assessment[selectedIndicator].value!==undefined ? assessment[selectedIndicator].value : "";
+    const uncertainty = assessment[selectedIndicator].uncertainty!==undefined ? assessment[selectedIndicator].uncertainty : "";       
     const indicData = defaultData[selectedIndicator.toUpperCase()];
-
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
 
     return (
@@ -114,105 +112,93 @@ class Form extends React.Component {
             <div id="general-data" className="strip">
               <h2>Informations légales</h2>
               <div className="input">
-                <p>Numéro de siren </p><input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} /><p> {this.state.messageSIRENE}</p>
+                <label>Numéro de siren </label>
+                <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
+                <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
               </div>
               <div className="input">
-                  <label htmlFor="annee-exercice">Année de l'exercice</label>
-                  <input type="text"
-                         id="annee-exercice"
-                         value={anneeExercice!==undefined ? anneeExercice : ""} 
-                         onChange={this.onAnneeExerciceChange} />
-                </div>
-                <div>
-                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.denomination : " - "}</p>
-                <p>{uniteLegaleDataLoaded ? uniteLegaleData.activitePrincipaleLibelle : ""}</p>
+                <label htmlFor="annee-exercice">Année de l'exercice</label>
+                <input type="text"
+                        id="annee-exercice"
+                        value={anneeExercice!==undefined ? anneeExercice : ""} 
+                        onChange={this.onAnneeExerciceChange} />
+              </div>
+              <div>
+                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
+                <p>{uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
               </div>
             </div>
 
             <div id="indicators" className="strip">
-            <h2>
-              Indicateurs
-            </h2>
-
-            <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
-
-            <IndicatorView indic={selectedIndicator}
-                       indicData={indicData}
-                       value={value}
-                       uncertainty={uncertainty}
-                       setValue={this.setValue}
-                       setUncertainty={this.setUncertainty}/>
+              <h2>Indicateurs</h2>
+              <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
+              <IndicatorView indic={selectedIndicator}
+                        indicData={indicData}
+                        value={value}
+                        uncertainty={uncertainty}
+                        setValue={this.setValue}
+                        setUncertainty={this.setUncertainty}/>
             </div>
 
             <div id="further-info" className="strip">
-            <h2>
-              Informations complémentaires
-            </h2>
-            <div className="form-item">
-              <label>Message</label>
-              <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
-            </div>
-            <div className="form-item">
-              <label>Vos coordonnées (obligatoire)</label>
-              <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
-            </div>
-            <div className="input">
-              <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
-            </div>
-            <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
-            <div className="input">
-              <input type="checkbox" onChange={this.onPrixLibreChange} />
-              <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
-              <input type="text"
-                     id="contribution"
-                     disabled={!prixLibre}
-                    value={prix}
-                    onChange={this.onPrixChange} />
-              <span> &nbsp;€</span>
-            </div>
+              <h2>Informations complémentaires</h2>
+              <div className="form-item">
+                <label>Message</label>
+                <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
+              </div>
+              <div className="form-item">
+                <label>Vos coordonnées (obligatoire)</label>
+                <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
+              </div>
+              <div className="input">
+                <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
+              </div>
+              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
+              
+              <div className="input">
+                <input type="checkbox" onChange={this.onPrixLibreChange} />
+                <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
+                <input type="text"
+                      id="contribution"
+                      disabled={!prixLibre}
+                      value={prix}
+                      onChange={this.onPrixChange} />
+                <span> &nbsp;€</span>
+              </div>
 
-            <button className={btnClass} id="submit-assessment" onClick={this.submitForm}>{messageButton}</button>
+              <button className={btnClass} id="submit-assessment" onClick={this.submitAssessment}>{getMessageButton(declarationSend,siren,coordonnees)}</button>
             </div>
           </div>
 
     )
   }
 
-  /* SIREN */
+  /* --- SIREN --- */
   onSirenChange = (event) => {
     this.setState({siren: event.target.value})
     if (event.target.value.length===9 & !isNaN(parseFloat(event.target.value))) {
       this.getLegalUnitData(event.target.value);
     } else {
-      let message = (event.target.value.length>0 & (!/^\d+$/.test(event.target.value) | event.target.value.length>9)) ? "erreur format (le numéro de siren est composé de 9 chiffres)" : "Saisissez votre numéro de siren (9 chiffres)";
-      this.setState({ messageSIRENE: message, uniteLegaleDataLoaded: false, defaultCSFLoaded: false })
+      this.setState({ uniteLegaleDataLoaded: false, defaultCSFLoaded: false })
     }
   }
-  // Fetch legal data
+  // Fetch legal unit data
   getLegalUnitData = async (siren) => {
     try{
       const endpoint = `${apiBaseUrl}/siren/${siren}`;
       const response = await fetch(endpoint, {method:'get'});
       const data = await response.json();
-      const isLoaded = data.header.statut===200;
-      if (isLoaded) {
-        this.setState({
-          messageSIRENE: "OK", uniteLegaleDataLoaded: true,
-          uniteLegaleData: data.profil.descriptionUniteLegale, defaultCSF : data.profil.empreinteSocietale,
-        })
+      if (data.header.statut===200) {
+        this.setState({uniteLegaleDataLoaded: true, uniteLegaleData: data.profil })
       } else {
-        this.setState({
-          messageSIRENE: "numéro non reconnu (non bloquant)", uniteLegaleDataLoaded: false,
-        })
+        this.setState({uniteLegaleDataLoaded: false })
       }
-    }
-    catch(error){
-      console.log(error);
+    } catch(error){
       throw error;
     }
   }
 
-  // Données comptables
+  /* --- Financial data --- */
   onAnneeExerciceChange = (event) => {
     let anneeExercice = this.state.anneeExercice;
     let input = parseInt(event.target.value);
@@ -220,84 +206,49 @@ class Form extends React.Component {
     this.setState({anneeExercice: anneeExercice});
   }
 
-  // Message & Coordonnees
-  onMessageChange = (event) => {
-    this.setState({message: event.target.value})
+  /* --- Set values --- */
+  setValue = (event) => {
+    let assessment = this.state.assessment;
+    let value = parseFloat(event.target.value.replace(",","."));
+    assessment[this.state.selectedIndicator].value = isNaN(value) ? undefined : value ;
+    this.setState({assessment});
   }
-  onCoordonneesChange = (event) => {
-    this.setState({coordonnees: event.target.value})
-  }
-  onCheckboxChange = (event) => {
-    this.setState({certificationAutorisation: !this.state.certificationAutorisation})
+  setUncertainty = (event) => {
+    let assessment = this.state.assessment;
+    let value = parseFloat(event.target.value.replace(",","."));
+    assessment[this.state.selectedIndicator].uncertainty = isNaN(value) ? undefined : value ;
+    this.setState({assessment});
   }
 
-  onPrixLibreChange = (event) => {
-    this.setState({prixLibre: !this.state.prixLibre, prix: ""});
-    console.log(this.state.prixLibre);
-    console.log(this.state.prix);
-  }
+  /* --- Assessment message --- */
+  onMessageChange = (event) => { this.setState({message: event.target.value}) }
+  onCoordonneesChange = (event) => { this.setState({coordonnees: event.target.value}) }
+  onCheckboxChange = (event) => { this.setState({certificationAutorisation: !this.state.certificationAutorisation}) }
+  onPrixLibreChange = (event) => { this.setState({prixLibre: !this.state.prixLibre, prix: ""}); }
   onPrixChange = (event) => {
     let input = parseInt(event.target.value);
     this.setState({prix: isNaN(input) ? undefined : input});
   }
 
-  // Données - Impacts directs
-  setValue = (event) => {
-    let valeurs = this.state.valeurs;
-    let value = parseFloat(event.target.value.replace(",","."));
-    valeurs[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
-    this.setState({valeurs});
-  }
-  setUncertainty = (event) => {
-    let incertitudes = this.state.incertitudes;
-    let value = parseFloat(event.target.value.replace(",","."));
-    incertitudes[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
-    this.setState({incertitudes});
-  }
-
-  submitForm = async(event) => {
+  /* --- Submit assessment --- */
+  submitAssessment = async(event) => {
     event.preventDefault();
-    const objet = "Déclaration simplifiée (via website)";
+
     const siren = this.state.siren + " ("+this.state.anneeExercice+")";
-    const note = this.state.message;
+    const message = this.state.message;
     const coordonnees = this.state.coordonnees;
     const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
+    const assessment = this.state.assessment;   
 
-    // Obtention des valeurs
-    const valeurs = this.state.valeurs;
-    const incertitudes = this.state.incertitudes;
-    const values = {};
-    Object.entries(indicators).map(([index,indicator],_) => {
-      if (!isNaN(valeurs[indicator])) { 
-        values[indicator] = {
-          valeur: valeurs[indicator],
-          incertitude: incertitudes[indicator]
-      }}
-    });
-
-    if (this.state.certificationAutorisation
-        & Object.keys(values).length>0
-        & coordonnees!="") {
-      const res = await sendDeclarationMail(objet,siren,values,note,participation,coordonnees);
-      if (res.status < 300) {
-        this.setState ({
-          declarationSend: true,
-          messageButton: "Demande de publication envoyée"
-        })
-      } else {
-        this.setState({messageButton: "Merci de remplir tous les champs."})
-      }
-    } else {
-      console.log("here");
-      const message = 
-        (Object.keys(values).length==0 ? "(Aucune valeur déclarée)" : "(Coordoonées manquantes)");
-      this.setState({messageButton: "Merci de remplir tous les champs "+message})
+    if (this.state.certificationAutorisation & coordonnees!="" &siren!="") {
+      const res = await sendAssessment(siren,assessment,message,coordonnees,participation);
+      this.setState({declarationSend: res.status<300});
     }
   }
-
+  
 }
 
-/* ViewMenu : Controls the selected view that must be displayed */
+/* ----- ViewMenu : Controls the selected view that must be displayed ----- */
 function IndicatorViewMenu({selected, parent}){
   return (
     <div className="menu">
@@ -315,28 +266,44 @@ function IndicatorViewMenu({selected, parent}){
   );
 }
 
-/* Indicator Declaration View */
+/* ----- Indicator Assessment View ----- */
 function IndicatorView({indic,indicData,value,uncertainty,setValue,setUncertainty}){
-
     return (
       <div id="indicator-view">
-        <h3>
-          {indicData.libelle}
-        </h3>
+        <h3>{indicData.libelle}</h3>
         <div id="info-indicateur">
           <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
         </div>
+
         <div className="input">
-          <p>Valeur : </p>
+          <label>Valeur : </label>
           <input type="text" value={value} onChange={setValue} />
-          <p>  {indicData.unit}</p>
+          <span>  {indicData.unit}</span>
         </div>
+        
         <div className="input">
-          <p>Incertitude : </p>
+          <label>Incertitude : </label>
           <input type="text" value={uncertainty} onChange={setUncertainty} />
-          <p>  %</p>
+          <span>  %</span>
         </div>
       </div>
     )
 
 }
+
+/* ----- Builder message ----- */
+
+function getMessageSiren(siren,uniteLegaleDataLoaded) {
+  if (/[0-9]{9}/.test(siren) & uniteLegaleDataLoaded)  { return "OK" }
+  else if (/[0-9]{9}/.test(siren))                     { return "(non reconnu)" }
+  else if (siren.length>0 & !/[0-9]{1,9}/.test(siren)) { return "erreur format" }
+  else                                                 { return "" }
+}
+
+function getMessageButton(declarationSend,siren,coordonnees) {
+  if (declarationSend)        { return "Demande de publication envoyée"}
+  else if (siren==="")        { return "Numéro de siren manquant"}
+  else if (coordonnees==="")  { return "Coordonnées manquantes"}
+  else                        { return "Envoyer la publication" }
+}
+

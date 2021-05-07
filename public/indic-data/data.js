@@ -70,18 +70,33 @@ export const indicateurs = {
         was: 'En gramme par euro (g/€)',
         wat: 'En litre par euro (L/€)'
     },
-    note: {
-        art: '',
-        dis: '',
-        eco: '',
-        geq: '',
-        ghg: '',
-        haz: '',
-        knw: '',
-        mat: '',
-        nrg: '',
-        soc: '',
-        was: '',
-        wat: ''
+    unitAbsoluteCode: {
+        art: '€',
+        dis: '/100',
+        eco: '€',
+        geq: '%',
+        ghg: 'kgCO2e',
+        haz: 'kg',
+        knw: '€',
+        mat: 'kg',
+        nrg: 'MJ',
+        soc: '€',
+        was: 'kg',
+        wat: 'm3'
+    },
+    defaultUncertainty: {
+        art: 0,
+        dis: 0,
+        eco: 0,
+        geq: 0,
+        ghg: 50,
+        haz: 50,
+        knw: 0,
+        mat: 50,
+        nrg: 50,
+        soc: 0,
+        was: 50,
+        wat: 50
     }
+    
 }

@@ -5,7 +5,6 @@ import Footer from './footer.js'
 import React, {useState} from 'react';
 
 import {sendDeclarationMail} from './api/mail-api.js'
-import { render } from 'react-dom';
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -17,14 +16,9 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
+import * as IndicData from '../../public/indic-data/data.js'
 
 // put in other file
-const impactsDirectsUnits = {
-  eco:"€", art:"€", soc:"€", knw:"€", dis:"/100", geq:"%", ghg:"kgCO2e", mat:"kg", was:"kg", nrg:"MJ", wat:"m3", haz:"kg"
-}
-const impactsDirectsIncertitudes = {
-  eco:0, art:0, soc:0, knw:0, dis:0, geq:0, ghg:50, mat:50, was:50, nrg:50, wat:25, haz:50
-}
 const defaultIncertitudes = {
   eco:75, art:100, soc:100, knw:100, dis:50, geq:75, ghg:1000, mat:1000, was:1000, nrg:1000, wat:1000, haz:10000
 }
@@ -35,14 +29,13 @@ Home.getInitialProps = async () => {
     const endpoint = `${apiBaseUrl}/default?pays=FRA`;
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
-    const isLoaded = data.header.statut===200; // handle error / no response
+    //const isLoaded = data.header.statut===200; // handle error => service unvailable
     const defaultData = data.empreinteSocietale;
     return({
       defaultData
     })
   }
   catch(error){
-    console.log(error);
     throw error;
   }
 }
@@ -60,7 +53,6 @@ export default function Home(props) {
         <h1>Declaration - Procédure simplifiée</h1>
         <p>La déclaration simplifiée permet d'ajuster votre Empreinte Sociétale en déclarant vos impacts directs.</p>
         <p>La qualité de la production disponible en France (PIB et Importations) est affectée aux charges externes. Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées, notamment sur les indicateurs environnementaux.</p>
-
         <Form defaultData={props.defaultData}/>
 
       </main>
@@ -80,14 +72,18 @@ class Form extends React.Component {
       // general experience state
       selectedIndicator: "eco",
       message: "", coordonnees: "",
-      certificationAutorisation: false, declarationSend: false,
-      prixLibre: false,prix: "",
+      certificationAutorisation: false,
+      declarationSend: false,
+      prixLibre: false,
+      prix: "",
       messageButton: "Valider la publication",
       
       // Legal entity data
-      siren: "", messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
+      siren: "",
+      messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
       uniteLegaleDataLoaded:false,
-      uniteLegaleData: {}, defaultCSF: {},
+      uniteLegaleData: {},
+      defaultCSF: {},
 
       // Accounting data
       donneesComptables: {
@@ -354,7 +350,7 @@ function getQuality(indic,impactDirect,valeurAjoutee,defaultValue,chiffreAffaire
       & chiffreAffaires!=undefined & chiffreAffaires!==""
       & defaultValue!==undefined) {
 
-    let NVAi = impactsDirectsIncertitudes[indic];
+    let NVAi = IndicData.defaultUncertainty[indic];
     let Ci = defaultIncertitudes[indic];
     let precision = 1;
     let NVAq = undefined;
@@ -429,7 +425,7 @@ function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,r
         <div className="input">
           <p>Impact direct : </p>
           <input type="text" value={valueImpact} onChange={setValue} />
-          <p>  {impactsDirectsUnits[indic]}</p>
+          <p>  {IndicData.unitAbsoluteCode[indic]}</p>
         </div>
         <div className="quality-boxes">
           <div className="quality-box">
