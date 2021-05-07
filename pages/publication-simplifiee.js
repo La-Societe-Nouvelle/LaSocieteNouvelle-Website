@@ -4,7 +4,7 @@ import Footer from './footer.js'
 
 import React, {useState} from 'react';
 
-import {sendDeclarationMail} from './api/mail-api.js'
+import {sendSimplifiedAssessment} from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -324,7 +324,7 @@ class Form extends React.Component {
     if (this.state.certificationAutorisation
         & Object.keys(values).length>0
         & coordonnees!="") {
-      const res = await sendDeclarationMail(objet,siren,values,note,participation,coordonnees);
+      const res = await sendSimplifiedAssessment(objet,siren,values,note,participation,coordonnees);
       if (res.status < 300) {
         this.setState ({
           declarationSend: true,
@@ -350,7 +350,7 @@ function getQuality(indic,impactDirect,valeurAjoutee,defaultValue,chiffreAffaire
       & chiffreAffaires!=undefined & chiffreAffaires!==""
       & defaultValue!==undefined) {
 
-    let NVAi = IndicData.defaultUncertainty[indic];
+    let NVAi = IndicData.indicateurs.defaultUncertainty[indic];
     let Ci = defaultIncertitudes[indic];
     let precision = 1;
     let NVAq = undefined;
@@ -425,7 +425,7 @@ function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,r
         <div className="input">
           <p>Impact direct : </p>
           <input type="text" value={valueImpact} onChange={setValue} />
-          <p>  {IndicData.unitAbsoluteCode[indic]}</p>
+          <p>  {IndicData.indicateurs.unitAbsoluteCode[indic]}</p>
         </div>
         <div className="quality-boxes">
           <div className="quality-box">
