@@ -9,7 +9,7 @@ import html from 'remark-html'
 
 var React = require('react');
 
-import * as data from '../public/indic-data/data.js'
+import * as data from '../../public/indic-data/data.js'
 import ReactMarkdown from 'react-markdown'
 
 export default function Post({postData}) {
@@ -80,9 +80,6 @@ function build(postData) {
             <li>Description : {data.description[indic]}</li>
             <li>Unité par défaut : {data.unit[indic]}</li>
           </ul>
-          <p>
-            {data.note[indic]}
-          </p>
         </div>
 
         <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
