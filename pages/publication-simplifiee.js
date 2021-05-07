@@ -16,7 +16,7 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
-import * as IndicData from '../../public/indic-data/data.js'
+import * as IndicData from '../public/indic-data/data.js'
 
 // put in other file
 const defaultIncertitudes = {
