@@ -1,4 +1,4 @@
-### IMAPCT DIRECT
+### IMPACT DIRECT
 
 **Grandeur mesurée :** Quantité consommée d’énergie (en MJ)
 
