@@ -16,6 +16,7 @@
     width: 100%;
     align-items: center;
     justify-content:space-around;
+    padding: 0 5%;
 
     .link-footer {
       height: 100%;
@@ -23,7 +24,7 @@
       font-size: 13px;
     }
 
-    @include xs{
+    @include xs {
       flex-flow: column;
     }
   }

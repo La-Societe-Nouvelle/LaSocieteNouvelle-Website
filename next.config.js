@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = (env) => {
-
+  
   let baseConfig = {
     sassOptions: {
       includePaths: [path.join(__dirname, 'styles')],

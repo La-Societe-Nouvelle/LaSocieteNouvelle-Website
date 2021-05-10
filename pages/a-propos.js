@@ -24,6 +24,14 @@ export default function Home() {
         </div>
 
         <div className="strip">
+          <h2>Modèle d'Indicateurs</h2>
+          <p>Les indicateurs que nous promouvons sont liés à la valeur économique et sont construits pour assurer une traçabilité le long des chaines de valeur. 
+             Leur objectif est d'informer sur les impacts sociaux et environnementaux de nos dépenses, via les entreprises que nous sollicitons.</p>
+          <p>Ils forment actuellement un panel de 12 indicateurs : l'Empreinte Sociétale de l'Entreprise (ESE).</p>
+          <p>Nous oeuvrons pour que chaque entreprise française publie annuellement ces indicateurs en fin d'exercice comptable d'ici 2030.</p>
+        </div>
+
+        <div className="strip">
           <h2>Activités</h2>
           <p>Nos activités s'organisent autour de trois axes :</p>
           <ul>
