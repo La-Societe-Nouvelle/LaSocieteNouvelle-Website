@@ -49,12 +49,10 @@ export default function Home(props) {
       </Head>
       <Header/>
       <main className="main">
-
         <h1>Declaration - Procédure simplifiée</h1>
         <p>La déclaration simplifiée permet d'ajuster votre Empreinte Sociétale en déclarant vos impacts directs.</p>
         <p>La qualité de la production disponible en France (PIB et Importations) est affectée aux charges externes. Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées, notamment sur les indicateurs environnementaux.</p>
         <Form defaultData={props.defaultData}/>
-
       </main>
       <Footer/>
     </div>
@@ -71,47 +69,55 @@ class Form extends React.Component {
 
       // general experience state
       selectedIndicator: "eco",
-      message: "", coordonnees: "",
+      message: "",
+      coordonnees: "",
+      prixLibre: false, prix: "",
       certificationAutorisation: false,
       declarationSend: false,
-      prixLibre: false,
-      prix: "",
-      messageButton: "Valider la publication",
-      
+            
       // Legal entity data
       siren: "",
-      messageSIRENE: "Saisissez votre numéro de siren (9 chiffres)",
-      uniteLegaleDataLoaded:false,
+      anneeExercice: undefined,
+      uniteLegaleDataLoaded: false,
       uniteLegaleData: {},
-      defaultCSF: {},
-
-      // Accounting data
-      donneesComptables: {
-        anneeExercice: undefined,
-        chiffreAffaires: undefined,
-        valeurAjoutee: undefined},
 
       // ES impacts
       donneesImpacts: {
-        eco: undefined, art: undefined, soc: undefined, knw: undefined, dis: undefined, geq: undefined,
-        ghg: undefined, mat: undefined, was: undefined, nrg: undefined, wat: undefined, haz: undefined}
+        art: undefined,
+        dis: undefined,
+        eco: undefined,
+        geq: undefined,
+        ghg: undefined,
+        haz: undefined,
+        knw: undefined,
+        mat: undefined,
+        nrg: undefined,
+        soc: undefined,  
+        was: undefined,
+        wat: undefined,
+      },
+
+      // Accounting data (temp)
+      donneesComptables: {
+        chiffreAffaires: undefined,
+        valeurAjoutee: undefined
+      }
+
     };
   }
 
   render() {
     const {selectedIndicator,
-           message,coordonnees,
-           certificationAutorisation,declarationSend,
-           prixLibre,prix,
-           messageButton,
-           siren,uniteLegaleDataLoaded,uniteLegaleData,defaultCSF,
-           donneesComptables,donneesImpacts,
+           message,coordonnees,prixLibre,prix,certificationAutorisation,
+           declarationSend,
+           siren,anneeExercice,
+           uniteLegaleDataLoaded,uniteLegaleData,
+           donneesImpacts,donneesComptables,
            defaultData} = this.state;
     
     const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";       
-    const reference = uniteLegaleDataLoaded ? defaultCSF[selectedIndicator.toUpperCase()] : undefined; // use default Data if defaultCSF undefined
+    const reference = uniteLegaleDataLoaded ? uniteLegaleData.empreinteSocietale[selectedIndicator.toUpperCase()] : undefined; // use default Data if defaultCSF undefined
     const indicData = defaultData[selectedIndicator.toUpperCase()];
-
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
 
     return (
@@ -120,24 +126,24 @@ class Form extends React.Component {
             <div id="general-data" className="strip">
               <h2>Informations légales</h2>
               <div className="input">
-                <p>Numéro de siren </p><input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} /><p> {this.state.messageSIRENE}</p>
+                <label>Numéro de siren </label>
+                <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
+                <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
               </div>
               <div>
-                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.denomination : " - "}</p>
-                <p>{uniteLegaleDataLoaded ? uniteLegaleData.activitePrincipaleLibelle : ""}</p>
+                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
+                <p>{uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
               </div>
             </div>
 
             <div id="accounting-data" className="strip">
               <h2>Informations comptables</h2>
-              <div id="dates-exercices">
-                <div className="input">
-                  <label htmlFor="annee-exercice">Année de l'exercice</label>
-                  <input type="text"
-                         id="annee-exercice"
-                         value={donneesComptables.anneeExercice!==undefined ? donneesComptables.anneeExercice : ""} 
-                         onChange={this.onAnneeExerciceChange} />
-                </div>
+              <div className="input">
+                <label htmlFor="annee-exercice">Année de l'exercice</label>
+                <input type="text"
+                        id="annee-exercice"
+                        value={anneeExercice!==undefined ? anneeExercice : ""} 
+                        onChange={this.onAnneeExerciceChange} />
               </div>
               <div className="input">
                 <label>Chiffre d'Affaires*</label>
@@ -160,103 +166,86 @@ class Form extends React.Component {
                     <input type="text"
                            id="taux-valeur-ajoutee"
                            disabled={true}
-                           value={
-                             (donneesComptables.chiffreAffaires!==undefined & donneesComptables.valeurAjoutee!==undefined)
-                               ? Math.round(donneesComptables.valeurAjoutee/donneesComptables.chiffreAffaires*100) +" %": " - %"} />
+                           value={getValueAddedRate(donneesComptables.valeurAjoutee,donneesComptables.chiffreAffaires) +" %"} />
                   </div>
               <p id="note">* Les données comptables sont utilisées uniquement sur la page pour obtenir les valeurs des indicateurs. Elles ne sont ni transmises, ni enregistrées.</p>
             </div>
 
             <div id="indicators" className="strip">
-            <h2>
-              Indicateurs
-            </h2>
-
-            <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
-
-            <IndicatorView indic={selectedIndicator}
-                       indicData={indicData}
-                       valueImpact={valueImpact}
-                       setValue={this.setValue}
-                       donneesComptables={donneesComptables}
-                       reference={reference}/>
+              <h2>Indicateurs</h2>
+              <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
+              <IndicatorView indic={selectedIndicator}
+                        indicData={indicData}
+                        valueImpact={valueImpact}
+                        setValue={this.setValue}
+                        donneesComptables={donneesComptables}
+                        reference={reference}/>
             </div>
 
             <div id="further-info" className="strip">
-            <h2>
-              Informations complémentaires
-            </h2>
-            <div className="form-item">
-              <label>Message</label>
-              <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
-            </div>
-            <div className="form-item">
-              <label>Vos coordonnées (obligatoire)</label>
-              <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
-            </div>
-            <div className="input">
-              <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
-            </div>
-            <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
-            <div className="input">
-              <input type="checkbox" onChange={this.onPrixLibreChange} />
-              <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
-              <input type="text"
-                     id="contribution"
-                     disabled={!prixLibre}
-                    value={prix}
-                    onChange={this.onPrixChange} />
-              <span> &nbsp;€</span>
-            </div>
+              <h2>Informations complémentaires</h2>
+              <div className="form-item">
+                <label>Message</label>
+                <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
+              </div>
+              <div className="form-item">
+                <label>Vos coordonnées (obligatoire)</label>
+                <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
+              </div>
+              <div className="input">
+                <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
+              </div>
+              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
+              
+              <div className="input">
+                <input type="checkbox" onChange={this.onPrixLibreChange} />
+                <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
+                <input type="text"
+                      id="contribution"
+                      disabled={!prixLibre}
+                      value={prix}
+                      onChange={this.onPrixChange} />
+                <span> &nbsp;€</span>
+              </div>
 
-            <button className={btnClass} id="submit-assessment" onClick={this.submitForm}>{messageButton}</button>
+              <button className={btnClass} id="submit-assessment" onClick={this.submitAssessment}>{getMessageButton(declarationSend,siren,coordonnees)}</button>
             </div>
           </div>
 
     )
   }
 
-  /* SIREN */
+  /* --- SIREN --- */
   onSirenChange = (event) => {
     this.setState({siren: event.target.value})
     if (event.target.value.length===9 & !isNaN(parseFloat(event.target.value))) {
       this.getLegalUnitData(event.target.value);
     } else {
-      let message = (event.target.value.length>0 & (!/^\d+$/.test(event.target.value) | event.target.value.length>9)) ? "erreur format (le numéro de siren est composé de 9 chiffres)" : "Saisissez votre numéro de siren (9 chiffres)";
-      this.setState({ messageSIRENE: message, uniteLegaleDataLoaded: false, defaultCSFLoaded: false })
+      this.setState({ uniteLegaleDataLoaded: false, defaultCSFLoaded: false })
     }
   }
-  // Fetch legal data
+  // Fetch legal unit data
   getLegalUnitData = async (siren) => {
     try{
       const endpoint = `${apiBaseUrl}/siren/${siren}`;
       const response = await fetch(endpoint, {method:'get'});
       const data = await response.json();
-      const isLoaded = data.header.statut===200;
-      if (isLoaded) {
-        this.setState({
-          messageSIRENE: "OK", uniteLegaleDataLoaded: true,
-          uniteLegaleData: data.profil.descriptionUniteLegale, defaultCSF : data.profil.empreinteSocietale,
-        })
+      if (data.header.statut===200) {
+        this.setState({uniteLegaleDataLoaded: true, uniteLegaleData: data.profil })
       } else {
-        this.setState({
-          messageSIRENE: "numéro non reconnu (non bloquant)", uniteLegaleDataLoaded: false,
-        })
+        this.setState({uniteLegaleDataLoaded: false })
       }
-    }
-    catch(error){
-      console.log(error);
+    } catch(error){
       throw error;
     }
   }
 
-  // Données comptables
+  /* --- Financial data --- */
   onAnneeExerciceChange = (event) => {
-    let donneesComptables = this.state.donneesComptables;
+    let anneeExercice = this.state.anneeExercice;
     let input = parseInt(event.target.value);
-    console.log(input);
-    donneesComptables.anneeExercice = isNaN(input) | !/^[0-9]*$/.test(event.target.value) ? undefined : input.toString().substring(0,4);
-    this.setState({donneesComptables});
+    anneeExercice = isNaN(input) | !/^[0-9]*$/.test(event.target.value) ? undefined : input.toString().substring(0,4);
+    this.setState({anneeExercice: anneeExercice});
   }
   onChiffreAffairesChange = (event) => {
     let donneesComptables = this.state.donneesComptables;
@@ -271,28 +260,7 @@ class Form extends React.Component {
     this.setState({donneesComptables});
   }
 
-  // Message & Coordonnees
-  onMessageChange = (event) => {
-    this.setState({message: event.target.value})
-  }
-  onCoordonneesChange = (event) => {
-    this.setState({coordonnees: event.target.value})
-  }
-  onCheckboxChange = (event) => {
-    this.setState({certificationAutorisation: !this.state.certificationAutorisation})
-  }
-
-  onPrixLibreChange = (event) => {
-    this.setState({prixLibre: !this.state.prixLibre, prix: ""});
-    console.log(this.state.prixLibre);
-    console.log(this.state.prix);
-  }
-  onPrixChange = (event) => {
-    let input = parseInt(event.target.value);
-    this.setState({prix: isNaN(input) ? undefined : input});
-  }
-
-  // Données - Impacts directs
+  /* --- Set values --- */
   setValue = (event) => {
     let donneesImpacts = this.state.donneesImpacts;
     let value = parseFloat(event.target.value.replace(",","."));
@@ -300,96 +268,36 @@ class Form extends React.Component {
     this.setState({donneesImpacts});
   }
 
-  submitForm = async(event) => {
+  /* --- Assessment message --- */
+  onMessageChange = (event) => { this.setState({message: event.target.value}) }
+  onCoordonneesChange = (event) => { this.setState({coordonnees: event.target.value}) }
+  onCheckboxChange = (event) => { this.setState({certificationAutorisation: !this.state.certificationAutorisation}) }
+  onPrixLibreChange = (event) => { this.setState({prixLibre: !this.state.prixLibre, prix: ""}); }
+  onPrixChange = (event) => {
+    let input = parseInt(event.target.value);
+    this.setState({prix: isNaN(input) ? undefined : input});
+  }
+
+  /* --- Submit assessment --- */
+  submitAssessment = async(event) => {
     event.preventDefault();
-    const objet = "Déclaration simplifiée (via website)";
-    const siren = this.state.siren + " ("+this.state.donneesComptables.anneeExercice+")";
-    const note = this.state.message;
+
+    const siren = this.state.siren + " ("+this.state.anneeExercice+")";
+    const message = this.state.message;
     const coordonnees = this.state.coordonnees;
     const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
-
-    // Obtention des valeurs
-    const {valeurAjoutee,chiffreAffaires} = this.state.donneesComptables;
-    const donneesImpacts = this.state.donneesImpacts;
-    const defaultData = this.state.defaultData;
-    const values = {};
-    Object.entries(this.state.donneesImpacts).map(([indicateur],_) => {
-      let [quality,uncertainty] = getQuality(indicateur,donneesImpacts[indicateur],valeurAjoutee,defaultData[indicateur.toUpperCase()].value,chiffreAffaires);
-      if (!isNaN(quality)) { values[indicateur] = {
-        valeur: quality,
-        incertitude: uncertainty
-      }}
-    });
-
-    if (this.state.certificationAutorisation
-        & Object.keys(values).length>0
-        & coordonnees!="") {
-      const res = await sendSimplifiedAssessment(objet,siren,values,note,participation,coordonnees);
-      if (res.status < 300) {
-        this.setState ({
-          declarationSend: true,
-          messageButton: "Demande de publication envoyée"
-        })
-      } else {
-        this.setState({messageButton: "Merci de remplir tous les champs."})
-      }
-    } else {
-      console.log("here");
-      const message = 
-        (Object.keys(values).length==0 ? "(Aucune valeur déclarée)" : "(Coordoonées manquantes)");
-      this.setState({messageButton: "Merci de remplir tous les champs "+message})
+    const assessment = buildAssessedValues(this.state.donneesImpacts, this.state.donneesComptables, this.state.defaultData);
+   
+    if (this.state.certificationAutorisation & coordonnees!="" & siren!="") {
+      const res = await sendSimplifiedAssessment(siren,assessment,message,coordonnees,participation);
+      this.setState({declarationSend: res.status<300});
     }
   }
 
 }
 
-/* Quality */
-function getQuality(indic,impactDirect,valeurAjoutee,defaultValue,chiffreAffaires) {
-  if (impactDirect!==undefined & impactDirect!==""
-      & valeurAjoutee!==undefined & valeurAjoutee!==""
-      & chiffreAffaires!=undefined & chiffreAffaires!==""
-      & defaultValue!==undefined) {
 
-    let NVAi = IndicData.indicateurs.defaultUncertainty[indic];
-    let Ci = defaultIncertitudes[indic];
-    let precision = 1;
-    let NVAq = undefined;
-
-    if (["eco","art","soc","knw"].indexOf(indic) > -1) {
-      NVAq = impactDirect*100/valeurAjoutee;
-      precision = 10;
-    } else if (["dis","geq"].indexOf(indic) > -1) {
-      NVAq = impactDirect;
-      precision = 10;
-    } else if (["wat","haz"].indexOf(indic) > -1) {
-      NVAq = impactDirect*1000/valeurAjoutee;
-      precision = 10;
-    } else {
-      NVAq = impactDirect*1000/valeurAjoutee;
-    }
-
-    let quality = (NVAq*valeurAjoutee + defaultValue*(chiffreAffaires-valeurAjoutee))/chiffreAffaires ;
-    let qualityMax = (NVAq*coefUp(NVAi,indic)*valeurAjoutee + defaultValue*coefUp(Ci,indic)*(chiffreAffaires-valeurAjoutee))/chiffreAffaires;
-    let qualityMin = (NVAq*coefDown(NVAi)*valeurAjoutee + defaultValue*coefDown(Ci)*(chiffreAffaires-valeurAjoutee))/chiffreAffaires;
-    let uncertainty = Math.max(qualityMax-quality,quality-qualityMin)/quality*100;
-    return[Math.round(quality*precision)/precision,Math.round(uncertainty)];
-
-  } else {
-    return[undefined,undefined];
-  }
-}
-function coefUp(value,indic) {
-  if (["eco","art","soc","knw","dis","geq"].indexOf(indic) > -1) {
-    return Math.min((100+value)/100,100);
-  } else {
-    return (100+value)/100;
-  }
-}
-function coefDown(value) {
-  return Math.max((100-value)/100,0);
-}
-
-/* ViewMenu : Controls the selected view that must be displayed */
+/* ----- ViewMenu : Controls the selected view that must be displayed ----- */
 function IndicatorViewMenu({selected, parent}){
   return (
     <div className="menu">
@@ -407,36 +315,34 @@ function IndicatorViewMenu({selected, parent}){
   );
 }
 
-/* Indicator Declaration View */
+/* ----- Indicator Declaration View ----- */
 function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,reference}){
 
-    const [valueAddedQuality,valueAddedUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjoutee,0.0,donneesComptables.valeurAjoutee);
-    const [revenueQuality,revenueUncertainty]=getQuality(indic,valueImpact,donneesComptables.valeurAjoutee,indicData.value,donneesComptables.chiffreAffaires);
+    const valueAddedQuality=Math.round(getQualityValueAdded(indic,valueImpact,donneesComptables.valeurAjoutee)*10)/10;
+    const valueAddedUncertainty = defaultIncertitudes[indic];
+    const [revenueQuality,revenueUncertainty]=getQuality(indic,valueImpact,donneesComptables,indicData.value);
     const valueReference = reference!==undefined ? reference.valueReference : indicData.value;
 
     return (
       <div id="indicator-view">
-        <h3>
-          {indicData.libelle}
-        </h3>
+        <h3>{indicData.libelle}</h3>
         <div id="info-indicateur">
           <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
         </div>
         <div className="input">
-          <p>Impact direct : </p>
+          <label>Impact direct : </label>
           <input type="text" value={valueImpact} onChange={setValue} />
-          <p>  {IndicData.indicateurs.unitAbsoluteCode[indic]}</p>
+          <span>  {IndicData.indicateurs.unitAbsoluteCode[indic]}</span>
         </div>
         <div className="quality-boxes">
           <div className="quality-box">
             <p className="quality-title">Qualité de la Valeur Ajoutée</p>
-            <p className="quality-value">{valueAddedQuality!== undefined ? valueAddedQuality : "-"}</p>
+            <p className="quality-value">{valueAddedQuality!== undefined & !isNaN(valueAddedQuality) ? valueAddedQuality : "-"}</p>
             <p>{indicData.unit}</p>
             <p className="uncertainty">Incertitude : {valueAddedUncertainty!==undefined ? valueAddedUncertainty : "-"} %</p>
           </div>
           <div className="quality-box">
-            <p className="quality-title">Qualité du Chiffre d'Affaires<br/>
-               (Valeur publiée)</p>
+            <p className="quality-title">Qualité du Chiffre d'Affaires<br/>(Valeur publiée)</p>
             <p id={revenueQuality!==undefined ? "declared-value" : ""} className="quality-value">{revenueQuality!==undefined ? revenueQuality : "-"}</p>
             <p>{indicData.unit}</p>
             <p className="uncertainty">Incertitude : {revenueUncertainty!==undefined ? revenueUncertainty : "-"} %</p>
@@ -451,4 +357,91 @@ function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,r
       </div>
     )
 
+}
+
+/* ----- Formulas ----- */
+
+// Quality & Uncertainty
+function getQuality(indic,impactDirect,donneesComptables,defaultValue) {
+
+  let valeurAjoutee = donneesComptables.valeurAjoutee;
+  let chiffreAffaires = donneesComptables.chiffreAffaires;
+  
+  if (impactDirect!==undefined & impactDirect!=="" 
+      & valeurAjoutee!==undefined & valeurAjoutee!==""
+      & chiffreAffaires!=undefined & chiffreAffaires!==""
+      & defaultValue!==undefined) {
+
+    let NVAq = getQualityValueAdded(indic,impactDirect,valeurAjoutee);
+    let NVAi = IndicData.indicateurs.defaultUncertainty[indic];
+    let Ci = defaultIncertitudes[indic];
+    let NvaRate = getValueAddedRate(valeurAjoutee,chiffreAffaires)/100;
+
+    let quality = NVAq*NvaRate + defaultValue*(1.0-NvaRate) ;
+    
+    let qualityMax = NVAq*NvaRate*coefUp(NVAi,indic)  + defaultValue*(1.0-NvaRate)*coefUp(Ci,indic);
+    let qualityMin = NVAq*NvaRate*coefDown(NVAi)      + defaultValue*(1.0-NvaRate)*coefDown(Ci);
+    let uncertainty = Math.max(qualityMax-quality,quality-qualityMin)/quality*100;
+    
+    return[Math.round(quality*getPrecision(indic))/getPrecision(indic),Math.round(uncertainty)];
+  } else {
+    return[undefined,undefined];
+  }
+}
+
+// Quality Net Value Added
+function getQualityValueAdded(indic,impactDirect,valeurAjoutee) {
+  if        (["eco","art","soc","knw"].indexOf(indic) > -1)   { return impactDirect*100/valeurAjoutee; } 
+  else if   (["dis","geq"].indexOf(indic) > -1)               { return impactDirect; } 
+  else                                                        { return impactDirect*1000/valeurAjoutee; }
+}
+
+// Net Value Added Rate
+function getValueAddedRate(valeurAjoutee,chiffreAffaires) {
+  if    (valeurAjoutee!==undefined & chiffreAffaires!==undefined) { return Math.round(valeurAjoutee/chiffreAffaires*100) } 
+  else                                                            { return " - " }
+}
+
+// Rounding
+function getPrecision(indic) {
+  if        (["eco","art","soc","knw","dis","geq","wat","haz"].indexOf(indic) > -1)   { return 10; } 
+  else                                                                                { return  1; }
+}
+
+// Coef uncertainty
+function coefUp(value,indic) {
+  if (["eco","art","soc","knw","dis","geq"].indexOf(indic) > -1)  { return Math.min((100+value)/100,100); } 
+  else                                                            { return (100+value)/100; }
+}
+function coefDown(value) {
+  return Math.max((100-value)/100,0);
+}
+
+// Assessed values
+function buildAssessedValues(donneesImpacts,donneesComptables,defaultData) {
+  let assessment = {};
+  Object.entries(donneesImpacts).map(([indicateur],_) => {
+    let [quality,uncertainty] = getQuality(indicateur,donneesImpacts[indicateur],donneesComptables,defaultData[indicateur.toUpperCase()].value);
+    if (!isNaN(quality)) { assessment[indicateur] = {
+      value: quality,
+      uncertainty: uncertainty
+    }};
+  });
+  return assessment;
+}
+
+/* ----- Builder message ----- */
+
+function getMessageSiren(siren,uniteLegaleDataLoaded) {
+  if (/[0-9]{9}/.test(siren) & uniteLegaleDataLoaded)  { return "OK" }
+  else if (/[0-9]{9}/.test(siren))                     { return "(non reconnu)" }
+  else if (siren.length>0 & !/[0-9]{1,9}/.test(siren)) { return "erreur format" }
+  else                                                 { return "" }
+}
+
+function getMessageButton(declarationSend,siren,coordonnees) {
+  if (declarationSend)        { return "Demande de publication envoyée"}
+  else if (siren==="")        { return "Numéro de siren manquant"}
+  else if (coordonnees==="")  { return "Coordonnées manquantes"}
+  else                        { return "Envoyer la publication" }
 }

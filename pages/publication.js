@@ -238,7 +238,7 @@ class Form extends React.Component {
     const message = this.state.message;
     const coordonnees = this.state.coordonnees;
     const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
-    const assessment = this.state.assessment;   
+    const assessment = this.state.assessment;
 
     if (this.state.certificationAutorisation & coordonnees!="" &siren!="") {
       const res = await sendAssessment(siren,assessment,message,coordonnees,participation);
