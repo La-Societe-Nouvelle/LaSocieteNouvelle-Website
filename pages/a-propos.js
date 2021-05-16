@@ -64,24 +64,20 @@ export default function Home() {
         <div className="strip">
           <h2>Principaux contributeurs</h2>
           <div className="contributeurs">
-          <div className="contributeur">
-            <img src="/resources/photo_sh.jpg" alt="photo_sh"/>
-            <div id="contributeur-data">
-              <p className="identite" >
+            <figure className="contributeur">
+              <img src="/resources/photo_sh.jpg" alt="photo_sh"/>
+              <figurecaption className="identite" >
                 <strong>Sylvain HUMILIERE</strong><br/>
                 Président - La Société Nouvelle
-              </p>
-            </div>
-          </div>
-          <div className="contributeur">
-            <img src="/resources/photo_ld.jpg" alt="photo_sh"/>
-            <div id="contributeur-data">
-              <p className="identite" >
+              </figurecaption>
+            </figure>
+            <figure className="contributeur">
+              <img src="/resources/photo_ld.jpg" alt="photo_sh"/>
+              <figurecaption className="identite" >
                 <strong>Lyderic DUTILLIEUX</strong><br/>
                 Président - Origénial
-              </p>
-            </div>
-          </div>
+              </figurecaption>
+            </figure>
           </div>
         </div>
 

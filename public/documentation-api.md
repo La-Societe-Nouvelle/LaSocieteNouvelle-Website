@@ -15,7 +15,7 @@ Le service d’interrogation unitaire permet d’obtenir les données disponible
 Il s’agit d’un service web de type REST. L’invocation du service se fait par l’envoi d’une requête HTTPS de type GET. Le résultat est communiqué dans le contenu de la réponse HTTPS sous format JSON.
 
 URL d’accès au service pour une interrogation unitaire :
-https://api.lasocietenouvelle.org/api/v2/siren/{siren}  
+https://api.lasocietenouvelle.org/api/v2/siren/{siren}
 
 où {siren} est un numéro à 9 chiffres.
 
@@ -43,7 +43,7 @@ Les codes renvoyés par les services sont les suivants :
 * 500 – erreur interne du serveur
 * 503 – service indisponible
 
-Les codes ci-dessus concernent le traitement interne de la requête par l’API et se situent dans le header de la réponse JSON. Ils ne concernent pas la disponibilité de l’API. 
+Les codes ci-dessus concernent le traitement interne de la requête par l’API et se situent dans le header de la réponse JSON. Ils ne concernent pas la disponibilité de l’API.
  
 ## Variables
 
@@ -83,7 +83,7 @@ valueReferenceSource | string | Origine de la la valeur de référence
 valueReferenceFlag | character | Indicateur d'appréciation de la valeur (cf. metadonnées)
 valueReferenceInfo | string | Information(s) complémentaire(s) sur la valeur de référence (hypothèses, etc.)
 valueDeclared | booléen | Caractère publiée de la valeur (ou valeur par défaut)
-libelleFlag | string | Libellé de l'indicateur d'appréciation  
+libelleFlag | string | Libellé de l'indicateur d'appréciation
 
 ## Metadonnées
 
@@ -102,23 +102,23 @@ code | description
 
 ## Exemple de réponse
 
-```JSON
-{  
-  "header":{  
-    "statut":200,  
-    "message":"OK",  
-    "tempsReponse":"300 ms"  
-  },  
-  "profil":{  
-    "descriptionUniteLegale":{  
-      "identifiant":"889182770",  
-      "denomination":"LA SOCIETE NOUVELLE",  
-      "codePostalSiege":"59000",  
-      "activitePrincipale":"70.22Z",  
-      "activitePrincipaleLibelle":"Conseil en gestion",  
-      "trancheEffectifs":"21",  
-      "communeSiege":"LILLE"  
-    },  
+```json
+{
+  "header":{
+    "statut":200,
+    "message":"OK",
+    "tempsReponse":"300 ms"
+  },
+  "profil":{
+    "descriptionUniteLegale":{
+      "identifiant":"889182770",
+      "denomination":"LA SOCIETE NOUVELLE",
+      "codePostalSiege":"59000",
+      "activitePrincipale":"70.22Z",
+      "activitePrincipaleLibelle":"Conseil en gestion",
+      "trancheEffectifs":"21",
+      "communeSiege":"LILLE"
+    },
     "empreinteSocietale":[
       {
         "code":"ECO",

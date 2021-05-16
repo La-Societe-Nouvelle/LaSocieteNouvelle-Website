@@ -43,7 +43,7 @@ export default function Home() {
             </li>
             <li id="mesure-indicateurs" className="services-item">
               <h3>Mesure des indicateurs</h3>
-              <p>L'ensemble des documentations, outils et autres supports pour la mesure des indicateurs sont mis à disposition librement. (cf. Ressources)</p>
+              <p>Les documentations, outils et autres supports pour la mesure des indicateurs sont mis à disposition librement. (cf. Ressources)</p>
               <p>Les informations relatives aux indicateurs (description, données par défaut, etc.) sont disponibles à partir de la page Empreinte Sociétale.</p>
               <p>Nous proposons également un service d'audit pour la mesure des indicateurs</p>
               <a className="button" href="LaSocieteNouvelle-METRIZ-1.1.exe" download>Téléchargement Logiciel</a>
