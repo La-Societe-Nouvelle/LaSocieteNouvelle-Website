@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import Header from '../pages/header.js'
 import Footer from '../pages/footer.js'
+import "prismjs/themes/prism-solarizedlight.css";
 
 import fs from 'fs'
 import unified from 'unified'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import html from 'remark-html'
+import prism from 'remark-prism'
+
 
 var React = require('react');
 
@@ -14,6 +17,7 @@ export async function getStaticProps() {
   const mdFile = await unified()
     .use(remarkParse)
     .use(remarkGfm)
+    .use(prism)
     .use(html)
     .process(fs.readFileSync('./public/documentation-api.md'));
   const data = {

@@ -29,7 +29,7 @@ export default function Home() {
             </li>
             <li id="declaration-simplifiee" className="services-item">
               <h3>Déclaration simplifiée</h3>
-              <p>Ajuster les valeurs des indicateurs de l'Empreinte Sociétale de votre entreprise en publiant vos imapcts directs.</p>
+              <p>Ajuster les valeurs des indicateurs de l'Empreinte Sociétale de votre entreprise en publiant vos impacts directs.</p>
               <p>Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées, notamment sur les indicateurs environnementaux.</p>
               <p>Le coût de la formalité de publication est libre. Les frais de publication permettent de financer l'hébergement, la maintenance et le développement de la base de données.</p>
               <a href="/publication-simplifiee" className="button">Formulaire de déclaration</a>
@@ -45,12 +45,11 @@ export default function Home() {
             </li>
             <li id="mesure-indicateurs" className="services-item">
               <h3>Mesure des indicateurs</h3>
-              <p>L'ensemble des documentations, outils et autres supports pour la mesure des indicateurs sont mis à disposition librement. (cf. Ressources)</p>
+              <p>Les documentations, outils et autres supports pour la mesure des indicateurs sont mis à disposition librement. (cf. Ressources)</p>
               <p>Les informations relatives aux indicateurs (description, données par défaut, etc.) sont disponibles à partir de la page Empreinte Sociétale.</p>
               <p>Nous proposons également un service d'audit pour la mesure des indicateurs</p>
               <a className="button-disabled">Téléchargement Logiciel (bientôt)</a>
             </li>
-            
           </ul>
         </div>
 
