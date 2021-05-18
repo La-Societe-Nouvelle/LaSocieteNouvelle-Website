@@ -12,7 +12,7 @@ Les données disponibles se limitent à l’écart de rémunération à l’éch
 
 La valeur par défaut est appliquée à l’ensemble des unités légales dont les effectifs sont supérieurs à 2 collaborateurs. Pour les unités légales dont les effectifs ne dépassent pas 
 
-2 collaborateurs, l'écart est définie comme nul pour la valeur ajoutée, et la valeur par défaut est appliqué pour les consommations.
+2 collaborateurs, l'écart est défini comme nul pour la valeur ajoutée, et la valeur par défaut est appliqué pour les consommations.
 
 L’intervalle de confiance est de 50 %.
 
