@@ -199,6 +199,28 @@ textarea {
 
 }
 
+.partenaires {
+  display: flex;
+  flex-direction: row;
+
+  img {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 10px;
+  }
+
+  .partenaire-box {
+    padding-left: 10px;
+  }
+
+  .partenaire-title {
+    font-weight: bold;
+    margin: 10px 0;
+
+  }
+
+}
+
 
 /* ----- ESE ----- */
 
