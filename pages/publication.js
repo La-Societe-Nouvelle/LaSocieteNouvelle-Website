@@ -62,12 +62,12 @@ class Form extends React.Component {
 
       // general experience state
       selectedIndicator: "eco",
-      message: "", 
+      message: "",
       coordonnees: "",
       prixLibre: false,prix: "",
-      certificationAutorisation: false, 
+      certificationAutorisation: false,
       declarationSend: false,
-      
+
       // Legal entity data
       siren: "",
       anneeExercice: undefined,
@@ -100,9 +100,9 @@ class Form extends React.Component {
            uniteLegaleDataLoaded,uniteLegaleData,
            assessment,
            defaultData} = this.state;
-    
+
     const value = assessment[selectedIndicator].value!==undefined ? assessment[selectedIndicator].value : "";
-    const uncertainty = assessment[selectedIndicator].uncertainty!==undefined ? assessment[selectedIndicator].uncertainty : "";       
+    const uncertainty = assessment[selectedIndicator].uncertainty!==undefined ? assessment[selectedIndicator].uncertainty : "";
     const indicData = defaultData[selectedIndicator.toUpperCase()];
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
 
@@ -120,7 +120,7 @@ class Form extends React.Component {
                 <label htmlFor="annee-exercice">Année de l'exercice</label>
                 <input type="text"
                         id="annee-exercice"
-                        value={anneeExercice!==undefined ? anneeExercice : ""} 
+                        value={anneeExercice!==undefined ? anneeExercice : ""}
                         onChange={this.onAnneeExerciceChange} />
               </div>
               <div>
@@ -154,7 +154,7 @@ class Form extends React.Component {
                 <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
               </div>
               <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
-              
+
               <div className="input">
                 <input type="checkbox" onChange={this.onPrixLibreChange} />
                 <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
@@ -245,19 +245,21 @@ class Form extends React.Component {
       this.setState({declarationSend: res.status<300});
     }
   }
-  
+
 }
 
 /* ----- ViewMenu : Controls the selected view that must be displayed ----- */
 function IndicatorViewMenu({selected, parent}){
   return (
     <div className="menu">
-      <div id="menu-items">
+      <div className="menu-items">
         {Object.entries(indicators).map(
           ([index,indicator],_) => (
             <button key={indicator}
                     onClick = {() => parent.setState({selectedIndicator: indicator})}
-                    className={ (indicator == selected) ? "menu-button-inverse" : "menu-button"}>
+                    className={"menu-button " +
+                               ((indicator == selected) ? "selected" : "")}>
+
               {indicator.toUpperCase()}
             </button>
           ))}
@@ -280,7 +282,7 @@ function IndicatorView({indic,indicData,value,uncertainty,setValue,setUncertaint
           <input type="text" value={value} onChange={setValue} />
           <span>  {indicData.unit}</span>
         </div>
-        
+
         <div className="input">
           <label>Incertitude : </label>
           <input type="text" value={uncertainty} onChange={setUncertainty} />
@@ -306,4 +308,3 @@ function getMessageButton(declarationSend,siren,coordonnees) {
   else if (coordonnees==="")  { return "Coordonnées manquantes"}
   else                        { return "Envoyer la publication" }
 }
-

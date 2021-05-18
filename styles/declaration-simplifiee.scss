@@ -3,13 +3,13 @@
 .declarationForm {
     width: 100%;
     margin-bottom: 100px;
-    
+
     .input {
         display: flex;
         flex-direction: row;
         align-items: center;
         margin: 5px 0;
-        
+
 
         p, label{
         margin: 0 5px;
@@ -28,30 +28,30 @@
 
         .menu-items {
             display: grid;
-            grid-auto-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             background-color: white;
             width: 100%;
         }
         .menu-button {
+            width:unset;
             color: $primary-color;
             background-color: transparent;
         }
-        .menu-button:hover {
+        .menu-button:not(.selected):hover {
             color: white;
             background-color: $secondary-color;
         }
-        .menu-button-inverse {
+        .menu-button.selected {
             color: white;
             background-color: $primary-color;
         }
-
     }
 
     #indicator-view {
         display: flex;
         flex-direction: column;
         align-items: center;
-    
+
         #info-indicateur {
             text-align: left;
             width: 100%;

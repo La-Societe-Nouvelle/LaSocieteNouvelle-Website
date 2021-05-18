@@ -74,7 +74,7 @@ class Form extends React.Component {
       prixLibre: false, prix: "",
       certificationAutorisation: false,
       declarationSend: false,
-            
+
       // Legal entity data
       siren: "",
       anneeExercice: undefined,
@@ -92,7 +92,7 @@ class Form extends React.Component {
         knw: undefined,
         mat: undefined,
         nrg: undefined,
-        soc: undefined,  
+        soc: undefined,
         was: undefined,
         wat: undefined,
       },
@@ -114,8 +114,8 @@ class Form extends React.Component {
            uniteLegaleDataLoaded,uniteLegaleData,
            donneesImpacts,donneesComptables,
            defaultData} = this.state;
-    
-    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";       
+
+    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";
     const reference = uniteLegaleDataLoaded ? uniteLegaleData.empreinteSocietale[selectedIndicator.toUpperCase()] : undefined; // use default Data if defaultCSF undefined
     const indicData = defaultData[selectedIndicator.toUpperCase()];
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
@@ -142,12 +142,12 @@ class Form extends React.Component {
                 <label htmlFor="annee-exercice">Année de l'exercice</label>
                 <input type="text"
                         id="annee-exercice"
-                        value={anneeExercice!==undefined ? anneeExercice : ""} 
+                        value={anneeExercice!==undefined ? anneeExercice : ""}
                         onChange={this.onAnneeExerciceChange} />
               </div>
               <div className="input">
                 <label>Chiffre d'Affaires*</label>
-                <input type="text" 
+                <input type="text"
                        id="chiffre-affaires"
                        value={donneesComptables.chiffreAffaires!==undefined ? donneesComptables.chiffreAffaires : ""} onChange={this.onChiffreAffairesChange} />
                 <span> &nbsp;€</span>
@@ -196,7 +196,7 @@ class Form extends React.Component {
                 <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
               </div>
               <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
-              
+
               <div className="input">
                 <input type="checkbox" onChange={this.onPrixLibreChange} />
                 <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
@@ -287,7 +287,7 @@ class Form extends React.Component {
     const coordonnees = this.state.coordonnees;
     const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
     const assessment = buildAssessedValues(this.state.donneesImpacts, this.state.donneesComptables, this.state.defaultData);
-   
+
     if (this.state.certificationAutorisation & coordonnees!="" & siren!="") {
       const res = await sendSimplifiedAssessment(siren,assessment,message,coordonnees,participation);
       this.setState({declarationSend: res.status<300});
@@ -306,7 +306,8 @@ function IndicatorViewMenu({selected, parent}){
           ([index,indicator],_) => (
             <button key={indicator}
                     onClick = {() => parent.setState({selectedIndicator: indicator})}
-                    className={ (indicator == selected) ? "menu-button-inverse" : "menu-button"}>
+                    className= {"menu-button " +
+                                ((indicator == selected) ? "selected" : "")}>
               {indicator.toUpperCase()}
             </button>
           ))}
@@ -366,8 +367,8 @@ function getQuality(indic,impactDirect,donneesComptables,defaultValue) {
 
   let valeurAjoutee = donneesComptables.valeurAjoutee;
   let chiffreAffaires = donneesComptables.chiffreAffaires;
-  
-  if (impactDirect!==undefined & impactDirect!=="" 
+
+  if (impactDirect!==undefined & impactDirect!==""
       & valeurAjoutee!==undefined & valeurAjoutee!==""
       & chiffreAffaires!=undefined & chiffreAffaires!==""
       & defaultValue!==undefined) {
@@ -378,11 +379,11 @@ function getQuality(indic,impactDirect,donneesComptables,defaultValue) {
     let NvaRate = getValueAddedRate(valeurAjoutee,chiffreAffaires)/100;
 
     let quality = NVAq*NvaRate + defaultValue*(1.0-NvaRate) ;
-    
+
     let qualityMax = NVAq*NvaRate*coefUp(NVAi,indic)  + defaultValue*(1.0-NvaRate)*coefUp(Ci,indic);
     let qualityMin = NVAq*NvaRate*coefDown(NVAi)      + defaultValue*(1.0-NvaRate)*coefDown(Ci);
     let uncertainty = Math.max(qualityMax-quality,quality-qualityMin)/quality*100;
-    
+
     return[Math.round(quality*getPrecision(indic))/getPrecision(indic),Math.round(uncertainty)];
   } else {
     return[undefined,undefined];
@@ -391,26 +392,26 @@ function getQuality(indic,impactDirect,donneesComptables,defaultValue) {
 
 // Quality Net Value Added
 function getQualityValueAdded(indic,impactDirect,valeurAjoutee) {
-  if        (["eco","art","soc","knw"].indexOf(indic) > -1)   { return impactDirect*100/valeurAjoutee; } 
-  else if   (["dis","geq"].indexOf(indic) > -1)               { return impactDirect; } 
+  if        (["eco","art","soc","knw"].indexOf(indic) > -1)   { return impactDirect*100/valeurAjoutee; }
+  else if   (["dis","geq"].indexOf(indic) > -1)               { return impactDirect; }
   else                                                        { return impactDirect*1000/valeurAjoutee; }
 }
 
 // Net Value Added Rate
 function getValueAddedRate(valeurAjoutee,chiffreAffaires) {
-  if    (valeurAjoutee!==undefined & chiffreAffaires!==undefined) { return Math.round(valeurAjoutee/chiffreAffaires*100) } 
+  if    (valeurAjoutee!==undefined & chiffreAffaires!==undefined) { return Math.round(valeurAjoutee/chiffreAffaires*100) }
   else                                                            { return " - " }
 }
 
 // Rounding
 function getPrecision(indic) {
-  if        (["eco","art","soc","knw","dis","geq","wat","haz"].indexOf(indic) > -1)   { return 10; } 
+  if        (["eco","art","soc","knw","dis","geq","wat","haz"].indexOf(indic) > -1)   { return 10; }
   else                                                                                { return  1; }
 }
 
 // Coef uncertainty
 function coefUp(value,indic) {
-  if (["eco","art","soc","knw","dis","geq"].indexOf(indic) > -1)  { return Math.min((100+value)/100,100); } 
+  if (["eco","art","soc","knw","dis","geq"].indexOf(indic) > -1)  { return Math.min((100+value)/100,100); }
   else                                                            { return (100+value)/100; }
 }
 function coefDown(value) {
