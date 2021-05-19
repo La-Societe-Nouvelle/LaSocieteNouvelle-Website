@@ -30,12 +30,9 @@ export default function Home({data}) {
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
       </Head>
-
       <Header/>
       <main className="main">
-
         <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
-
         <div className="strip">
           <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/modele.md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>
