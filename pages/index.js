@@ -18,9 +18,9 @@ export default function Home() {
       <main className="main">
 
         <div id="head-accueil">
-          <h2 id="head-accueil-h4" className="head-accueil-item">Base de données ouverte des impacts des entreprises</h2>
-          <h2 id="head-accueil-h2" className="head-accueil-item">Panel d'indicateurs extra-financiers</h2>
-          <h2 id="head-accueil-h3" className="head-accueil-item">Participez à une économie durable</h2>
+          <h2 className="head-accueil-item">Base de données ouverte des impacts des entreprises.</h2>
+          <h2 className="head-accueil-item-highlight">Construisons une économie durable.</h2>
+          <h2 className="head-accueil-item-highlight">Publiez vos impacts.</h2>
         </div>
 
         <div id="front-page">

@@ -12,7 +12,12 @@
   display: block;
   margin: 5px 0px;
 }
-#head-accueil-h3 {
+
+.head-accueil-item-highlight {
+  text-align: left;
+  justify-content: left;
+  display: block;
+  margin: 5px 0px;
   color: $highlight-color;
 }
 
