@@ -301,7 +301,7 @@ class Form extends React.Component {
 function IndicatorViewMenu({selected, parent}){
   return (
     <div className="menu">
-      <div id="menu-items">
+      <div className="menu-items">
         {Object.entries(indicators).map(
           ([index,indicator],_) => (
             <button key={indicator}
