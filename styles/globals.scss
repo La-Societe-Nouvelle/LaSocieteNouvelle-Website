@@ -384,7 +384,14 @@ textarea {
 }
 
 .content-md {
+  width: 95%;
+
+  @include lg{
+    width:85%;
+  }
+
   :not(pre) > code[class*="language-"], pre[class*="language-"] {
     background-color: #ffffff;
   }
+  
 }
