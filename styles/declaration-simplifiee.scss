@@ -73,13 +73,6 @@
     font-style: italic;
 }
 
-.declarationForm .menu-items {
-    display: grid;
-    grid-auto-columns: repeat(6, 1fr);
-    background-color: white;
-    width: 100%;
-  }
-
 .declarationForm .menu-button {
     color: $primary-color;
     background-color: transparent;
