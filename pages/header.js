@@ -19,8 +19,10 @@ export default class Header extends React.Component {
             <span id="text-header">L'OpenData au service de l'économie</span>
           </div>
           <hr/>
-          <div className="header-strip-item" id="header-text2">
-            Système d'Information extra-financière
+          <div className="header-strip-item" id="header-text2">Système d'Information extra-financière</div>
+          <div className="header-actions">
+            <button id="header-action-declaration" onClick={() => window.location="/publication"}>Publiez vos impacts</button>
+            <button onClick={() => window.location="/mesure-empreinte"}>Mesurez vos Impacts</button>
           </div>
         </div>
 
