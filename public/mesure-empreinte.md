@@ -8,6 +8,8 @@ Le mesure de l'Empreinte Sociétale d'une Entreprise s'effectue sur le dernier e
 * dotations aux amortissements sur immobilisations. 
 La valeur d’un indicateur correspond alors à une moyenne des valeurs pour chaque agrégat pondérée par leur montant i.e. une somme des impacts (en valeur brute) des agrégats ramenée sur le chiffre d’affaires.
 
+[*Téléchargement - Document de présentation & Informations nécessaires*](/EmpreinteSocietale_InformationsUtiles.pdf)
+
 ## DONNEES COMPTABLES
 
 L'obtention des indicateurs nécessite certaines informations comptables de l'entreprise relatives à la production (chiffre d'affaires, valeur ajoutée, etc.) et aux flux externes (factures fournisseurs, immobilisations, etc.).
