@@ -222,6 +222,7 @@ class Form extends React.Component {
       this.getLegalUnitData(event.target.value);
     } else {
       this.setState({ uniteLegaleDataLoaded: false, defaultCSFLoaded: false })
+      this.updateDefaultData('00');
     }
   }
   // Fetch legal unit data
@@ -232,10 +233,25 @@ class Form extends React.Component {
       const data = await response.json();
       if (data.header.statut===200) {
         this.setState({uniteLegaleDataLoaded: true, uniteLegaleData: data.profil })
+        this.updateDefaultData(data.profil.descriptionUniteLegale.activitePrincipale.substring(0,2));
       } else {
         this.setState({uniteLegaleDataLoaded: false })
+        this.updateDefaultData('00');
       }
     } catch(error){
+      throw error;
+    }
+  }
+  updateDefaultData = async (codeActivite) => {
+    try{
+      const endpoint = `${apiBaseUrl}/default?pays=FRA&activite=`+codeActivite+'&flow=IC';
+      const response = await fetch(endpoint, {method:'get'});
+      const data = await response.json();
+      if (data.header.statut===200) {
+        this.setState({defaultData: data.empreinteSocietale })
+      }
+    }
+    catch(error){
       throw error;
     }
   }
