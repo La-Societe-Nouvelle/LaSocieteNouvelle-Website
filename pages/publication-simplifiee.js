@@ -51,7 +51,7 @@ export default function Home(props) {
       <main className="main">
         <h1>Declaration - Procédure simplifiée</h1>
         <p>La déclaration simplifiée permet d'ajuster votre Empreinte Sociétale en déclarant vos impacts directs.</p>
-        <p>La qualité de la production disponible en France (PIB et Importations) est affectée aux charges externes. Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées, notamment sur les indicateurs environnementaux.</p>
+        <p>Les valeurs déclarées sont complétées par des données par défaut issues de statistiques macroéconomiques. Du fait de l'analyse incomplète, les incertitudes liées aux valeurs peuvent être élevées.</p>
         <Form defaultData={props.defaultData}/>
       </main>
       <Footer/>
