@@ -22,6 +22,10 @@ export default class Header extends React.Component {
           <div className="header-strip-item" id="header-text2">
             Système d'Information extra-financière
           </div>
+          <div className="header-actions">
+            <button id="header-action-declaration" onClick={() => window.location="/publication-choix"}>Publiez vos impacts</button>
+            <button onClick={() => window.location="/mesure-empreinte"}>Mesurez vos Impacts</button>
+          </div>
           {/* <hr className="hr-small-size"/> */}
         </div>
 

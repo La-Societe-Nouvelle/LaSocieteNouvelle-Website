@@ -29,6 +29,7 @@ export default function Home() {
           </p>
           <p>En compléments :</p>
           <p>
+            <a className="text-link" href="/EmpreinteSocietale_documentation_v4.pdf">Documentation v4</a><br/>
             <a className="text-link" href="modele-indicateurs">Description du Modèle</a><br/>
             <a className="text-link" href="guide">Guide méthodologique</a>
           </p>

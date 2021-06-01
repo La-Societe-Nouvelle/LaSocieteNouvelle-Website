@@ -19,10 +19,10 @@ Elles sont obtenues à partir des comptes macroéconomiques des branches économ
 
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 500 % pour les valeurs sectorielles. (Travaux en cours)
 
-**Données EUROSTAT :**  
+**Données brutes :**  
 [*Compte d'émissions atmosphériques par activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
 
-**Données INSEE :**
+**Données financières :**  
 [*Tableaux de synthèse : TES et TEE en 2019*](https://www.insee.fr/fr/statistiques/4494213)
 
 ### POUR ALLER PLUS LOIN
