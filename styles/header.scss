@@ -31,12 +31,20 @@
       display: none;
     }
 
-    @include sm {
-      width:60%
+    hr{
+      @include xs {
+        display: none;
+      }
+
+      @include sm {
+        width:60%;
+      }
+      @include lg {
+        display:none;
+      }
     }
-    @include lg {
-      display:none;
-    }
+
+    
   }
 }
 
@@ -100,24 +108,76 @@
     color: white;
   }
 
+  #menu {
+    @include xs{
+      display: block;
+      background-color: $primary-color;
+      width:100%;
 
+      * {
+        color: white;
+      }
 
-  ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width:100%;
-    padding:0 5%;
+      .dropdown-title {
+        display: block;
+        width: 100%;
+      }
 
-    :hover{
-      background-color:$secondary-color;
+      .dropdown-items{
+        display:flex;
+        flex-flow:column nowrap;
+        background-color: $primary-color;
+        min-width:100%;
+        transform: translate3d(0,0,0);
+        max-height:100vh;
+        transition: max-height 0.5s linear;
+        overflow:hidden;
+
+        &.reduced{
+          max-height:0px;
+        }
+
+        :hover{
+          background-color:$secondary-color;
+        }
+
+        a {
+          color: white;
+        }
+
+        @include xs {
+          text-align:center;
+        }
+        @include sm{
+          position:absolute;
+          top:25px;
+          left: 0px;
+          white-space: nowrap;
+
+          a {
+            justify-content: left;
+          }
+        }
+      }
     }
 
-    .active{
-      background-color:$secondary-color;
+    @include sm{
+      background-color: $primary-color;
+      width:100%;
+      .dropdown-title {
+        display: none;
+      }
+    }
 
-      span{
-      transform: rotate(540deg);
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width:100%;
+      padding:0 5%;
+
+      :hover{
+        background-color:$secondary-color;
       }
     }
 
@@ -181,19 +241,18 @@
         }
       }
 
-      .dropdown-items{
-        display:flex;
-        flex-flow:column nowrap;
-        background-color: $secondary-color;
-        min-width:100%;
-        transform: translate3d(0,0,0);
-        max-height:100vh;
-        transition: max-height 0.5s linear;
-        overflow:hidden;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        padding: 3px 5px;
+        color: white;
+      }
 
-        &.reduced{
-          max-height:0px;
-        }
+      .dropdown{
+        position:relative;
+        width:100%;
 
         :hover{
           background-color:$primary-color;
