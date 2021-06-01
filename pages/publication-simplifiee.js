@@ -82,19 +82,20 @@ class Form extends React.Component {
       uniteLegaleData: {},
 
       // ES impacts
+      counter: "0",
       donneesImpacts: {
-        art: undefined,
-        dis: undefined,
-        eco: undefined,
-        geq: undefined,
-        ghg: undefined,
-        haz: undefined,
-        knw: undefined,
-        mat: undefined,
-        nrg: undefined,
-        soc: undefined,
-        was: undefined,
-        wat: undefined,
+        art: {value:undefined,skipped:false},
+        dis: {value:undefined,skipped:false},
+        eco: {value:undefined,skipped:false},
+        geq: {value:undefined,skipped:false},
+        ghg: {value:undefined,skipped:false},
+        haz: {value:undefined,skipped:false},
+        knw: {value:undefined,skipped:false},
+        mat: {value:undefined,skipped:false},
+        nrg: {value:undefined,skipped:false},
+        soc: {value:undefined,skipped:false},
+        was: {value:undefined,skipped:false},
+        wat: {value:undefined,skipped:false}
       },
 
       // Accounting data (temp)
@@ -112,12 +113,13 @@ class Form extends React.Component {
            declarationSend,
            siren,anneeExercice,
            uniteLegaleDataLoaded,uniteLegaleData,
-           donneesImpacts,donneesComptables,
+           counter,donneesImpacts,donneesComptables,
            defaultData} = this.state;
 
-    const valueImpact = donneesImpacts[selectedIndicator]!==undefined ? donneesImpacts[selectedIndicator] : "";
+    const value = donneesImpacts[selectedIndicator].value!==undefined ? donneesImpacts[selectedIndicator].value : "";
     const reference = uniteLegaleDataLoaded ? uniteLegaleData.empreinteSocietale[selectedIndicator.toUpperCase()] : undefined; // use default Data if defaultCSF undefined
     const indicData = defaultData[selectedIndicator.toUpperCase()];
+    const skipped = donneesImpacts[selectedIndicator].skipped;
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
 
     return (
@@ -172,12 +174,14 @@ class Form extends React.Component {
             </div>
 
             <div id="indicators" className="strip">
-              <h2>Indicateurs</h2>
+              <h2>Indicateurs <IndicatorCounter counter={counter} setCounter={this.setCounter}/></h2>
               <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
               <IndicatorView indic={selectedIndicator}
                         indicData={indicData}
-                        valueImpact={valueImpact}
+                        value={value}
+                        skipped={skipped}
                         setValue={this.setValue}
+                        setSkipped={this.setSkipped}
                         donneesComptables={donneesComptables}
                         reference={reference}/>
             </div>
@@ -280,7 +284,12 @@ class Form extends React.Component {
   setValue = (event) => {
     let donneesImpacts = this.state.donneesImpacts;
     let value = parseFloat(event.target.value.replace(",","."));
-    donneesImpacts[this.state.selectedIndicator] = isNaN(value) ? undefined : value ;
+    donneesImpacts[this.state.selectedIndicator].value = isNaN(value) ? undefined : value ;
+    this.setState({donneesImpacts});
+  }
+  setSkipped = (event) => {
+    let donneesImpacts = this.state.donneesImpacts;
+    donneesImpacts[this.state.selectedIndicator].skipped = event.target.checked;
     this.setState({donneesImpacts});
   }
 
@@ -312,6 +321,14 @@ class Form extends React.Component {
 
 }
 
+/* ----- Counter Indicator ----- */
+function IndicatorCounter({counter}){
+  return (
+    <div className="counter">
+      Complété(s) : {counter}/12
+    </div>
+  );
+}
 
 /* ----- ViewMenu : Controls the selected view that must be displayed ----- */
 function IndicatorViewMenu({selected, parent}){
@@ -324,53 +341,65 @@ function IndicatorViewMenu({selected, parent}){
                     onClick = {() => parent.setState({selectedIndicator: indicator})}
                     className= {"menu-button " +
                                 ((indicator == selected) ? "selected" : "")}>
+              <span></span>
               {indicator.toUpperCase()}
+              <span className="validated"></span>
             </button>
-          ))}
+          ))
+        }
       </div>
     </div>
   );
 }
 
 /* ----- Indicator Declaration View ----- */
-function IndicatorView({indic,indicData,valueImpact,setValue,donneesComptables,reference}){
-
-    const valueAddedQuality=Math.round(getQualityValueAdded(indic,valueImpact,donneesComptables.valeurAjoutee)*10)/10;
+function IndicatorView({indic,indicData,value,skipped,setValue,setSkipped,donneesComptables,reference}){
+  let {message, disabled} = getSaveButtonProps(value,skipped)
+    const valueAddedQuality=Math.round(getQualityValueAdded(indic,value,donneesComptables.valeurAjoutee)*10)/10;
     const valueAddedUncertainty = defaultIncertitudes[indic];
-    const [revenueQuality,revenueUncertainty]=getQuality(indic,valueImpact,donneesComptables,indicData.value);
+    const [revenueQuality,revenueUncertainty]=getQuality(indic,value,donneesComptables,indicData.value);
     const valueReference = reference!==undefined ? reference.valueReference : indicData.value;
 
     return (
       <div id="indicator-view">
-        <h3>{indicData.libelle}</h3>
-        <div id="info-indicateur">
-          <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
-        </div>
-        <div className="input">
-          <label>Impact direct : </label>
-          <input type="text" value={valueImpact} onChange={setValue} />
-          <span>  {IndicData.indicateurs.unitAbsoluteCode[indic]}</span>
-        </div>
-        <div className="quality-boxes">
-          <div className="quality-box">
-            <p className="quality-title">Qualité de la Valeur Ajoutée</p>
-            <p className="quality-value">{valueAddedQuality!== undefined & !isNaN(valueAddedQuality) ? valueAddedQuality : "-"}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {valueAddedUncertainty!==undefined ? valueAddedUncertainty : "-"} %</p>
+        <a className="prev" href="#"></a>
+        <div id="indicateur-form">
+          <h3>{indicData.libelle}</h3>
+          <div id="info-indicateur">
+            <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
           </div>
-          <div className="quality-box">
-            <p className="quality-title">Qualité du Chiffre d'Affaires<br/>(Valeur publiée)</p>
-            <p id={revenueQuality!==undefined ? "declared-value" : ""} className="quality-value">{revenueQuality!==undefined ? revenueQuality : "-"}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {revenueUncertainty!==undefined ? revenueUncertainty : "-"} %</p>
+          <div className="input">
+            <label>Impact direct : </label>
+            <input type="text" value={value} onChange={setValue} />
+            <span>&nbsp;{IndicData.indicateurs.unitAbsoluteCode[indic]}</span>
           </div>
-          <div className="quality-box">
-            <p className="quality-title">Valeur comparative</p>
-            <p className="quality-value">{valueReference}</p>
-            <p>{indicData.unit}</p>
-            <p className="uncertainty">Incertitude : {defaultIncertitudes[indic]} %</p>
+          <div className="quality-boxes">
+            <div className="quality-box">
+              <p className="quality-title">Qualité de la Valeur Ajoutée</p>
+              <p className="quality-value">{valueAddedQuality!== undefined & !isNaN(valueAddedQuality) ? valueAddedQuality : "-"}</p>
+              <p>{indicData.unit}</p>
+              <p className="uncertainty">Incertitude : {valueAddedUncertainty!==undefined ? valueAddedUncertainty : "-"} %</p>
+            </div>
+            <div className="quality-box">
+              <p className="quality-title">Qualité du Chiffre d'Affaires<br/>(Valeur publiée)</p>
+              <p id={revenueQuality!==undefined ? "declared-value" : ""} className="quality-value">{revenueQuality!==undefined ? revenueQuality : "-"}</p>
+              <p>{indicData.unit}</p>
+              <p className="uncertainty">Incertitude : {revenueUncertainty!==undefined ? revenueUncertainty : "-"} %</p>
+            </div>
+            <div className="quality-box">
+              <p className="quality-title">Valeur comparative</p>
+              <p className="quality-value">{valueReference}</p>
+              <p>{indicData.unit}</p>
+              <p className="uncertainty">Incertitude : {defaultIncertitudes[indic]} %</p>
+            </div>
           </div>
+          <div className="input">
+          <input type="checkbox" id="skipped" name="skipped" checked={skipped} onChange={setSkipped}/>
+          <label htmlFor="skipped">Je n'ai pas calculé cet indicateur</label>
         </div>
+        <button id="submit-assessment" type="submit" disabled={disabled}>{message}</button>
+        </div>
+        <a className="next" href="#"></a>
       </div>
     )
 
@@ -461,4 +490,10 @@ function getMessageButton(declarationSend,siren,coordonnees) {
   else if (siren==="")        { return "Numéro de siren manquant"}
   else if (coordonnees==="")  { return "Coordonnées manquantes"}
   else                        { return "Envoyer la publication" }
+}
+
+function getSaveButtonProps(value, checked) {
+  let disabled = (!checked && (value==="")); // parse to int
+  let message = disabled ? "Remplir les données de l'indicateur ou cocher la case" : "Sauvegarder";
+  return {disabled, message};
 }
