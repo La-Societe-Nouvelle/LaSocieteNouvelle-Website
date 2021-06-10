@@ -26,7 +26,6 @@
     flex-flow: column nowrap;
   }
 
-
   hr {
     @include xs {
       display: none;
@@ -248,6 +247,10 @@
         position: relative;
         background-color: $secondary-color;
         width: 100%;
+        transform: translate3d(0,0,0);
+        max-height:100vh;
+        transition: max-height 0.5s linear;
+        overflow:hidden;
 
         :hover {
           background-color: $primary-color;
