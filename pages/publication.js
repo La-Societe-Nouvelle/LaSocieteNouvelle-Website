@@ -1,11 +1,12 @@
+import React from 'react';
+
 import Head from 'next/head'
 import Header from './header.js'
 import Footer from './footer.js'
 
-import React, {useState} from 'react';
 import EmblaCarousel from '../src/lasocietenouvelle/component/carousel.js';
 
-import {sendAssessment, sendDeclarationMail} from './api/mail-api.js'
+import {sendAssessment} from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -106,15 +107,15 @@ class Form extends React.Component {
               </div>
               <div>
                 <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
-                <p>{uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+                <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+                <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
               </div>
             </div>    
               
-            <EmblaCarousel 
+            <EmblaCarousel
+             assessmentType="final"
              assessment={assessment}
-             indicators={indicators}
-             empreinteSocietale={defaultData}
-             onIndicatorCommit={this.commitIndicator}/>
+             onIndicatorCommit={this.commitIndicator.bind(this)}/>
                 
             <div id="further-info" className="strip">
               <h2>Informations complémentaires</h2>
@@ -129,7 +130,7 @@ class Form extends React.Component {
               <div className="input" id="certification">
                 <input type="checkbox" onChange={this.onCheckboxChange} /><label htmlFor="certification">Je certifie être autorisé(e) à soumettre la déclaration ci-présente.</label>
               </div>
-              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
+              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accessibilité des données.</p>
               <div className="input" id="contribution">
                 <input type="checkbox" onChange={this.onPrixLibreChange} />
                 <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
@@ -140,7 +141,7 @@ class Form extends React.Component {
                       onChange={this.onPrixChange} />
                 <span> &nbsp;€</span>
               </div>
-              <button className="form-btn submit" id="submit-assessment" onClick={this.submitAssessment} disabled={disabled}>{getMessageButton(declarationSend,siren,coordonnees)}</button>
+              <button className="form-btn submit" id="submit-assessment" onClick={this.submitAssessment} disabled={disabled}>{getMessageButton(declarationSend,siren,coordonnees,certificationAutorisation)}</button>
             </div>
           </div>
     )
@@ -256,9 +257,10 @@ function getMessageSiren(siren,uniteLegaleDataLoaded) {
   else                                                 { return "" }
 }
 
-function getMessageButton(declarationSend,siren,coordonnees) {
+function getMessageButton(declarationSend,siren,coordonnees,autorisation) {
   if (declarationSend)        { return "Demande de publication envoyée"}
   else if (siren==="")        { return "Numéro de siren manquant"}
   else if (coordonnees==="")  { return "Coordonnées manquantes"}
+  else if (!autorisation)     { return "Autorisation manquante"}
   else                        { return "Envoyer la publication" }
 }

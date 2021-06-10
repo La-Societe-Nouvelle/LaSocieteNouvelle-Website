@@ -4,12 +4,19 @@
     width: 100%;
     margin-bottom: 100px;
 
+    label {
+        min-width: 200px;
+    }
+    input {
+        margin: 0 5px;
+        text-align: right;
+    }
     .input {
         display: flex;
         flex-direction: row;
         align-items: center;
         margin: 5px 0;
-        width: 50%;
+        //width: 50%;
 
         @include xs {
             width: 100%;
@@ -26,6 +33,7 @@
 
             border-top: solid $primary-color 1px;
             border-bottom: solid $primary-color 1px;
+            padding-bottom: 1px;
     
             .menu-items {
                 display: grid;
@@ -111,9 +119,10 @@
                             .embla__slide__inner {
                                 position: relative;
                                 overflow-x: hidden;
+                                padding: 1px;
 
                                 .indicateur-form{
-                                    align-items: center;
+                                    align-items: left;
                                     flex-direction: column;
                                     display: flex;
 
@@ -134,10 +143,11 @@
 
                                     .input {
                                         display: flex;
-                                        justify-content: space-between;
+                                        flex-direction: row;
+                                        justify-content: left;
                                         label {
-                                            width: 100%;
-                                            min-width: 50%;
+                                            //width: 100%;
+                                            min-width: 125px;
                                         } 
                                     }
                                     
@@ -191,9 +201,12 @@
             }
         }
     }
+
     .form-btn {
+
         margin: 20px 0;
         width: 100%;
+
         &:disabled{
             cursor: default;
             background-color: $highlight-color;
@@ -217,10 +230,12 @@
 }
 
 .declarationForm .quality-boxes {
+    width: 100%;
     margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-top: solid $primary-color 1px;
     border-bottom: solid $primary-color 1px;
 }
 .declarationForm .quality-box {

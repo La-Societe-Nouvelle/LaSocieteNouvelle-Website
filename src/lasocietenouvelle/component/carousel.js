@@ -1,9 +1,13 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import { useEmblaCarousel } from 'embla-carousel/react'
 
+import {IndicatorSimplifiedAssessmentView} from './indicatorSimplifiedAssessmentView'
+import {IndicatorAssessmentView} from './indicatorAssessmentView'
 
+/* Metadata for indicators */
+import {indics} from '../../../public/indic-data/data.js'
 
-const CarouselIndicators = ({indicators, empreinteSocietale,assessment, onIndicatorCommit}) => {
+const CarouselIndicators = ({assessment, assessmentType, indicatorViewProps, onIndicatorCommit}) => {
   const [emblaRef, embla] = useEmblaCarousel({
     loop: true,
     skipSnaps: false
@@ -42,14 +46,31 @@ const CarouselIndicators = ({indicators, empreinteSocietale,assessment, onIndica
   let tickedIndicators = Object.values(assessment);
   let validIndicators = tickedIndicators.filter(isValid);
 
+  const getAssessmentView = (assessmentType,indicator,indicatorViewProps,onIndicatorCommit) => {
+    switch(assessmentType) {
+      case "simplified": return(
+        <IndicatorSimplifiedAssessmentView indic={indicator} {...indicatorViewProps}
+        onCommit={(indicator,value,uncertainty,skipped) => {
+          onIndicatorCommit(indicator,value,uncertainty,skipped);
+          scrollNext();}
+        }/>)
+      default: return (
+        <IndicatorAssessmentView indic={indicator} {...indicatorViewProps}
+        onCommit={(indicator,value,uncertainty,skipped) => {
+          onIndicatorCommit(indicator,value,uncertainty,skipped);
+          scrollNext();}
+        }/>)
+    }
+  }
+
   return (
     <div id="indicators" className="strip">
       <h2>Indicateurs
-          <IndicatorCounter counter={validIndicators.length} counted={indicators.length}/>
+          <IndicatorCounter counter={validIndicators.length} counted={indics.length}/>
       </h2>
       <div className="menu" ref={thumbViewportRef}>
         <div className="menu-items">
-            {indicators.map((indicator,index) => (
+            {indics.map((indicator,index) => (
               <Thumb
                 key={index}
                 onClick={() => scrollTo(index)}
@@ -66,19 +87,11 @@ const CarouselIndicators = ({indicators, empreinteSocietale,assessment, onIndica
           <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
-                  {indicators.map(indicator =>
+                  {indics.map(indicator =>
                     (
                       <div className="embla__slide" key={indicator}>
                         <div className="embla__slide__inner">
-                          <IndicatorView
-                          indic={indicator}
-                          indicData={empreinteSocietale[indicator.toUpperCase()]}
-                          onCommit={
-                            (indicator,value,uncertainty,skipped) => {
-                              onIndicatorCommit(indicator,value,uncertainty,skipped);
-                              scrollNext();
-                            }
-                          }/>
+                          {getAssessmentView(assessmentType,indicator,indicatorViewProps,onIndicatorCommit)}
                         </div>
                       </div>
                     )
@@ -108,7 +121,7 @@ const Thumb = ({selected, onClick, indic, ticked }) => (
 function IndicatorCounter({counter, counted}){
   return (
     <div className="counter">
-      Renseigné(s) : {counter}/{counted}
+      renseigné(s) : {counter}/{counted}
     </div>
   )
 }
@@ -122,42 +135,5 @@ const PrevButton = ({onClick}) => (
 const NextButton = ({onClick}) => (
   <button className="next-btn" onClick={onClick}><span className="next-arrow"></span></button>
 );
-
-function IndicatorView({indic, indicData, onCommit}){
-  let [value, setValue] = useState("");
-  let [uncertainty, setUncertainty] = useState("");
-  let [skipped, setSkipped] = useState("");
-  const commitable = isCommitable(value,uncertainty,skipped);
-  const message = commitable ? "Sauvegarder" : "Remplir les données de l'indicateur ou cocher la case";
-  return (
-      <div className="indicateur-form">
-        <h3>{indicData.libelle}</h3>
-        <div className="info-indicateur">
-          <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
-        </div>
-        <div className="input">
-          <label>Valeur :</label>
-          <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
-          <span>&nbsp;{indicData.unit}</span>
-        </div>
-        <div className="input">
-          <label>Incertitude :</label>
-          <input type="text" value={uncertainty} onChange={(e) => setUncertainty(e.target.value)} />
-          <span>&nbsp;%</span>
-        </div>
-        <div className="input">
-          <input type="checkbox" id="skipped" name="skipped" checked={skipped} onChange={(e) => setSkipped(e.target.checked)}/>
-          <label htmlFor="skipped">Je n'ai pas calculé cet indicateur</label>
-        </div>
-        <button className="form-btn commit" id="submit-indicator" type="submit" disabled={!commitable} 
-          onClick={(e) => onCommit(indic,value,uncertainty,skipped)}>{message}
-        </button>
-      </div>    
-  )
-}
-
-function isCommitable(value, uncertainty,skipped){
-  return (skipped || (value!=="" && uncertainty!==""));
-}
 
 export default CarouselIndicators;
