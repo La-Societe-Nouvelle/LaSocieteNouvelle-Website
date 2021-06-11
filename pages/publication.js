@@ -1,10 +1,12 @@
+import React from 'react';
+
 import Head from 'next/head'
 import Header from './header.js'
 import Footer from './footer.js'
 
-import React, {useState} from 'react';
+import EmblaCarousel from '../src/lasocietenouvelle/component/carousel.js';
 
-import {sendAssessment, sendDeclarationMail} from './api/mail-api.js'
+import {sendAssessment} from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -57,9 +59,6 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // Default data
-      defaultData: props.defaultData,
-
       // general experience state
       selectedIndicator: "eco",
       message: "",
@@ -75,43 +74,26 @@ class Form extends React.Component {
       uniteLegaleData: {},
 
       // ES impacts
-      assessment: {
-        art: {value:undefined, uncertainty:undefined},
-        dis: {value:undefined, uncertainty:undefined},
-        eco: {value:undefined, uncertainty:undefined},
-        geq: {value:undefined, uncertainty:undefined},
-        ghg: {value:undefined, uncertainty:undefined},
-        haz: {value:undefined, uncertainty:undefined},
-        knw: {value:undefined, uncertainty:undefined},
-        mat: {value:undefined, uncertainty:undefined},
-        nrg: {value:undefined, uncertainty:undefined},
-        soc: {value:undefined, uncertainty:undefined},
-        was: {value:undefined, uncertainty:undefined},
-        wat: {value:undefined, uncertainty:undefined}
-      }
+      assessment: {}
     }
   }
 
   render() {
-    const {selectedIndicator,
-           message,coordonnees,certificationAutorisation,prixLibre,prix,
+    const {message,coordonnees,certificationAutorisation,prixLibre,prix,
            declarationSend,
            siren,anneeExercice,
            uniteLegaleDataLoaded,uniteLegaleData,
-           assessment,
-           defaultData} = this.state;
+           assessment} = this.state;
+    const {defaultData} = this.props;
+    
 
-    const value = assessment[selectedIndicator].value!==undefined ? assessment[selectedIndicator].value : "";
-    const uncertainty = assessment[selectedIndicator].uncertainty!==undefined ? assessment[selectedIndicator].uncertainty : "";
-    const indicData = defaultData[selectedIndicator.toUpperCase()];
-    const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
+    let disabled = (declarationSend | !certificationAutorisation);
 
     return (
           <div className="declarationForm">
-
             <div id="general-data" className="strip">
               <h2>Informations légales</h2>
-              <div className="input">
+              <div className="siren-input input">
                 <label>Numéro de siren </label>
                 <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
                 <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
@@ -125,21 +107,16 @@ class Form extends React.Component {
               </div>
               <div>
                 <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
-                <p>{uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+                <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+                <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
               </div>
-            </div>
-
-            <div id="indicators" className="strip">
-              <h2>Indicateurs</h2>
-              <IndicatorViewMenu selected={selectedIndicator} parent={this}/>
-              <IndicatorView indic={selectedIndicator}
-                        indicData={indicData}
-                        value={value}
-                        uncertainty={uncertainty}
-                        setValue={this.setValue}
-                        setUncertainty={this.setUncertainty}/>
-            </div>
-
+            </div>    
+              
+            <EmblaCarousel
+             assessmentType="final"
+             assessment={assessment}
+             onIndicatorCommit={this.commitIndicator.bind(this)}/>
+                
             <div id="further-info" className="strip">
               <h2>Informations complémentaires</h2>
               <div className="form-item">
@@ -150,12 +127,11 @@ class Form extends React.Component {
                 <label>Vos coordonnées (obligatoire)</label>
                 <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
               </div>
-              <div className="input">
-                <input type="checkbox" onChange={this.onCheckboxChange} /><p> Je certifie être autorisé(e) à soumettre la déclaration ci-présente</p>
+              <div className="input" id="certification">
+                <input type="checkbox" onChange={this.onCheckboxChange} /><label htmlFor="certification">Je certifie être autorisé(e) à soumettre la déclaration ci-présente.</label>
               </div>
-              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accéssibilités des données et des supports mis à disposition.</p>
-
-              <div className="input">
+              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accessibilité des données.</p>
+              <div className="input" id="contribution">
                 <input type="checkbox" onChange={this.onPrixLibreChange} />
                 <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
                 <input type="text"
@@ -165,12 +141,20 @@ class Form extends React.Component {
                       onChange={this.onPrixChange} />
                 <span> &nbsp;€</span>
               </div>
-
-              <button className={btnClass} id="submit-assessment" onClick={this.submitAssessment}>{getMessageButton(declarationSend,siren,coordonnees)}</button>
+              <button className="form-btn submit" id="submit-assessment" onClick={this.submitAssessment} disabled={disabled}>{getMessageButton(declarationSend,siren,coordonnees,certificationAutorisation)}</button>
             </div>
           </div>
-
     )
+  }
+
+  /* --- Submit commit --- */
+  commitIndicator = (commitedIndicator, value, uncertainty, skipped) =>
+  {
+    let assessment = this.state.assessment;
+    // When skipped : the assessment is set to an empty object (The indicator has been purposefully skipped)
+    // When fully filled : the assessment is set to a non-empty object (The indicator has been filled (data can be retrieved later))
+    assessment[commitedIndicator] = skipped ? {} : {value, uncertainty};
+    this.setState({assessment});
   }
 
   /* --- SIREN --- */
@@ -206,20 +190,6 @@ class Form extends React.Component {
     this.setState({anneeExercice: anneeExercice});
   }
 
-  /* --- Set values --- */
-  setValue = (event) => {
-    let assessment = this.state.assessment;
-    let value = parseFloat(event.target.value.replace(",","."));
-    assessment[this.state.selectedIndicator].value = isNaN(value) ? undefined : value ;
-    this.setState({assessment});
-  }
-  setUncertainty = (event) => {
-    let assessment = this.state.assessment;
-    let value = parseFloat(event.target.value.replace(",","."));
-    assessment[this.state.selectedIndicator].uncertainty = isNaN(value) ? undefined : value ;
-    this.setState({assessment});
-  }
-
   /* --- Assessment message --- */
   onMessageChange = (event) => { this.setState({message: event.target.value}) }
   onCoordonneesChange = (event) => { this.setState({coordonnees: event.target.value}) }
@@ -245,7 +215,15 @@ class Form extends React.Component {
       this.setState({declarationSend: res.status<300});
     }
   }
+}
 
+/* ----- Counter Indicator ----- */
+function IndicatorCounter({counter, counted}){
+  return (
+    <div className="counter">
+      Complété(s) : {counter}/{counted}
+    </div>
+  );
 }
 
 /* ----- ViewMenu : Controls the selected view that must be displayed ----- */
@@ -259,38 +237,15 @@ function IndicatorViewMenu({selected, parent}){
                     onClick = {() => parent.setState({selectedIndicator: indicator})}
                     className={"menu-button " +
                                ((indicator == selected) ? "selected" : "")}>
-
+              <span></span>
               {indicator.toUpperCase()}
+              <span id={"validated-" + indicator.toString()} className=""></span>
             </button>
-          ))}
+          ))
+        }
       </div>
     </div>
   );
-}
-
-/* ----- Indicator Assessment View ----- */
-function IndicatorView({indic,indicData,value,uncertainty,setValue,setUncertainty}){
-    return (
-      <div id="indicator-view">
-        <h3>{indicData.libelle}</h3>
-        <div id="info-indicateur">
-          <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
-        </div>
-
-        <div className="input">
-          <label>Valeur : </label>
-          <input type="text" value={value} onChange={setValue} />
-          <span>  {indicData.unit}</span>
-        </div>
-
-        <div className="input">
-          <label>Incertitude : </label>
-          <input type="text" value={uncertainty} onChange={setUncertainty} />
-          <span>  %</span>
-        </div>
-      </div>
-    )
-
 }
 
 /* ----- Builder message ----- */
@@ -302,9 +257,10 @@ function getMessageSiren(siren,uniteLegaleDataLoaded) {
   else                                                 { return "" }
 }
 
-function getMessageButton(declarationSend,siren,coordonnees) {
+function getMessageButton(declarationSend,siren,coordonnees,autorisation) {
   if (declarationSend)        { return "Demande de publication envoyée"}
   else if (siren==="")        { return "Numéro de siren manquant"}
   else if (coordonnees==="")  { return "Coordonnées manquantes"}
+  else if (!autorisation)     { return "Autorisation manquante"}
   else                        { return "Envoyer la publication" }
 }

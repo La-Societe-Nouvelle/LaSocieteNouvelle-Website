@@ -18,15 +18,21 @@ export default class Header extends React.Component {
             <h1 id="company-name-header">La Société Nouvelle</h1>
             <span id="text-header">L'OpenData au service de l'économie</span>
           </div>
-          <hr/>
-          <div className="header-strip-item" id="header-text2">Système d'Information extra-financière</div>
+          <hr className="hr-big-size"/>
+          <div className="header-strip-item" id="header-text2">
+            Système d'Information extra-financière
+          </div>
           <div className="header-actions">
             <button id="header-action-declaration" onClick={() => window.location="/publication-choix"}>Publiez vos impacts</button>
             <button onClick={() => window.location="/mesure-empreinte"}>Mesurez vos Impacts</button>
           </div>
+          {/* <hr className="hr-small-size"/> */}
         </div>
 
         <div id="menu">
+          <DropDown
+                title="Menu"
+                href="##">
           <ul>
             <li className="menu-item"><a href="/a-propos">A Propos</a></li>
             <li className="menu-item">
@@ -53,6 +59,7 @@ export default class Header extends React.Component {
             <li className="menu-item"><a href="/ressources">Ressources</a></li>
             <li className="menu-item"><a href="/contact">Contact</a></li>
           </ul>
+          </DropDown>
         </div>
 
       </div>

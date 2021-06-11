@@ -12,7 +12,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta property="og:site_name" content="La Société Nouvelle" />
           <meta property="og:image" content={basePath + "/resources/logo.jpg"} />
           {/* The below line must be set on a per page basis */}
