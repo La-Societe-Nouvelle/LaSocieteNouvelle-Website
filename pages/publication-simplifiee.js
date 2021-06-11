@@ -98,7 +98,11 @@ class Form extends React.Component {
     // Form button
     const btnClass = (declarationSend | !certificationAutorisation) ? "disabled" : "";
     // Props for assessment view in embla carousel
-    let indicatorViewProps = {defaultData: defaultData, donneesComptables: donneesComptables, reference: reference}
+    let indicatorViewProps = {
+      defaultData: defaultData,
+      valeurAjoutee: donneesComptables.valeurAjoutee,
+      chiffreAffaires: donneesComptables.chiffreAffaires,
+      reference: reference}
 
     return (
           <div className="declarationForm">
@@ -157,7 +161,6 @@ class Form extends React.Component {
               assessmentType="simplified"
               assessment={assessment}
               indicatorViewProps={indicatorViewProps}
-              empreinteSocietale={defaultData}
               onIndicatorCommit={this.commitIndicator.bind(this)}/>
 
             <div id="further-info" className="strip">
@@ -280,7 +283,6 @@ class Form extends React.Component {
     // When skipped : the assessment is set to an empty object (The indicator has been purposefully skipped)
     // When fully filled : the assessment is set to a non-empty object (The indicator has been filled (data can be retrieved later))
     assessment[commitedIndicator] = skipped ? {} : {value, uncertainty};
-    console.log(assessment);
     this.setState({assessment});
   }
 
