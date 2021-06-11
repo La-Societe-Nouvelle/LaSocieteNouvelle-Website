@@ -1,4 +1,6 @@
 
+export const indics = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
+
 export const indicateurs = {
     code: {
         art: 'ART',
@@ -70,6 +72,20 @@ export const indicateurs = {
         was: 'En gramme par euro (g/€)',
         wat: 'En litre par euro (L/€)'
     },
+    unitCode: {
+        art: '%',
+        dis: '/100',
+        eco: '%',
+        geq: '%',
+        ghg: 'gCO2e/€',
+        haz: 'g/€',
+        knw: '%',
+        mat: 'g/€',
+        nrg: 'kJ/€',
+        soc: '%',
+        was: 'g/€',
+        wat: 'L/€'
+    },
     unitAbsoluteCode: {
         art: '€',
         dis: '/100',
@@ -96,7 +112,21 @@ export const indicateurs = {
         nrg: 50,
         soc: 0,
         was: 50,
-        wat: 50
+        wat: 25
+    },
+    descriptionImpactDirect: {
+        art: 'Valeur ajoutée correspondante à des activites artisanales',
+        dis: 'Indice de GINI des taux horaires bruts',
+        eco: 'Valeur ajoutée produite en France',
+        geq: 'Ecart de rémunération femmes/hommes',
+        ghg: 'Emissions directes de gaz à effet de serre',
+        haz: 'Quantité utilisée de produits dangereux',
+        knw: 'Rémunérations liées à des activités de recherche ou de formation',
+        mat: 'Quantité extraite de matières premières',
+        nrg: 'Quantité consommée d\'énergie',
+        soc: 'Valeur ajoutée si entreprise de l\'ESS ou ayant une raison d\'être définie dans les statuts, zéro sinon',
+        was: 'Quantité produite de déchets',
+        wat: 'Quantité consommée d\'eau'
     }
     
 }

@@ -4,64 +4,220 @@
     width: 100%;
     margin-bottom: 100px;
 
+    label {
+        min-width: 200px;
+    }
+    input {
+        margin: 0 5px;
+        text-align: right;
+    }
     .input {
         display: flex;
         flex-direction: row;
         align-items: center;
         margin: 5px 0;
+        //width: 50%;
 
-
-        p, label{
-        margin: 0 5px;
-        min-width: 200px;
+        @include xs {
+            width: 100%;
         }
     }
 
-    input {
-        text-align: right;
-    }
+    #indicators {
+        h2 {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .menu {
+        .menu {
 
-        border-top: solid $primary-color 1px;
-        border-bottom: solid $primary-color 1px;
+            border-top: solid $primary-color 1px;
+            border-bottom: solid $primary-color 1px;
+            padding-bottom: 1px;
+    
+            .menu-items {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                background-color: white;
+                width: 100%;
+            
+                .menu-button {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width:unset;
+                    background-color: transparent;
+                    color: $primary-color;
+                    
+                    :hover {
+                        color: white;
+                        background-color: $secondary-color;
+                      }
+                    
+                    &.menu-button-inverse {
+                        color: white;
+                        background-color: $primary-color;
+                      }
+                    
 
-        .menu-items {
+                    .ticked {
+                        display: flex;
+                        width: 10px;
+                        height: 10px;
+                        clip-path: polygon(1% 52%, 18% 32%, 38% 50%, 72% 0, 100% 0, 40% 85%);
+                        background-color:$primary-color;
+                    }
+                    &:not(.selected):hover {
+                        color: white;
+                        background-color: $secondary-color;
+
+                        .validated {
+                            background-color:white; 
+                        }
+                    }
+                    &.selected {
+                        color: white;
+                        background-color: $primary-color;
+
+                        .validated {
+                            background-color:white; 
+                        }
+                    }
+                }
+            }
+        }
+
+        #indicator-view {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            background-color: white;
-            width: 100%;
-        }
-        .menu-button {
-            width:unset;
-            color: $primary-color;
-            background-color: transparent;
-        }
-        .menu-button:not(.selected):hover {
-            color: white;
-            background-color: $secondary-color;
-        }
-        .menu-button.selected {
-            color: white;
-            background-color: $primary-color;
-        }
-    }
+            grid-template-columns: 1fr 8fr 1fr;
+            align-items: center;
+            justify-items: center;
+            
+            .embla {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                overflow-x: hidden;
+                
+                .embla__viewport {
+                    overflow-x: hidden;
+                    width: 100%;
 
-    #indicator-view {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+                    .embla__container {
+                        display: flex;
+                        user-select: none;
+                        -webkit-touch-callout: none;
+                        -khtml-user-select: none;
+                        -webkit-tap-highlight-color: transparent;
+                        width:100%;
 
-        #info-indicateur {
-            text-align: left;
-            width: 100%;
-            a {
-                font-style: italic;
+                        .embla__slide {
+                            position: relative;
+                            min-width:100%;
+
+                            .embla__slide__inner {
+                                position: relative;
+                                overflow-x: hidden;
+                                padding: 1px;
+
+                                .indicateur-form{
+                                    align-items: left;
+                                    flex-direction: column;
+                                    display: flex;
+
+                                    h3 {
+                                       text-align:center;
+                                    }
+                        
+                                    .info-indicateur {
+                                        a {
+                                            text-decoration: underline;
+                                            font-style: italic;
+                                        }
+                                        padding-bottom: 2%;
+                                        :hover{
+                                            color: $secondary-color
+                                        }
+                                    }
+
+                                    .input {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: left;
+                                        label {
+                                            //width: 100%;
+                                            min-width: 125px;
+                                        } 
+                                    }
+                                    
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .embla__viewport.is-draggable {
+                    cursor: move;
+                    cursor: grab;
+                }
+              
+                .embla__viewport.is-dragging {
+                    cursor: grabbing;
+                }
+            }
+    
+            .prev-btn{
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background-color: transparent;
+
+                .prev-arrow{
+                    display: block;
+                    clip-path: polygon(66% 0, 58% 0%, 33% 50%, 58% 100%, 66% 100%, 41% 50%);
+                    background-color: $primary-color;
+                    width: 100%;
+                    height: 70px;
+                }
+            }
+    
+            .next-btn{
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background-color: transparent;
+
+                .next-arrow{
+                    display: block;
+                    clip-path: polygon(33% 0, 41% 0, 66% 50%, 41% 100%, 33% 100%, 58% 50%);
+                    background-color: $primary-color;
+                    width: 100%;
+                    height: 70px;
+                }
             }
         }
     }
 
+    .form-btn {
 
+        margin: 20px 0;
+        width: 100%;
+
+        &:disabled{
+            cursor: default;
+            background-color: $highlight-color;
+            color: white;
+            border: solid $highlight-color 1px;
+        }
+        &:not(:disabled){
+            cursor: pointer;
+        }
+    }
+    
 }
 
 .declarationForm #general-data {
@@ -73,40 +229,13 @@
     font-style: italic;
 }
 
-.declarationForm .menu-button {
-    color: $primary-color;
-    background-color: transparent;
-  }
-
-.declarationForm .menu-button:hover {
-    color: white;
-    background-color: $secondary-color;
-  }
-
-.declarationForm .menu-button-inverse {
-    color: white;
-    background-color: $primary-color;
-  }
-
-.declarationForm #indicator-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.declarationForm #indicator-view .input {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
 .declarationForm .quality-boxes {
+    width: 100%;
     margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
+    border-top: solid $primary-color 1px;
     border-bottom: solid $primary-color 1px;
 }
 .declarationForm .quality-box {
@@ -137,19 +266,10 @@
     font-size: 12px;
 }
 
-#submit-assessment {
-    margin: 20px 0;
-    width: 100%;
-}
-#submit-assessment.disabled {
-    background-color: white;
-    color: $primary-color;
-    border: solid $primary-color 1px;
-  }
-
 #indicators-assessments {
     margin-left: 20px;
 }
+
 #assessment {
     justify-content: left;
 }
