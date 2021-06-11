@@ -12,23 +12,41 @@ const defaultIncertitudesNVA = {
 
 export class IndicatorSimplifiedAssessmentView extends React.Component {
   
-    constructor(props) {
-      super(props);
-      this.state = {
-        value: "",
-        uncertainty: "",
-        skipped: "",
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+      uncertainty: "",
+      skipped: "",
+    }
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps.valeurAjoutee !== this.props.valeurAjoutee | prevProps.chiffreAffaires !== this.props.chiffreAffaires) {
+      if (this.state.value!=="" & !this.state.skipped) {
+        let indic = this.props.indic;
+        let [value,uncertainty] = getQuality(indic,this.state.value,this.state.uncertainty,this.props.valeurAjoutee,this.props.chiffreAffaires,this.props.defaultData[indic.toUpperCase()].value);
+        this.props.onUpdate(
+            indic,
+            value,
+            uncertainty,
+            this.state.skipped);
       }
     }
-  
+  }
+
   render() {
     
     const {value,uncertainty,skipped} = this.state;
-    const {indic,defaultData,donneesComptables,reference} = this.props;
+    const {indic,defaultData,valeurAjoutee,chiffreAffaires,reference} = this.props;
 
     let {message, disabled} = getSaveButtonProps(value,skipped)
-    const valueAddedQuality = Math.round(getQualityValueAdded(indic,value,donneesComptables.valeurAjoutee)*10)/10;
-    const [revenueQuality,revenueUncertainty] = getQuality(indic,value,uncertainty,donneesComptables,defaultData[indic.toUpperCase()].value);
+    const valueAddedQuality = Math.round(getQualityValueAdded(indic,value,valeurAjoutee)*10)/10;
+    const [revenueQuality,revenueUncertainty] = getQuality(indic,value,uncertainty,valeurAjoutee,chiffreAffaires,defaultData[indic.toUpperCase()].value);
+
+    let isFinancialDataSet = (
+      valeurAjoutee!==undefined & valeurAjoutee!=="" & valeurAjoutee!==null
+      & chiffreAffaires!=undefined & chiffreAffaires!=="" & chiffreAffaires!==null);
 
     return (
       <div className="indicateur-form">
@@ -100,8 +118,8 @@ export class IndicatorSimplifiedAssessmentView extends React.Component {
   }
 
   onCommit = (event) => {
-    let {indic,donneesComptables,defaultData} = this.props;
-    let [value,uncertainty] = getQuality(indic,this.state.value,this.state.uncertainty,donneesComptables,defaultData[indic.toUpperCase()].value);
+    let {indic,valeurAjoutee,chiffreAffaires,defaultData} = this.props;
+    let [value,uncertainty] = getQuality(indic,this.state.value,this.state.uncertainty,valeurAjoutee,chiffreAffaires,defaultData[indic.toUpperCase()].value);
     this.props.onCommit(
         indic,
         value,
@@ -114,10 +132,7 @@ export class IndicatorSimplifiedAssessmentView extends React.Component {
 /* ----- Formulas ----- */
 
 // Quality & Uncertainty
-function getQuality(indic,impactDirect,assessmentUncertainty,donneesComptables,defaultValue) {
-
-  let valeurAjoutee = donneesComptables.valeurAjoutee;
-  let chiffreAffaires = donneesComptables.chiffreAffaires;
+function getQuality(indic,impactDirect,assessmentUncertainty,valeurAjoutee,chiffreAffaires,defaultValue) {
 
   if (impactDirect!==undefined & impactDirect!=="" & impactDirect!==null
       & valeurAjoutee!==undefined & valeurAjoutee!=="" & valeurAjoutee!==null
@@ -134,9 +149,6 @@ function getQuality(indic,impactDirect,assessmentUncertainty,donneesComptables,d
     let qualityMax = NvaRate*valueUp(NVAq*coefUp(NVAi)) + (1.0-NvaRate)*valueUp(defaultValue*coefUp(Ci),indic);
     let qualityMin = NvaRate*valueDown(NVAq*coefDown(NVAi)) + (1.0-NvaRate)*valueDown(defaultValue*coefDown(Ci));
     let uncertainty = Math.max(qualityMax-quality,quality-qualityMin)/quality*100;
-    console.log("new") 
-    console.log(NVAi) 
-    console.log(coefUp(NVAi)); console.log(coefDown(NVAi)); console.log(uncertainty);
     return[Math.round(quality*getPrecision(indic))/getPrecision(indic),Math.round(uncertainty)];
   } else {
     return[undefined,undefined];
@@ -181,8 +193,6 @@ function valueUp(value,indic) {
 function valueDown(value) {
   return Math.max(value,0);
 }
-
-
 
 function getSaveButtonProps(value, checked) {
   let disabled = (!checked && (value==="")); // parse to int

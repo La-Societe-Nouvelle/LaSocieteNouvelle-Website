@@ -53,6 +53,9 @@ const CarouselIndicators = ({assessment, assessmentType, indicatorViewProps, onI
         onCommit={(indicator,value,uncertainty,skipped) => {
           onIndicatorCommit(indicator,value,uncertainty,skipped);
           scrollNext();}
+        }
+        onUpdate={(indicator,value,uncertainty,skipped) => {
+          onIndicatorCommit(indicator,value,uncertainty,skipped);}
         }/>)
       default: return (
         <IndicatorAssessmentView indic={indicator} {...indicatorViewProps}
