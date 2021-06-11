@@ -20,6 +20,8 @@
 
         @include xs {
             width: 100%;
+            flex-direction: column;
+            text-align: center;
         }
     }
 
@@ -149,6 +151,11 @@
                                             //width: 100%;
                                             min-width: 125px;
                                         } 
+
+                                        @include xs {
+                                            flex-direction: column;
+                                            text-align: center;
+                                        }
                                     }
                                     
                                     
@@ -216,6 +223,10 @@
         &:not(:disabled){
             cursor: pointer;
         }
+
+        @include xs {
+            height: auto;
+        }
     }
     
 }
@@ -237,6 +248,12 @@
     justify-content: space-around;
     border-top: solid $primary-color 1px;
     border-bottom: solid $primary-color 1px;
+
+    @include xs {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
 }
 .declarationForm .quality-box {
     display: flex;
@@ -245,15 +262,30 @@
     align-items: center;
     margin-bottom: 20px;
     height: 200px;
+
+    @include xs {
+        height: auto;
+        margin-bottom: 5px;
+    }
 }
 .declarationForm .quality-title {
     min-height: 50px;
+
+    @include xs {
+        min-height: auto;
+        padding: 10px 0;
+    }
 }
 .declarationForm .quality-value {
     padding: 20px 10px;
     min-width: 150px;
     font-size: 30px;
     font-weight: bold;
+
+    @include xs {
+        font-size: 25px;
+        padding: 10px 5px;
+    }
 }
 .declarationForm #declared-value {
     border: solid $primary-color 1px;
