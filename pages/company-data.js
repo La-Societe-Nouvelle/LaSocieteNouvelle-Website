@@ -155,7 +155,7 @@ function ESEViewMenu({selected, selector, views}){
           ([viewKey,viewValue],_) => (
             <button key={viewKey}
                     onClick = {() => selector(viewKey)}
-                    className={ (viewKey == selected) ? "sfp-menu-button-inverse" : "sfp-menu-button"}>
+                    className={ (viewKey == selected) ? "sfp-menu-button inverse" : "sfp-menu-button"}>
               {viewValue.name}
             </button>
           ))}
@@ -185,39 +185,106 @@ function IndicatorDetails
   return (
     <div key={code} className="VueIndicateur">
       <h4 id="indic-view-label">{libelle}</h4>
-      <ColumnChart title={libelle} viewWindow={viewWindow}
+      <TypeChart title={libelle} viewWindow={viewWindow} unit={unit}
                 performance={displayedValue} reference={displayedValueReference}/>
       <p id={valueDeclared ? "indic-value" : "indic-value-default"}>{Math.round(displayedValue)} {unit}</p>
+      <p className="indic-subdata reference">Valeur de référence : {Math.round(valueReference)} {unit}</p>
       <p className="indic-subdata">Source : {libelleFlag}</p>
       <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
       <p className="indic-subdata">Dernière mise à jour : {year}</p>
-      <p className="indic-subdata">Valeur de référence : {Math.round(valueReference)} {unit}</p>
     </div>
   );
 }
 
-function ColumnChart({title, performance, reference, viewWindow = {}}) {
-  return (
-    <div align="center">
-      <Chart
-        width={"80%"}
-        height={"150px"}
-        chartType="ColumnChart"
-        loader={<div>Chargement</div>}
-        data={
-          (performance != NaN && reference != NaN && title)
-            ? [
-              ["", title, { role: "style" }],
-              ["Valeur comparative", reference, "#B0B0B0"],
-              ["Unité légale", performance, "#616161"],
-            ]
-          : []}
-        options={{
-          legend: {position: 'none'},
-          vAxis: {viewWindow: viewWindow, viewWindowMode: "explicit"},
-          enableInteractivity: false,
-          animation:{duration:600, easing:"inAndOut"}
-        }}
-      />
-    </div>)
+function TypeChart({title, performance,unit ,reference, viewWindow = {}}) {
+
+  let WeightPie = "200px"
+  if (unit == "%") {
+    return (
+      <div className="pie" align="center" >
+        <div className="value">
+          <Chart
+            width={"100%"}
+            height={"200px"}
+            chartType="PieChart"
+            loader={<div>Chargement</div>}
+            data={
+              (performance != NaN && reference != NaN && title)
+                ? [
+                  ["", title],
+                  ["Unité légale", performance],
+                  ["", 100-performance],
+                ]
+              : []}
+            options={{
+              legend: {position: 'none'},
+              enableInteractivity: true,
+              animation:{duration:600, easing:"inAndOut"},
+              pieSliceText: 'none',
+              slices: {
+                0: { color: '#8B0000'},
+                1: { color: '#dddddd'}
+              },
+              backgroundColor: {fill:'transparent'},
+              pieSliceBorderColor: 'transparetn',
+              pieStartAngle: 0,
+            }}
+          />
+        </div>
+        <div className="reference">
+          <Chart
+            width={"100%"}
+            height={"200px"}
+            chartType="PieChart"
+            loader={<div>Chargement</div>}
+            data={
+              (performance != NaN && reference != NaN && title)
+                ? [
+                  ["", title],
+                  ["Unité légale", reference],
+                  ["", 100-reference],
+                ]
+              : []}
+            options={{
+              legend: {position: 'none'},
+              enableInteractivity: true,
+              animation:{duration:600, easing:"inAndOut"},
+              pieSliceText: 'none',
+              slices: {
+                0: { color: '#616161'},
+                1: { color: 'white'}
+              },
+              backgroundColor: {fill:'transparent'},
+              pieSliceBorderColor: 'white',
+              pieStartAngle: 0,
+              pieHole: 0.85,
+            }}
+          />
+        </div>
+      </div>)
+  } else {
+      return (
+        <div className="column" align="center">
+          <Chart
+            width={"100%"}
+            height={"200px"}
+            chartType="ColumnChart"
+            loader={<div>Chargement</div>}
+            data={
+              (performance != NaN && reference != NaN && title)
+                ? [
+                  ["", title, { role: "style" }],
+                  ["Unité légale", performance, "#8B0000"],
+                  ["Valeur comparative", reference, "#818181"],
+                ]
+              : []}
+            options={{
+              legend: {position: 'none'},
+              vAxis: {viewWindow: viewWindow, viewWindowMode: "explicit"},
+              enableInteractivity: false,
+              animation:{duration:600, easing:"inAndOut"}
+            }}
+          />
+        </div>)
+  }
 }
