@@ -27,7 +27,7 @@
     align-items: stretch;
     justify-content: space-between;
     text-align: justify;
-    
+
     .sfp-menu-button {
       flex-grow: 1;
       padding: 5px 25px 5px 25px;
@@ -36,14 +36,16 @@
       border-top: 0;
       border-bottom: 0;
       border-left: solid $primary-color 1px;
+      height: max-content;
+
+      &:hover {
+        color: white;
+        background-color: $secondary-color;
+      }
+
     }
-    
-    .sfp-menu-button:hover {
-      color: white;
-      background-color: $secondary-color;
-    }
-    
-    .sfp-menu-button-inverse {
+
+    .inverse {
       flex-grow: 1;
       padding: 5px 25px 5px 25px;
       color: white;
@@ -52,6 +54,8 @@
       border-bottom: 0;
       border-left: solid $primary-color 1px;
     }
+    
+    
   }
 }
 
@@ -89,7 +93,7 @@
         }
         .reference{
             position : absolute;
-            z-index: 0;
+            z-index: 1;
             width: 100%;
             background-color: transparent;
             left: 0.5px;

@@ -155,7 +155,7 @@ function ESEViewMenu({selected, selector, views}){
           ([viewKey,viewValue],_) => (
             <button key={viewKey}
                     onClick = {() => selector(viewKey)}
-                    className={ (viewKey == selected) ? "sfp-menu-button-inverse" : "sfp-menu-button"}>
+                    className={ (viewKey == selected) ? "sfp-menu-button inverse" : "sfp-menu-button"}>
               {viewValue.name}
             </button>
           ))}
@@ -197,12 +197,14 @@ function IndicatorDetails
 }
 
 function TypeChart({title, performance,unit ,reference, viewWindow = {}}) {
+
+  let WeightPie = "200px"
   if (unit == "%") {
     return (
       <div className="pie" align="center" >
         <div className="value">
           <Chart
-            width={"80%"}
+            width={"100%"}
             height={"200px"}
             chartType="PieChart"
             loader={<div>Chargement</div>}
@@ -224,7 +226,7 @@ function TypeChart({title, performance,unit ,reference, viewWindow = {}}) {
                 1: { color: '#dddddd'}
               },
               backgroundColor: {fill:'transparent'},
-              pieSliceBorderColor: '#8B0000',
+              pieSliceBorderColor: 'transparetn',
               pieStartAngle: 0,
             }}
           />
@@ -250,10 +252,10 @@ function TypeChart({title, performance,unit ,reference, viewWindow = {}}) {
               pieSliceText: 'none',
               slices: {
                 0: { color: '#616161'},
-                1: { color: 'transparent'}
+                1: { color: 'white'}
               },
               backgroundColor: {fill:'transparent'},
-              pieSliceBorderColor: 'transparent',
+              pieSliceBorderColor: 'white',
               pieStartAngle: 0,
               pieHole: 0.85,
             }}
