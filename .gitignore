@@ -37,3 +37,4 @@ yarn-error.log*
 #Editors
 /nbproject/
 .projectile
+.vscode/settings.json
