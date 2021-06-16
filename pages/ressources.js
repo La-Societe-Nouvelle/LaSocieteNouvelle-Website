@@ -32,14 +32,6 @@ export default function Home() {
           <a href="/Tableur-Indicateurs-RH.xlsx" download>Lien de téléchargement</a>
         </div>
 
-        <div className="strip">
-          <h2>METRIZ</h2>
-          <p>Application pour la mesure des indicateurs.</p>
-          <a href="LaSocieteNouvelle-METRIZ-1.1.exe" download>Lien de téléchargement</a>
-          <p><a href="https://github.com/SylvainH-LSN/LaSocieteNouvelle-METRIZ/blob/master/DOCUMENTATION.md" target="_blank">Lien vers la documentation (en cours)</a></p>
-          <p><a href="https://github.com/SylvainH-LSN/LaSocieteNouvelle-METRIZ" target="_blank">Lien vers le code source</a></p>
-        </div>
-
       </main>
 
       <Footer/>
