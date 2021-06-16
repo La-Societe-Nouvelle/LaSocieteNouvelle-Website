@@ -19,7 +19,7 @@ export class IndicatorAssessmentView extends React.Component {
     const {indic} = this.props;
 
     const commitable = isCommitable(value,uncertainty,skipped);
-    const message = commitable ? "Sauvegarder" : "Remplir les données de l'indicateur ou cocher la case";
+    const message = commitable ? "Sauvegarder" : "Remplir les données de l'indicateur (valeur et incertitude) ou cocher la case";
   
     return (
       <div className="indicateur-form">
