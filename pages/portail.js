@@ -26,7 +26,7 @@ export default function Home() {
           </h2>
           <p>Retrouvez les indicateurs de l'Empreinte Sociétale pour l'ensemble des entreprises françaises.</p>
           <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
-          <p>La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 07/06/2021).</p>
+          <p>La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 02/07/2021).</p>
           <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
         </div>
 
