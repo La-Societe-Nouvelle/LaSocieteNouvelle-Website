@@ -1,13 +1,18 @@
 import Head from 'next/head'
+// Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+// API
 import {sendContactMail} from '../pages/api/mail-api.js'
+// Modules
+import React from 'react';
 
-var React = require('react');
 
 export default function Home() {
+
   return (
     <div className="container">
+
       <Head>
         <title>La Société Nouvelle</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -16,13 +21,8 @@ export default function Home() {
       <Header/>
 
       <main className="main">
-
-        <h1>
-        Formulaire de contact
-        </h1>
-
+        <h1>Formulaire de contact</h1>
         <ContactForm />
-
       </main>
 
       <Footer/>
@@ -51,21 +51,15 @@ class ContactForm extends React.Component {
       <div id="strip-form" className="strip">
           <div className="form">
             <div className="form-item">
-              <label>
-              Objet
-              </label>
+              <label>Objet</label>
               <input id="objet-input" type="text" value={objet} onChange={this.onObjetChange} />
             </div>
             <div className="form-item">
-              <label>
-              Message
-              </label>
+              <label>Message</label>
               <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
             </div>
             <div className="form-item">
-              <label>
-              Vos coordonnées
-              </label>
+              <label>Vos coordonnées</label>
               <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
             </div>
             <button className={btnClass} id="submit-form" onClick={this.submitContactForm}>{formButtontext}</button>

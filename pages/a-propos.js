@@ -3,8 +3,10 @@ import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
 export default function Home() {
+  
   return (
     <div className="container">
+      
       <Head>
         <title>La Société Nouvelle | A propos</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -81,7 +83,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="strip-ecosystem" className="strip">
+        <div className="strip" id="strip-ecosystem">
           <p id="ecosystem-label">Ecosystème - La Société Nouvelle</p>
           <div className="ecosystem-list-logo">
             <img src="/resources/mif-logo.png" alt="logo"/>

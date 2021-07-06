@@ -1,11 +1,14 @@
 import Head from 'next/head'
+// Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+// Modules
 import React from 'react';
 
 export default function Home() {
   return (
     <div className="container">
+
       <Head>
         <title>La Société Nouvelle | Portail</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -14,23 +17,15 @@ export default function Home() {
       <Header/>
 
       <main className="main">
-
-        <h1>
-        Portail d'accès aux données
-        </h1>
-
+        <h1>Portail d'accès aux données</h1>
         <div id="portail-informations" className="strip">
-          <h2>
-          Informations
-          </h2>
+          <h2>Informations</h2>
           <p>Retrouvez les indicateurs de l'Empreinte Sociétale pour l'ensemble des entreprises françaises.</p>
           <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
           <p>La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 07/06/2021).</p>
           <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
         </div>
-
         <PortailView/>
-
       </main>
 
       <Footer/>

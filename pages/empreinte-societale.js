@@ -6,6 +6,7 @@ import Footer from '../src/components/footer'
 export default function Home() {
   return (
     <div className="container">
+
       <Head>
         <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
         <link rel="icon" href="/resources/logo_miniature.jpg" />
@@ -21,13 +22,12 @@ export default function Home() {
           <h2>Introduction</h2>
           <p>L’Empreinte Sociétale de l’Entreprise (ESE) est un panel d'indicateurs extra-financiers associés au chiffre d'affaires des entreprises.  Il informe sur les externalités sociales et environnementales liées à la production des biens et/ou services vendus par l'entreprise. Les indicateurs prennent en compte les activités propres de l'entreprise (valeur ajoutée nette), mais également les consommations (achats et autres charges externes) et les immobilisations. La mesure des impacts indirects s'appuie sur les données publiées des entreprises sollicitées.</p>
           <p>Le modèle des indicateurs repose sur l'association des externalités à la valeur économique créée. Il permet une intégration directe au sein de la comptabilité des entreprises et une traçabilité le long des chaînes de valeur. Il offre ainsi une solution efficace et opérationnelle pour la mise en place d'une comptabilité sociale et environnementale et la mobilisation des entreprises sur les grands enjeux sociétaux. Enfin, les données produites donnent à chaque entreprise la capacité de mesurer les impacts liés à leur production, de les suivre, pour finalement améliorer la qualité de leur chiffre d'affaires.</p>
-          <p>Ainsi, l’usage de l’ESE est triple :
+          <p>Ainsi, l’usage de l’ESE est triple :</p>
             <ul>
               <li>Elément d’information comparable sur la performance sociale et environnementale d’une entreprise ;</li>
               <li>Outil de pilotage interne de cette performance ;</li>
               <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
             </ul>
-          </p>
           <p>En compléments :</p>
           <p>
             <a className="text-link" href="/EmpreinteSocietale_documentation_v4.pdf">Documentation v4</a><br/>
@@ -86,7 +86,9 @@ export default function Home() {
         </div>
 
       </main>
+
       <Footer/>
+      
     </div>
   )
 }
