@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../pages/header.js'
-import Footer from '../pages/footer.js'
+import Header from '../src/components/header'
+import Footer from '../src/components/footer'
 
 var React = require('react');
 

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from './header.js'
-import Footer from './footer.js'
+import Header from '../src/components/header.js'
+import Footer from '../src/components/footer.js'
 
 export default function Home() {
   return (

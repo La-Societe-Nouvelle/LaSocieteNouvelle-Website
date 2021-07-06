@@ -1,5 +1,5 @@
 var React = require('react');
-import {DropDown} from "../src/lasocietenouvelle/component/dropdown.js";
+import {DropDown} from "./dropdown";
 
 
 export default class Header extends React.Component {
