@@ -5,7 +5,7 @@ import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
 import {sendSimplifiedAssessment} from './api/mail-api.js'
-import EmblaCarousel from '../src/lasocietenouvelle/component/carousel.js';
+import EmblaCarousel from '../src/components/carousel';
 
 /* The base URL of the API */
 const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";

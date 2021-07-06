@@ -5,7 +5,7 @@ import {IndicatorSimplifiedAssessmentView} from './indicatorSimplifiedAssessment
 import {IndicatorAssessmentView} from './indicatorAssessmentView'
 
 /* Metadata for indicators */
-import {indics} from '../../../public/indic-data/data.js'
+import {indics} from '../../public/indic-data/data'
 
 const CarouselIndicators = ({assessment, assessmentType, indicatorViewProps, onIndicatorCommit}) => {
   const [emblaRef, embla] = useEmblaCarousel({

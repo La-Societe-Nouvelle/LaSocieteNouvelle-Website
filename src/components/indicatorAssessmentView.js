@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as IndicData from '../../../public/indic-data/data.js'
+import * as IndicData from '../../public/indic-data/data'
 
 export class IndicatorAssessmentView extends React.Component {
 

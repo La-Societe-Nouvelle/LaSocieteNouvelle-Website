@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
-import EmblaCarousel from '../src/lasocietenouvelle/component/carousel.js';
+import EmblaCarousel from '../src/components/carousel.js';
 
 import {sendAssessment} from './api/mail-api.js'
 
