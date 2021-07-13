@@ -28,7 +28,7 @@ export default function Home() {
             <li id="declaration-simplifiee" className="services-item">
               <h3>Déclaration simplifiée</h3>
               <p>Ajustez les valeurs de l'Empreinte Sociétale de votre entreprise en publiant vos impacts directs.</p>
-              <p>Démarche simple et rapide. Les incertitudes liées aux valeurs peuvent cependant être élevées en raion de l'analyse incomplète, notamment sur les indicateurs environnementaux.</p>
+              <p>Démarche simple et rapide. Les incertitudes liées aux valeurs peuvent cependant être élevées en raison de l'analyse incomplète, notamment sur les indicateurs environnementaux.</p>
               <p>Le coût de la formalité de publication est libre.</p>
               <a href="/publication-simplifiee" className="button">Formulaire de déclaration</a>
             </li>
