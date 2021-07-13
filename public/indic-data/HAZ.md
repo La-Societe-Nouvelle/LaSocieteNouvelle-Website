@@ -12,7 +12,7 @@ Les dangers considérés sont :
 
 ### DONNEES PAR DEFAUT
 
-Les données disponibles se limite à l’intensité d’utilisation de produits dangereux à l’échelle de la production intérieure européenne. Elle est affectée à l’ensemble des unités légales.
+Les données disponibles se limitent à l’intensité d’utilisation de produits dangereux à l’échelle de la production intérieure européenne. Elle est affectée à l’ensemble des unités légales.
 
 L’intervalle de confiance associé à l’utilisation de la valeur est à 1000 %.
 
@@ -53,4 +53,4 @@ L’intervalle de confiance associé à l’utilisation de la valeur est à 1000
 
 **Objectif :** Intensité < 4.8 g/€ d’ici 2030 
 
-L’objectif est fixé par La Société Nouvelle. Il s'inscrit dans une trajectoire visant une intensité inférieure à 0.4 g/€ d'ici 2050, équivalente à une utilisation de 10 Mt de produits dangereux à l'échelle européenne.
+L’objectif est fixé par La Société Nouvelle. Il s'inscrit dans une trajectoire visant une intensité inférieure à 0.4 g/€ d'ici 2050, équivalente à une utilisation de 10 Mt/an de produits dangereux à l'échelle européenne.
