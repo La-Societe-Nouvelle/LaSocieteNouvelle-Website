@@ -35,7 +35,7 @@ L’intervalle de confiance est de 50 %.
     <div id="block-2">
     <p id="titre-block">objectif 2021</p>
     <p id="value-block">13.7</p>
-    <p id="unit-block">/100</p>
+    <p id="unit-block">%</p>
     </div>
     <div id="block-3">
     <p id="titre-block">objectif 2030</p>
