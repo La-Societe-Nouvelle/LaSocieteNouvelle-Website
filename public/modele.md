@@ -56,7 +56,7 @@ Dans le cas où les données ne sont pas publiées par l'entreprise, des donnée
 
 Afin de pallier l'absence de données publiées, des valeurs par défaut sont proposées à partir des caractéristiques connues de l'entreprise : activité principale, taille, localisation, etc.
 
-La description de l'obtention de ces données et les sources de données utilisées pour le traitement sont décrites au sein des fiches de présentation des indicateurs. Les valeurs proposées peuvent évoluées selon les données statistiques disponibles.
+La description de l'obtention de ces données et les sources de données utilisées pour le traitement sont décrites au sein des fiches de présentation des indicateurs. Les valeurs proposées peuvent évoluer selon les données statistiques disponibles.
 
 L'utilisation d'autres sources de données *par défaut* est autorisée.
 
