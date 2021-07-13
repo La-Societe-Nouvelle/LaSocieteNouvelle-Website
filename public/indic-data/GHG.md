@@ -55,4 +55,4 @@ Centre technique de référence en matière de pollution atmosphérique et de ch
 
 **Objectif :** Intensité < 63 gCO2e/€ d’ici 2030 
 
-L’objectif correspond une réduction des émissions de 55% d’ici 2030 par rapport à 1990, objectif fixé par le Ministère de la Transition Ecologie, et défini à l’échelle européenne. L’objectif dépend également des puits de carbone, de l’évolution des émissions directes des ménages et du volume des activités économiques.
+L’objectif correspond à une réduction des émissions de 55% d’ici 2030 par rapport à 1990, objectif fixé par le Ministère de la Transition Ecologie, et défini à l’échelle européenne. L’objectif dépend également des puits de carbone, de l’évolution des émissions directes des ménages et du volume des activités économiques.
