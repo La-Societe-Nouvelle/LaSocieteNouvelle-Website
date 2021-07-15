@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_knw.png alt="logo"/>
+</div>
+
 L’acquisition de compétences et de connaissances complète la notion de valeur ajoutée au sein d’une entreprise. Plus les entreprises investissent pour former leurs employés, plus la valeur ajoutée sera mieux répartie et les écarts de salaires amoindris.
 
 ### IMAPCT DIRECT

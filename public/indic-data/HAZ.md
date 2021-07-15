@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_haz.png alt="logo"/>
+</div>
+
 D’après [l’ADEME](https://grand-est.ademe.fr/expertises/dechets/reduction-de-la-production-de-dechets-en-entreprise/enjeux), la priorité pour les producteurs de déchets est d’en réduire la quantité et la nocivité : il s’agit de la notion de prévention des déchets.
 Les enjeux de la prévention des déchets, qui est un volet de l’économie circulaire, sont les suivants :
 * Une économie de matières premières épuisables ;

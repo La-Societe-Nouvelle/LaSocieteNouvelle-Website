@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_nrg.png alt="logo"/>
+</div>
+
 Il est nécessaire de réduire au maximum notre consommation de combustibles fossiles qui génèrent [des gaz à effet de serre](https://lasocietenouvelle.org/indicateur/ghg). Ceux-ci sont à l'origine d'un dérèglement climatique ayant des conséquences notables sur :
 * L'accentuation des écarts de précipitation entre les régions du monde, créant des situations de précarité,
 * L'augmentation du niveau de la mer générant migration et catastrophes climatiques,

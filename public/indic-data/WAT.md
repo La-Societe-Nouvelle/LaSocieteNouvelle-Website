@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_wat.png alt="logo"/>
+</div>
+
 La raréfaction de l'eau et les priorités environnementales obligent les industriels à rechercher des technologies fiables et économiques pour le traitement et le recyclage de l'eau.
 Cependant, la bonne gestion des eaux usées repose d’abord sur une bonne gestion des ressources.
 

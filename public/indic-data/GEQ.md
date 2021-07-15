@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_geq.png alt="logo"/>
+</div>
+
 Pour une société plus juste, 4 enjeux sont fondamentaux dans la lutte contre l’inégalité Hommes/Femmes :
 * La discrimination à l'embauche,
 * L’égalité salariale entre hommes et femmes,
