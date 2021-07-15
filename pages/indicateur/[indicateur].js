@@ -66,20 +66,27 @@ function build(postData) {
 
       <Header/>
       <main className="main">
-
-        <div id="strip-odd" className="strip">
-          <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
-        </div>
-
+        <br/>
         <div id="strip-header" className="strip">
+          <br/>
           <h2 className="indic-strip-title" id="indic-label">
           {data.libelle[indic]}
           </h2>
+          <br/>
           <ul>
             <li>Code : {data.code[indic]}</li>
             <li>Description : {data.description[indic]}</li>
             <li>Unité par défaut : {data.unit[indic]}</li>
           </ul>
+        </div>
+
+        <div className="issue">
+          <h3 className="indic-strip-title">
+            ENJEUX
+          </h3>
+          <div id="strip-odd" className="strip">
+            <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
+          </div>
         </div>
 
         <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
