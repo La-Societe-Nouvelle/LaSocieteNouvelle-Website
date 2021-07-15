@@ -47,7 +47,7 @@ export default function Home() {
 
         <div className="strip">
           <h2>Indicateurs</h2>
-          <p>Les Indicateurs de Qualité de la Valeur Economique (IQVE) qui composent l’ESE sont en lien direct avec les 17 Objectifs de Développement Durable (ODD). Ils sont construits et sélectionnés pour leur pertinence vis-à-vis du développement durable, de l’entreprise et du consommateur final.</p>
+          <p>Les Indicateurs de Qualité de la Valeur Economique (IQVE) qui composent l’ESE sont en lien direct avec les 17 Objectifs de Développement Durable (ODD)*. Ils sont construits et sélectionnés pour leur pertinence vis-à-vis du développement durable, de l’entreprise et du consommateur final.</p>
           <p>Emplois des ressources :</p>
           <ul>
             <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale </a><img className="odd-indic" src="/resources/odd_eco.png" /></li>
@@ -84,6 +84,11 @@ export default function Home() {
           <h2>Note</h2>
           <p>L’ESE fournit une information liée à la production d’une entreprise, et ne prend pas en compte les impacts liés à l’emploi et à la fin de vie des produits (utilisation, influence comportementale, incitation à d’autres achats, etc.). Elle doit donc être exploitée au regard de ce qu’elle mesure, et ne peut constituer un élément unique de décision vis-à-vis d’un produit ou de la situation d’une entreprise.</p>
         </div>
+
+        <div className="strip">
+          <p>* Objectifs de Développement Durable (ODD) :</p>
+        </div>
+        <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
 
       </main>
 
