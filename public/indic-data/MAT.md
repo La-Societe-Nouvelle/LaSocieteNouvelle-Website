@@ -1,3 +1,5 @@
+Entre l’exploitation des terres rares et des énergies fossiles, il est nécessaire d’accélérer la transition vers une utilisation des ressources renouvelables, de manière modérée et intelligente.
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Quantité extraite de matières premières (en kg)
@@ -19,13 +21,13 @@ Elles sont obtenues à partir des apports directs (extractions intérieures et i
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
 
 **Données EUROSTAT :**  
-[*Comptes de flux de matières*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr)  
-[*Comptes de flux de matières en équivalent matières premières par consommation finale de produits - modélisation*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr)
+[Comptes de flux de matières](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr)  
+[Comptes de flux de matières en équivalent matières premières par consommation finale de produits - modélisation](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr)
 
 ### POUR ALLER PLUS LOIN
 
 **Ministère de la Transition écologique**  
-[*La productivité des ressources*](https://www.ecologie.gouv.fr/productivite-des-ressources)
+[La productivité des ressources](https://www.ecologie.gouv.fr/productivite-des-ressources)
 
 ### SUIVI MACRO-ECONOMIQUE
 

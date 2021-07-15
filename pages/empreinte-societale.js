@@ -90,6 +90,11 @@ export default function Home() {
         </div>
         <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
 
+        <div className="strip">
+          <p>* Objectifs de Développement Durable (ODD) :</p>
+        </div>
+        <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
+
       </main>
 
       <Footer/>

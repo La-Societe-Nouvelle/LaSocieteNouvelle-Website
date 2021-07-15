@@ -4,8 +4,11 @@
 
 #strip-odd {
   display: flex;
-  justify-content: center;
-  margin-top: 25px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
 
   @include lg{
     justify-content: flex-start;
@@ -24,14 +27,17 @@
 }
 
 #indic-label {
-  border-top: solid $primary-color 1px;
-  border-bottom: solid $primary-color 1px;
+  border-top: none;
+  border-bottom: none;
+  line-height: 1;
+  color: #8B0000;
   text-align: center;
+  font-size : 30px;
 }
 
 #logo-odd {
   margin: 0;
-  height: 50px;
+  height: 100px;
   width: auto;
 }
 
@@ -54,6 +60,13 @@
   margin-top: 50px;
   border-top: solid $primary-color 1px;
   border-bottom: solid $primary-color 1px;
+}
+
+.issue{
+  width : 95%;
+  @include lg{
+    width:75%;
+  }
 }
 
 #lien-github {
@@ -113,4 +126,8 @@
   @include lg {
     width: 75%;
   }
+}
+
+a{
+ color: #8B0000;
 }

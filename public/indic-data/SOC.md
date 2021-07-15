@@ -1,3 +1,9 @@
+Le développement économique d’une entreprise ne doit pas se faire au détriment des conditions de travail des salariés. C’est pourquoi il est nécessaire de trouver un juste équilibre qui peut reposer entre autres sur les principes des Entreprises Sociales et Solidaires (ESS) :
+* La non lucrativité, c’est-à-dire que les buts poursuivis sont autres que le seul partage des bénéfices,
+* Une gouvernance démocratique prévoyant l'information et la participation des sociétaires, salariés, producteurs, consommateurs ou utilisateurs,
+* L’existence de réserves impartageables qui ne peuvent être distribuées individuellement et sont consacrées au maintien ou au développement de l’organisation.
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Valeur nette créée par des acteurs d’intérêt social (en euros)
@@ -9,9 +15,9 @@ Critères :
 * Agrément ESUS (Entreprise  Solidaire d'Utilité Sociale) 
 * Entreprise à mission / Raison d’être inscrite dans les statuts de l’entreprise 
 
-[*Qu'est-ce que l'économie sociale et solidaire ?*](https://www.economie.gouv.fr/cedef/economie-sociale-et-solidaire)  
-[*Qu’est-ce que l’agrément « Entreprise solidaire d’utilité sociale » ?*](https://www.economie.gouv.fr/entreprises/agrement-entreprise-solidaire-utilite-sociale-ess)  
-[*Que sont les sociétés à mission ?*](https://www.economie.gouv.fr/cedef/societe-mission)
+[Qu'est-ce que l'économie sociale et solidaire ?](https://www.economie.gouv.fr/cedef/economie-sociale-et-solidaire)  
+[Qu’est-ce que l’agrément « Entreprise solidaire d’utilité sociale » ?](https://www.economie.gouv.fr/entreprises/agrement-entreprise-solidaire-utilite-sociale-ess)  
+[Que sont les sociétés à mission ?](https://www.economie.gouv.fr/cedef/societe-mission)
 
 La valeur ajoutée nette correspond à la valeur ajoutée hors dotations aux amortissements.
 
@@ -28,18 +34,18 @@ Dès son apparition au sein du répertoire SIRENE, la qualité "Société à Mis
 L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du taux de valeur ajoutée de l'entreprise. Pour une unité légale non reconnue, l’intervalle de confiance est de 500%.
 
 **Données ESS France :**  
-[*L'ESS en chiffres*](https://ess-france.org/fr/less-en-chiffres)
+[L'ESS en chiffres](https://ess-france.org/fr/less-en-chiffres)
 
 ### POUR ALLER PLUS LOIN
 
 **Ministère de l’Economie, des Finances et de la Relance**  
-[*Redéfinir la raison d'être des entreprises*](https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises)
+[Redéfinir la raison d'être des entreprises](https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises)
 
 **ESS France (Chambre française de l’ESS)**  
-[*ESS France (site web)*](https://ess-france.org/fr)
+[ESS France (site web)](https://ess-france.org/fr)
 
 **Conseil National des Chambres Régionales de l’ESS**  
-[*CNCRESS (site web)*](http://www.esspace.fr/index.html)
+[CNCRESS (site web)](http://www.esspace.fr/index.html)
 
 ### SUIVI MACRO-ECONOMIQUE
 

@@ -1,3 +1,5 @@
+Favoriser l’entrepreneuriat ou l’intrapreneuriat dans le domaine de l’artisanat permet de développer un savoir faire à l’origine du cachet français. Cela passe aussi par le soutient de projets innovants en faveur d’un développement durable.
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Valeur nette créée issue de l’artisanat ou d’un savoir-faire reconnu (en euros)
@@ -6,8 +8,8 @@ Critères :
 * Activité principale répertoriée au registre des métiers / au sein de la Nomenclature d’Activités Française de secteur des métiers de l’Artisanat  
 * Labellisation Entreprise du Patrimoine Vivant (EPV)
 
-[*La Nomenclature d'Activités Française de l'Artisanat*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/la-nomenclature-d-activites-francaise-de-l-artisanat)  
-[*Le label Entreprise du Patrimoine Vivant*](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/dispositifs-et-labels/label-entreprise-du-patrimoine-vivant)
+[La Nomenclature d'Activités Française de l'Artisanat](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/la-nomenclature-d-activites-francaise-de-l-artisanat)  
+[Le label Entreprise du Patrimoine Vivant](https://www.entreprises.gouv.fr/fr/commerce-et-artisanat/dispositifs-et-labels/label-entreprise-du-patrimoine-vivant)
 
 La valeur nette créée correspond à la valeur créée hors dotations aux amortissements.
 
@@ -24,18 +26,18 @@ Les taux de valeur ajoutée, de consommation et d’importation sont obtenus à 
 L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du taux de valeur ajoutée de l'entreprise. Pour une unité légale non reconnue, l’intervalle de confiance est de 500%.
 
 **Données DGE :**  
-[*Les chiffres clés de l'artisanat*](https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat)
+[Les chiffres clés de l'artisanat](https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat)
 
 ### POUR ALLER PLUS LOIN
 
 **Ministère de l’Economie, des Finances et de la Relance**  
-[*Labels et reconnaissance de savoir-faire*](https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire)
+[Labels et reconnaissance de savoir-faire](https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire)
 
 **Institut National des Métiers d'Art (INMA)**  
-[*Institut National des Métiers d'Art (site web)*](https://www.institut-metiersdart.org)
+[Institut National des Métiers d'Art (site web)](https://www.institut-metiersdart.org)
 
 **INSEE**  
-[*Tableaux de l'économie française (2020) - Artisanat*](https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291)
+[Tableaux de l'économie française (2020) - Artisanat](https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291)
 
 ### SUIVI MACRO-ECONOMIQUE
 

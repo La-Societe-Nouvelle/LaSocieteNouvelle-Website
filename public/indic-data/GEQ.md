@@ -1,3 +1,10 @@
+Pour une société plus juste, 4 enjeux sont fondamentaux dans la lutte contre l’inégalité Hommes/Femmes :
+* La discrimination à l'embauche,
+* L’égalité salariale entre hommes et femmes,
+* L’égalité dans le déroulement de carrière,
+* La parité dans les conseils d'administration.
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Ecart absolu entre le taux horaires moyens bruts des femmes et celui des hommes, en pourcentage du taux horaire brut moyen
@@ -17,12 +24,12 @@ La valeur par défaut est appliquée à l’ensemble des unités légales dont l
 L’intervalle de confiance est de 50 %.
 
 **Données EUROSTAT :**  
-[*Enquête sur la structure des salaires : salaires horaires*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr)
+[Enquête sur la structure des salaires : salaires horaires](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr)
 
 ### REFERENCES & COMPLEMENTS
 
 **Ministère du Travail, de l’Emploi et de l’Insertion**  
-[*L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533)  
+[L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533)  
 
 ### SUIVI MACRO-ECONOMIQUE
 

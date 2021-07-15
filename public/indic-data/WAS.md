@@ -1,3 +1,12 @@
+D’après [l’ADEME](https://grand-est.ademe.fr/expertises/dechets/reduction-de-la-production-de-dechets-en-entreprise/enjeux), la priorité pour les producteurs de déchets est d’en réduire la quantité et la nocivité : il s’agit de la notion de prévention des déchets.
+Les enjeux liés sont les suivants :
+* Une économie de matières premières épuisables ;
+* La limitation des impacts sur l’environnement et la santé ;
+* Les économies financières liées au traitement du déchet.
+
+Cela prend en compte le tri, la valorisation des déchets, l’implication d’acteurs permettant une économie circulaire et comprend donc une organisation et une sensibilisation générale au sein des entreprises.
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Quantité produite de déchets (en kg)
@@ -22,10 +31,10 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 ### POUR ALLER PLUS LOIN
 
 **Ministère de la Transition écologique**  
-[*Politiques publiques - Économie circulaire et déchets*](https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets)
+[Politiques publiques - Économie circulaire et déchets](https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets)
 
 **Agence de la Transition écologique (ADEME)**  
-[*Expertises - Déchets*](https://www.ademe.fr/expertises/dechets)
+[Expertises - Déchets](https://www.ademe.fr/expertises/dechets)
 
 ### SUIVI MACRO-ECONOMIQUE
 

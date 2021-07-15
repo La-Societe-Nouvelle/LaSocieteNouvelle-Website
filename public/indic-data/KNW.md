@@ -1,3 +1,5 @@
+L’acquisition de compétences et de connaissances complète la notion de valeur ajoutée au sein d’une entreprise. Plus les entreprises investissent pour former leurs employés, plus la valeur ajoutée sera mieux répartie et les écarts de salaires amoindris.
+
 ### IMAPCT DIRECT
 
 **Grandeur mesurée :** Montant total des charges (hors charges externes) liées à la formation, l’éducation ou la recherche (en euros)
@@ -23,18 +25,18 @@ Les jeux de données ouvertes du ministère de l’Enseignement supérieur, de l
 L’intervalle de confiance si situe aux alentours de 25 % pour les valeurs ajustées (branches spécifiques) et de 500 % dans les autres cas i.e. une contribution entre 0.1 % et 10 %.
 
 **Données EUROSTAT :**  
-[*Coûts des cours FPC par type et activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr)
+[Coûts des cours FPC par type et activité de la NACE Rév. 2](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr)
 
 ### POUR ALLER PLUS LOIN
 
 **Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation**  
-[*Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation (site web)*](https://www.enseignementsup-recherche.gouv.fr/)
+[Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation (site web)](https://www.enseignementsup-recherche.gouv.fr/)
 
 **Ministère du Travail, de l’Emploi et de l’Insertion**  
-[*Formation professionnelle*](https://travail-emploi.gouv.fr/formation-professionnelle/)
+[Formation professionnelle](https://travail-emploi.gouv.fr/formation-professionnelle/)
 
 **Ministère de l’Economie, des Finances et de la Relance**  
-[*Innovation et data*](https://www.economie.gouv.fr/entreprises/innovation-et-data)
+[Innovation et data](https://www.economie.gouv.fr/entreprises/innovation-et-data)
 
 ### SUIVI MACRO-ECONOMIQUE
 
