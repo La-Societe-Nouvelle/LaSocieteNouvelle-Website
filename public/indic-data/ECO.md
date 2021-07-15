@@ -1,3 +1,5 @@
+Permettre une meilleure qualité de vie et une baisse de chômage en développant l’emploi à valeur ajoutée et en relocalisant les industries françaises ne peut être que bénéfique pour le PIB français. En tant que pays développé, il est d’autant plus nécessaire d’inclure dans cette reconstruction des modes de production et de consommation durables.
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Valeur nette créée sur le territoire français (en euros)
@@ -19,22 +21,22 @@ Les valeurs affectées par défaut aux unités légales s’appuient sur leur ac
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques varie de 25 à 100 % selon la granularité des données macroéconomiques utilisées et les informations spécifiques à l’entreprise disponibles.
 
 **Données EUROSTAT :**  
-[*Agrégats des comptes nationaux par branche*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_a64&lang=fr)  
-[*Commerce par activité de la NACE Rév. 2 et classe de taille d'entreprise*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ext_tec01&lang=fr)
+[Agrégats des comptes nationaux par branche](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_a64&lang=fr)  
+[Commerce par activité de la NACE Rév. 2 et classe de taille d'entreprise](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ext_tec01&lang=fr)
 
 **Données INSEE :**  
-[*Tableaux de l'économie française (2020) - Production des branches*](https://www.insee.fr/fr/statistiques/4277775?sommaire=4318291)  
-[*Importations - Données trimestrielles*](https://www.insee.fr/fr/statistiques/2830182)
+[Tableaux de l'économie française (2020) - Production des branches](https://www.insee.fr/fr/statistiques/4277775?sommaire=4318291)  
+[Importations - Données trimestrielles](https://www.insee.fr/fr/statistiques/2830182)
 
 ### POUR ALLER PLUS LOIN
 
 **INSEE**  
-[*Insee Première n°1756 - "Made In France"*](https://www.insee.fr/fr/statistiques/4166056)  
+[Insee Première n°1756 - "Made In France"](https://www.insee.fr/fr/statistiques/4166056)  
 
 
 **EUROSTAT**  
-[*Annual national accounts (Metadata)*](https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm)  
-[*International trade in goods - trade by enterprise characteristics (Metadata)*](https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm)  
+[Annual national accounts (Metadata)](https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm)  
+[International trade in goods - trade by enterprise characteristics (Metadata)](https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm)  
 
 ### SUIVI MACRO-ECONOMIQUE
 

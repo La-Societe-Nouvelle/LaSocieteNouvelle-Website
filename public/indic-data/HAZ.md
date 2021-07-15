@@ -1,3 +1,12 @@
+D’après [l’ADEME](https://grand-est.ademe.fr/expertises/dechets/reduction-de-la-production-de-dechets-en-entreprise/enjeux), la priorité pour les producteurs de déchets est d’en réduire la quantité et la nocivité : il s’agit de la notion de prévention des déchets.
+Les enjeux de la prévention des déchets, qui est un volet de l’économie circulaire, sont les suivants :
+* Une économie de matières premières épuisables ;
+* La limitation des impacts sur l’environnement et la santé ;
+* Les économies financières liées au traitement du déchet.
+
+Cela prend en compte le tri, la valorisation des déchets, l’implication d’acteurs permettant une économie circulaire et comprend donc une organisation et une sensibilisation générale au sein des entreprises.
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Quantité utilisée de produits dangereux pour la santé et/ou l’environnement (en kg)
@@ -19,13 +28,13 @@ L’intervalle de confiance associé à l’utilisation de la valeur est à 1000
 ### POUR ALLER PLUS LOIN
 
 **Ministère de la Transition Ecologique**  
-[*Politiques publiques - Produits chimiques*](https://www.ecologie.gouv.fr/politiques/produits-chimiques)
+[Politiques publiques - Produits chimiques](https://www.ecologie.gouv.fr/politiques/produits-chimiques)
 
 **Institut National de Recherche et de Sécurité (INRS)**  
-[*Agents chimiques CMR*](https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html)
+[Agents chimiques CMR](https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html)
 
 **European Chemicals Agency (ECHA)**  
-[*ECHA (site web)*](https://echa.europa.eu/fr/home)
+[ECHA (site web)](https://echa.europa.eu/fr/home)
 
 ### SUIVI MACRO-ECONOMIQUE
 

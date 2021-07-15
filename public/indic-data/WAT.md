@@ -1,3 +1,7 @@
+La raréfaction de l'eau et les priorités environnementales obligent les industriels à rechercher des technologies fiables et économiques pour le traitement et le recyclage de l'eau.
+Cependant, la bonne gestion des eaux usées repose d’abord sur une bonne gestion des ressources.
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Quantité consommée d’eau (en m3)
@@ -23,16 +27,16 @@ L’intervalle de confiance associé à l’utilisation des données est de 1000
 ### POUR ALLER PLUS LOIN
 
 **Ministère de la transition écologique**  
-[*Politiques publiques - Eau*](https://www.ecologie.gouv.fr/politiques/eau)
+[Politiques publiques - Eau](https://www.ecologie.gouv.fr/politiques/eau)
 
 **Eau France**  
-[*Eau France (site web)*](https://www.eaufrance.fr/)
+[Eau France (site web)](https://www.eaufrance.fr/)
 
 **Agences de l’eau**  
-[*Agences de l'eau (site web)*](http://www.lesagencesdeleau.fr/)
+[Agences de l'eau (site web)](http://www.lesagencesdeleau.fr/)
 
 **European Environnement Agency (EEA)**  
-[*WISE Freshwater*](https://water.europa.eu/freshwater)
+[WISE Freshwater](https://water.europa.eu/freshwater)
 
 ### SUIVI MACRO-ECONOMIQUE
 

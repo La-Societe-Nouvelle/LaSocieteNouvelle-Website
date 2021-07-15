@@ -1,3 +1,11 @@
+Les gaz à effet de serre proviennent majoritairement de la combustion des combustibles fossiles. Ils s’accumulent dans l’atmosphère et sont à l’origine d’un dérèglement climatique, ayant des conséquences notables sur :
+* L'accentuation des écarts de précipitation entre les régions du monde, créant des situations de précarité,
+* L'augmentation du niveau de la mer générant migrations et catastrophes climatiques,
+* L'acidification des océans, éliminant certaines espèces et menaçant l’équilibre marin,
+* Le développement de maladies infectieuses jusqu’à lors limitées dans l’espace par la température ou l’humidité.
+
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesuréee :** Emissions directes de gaz à effet de serre - SCOPE 1 (en kgCO2e)
@@ -20,20 +28,20 @@ Elles sont obtenues à partir des comptes macroéconomiques des branches économ
 L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 500 % pour les valeurs sectorielles. (Travaux en cours)
 
 **Données brutes :**  
-[*Compte d'émissions atmosphériques par activité de la NACE Rév. 2*](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
+[Compte d'émissions atmosphériques par activité de la NACE Rév. 2](https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr)
 
 **Données financières :**  
-[*Tableaux de synthèse : TES et TEE en 2019*](https://www.insee.fr/fr/statistiques/4494213)
+[Tableaux de synthèse : TES et TEE en 2019](https://www.insee.fr/fr/statistiques/4494213)
 
 ### POUR ALLER PLUS LOIN
 
 Ministère de la Transition écologique  
-[*Politiques publiques - Climat*](https://www.ecologie.gouv.fr/politiques/climat)
+[Politiques publiques - Climat](https://www.ecologie.gouv.fr/politiques/climat)
 
 Centre technique de référence en matière de pollution atmosphérique et de changement climatique (CITEPA)  
-[*CITEPA (site web)*](https://www.citepa.org/fr/)
+[CITEPA (site web)](https://www.citepa.org/fr/)
 
-### SUIVI MACRO-ECONOMIQUE
+### SUIVI MACRO-ECONOMIQUE : ECHELLE NATIONALE
 
 <div class="references-blocks">
     <div id="block-1">

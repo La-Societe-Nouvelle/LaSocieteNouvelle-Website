@@ -1,3 +1,7 @@
+Une meilleure répartition des rémunération au sein d’une entreprise reflète une meilleure répartition de la valeur ajoutée entre les emplois.
+Pour la [CFE-CGC](https://www.cfecgc.org/actualites/les-enjeux-autour-dun-meilleur-partage-de-la-valeur-ajoutee), "la valeur ajoutée créée par les entreprises est due en grande partie au travail et à l’investissement des salariés, ce qui justifie une répartition juste et équitable et favorise une meilleure cohésion sociale dans l’entreprise."
+
+
 ### IMPACT DIRECT
 
 **Grandeur mesurée :** Indice de GINI des taux horaires bruts
@@ -17,10 +21,10 @@ L’intervalle de confiance est de 50 %.
 ### POUR ALLER PLUS LOIN
 
 **Ministère du Travail, de l’Emploi et de l’Insertion**  
-[*Le salaire : fixation et paiement*](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement)
+[Le salaire : fixation et paiement](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement)
 
 **Ministère de l’Economie, des Finances et de la Relance**  
-[*Rémunération de vos salariés*](https://www.economie.gouv.fr/entreprises/remuneration-salaries)
+[Rémunération de vos salariés](https://www.economie.gouv.fr/entreprises/remuneration-salaries)
 
 ### SUIVI MACRO-ECONOMIQUE
 
