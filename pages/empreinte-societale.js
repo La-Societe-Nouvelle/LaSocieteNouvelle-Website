@@ -28,13 +28,17 @@ export default function Home() {
               <li>Outil de pilotage interne de cette performance ;</li>
               <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
             </ul>
-          <p>En compléments :</p>
-          <p>
-            <a className="text-link" href="/EmpreinteSocietale_documentation_v4.pdf">Documentation v4</a><br/>
-            <a className="text-link" href="modele-indicateurs">Description du Modèle</a><br/>
-            <a className="text-link" href="guide">Guide méthodologique</a>
-          </p>
-          <p>L'ensemble des documentations et outils mis à disposition sont libres et open source.</p>
+          <br/>
+          <div>
+            <p>Pour plus d'information :</p>
+            <p>
+              <ul>
+                <li>Lien vers la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.pdf">Documentation v4</a><br/></li>
+                <li>Lien vers la description du modèle : <a className="text-link" href="modele-indicateurs">Description du Modèle</a><br/></li>
+                <li>Lien vers la guide méthodologique : <a className="text-link" href="guide">Guide méthodologique</a></li>
+              </ul>
+            </p>
+          </div>
         </div>
 
         <div className="strip">
@@ -69,13 +73,13 @@ export default function Home() {
           </ul>
           <p>Partage de la valeur :</p>
           <ul>
-            <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a><img className="odd-indic" src="/resources/odd_dis.png" /></li>
-            <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a><img className="odd-indic" src="/resources/odd_geq.png" /></li>
+            <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a>
+                <img className="odd-indic" src="/resources/odd_dis.png" /></li>
+            <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a>
+                <img className="odd-indic" src="/resources/odd_geq.png" /></li>
           </ul>
-          <p>* Objectifs de Développement Durable (ODD) :</p>
-          <p>
-            <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a><br/>
-            <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br/>
+          <br/>
+          <p>*Objectifs de Développement Durable (ODD) : <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a> - <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br/>
           </p>
         </div>
 
