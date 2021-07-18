@@ -17,29 +17,25 @@ export default function Home() {
         <h1>Services disponibles</h1>
 
         <div id="services-strip" className="strip">
-          <div id="services">
-            <div id="declaration" className="services-item">
-              <h3 className="serviceTitle">Déclaration</h3>
-              <p className="serviceDesc">Publiez les valeurs de l'Empreinte Sociétale de votre entreprise.</p>
-              <a  href="/publication" className="button">Formulaire de déclaration</a>
-            </div>
-            <div id="declaration-simplifiee" className="services-item">
-              <h3 className="serviceTitle">Mesure</h3>
-              <p className="serviceDesc">Calculez votre empreinte sociétale.</p>
-              <a href="/publication-simplifiee" className="button">Mesure simplifiée</a>
-              <a className="button" href="http://metriz.lasocietenouvelle.org" target="_blank">Mesure complète</a>
-            </div>
-            <div id="acces-donnees" className="services-item">
-              <h3 className="serviceTitle">Accès aux données</h3>
-              <p className="serviceDesc">Les données sont accessibles librement via le portail web ou l'API. </p>
-              <p className="serviceDesc">
-                <a href="../documentation-api" target="_blank">Lien vers la documentation</a>
-              </p>
+          <ul id="services">
+            <li id="declaration" className="services-item">
+              <h2>Déclaration</h2>
+              <p>Publiez les valeurs de l'Empreinte Sociétale de votre entreprise.</p>
+              <a  href="/publication" className="button">Accès au Formulaire</a>
+            </li>
+            <li id="mesure-indicateurs" className="services-item">
+              <h2>Mesure</h2>
+              <p>Calculez les indicateurs de l'Empreinte Sociétale de votre entreprise.</p>
+              <a className="button" href="http://metriz.lasocietenouvelle.org" target="_blank">Accès à l'Application</a>
+            </li>
+            <li id="acces-donnees" className="services-item">
+              <h2>Accès aux données</h2>
+              <p>Accédez et exploitez librement les données via notre API. </p>
               <a href="http://api.lasocietenouvelle.org" target="_blank" className="button">Accès à l'API</a>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
-
+{/*
         <div id="services-partenaires-strip" className="strip">
           <h1>Partenaires</h1>
           <div className="partenaires">
@@ -58,7 +54,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+*/}
       </main>
 
       <Footer/>

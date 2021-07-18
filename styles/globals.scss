@@ -157,17 +157,23 @@ textarea {
 #services-strip {
   text-align: center;
   width: 100%;
-  display : flex;
-  justify-content : space-evenly;
 }
 
 #services, #services-publication {
-  display: flex; //grid
+  display: grid;
   max-width:1000px;
   margin:auto;
+  justify-content: center;
+  padding: 0;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  @include screen-min(750px)
-  {
+}
+#services {
+  @include md {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+#services-publication {
+  @include md {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   justify-content: center;
@@ -185,19 +191,14 @@ textarea {
   vertical-align: top;
   border: solid $primary-color 1px;
 
-  .serviceTitle{
-    color : #8B0000;
-    font-size: 22px;
-  }
-
-  .serviceDesc{
+  h2 {
     text-align: center;
+    margin: 10px 0px;
   }
-
-
 
   p {
-    margin: 10px;
+    margin: 25px;
+    text-align: center;
   }
 
   .button {
