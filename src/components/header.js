@@ -56,7 +56,7 @@ export default class Header extends React.Component {
             </li>
             <li className="menu-item"><a href="/portail">Portail</a></li>
             <li className="menu-item"><a href="/services">Services</a></li>
-            <li className="menu-item"><a href="/ressources">Ressources</a></li>
+            {/*<li className="menu-item"><a href="/ressources">Ressources</a></li>*/}
             <li className="menu-item"><a href="/contact">Contact</a></li>
           </ul>
           </DropDown>
