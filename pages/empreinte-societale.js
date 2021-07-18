@@ -72,6 +72,11 @@ export default function Home() {
             <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a><img className="odd-indic" src="/resources/odd_dis.png" /></li>
             <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a><img className="odd-indic" src="/resources/odd_geq.png" /></li>
           </ul>
+          <p>* Objectifs de Développement Durable (ODD) :</p>
+          <p>
+            <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a><br/>
+            <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br/>
+          </p>
         </div>
 
         <div className="strip">
@@ -84,16 +89,6 @@ export default function Home() {
           <h2>Note</h2>
           <p>L’ESE fournit une information liée à la production d’une entreprise, et ne prend pas en compte les impacts liés à l’emploi et à la fin de vie des produits (utilisation, influence comportementale, incitation à d’autres achats, etc.). Elle doit donc être exploitée au regard de ce qu’elle mesure, et ne peut constituer un élément unique de décision vis-à-vis d’un produit ou de la situation d’une entreprise.</p>
         </div>
-  
-        <div className="strip">
-          <p>* Objectifs de Développement Durable (ODD) :</p>
-        </div>
-        <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
-
-        <div className="strip">
-          <p>* Objectifs de Développement Durable (ODD) :</p>
-        </div>
-        <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
 
       </main>
 
