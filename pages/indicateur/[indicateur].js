@@ -80,14 +80,7 @@ function build(postData) {
           </ul>
         </div>
 
-        <div className="issue">
-          <h3 className="indic-strip-title">
-            ENJEUX
-          </h3>
-          <div id="strip-odd" className="strip">
-            <img id="logo-odd" src={data.odd_img[indic]} alt="logo" />
-          </div>
-        </div>
+        
 
         <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
 

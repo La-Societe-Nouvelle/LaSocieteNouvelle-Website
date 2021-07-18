@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_eco.png alt="logo"/>
+</div>
+
 Permettre une meilleure qualité de vie et une baisse de chômage en développant l’emploi à valeur ajoutée et en relocalisant les industries françaises ne peut être que bénéfique pour le PIB français. En tant que pays développé, il est d’autant plus nécessaire d’inclure dans cette reconstruction des modes de production et de consommation durables.
 
 ### IMPACT DIRECT

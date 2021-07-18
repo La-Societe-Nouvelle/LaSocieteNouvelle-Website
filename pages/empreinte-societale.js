@@ -84,6 +84,11 @@ export default function Home() {
           <h2>Note</h2>
           <p>L’ESE fournit une information liée à la production d’une entreprise, et ne prend pas en compte les impacts liés à l’emploi et à la fin de vie des produits (utilisation, influence comportementale, incitation à d’autres achats, etc.). Elle doit donc être exploitée au regard de ce qu’elle mesure, et ne peut constituer un élément unique de décision vis-à-vis d’un produit ou de la situation d’une entreprise.</p>
         </div>
+  
+        <div className="strip">
+          <p>* Objectifs de Développement Durable (ODD) :</p>
+        </div>
+        <img src="https://i.ibb.co/f9PRRFq/odd-tete-article-onu.jpg" alt="odd-tete-article-onu" border="0"></img>
 
         <div className="strip">
           <p>* Objectifs de Développement Durable (ODD) :</p>

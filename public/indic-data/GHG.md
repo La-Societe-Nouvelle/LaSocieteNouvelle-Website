@@ -1,3 +1,10 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_ghg.png alt="logo"/>
+</div>
+
+
 Les gaz à effet de serre proviennent majoritairement de la combustion des combustibles fossiles. Ils s’accumulent dans l’atmosphère et sont à l’origine d’un dérèglement climatique, ayant des conséquences notables sur :
 * L'accentuation des écarts de précipitation entre les régions du monde, créant des situations de précarité,
 * L'augmentation du niveau de la mer générant migrations et catastrophes climatiques,

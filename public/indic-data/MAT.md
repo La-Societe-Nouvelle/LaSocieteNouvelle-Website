@@ -1,3 +1,9 @@
+### ENJEUX
+
+<div id="strip-odd" className="strip">
+    <img id="logo-odd" src=/resources/odd_mat.png alt="logo"/>
+</div>
+
 Entre l’exploitation des terres rares et des énergies fossiles, il est nécessaire d’accélérer la transition vers une utilisation des ressources renouvelables, de manière modérée et intelligente.
 
 ### IMPACT DIRECT

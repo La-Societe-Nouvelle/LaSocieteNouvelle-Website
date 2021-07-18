@@ -157,10 +157,12 @@ textarea {
 #services-strip {
   text-align: center;
   width: 100%;
+  display : flex;
+  justify-content : space-evenly;
 }
 
 #services, #services-publication {
-  display: grid;
+  display: flex; //grid
   max-width:1000px;
   margin:auto;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -176,11 +178,23 @@ textarea {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
+  width : 33%;
   height: auto;
   padding: 20px;
   margin: 25px;
   vertical-align: top;
   border: solid $primary-color 1px;
+
+  .serviceTitle{
+    color : #8B0000;
+    font-size: 22px;
+  }
+
+  .serviceDesc{
+    text-align: center;
+  }
+
+
 
   p {
     margin: 10px;
