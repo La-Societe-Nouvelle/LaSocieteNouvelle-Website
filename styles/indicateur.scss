@@ -7,8 +7,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  margin-top: 35px;
-  margin-bottom: 25px;
+  margin: 35px 0px;
 
   @include lg{
     justify-content: flex-start;
@@ -30,7 +29,7 @@
   border-top: none;
   border-bottom: none;
   line-height: 1;
-  color: #8B0000;
+  color: $primary-color;
   text-align: center;
   font-size : 30px;
 }
@@ -128,6 +127,10 @@
   }
 }
 
-a{
- color: #8B0000;
+.content-strip {
+
+  a{
+   color: $primary-color;
+   font-style: italic;
+  }
 }
