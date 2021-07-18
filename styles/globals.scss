@@ -176,15 +176,12 @@ textarea {
   @include md {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  justify-content: center;
-  padding: 0;
 }
 
 .services-item {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  width : 33%;
   height: auto;
   padding: 20px;
   margin: 25px;
