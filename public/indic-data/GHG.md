@@ -5,12 +5,21 @@
 </div>
 
 
-Les gaz à effet de serre proviennent majoritairement de la combustion des combustibles fossiles. Ils s’accumulent dans l’atmosphère et sont à l’origine d’un dérèglement climatique, ayant des conséquences notables sur :
-* L'accentuation des écarts de précipitation entre les régions du monde, créant des situations de précarité,
-* L'augmentation du niveau de la mer générant migrations et catastrophes climatiques,
-* L'acidification des océans, éliminant certaines espèces et menaçant l’équilibre marin,
-* Le développement de maladies infectieuses jusqu’à lors limitées dans l’espace par la température ou l’humidité.
+Les gaz à effet de serre proviennent majoritairement de la combustion des combustibles fossiles. Ils s’accumulent dans l’atmosphère et sont à l’origine d’un dérèglement climatique ayant des conséquences notables sur :
+* L’écologie :
+    * Accentuation des écarts de précipitation entre les régions du monde (Un manque de 2 milliards de m3 d’eau en 2050 si la demande reste stable d'après [le Ministère de la Transition Écologique](https://www.ecologie.gouv.fr/observatoire-national-sur-effets-du-rechauffement-climatique-onerc))
+    * Augmentation du niveau de la mer générant catastrophes climatiques
+    * Acidification des océans, éliminant certaines espèces et menaçant l’équilibre marin
 
+* La société :
+    * Développement de maladies infectieuses jusqu’à lors limitées dans l’espace par la température ou l’humidité.
+
+* La politique et l’économie :
+    * Migrations dues à la montée des eaux
+    * Risques de conflits territoriaux
+    * Coût du changement climatique (estimé à 5 500 milliards d’euros sur 10 ans d'après [l'ADEME](https://www.ademe.fr/expertises/changement-climatique/quoi-parle-t/phenomenes-impacts-changement-climatique))
+
+D’après [l’ADEME](https://www.ecologie.gouv.fr/impacts-du-changement-climatique-sante-et-societe) 62% de la population française est exposée de manière forte ou très forte aux risques climatiques.
 
 
 ### IMPACT DIRECT

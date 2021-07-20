@@ -4,7 +4,7 @@
     <img id="logo-odd" src=/resources/odd_knw.png alt="logo"/>
 </div>
 
-L’acquisition de compétences et de connaissances complète la notion de valeur ajoutée au sein d’une entreprise. Plus les entreprises investissent pour former leurs employés, plus la valeur ajoutée sera mieux répartie et les écarts de salaires amoindris.
+D’après [Pôle Emploi](https://www.pole-emploi.fr/actualites/le-dossier/les-metiers-de-demain/85-des-emplois-de-2030-nexistent.html), 85% des emplois de 2030 n’existent pas encore. La rapide évolution des technologies oblige les entreprises à s’adapter et à investir en recherche pour innover. Il est donc nécessaire de former ses employés pour les faire évoluer en compétence et les rendre plus flexibles.
 
 ### IMAPCT DIRECT
 

@@ -4,12 +4,7 @@
     <img id="logo-odd" src=/resources/odd_geq.png alt="logo"/>
 </div>
 
-Pour une société plus juste, 4 enjeux sont fondamentaux dans la lutte contre l’inégalité Hommes/Femmes :
-* La discrimination à l'embauche,
-* L’égalité salariale entre hommes et femmes,
-* L’égalité dans le déroulement de carrière,
-* La parité dans les conseils d'administration.
-
+Le principal enjeux des inégalités Femmes/Hommes est l’écart de salaire. En effet, d'après [l'INSEE](https://www.insee.fr/fr/statistiques/4514861#figure3_radio1) en 2017 en France, les femmes salariées du secteur privé gagnent en moyenne 16,8 % de moins que les hommes en équivalent temps plein, c’est-à-dire pour un même volume de travail.
 
 ### IMPACT DIRECT
 

@@ -4,12 +4,8 @@
     <img id="logo-odd" src=/resources/odd_nrg.png alt="logo"/>
 </div>
 
-Il est nécessaire de réduire au maximum notre consommation de combustibles fossiles qui génèrent [des gaz à effet de serre](https://lasocietenouvelle.org/indicateur/ghg). Ceux-ci sont à l'origine d'un dérèglement climatique ayant des conséquences notables sur :
-* L'accentuation des écarts de précipitation entre les régions du monde, créant des situations de précarité,
-* L'augmentation du niveau de la mer générant migration et catastrophes climatiques,
-* L'acidification des océans, éliminant certaines espèces et menaçant l’équilibre marin,
-* Le développement de maladies infectieuses jusqu’à lors limitées dans l’espace par la température ou l’humidité.
-
+L’énergie correspond à la grandeur qui caractérise le changement d’état d’un système, et s’inscrit donc dans notre quotidien. En 2019 en France, 47% de la consommation énergétique provient de sources d’énergies fossiles (Pétrole 29%, Gaz 15.2%, Charbon 3%), malgré notre production d’énergie nucléaire estimée à 77% de notre production totale.
+Il est donc nécessaire de réduire au maximum notre consommation de combustibles fossiles qui génèrent des [gaz à effet de serre](https://lasocietenouvelle.org/indicateur/ghg).
 
 ### IMPACT DIRECT
 

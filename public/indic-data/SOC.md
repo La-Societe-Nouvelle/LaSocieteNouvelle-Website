@@ -4,11 +4,7 @@
     <img id="logo-odd" src=/resources/odd_soc.png alt="logo"/>
 </div>
 
-Le développement économique d’une entreprise ne doit pas se faire au détriment des conditions de travail des salariés. C’est pourquoi il est nécessaire de trouver un juste équilibre qui peut reposer entre autres sur les principes des Entreprises Sociales et Solidaires (ESS) :
-* La non lucrativité, c’est-à-dire que les buts poursuivis sont autres que le seul partage des bénéfices,
-* Une gouvernance démocratique prévoyant l'information et la participation des sociétaires, salariés, producteurs, consommateurs ou utilisateurs,
-* L’existence de réserves impartageables qui ne peuvent être distribuées individuellement et sont consacrées au maintien ou au développement de l’organisation.
-
+Face aux enjeux environnementaux et sociétaux, l’entreprise doit se positionner par sa raison d’être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.
 
 ### IMPACT DIRECT
 
