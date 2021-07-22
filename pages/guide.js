@@ -37,7 +37,7 @@ export default function Home({data}) {
         <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
 
         <div className="strip">
-          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/guide  .md"} target="_blanck">Proposer une amélioration de la page</a></p>
+          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/guide.md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>
 
       </main>
