@@ -4,9 +4,7 @@
     <img id="logo-odd" src=/resources/odd_wat.png alt="logo"/>
 </div>
 
-La raréfaction de l'eau et les priorités environnementales obligent les industriels à rechercher des technologies fiables et économiques pour le traitement et le recyclage de l'eau.
-Cependant, la bonne gestion des eaux usées repose d’abord sur une bonne gestion des ressources.
-
+Le changement climatique a des conséquences sur la raréfaction de l’eau. En effet la répartition de l’eau sur le territoire français correspond à des bassins, qualifiés par leur quantité et la qualité de l’eau. La croissance de la demande avec l’augmentation de la population ainsi que la baisse des précipitations entraineront une raréfaction de l’eau.
 
 ### IMPACT DIRECT
 

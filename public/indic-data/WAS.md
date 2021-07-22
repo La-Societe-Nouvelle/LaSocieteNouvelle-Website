@@ -4,14 +4,7 @@
     <img id="logo-odd" src=/resources/odd_was.png alt="logo"/>
 </div>
 
-D’après [l’ADEME](https://grand-est.ademe.fr/expertises/dechets/reduction-de-la-production-de-dechets-en-entreprise/enjeux), la priorité pour les producteurs de déchets est d’en réduire la quantité et la nocivité : il s’agit de la notion de prévention des déchets.
-Les enjeux liés sont les suivants :
-* Une économie de matières premières épuisables ;
-* La limitation des impacts sur l’environnement et la santé ;
-* Les économies financières liées au traitement du déchet.
-
-Cela prend en compte le tri, la valorisation des déchets, l’implication d’acteurs permettant une économie circulaire et comprend donc une organisation et une sensibilisation générale au sein des entreprises.
-
+Une des principales priorité est la réduction des déchets. En 2016, la France a produit plus de 322 millions de tonnes de déchets, étant ainsi le 2ème pays européen produisant le plus de déchet d'après le [Ministère de la Transition Écologique et solidaire](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj41vHt1u7xAhWQyYUKHalpAosQFjATegQIDxAD&url=https%3A%2F%2Fwww.statistiques.developpement-durable.gouv.fr%2Fsites%2Fdefault%2Ffiles%2F2019-12%2Fdatalab-essentiel-198-bilan-2016-production-dechets-france-decembre2019.pdf&usg=AOvVaw3z6AIiub0l2m4-LBg7Ad43). Tous déchets confondus, seulement 66% en 2018 ont été recyclés d'après [L'environnement en France](https://ree.developpement-durable.gouv.fr/themes/economie-verte/activites-de-l-economie-verte/gestion-des-dechets/article/le-traitement-des-dechets?glossarise=2436).
 
 ### IMPACT DIRECT
 

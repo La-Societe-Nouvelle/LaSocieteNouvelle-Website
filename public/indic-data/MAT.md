@@ -4,7 +4,9 @@
     <img id="logo-odd" src=/resources/odd_mat.png alt="logo"/>
 </div>
 
-Entre l’exploitation des terres rares et des énergies fossiles, il est nécessaire d’accélérer la transition vers une utilisation des ressources renouvelables, de manière modérée et intelligente.
+L’utilisation de terres rares et de ressources fossiles génère un impact important sur l’environnement. Notamment la modification des paysages, sols et régime hydrographique local, ainsi que, pour les terres rares, la pollution radioactive due à la présence de thorium et d’uranium dans les gisements (source : [ADEME](https://www.ademe.fr/terres-rares-energies-renouvelables-stockage-denergies)). Ceux-ci provoquent des problèmes de santé aux ouvriers et habitants locaux.
+
+Il est nécessaire de prendre en compte pour ces dernières le quasi monopole de la Chine (97% de la production en provient) qui n’hésite pas à faire pression sur les sociétés, et les problèmes liés au recyclage de ces matériaux.
 
 ### IMPACT DIRECT
 

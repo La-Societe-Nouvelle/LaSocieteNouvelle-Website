@@ -4,13 +4,12 @@
     <img id="logo-odd" src=/resources/odd_haz.png alt="logo"/>
 </div>
 
-D’après [l’ADEME](https://grand-est.ademe.fr/expertises/dechets/reduction-de-la-production-de-dechets-en-entreprise/enjeux), la priorité pour les producteurs de déchets est d’en réduire la quantité et la nocivité : il s’agit de la notion de prévention des déchets.
-Les enjeux de la prévention des déchets, qui est un volet de l’économie circulaire, sont les suivants :
-* Une économie de matières premières épuisables ;
-* La limitation des impacts sur l’environnement et la santé ;
-* Les économies financières liées au traitement du déchet.
+En 2018, on compte en France 11 millions de tonnes de déchets dangereux, soit 3% des déchets français d’après [l’ADEME](https://www.ademe.fr/expertises/dechets/quoi-parle-t/types-dechets/dossier/dechets-dangereux/generalites-reglementation). Or en 2016, 54 % des déchets dangereux ne sont pas valorisés : 21 % sont éliminés par incinération sans valorisation énergétique et 32 % sont envoyés en centre de stockage (source : [ADEME](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjNyuqjje_xAhUMxoUKHSACAagQFjAAegQIBxAD&url=https%3A%2F%2Fwww.ademe.fr%2Fsites%2Fdefault%2Ffiles%2Fassets%2Fdocuments%2Fdechets_chiffres_cles_edition_2020_010692.pdf&usg=AOvVaw1a9p9rK2SrmFhdeYd4uBtT)). 
 
-Cela prend en compte le tri, la valorisation des déchets, l’implication d’acteurs permettant une économie circulaire et comprend donc une organisation et une sensibilisation générale au sein des entreprises.
+De plus, certains produits comme les pesticides ont un impact direct sur notre santé par leur présence possible dans les aliments destinés à la consommation. En 2016 [un contrôle de la DGCCRF](https://ree.developpement-durable.gouv.fr/themes/risques-nuisances-pollutions/sante-et-environnement/exposition-aux-substances-chimiques/article/pesticides?glossarise=2526#volet_glossaire) a révélé la présence de pesticides dans 56% des échantillons d’aliments destinés à la consommation contrôlés et près de 7% dépassaient la limite maximale autorisée pour au moins un pesticide (source : [L'environnement en France](https://ree.developpement-durable.gouv.fr/themes/risques-nuisances-pollutions/sante-et-environnement/exposition-aux-substances-chimiques/article/pesticides)).
+
+Il est donc nécessaire de réduire l’utilisation de produits à l’origine de déchets dangereux pour la santé et l’environnement.
+
 
 
 ### IMPACT DIRECT

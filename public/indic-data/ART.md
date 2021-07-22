@@ -4,7 +4,7 @@
     <img id="logo-odd" src=/resources/odd_art.png alt="logo"/>
 </div>
 
-Favoriser l’entrepreneuriat ou l’intrapreneuriat dans le domaine de l’artisanat permet de développer un savoir faire à l’origine du cachet français. Cela passe aussi par le soutient de projets innovants en faveur d’un développement durable.
+Les activités artisanales sont à valoriser par un savoir-faire de qualité et l’utilisation de méthodes bien souvent plus écologiques.
 
 ### IMPACT DIRECT
 

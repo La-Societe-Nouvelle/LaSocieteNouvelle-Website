@@ -4,9 +4,7 @@
     <img id="logo-odd" src=/resources/odd_dis.png alt="logo"/>
 </div>
 
-Une meilleure répartition des rémunération au sein d’une entreprise reflète une meilleure répartition de la valeur ajoutée entre les emplois.
-Pour la [CFE-CGC](https://www.cfecgc.org/actualites/les-enjeux-autour-dun-meilleur-partage-de-la-valeur-ajoutee), "la valeur ajoutée créée par les entreprises est due en grande partie au travail et à l’investissement des salariés, ce qui justifie une répartition juste et équitable et favorise une meilleure cohésion sociale dans l’entreprise."
-
+La meilleure répartition des rémunération au sein d’une entreprise renforce la cohésion sociale qui contribue au bien-être des salariés et à la performance globale de l’entreprise.
 
 ### IMPACT DIRECT
 
