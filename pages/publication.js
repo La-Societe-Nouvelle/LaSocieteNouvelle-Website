@@ -1,12 +1,13 @@
+// La Société Nouvelle
+
+// react
 import React from 'react';
 
 import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
-import EmblaCarousel from '../src/components/carousel.js';
-
-import {sendAssessment} from './api/mail-api.js'
+import { sendAssessment } from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -18,6 +19,8 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
+
+import * as IndicData from '../public/indic-data/data';
 
 /* Fetch default data */
 Home.getInitialProps = async () => {
@@ -59,6 +62,8 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      //
+      step: 0,
       // general experience state
       selectedIndicator: "eco",
       message: "",
@@ -73,88 +78,101 @@ class Form extends React.Component {
       uniteLegaleDataLoaded:false,
       uniteLegaleData: {},
 
-      // ES impacts
-      assessment: {}
+      // Statements
+      socialfootprint: Object.fromEntries(indicators.map(indic => [indic,{value: null,uncertainty: null, info: null}]))
     }
   }
 
-  render() {
-    const {message,coordonnees,certificationAutorisation,prixLibre,prix,
-           declarationSend,
-           siren,anneeExercice,
-           uniteLegaleDataLoaded,uniteLegaleData,
-           assessment} = this.state;
-    const {defaultData} = this.props;
-    
-
-    let disabled = (declarationSend | !certificationAutorisation);
+  render() 
+  {
+    const {step,certificationAutorisation,declarationSend} = this.state;  
 
     return (
-          <div className="declarationForm">
-            <div id="general-data" className="strip">
-              <h2>Informations légales</h2>
-              <div className="siren-input input">
-                <label>Numéro de siren </label>
-                <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
-                <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
-              </div>
-              <div className="input">
-                <label htmlFor="annee-exercice">Année de l'exercice</label>
-                <input type="text"
-                        id="annee-exercice"
-                        value={anneeExercice!==undefined ? anneeExercice : ""}
-                        onChange={this.onAnneeExerciceChange} />
-              </div>
-              <div>
-                <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
-                <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
-                <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
-              </div>
-            </div>    
-              
-            <EmblaCarousel
-             assessmentType="final"
-             assessment={assessment}
-             onIndicatorCommit={this.commitIndicator.bind(this)}/>
-                
-            <div id="further-info" className="strip">
-              <h2>Informations complémentaires</h2>
-              <div className="form-item">
-                <label>Message</label>
-                <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
-              </div>
-              <div className="form-item">
-                <label>Vos coordonnées (obligatoire)</label>
-                <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
-              </div>
-              <div className="input" id="certification">
-                <input type="checkbox" onChange={this.onCheckboxChange} /><label htmlFor="certification">Je certifie être autorisé(e) à soumettre la déclaration ci-présente.</label>
-              </div>
-              <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accessibilité des données.</p>
-              <div className="input" id="contribution">
-                <input type="checkbox" onChange={this.onPrixLibreChange} />
-                <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
-                <input type="text"
-                      id="contribution"
-                      disabled={!prixLibre}
-                      value={prix}
-                      onChange={this.onPrixChange} />
-                <span> &nbsp;€</span>
-              </div>
-              <button className="form-btn submit" id="submit-assessment" onClick={this.submitAssessment} disabled={disabled}>{getMessageButton(declarationSend,siren,coordonnees,certificationAutorisation)}</button>
-            </div>
-          </div>
+      <div className="declarationForm">
+        {this.buildForm(step)}
+      </div>
     )
   }
 
-  /* --- Submit commit --- */
-  commitIndicator = (commitedIndicator, value, uncertainty, skipped) =>
+  buildForm = (step) => 
   {
-    let assessment = this.state.assessment;
-    // When skipped : the assessment is set to an empty object (The indicator has been purposefully skipped)
-    // When fully filled : the assessment is set to a non-empty object (The indicator has been filled (data can be retrieved later))
-    assessment[commitedIndicator] = skipped ? {} : {value, uncertainty};
-    this.setState({assessment});
+    switch(step)
+    {
+      case 0: return <LegalDataForm onCommit={this.commit.bind(this)}/>
+      case 1: return <SocialFootprintForm socialfootprint={this.state.socialfootprint}
+                                          onCommit={this.commit.bind(this)}/>
+      case 2: return <ContactDetailsForm/>
+    }
+  }
+
+  /* --- Submit commit --- */
+
+  commit = () => {
+    this.setState({step: this.state.step+1});
+  }
+
+  /* --- Submit assessment --- */
+  submitAssessment = async(event) => 
+  {
+    event.preventDefault();
+
+    const siren = this.state.siren + " ("+this.state.anneeExercice+")";
+    const message = this.state.message;
+    const coordonnees = this.state.coordonnees;
+    const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
+    const assessment = this.state.assessment;
+
+    if (this.state.certificationAutorisation & coordonnees!="" &siren!="") {
+      const res = await sendAssessment(siren,assessment,message,coordonnees,participation);
+      this.setState({declarationSend: res.status<300});
+    }
+  }
+}
+
+/* ----- Counter Indicator ----- */
+
+class LegalDataForm extends React.Component {
+
+  // form for legal data
+
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      siren: "",
+      anneeExercice: undefined,
+      uniteLegaleDataLoaded:false,
+      uniteLegaleData: {},
+    }
+  }
+
+  render()
+  {
+    const {siren,anneeExercice,uniteLegaleDataLoaded,uniteLegaleData} = this.state;
+
+    return(
+      <div id="general-data" className="strip">
+        <h2>Informations légales</h2>
+        <div className="siren-input input">
+          <label>Numéro de siren </label>
+          <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
+          <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
+        </div>
+        <div className="input">
+          <label htmlFor="annee-exercice">Année de l'exercice</label>
+          <input type="text"
+                  id="annee-exercice"
+                  value={anneeExercice!==undefined ? anneeExercice : ""}
+                  onChange={this.onAnneeExerciceChange} />
+        </div>
+        <div>
+          <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
+          <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+          <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
+        </div>
+        <button onClick={this.commit}>Valider</button>
+      </div> 
+    )
   }
 
   /* --- SIREN --- */
@@ -190,63 +208,160 @@ class Form extends React.Component {
     this.setState({anneeExercice: anneeExercice});
   }
 
+  commit = () => this.props.onCommit();
+
+}
+
+class SocialFootprintForm extends React.Component {
+
+  // form for each indicator
+  // inputs : value / uncertainty / infos
+
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      socialfootprint: props.socialfootprint
+    }
+  }
+
+  render()
+  {
+    let {socialfootprint} = this.state; 
+    return(
+      <div>
+        <h2>Déclaration des données</h2>
+        {indicators.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={this.onUpdateProps.bind(this)}/>)}
+        <button onClick={this.commit}>Valider</button>
+      </div>
+    )
+  }
+
+  onUpdateProps = (nextProps) => this.state.socialfootprint[nextProps.indic] = nextProps
+
+  commit = () => this.props.onCommit();
+
+}
+class IndicatorForm extends React.Component {
+
+  // form for each indicator
+  // inputs : value / uncertainty / infos
+
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      value: props.value || "",
+      uncertainty: props.uncertainty || "",
+      info: props.info || ""
+    }
+  }
+
+  render()
+  {
+    const {indic} = this.props;
+    const {value,uncertainty,info} = this.state;
+
+    return(
+      <div>
+        <h3>{IndicData.indicateurs.libelle[indic]}</h3>
+        <div className="input">
+          <label>Valeur :</label>
+          <input type="text" 
+                 value={value} 
+                 onChange={this.onValueChange}
+                 onBlur={this.onBlur} />
+          <span>&nbsp;{IndicData.indicateurs.unitCode[indic]}</span>
+        </div>
+        <div className="input">
+          <label>Incertitude :</label>
+          <input type="text" 
+                 value={uncertainty} 
+                 onChange={this.onUncertaintyChange}
+                 onBlur={this.onBlur} />
+          <span>&nbsp;%</span>
+        </div>
+        <div className="form-item">
+          <label>Informations complémentaires :</label>
+          <textarea type="text" 
+                    value={info} 
+                    onChange={this.onInfoChange}
+                    onBlur={this.onBlur} />
+        </div>
+      </div>
+    )
+  }
+
+  onValueChange = (event) => this.setState({value: event.target.value})
+  onUncertaintyChange = (event) => this.setState({uncertainty: event.target.value})
+  onInfoChange = (event) => this.setState({info: event.target.value})
+
+  onBlur = () => this.props.updateProps({indic: this.props.indic,...this.state})
+
+}
+
+class ContactDetailsForm extends React.Component {
+
+  // form for contact details
+
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      message: props.message,
+      coordonnees: "",
+      contribution: false,
+      certificationAutorisation: false
+    }
+  }
+
+  render()
+  {
+    const {message,coordonnees,certificationAutorisation,contribution} = this.state;
+    
+    return(
+      <div id="further-info" className="strip">
+        <h2>Informations complémentaires</h2>
+        <div className="form-item">
+          <label>Message</label>
+          <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
+        </div>
+        <div className="form-item">
+          <label>Vos coordonnées (obligatoire)</label>
+          <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
+        </div>
+        <div className="input" id="certification">
+          <input type="checkbox" onChange={this.onCheckboxChange} /><label htmlFor="certification">Je certifie être autorisé(e) à soumettre la déclaration ci-présente.</label>
+        </div>
+        <p>La publication des données est soumise à un prix libre. Les revenus permettent de couvrir les frais d'hébergement, de maintenance et d'accessibilité des données.</p>
+        <div className="input" id="contribution">
+          <input type="checkbox" onChange={this.onContributionChange} />
+          <label htmlFor="contribution">J'accepte de contribuer, montant : </label>
+          <input type="text"
+                 id="contribution"
+                 disabled={!contribution}
+                 value={"25"}
+                 onChange={this.onPrixChange} />
+          <span> &nbsp;€</span>
+        </div>
+        <button className="form-btn submit" id="submit-assessment" onClick={this.props.onCommit} disabled={false}>{getMessageButton(false,coordonnees,certificationAutorisation)}</button>
+      </div>
+    )
+  }
+
   /* --- Assessment message --- */
   onMessageChange = (event) => { this.setState({message: event.target.value}) }
   onCoordonneesChange = (event) => { this.setState({coordonnees: event.target.value}) }
   onCheckboxChange = (event) => { this.setState({certificationAutorisation: !this.state.certificationAutorisation}) }
-  onPrixLibreChange = (event) => { this.setState({prixLibre: !this.state.prixLibre, prix: ""}); }
+  onContributionChange = (event) => { this.setState({prixLibre: !this.state.prixLibre, prix: ""}); }
   onPrixChange = (event) => {
     let input = parseInt(event.target.value);
     this.setState({prix: isNaN(input) ? undefined : input});
   }
 
-  /* --- Submit assessment --- */
-  submitAssessment = async(event) => {
-    event.preventDefault();
 
-    const siren = this.state.siren + " ("+this.state.anneeExercice+")";
-    const message = this.state.message;
-    const coordonnees = this.state.coordonnees;
-    const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
-    const assessment = this.state.assessment;
-
-    if (this.state.certificationAutorisation & coordonnees!="" &siren!="") {
-      const res = await sendAssessment(siren,assessment,message,coordonnees,participation);
-      this.setState({declarationSend: res.status<300});
-    }
-  }
 }
 
-/* ----- Counter Indicator ----- */
-function IndicatorCounter({counter, counted}){
-  return (
-    <div className="counter">
-      Complété(s) : {counter}/{counted}
-    </div>
-  );
-}
-
-/* ----- ViewMenu : Controls the selected view that must be displayed ----- */
-function IndicatorViewMenu({selected, parent}){
-  return (
-    <div className="menu">
-      <div className="menu-items">
-        {Object.entries(indicators).map(
-          ([index,indicator],_) => (
-            <button key={indicator}
-                    onClick = {() => parent.setState({selectedIndicator: indicator})}
-                    className={"menu-button " +
-                               ((indicator == selected) ? "selected" : "")}>
-              <span></span>
-              {indicator.toUpperCase()}
-              <span id={"validated-" + indicator.toString()} className=""></span>
-            </button>
-          ))
-        }
-      </div>
-    </div>
-  );
-}
 
 /* ----- Builder message ----- */
 
@@ -257,9 +372,9 @@ function getMessageSiren(siren,uniteLegaleDataLoaded) {
   else                                                 { return "" }
 }
 
-function getMessageButton(declarationSend,siren,coordonnees,autorisation) {
-  if (declarationSend)        { return "Demande de publication envoyée"}
-  else if (siren==="")        { return "Numéro de siren manquant"}
+function getMessageButton(coordonnees,autorisation) {
+  if (false)        { return "Demande de publication envoyée"}
+  //else if (siren==="")        { return "Numéro de siren manquant"}
   else if (coordonnees==="")  { return "Coordonnées manquantes"}
   else if (!autorisation)     { return "Autorisation manquante"}
   else                        { return "Envoyer la publication" }
