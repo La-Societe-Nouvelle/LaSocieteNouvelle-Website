@@ -49,7 +49,6 @@ export default function Home(props) {
       <Header/>
       <main className="main">
         <h1>Declaration - Empreinte Sociétale</h1>
-        <p>Merci de vérifier que les valeurs déclarées correspondent bien à la définition des indicateurs.</p>
         <Form defaultData={props.defaultData}/>
       </main>
       <Footer/>
@@ -85,7 +84,9 @@ class Form extends React.Component {
 
   render() 
   {
-    const {step,certificationAutorisation,declarationSend} = this.state;  
+    const {step,certificationAutorisation,declarationSend} = this.state; 
+    
+    console.log(this.state.socialfootprint);
 
     return (
       <div className="declarationForm">
@@ -150,27 +151,32 @@ class LegalDataForm extends React.Component {
   {
     const {siren,anneeExercice,uniteLegaleDataLoaded,uniteLegaleData} = this.state;
 
+    const isAllValid = /[0-9]{9}/.test(siren) && /[0-9]{4}/.test(anneeExercice);
+
     return(
       <div id="general-data" className="strip">
         <h2>Informations légales</h2>
-        <div className="siren-input input">
-          <label>Numéro de siren </label>
-          <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
-          <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
+
+        <div className="form_inner">
+          <div className="siren-input input">
+            <label>Numéro de siren </label>
+            <input id="siren-input" type="text" value={siren} onChange={this.onSirenChange} />
+            <span> {getMessageSiren(siren,uniteLegaleDataLoaded)}</span>
+          </div>
+          <div className="input">
+            <label htmlFor="annee-exercice">Année de l'exercice</label>
+            <input type="text"
+                    id="annee-exercice"
+                    value={anneeExercice!==undefined ? anneeExercice : ""}
+                    onChange={this.onAnneeExerciceChange} />
+          </div>
+          <div>
+            <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
+            <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
+            <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
+          </div>
         </div>
-        <div className="input">
-          <label htmlFor="annee-exercice">Année de l'exercice</label>
-          <input type="text"
-                  id="annee-exercice"
-                  value={anneeExercice!==undefined ? anneeExercice : ""}
-                  onChange={this.onAnneeExerciceChange} />
-        </div>
-        <div>
-          <p>Dénomination sociale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.denomination : " - "}</p>
-          <p>Activité principale : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.activitePrincipaleLibelle : ""}</p>
-          <p>Siège : {uniteLegaleDataLoaded ? uniteLegaleData.descriptionUniteLegale.communeSiege+" ("+uniteLegaleData.descriptionUniteLegale.codePostalSiege+")" : ""}</p>
-        </div>
-        <button onClick={this.commit}>Valider</button>
+        <button disabled={!isAllValid} onClick={this.commit}>Valider</button>
       </div> 
     )
   }
@@ -212,34 +218,25 @@ class LegalDataForm extends React.Component {
 
 }
 
-class SocialFootprintForm extends React.Component {
+/* ---------- SOCIALFOOTPRINT STATEMENT ---------- */
+
+const SocialFootprintForm = ({socialfootprint,onCommit}) => {
 
   // form for each indicator
   // inputs : value / uncertainty / infos
 
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      socialfootprint: props.socialfootprint
-    }
-  }
+  const onUpdateProps = (nextProps) => socialfootprint[nextProps.indic] = nextProps
+  const commit = () => onCommit();
 
-  render()
-  {
-    let {socialfootprint} = this.state; 
-    return(
-      <div>
-        <h2>Déclaration des données</h2>
-        {indicators.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={this.onUpdateProps.bind(this)}/>)}
-        <button onClick={this.commit}>Valider</button>
+  return(
+    <div className="strip">
+      <h2>Déclaration des données</h2>
+      <div className="form_inner">
+        {indicators.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={onUpdateProps}/>)}
       </div>
-    )
-  }
-
-  onUpdateProps = (nextProps) => this.state.socialfootprint[nextProps.indic] = nextProps
-
-  commit = () => this.props.onCommit();
+      <button onClick={commit}>Valider</button>
+    </div>
+  )
 
 }
 class IndicatorForm extends React.Component {
@@ -263,7 +260,7 @@ class IndicatorForm extends React.Component {
     const {value,uncertainty,info} = this.state;
 
     return(
-      <div>
+      <div className="group">
         <h3>{IndicData.indicateurs.libelle[indic]}</h3>
         <div className="input">
           <label>Valeur :</label>

@@ -3,6 +3,22 @@
 .declarationForm {
     width: 100%;
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .strip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form_inner {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
 
     label {
         min-width: 200px;
@@ -23,6 +39,14 @@
             flex-direction: column;
             text-align: center;
         }
+    }
+
+    .group {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
     }
 
     #indicators {
