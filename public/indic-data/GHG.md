@@ -1,28 +1,24 @@
-### ENJEUX
+### DESCRIPTION
+
+Quantité de gaz à effet de serre émise par unité de valeur produite, exprimée en gCO2e/€ (grammes de CO2 équivalent par euro ; équivalent pour la mise en équivalence des différents gaz à effet de serre, par rapport au CO2).
+
+L’indicateur informe sur la quantité émise de gaz à effet de serre liée à la production de l'entreprise avec pour objectif d'identifier les entreprises les plus performantes. Il s'inscrit dans l'objectif de réduction des émissions de gaz à effet de serre, dans le cadre de la lutte contre le déréglèment climatique.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_ghg.png alt="logo"/>
 </div>
 
+* 7.2 : D’ici à 2030, accroître nettement la part de l’énergie renouvelable dans le bouquet énergétique mondial.
+* 8.4 : Améliorer progressivement, jusqu’en 2030, l’efficience de l’utilisation des ressources mondiales du point de vue de la consommation comme de la production et s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement \[...\].
+* 12.1 : Mettre en œuvre le Cadre décennal de programmation concernant les modes de consommation et de production durables \[...\].
+* 13.1 : Renforcer, dans tous les pays, la résilience et les capacités d’adaptation face aux aléas climatiques et aux catastrophes naturelles liées au climat.
+* 13.2 : Incorporer des mesures relatives aux changements climatiques dans les politiques, les stratégies et la planification nationales.
+* 14.3 Réduire au maximum l’acidification des océans et lutter contre ses effets, notamment en renforçant la coopération scientifique à tous les niveaux.
+* 15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux.
 
-Les gaz à effet de serre proviennent majoritairement de la combustion des combustibles fossiles. Ils s’accumulent dans l’atmosphère et sont à l’origine d’un dérèglement climatique ayant des conséquences notables sur :
-* L’écologie :
-    * Accentuation des écarts de précipitation entre les régions du monde (Un manque de 2 milliards de m3 d’eau en 2050 si la demande reste stable d'après [le Ministère de la Transition Écologique](https://www.ecologie.gouv.fr/observatoire-national-sur-effets-du-rechauffement-climatique-onerc))
-    * Augmentation du niveau de la mer générant catastrophes climatiques
-    * Acidification des océans, éliminant certaines espèces et menaçant l’équilibre marin
-
-* La société :
-    * Développement de maladies infectieuses jusqu’à lors limitées dans l’espace par la température ou l’humidité.
-
-* La politique et l’économie :
-    * Migrations dues à la montée des eaux
-    * Risques de conflits territoriaux
-    * Coût du changement climatique (estimé à 5 500 milliards d’euros sur 10 ans d'après [l'ADEME](https://www.ademe.fr/expertises/changement-climatique/quoi-parle-t/phenomenes-impacts-changement-climatique))
-
-D’après [l’ADEME](https://www.ecologie.gouv.fr/impacts-du-changement-climatique-sante-et-societe) 62% de la population française est exposée de manière forte ou très forte aux risques climatiques.
-
-
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesuréee :** Emissions directes de gaz à effet de serre - SCOPE 1 (en kgCO2e)
 

@@ -1,12 +1,21 @@
-### ENJEUX
+### DESCRIPTION
+
+Ecart entre le taux horaire brut moyen des femmes et des hommes (en pourcentage du taux horaire moyen), exprimé en % (du taux horaire moyen).
+
+L’indicateur informe sur les écarts de salaires entre les femmes et les hommes au sein des entreprises ayant contribué à la production de la valeur. Il vise à encourager les actions en faveur de la réduction de l'écart de rémunérations entre les femmes/hommes ; en 2017 cet écart était de 16.8 % dans le secteur privé ([INSEE](https://www.insee.fr/fr/statistiques/4514861#figure3_radio1)).
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_geq.png alt="logo"/>
 </div>
 
-Le principal enjeux des inégalités Femmes/Hommes est l’écart de salaire. En effet, d'après [l'INSEE](https://www.insee.fr/fr/statistiques/4514861#figure3_radio1) en 2017 en France, les femmes salariées du secteur privé gagnent en moyenne 16,8 % de moins que les hommes en équivalent temps plein, c’est-à-dire pour un même volume de travail.
+* 5.1 : Mettre fin, dans le monde entier, à toutes les formes de discrimination à l’égard des femmes et des filles.
+* 5.5 : Garantir la participation entière et effective des femmes et leur accès en toute égalité aux fonctions de direction à tous les niveaux de décision, dans la vie politique, économique et publique.
+* 8.5 : D’ici à 2030, parvenir au plein emploi productif et garantir à toutes les femmes et à tous les hommes, y compris les jeunes et les personnes handicapées, un travail décent et un salaire égal pour un travail de valeur égale
+* 10.2 : D’ici à 2030, autonomiser toutes les personnes et favoriser leur intégration sociale, économique et politique, indépendamment de leur âge, de leur sexe, de leurs handicaps, de leur race, de leur appartenance ethnique, de leurs origines, de leur religion ou de leur statut économique ou autre.
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Ecart absolu entre le taux horaires moyens bruts des femmes et celui des hommes, en pourcentage du taux horaire brut moyen
 

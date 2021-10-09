@@ -1,12 +1,25 @@
-### ENJEUX
+### DESCRIPTION
+
+Part de la valeur produite sur le territoire français, exprimée en % (de la valeur).
+
+L’indicateur vise à informer sur la localisation des activités (en France ou à l’étranger).
+
+Il permet de rendre compte de la part de la valeur produite en France et celle issue d’importations. Il s’inscrit dans une dynamique de relocalisation des activités et ouvre la voie à une information plus complète sur la diffusion des dépenses (part de la valeur produite à l'échelle locale, européenne, etc.).
+
+*Note : L’indicateur s’intéresse à la production de la valeur et à sa redistribution. La valeur ajoutée d’une entreprise française peut être entièrement contributrice à l’économie nationale bien que des rémunérations ou des dividendes soient versés à l’étranger.*
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_eco.png alt="logo"/>
 </div>
 
-Pour retrouver une certaine souveraineté économique il est nécessaire de relocaliser les industries françaises et favoriser l’économie circulaire au niveau national. Cette stratégie permettrait en conséquence de limiter les importations et les impacts écologiques liés. 
+* 8.3 : Promouvoir des politiques axées sur le développement qui favorisent des activités productives, la création d’emplois décents, l’entrepreneuriat,\[...\] et stimulent la croissance des micro-entreprises et des petites et moyennes entreprises \[...\].
+* 8.5 : D’ici à 2030, parvenir au plein emploi productif et garantir à toutes les femmes et à tous les hommes, y compris les jeunes et les personnes handicapées, un travail décent \[...\].
+* 9.2 : Promouvoir une industrialisation durable qui profite à tous et, d’ici à 2030, augmenter nettement la contribution de l’industrie à l’emploi et au produit intérieur brut, en fonction du contexte national, et la multiplier par deux dans les pays les moins avancés
+* 12.b : Mettre au point et utiliser des outils de contrôle des impacts sur le développement durable, pour un tourisme durable qui crée des emplois et met en valeur la culture et les produits locaux
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Valeur nette créée sur le territoire français (en euros)
 

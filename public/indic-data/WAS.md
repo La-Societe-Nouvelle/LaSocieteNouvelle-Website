@@ -1,12 +1,25 @@
-### ENJEUX
+### DESCRIPTION
+
+Quantité de déchets produite par unité de valeur produite, exprimée en g/€ (grammes par euro).
+
+L’indicateur informe sur la quantité de déchets produite, avec pour objectif de la réduire.
+Il n’informe cependant pas sur le traitement des déchets (recyclages, destruction, etc.) et leur dangerosité. Des indicateurs spécifiques pourront être mis en place pour ces catégories.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_was.png alt="logo"/>
 </div>
 
-Une des principales priorité est la réduction des déchets. En 2016, la France a produit plus de 322 millions de tonnes de déchets, étant ainsi le 2ème pays européen produisant le plus de déchet d'après le [Ministère de la Transition Écologique et solidaire](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj41vHt1u7xAhWQyYUKHalpAosQFjATegQIDxAD&url=https%3A%2F%2Fwww.statistiques.developpement-durable.gouv.fr%2Fsites%2Fdefault%2Ffiles%2F2019-12%2Fdatalab-essentiel-198-bilan-2016-production-dechets-france-decembre2019.pdf&usg=AOvVaw3z6AIiub0l2m4-LBg7Ad43). Tous déchets confondus, seulement 66% en 2018 ont été recyclés d'après [L'environnement en France](https://ree.developpement-durable.gouv.fr/themes/economie-verte/activites-de-l-economie-verte/gestion-des-dechets/article/le-traitement-des-dechets?glossarise=2436).
+* 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de maladies dus à des substances chimiques dangereuses et à la pollution et à la contamination de l’air, de l’eau et du sol.
+* 6.3 : D’ici à 2030, améliorer la qualité de l’eau en réduisant la pollution, en éliminant l’immersion de déchets et en réduisant au minimum les émissions de produits chimiques et de matières dangereuses, en diminuant de moitié la proportion d’eaux usées non traitées et en augmentant considérablement à l’échelle mondiale le recyclage et la réutilisation sans danger de l’eau.
+* 11.6 : D’ici à 2030, réduire l’impact environnemental négatif des villes par habitant, y compris en accordant une attention particulière à la qualité de l’air et à la gestion, notamment municipale, des déchets.
+* 12.3 : D’ici à 2030, réduire de moitié à l’échelle mondiale le volume de déchets alimentaires par habitant au niveau de la distribution comme de la consommation et réduire les pertes de produits alimentaires tout au long des chaînes de production et d’approvisionnement, y compris les pertes après récolte.
+* 12.5 : D’ici à 2030, réduire considérablement la production de déchets par la prévention, la réduction, le recyclage et la réutilisation.
+* 14.1 D’ici à 2025, prévenir et réduire nettement la pollution marine de tous types, en particulier celle résultant des activités terrestres, y compris les déchets en mer et la pollution par les nutriments.
+* 15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux.
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Quantité produite de déchets (en kg)
 

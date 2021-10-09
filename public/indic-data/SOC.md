@@ -1,12 +1,19 @@
-### ENJEUX
+### DESCRIPTION
+
+Part de la valeur produite dans un intérêt social défini (raison d’être, etc.), exprimée en % (de la valeur).
+
+Face aux enjeux environnementaux et sociétaux, l’entreprise doit se positionner par sa raison d’être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_soc.png alt="logo"/>
 </div>
 
-Face aux enjeux environnementaux et sociétaux, l’entreprise doit se positionner par sa raison d’être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.
+* 12.1 : Mettre en œuvre le Cadre décennal de programmation concernant les modes de consommation et de production durables avec la participation de tous les pays, les pays développés montrant l’exemple en la matière, compte tenu du degré de développement et des capacités des pays en développement.
+* 12.6 : Encourager les entreprises, en particulier les grandes et les transnationales, à adopter des pratiques viables et à intégrer dans les rapports qu’elles établissent des informations sur la viabilité.
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Valeur nette créée par des acteurs d’intérêt social (en euros)
 

@@ -1,12 +1,21 @@
-### ENJEUX
+### DESCRIPTION
+
+Part de la valeur produite, contribuant à la recherche, à la formation ou à l’enseignement, exprimée en % (de la valeur).
+
+L’indicateur informe sur la part des revenus de l’entreprise dédiée à la formation, la recherche ou l’enseignement.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_knw.png alt="logo"/>
 </div>
 
-D’après [Pôle Emploi](https://www.pole-emploi.fr/actualites/le-dossier/les-metiers-de-demain/85-des-emplois-de-2030-nexistent.html), 85% des emplois de 2030 n’existent pas encore. La rapide évolution des technologies oblige les entreprises à s’adapter et à investir en recherche pour innover. Il est donc nécessaire de former ses employés pour les faire évoluer en compétence et les rendre plus flexibles.
+* 4.3 : D’ici à 2030, faire en sorte que les femmes et les hommes aient tous accès dans des conditions d’égalité à un enseignement technique, professionnel ou tertiaire, y compris universitaire, de qualité et d’un coût abordable.
+* 4.4 : D’ici à 2030, augmenter considérablement le nombre de jeunes et d’adultes disposant des compétences, notamment techniques et professionnelles, nécessaires à l’emploi, à l’obtention d’un travail décent et à l’entrepreneuriat
+* 8.6 : D’ici à 2020, réduire considérablement la proportion de jeunes non scolarisés et sans emploi ni formation
+* 9.5 : Renforcer la recherche scientifique, perfectionner les capacités technologiques des secteurs industriels de tous les pays, \[...\] notamment en encourageant l’innovation et en augmentant considérablement le nombre de personnes travaillant dans le secteur de la recherche et du développement \[...\ et en accroissant les dépenses publiques et privées consacrées à la recherche et au développement d’ici à 2030.
 
-### IMAPCT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Montant total des charges (hors charges externes) liées à la formation, l’éducation ou la recherche (en euros)
 

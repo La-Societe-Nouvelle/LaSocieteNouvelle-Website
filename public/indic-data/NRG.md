@@ -1,13 +1,25 @@
-### ENJEUX
+### DESCRIPTION
+
+Consommation d’énergie primaire par unité de valeur produite, exprimée en kJ/€ (kilojoules par euro).
+
+L’énergie est une grandeur qui caractérise la transformation d’un système. De nombreux enjeux sont ainsi directement liés à l’énergie tels que la consommation de ressources naturelles (matières fossiles, eau, minerais, etc.) ou les émissions de gaz à effet de serre.
+
+L’indicateur informe donc sur la pression exercée sur l’environnement.
+
+Associé à l’intensité d’émissions de gaz à effet de serre, il permet de connaître l’intensité carbone de l’énergie consommée.
+
+### OBJECTIF DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_nrg.png alt="logo"/>
 </div>
 
-L’énergie correspond à la grandeur qui caractérise le changement d’état d’un système, et s’inscrit donc dans notre quotidien. En 2019 en France, 47% de la consommation énergétique provient de sources d’énergies fossiles (Pétrole 29%, Gaz 15.2%, Charbon 3%), malgré notre production d’énergie nucléaire estimée à 77% de notre production totale.
-Il est donc nécessaire de réduire au maximum notre consommation de combustibles fossiles qui génèrent des [gaz à effet de serre](https://lasocietenouvelle.org/indicateur/ghg).
+* 7.3 : D’ici à 2030, multiplier par deux le taux mondial d’amélioration de l’efficacité énergétique.
+* 8.4 : Améliorer progressivement, jusqu’en 2030, l’efficience de l’utilisation des ressources mondiales du point de vue de la consommation comme de la production et s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement \[...\].
+* 12.2 : D’ici à 2030, parvenir à une gestion durable et à une utilisation rationnelle des ressources naturelles.
+* 13.1 : Renforcer, dans tous les pays, la résilience et les capacités d’adaptation face aux aléas climatiques et aux catastrophes naturelles liées au climat.
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Quantité consommée d’énergie (en MJ)
 

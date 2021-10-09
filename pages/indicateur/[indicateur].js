@@ -73,11 +73,6 @@ function build(postData) {
           {data.libelle[indic]}
           </h2>
           <br/>
-          <ul>
-            <li>Code : {data.code[indic]}</li>
-            <li>Description : {data.description[indic]}</li>
-            <li>Unité par défaut : {data.unit[indic]}</li>
-          </ul>
         </div>
 
         

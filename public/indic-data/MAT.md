@@ -1,14 +1,23 @@
-### ENJEUX
+### DESCRIPTION
+
+Quantité de matières premières extraite (minerais, fossiles, biomasse) par unité de valeur produite, exprimée en g/€ (en grammes par euro).
+
+L’indicateur informe sur le recours à l’extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure.
+L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_mat.png alt="logo"/>
 </div>
 
-L’utilisation de terres rares et de ressources fossiles génère un impact important sur l’environnement. Notamment la modification des paysages, sols et régime hydrographique local, ainsi que, pour les terres rares, la pollution radioactive due à la présence de thorium et d’uranium dans les gisements (source : [ADEME](https://www.ademe.fr/terres-rares-energies-renouvelables-stockage-denergies)). Ceux-ci provoquent des problèmes de santé aux ouvriers et habitants locaux.
+* 8.4 : Améliorer progressivement, jusqu’en 2030, l’efficience de l’utilisation des ressources mondiales du point de vue de la consommation comme de la production et s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement, comme prévu dans le cadre décennal de programmation relatif à la consommation et à la production durables, les pays développés montrant l’exemple en la matière.
+* 12.2 : D’ici à 2030, parvenir à une gestion durable et à une utilisation rationnelle des ressources naturelles.
+* 14.4 D’ici à 2020, réglementer efficacement la pêche, mettre un terme à la surpêche, \[...\] et aux pratiques de pêche destructrices et exécuter des plans de gestion fondés sur des données scientifiques, l’objectif étant de rétablir les stocks de poissons le plus rapidement possible, au moins à des niveaux permettant d’obtenir un rendement constant maximal compte tenu des caractéristiques biologiques.
+* 15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux
+* 15.2 : D’ici à 2020, promouvoir la gestion durable de tous les types de forêt, mettre un terme à la déforestation, restaurer les forêts dégradées et accroître considérablement le boisement et le reboisement au niveau mondial
 
-Il est nécessaire de prendre en compte pour ces dernières le quasi monopole de la Chine (97% de la production en provient) qui n’hésite pas à faire pression sur les sociétés, et les problèmes liés au recyclage de ces matériaux.
-
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Quantité extraite de matières premières (en kg)
 

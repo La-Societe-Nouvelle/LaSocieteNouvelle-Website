@@ -1,12 +1,21 @@
-### ENJEUX
+### DESCRIPTION
+
+Part de la valeur produite par des entreprises artisanales, créatives ou dont le savoir-faire est reconnu ; exprimée en % (de la valeur).
+
+L'indicateur vise à informer sur la part *artisanale* de la valeur produite dans un objectif de valorisation des savoir-faire et des métiers de l'artisanat auprès des consommateurs finaux.
+
+Code : ART
+  
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_art.png alt="logo"/>
 </div>
 
-Les activités artisanales sont à valoriser par un savoir-faire de qualité et l’utilisation de méthodes bien souvent plus écologiques.
+* 8.3 : Promouvoir des politiques axées sur le développement qui favorisent \[...\], la créativité et l’innovation et stimulent la croissance des micro-entreprises et des petites et moyennes entreprises \[...\].
+* 9.2 : Promouvoir une industrialisation durable qui profite à tous \[...\].
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Valeur nette créée issue de l’artisanat ou d’un savoir-faire reconnu (en euros)
 

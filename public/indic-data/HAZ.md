@@ -1,18 +1,26 @@
-### ENJEUX
+### DESCRIPTION
+
+Quantité utilisée de produits classifiés comme dangereux pour la santé ou l’environnement par unité de valeur produite, exprimée en g/€ (grammes par euro). Les dangers physiques (irritation, explosif, inflammable, etc.) ne sont pas pris en compte. La classification s’appuie sur les pictogrammes de danger présents sur les produits.
+
+L’indicateur vise à informer sur le degré d’utilisation de produits pouvant entraîner des conséquences néfastes sur la santé et/ou l’environnement (pesticides, etc.). Son objectif est de diminuer le recours à ces catégories de produits.
+
+L’indicateur n’informe pas sur les types de dangers liés à ces produits (toxicité, irritation, etc.), sur leur périmètre (danger temporaire lors d’une manipulation, contact avec l’environnement, présence résiduelle dans les produits, etc.) et des mesures prises pour limiter les risques.
+
+Dans une volonté de réduire l’utilisation de produits spécifiques, il conviendra alors de construire un indicateur ad hoc.
+
+### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_haz.png alt="logo"/>
 </div>
 
-En 2018, on compte en France 11 millions de tonnes de déchets dangereux, soit 3% des déchets français d’après [l’ADEME](https://www.ademe.fr/expertises/dechets/quoi-parle-t/types-dechets/dossier/dechets-dangereux/generalites-reglementation). Or en 2016, 54 % des déchets dangereux ne sont pas valorisés : 21 % sont éliminés par incinération sans valorisation énergétique et 32 % sont envoyés en centre de stockage (source : [ADEME](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjNyuqjje_xAhUMxoUKHSACAagQFjAAegQIBxAD&url=https%3A%2F%2Fwww.ademe.fr%2Fsites%2Fdefault%2Ffiles%2Fassets%2Fdocuments%2Fdechets_chiffres_cles_edition_2020_010692.pdf&usg=AOvVaw1a9p9rK2SrmFhdeYd4uBtT)). 
+* 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de maladies dus à des substances chimiques dangereuses et à la pollution et à la contamination de l’air, de l’eau et du sol.
+* 8.4 : \[...\] s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement, comme prévu dans le cadre décennal de programmation relatif à la consommation et à la production durables, les pays développés montrant l’exemple en la matière.
+* 12.4 : D’ici à 2020, instaurer une gestion écologiquement rationnelle des produits chimiques et de tous les déchets tout au long de leur cycle de vie, conformément aux principes directeurs arrêtés à l’échelle internationale, et réduire considérablement leur déversement dans l’air, l’eau et le sol, afin de minimiser leurs effets négatifs sur la santé et l’environnement.
+* 14.1 : D’ici à 2025, prévenir et réduire nettement la pollution marine de tous types, en particulier celle résultant des activités terrestres, y compris les déchets en mer et la pollution par les nutriments.
+* 15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux
 
-De plus, certains produits comme les pesticides ont un impact direct sur notre santé par leur présence possible dans les aliments destinés à la consommation. En 2016 [un contrôle de la DGCCRF](https://ree.developpement-durable.gouv.fr/themes/risques-nuisances-pollutions/sante-et-environnement/exposition-aux-substances-chimiques/article/pesticides?glossarise=2526#volet_glossaire) a révélé la présence de pesticides dans 56% des échantillons d’aliments destinés à la consommation contrôlés et près de 7% dépassaient la limite maximale autorisée pour au moins un pesticide (source : [L'environnement en France](https://ree.developpement-durable.gouv.fr/themes/risques-nuisances-pollutions/sante-et-environnement/exposition-aux-substances-chimiques/article/pesticides)).
-
-Il est donc nécessaire de réduire l’utilisation de produits à l’origine de déchets dangereux pour la santé et l’environnement.
-
-
-
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Quantité utilisée de produits dangereux pour la santé et/ou l’environnement (en kg)
 

@@ -1,12 +1,21 @@
-### ENJEUX
+### DESCRIPTION
+
+Coefficient de GINI. Valeur sans unité, comprise entre 0 (égalité parfaite) et 100 (inégalité parfaite).
+
+L’indicateur vise à fournir un élément d’information sur la répartition des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite. D'autres indicateurs tel que le rapport interdécile D1/D9 sont en réflexion pour compléter cette information.
+
+*Note : Une meilleure répartition des rémunérations au sein de chaque entreprise n’implique pas nécessairement une meilleure répartition des revenus à l’échelle nationale, notamment en raison des disparités existantes entre certaines branches d’activités.*
+
+### OBJECTIFS DE DVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
     <img id="logo-odd" src=/resources/odd_dis.png alt="logo"/>
 </div>
 
-La meilleure répartition des rémunération au sein d’une entreprise renforce la cohésion sociale qui contribue au bien-être des salariés et à la performance globale de l’entreprise.
+* 8.5 : D’ici à 2030, parvenir au plein emploi productif et garantir à toutes les femmes et à tous les hommes, y compris les jeunes et les personnes handicapées, un travail décent et un salaire égal pour un travail de valeur égale.
+* 10.1 : D’ici à 2030, faire en sorte, au moyen d’améliorations progressives, que les revenus des 40 % les plus pauvres de la population augmentent plus rapidement que le revenu moyen national, et ce de manière durable
 
-### IMPACT DIRECT
+### IMPACT DIRECT MESUR&Eacute;
 
 **Grandeur mesurée :** Indice de GINI des taux horaires bruts
 
