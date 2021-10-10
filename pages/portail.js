@@ -43,7 +43,7 @@ class PortailView extends React.Component {
         input: '',
         isLoading: false,
         isLoaded: false,
-        infoResults: {},
+        infoResults: {nbResults: 0},
         results: {}
     };
     this.inputChange = this.inputChange.bind(this);
@@ -54,8 +54,9 @@ class PortailView extends React.Component {
     this.setState({input: event.target.value});
   }
 
-  handleClick(event) {
-    if (this.state.input!==undefined & this.state.input!=='') {
+  handleClick(event) 
+  {
+    if (this.state.input!==undefined && this.state.input!=='') {
       this.setState({
         isLoaded: false,
         isLoading: true
@@ -64,26 +65,34 @@ class PortailView extends React.Component {
     }
   }
 
-  getResults(recherche) {
+  getResults(recherche) 
+  {
     fetch('https://systema-api.azurewebsites.net/api/v2/search?denomination='+recherche,{method:'get'})
         .then(response => response.json())
-        .then(
-            (data) => {
-                this.setState({
-                    isLoaded: true,
-                    isLoading: false,
-                    infoResults: data.infoResults,
-                    results: Object.values(data.results),
-                });
-            }
-        ).catch(error => console.log(error))
+        .then((response) => 
+        {
+          if (response.header.statut==200) {
+            this.setState({
+                isLoaded: true,
+                isLoading: false,
+                infoResults: response.infoResults,
+                results: Object.values(response.results),
+            });
+          } else {
+            this.setState({
+              isLoading: false,
+              infoResults: {nbResults: 0},
+            })
+          }
+        }).catch(error => console.log(error))
   }
 
-  render() {
-    const {input,isLoading,isLoaded,infoResults,results} = this.state;
+  render() 
+  {
+    const {isLoading,isLoaded,infoResults,results} = this.state;
     const nbResults = infoResults.nbResults;
     // if results are loaded
-    if (!isLoaded & !isLoading) {
+    if (!isLoaded && !isLoading) {
       return (
         <div id="portail-view">
             {buildSearchBar(this)}
