@@ -20,7 +20,7 @@ export default class Header extends React.Component {
           </div>
           <hr className="hr-big-size"/>
           <div className="header-strip-item" id="header-text2">
-            Système d'Information extra-financière
+            <p>Système d'Information&nbsp;</p><p>et de Comptabilité extra-financière</p>
           </div>
           <div className="header-actions">
             <button id="header-action-declaration" onClick={() => window.location="/publication-choix"}>Publiez vos impacts</button>

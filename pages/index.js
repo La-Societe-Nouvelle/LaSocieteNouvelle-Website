@@ -21,9 +21,9 @@ export default function Home() {
       <main className="main">
 
         <div id="head-accueil">
-          <h2 className="head-accueil-item">Base de données ouverte des impacts des entreprises.</h2>
-          <h2 className="head-accueil-item-highlight">Construisons une économie durable.</h2>
-          <h2 className="head-accueil-item-highlight">Publiez vos impacts.</h2>
+          <h2 className="head-accueil-item">Système d'Information et de Comptabilité extra-financière.</h2>
+          <h2 className="head-accueil-item-highlight">Base de données ouverte.</h2>
+          <h2 className="head-accueil-item-highlight">Application web open source.</h2>
         </div>
 
         <div id="front-page">
