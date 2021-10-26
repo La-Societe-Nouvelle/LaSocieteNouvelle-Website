@@ -23,7 +23,7 @@ export default class Header extends React.Component {
             <p>Système d'Information&nbsp;</p><p>et de Comptabilité extra-financière</p>
           </div>
           <div className="header-actions">
-            <button id="header-action-declaration" onClick={() => window.location="/publication-choix"}>Publiez vos impacts</button>
+            <button id="header-action-declaration" onClick={() => window.location="/publication"}>Publiez vos impacts</button>
             <button onClick={() => window.open("https://metriz.lasocietenouvelle.org/")}>Mesurez vos Impacts</button>
           </div>
           {/* <hr className="hr-small-size"/> */}

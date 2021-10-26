@@ -50,6 +50,11 @@ button {
 button:hover {
   background-color: $secondary-color;
 }
+button:disabled {
+  background-color: white;
+  color: $primary-color;
+  border: solid 1px $primary-color;
+}
 
 input {
   height: 25px;

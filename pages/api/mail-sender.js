@@ -1,39 +1,37 @@
 import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
-    host: "ssl0.ovh.net",
-    port: "465",
+    host: process.env.FORM_SERVER_SMTP,
+    port: process.env.FORM_SERVER_PORT,
     auth: {
         user: process.env.FORM_SENDER_MAIL,
         pass: process.env.FORM_SENDER_PASSWD
     }
 })
 
-export default async (req,res) => {
-    const {recipientMail, objetMail, messageMail} = req.body;
+export default async (req,res) => 
+{
+    const {objetMail, messageMail} = req.body;
 
     if (objetMail==="" || messageMail==="") {
         res.status(403).send("");
         return
     }
 
-    const mailerRes = await mailer({objetMail,text:messageMail,recipientMail});
+    const mailerRes = await mailer(req.body);
     res.send(mailerRes);
-
 }
 
-const mailer = ({objetMail,text,recipientMail}) => {
-    
+const mailer = ({objetMail,messageMail,recipientMail,attachments}) => 
+{
     const mail = {
-        from: " Formulaire de contact - Website <"+process.env.FORM_SENDER_MAIL+">",
+        from: "La Société Nouvelle",
         to: recipientMail,
         subject: objetMail,
-        text
+        text: messageMail,
+        attachments: attachments || []
     }
+    console.log(mail);
 
-    return new Promise((resolve,reject) => {
-        transporter.sendMail(mail, (error,info) =>
-            error ? reject(error) : resolve(info))
-    })
-    
+    return new Promise((resolve,reject) => {transporter.sendMail(mail, (error,info) => error ? reject(error) : resolve(info))})
 }
