@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.sfr.fr",
+    host: "ssl0.ovh.net",
     port: "465",
     auth: {
         user: process.env.FORM_SENDER_MAIL,
