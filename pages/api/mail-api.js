@@ -61,7 +61,9 @@ export const sendStatementToAdmin = async (message,statementFile) =>
   const messageMail = message;
   const attachments = [{
     filename: 'bon_pour_publication.pdf',
-    content: statementFile,
+    path: statementFile,
+    contentType: 'application/pdf',
+    encoding: 'base64'
   }];
 
   const contentMail = { recipientMail, objetMail, messageMail, attachments }
