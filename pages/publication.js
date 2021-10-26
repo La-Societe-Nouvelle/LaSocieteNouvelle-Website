@@ -77,7 +77,7 @@ class Form extends React.Component {
   {
     return (
       <div className="declarationForm">
-        {this.buildForm(this.state)}
+        {this.buildForm(this.state.step)}
       </div>
     )
   }
