@@ -153,13 +153,13 @@ class Form extends React.Component {
     event.preventDefault();
     this.setState({step: 8})
     
-    const attachment = getBinaryPDF(this.state);
+    const statementFile = getBinaryPDF(this.state);
 
     const messageToAdmin = mailToAdminWriter(this.state);
-    const resAdmin = await sendStatementToAdmin(messageToAdmin,attachment);
+    const resAdmin = await sendStatementToAdmin(messageToAdmin,statementFile);
 
-    //const messageToDeclarant = mailToDeclarantWriter(this.state);
-    //const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,attachment);
+    const messageToDeclarant = mailToDeclarantWriter(this.state);
+    const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,attachment);
 
     if (resAdmin.status<300) this.setState({step: 9})
     else this.setState({step: 0})

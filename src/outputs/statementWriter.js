@@ -18,10 +18,10 @@ export function exportStatementPDF(data)
 export function getBinaryPDF(data) 
 {
   const doc = writeStatementPDF(data);
-  doc.output('datauristring');
+  const binaryPDF = doc.output('datauristring');
 
   // Export
-  return doc;
+  return binaryPDF;
 }
 
 const writeStatementPDF = (data) =>
