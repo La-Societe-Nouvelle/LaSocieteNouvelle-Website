@@ -12,10 +12,10 @@ export function exportStatementPDF(data)
 
   // Export
   let today = new Date();
-  doc.save("BonPourPublication_"+data.siren+"-"+String(today.getDate()).padStart(2,'0')+String(today.getMonth()+1).padStart(2,'0')+today.getFullYear()+".pdf");
+  doc.save("declaration_"+data.siren+"-"+String(today.getDate()).padStart(2,'0')+String(today.getMonth()+1).padStart(2,'0')+today.getFullYear()+".pdf");
 }
 
-export function getPDF(data) 
+export function getBinaryPDF(data) 
 {
   const doc = writeStatementPDF(data);
   doc.output('datauristring');
