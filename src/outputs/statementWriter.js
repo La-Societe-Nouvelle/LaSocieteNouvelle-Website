@@ -18,6 +18,7 @@ export function exportStatementPDF(data)
 export function getPDF(data) 
 {
   const doc = writeStatementPDF(data);
+  doc.output('datauristring');
 
   // Export
   return doc;

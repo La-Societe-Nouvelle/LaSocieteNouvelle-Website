@@ -16,42 +16,11 @@ export const sendContactMail = async (recipientMail,objet,message,coordonnees) =
   try 
   {
       const res = await fetch('/api/mail-sender', req);
-      console.log(res);
       return res;
   } 
   catch (error) {
       return error;
   }
-}
-
-export const sendAssessment = async (siren,data,message,coordonnees,participation) => {
-
-    const recipientMail= "sylvain.humiliere@la-societe-nouvelle.fr";
-    const objetMail= "Déclaration en ligne";
-    const messageMail = "Unité légale : "+siren
-            + " \r\r ----------------------- \r ## Valeurs déclarées ## \r ----------------------- \r "
-            + Object.entries(data).map(([indic],_) => { return("\r"+indic+" : "+data[indic].value+" (+/- "+data[indic].uncertainty+" %) ") })
-            + " \r\r ------------- \r ## Message ## \r ------------- \r "
-            + message
-            + " \r\r ------------------- \r ## Participation ## \r ------------------- \r "
-            + participation
-            + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
-            + coordonnees;
-
-    const contentMail = { recipientMail, objetMail, messageMail }
-    
-    try {
-        const res = await fetch('/api/mail-sender', {
-            body: JSON.stringify(contentMail),
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            method: 'POST'
-          })
-        return res;
-    } catch (error) {
-        return error;
-    }
 }
 
 export const sendStatementToAdmin = async (message,statementFile) => 
@@ -60,7 +29,7 @@ export const sendStatementToAdmin = async (message,statementFile) =>
   const objetMail= "Demande de publication (via formulaire)";
   const messageMail = message;
   const attachments = [{
-    filename: 'bon_pour_publication.pdf',
+    filename: 'declaration.pdf',
     path: statementFile,
     contentType: 'application/pdf',
     encoding: 'base64'
@@ -77,7 +46,36 @@ export const sendStatementToAdmin = async (message,statementFile) =>
   try 
   {
       const res = await fetch('/api/mail-sender', request);
-      console.log(res);
+      return res;
+  } 
+  catch (error) {
+    return error;
+  }
+}
+
+export const sendStatementToDeclarant = async (message,recipient,statementFile) => 
+{
+  const recipientMail= recipient;
+  const objetMail= "Déclaration - Empreinte Sociétale [Ne pas répondre]";
+  const messageMail = message;
+  const attachments = [{
+    filename: 'declaration.pdf',
+    path: statementFile,
+    contentType: 'application/pdf',
+    encoding: 'base64'
+  }];
+
+  const contentMail = { recipientMail, objetMail, messageMail, attachments }
+
+  const request = {
+    body: JSON.stringify(contentMail),
+    headers: {'Content-Type': 'application/json'},
+    method: 'POST'
+  }
+  
+  try 
+  {
+      const res = await fetch('/api/mail-sender', request);
       return res;
   } 
   catch (error) {

@@ -8,7 +8,7 @@ import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
-import { sendStatementToAdmin } from './api/mail-api.js'
+import { sendStatementToAdmin, sendStatementToDeclarant } from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -75,13 +75,9 @@ class Form extends React.Component {
 
   render() 
   {
-    const {step} = this.state; 
-
-    console.log(this.state);
-    
     return (
       <div className="declarationForm">
-        {this.buildForm(step)}
+        {this.buildForm(this.state)}
       </div>
     )
   }
@@ -96,8 +92,9 @@ class Form extends React.Component {
       case 4: return <SocialFootprintForm {...this.state} commitSocialFootprint={this.commitSocialFootprint.bind(this)} goBack={this.goBack.bind(this)}/>
       case 5: return <DeclarantForm {...this.state} commitDeclarant={this.commitDeclarant.bind(this)} goBack={this.goBack.bind(this)}/>
       case 6: return <PriceInput {...this.state} commitPrice={this.commitPrice.bind(this)} goBack={this.goBack.bind(this)}/>
-      case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} submitStatement={this.submitAssessment.bind(this)} goBack={this.prevStep.bind(this)}/>
-      case 8: return <EndForm />
+      case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} submitStatement={this.submitStatement.bind(this)} goBack={this.prevStep.bind(this)}/>
+      case 8: return <StatementSendingMessage />
+      case 9: return <StatementSendMessage />
     }
   }
 
@@ -150,17 +147,20 @@ class Form extends React.Component {
   exportStatement = () => exportStatementPDF(this.state)
 
   /* --- Submit assessment --- */
-  submitAssessment = async (event) => 
+  submitStatement = async (event) => 
   {
     event.preventDefault();
+    this.setState({step: 8})
+    
+    const attachment = getBinaryPDF(this.state);
 
-    const message = mailToAdminWriter(this.state);
+    const messageToAdmin = mailToAdminWriter(this.state);
+    const resAdmin = await sendStatementToAdmin(messageToAdmin,attachment);
 
-    const doc = getPDF(this.state);
-    const file = doc.output('datauristring');
+    const messageToDeclarant = mailToDeclarantWriter(this.state);
+    const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,attachment);
 
-    const res = await sendStatementToAdmin(message,file);
-    this.setState({declarationSend: res.status<300, step: 8});
+    this.setState({declarationSend: resAdmin.status<300, step: 9});
   }
 }
 
@@ -481,31 +481,31 @@ const Summary = ({siren,denomination,socialfootprint,year,declarant,price,export
 
 /* ---------- END ---------- */
 
-const EndForm = () => 
+const StatementSendingMessage = () => 
 {
   return(
     <div className="strip">
-      <h2>Déclaration envoyée</h2>
+      <h2>Déclaration validée</h2>
+      <div className="form_inner">
+        <p>Envoi en cours...</p>
+      </div>
     </div>
   )
 }
 
-/* ----- Builder message ----- */
-
-function getMessageSiren(siren,uniteLegaleDataLoaded) {
-  if (/[0-9]{9}/.test(siren) & uniteLegaleDataLoaded)  { return "OK" }
-  else if (/[0-9]{9}/.test(siren))                     { return "(non reconnu)" }
-  else if (siren.length>0 & !/[0-9]{1,9}/.test(siren)) { return "erreur format" }
-  else                                                 { return "" }
+const StatementSendMessage = () => 
+{
+  return(
+    <div className="strip">
+      <h2>Déclaration validée</h2>
+      <div className="form_inner">
+        <p>Demande de publication envoyée ! Merci.</p>
+      </div>
+    </div>
+  )
 }
 
-function getMessageButton(coordonnees,autorisation) {
-  if (false)        { return "Demande de publication envoyée"}
-  //else if (siren==="")        { return "Numéro de siren manquant"}
-  else if (coordonnees==="")  { return "Coordonnées manquantes"}
-  else if (!autorisation)     { return "Autorisation manquante"}
-  else                        { return "Envoyer la publication" }
-}
+/* ----- Builder message mails ----- */
 
 const mailToAdminWriter = (statementData) => 
 (
