@@ -8,7 +8,7 @@ import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
-import { sendAssessment } from './api/mail-api.js'
+import { sendAssessment, sendStatementToAdmin } from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -22,7 +22,7 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
 
 import * as IndicData from '../public/indic-data/data';
-import { exportStatementPDF } from '../src/outputs/statementWriter.js';
+import { exportStatementPDF, getPDF } from '../src/outputs/statementWriter.js';
 
 /* ---------- MAIN FUNCTION ---------- */
 
@@ -98,7 +98,8 @@ class Form extends React.Component {
       case 4: return <SocialFootprintForm {...this.state} commitSocialFootprint={this.commitSocialFootprint.bind(this)} goBack={this.goBack.bind(this)}/>
       case 5: return <ContactDetailsForm {...this.state} commitDeclarant={this.commitDeclarant.bind(this)} goBack={this.goBack.bind(this)}/>
       case 6: return <PriceForm {...this.state} commitPrice={this.commitPrice.bind(this)} goBack={this.goBack.bind(this)}/>
-      case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} goBack={this.prevStep.bind(this)}/>
+      case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} submitStatement={this.submitAssessment.bind(this)} goBack={this.prevStep.bind(this)}/>
+      case 8: return <EndForm />
     }
   }
 
@@ -150,20 +151,17 @@ class Form extends React.Component {
   exportStatement = () => exportStatementPDF(this.state)
 
   /* --- Submit assessment --- */
-  submitAssessment = async(event) => 
+  submitAssessment = async (event) => 
   {
     event.preventDefault();
 
-    const siren = this.state.siren + " ("+this.state.anneeExercice+")";
-    const message = this.state.message;
-    const coordonnees = this.state.coordonnees;
-    const participation = this.state.prixLibre ? "Participation : "+this.state.prix+" €" : "Pas de participation";
-    const assessment = this.state.assessment;
+    const message = mailToAdminWriter(this.state);
 
-    if (this.state.certificationAutorisation & coordonnees!="" &siren!="") {
-      const res = await sendAssessment(siren,assessment,message,coordonnees,participation);
-      this.setState({declarationSend: res.status<300});
-    }
+    const doc = getPDF(this.state);
+    const file = doc.output('datauristring');
+
+    const res = await sendStatementToAdmin(message,file);
+    this.setState({declarationSend: res.status<300, step: 8});
   }
 }
 
@@ -269,7 +267,6 @@ const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack}) =>
       </div>
     </div>
   )
-
 }
 class IndicatorForm extends React.Component {
 
@@ -432,7 +429,7 @@ const PriceForm = ({price,commitPrice,goBack}) =>
 }
 
 /* ----- DECLARANT FORM ----- */
-const Summary = ({siren,denomination,socialfootprint,year,declarant,price,exportStatement,goBack}) => 
+const Summary = ({siren,denomination,socialfootprint,year,declarant,price,exportStatement,submitStatement,goBack}) => 
 {
   return(
     <div className="strip">
@@ -449,12 +446,22 @@ const Summary = ({siren,denomination,socialfootprint,year,declarant,price,export
       <div className="form_footer">
         <button onClick={goBack}>Retour</button>
         <button onClick={exportStatement}>Télécharger</button>
-        <button onClick={goBack}>Confirmer</button>
+        <button onClick={submitStatement}>Envoyer</button>
       </div>
     </div> 
   )
 }
 
+/* ---------- END ---------- */
+
+const EndForm = () => 
+{
+  return(
+    <div className="strip">
+      <h2>Déclaration envoyée</h2>
+    </div>
+  )
+}
 
 /* ----- Builder message ----- */
 
@@ -472,3 +479,39 @@ function getMessageButton(coordonnees,autorisation) {
   else if (!autorisation)     { return "Autorisation manquante"}
   else                        { return "Envoyer la publication" }
 }
+
+const mailToAdminWriter = (statementData) => 
+(
+    "Unité légale : "+statementData.siren + "\r"
+  + "Dénomination : "+statementData.denomination + "\r"
+  + "Année : "+statementData.year + "\r"
+  + "\r"
+  + "Valeurs à publier :" + "\r"
+  + "\r"
+  + Object.entries(statementData.socialfootprint).map(([indic,data]) => 
+    (indic+" : "+data.value+" +/- "+data.uncertainty+" % "+(data.info.length > 0 ? "("+data.info+")" : "")+"\r"))
+  + "\r"
+  + "Déclarant :" + "\r"
+  + "Nom : "+statementData.declarant + "\r"
+  + "Mail : "+statementData.email + "\r"
+  + "\r"
+  + "Tarif :" +statementData.price +" €" + "\r"
+)
+
+const mailToDeclarantWriter = (statementData) => 
+(
+    "Unité légale : "+statementData.siren + "\r"
+  + "Dénomination : "+statementData.denomination + "\r"
+  + "Année : "+statementData.year + "\r"
+  + "\r"
+  + "Valeurs à publier :" + "\r"
+  + "\r"
+  + Object.entries(statementData.socialfootprint).map(([indic,data]) => 
+    (indic+" : "+data[indic].value+" +/- "+data[indic].uncertainty+" % "+(data.info.length > 0 ? "("+data.info+")" : "")+"\r"))
+  + "\r"
+  + "Déclarant :" + "\r"
+  + "Nom : "+statementData.declarant + "\r"
+  + "Mail : "+statementData.email + "\r"
+  + "\r"
+  + "Tarif :" +statementData.price +" €" + "\r"
+)
