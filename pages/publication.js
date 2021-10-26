@@ -159,9 +159,10 @@ class Form extends React.Component {
     const resAdmin = await sendStatementToAdmin(messageToAdmin,statementFile);
 
     const messageToDeclarant = mailToDeclarantWriter(this.state);
+    console.log(this.state.email);
     const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,attachment);
 
-    if (resAdmin.status<300) this.setState({step: 9})
+    if (resAdmin.status<300 && resDeclarant<300) this.setState({step: 9})
     else this.setState({step: 0})
   }
 }
