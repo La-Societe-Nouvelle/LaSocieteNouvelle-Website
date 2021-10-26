@@ -8,7 +8,7 @@ import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 
-import { sendAssessment, sendStatementToAdmin } from './api/mail-api.js'
+import { sendStatementToAdmin } from './api/mail-api.js'
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -19,14 +19,14 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the name of the view.
    - the associated indicators.
 */
-const indicators = ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"];
 
-import * as IndicData from '../public/indic-data/data';
+import metaData from '../public/indic-data/metaData';
 import { exportStatementPDF, getPDF } from '../src/outputs/statementWriter.js';
 
 /* ---------- MAIN FUNCTION ---------- */
 
-export default function Home(props) {
+export default function Home(props) 
+{
   return (
     <div className="container">
       <Head>
@@ -52,26 +52,24 @@ class Form extends React.Component {
     this.state = 
     {
       // Progression
-      step: 6,
+      step: 1,
 
       // Legal entity data (steps 1 to 3)
-      siren: "889182770",
-      denomination: "LA SOCIETE NOUVELLE",
-      year: "2020",
+      siren: "",
+      denomination: "",
+      year: "",
 
-      // Statements (step 4 & 5)
-      socialfootprint: {"eco" : {value: 75.0, uncertainty: 10.0, info: ""},"wat" : {value: 7.5, uncertainty: 15.0, info: ""}},
-      message: "",
+      // Statements (step 4)
+      socialfootprint: {},
 
-      // declarant data (step 6 & 7)
-      declarant: "HUMILIERE Sylvain",
+      // declarant data (step 5)
+      declarant: "",
       email: "",
       phone: "",
       autorisation: false,
 
-      // prix
-      price: "25",
-      declarationSend: false,
+      // tarif (step 6)
+      price: ""
     }
   }
 
@@ -92,12 +90,12 @@ class Form extends React.Component {
   {
     switch(step)
     {
-      case 1: return <SirenForm {...this.state} commitSiren={this.commitSiren.bind(this)}/>
-      case 2: return <DenominationForm {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)}/>
-      case 3: return <YearForm {...this.state} commitYear={this.commitYear.bind(this)} goBack={this.goBack.bind(this)}/>
+      case 1: return <SirenInput {...this.state} commitSiren={this.commitSiren.bind(this)}/>
+      case 2: return <DenominationInput {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)}/>
+      case 3: return <YearInput {...this.state} commitYear={this.commitYear.bind(this)} goBack={this.goBack.bind(this)}/>
       case 4: return <SocialFootprintForm {...this.state} commitSocialFootprint={this.commitSocialFootprint.bind(this)} goBack={this.goBack.bind(this)}/>
-      case 5: return <ContactDetailsForm {...this.state} commitDeclarant={this.commitDeclarant.bind(this)} goBack={this.goBack.bind(this)}/>
-      case 6: return <PriceForm {...this.state} commitPrice={this.commitPrice.bind(this)} goBack={this.goBack.bind(this)}/>
+      case 5: return <DeclarantForm {...this.state} commitDeclarant={this.commitDeclarant.bind(this)} goBack={this.goBack.bind(this)}/>
+      case 6: return <PriceInput {...this.state} commitPrice={this.commitPrice.bind(this)} goBack={this.goBack.bind(this)}/>
       case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} submitStatement={this.submitAssessment.bind(this)} goBack={this.prevStep.bind(this)}/>
       case 8: return <EndForm />
     }
@@ -125,6 +123,7 @@ class Form extends React.Component {
                        step: 2})
       } else {
         this.setState({siren: siren,
+                       denomination: "",
                        step: 2})
       }
     } catch(error) {
@@ -166,7 +165,7 @@ class Form extends React.Component {
 }
 
 /* ----- SIREN FORM ----- */
-const SirenForm = ({siren,commitSiren}) => 
+const SirenInput = ({siren,commitSiren}) => 
 {
   const [sirenInput, setSiren] = useState(siren);
   const onSirenChange = (event) => setSiren(event.target.value);
@@ -185,14 +184,17 @@ const SirenForm = ({siren,commitSiren}) =>
         </div>
       </div>
       <div className="form_footer">
-        <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        <p>Etape 1/7</p>
+        <div className="actions">
+          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        </div>
       </div>
     </div> 
   )
 }
 
 /* ----- DENOMINATION FORM ----- */
-const DenominationForm = ({denomination,commitDenomination,goBack}) => 
+const DenominationInput = ({denomination,commitDenomination,goBack}) => 
 {
   const [denominationInput, setDenomination] = useState(denomination);
   const onDenominationChange = (event) => setDenomination(event.target.value);
@@ -212,15 +214,18 @@ const DenominationForm = ({denomination,commitDenomination,goBack}) =>
         </div>
       </div>
       <div className="form_footer">
-        <button onClick={onGoBack}>Retour</button>
-        <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        <p>Etape 2/7</p>
+        <div className="actions">
+          <button onClick={onGoBack}>Retour</button>
+          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        </div>
       </div>
     </div> 
   )
 }
 
 /* ----- YEAR FORM ----- */
-const YearForm = ({year,commitYear,goBack}) => 
+const YearInput = ({year,commitYear,goBack}) => 
 {
   const [yearInput, setYear] = useState(year);
   const onYearChange = (event) => setYear(event.target.value);
@@ -235,13 +240,17 @@ const YearForm = ({year,commitYear,goBack}) =>
       <h2>Année de référence</h2>
       <div className="form_inner">
         <div className="siren-input input">
-          <label>Année de l'exercice (fin) : </label>
+          <label>Année de l'exercice<sup>1</sup> : </label>
           <input id="year-input" type="text" value={yearInput} onChange={onYearChange} onKeyPress={onEnterPress}/>
         </div>
+        <p className="note"><sup>1</sup> Année en fin d'exercice si l'exercice se déroule sur deux années civiles.</p>
       </div>
       <div className="form_footer">
-        <button onClick={onGoBack}>Retour</button>
-        <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        <p>Etape 3/7</p>
+        <div className="actions">
+          <button onClick={onGoBack}>Retour</button>
+          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        </div>
       </div>
     </div> 
   )
@@ -259,11 +268,14 @@ const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack}) =>
     <div className="strip">
       <h2>Déclaration des données</h2>
       <div className="form_inner">
-        {indicators.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={onUpdateProps}/>)}
+        {metaData.indics.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={onUpdateProps}/>)}
       </div>
       <div className="form_footer">
-        <button onClick={onGoBack}>Retour</button>
-        <button onClick={onCommit}>Valider</button>
+        <p>Etape 4/7</p>
+        <div className="actions">
+          <button onClick={onGoBack}>Retour</button>
+          <button onClick={onCommit}>Valider</button>
+        </div>
       </div>
     </div>
   )
@@ -293,33 +305,36 @@ class IndicatorForm extends React.Component {
 
     return(
       <div className="indicator-form">
-        <h3>{IndicData.indicateurs.libelle[indic]}</h3>
-        <a className="text-link" href={"https://lasocietenouvelle.org/indicateur/"+indic} target="_blank">Informations sur l'indicateur</a>
-        <div className="input">
-          <label>Valeur :</label>
-          <input type="text" 
-                 value={value} 
-                 onChange={this.onValueChange}
-                 onBlur={this.onBlur} 
-                 onKeyPress={this.onEnterPress}/>
-          <span>&nbsp;{IndicData.indicateurs.unitCode[indic]}</span>
+        <h3>{metaData.libelle[indic]}</h3>
+        <div className="input-intro">
+          <a className="text-link" href={"https://lasocietenouvelle.org/indicateur/"+indic} target="_blank">Informations sur l'indicateur</a>
         </div>
-        <div className="input">
-          <label>Incertitude :</label>
-          <input type="text" 
-                 value={uncertainty} 
-                 onChange={this.onUncertaintyChange}
-                 onBlur={this.onBlur} 
-                 onKeyPress={this.onEnterPress}/>
-          <span>&nbsp;%</span>
-        </div>
-        <div className="input-column">
-          <label>Informations complémentaires :</label>
-          <textarea type="text" 
-                    value={info} 
-                    onChange={this.onInfoChange}
-                    onBlur={this.onBlur} 
-                    onKeyPress={this.onEnterPress}/>
+        <div className="inputs">
+          <div className="input">
+            <label>Valeur :</label>
+            <input type="text" 
+                  value={value} 
+                  onChange={this.onValueChange}
+                  onBlur={this.onBlur} 
+                  onKeyPress={this.onEnterPress}/>
+            <span>&nbsp;{metaData.unitCode[indic]}</span>
+          </div>
+          <div className="input">
+            <label>Incertitude :</label>
+            <input type="text" 
+                  value={uncertainty} 
+                  onChange={this.onUncertaintyChange}
+                  onBlur={this.onBlur} 
+                  onKeyPress={this.onEnterPress}/>
+            <span>&nbsp;%</span>
+          </div>
+          <div className="input-column">
+            <label>Informations complémentaires :</label>
+            <textarea type="text" 
+                      value={info} 
+                      onChange={this.onInfoChange}
+                      onBlur={this.onBlur}/>
+          </div>
         </div>
       </div>
     )
@@ -334,7 +349,7 @@ class IndicatorForm extends React.Component {
 }
 
 /* ----- DECLARANT FORM ----- */
-class ContactDetailsForm extends React.Component {
+class DeclarantForm extends React.Component {
 
   // form for contact details
 
@@ -371,8 +386,11 @@ class ContactDetailsForm extends React.Component {
           </div>
         </div>
         <div className="form_footer">
-          <button onClick={this.onGoBack}>Retour</button>
-          <button disabled={!isAllValid} onClick={this.onCommit}>Valider</button>
+          <p>Etape 5/7</p>
+          <div className="actions">
+            <button onClick={this.onGoBack}>Retour</button>
+            <button disabled={!isAllValid} onClick={this.onCommit}>Valider</button>
+          </div>
         </div>
       </div>
     )
@@ -388,7 +406,7 @@ class ContactDetailsForm extends React.Component {
 }
 
 /* ----- PRICE FORM ----- */
-const PriceForm = ({price,commitPrice,goBack}) => 
+const PriceInput = ({price,commitPrice,goBack}) => 
 {
   const [priceInput, setPrice] = useState(price);
   const changePrice = (event) => setPrice(event.target.value);
@@ -421,8 +439,11 @@ const PriceForm = ({price,commitPrice,goBack}) =>
         <p>Les revenus couvrent la réalisation des formalités, ainsi que les frais d'hébergement et de maintenance pour l'accessibilité des données.</p>
       </div>
       <div className="form_footer">
-        <button onClick={goBack}>Retour</button>
-        <button disabled={priceInput==""} onClick={onCommit}>Valider</button>
+        <p>Etape 6/7</p>
+        <div className="actions">
+          <button onClick={goBack}>Retour</button>
+          <button disabled={priceInput==""} onClick={onCommit}>Valider</button>
+        </div>
       </div>
     </div> 
   )
@@ -439,14 +460,20 @@ const Summary = ({siren,denomination,socialfootprint,year,declarant,price,export
         <p><b>Dénomination : </b>{denomination}</p>
         <p><b>Année : </b>{year}</p>
         <p><b>Indicateurs : </b></p>
-        {Object.entries(socialfootprint).map(([indic,_]) => <p key={indic}>&emsp;{IndicData.indicateurs.libelle[indic]}</p>)}
-        <p><b>Fait le </b>25/10/2021<b> par </b>{declarant}</p>
-        <p>Coût de la formalité : {price} €</p>
+        {Object.entries(socialfootprint).map(([indic,_]) => <p key={indic}>&emsp;{metaData.libelle[indic]}</p>)}
+        {Object.entries(socialfootprint).length == 0 &&
+          <p>&emsp; - </p>}
+        <p><b>Fait le : </b>25/10/2021</p>
+        <p><b>Déclarant : </b>{declarant}</p>
+        <p><b>Coût de la formalité : </b>{price} €</p>
       </div>
       <div className="form_footer">
-        <button onClick={goBack}>Retour</button>
-        <button onClick={exportStatement}>Télécharger</button>
-        <button onClick={submitStatement}>Envoyer</button>
+        <p>Etape 7/7</p>
+        <div className="actions">
+          <button onClick={goBack}>Retour</button>
+          <button onClick={exportStatement}>Télécharger</button>
+          <button onClick={submitStatement}>Envoyer</button>
+        </div>
       </div>
     </div> 
   )
@@ -500,18 +527,14 @@ const mailToAdminWriter = (statementData) =>
 
 const mailToDeclarantWriter = (statementData) => 
 (
-    "Unité légale : "+statementData.siren + "\r"
-  + "Dénomination : "+statementData.denomination + "\r"
-  + "Année : "+statementData.year + "\r"
+    statementData.declarant+"," + "\r"
   + "\r"
-  + "Valeurs à publier :" + "\r"
+  + "Votre demande de publication a bien été prise en compte. Vous trouverez ci-joint votre déclaration." + "\r"
+  + "Le délai de traitement est de 7 jours." + "\r"
   + "\r"
-  + Object.entries(statementData.socialfootprint).map(([indic,data]) => 
-    (indic+" : "+data[indic].value+" +/- "+data[indic].uncertainty+" % "+(data.info.length > 0 ? "("+data.info+")" : "")+"\r"))
+  + "Pour modifier ou supprimer les données publiées, contactez-nous directement via cette adresse mail" + "\r"
   + "\r"
-  + "Déclarant :" + "\r"
-  + "Nom : "+statementData.declarant + "\r"
-  + "Mail : "+statementData.email + "\r"
+  + "Bien à vous," + "\r"
   + "\r"
-  + "Tarif :" +statementData.price +" €" + "\r"
+  + "La Société Nouvelle." + "\r"
 )

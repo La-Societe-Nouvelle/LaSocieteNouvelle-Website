@@ -11,6 +11,7 @@ export function exportStatementPDF(data)
   const doc = writeStatementPDF(data);
 
   // Export
+  let today = new Date();
   doc.save("BonPourPublication_"+data.siren+"-"+String(today.getDate()).padStart(2,'0')+String(today.getMonth()+1).padStart(2,'0')+today.getFullYear()+".pdf");
 }
 
@@ -25,6 +26,7 @@ export function getPDF(data)
 const writeStatementPDF = (data) =>
 {
   const doc = new jsPDF();
+  let today = new Date();
 
   // 
   doc.setFont("Calibri");
@@ -33,11 +35,10 @@ const writeStatementPDF = (data) =>
   // HEADER
   doc.setFontSize(16);
   doc.setFont("Calibri","bold");
-  doc.text("BON POUR PUBLICATION",10,y);
+  doc.text("DECLARATION - EMPREINTE SOCIETALE",10,y);
 
   doc.setFont("Calibri","normal");
   doc.setFontSize(10);
-  let today = new Date();
   y+=10;
   doc.text("Unité légale : "+data.siren,10,y); 
   y+=6;
@@ -84,6 +85,12 @@ const writeStatementPDF = (data) =>
       y+=(infos.length-1)*4;
     }
   })
+  if (Object.entries(data.socialfootprint).length == 0) {
+    y+=6;
+    doc.setFont("Calibri","italic");
+    doc.text("Aucune donnée déclarée",105,y,{align: "center"});
+    doc.setFont("Calibri","normal");
+  }
   doc.line(10,y+2,200,y+2);
 
   y+=15;

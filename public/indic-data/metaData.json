@@ -1,5 +1,5 @@
 {
-  "codes": ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"],
+  "indics": ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"],
   "libelle": {
       "art": "Contribution aux Métiers d'art & aux Savoir-faire",
       "dis": "Indice de Répartition des Rémunérations",
