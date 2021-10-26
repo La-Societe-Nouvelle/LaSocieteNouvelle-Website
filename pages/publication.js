@@ -77,14 +77,14 @@ class Form extends React.Component {
   {
     return (
       <div className="declarationForm">
-        {this.buildForm(this.state.step)}
+        {this.buildForm()}
       </div>
     )
   }
 
-  buildForm = (step) => 
+  buildForm = () => 
   {
-    switch(step)
+    switch(this.state.step)
     {
       case 1: return <SirenInput {...this.state} commitSiren={this.commitSiren.bind(this)}/>
       case 2: return <DenominationInput {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)}/>
