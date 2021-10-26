@@ -25,7 +25,7 @@ export default async (req,res) =>
 const mailer = ({objetMail,messageMail,recipientMail,attachments}) => 
 {
     const mail = {
-        from: " Formulaire de contact - Website <"+process.env.FORM_SENDER_MAIL+">",
+        from: "La Société Nouvelle",
         to: recipientMail,
         subject: objetMail,
         text: messageMail,

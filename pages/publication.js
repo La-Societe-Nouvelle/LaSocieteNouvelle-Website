@@ -161,7 +161,7 @@ class Form extends React.Component {
     const messageToDeclarant = mailToDeclarantWriter(this.state);
     const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,statementFile);
 
-    if (resAdmin.status<300 && resDeclarant<300) this.setState({step: 9})
+    if (resAdmin.status<300) this.setState({step: 9})
     else this.setState({step: 0})
   }
 }
@@ -540,12 +540,13 @@ const mailToAdminWriter = (statementData) =>
 
 const mailToDeclarantWriter = (statementData) => 
 (
-    statementData.declarant+"," + "\r"
+    ""
+  + statementData.declarant+"," + "\r"
   + "\r"
   + "Votre demande de publication a bien été prise en compte. Vous trouverez ci-joint votre déclaration." + "\r"
   + "Le délai de traitement est de 7 jours." + "\r"
   + "\r"
-  + "Pour modifier ou supprimer les données publiées, contactez-nous directement via cette adresse mail" + "\r"
+  + "Pour modifier ou supprimer les données publiées, contactez-nous directement via l'adresse mail admin@lasocietenouvelle.org" + "\r"
   + "\r"
   + "Bien à vous," + "\r"
   + "\r"
