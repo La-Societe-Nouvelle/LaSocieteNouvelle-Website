@@ -1,5 +1,6 @@
-export const sendContactMail = async (recipientMail,objet,message,coordonnees) => 
+export const sendContactMail = async (objet,message,coordonnees) => 
 {
+  const recipientMail= "contact@lasocietenouvelle.org";
   const objetMail = objet;
   const messageMail = message
           + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
