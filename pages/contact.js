@@ -78,11 +78,11 @@ class ContactForm extends React.Component {
     this.setState({coordonnees: event.target.value})
   }
 
-  submitContactForm = async (event) => {
+  submitContactForm = async (event) => 
+  {
     event.preventDefault();
-    const recipientMail = "sylvain.humiliere@la-societe-nouvelle.fr";
     const {objet,message,coordonnees} = this.state;
-    const res = await sendContactMail(recipientMail,objet,message,coordonnees);
+    const res = await sendContactMail(objet,message,coordonnees);
     if (res.status < 300) {
       this.setState ({
         objet: "",
