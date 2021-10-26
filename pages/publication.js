@@ -86,6 +86,7 @@ class Form extends React.Component {
   {
     switch(this.state.step)
     {
+      case 0: return <ErrorMessage />
       case 1: return <SirenInput {...this.state} commitSiren={this.commitSiren.bind(this)}/>
       case 2: return <DenominationInput {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)}/>
       case 3: return <YearInput {...this.state} commitYear={this.commitYear.bind(this)} goBack={this.goBack.bind(this)}/>
@@ -160,7 +161,8 @@ class Form extends React.Component {
     const messageToDeclarant = mailToDeclarantWriter(this.state);
     const resDeclarant = await sendStatementToDeclarant(this.state.email,messageToDeclarant,attachment);
 
-    this.setState({declarationSend: resAdmin.status<300, step: 9});
+    if (resAdmin.status<300) this.setState({step: 9})
+    else this.setState({step: 0})
   }
 }
 
@@ -500,6 +502,17 @@ const StatementSendMessage = () =>
       <h2>Déclaration validée</h2>
       <div className="form_inner">
         <p>Demande de publication envoyée ! Merci.</p>
+      </div>
+    </div>
+  )
+}
+
+const ErrorMessage = () => 
+{
+  return(
+    <div className="strip">
+      <div className="form_inner">
+        <p>Error</p>
       </div>
     </div>
   )

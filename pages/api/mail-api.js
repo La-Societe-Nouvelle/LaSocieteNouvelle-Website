@@ -53,7 +53,7 @@ export const sendStatementToAdmin = async (message,statementFile) =>
   }
 }
 
-export const sendStatementToDeclarant = async (message,recipient,statementFile) => 
+export const sendStatementToDeclarant = async (recipient,message,statementFile) => 
 {
   const recipientMail= recipient;
   const objetMail= "Déclaration - Empreinte Sociétale [Ne pas répondre]";
