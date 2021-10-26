@@ -158,9 +158,9 @@ class Form extends React.Component {
     const message = mailToAdminWriter(this.state);
 
     const doc = getPDF(this.state);
-    //const file = doc.output('datauristtring');
+    const file = doc.output('datauristtring');
 
-    const res = await sendStatementToAdmin(message,doc);
+    const res = await sendStatementToAdmin(message,file);
     this.setState({declarationSend: res.status<300, step: 8});
   }
 }
