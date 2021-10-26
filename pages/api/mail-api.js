@@ -56,7 +56,7 @@ export const sendAssessment = async (siren,data,message,coordonnees,participatio
 
 export const sendStatementToAdmin = async (message,statementFile) => 
 {
-  const recipientMail= "admin@la-societe-nouvelle.fr";
+  const recipientMail= "admin@lasocietenouvelle.org";
   const objetMail= "Demande de publication (via formulaire)";
   const messageMail = message;
   const attachments = [{
