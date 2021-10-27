@@ -57,8 +57,8 @@ Centre technique de référence en matière de pollution atmosphérique et de ch
 
 <div class="references-blocks">
     <div id="block-1">
-    <p id="titre-block">situation 2018</p>
-    <p id="value-block">158</p>
+    <p id="titre-block">situation 2019</p>
+    <p id="value-block">153</p>
     <p id="unit-block">gCO2e/€</p>
     </div>
     <div id="block-2">

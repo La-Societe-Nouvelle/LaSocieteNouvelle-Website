@@ -59,8 +59,8 @@ L’intervalle de confiance associé à l’utilisation des données est de 1000
 
 <div class="references-blocks">
     <div id="block-1">
-    <p id="titre-block">situation 2016</p>
-    <p id="value-block">10.7</p>
+    <p id="titre-block">situation 2017</p>
+    <p id="value-block">10.6</p>
     <p id="unit-block">L/€</p>
     </div>
     <div id="block-2">
@@ -73,10 +73,6 @@ L’intervalle de confiance associé à l’utilisation des données est de 1000
     <p id="value-block">7.1</p>
     <p id="unit-block">L/€</p>
     </div>
-</div>
-
-<div id="graph">
-    <img id="graph-img" src="/graphics/WAT_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 7.4 L/€ d’ici 2030

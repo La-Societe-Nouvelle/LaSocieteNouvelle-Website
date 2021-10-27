@@ -50,8 +50,8 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 
 <div class="references-blocks">
     <div id="block-1">
-    <p id="titre-block">situation 2019</p>
-    <p id="value-block">357</p>
+    <p id="titre-block">situation 2020</p>
+    <p id="value-block">281</p>
     <p id="unit-block">g/€</p>
     </div>
     <div id="block-2">
@@ -64,10 +64,6 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
     <p id="value-block">284</p>
     <p id="unit-block">g/€</p>
     </div>
-</div>
-
-<div id="graph">
-    <img id="graph-img" src="/graphics/MAT_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Intensité < 247 g/€ d’ici 2030 

@@ -76,10 +76,6 @@ L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du t
     </div>
 </div>
 
-<div id="graph">
-    <img id="graph-img" src="/graphics/SOC_Graphe-fr.png" alt="graph"/>
-</div>
-
 **Objectif :** Contribution > 75.0 % d’ici 2030
 
 L’objectif est fixé par La Société Nouvelle. Il est défini pour inciter à la définition de la raison d’être des entreprises. En complément, sur le périmètre spécifique de l’ESS, l’objectif visé est de 10.0 % d’ici 2030.

@@ -46,7 +46,7 @@ L’intervalle de confiance est de 50 %.
 <div class="references-blocks">
     <div id="block-1">
     <p id="titre-block">situation 2018</p>
-    <p id="value-block">17.1</p>
+    <p id="value-block">18.2</p>
     <p id="unit-block">%</p>
     </div>
     <div id="block-2">

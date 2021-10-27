@@ -61,8 +61,8 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 
 <div class="references-blocks">
     <div id="block-1">
-    <p id="titre-block">situation 2018</p>
-    <p id="value-block">81</p>
+    <p id="titre-block">situation 2019</p>
+    <p id="value-block">73.2</p>
     <p id="unit-block">%</p>
     </div>
     <div id="block-2">
@@ -75,10 +75,6 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
     <p id="value-block">91</p>
     <p id="unit-block">%</p>
     </div>
-</div>
-
-<div id="graph">
-    <img id="graph-img" src="/graphics/ECO_Graphe-fr-df.png" alt="graph"/>
 </div>
 
 **Objectif :** Contribution > 82 % d’ici 2030

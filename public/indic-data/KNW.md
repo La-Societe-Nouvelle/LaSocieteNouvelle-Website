@@ -73,10 +73,6 @@ L’intervalle de confiance si situe aux alentours de 25 % pour les valeurs ajus
     </div>
 </div>
 
-<div id="graph">
-    <img id="graph-img" src="/graphics/KNW_Graphe-fr.png" alt="graph"/>
-</div>
-
 **Objectif :** Contribution > 5.0 % d’ici 2030 
 
 L’objectif est fixé La Société Nouvelle. Il est défini pour incitation au financement de la recherche et à la formation. Il est alimenté par l’objectif de l’Union Européenne d’un financement de la R&D à hauteur de 3% du PIB.

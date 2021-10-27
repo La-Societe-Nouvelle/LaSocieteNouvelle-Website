@@ -43,24 +43,20 @@ L’intervalle de confiance est de 50 %.
 
 <div class="references-blocks">
     <div id="block-1">
-    <p id="titre-block">situation 2018</p>
-    <p id="value-block">50.9</p>
+    <p id="titre-block">situation 2019</p>
+    <p id="value-block">29.2</p>
     <p id="unit-block">/100</p>
     </div>
     <div id="block-2">
     <p id="titre-block">objectif 2021</p>
-    <p id="value-block">46.9</p>
+    <p id="value-block"> - </p>
     <p id="unit-block">/100</p>
     </div>
     <div id="block-3">
     <p id="titre-block">objectif 2030</p>
-    <p id="value-block">33.3</p>
+    <p id="value-block"> - </p>
     <p id="unit-block">/100</p>
     </div>
-</div>
-
-<div id="graph">
-    <img id="graph-img" src="/graphics/DIS_Graphe-fr.png" alt="graph"/>
 </div>
 
 **Objectif :** Indice de GINI < 25/100 d’ici 2030

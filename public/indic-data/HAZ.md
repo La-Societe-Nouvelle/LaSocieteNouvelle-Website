@@ -69,10 +69,6 @@ L’intervalle de confiance associé à l’utilisation de la valeur est à 1000
     </div>
 </div>
 
-<div id="graph">
-    <img id="graph-img" src="/graphics/HAZ_Graphe-eu-pi.png" alt="graph"/>
-</div>
-
 **Objectif :** Intensité < 4.8 g/€ d’ici 2030 
 
 L’objectif est fixé par La Société Nouvelle. Il s'inscrit dans une trajectoire visant une intensité inférieure à 0.4 g/€ d'ici 2050, équivalente à une utilisation de 10 Mt/an de produits dangereux à l'échelle européenne.

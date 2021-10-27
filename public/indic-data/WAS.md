@@ -68,10 +68,6 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
     </div>
 </div>
 
-<div id="graph">
-    <img id="graph-img" src="/graphics/WAS_Graphe-fr.png" alt="graph"/>
-</div>
-
 **Objectif :** Intensité < 32,8 g/€ d’ici 2030
 
 L’objectif est fixé par La Société Nouvelle. Il est défini en accord avec une trajectoire visant une économie zéro déchets (volume < 10 Mt) en 2050.
