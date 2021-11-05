@@ -30,14 +30,7 @@ export default function Home() {
             </ul>
           <br/>
           <div>
-            <p>Pour plus d'information :</p>
-            <p>
-              <ul>
-                <li>Lien vers la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.pdf">Documentation v4</a><br/></li>
-                <li>Lien vers la description du modèle : <a className="text-link" href="modele-indicateurs">Description du Modèle</a><br/></li>
-                <li>Lien vers la guide méthodologique : <a className="text-link" href="guide">Guide méthodologique</a></li>
-              </ul>
-            </p>
+            <p>Télécharger la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.4.pdf">Documentation</a></p>
           </div>
         </div>
 
