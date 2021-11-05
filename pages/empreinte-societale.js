@@ -30,7 +30,7 @@ export default function Home() {
             </ul>
           <br/>
           <div>
-            <p>Télécharger la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.4.pdf">Documentation</a></p>
+            <p>Télécharger la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.4.pdf" target="_blank">Documentation</a></p>
           </div>
         </div>
 
