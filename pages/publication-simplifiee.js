@@ -14,7 +14,7 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 /* Fetch default data */
 Home.getInitialProps = async () => {
   try{
-    const endpoint = `${apiBaseUrl}/default?pays=FRA&flow=GAP`;
+    const endpoint = `${apiBaseUrl}/default?area=FRA&activity=00&flow=GAP`;
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
     //const isLoaded = data.header.statut===200; // handle error => service unvailable
@@ -230,7 +230,7 @@ class Form extends React.Component {
   }
   updateDefaultData = async (codeActivite) => {
     try{
-      const endpoint = `${apiBaseUrl}/default?pays=FRA&activite=`+codeActivite+'&flow=IC';
+      const endpoint = `${apiBaseUrl}/default?area=FRA&activity=`+codeActivite+'&flow=IC';
       const response = await fetch(endpoint, {method:'get'});
       const data = await response.json();
       if (data.header.statut===200) {
@@ -243,7 +243,7 @@ class Form extends React.Component {
   }
   updateReference = async (codeActivite) => {
     try{
-      const endpoint = `${apiBaseUrl}/default?pays=FRA&activite=`+codeActivite+'&flow=PRD';
+      const endpoint = `${apiBaseUrl}/default?area=FRA&activity=`+codeActivite+'&flow=PRD';
       const response = await fetch(endpoint, {method:'get'});
       const data = await response.json();
       console.log(data);
