@@ -16,7 +16,7 @@ export default class Header extends React.Component {
           </a>
           <div id="header-name-company">
             <h1 id="company-name-header">La Société Nouvelle</h1>
-            <span id="text-header">L'OpenData au service de l'économie</span>
+            <span id="text-header">Mesure, Informer pour une économie durable</span>
           </div>
           <hr className="hr-big-size"/>
           <div className="header-strip-item" id="header-text2">
@@ -26,7 +26,6 @@ export default class Header extends React.Component {
             <button id="header-action-declaration" onClick={() => window.location="/publication"}>Publiez vos impacts</button>
             <button onClick={() => window.open("https://metriz.lasocietenouvelle.org/")}>Mesurez vos Impacts</button>
           </div>
-          {/* <hr className="hr-small-size"/> */}
         </div>
 
         <div id="menu">
@@ -34,10 +33,11 @@ export default class Header extends React.Component {
                 title="Menu"
                 href="##">
           <ul>
-            <li className="menu-item"><a href="/a-propos">A Propos</a></li>
+            <li className="menu-item"><a href="/">Accueil</a></li>
+            <li className="menu-item"><a href="/portail">Données</a></li>
             <li className="menu-item">
               <DropDown
-                title="Empreinte Societale"
+                title="Méthodologie et Indicateurs"
                 href="/empreinte-societale">
                 <div><a href="/empreinte-societale">Présentation générale</a></div>
                 <div><a href="/indicateur/ghg">Emissions de gaz à effet de serre</a></div>
@@ -54,10 +54,10 @@ export default class Header extends React.Component {
                 <div><a href="/indicateur/haz">Produits dangereux</a></div>
               </DropDown>
             </li>
-            <li className="menu-item"><a href="/portail">Portail</a></li>
-            <li className="menu-item"><a href="/services">Services</a></li>
-            {/*<li className="menu-item"><a href="/ressources">Ressources</a></li>*/}
-            <li className="menu-item"><a href="/contact">Contact</a></li>
+            <li className="menu-item"><a href="/a-propos">Services</a></li>
+            <li className="menu-item"><a href="/a-propos">A Propos</a></li>
+            <li className="menu-item"><a href="/a-propos">Professionnel</a></li>
+            <li className="menu-item"><a href="/a-propos">Acteurs de la comptabilité</a></li>
           </ul>
           </DropDown>
         </div>
