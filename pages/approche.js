@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
-import metaData from '../public/indic-data/metaData';
+import metaData from '../lib/metaData';
 
 const first_set_indics = ["eco","art","knw","soc","dis","geq"];
 const second_set_indics = ["ghg","nrg","wat","was","mat","haz"];

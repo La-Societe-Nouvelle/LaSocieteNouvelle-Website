@@ -5,7 +5,7 @@ import Footer from '../src/components/footer'
 // Modules
 import React from 'react';
 
-import content from '../public/articles.json';
+import content from '../lib/articles.json';
 
 export default function Home() {
 

@@ -16,7 +16,7 @@ export async function getStaticProps() {
     .use(remarkParse)
     .use(remarkGfm)
     .use(html)
-    .process(fs.readFileSync('./public/modele.md'));
+    .process(fs.readFileSync('./public/md-files/modele.md'));
   const data = {
       content: String(mdFile).replace(/href/g,'target="_blank" href')}
   return {
@@ -38,7 +38,7 @@ export default function Home({data}) {
       <main className="main">
         <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
         <div className="strip">
-          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/modele.md"} target="_blanck">Proposer une amélioration de la page</a></p>
+          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/md-files/modele.md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>
       </main>
       

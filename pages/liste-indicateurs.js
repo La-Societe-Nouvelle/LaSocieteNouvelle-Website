@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
-import metaData from '../public/indic-data/metaData';
+import metaData from '../lib/metaData';
 
 export default function Home() {
   

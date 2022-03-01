@@ -9,7 +9,7 @@ import html from 'remark-html'
 
 var React = require('react');
 
-import * as data from '../../public/indic-data/data.js'
+import indicData from '../../public/indic-data/data.js'
 import ReactMarkdown from 'react-markdown'
 
 export default function Post({postData}) {
@@ -48,7 +48,7 @@ export async function getStaticProps({params}) {
     .process(fs.readFileSync('./public/indic-data/'+params.indicateur.toUpperCase()+'.md'));
   const postData = {
       indic: params.indicateur,
-      data: data.indicateurs,
+      data: indicData,
       content: String(mdFile).replace(/href/g,'target="_blank" href')}
   return {
     props: {postData}
@@ -70,7 +70,7 @@ function build(postData) {
         <div id="strip-header" className="strip">
           <br/>
           <h2 className="indic-strip-title" id="indic-label">
-          {data.libelle[indic]}
+          {data[indic].libelle}
           </h2>
           <br/>
         </div>

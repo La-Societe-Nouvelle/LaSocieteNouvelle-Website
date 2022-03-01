@@ -20,7 +20,7 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 
-import metaData from '../public/indic-data/metaData';
+import metaData from '../lib/metaData';
 import { exportStatementPDF, getBinaryPDF } from '../src/outputs/statementWriter.js';
 
 /* ---------- MAIN FUNCTION ---------- */
