@@ -1,33 +1,134 @@
 {
   "indics": ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"],
-  "libelle": {
-      "art": "Contribution aux Métiers d'art & aux Savoir-faire",
-      "dis": "Indice de Répartition des Rémunérations",
-      "eco": "Contribution à l'Economie Nationale",
-      "geq": "Indice d'Ecart des Rémunérations Femmes/Hommes",
-      "ghg": "Intensité d'Emission de Gaz à Effet de Serre",
-      "haz": "Intensité d'Utilisation de Produits dangereux pour la Santé et l'Environnement",
-      "knw": "Contribution à l'Evolution des Compétences et des Connaissances",
-      "mat": "Intensité d'Extraction de Matières Premières",
-      "nrg": "Intensité de Consommation d'Energie",
-      "soc": "Contribution aux Acteurs d'Intérêt social",
-      "was": "Intensité de Production de Déchets",
-      "wat": "Intensité de Consommation d'Eau"
-    },
-  "description": {
-      "art": "Part de la valeur produite par des entreprises artisanales, créatives ou dont le savoir-faire est reconnu",
-      "dis": "Indice de GINI",
-      "eco": "Part de la valeur produite en France",
-      "geq": "Ecart de la rémunération moyenne Femmes/Hommes",
-      "ghg": "Quantité émise de gaz à effet de serre par unité de valeur",
-      "haz": "Quantité utilisée de produits dangereux pour la santé et/ou l'environnement par unité de valeur",
-      "knw": "Part de la valeur produite dédiée à la formation, la recherche ou l'enseignement",
-      "mat": "Quantité extraite de matières premières (matières biologiques, biomasse, matières fossiles et minerais) par unité de valeur",
-      "nrg": "Quantité consommée d'énergie par unité de valeur",
-      "soc": "Part de la valeur produite par des structures de l'ESS ou des entreprises à mission",
-      "was": "Quantité produite de déchets par unité de valeur",
-      "wat": "Quantité consommée d'eau par unité de valeur"
-    },
+  "odds": ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17"],
+  "indics-es": {
+    "libelle": "Indicateurs socio-économiques",
+    "indics": ["eco","art","knw","soc","dis","geq"]
+  },
+  "indics-env": {
+    "libelle": "Indicateurs environnementaux",
+    "indics": ["ghg","nrg","wat","was","mat","haz"]
+  },
+  "art": {
+    "libelle": "Contribution aux Métiers d'art & aux Savoir-faire",
+    "description": "Part de la valeur produite par des entreprises artisanales, créatives ou dont le savoir-faire est reconnu",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Valeur ajoutée correspondante à des activites artisanales",
+    "odds": ["08","09","12"]
+  },
+  "dis": {
+    "libelle": "Indice de Répartition des Rémunérations",
+    "description": "Indice de GINI",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Ecart de rémunération femmes/hommes",
+    "odds": ["08","10"]
+  },
+  "eco": {
+    "libelle": "Contribution à l'Economie Nationale",
+    "description": "Part de la valeur produite en France",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "",
+    "odds": ["08","12"]
+  },
+  "geq": {
+    "libelle": "Indice d'Ecart des Rémunérations Femmes/Hommes",
+    "description": "Ecart de la rémunération moyenne Femmes/Hommes",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "",
+    "odds": ["05","10"]
+  },
+  "ghg": {
+    "libelle": "Intensité d'Emission de Gaz à Effet de Serre",
+    "description": "Quantité émise de gaz à effet de serre par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Emissions directes de gaz à effet de serre",
+    "odds": ["12","13","14","15"]
+  },
+  "haz": {
+    "libelle": "Intensité d'Utilisation de produits dangereux",
+    "description": "Quantité utilisée de produits dangereux pour la santé et/ou l'environnement par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Quantité utilisée de produits dangereux",
+    "odds": ["02","03","12","14","15"]
+  },
+  "knw": {
+    "libelle": "Contribution à l'Evolution des Compétences et des Connaissances",
+    "description": "Part de la valeur produite dédiée à la formation, la recherche ou l'enseignement",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Rémunérations liées à des activités de recherche ou de formation",
+    "odds": ["08","09","12"]
+  },
+  "mat": {
+    "libelle": "Intensité d'Extraction de Matières Premières",
+    "description": "Quantité extraite de matières premières (matières biologiques, biomasse, matières fossiles et minerais) par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Quantité extraite de matières premières",
+    "odds": ["12","14","15"]
+  },
+  "nrg": {
+    "libelle": "Intensité de Consommation d'Energie",
+    "description": "Quantité consommée d'énergie par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Quantité consommée d'énergie",
+    "odds": ["07","12","13"]
+  },
+  "soc": {
+    "libelle": "Contribution aux Acteurs d'Intérêt social",
+    "description": "Part de la valeur produite par des structures de l'ESS ou des entreprises à mission",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Valeur ajoutée si entreprise de l'ESS ou ayant une raison d'être définie dans les statuts, zéro sinon",
+    "odds": ["08","12"]
+  },
+  "was": {
+    "libelle": "Intensité de Production de Déchets",
+    "description": "Quantité produite de déchets par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Quantité produite de déchets",
+    "odds": ["03","11","12","14","15"]
+  },
+  "wat": {
+    "libelle": "Intensité de Consommation d'Eau",
+    "description": "Quantité consommée d'eau par unité de valeur",
+    "unit": "",
+    "unitCode": "",
+    "unitAbsoluteCode": "",
+    "defaultUncertainty": "",
+    "descriptionImpactDirect": "Quantité consommée d'eau",
+    "odds": ["06","12","14","15"]
+  },
   "unit": {
       "art": "En % de la valeur",
       "dis": "Base 100 où 0 correspond à une égalité parfaite",
@@ -83,19 +184,5 @@
       "soc": 0,
       "was": 50,
       "wat": 25
-    },
-  "descriptionImpactDirect": {
-      "art": "Valeur ajoutée correspondante à des activites artisanales",
-      "dis": "Indice de GINI des taux horaires bruts",
-      "eco": "Valeur ajoutée produite en France",
-      "geq": "Ecart de rémunération femmes/hommes",
-      "ghg": "Emissions directes de gaz à effet de serre",
-      "haz": "Quantité utilisée de produits dangereux",
-      "knw": "Rémunérations liées à des activités de recherche ou de formation",
-      "mat": "Quantité extraite de matières premières",
-      "nrg": "Quantité consommée d'énergie",
-      "soc": "Valeur ajoutée si entreprise de l'ESS ou ayant une raison d'être définie dans les statuts, zéro sinon",
-      "was": "Quantité produite de déchets",
-      "wat": "Quantité consommée d'eau"
     }
 }

@@ -21,7 +21,7 @@ export default function Home() {
           <h2>La Société Nouvelle</h2>
           <p>
           SAS au capital de 1 000 €<br/>
-          Siège social : 31/33 rue Adolphe 59000 LILLE<br/>
+          Siège social : 165 avenue de Bretagne 59000 LILLE<br/>
           SIREN : 889 182 770<br/>
           Responsable : Sylvain HUMILIERE<br/>
           Contact : sylvain.humiliere@la-societe-nouvelle.fr<br/>

@@ -1,0 +1,34 @@
+@import "base";
+
+
+#submit-form 
+{
+  width: 100%;
+
+  &.disabled 
+  {
+    background-color: white;
+    color: $primary-color;
+    border: solid $primary-color 1px;
+  }
+}
+
+#coordonnees-input {
+  height: 50px;
+}
+
+#message-input {
+  height: 150px;
+}
+
+.form-item 
+{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 25px;
+  
+  > label {
+    margin-bottom: 5px;
+  }
+}

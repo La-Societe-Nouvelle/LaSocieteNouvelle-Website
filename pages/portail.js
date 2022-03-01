@@ -17,15 +17,27 @@ export default function Home() {
       <Header/>
 
       <main className="main">
+
+        <div className="section">
+          <div className="bloc blue h-group chiffres-clefs-bdd">
+            <div className="h-group chiffre-clef-bdd">
+              <p className="chiffre-clef-bdd-valeur">27</p>
+              <p>Requêtes effectuées</p>
+            </div>
+            <div className="h-group chiffre-clef-bdd">
+              <p className="chiffre-clef-bdd-valeur">12</p>
+              <p>Valeurs publiées</p>
+            </div>
+          </div>
+        </div>
+
         <h1>Portail d'accès aux données</h1>
-        <div id="portail-informations" className="strip">
-          <h2>Informations</h2>
-          <p>Retrouvez les indicateurs de l'Empreinte Sociétale pour l'ensemble des entreprises françaises.</p>
+        <PortailView/>
+        <div className="strip"  id="portail-informations">
+          <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
           <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
-          <p>La base de données s'appuie sur le répertoire SIRENE (Dernière mise à jour : 02/07/2021).</p>
           <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
         </div>
-        <PortailView/>
       </main>
 
       <Footer/>
@@ -140,7 +152,7 @@ function buildSearchBar(parent) {
   return (
     <div id="search-bar">
       <input id="search-input" type="text"
-             placeholder="siren ou dénomination sociale"
+             placeholder="Dénomination sociale, N° de siren"
              value={parent.state.input} onChange={parent.inputChange}></input>
       <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
     </div>

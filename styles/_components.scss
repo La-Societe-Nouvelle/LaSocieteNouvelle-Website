@@ -1,0 +1,20 @@
+@import "base";
+
+button {
+  color: white;
+  background-color: $raspberry;
+  border: 0;
+  height: 25px;
+  border-radius: 5px;
+  padding: 2px 10px;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  &:disabled {
+    background-color: white;
+    color: $primary-color;
+    border: solid 1px $primary-color;
+  }
+}

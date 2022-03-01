@@ -3,7 +3,9 @@ import {DropDown} from "./dropdown";
 
 
 export default class Header extends React.Component {
-  render() {
+
+  render() 
+  {
     return (
 
     <div className="Header">
@@ -12,20 +14,14 @@ export default class Header extends React.Component {
 
         <div id="header-strip">
           <a href="/">
-          <img id="logo-header" src="/resources/logo_miniature.jpg" alt="logo"/>
+            <img id="logo-header" src="/images/logo-lsn-header.png" alt="logo-lsn-header"/>
           </a>
-          <div id="header-name-company">
-            <h1 id="company-name-header">La Société Nouvelle</h1>
-            <span id="text-header">Mesure, Informer pour une économie durable</span>
-          </div>
+          <p id="slogan">Mesure, Informer pour une économie durable</p>
+          <svg id="slogan-line_container" viewBox="0 0 100 10">
+            <line id="slogan-line" x1="0" y1="0" x2="100" y2="0"/>
+          </svg>
+          <p id="slogan-2">Initiative OpenData - OpenSource</p>
           <hr className="hr-big-size"/>
-          <div className="header-strip-item" id="header-text2">
-            <p>Système d'Information&nbsp;</p><p>et de Comptabilité extra-financière</p>
-          </div>
-          <div className="header-actions">
-            <button id="header-action-declaration" onClick={() => window.location="/publication"}>Publiez vos impacts</button>
-            <button onClick={() => window.open("https://metriz.lasocietenouvelle.org/")}>Mesurez vos Impacts</button>
-          </div>
         </div>
 
         <div id="menu">
@@ -33,31 +29,22 @@ export default class Header extends React.Component {
                 title="Menu"
                 href="##">
           <ul>
-            <li className="menu-item"><a href="/">Accueil</a></li>
-            <li className="menu-item"><a href="/portail">Données</a></li>
+            <li id="home" className="menu-item"><a href="/"><img id="icon-home" src="/images/icon-home.png" alt="icon-home"/></a></li>
             <li className="menu-item">
               <DropDown
-                title="Méthodologie et Indicateurs"
-                href="/empreinte-societale">
-                <div><a href="/empreinte-societale">Présentation générale</a></div>
-                <div><a href="/indicateur/ghg">Emissions de gaz à effet de serre</a></div>
-                <div><a href="/indicateur/eco">Production française</a></div>
-                <div><a href="/indicateur/was">Déchets</a></div>
-                <div><a href="/indicateur/geq">Inégalités Femmes/Hommes</a></div>
-                <div><a href="/indicateur/nrg">Consommation d'énergie</a></div>
-                <div><a href="/indicateur/wat">Consommation d'eau</a></div>
-                <div><a href="/indicateur/dis">Répartition des rémunérations</a></div>
-                <div><a href="/indicateur/soc">Acteurs d'intérêt social</a></div>
-                <div><a href="/indicateur/mat">Ressources naturelles</a></div>
-                <div><a href="/indicateur/knw">Compétences et Connaissances</a></div>
-                <div><a href="/indicateur/art">Métiers d'Art et Savoir-Faire</a></div>
-                <div><a href="/indicateur/haz">Produits dangereux</a></div>
+                title="Approche"
+                href="/approche">
+                <div><a href="/approche">Principe / Présentation</a></div>
+                <div><a href="/liste-indicateurs">Indicateurs</a></div>
+                <div><a href="/approche">Base de données</a></div>
+                <div><a href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</a></div>
+                <div><a href="/approche">Accès à la documentation</a></div>
               </DropDown>
             </li>
-            <li className="menu-item"><a href="/a-propos">Services</a></li>
-            <li className="menu-item"><a href="/a-propos">A Propos</a></li>
-            <li className="menu-item"><a href="/a-propos">Professionnel</a></li>
-            <li className="menu-item"><a href="/a-propos">Acteurs de la comptabilité</a></li>
+            <li className={"menu-item"+(this.props.page=="portail" ? " selected" : "")}><a href="/portail">Données</a></li>
+            <li className={"menu-item"+(this.props.page=="cabinets-comptables" ? " selected" : "")}><a href="/cabinets-comptables">Cabinets comptables</a></li>
+            <li className={"menu-item"+(this.props.page=="entreprises" ? " selected" : "")}><a href="/entreprises">Entreprises</a></li>
+            <li className={"menu-item"+(this.props.page=="a-propos" ? " selected" : "")}><a href="/a-propos">La Société Nouvelle</a></li>
           </ul>
           </DropDown>
         </div>

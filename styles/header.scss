@@ -5,10 +5,13 @@
 .Header {
   display: block;
   width: 100%;
+
 }
 
 #header {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
   width: 100%;
   text-align: center;
   color: $primary-color;
@@ -19,8 +22,9 @@
   flex-flow: row wrap;
   width: 100%;
   margin: 5px 0 10px 0;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
+  position: relative;
 
   @include xs {
     flex-flow: column nowrap;
@@ -35,6 +39,34 @@
     }
     @include lg {
       display: none;
+    }
+  }
+
+
+
+  p#slogan {
+    position: absolute;
+    left: 119px;
+    top: 29px;
+  }
+
+  p#slogan-2 {
+    position: absolute;
+    right:50px;
+    top: 5px;
+    font-size: 20px;
+    color: $secondary-color;
+  }
+
+  > svg#slogan-line_container {
+    position: absolute;
+    left: 295px;
+    top: 46px;
+    width: 110px;
+
+    line#slogan-line {
+      stroke: $raspberry;
+      stroke-width: 3px;
     }
   }
 }
@@ -92,16 +124,25 @@
   }
 }
 
-#text-header {
+#slogan {
   position: relative;
   left: 2px;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 14px;
+  color: $dark-blue;
 }
 
 #menu {
+  margin-bottom: 10px;
 
+  ul {
+    margin: 0;
+
+    .selected {
+      background-color: $raspberry;
+    }
+  }
   
   @include xs {
     display: block;
@@ -156,7 +197,6 @@
   }
 
   @include sm {
-    background-color: $primary-color;
     width: 100%;
     .dropdown-title {
       display: none;
@@ -168,14 +208,14 @@
     flex-flow: row wrap;
     justify-content: center;
     width: 100%;
-    padding: 0 5%;
+    padding: 0;
 
     :hover {
-      background-color: $secondary-color;
+      background-color: $raspberry;
     }
 
     .active {
-      background-color: $secondary-color;
+      background-color: $raspberry;
 
       span {
         transform: rotate(540deg);
@@ -187,27 +227,22 @@
       padding: 0px;
     }
     @include md {
-      padding: 0 10%;
+      padding: 0;
     }
   }
 
   .menu-item {
     width: auto;
-    background-color: $primary-color;
+    background-color: $dark-blue;
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
     flex-grow: 1;
     cursor: pointer;
+    margin: 0 1px;
 
-    @include sm {
-      &::before,
-      &:last-of-type::after {
-        content: " ";
-        margin: auto;
-        height: 15px;
-        border-right: solid white 1px;
-      }
+    &#home {
+      max-width: 50px;
     }
 
     a {
@@ -249,29 +284,30 @@
         align-items: center;
         justify-content: space-around;
         width: 100%;
+        height: 100%;
         padding: 3px 5px;
         color: white;
       }
 
       .dropdown-items {
         position: relative;
-        background-color: $secondary-color;
+        background-color: white;
         width: 100%;
         transform: translate3d(0,0,0);
         max-height:100vh;
         transition: max-height 0.5s linear;
         overflow:hidden;
 
-        :hover {
-          background-color: $primary-color;
-        }
+        //:hover {
+          //background-color: $raspberry;
+        //}
 
         &.reduced {
           max-height: 0px;
         }
 
         a {
-          color: white;
+          color: $dark-blue;
         }
 
         @include xs {
@@ -279,7 +315,7 @@
         }
         @include sm {
           position: absolute;
-          top: 25px;
+          top: 35px;
           left: 0px;
           white-space: nowrap;
 
@@ -308,6 +344,12 @@
       }
     }
   }
+
+  #icon-home {
+    padding: 2px;
+    margin: 0 2px;
+  }
+
 }
 
 .header-actions {

@@ -1,8 +1,16 @@
 import Head from 'next/head'
 
+import '../styles/_groups.scss'
+import '../styles/_section.scss'
+import '../styles/_wrapper.scss'
+import '../styles/_components.scss'
+import '../styles/_md.scss'
+
+
 import '../styles/globals.scss'
 import '../styles/header.scss'
 import '../styles/footer.scss'
+
 // CSS specific to pages
 import '../styles/accueil.scss'
 import '../styles/a-propos.scss'

@@ -1,0 +1,34 @@
+@import 'base';
+
+
+/* -------------------- Horizontal -------------------- */
+
+.h-group 
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 10px;
+  gap: 10px;
+
+  > div 
+  {
+    flex: 1 1 0px;
+  }
+}
+
+/* -------------------- Vertical -------------------- */
+
+.v-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
+
+  > * 
+  {
+    margin: auto;
+  }
+}

@@ -28,6 +28,14 @@ h2 {
 p {
   font-size: 1rem;
   text-align: justify;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.highlighted {
+    color: $raspberry;
+  }
 }
 
 a {
@@ -38,22 +46,6 @@ a {
   color: $primary-color;
   box-sizing: border-box;
   font-family: Helvetica;
-}
-
-button {
-  color: white;
-  background-color: $primary-color;
-  border: 0;
-  height: 25px;
-  width: 150px;
-}
-button:hover {
-  background-color: $secondary-color;
-}
-button:disabled {
-  background-color: white;
-  color: $primary-color;
-  border: solid 1px $primary-color;
 }
 
 input {
@@ -83,6 +75,22 @@ textarea {
 
 }
 
+.with-white-border 
+{
+  position: relative;
+
+  &::after 
+  {
+    content: "";
+    height: 60%;
+    width: 1px;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 20%;
+  }
+}
+
 /* ----- class ----- */
 
 .container {
@@ -91,6 +99,10 @@ textarea {
   flex-direction: column;
   justify-content: left;
   align-items: center;
+  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
+  background-repeat: no-repeat;
+  background-position: left bottom,right bottom;
+  background-attachment: fixed;
 }
 
 .main {
@@ -103,7 +115,18 @@ textarea {
   height: 100%;
 
   @include lg{
-    width:75%;
+    width:100%;
+    padding: 0 10%;
+  }
+}
+
+.wrapper {
+  img {
+    width: 150px;
+    margin: auto;
+  }
+  p {
+    text-align: center;
   }
 }
 
@@ -118,11 +141,275 @@ textarea {
   }
 }
 
+
 .text-link {
   font-style: italic;
 }
 
+/* -------------------- Index | Chiffre-clef -------------------- */
+
+.bloc#chiffres-clefs
+{
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 10px;  
+}
+
+.chiffre-clef 
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  .chiffre-clef-icone
+  {
+    height: 50px;
+    margin: 10px;
+  }
+  
+  .chiffre-clef-valeur 
+  {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    p 
+    {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 20px 10px 20px 0;
+    }
+
+    span 
+    {
+      margin-top: 12px;
+      color: white;
+    }
+  }
+
+  .chiffre-clef-libelle 
+  {
+    margin: 0;
+  }
+}
+
+#quick-access_container {
+  width: 10%;
+  max-width: 250px;
+
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 250px;
+  background-color: $light-gray;
+
+  p {
+    color: black;
+  }
+}
+
+/* ----- Approche ----- */
+
+#empreinte-societale-description
+{
+  padding: 0 2%;
+
+  p
+  {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+#empreinte-societale-illustration
+{
+  height: 200px;
+  position: relative;
+  
+  p 
+  {
+    position: absolute;
+    left: 225px;
+    top: 32px;
+  }
+
+  img#icon-euro 
+  {
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    height: 75px;
+  }
+
+  svg#empreinte-societale-traits
+  {
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+  
+    line 
+    {
+      stroke: white;
+      stroke-width: 2px;
+    }
+  }
+}
+
+.indicator-section 
+{
+
+  .icons-odd 
+  {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+    height: 50px;
+
+    img.icon-odd
+    {
+      height: 50px;
+      
+      &.not-concerned 
+      {
+        filter: brightness(55%);
+        height: 35px;
+      }
+    }
+  }
+
+  .indicators-panel-view
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100%;
+    padding: 15px 0;
+
+    img.default-icon
+    {
+      display: block;
+      height: 100px;
+      margin: auto;
+    }
+
+    .indicators-panel-details
+    {
+      height: 100%;
+      border: 1px solid $dark-blue;
+
+      p
+      {
+        padding: 5px 10px;
+        text-align: left;
+      }
+
+      h3 
+      {
+        height: max-content;
+        background-color: $dark-blue;
+        margin: 0px;
+        padding: 5px;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .indicators-panel-list
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p
+    {
+      margin: 5px 0;
+    }
+  }
+}
+
+img#graph-donut
+{
+  height: 400px;
+  margin: 25px auto;
+}
+
+img.main-icon
+{
+  height: 100px;
+  width: 100px;
+  margin: 50px auto;
+}
+
+.logos-partners
+{
+  justify-content: space-evenly;
+
+  img.logo-partner
+  {
+    height: 75px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+/* ----- A-Propos ----- */
+
+.buttons-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#mission-buttons {
+  justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#img-screen-video {
+  margin-top: 20px;
+}
+
+#mission-text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
 /* ---- others ----- */
+
+.chiffres-clefs-bdd
+{
+  justify-content: space-evenly;
+
+  .chiffre-clef-bdd
+  {
+    justify-content: center;
+    align-items: center;
+
+    .chiffre-clef-bdd-valeur
+    {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+}
 
 #remaining-space {
   flex-grow: 1;
@@ -376,43 +663,4 @@ textarea {
 .form {
   margin: 0 auto;
   width: 75%;
-}
-
-.form-item {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-bottom: 25px;
-}
-.form-item > label {
-  margin-bottom: 5px;
-}
-
-#message-input {
-  height: 150px;
-}
-#coordonnees-input {
-  height: 50px;
-}
-
-#submit-form {
-  width: 100%;
-}
-#submit-form.disabled {
-  background-color: white;
-  color: $primary-color;
-  border: solid $primary-color 1px;
-}
-
-.content-md {
-  width: 95%;
-
-  @include lg{
-    width:85%;
-  }
-
-  :not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background-color: #ffffff;
-  }
-  
 }

@@ -1,0 +1,85 @@
+@import 'base';
+
+
+/* -------------------- Section -------------------- */
+
+.section 
+{
+  width: 100%;
+  padding: 0px;
+  margin: 10px 0;
+
+  &.h-group 
+  {
+    padding: 0;
+    gap: 10px;
+    
+    > div 
+    {
+      flex: 1 1 0px;
+      margin: 0px;
+    }
+  }
+
+  // components
+
+  .titre-section
+  {
+    font-size: 25px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+}
+
+/* -------------------- Bloc -------------------- */
+
+.bloc 
+{
+  overflow: auto;
+
+  &.blue {
+    background-color: $dark-blue;
+    h1,h2,p,b {
+      color: white;
+    }
+  }
+  
+  &.gray {
+    background-color: $light-gray;
+  }
+  
+  &.white {
+    border: 1px solid $dark-blue;
+    
+    button {
+      background-color: $dark-blue;
+    }
+  }
+
+  // Components
+  
+  h1.titre-bloc
+  {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  h2.titre-bloc
+  {
+    font-size: 25px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  > img
+  {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

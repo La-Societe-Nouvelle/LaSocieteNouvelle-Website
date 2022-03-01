@@ -128,5 +128,4 @@ export const indicateurs = {
         was: 'Quantité produite de déchets',
         wat: 'Quantité consommée d\'eau'
     }
-    
 }
