@@ -103,6 +103,7 @@ export default function Home() {
         <div className="section">
           <div className="bloc gray">
             <h1>Fonctionnement de l'Application</h1>
+            <FigureEtapes />
           </div>
         </div>        
 
@@ -114,3 +115,37 @@ export default function Home() {
     </div>
   )
 }
+
+const FigureEtapes = () =>
+  <div className="h-group" id="etapes">
+    <div className="step-container">
+      <h4>Import comptable</h4>
+      <p>
+        Import des écritures comptables à partir du FEC.
+      </p>
+      <p className="step-number">1</p>
+    </div>
+    <div className="step-container">
+      <h4>Etats initiaux</h4>
+      <p>
+        Initialisation de l'empreinte des comptes de stocks et d'immobilisations à partir des résultats 
+        de l'exercice précédent ou via l'utilisation de données par défaut.
+      </p>
+      <p className="step-number">2</p>
+    </div>
+    <div className="step-container">
+      <h4>Numéros de siren</h4>
+      <p>
+        Association des numéros de siren aux comptes fournisseurs auxiliaires, et récupération des empreintes
+        de la valeur produite des fournisseurs.
+      </p>
+      <p className="step-number">3</p>
+    </div>
+    <div className="step-container">
+      <h4>Impacts directs</h4>
+      <p>
+        Evaluation et déclaration des impacts directs de l'entreprise. Des outils de calcul sont disponibles pour les indicateurs les plus complexes.
+      </p>
+      <p className="step-number">4</p>
+    </div>
+  </div>

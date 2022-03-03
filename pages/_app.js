@@ -17,6 +17,7 @@ import '../styles/a-propos.scss'
 import '../styles/indicateur.scss'
 import '../styles/portail.scss'
 import '../styles/contact.scss'
+import '../styles/approche.scss'
 import '../styles/company-data.scss'
 
 function MyApp({ Component, pageProps }) {

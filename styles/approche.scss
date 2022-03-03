@@ -1,0 +1,49 @@
+@import 'base';
+
+
+/* -------------------- Approche page -------------------- */
+
+.step-container
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 1px #9aa2d0;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  min-height: 75px;
+  padding: 15px 15px 25px;
+
+  h4
+  {
+    margin: 5px auto;
+    color: $primary-color;
+  }
+
+  p 
+  {
+    text-align: center;
+  }
+
+  .step-number 
+  {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:none;
+    background: #9aa2d0;
+    font-size: 2em;
+    font-weight: 800;
+    color : #fff;
+  }
+}

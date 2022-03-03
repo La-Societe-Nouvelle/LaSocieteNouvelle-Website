@@ -23,8 +23,8 @@ export default function Home() {
               <div>
                 <h2>Pilotez et valorisez votre performance extra-financière</h2>
                 <p>
-                  Climat, inégalités sociales, raréfaction des ressources naturelles... Les entreprises ont un rôle majeur
-                  dans la construction d'une société durable. Il est désormais incontournable pour une entreprise de 
+                  Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
+                  dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de 
                   prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
                 </p>
                 <p>
