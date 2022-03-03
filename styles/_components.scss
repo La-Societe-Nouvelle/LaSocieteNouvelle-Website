@@ -4,18 +4,18 @@ button
 {
   color: white;
   background-color: $raspberry;
-  border: solid 1px $raspberry;
+  border: none;
   border-radius: 5px;
-  padding: 5px 25px;
+  padding: 15px 25px;
   width: fit-content;
   height: fit-content;
   font-size: 1rem;
-
+  margin: 0.5em 1em;
   &:hover 
   {
-    background-color: white;
-    border: 1px solid $raspberry;
-    color: $raspberry;
+    background-color: $raspberry;
+    color: #fff;
+    cursor: pointer;
   }
 
   &:disabled 

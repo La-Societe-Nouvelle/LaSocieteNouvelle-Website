@@ -37,10 +37,10 @@
 .bloc 
 {
   overflow: auto;
+  padding: 2em;
 
   &.blue {
     background-color: $dark-blue;
-    padding: 2em;
     h1,h2,p,b {
       color: white;
     }
@@ -51,7 +51,8 @@
   }
   
   &.white {
-    border: 1px solid $dark-blue;
+    border: 1px solid #c6c3f0;
+    background: #ffffff;
     
     button {
       background-color: $dark-blue;

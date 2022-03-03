@@ -221,7 +221,14 @@ textarea {
 #quick-access_container {
   width: 10%;
   max-width: 250px;
+  padding: 0;
 
+  h2{
+    margin-bottom: 20px;
+  }
+  .box:hover {
+    cursor: pointer;
+  }
 }
 
 .box {

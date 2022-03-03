@@ -168,6 +168,7 @@
       transition: max-height 0.5s linear;
       overflow: hidden;
       padding: 0.8em;
+      z-index: 9999;
   
       &.reduced {
         max-height: 0px;
@@ -301,6 +302,8 @@
         max-height:100vh;
         transition: max-height 0.5s linear;
         overflow:hidden;
+        z-index: 9999;
+
         //:hover {
           //background-color: $raspberry;
         //}
