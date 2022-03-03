@@ -58,12 +58,19 @@
     }
   }
 
+  // Inner
+
+  .bloc-container
+  {
+    margin-bottom: 20px;
+  }
+
   // Components
   
   h1.titre-bloc
   {
-    font-size: 25px;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin-top: 15px;
     margin-bottom: 5px;
   }
 

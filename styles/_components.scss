@@ -1,20 +1,32 @@
 @import "base";
 
-button {
+button 
+{
   color: white;
   background-color: $raspberry;
-  border: 0;
-  height: 25px;
+  border: solid 1px $raspberry;
   border-radius: 5px;
-  padding: 2px 10px;
+  padding: 5px 25px;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1rem;
 
-  &:hover {
-    background-color: $secondary-color;
+  &:hover 
+  {
+    background-color: white;
+    border: 1px solid $raspberry;
+    color: $raspberry;
   }
 
-  &:disabled {
+  &:disabled 
+  {
     background-color: white;
     color: $primary-color;
     border: solid 1px $primary-color;
+  }
+
+  &.large
+  {
+    padding: 10px 20px;
   }
 }
