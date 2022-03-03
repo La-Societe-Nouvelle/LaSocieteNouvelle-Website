@@ -9,7 +9,7 @@ export default function Home() {
 
       <Head>
         <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
+        <link rel="icon" href="/images/logo-lsn-header.png" />
       </Head>
 
       <Header page="cabinets-comptables"/>
@@ -19,8 +19,25 @@ export default function Home() {
         <div className="section">
 
           <div className="bloc blue">
-            <h2>Complétez les livrables comptables à destination de vos clients</h2>
-            <p>L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
+            <h2 className="titre-bloc">Vous êtes un acteur de la comptabilité</h2>
+            <div className="h-group">
+              <div>
+                <p>
+                  Complétez les livrables comptables à destination de vos clients.
+                </p>
+                <p>
+                  " Tout compréhension de l'entreprise passe par sa comptabilité. Or les enjeux sociaux
+                  et environnementaux qui doivent être considérés en sont absents " - Rapport <i>Entreprise
+                  et intérêt général</i>, Nicolas NOTAT et Dominique SENARD
+                </p>
+                <p>
+                  La comptabilité actuelle ne permet pas de 
+                </p>
+              </div>
+              <div>
+                <img id="img-screen-video" src="/images/team_working.png" alt="img-screen-video"/>
+              </div>
+            </div>
           </div>
 
         </div>

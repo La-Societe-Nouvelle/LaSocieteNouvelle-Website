@@ -1,10 +1,14 @@
+// React
+import React, {useState} from 'react';
+
 // Imports
 import Head from 'next/head'
+
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+
 // Modules
-import React, {useState} from 'react';
 import { Chart } from "react-google-charts";
 
 
@@ -42,14 +46,18 @@ const views =
 /* Fetch (on server side) the profile of the company given its SIREN number */
 Home.getInitialProps = async (ctx) => 
 {
-  try{
+  try
+  {
     const siren = ctx.query.siren;
     const endpoint = `${apiBaseUrl}/siren/${siren}`;
+
     const response = await fetch(endpoint, {method:'get'});
     const data = await response.json();
+
     const dataFetched = data.header.statut===200;
     const header = data.header;
     const profil = data.profil;
+
     return {
       siren,
       dataFetched,
@@ -58,7 +66,8 @@ Home.getInitialProps = async (ctx) =>
       empreinteSocietale: dataFetched ? profil.empreinteSocietale : null
     };
   }
-  catch(error){
+  catch(error)
+  {
     console.log(error);
     throw error;
   }
@@ -77,12 +86,17 @@ export default function Home (props)
 
       <Header/>
 
-      <main className="main">
-        <h1 className="title"> Empreinte Sociétale #{props.siren}</h1>
-        {props.dataFetched &&
-          <ContentSocialFootprint {...props}/>}
-        {!props.dataFetched && 
-          <ContentError {...props} />}
+      <main className="main" id="company-footprint">
+
+        <div className="section">
+          <h1> Empreinte Sociétale #{props.siren}</h1>
+        </div>
+
+        {
+          props.dataFetched ? <ContentSocialFootprint {...props}/>
+                            : <ContentError {...props}/>
+        }
+
       </main>
 
       <Footer/>
@@ -91,101 +105,68 @@ export default function Home (props)
   )
 }
 
-/* default body of the page */
-function ContentError ({header}) 
-{
-  return (
-    <div id="default-message" className="strip">
-      <p>404 | Empreinte Sociétale non trouvée</p>
-      <p>Error : {header.message}</p>
-    </div>
-  )
-}
-
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint ({siren,uniteLegale,empreinteSocietale})
+function ContentSocialFootprint ({uniteLegale,empreinteSocietale})
 {
   /* Use a state Hook with a default value */
   const [selectedView, setSelectedView] = useState("empreinteEconomique");
+  const selectedIndicatorDetails = Object.entries(views[selectedView].indicators).map(([code,viewWindow],_) => ({...empreinteSocietale[code], viewWindow}));
 
   return (
-    <div className="strip">
+    <>
+      <div className="section" id="legal-unit-data">
+        <h2> {uniteLegale.denomination} </h2>
+        <p> 
+          SIREN : {uniteLegale.siren} 
+        </p>
+        <p>
+          Activité principale : {uniteLegale.activitePrincipaleLibelle} <br/>
+          Siège : {uniteLegale.communeSiege} ({uniteLegale.codePostalSiege})
+        </p>
+      </div>
 
-      <UniteLegale {...uniteLegale}/>
+      <div id="notes">
+        <p>
+          /!\ Les valeurs affichées peuvent correspondre à des données par défaut non spécifique à l'entreprise, 
+          et peuvent donc être éloignées de la réalité de l'entreprise.
+          Merci de prendre ces données avec précaution.
+        </p>
+        <p>
+          La valeur de référence correspond à la valeur de l'indicateur pour l'agrégat macroéconomique le plus proche.
+        </p>
+      </div>
 
-      <p id="note-info">
-      /!\ Les valeurs affichées peuvent correspondre à des données par défaut non spécifique à l'entreprise, et peuvent donc être éloignées de la réalité de l'entreprise.
-      Merci de prendre ces données avec précaution.
-      </p><p id="note-info">
-      La valeur de référence correspond à la valeur de l'indicateur pour l'agrégat macroéconomique le plus proche.
-      </p>
-
-      {/* Forward state and state handler to the menu */}
-      <ViewsSelector selected={selectedView} selector={setSelectedView} views={views}/>
-
-      <IndicatorsView
-        showedIndicators={views[selectedView].indicators}
-        footprint={empreinteSocietale}/>
-    </div>
-  )
-}
-
-/* View of a Legal Entity */
-function UniteLegale(uniteLegale)
-{
-  return (
-    <div id="sfp-company-data" className="strip">
-      <h2> {uniteLegale.denomination} </h2>
-      <p> SIREN : {uniteLegale.siren} </p>
-      <p>
-        Activité principale : {uniteLegale.activitePrincipaleLibelle} <br/>
-        Siège : {uniteLegale.communeSiege} ({uniteLegale.codePostalSiege})
-      </p>
-    </div>
-  )
-}
-
-/* ViewMenu : Controls the selected view that must be displayed */
-function ViewsSelector({selected, selector, views})
-{
-  return (
-    <div className="MenuEmpreinteSocietale">
-      <div id="sfp-menu-items">
+      <div className="h-group" id="menu-footprint">
         {Object.entries(views).map(([viewKey,viewValue],_) => (
             <button key={viewKey}
-                    onClick = {() => selector(viewKey)}
-                    className={ (viewKey == selected) ? "sfp-menu-button-inverse" : "sfp-menu-button"}>
+                    onClick = {() => setSelectedView(viewKey)}
+                    className={ (viewKey == selectedView) ? "inverse" : ""}>
               {viewValue.name}
             </button>))}
       </div>
-    </div>
-  );
-}
 
-/* Takes the ESE and outputs some indicators given their codes */
-function IndicatorsView({showedIndicators, footprint}) 
-{
-  const selectedIndicatorDetails = Object.entries(showedIndicators)
-        .map(([code,viewWindow],_) => ({...footprint[code], viewWindow}));
-  return (
-    <div id="sfp-view">
-      {selectedIndicatorDetails.map(details => (
-        <IndicatorDetails key={details.code} {...details}/>
-      ))}
+      <div id="sfp-view">
+        {selectedIndicatorDetails.map(details => (
+          <IndicatorDetails key={details.code} {...details}/>
+        ))}
     </div>
+    </>
   )
 }
 
+
 /* Basic indicator view */
 function IndicatorDetails
-({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, viewWindow}){
+({code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, viewWindow})
+{
   const displayedValue = Math.round(10*value)/10;
   const displayedColor = valueDeclared ? "#616161" : "#b0b0b0";
+
   return (
-    <div key={code} className="VueIndicateur">
+    <div key={code} className="indic-view">
       <h4 id="indic-view-label">{libelle}</h4>
       <ColumnChart title={libelle} viewWindow={viewWindow} performance={displayedValue} color={displayedColor}/>
-      <p id={valueDeclared ? "indic-value" : "indic-value-default"}>{Math.round(displayedValue)} {unit}</p>
+      <p className={valueDeclared ? "indic-value" : "indic-value default"}>{Math.round(displayedValue)} {unit}</p>
       <p className="indic-subdata">Source : {libelleFlag}</p>
       <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
       <p className="indic-subdata">Dernière mise à jour : {year}</p>
@@ -216,4 +197,16 @@ function ColumnChart({title, performance, color, viewWindow = {}}) {
         }}
       />
     </div>)
+}
+
+
+/* default body of the page */
+function ContentError ({header}) 
+{
+  return (
+    <div id="default-message">
+      <p>404 | Empreinte Sociétale non trouvée</p>
+      <p>Error : {header.message}</p>
+    </div>
+  )
 }

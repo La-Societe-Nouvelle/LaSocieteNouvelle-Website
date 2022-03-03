@@ -1,34 +1,24 @@
 @import "base";
 
+/* -------------------- Forms -------------------- */
 
-#submit-form 
+#contact-form
 {
-  width: 100%;
+  flex-grow: 1;
 
-  &.disabled 
+  #objet-input
   {
-    background-color: white;
-    color: $primary-color;
-    border: solid $primary-color 1px;
+    height: auto;
   }
-}
 
-#coordonnees-input {
-  height: 50px;
-}
-
-#message-input {
-  height: 150px;
-}
-
-.form-item 
-{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-bottom: 25px;
+  #coordonnees-input 
+  {
+    height: 50px;
+  }
   
-  > label {
-    margin-bottom: 5px;
+  #message-input 
+  {
+    height: 150px;
   }
 }
+

@@ -5,7 +5,7 @@ import '../styles/_section.scss'
 import '../styles/_wrapper.scss'
 import '../styles/_components.scss'
 import '../styles/_md.scss'
-
+import '../styles/_form.scss'
 
 import '../styles/globals.scss'
 import '../styles/header.scss'
@@ -16,7 +16,8 @@ import '../styles/accueil.scss'
 import '../styles/a-propos.scss'
 import '../styles/indicateur.scss'
 import '../styles/portail.scss'
-import '../styles/declaration-simplifiee.scss'
+import '../styles/contact.scss'
+import '../styles/company-data.scss'
 
 function MyApp({ Component, pageProps }) {
   return (<>  

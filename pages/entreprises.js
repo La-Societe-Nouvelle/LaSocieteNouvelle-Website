@@ -22,7 +22,20 @@ export default function Home() {
             <div className="h-group">
               <div>
                 <h2>Pilotez et valorisez votre performance extra-financière</h2>
-                <p>L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
+                <p>
+                  Climat, inégalités sociales, raréfaction des ressources naturelles... Les entreprises ont un rôle majeur
+                  dans la construction d'une société durable. Il est désormais incontournable pour une entreprise de 
+                  prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
+                </p>
+                <p>
+                  Mesurer les impacts de sa valeur ajoutée et de sa valeur produite permet d'évaluer sa capacité à produire
+                  de la valeur en limitant ses impacts négatifs, de se positionner vis-à-vis de sa branche d'activités et
+                  des objectifs de développement durable fixé.
+                </p>
+                <p>
+                  Les indicateurs permettent d'informer vos clients sur les impacts liés à leurs dépenses et apportent
+                  ainsi une véritable transparence.
+                </p>
               </div>
             </div>
 
@@ -30,7 +43,14 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <h2>La mesure des indicateurs permet à vos clients de : </h2>
+          <div className="bloc gray">
+            <h1 className="titre-section">Principe de calcul</h1>
+            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon"/>
+          </div>
+        </div>
+
+        <div className="section">
+          <h2>La mesure des indicateurs vous permet de : </h2>
           <div className="wrapper">
             <div className="v-group one">
               <h3>Prendre conscience</h3>

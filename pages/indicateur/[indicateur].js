@@ -9,7 +9,7 @@ import html from 'remark-html'
 
 var React = require('react');
 
-import indicData from '../../public/indic-data/data.js'
+import indicData from '../../lib/metaData.json'
 import ReactMarkdown from 'react-markdown'
 
 export default function Post({postData}) {

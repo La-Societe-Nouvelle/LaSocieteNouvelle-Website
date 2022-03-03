@@ -35,26 +35,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-{/*
-        <div id="services-partenaires-strip" className="strip">
-          <h1>Partenaires</h1>
-          <div className="partenaires">
-            <img src="/resources/mestawet-logo.jpg" alt="mestawet-logo"/>
-            <div className="partenaire-box">
-              <p className="partenaire-title">MESTAWET</p>
-              <p className="partenaire-presentation">
-              Mestawet accompagne les entreprises pour développer des projets à impact positif.<br/>
-              La méthode s’appuie sur 4 piliers :<br/>
-              - Identifier (Assessment BCorp, Empreinte Sociétale, etc.)<br/>
-              - Eclairer : inspirer, montrer les choses qui fonctionnent ailleurs, autour de soi<br/>
-              - Concevoir : passer à l’action et tester des choses<br/>
-              - Développer : faire grandir les projets, passer à l’échelle<br/>
-              </p>
-              <p><a href="https://www.mestawet.fr" target="_blank">www.mestawet.fr</a></p>
-            </div>
-          </div>
-        </div>
-*/}
+
       </main>
 
       <Footer/>

@@ -53,7 +53,15 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <h1 className="titre-section">Indicateurs socio-économiques</h1>
+          <div className="title-with-side-lines">
+            <svg className="side-line-title" viewbox="0 0 100 10">
+              <line x1="0" y1="5" x2="100" y2="5"/>
+            </svg>
+            <h1 className="titre-section">Indicateurs socio-économiques</h1>
+            <svg className="side-line-title" viewbox="0 0 100 10">
+              <line x1="0" y1="5" x2="100" y2="5"/>
+            </svg>
+          </div>
           <IndicatorsPanel indics={first_set_indics}/>
         </div>
 
@@ -154,6 +162,8 @@ const IndicatorDetails = ({indic}) =>
   return (
     <div className="indicators-panel-details">
       <h3>{metaData[indic].libelle}</h3>
-      <p>{metaData[indic].description}</p>
+      <p><b>Description : </b>{metaData[indic].description}</p>
+      <p><b>Finalité : </b>{metaData[indic].finalite}</p>
+      <p><b>Impact direct mesuré : </b>{metaData[indic].descriptionImpactDirect}</p>
     </div>)
 }
