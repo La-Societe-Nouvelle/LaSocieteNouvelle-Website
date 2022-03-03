@@ -5,7 +5,8 @@ import Footer from '../src/components/footer'
 // Modules
 import React from 'react';
 
-export default function Home() {
+export default function Home() 
+{
   return (
     <div className="container">
 
@@ -32,12 +33,9 @@ export default function Home() {
         </div>
 
         <h1>Portail d'accès aux données</h1>
+
         <PortailView/>
-        <div className="strip"  id="portail-informations">
-          <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
-          <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
-          <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
-        </div>
+
       </main>
 
       <Footer/>
@@ -49,9 +47,11 @@ export default function Home() {
 
 class PortailView extends React.Component {
 
-  constructor(props) {
+  constructor(props) 
+  {
     super(props);
-    this.state = {
+    this.state = 
+    {
         input: '',
         isLoading: false,
         isLoaded: false,
@@ -62,13 +62,15 @@ class PortailView extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  inputChange(event) {
+  inputChange(event) 
+  {
     this.setState({input: event.target.value});
   }
 
   handleClick(event) 
   {
-    if (this.state.input!==undefined && this.state.input!=='') {
+    if (this.state.input!==undefined && this.state.input!=='') 
+    {
       this.setState({
         isLoaded: false,
         isLoading: true
@@ -103,67 +105,46 @@ class PortailView extends React.Component {
   {
     const {isLoading,isLoaded,infoResults,results} = this.state;
     const nbResults = infoResults.nbResults;
-    // if results are loaded
-    if (!isLoaded && !isLoading) {
-      return (
-        <div id="portail-view">
-            {buildSearchBar(this)}
-        </div>
-      )
-    // if waiting for results
-    } else if (isLoading) {
-      return (
-        <div id="portail-view">
-          {buildSearchBar(this)}
-          <hr className="h-line"/>
+
+    return (
+      <div className="section portail-view">
+          <SearchBar parent={this}/>
+          {
+            isLoaded || isLoading ? <hr className="h-line"/> : ""
+          }
+          {!isLoaded && !isLoading ? <Informations /> : ""}
           <div id="results-strip">
-            <p>Recherche en cours...</p>
+            {isLoading ? <p>Recherche en cours...</p> : ""}
+            {isLoaded && nbResults==0 ? <p>Aucun résultat</p> : ""}
+            {isLoaded && nbResults>0 ? <Results items={results}/> : ""}
           </div>
-        </div>
-      )
-    // if waiting for results
-    } else if (nbResults===0) {
-      return (
-        <div id="portail-view">
-          {buildSearchBar(this)}
-          <hr className="h-line"/>
-          <div id="results-strip">
-            <p>Aucun résultat</p>
-          </div>
-        </div>
-      )
-    // default page
-    } else {
-      return (
-        <div id="portail-view">
-          {buildSearchBar(this)}
-          <hr className="line-separator"/>
-          <div id="results-strip">
-            {buildResultItems(results)}
-          </div>
-        </div>
-      );
-    }
+      </div>
+    )
   }
 
 }
 
-function buildSearchBar(parent) {
-  return (
+const Informations = () =>
+  <div className="bloc" id="informations">
+    <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
+    <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
+    <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
+  </div>
+
+const SearchBar = ({parent}) => 
     <div id="search-bar">
       <input id="search-input" type="text"
              placeholder="Dénomination sociale, N° de siren"
              value={parent.state.input} onChange={parent.inputChange}></input>
       <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
     </div>
-  )
-}
 
-function buildResultItems(items) {
+const Results = ({items}) =>
+{
   return items.map((item) =>
       <div key={'item-'+item.siren} className="result-item-container">
           <div className="result-item-data">
-              <p className="result-item-denomination">{item.denomination}</p>
+              <p className="result-item-denomination"><b>{item.denomination}</b></p>
               <p>siren : {item.siren}</p>
               <p>
               Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
