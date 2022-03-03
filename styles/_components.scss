@@ -11,9 +11,10 @@ button
   height: fit-content;
   font-size: 1rem;
   margin: 0.5em 1em;
+
   &:hover 
   {
-    background-color: $raspberry;
+    background-color: lighten($secondary-color, 15%);
     color: #fff;
     cursor: pointer;
   }
@@ -28,5 +29,10 @@ button
   &.large
   {
     padding: 10px 20px;
+  }
+
+  &.small
+  {
+    padding: 5px 10px;
   }
 }

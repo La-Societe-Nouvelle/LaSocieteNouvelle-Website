@@ -128,7 +128,7 @@ export default function Home(props) {
 
       <Header />
 
-      <main className="main">
+      <main className="main" id="index">
 
         <div className="section">
 
@@ -191,9 +191,11 @@ export default function Home(props) {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-section">Indicateurs clefs</h2>
+          </div>
           <div className="bloc">
 
-            <h2 className="titre-section">Indicateurs clefs</h2>
             <div className="graph">
 
               <Line

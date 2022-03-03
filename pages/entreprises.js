@@ -17,11 +17,12 @@ export default function Home() {
       <main className="main">
 
         <div className="section h-group">
+          
           <div className="bloc blue">
+            <h1 className="titre-bloc">Pilotez et valorisez votre performance extra-financière</h1>
 
             <div className="h-group">
               <div>
-                <h2>Pilotez et valorisez votre performance extra-financière</h2>
                 <p>
                   Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
                   dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de 
@@ -43,14 +44,18 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-section">Principe de calcul</h2>
+          </div>
           <div className="bloc gray">
-            <h1 className="titre-section">Principe de calcul</h1>
             <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon"/>
           </div>
         </div>
 
         <div className="section">
-          <h2>La mesure des indicateurs vous permet de : </h2>
+          <div className="title-with-side-lines">
+            <h2>La mesure des indicateurs vous permet de : </h2>
+          </div>
           <div className="wrapper">
             <div className="v-group one">
               <h3>Prendre conscience</h3>
@@ -77,8 +82,10 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2>Comment mesurer ces indicateurs pour mon entreprise ?</h2>
+          </div>
           <div className="bloc gray">
-            <h1>Comment mesurer ces indicateurs pour mon entreprise ?</h1>
             <div className="h-group">
               <div>
                 <p>L'outil permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables), les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables Téléchargeables.</p>
@@ -87,11 +94,11 @@ export default function Home() {
                 <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp"/>
                 <div className="buttons-group">
                   <button>Accéder à l'outil</button>
-                  <button>Accéder au tutoriel</button>
+                  {/* <button>Accéder au tutoriel</button> */}
                 </div>
               </div>
             </div>
-            <h2>Contactez les cabinets comptables partenaires pour bénéficier de leur expertise</h2>
+            {/* <h2>Contactez les cabinets comptables partenaires pour bénéficier de leur expertise</h2> */}
             <div className="h-group">
 
             </div>
@@ -99,8 +106,21 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-section">Les cabinets comptables partenaires</h2>
+          </div>
+          <div className="h-group logos-partners">
+            <img className="logo-partner" id="logo-easi" src="/images/logo-easi-1.png" alt="logo-easi"/>
+            <img className="logo-partner" id="logo-te" src="/images/logo-te-1.png" alt="logo-te"/>
+            <img className="logo-partner" id="logo-valoxy" src="/images/logo-valoxy-1.png" alt="logo-valoxy"/>
+          </div>
+        </div>
+
+        {/* <div className="section">
+          <div className="title-with-side-lines">
+            <h2>Aller plus loin...</h2>
+          </div>
           <div className="bloc white">
-            <h1>Aller plus loin...</h1>
             <div className="h-group">
               <div className="v-group">
                 <img id="icon-database" src="/images/icon-database.png" alt="icon-database"/>
@@ -116,7 +136,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>     
+        </div>      */}
 
       </main>
 

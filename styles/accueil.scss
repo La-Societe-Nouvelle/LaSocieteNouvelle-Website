@@ -1,5 +1,76 @@
 @import 'base';
 
+
+#index
+{
+
+  // Chiffres clefs
+
+  .bloc#chiffres-clefs
+  {
+    padding: 0;  
+  }
+  
+  .chiffre-clef 
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 20px;
+  
+    .chiffre-clef-icone
+    {
+      height: 50px;
+      margin: 10px;
+    }
+    
+    .chiffre-clef-valeur 
+    {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-around;
+  
+      p 
+      {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 20px 10px 20px 0;
+      }
+  
+      span 
+      {
+        margin-top: 12px;
+        color: white;
+      }
+    }
+  
+    .chiffre-clef-libelle 
+    {
+      margin: 0;
+    }
+  }
+  
+
+  .chiffres-clefs-bdd
+  {
+    justify-content: space-evenly;
+  
+    .chiffre-clef-bdd
+    {
+      justify-content: center;
+      align-items: center;
+  
+      .chiffre-clef-bdd-valeur
+      {
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 #head-accueil {
   justify-content: left;
   margin: 20px 10px 10px 10px;

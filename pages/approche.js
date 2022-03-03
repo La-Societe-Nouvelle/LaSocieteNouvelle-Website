@@ -18,7 +18,7 @@ const impacts_euro = [
 ]
 
 export default function Home() {
-  
+
   return (
     <div className="container">
 
@@ -40,7 +40,7 @@ export default function Home() {
                 <p className="center">L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
               </div>
               <div id="empreinte-societale-illustration">
-                <Ese_scrolling_informations />                 
+                <Ese_scrolling_informations />
                 <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro"/>
                 <svg id="empreinte-societale-traits" viewBox="0 0 200 100">
                   <line id="trait-diagonal"   x1="125" y1="35" x2="150" y2="10"/>
@@ -54,59 +54,63 @@ export default function Home() {
 
         <div className="section">
           <div className="title-with-side-lines">
-            <h1 className="titre-section">Indicateurs socio-économiques</h1>
+            <h2 className="titre-section">Indicateurs socio-économiques</h2>
           </div>
           <IndicatorsPanel indics={first_set_indics}/>
         </div>
 
         <div className="section">
           <div className="title-with-side-lines">
-            <h1 className="titre-section">Indicateurs environnementaux</h1>
+            <h2 className="titre-section">Indicateurs environnementaux</h2>
           </div>
           <IndicatorsPanel indics={second_set_indics}/>
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-section">Principe de calcul</h2>
+          </div>
           <div className="bloc gray">
-            <h1 className="titre-section">Principe de calcul</h1>
             <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon"/>
           </div>
         </div>
 
-        <div className="section">
-          <h1 className="titre-section">A votre disposition</h1>
+        <div className="section" id="section-ressources">
+          <div className="title-with-side-lines">
+            <h2 className="titre-section">A votre disposition</h2>
+          </div>
           <div className="h-group">
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-documentation" src="/images/documentation-brf-1-raspberry.png" alt="icon-documentation"/>
-              <h2 className="titre-bloc">Documentation</h2>
-              <button>Accéder à la ressource</button>
+              <h3 className="titre-bloc">Documentation</h3>
+              <button className="small">Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-database" src="/images/bdd-brf-1-raspberry.png" alt="icon-database"/>
-              <h2 className="titre-bloc">Base de données</h2>
-              <button>Accéder à la ressource</button>
+              <h3 className="titre-bloc">Base de données</h3>
+              <button className="small">Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-webapp" src="/images/webapp-brf-1-raspberry.png" alt="icon-webapp"/>
-              <h2 className="titre-bloc">Application web</h2>
-              <button>Accéder à la ressource</button>
+              <h3 className="titre-bloc">Application web</h3>
+              <button className="small">Accéder à la ressource</button>
             </div>
           </div>
         </div>
 
-        <div className="section">
+        {/* <div className="section">
           <h1 className="titre-section">Partenaires</h1>
           <div className="h-group logos-partners">
             <img className="logo-partner" id="logo-easi" src="/images/logo-easi-1.png" alt="logo-easi"/>
             <img className="logo-partner" id="logo-te" src="/images/logo-te-1.png" alt="logo-te"/>
             <img className="logo-partner" id="logo-valoxy" src="/images/logo-valoxy-1.png" alt="logo-valoxy"/>
           </div>
-        </div>
+        </div> */}
 
       </main>
 
       <Footer/>
-      
+
     </div>
   )
 }
@@ -133,20 +137,20 @@ const IndicatorsPanel = (props) =>
   const icon = indics.includes("eco") ? "social-brf-1-blue.png" : "environnement-brf-1-blue.png";
 
   return (
-    <div className="bloc indicator-section">
+    <div className="indicator-section">
       <div className="h-group icons-odd">
         {listOdds.map((odd) => <img className={"icon-odd"+(selectedIndic!="none" && metaData[selectedIndic].odds.includes(odd) ? "" : " not-concerned")} id={"icon-odd-"+odd} src={"/images/icon-odd-"+odd+".png"} alt="icon-odd"/>)}
       </div>
-      <div className="h-group">
+      <div className="h-group nogap">
         <div className="indicators-panel-view">
           {selectedIndic=="none" ? <img className="default-icon" id="icon" src={"/images/"+icon} alt="icon"/> : <IndicatorDetails indic={selectedIndic} />}
         </div>
         <div className="indicators-panel-list">
-          {indics.map((indic) => 
+          {indics.map((indic) =>
               <p className={indic==selectedIndic ? "highlighted" : ""}
                 onClick={() => setSelectedIndic(indic)}>
                 {metaData[indic].libelle}
-              </p>)}            
+              </p>)}
         </div>
       </div>
     </div>
@@ -157,7 +161,7 @@ const IndicatorDetails = ({indic}) =>
 {
   return (
     <div className="indicators-panel-details">
-      <h3>{metaData[indic].libelle}</h3>
+      {/* <h3>{metaData[indic].libelle}</h3> */}
       <p><b>Description : </b>{metaData[indic].description}</p>
       <p><b>Finalité : </b>{metaData[indic].finalite}</p>
       <p><b>Impact direct mesuré : </b>{metaData[indic].descriptionImpactDirect}</p>

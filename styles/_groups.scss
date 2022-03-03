@@ -9,12 +9,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0 10px;
+  padding: 0;
   gap: 10px;
 
   > div 
   {
     flex: 1 1 0px;
+  }
+
+  &.nogap
+  {
+    gap: 0;
   }
 }
 

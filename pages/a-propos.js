@@ -36,7 +36,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="h-group" id="mission-buttons">
-                  <button onClick={() => windows.open("/approche")}>Découvrir l'approche</button>
+                  {/* <button onClick={() => windows.open("/approche")}>Découvrir l'approche</button> */}
                   <button>Nous contacter</button>
                 </div>
               </div>
@@ -48,8 +48,10 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-bloc">Gouvernance des indicateurs</h2>
+          </div>
           <div className="bloc gray">
-            <h1 className="titre-bloc">Gouvernance des indicateurs</h1>
             <div className="bloc-container text-container">
               <p>
                 Nous travaillons en continu sur les indicateurs disponibles: choix méthodologiques, 
@@ -62,8 +64,10 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-bloc">Nos activités</h2>
+          </div>
           <div className="bloc">
-            < h1 className="titre-bloc">Nos activités</h1>
             <div className="h-group" id="nos-activites">
               <div className="v-group">
                 <div className="activite">
@@ -109,8 +113,10 @@ export default function Home() {
         </div>
 
         <div className="section">
+          <div className="title-with-side-lines">
+            <h2 className="titre-bloc">Equipe</h2>
+          </div>
           <div className="bloc">
-            <h1 className="titre-bloc">Equipe</h1>
             <div className="h-group" id="photos-equipe">
               <div>
                 <img id="img-laura" src="/images/img-laura.png" alt="img-laura"/>

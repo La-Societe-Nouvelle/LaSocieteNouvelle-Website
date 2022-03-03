@@ -36,7 +36,7 @@ export default class Header extends React.Component {
                 href="/approche">
                 <div><a href="/approche">Principe / Présentation</a></div>
                 <div><a href="/liste-indicateurs">Indicateurs</a></div>
-                <div><a href="/approche">Base de données</a></div>
+                <div><a href="/portail">Base de données</a></div>
                 <div><a href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</a></div>
                 <div><a href="/approche">Accès à la documentation</a></div>
               </DropDown>

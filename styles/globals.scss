@@ -22,6 +22,7 @@ h1 {
 }
 
 h2 {
+  color: $primary-color;
   font-family: $font-family;
   margin: 0px 10px 20px 0;
   font-size: 1.5rem;
@@ -35,39 +36,34 @@ h2 {
   justify-content: space-between;
   align-items: center;
 
-  h1 
+  h2 
   {
     position: relative;
     z-index: 1;
     overflow: hidden;
     text-align: center;
     width: 100%;
+    height: 25px;
   }
 
-  h1:before, h1:after 
+  h2:before, h2:after 
   {
       position: absolute;
       top: 50%;
       overflow: hidden;
       width: 50%;
-      height: 2px;
+      height: 1px;
       content: '\a0';
-      background-color: $raspberry;
+      background-color: $primary-color;
   }
-  h1:after
+  h2:after
   {
     margin-left: 2%;
   }
-  h1:before 
+  h2:before 
   {
       margin-left: -52%;
       text-align: right;
-  }
-
-  svg.side-line-title
-  {
-    stroke: $raspberry;
-    flex-grow: 1;
   }
 }
 
@@ -80,7 +76,7 @@ p {
   }
 
   &.highlighted {
-    color: $raspberry;
+    color: $secondary-color;
   }
 }
 
@@ -160,6 +156,7 @@ textarea {
   align-items: center;
   width: 95%;
   height: 100%;
+  margin-bottom: 25px;
 
   @include lg{
     width:100%;
@@ -195,53 +192,6 @@ textarea {
 
 /* -------------------- Index | Chiffre-clef -------------------- */
 
-.bloc#chiffres-clefs
-{
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 10px;  
-}
-
-.chiffre-clef 
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-
-  .chiffre-clef-icone
-  {
-    height: 50px;
-    margin: 10px;
-  }
-  
-  .chiffre-clef-valeur 
-  {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
-
-    p 
-    {
-      font-size: 40px;
-      font-weight: bold;
-      margin: 20px 10px 20px 0;
-    }
-
-    span 
-    {
-      margin-top: 12px;
-      color: white;
-    }
-  }
-
-  .chiffre-clef-libelle 
-  {
-    margin: 0;
-  }
-}
 
 #quick-access_container {
   width: 10%;
@@ -348,6 +298,9 @@ textarea {
     justify-content: center;
     align-items: stretch;
     min-height: 100%;
+    overflow-y: auto;
+    max-height: 240px;
+    border: 1px solid $dark-blue;
 
     img.default-icon
     {
@@ -359,9 +312,6 @@ textarea {
     .indicators-panel-details
     {
       height: 100%;
-      border: 1px solid $dark-blue;
-      border-top: 0px;
-      border-radius: 6px 6px;
 
       p
       {
@@ -372,9 +322,8 @@ textarea {
       
       h3 
       {
-        border-radius: 5px 5px 0 0;
         height: max-content;
-        background-color: $dark-blue;
+        background-color: lighten($primary-color,50%);
         margin: 0px;
         padding: 5px;
         color: white;
@@ -392,7 +341,15 @@ textarea {
 
     p
     {
-      margin: 5px 0;
+      margin: 0;
+      padding: 10px 10px;
+      width: 100%;
+
+      &.highlighted
+      {
+        background-color: $primary-color;
+        color: white;
+      }
     }
   }
 }
@@ -407,7 +364,7 @@ img.main-icon
 {
   height: 75px;
   width: 75px;
-  margin: 50px;
+  margin: 25px 0 10px;
 }
 
 .logos-partners
@@ -438,7 +395,8 @@ img.main-icon
   margin-bottom: 10px;
 }
 
-#img-screen-video {
+#img-screen-video 
+{
   margin-top: 20px;
 }
 
@@ -451,22 +409,6 @@ img.main-icon
 
 /* ---- others ----- */
 
-.chiffres-clefs-bdd
-{
-  justify-content: space-evenly;
-
-  .chiffre-clef-bdd
-  {
-    justify-content: center;
-    align-items: center;
-
-    .chiffre-clef-bdd-valeur
-    {
-      font-size: 25px;
-      font-weight: bold;
-    }
-  }
-}
 
 #remaining-space {
   flex-grow: 1;
@@ -492,4 +434,18 @@ img.main-icon
 .content-md thead tr th:first-child,
 .content-md tbody tr td:first-child {
   min-width: 250px;
+}
+
+#liste-indicateurs
+{
+  li
+  {
+    padding: 5px 0;
+    color: $primary-color;
+
+    &:hover
+    {
+      color: $secondary-color;
+    }
+  }
 }

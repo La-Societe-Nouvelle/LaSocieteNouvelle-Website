@@ -17,9 +17,9 @@ export default function Home() {
       <main className="main">
 
         <div className="section">
-
+          
           <div className="bloc blue">
-            <h2 className="titre-bloc">Vous êtes un acteur de la comptabilité</h2>
+            <h1 className="titre-bloc">Vous êtes un acteur de la comptabilité</h1>
             <div className="h-group">
               <div>
                 <p>
@@ -34,7 +34,7 @@ export default function Home() {
                   La comptabilité actuelle ne permet pas de 
                 </p>
               </div>
-              <div>
+              <div className="v-group">
                 <img id="img-screen-video" src="/images/team_working.png" alt="img-screen-video"/>
               </div>
             </div>
@@ -44,7 +44,9 @@ export default function Home() {
 
         <div className="section">
 
-          <h2>La mesure des indicateurs permet à vos clients de : </h2>
+          <div className="title-with-side-lines">
+            <h2>La mesure des indicateurs permet à vos clients de : </h2>
+          </div>
           <div className="wrapper">
 
             <div className="v-group one">
@@ -75,8 +77,10 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <div className="bloc gray">
+          <div className="title-with-side-lines">
             <h2 className="text-center">Un outil de calcul open source à votre disposition</h2>
+          </div>
+          <div className="bloc gray">
             <div className="h-group">
               <div className="v-group">
                 <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp"/>
@@ -101,9 +105,11 @@ export default function Home() {
         </div>
 
         <div className="section">
-          <div className="bloc gray">
-            <FigureEtapes />
+          <div className="title-with-side-lines">
             <h2 className="text-center">Fonctionnement de l'Application</h2>
+          </div>
+          <div className="bloc">
+            <FigureEtapes />
           </div>
         </div>        
 

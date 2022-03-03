@@ -21,11 +21,13 @@ export default function Home() {
 
       <main className="main">
 
-        {metaData.indics.map((indic) =>
-          <div className="section bloc white"
-               onClick={() => window.open('/indicateur/'+indic)}>
-            <h1 className="titre-section">{metaData[indic].libelle}</h1>
-          </div>)}
+        <div className="section bloc">
+          <ul id="liste-indicateurs">
+            {
+              metaData.indics.map((indic) => <li onClick={() => window.open('/indicateur/'+indic)}>{metaData[indic].libelle}</li>)
+            }
+          </ul>
+        </div>
 
       </main>
 
