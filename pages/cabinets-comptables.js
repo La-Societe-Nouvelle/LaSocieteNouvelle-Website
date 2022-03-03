@@ -76,7 +76,7 @@ export default function Home() {
 
         <div className="section">
           <div className="bloc gray">
-            <h1>Un outil de calcul open source à votre disposition</h1>
+            <h2 className="text-center">Un outil de calcul open source à votre disposition</h2>
             <div className="h-group">
               <div className="v-group">
                 <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp"/>
@@ -102,7 +102,7 @@ export default function Home() {
 
         <div className="section">
           <div className="bloc gray">
-            <h1>Fonctionnement de l'Application</h1>
+            <h2 className="text-center">Fonctionnement de l'Application</h2>
           </div>
         </div>        
 
