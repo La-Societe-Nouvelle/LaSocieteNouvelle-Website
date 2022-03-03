@@ -167,6 +167,7 @@
       max-height: 100vh;
       transition: max-height 0.5s linear;
       overflow: hidden;
+      padding: 0.8em;
   
       &.reduced {
         max-height: 0px;
@@ -178,6 +179,7 @@
   
       a {
         color: white;
+        
       }
   
       @include xs {
@@ -212,6 +214,7 @@
 
     :hover {
       background-color: $raspberry;
+
     }
 
     .active {
@@ -292,12 +295,12 @@
       .dropdown-items {
         position: relative;
         background-color: white;
+        border: 1px solid #f3f3f3;
         width: 100%;
         transform: translate3d(0,0,0);
         max-height:100vh;
         transition: max-height 0.5s linear;
         overflow:hidden;
-
         //:hover {
           //background-color: $raspberry;
         //}
@@ -308,6 +311,11 @@
 
         a {
           color: $dark-blue;
+          padding: 0.5em 1em;
+          margin: 0.5em 0;
+          &:hover {
+            color : #fff;
+          }
         }
 
         @include xs {
