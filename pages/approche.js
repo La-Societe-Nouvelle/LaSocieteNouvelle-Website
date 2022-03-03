@@ -54,19 +54,15 @@ export default function Home() {
 
         <div className="section">
           <div className="title-with-side-lines">
-            <svg className="side-line-title" viewbox="0 0 100 10">
-              <line x1="0" y1="5" x2="100" y2="5"/>
-            </svg>
             <h1 className="titre-section">Indicateurs socio-économiques</h1>
-            <svg className="side-line-title" viewbox="0 0 100 10">
-              <line x1="0" y1="5" x2="100" y2="5"/>
-            </svg>
           </div>
           <IndicatorsPanel indics={first_set_indics}/>
         </div>
 
         <div className="section">
-          <h1 className="titre-section">Indicateurs environnementaux</h1>
+          <div className="title-with-side-lines">
+            <h1 className="titre-section">Indicateurs environnementaux</h1>
+          </div>
           <IndicatorsPanel indics={second_set_indics}/>
         </div>
 

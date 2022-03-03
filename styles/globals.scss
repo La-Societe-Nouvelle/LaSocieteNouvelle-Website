@@ -35,13 +35,35 @@ h2 {
   justify-content: space-between;
   align-items: center;
 
-  h1.titre-section
+  h1 
   {
-    width: fit-content;
-    margin-left: 10px;
-    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
   }
 
+  h1:before, h1:after 
+  {
+      position: absolute;
+      top: 50%;
+      overflow: hidden;
+      width: 50%;
+      height: 2px;
+      content: '\a0';
+      background-color: $raspberry;
+  }
+  h1:after
+  {
+    margin-left: 2%;
+  }
+  h1:before 
+  {
+      margin-left: -52%;
+      text-align: right;
+  }
+  
   svg.side-line-title
   {
     stroke: $raspberry;
