@@ -34,11 +34,11 @@ export default class Header extends React.Component {
               <DropDown
                 title="Approche"
                 href="/approche">
-                <div><a href="/approche">Principe / Présentation</a></div>
+                <div><a href="/approche">Présentation</a></div>
                 <div><a href="/liste-indicateurs">Indicateurs</a></div>
                 <div><a href="/portail">Base de données</a></div>
                 <div><a href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</a></div>
-                <div><a href="/approche">Accès à la documentation</a></div>
+                <div><a href="/approche">Documentation</a></div>
               </DropDown>
             </li>
             <li className={"menu-item"+(this.props.page=="portail" ? " selected" : "")}><a href="/portail">Données</a></li>
