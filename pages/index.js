@@ -143,7 +143,7 @@ export default function Home(props) {
         min: 0,
         title: {
           display: true,
-          text: 'litres',
+          text: 'L / €',
           padding : 10,
           font: {
             size: 12,
@@ -286,7 +286,7 @@ export default function Home(props) {
                 data={dataGHG} options={optionsGHG}
               />
               <p className="source">
-                  Source : Insee, Eurostat | Traitement : La société nouvelle
+                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
                 </p>
             </div>
             <div className="graph">
@@ -295,7 +295,7 @@ export default function Home(props) {
                 data={dataWAT} options={optionsWat}
               />
               <p className="source">
-                  Source : Insee, Eurostat | Traitement : La société nouvelle
+                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
                 </p>
             </div>
           </div>
