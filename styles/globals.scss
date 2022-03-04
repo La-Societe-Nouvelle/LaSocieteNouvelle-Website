@@ -67,6 +67,39 @@ h2 {
   }
 }
 
+.title-with-left-line
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 
+  {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    height: 25px;
+  }
+
+  h2:after 
+  {
+      position: absolute;
+      top: 50%;
+      overflow: hidden;
+      width: 100%;
+      height: 1px;
+      content: '\a0';
+      background-color: $primary-color;
+  }
+  h2:after
+  {
+    margin-left: 2%;
+  }
+}
+
 p {
   font-size: 1rem;
   text-align: justify;
@@ -194,9 +227,8 @@ textarea {
 
 
 #quick-access_container {
-  width: 10%;
-  max-width: 250px;
-  padding: 0;
+  max-width: fit-content;
+  //max-width: 250px;
 
   h2{
     margin-bottom: 20px;
@@ -213,10 +245,10 @@ textarea {
   margin-bottom: 10px;
   height: 50px;
   width: 250px;
-  background-color: $light-gray;
-
+  background-color: lighten($primary-color, 60%);
+  
   p {
-    color: black;
+    color: $primary-color;
   }
 }
 

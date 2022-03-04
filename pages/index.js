@@ -245,17 +245,21 @@ export default function Home(props) {
 
         </div>
 
-        <div className="section h-group">
+        <div className="section h-group nogap">
 
           <div className="bloc">
-            <h2 className="titre-bloc">Actualités</h2>
+            <div className="title-with-left-line">
+              <h2 className="titre-bloc">Actualités</h2>
+            </div>
             <div className="bloc-actualites">
               {content.blog.map((articleData) => <Vignette key={articleData.titre} {...articleData} />)}
             </div>
           </div>
 
           <div className="bloc" id="quick-access_container">
-            <h2 className="titre-bloc">Accès rapide</h2>
+            <div className="title-with-side-lines">
+              <h2 className="titre-bloc">Accès rapide</h2>
+            </div>
             <div className="v-group">
               <div className="box"
                 onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>
@@ -315,4 +319,7 @@ const Vignette = (props) =>
     <p>Publié le {props.date}</p>
     <p>{props.accroche}</p>
     <p>{props.texte}..</p>
+    <div className="buttons">
+      <button className="large">Lire la suite</button>
+    </div>
   </div>

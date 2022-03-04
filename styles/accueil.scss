@@ -114,3 +114,26 @@
 #titre-logo-accueil {
   margin-bottom: 10px;
 }
+
+.vignette
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border: solid 1px $primary-color;
+  margin-top: 10px;
+  background-color: white;
+
+  > * {
+    margin: 7px;
+    width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
