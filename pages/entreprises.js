@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <div className="container">
 
-      <Header page="entreprises"/>
+      <Header page="entreprises" />
 
       <main className="main">
 
         <div className="section h-group">
-          
+
           <div className="bloc blue">
             <h1 className="titre-bloc">Pilotez et valorisez votre performance extra-financière</h1>
 
@@ -20,7 +20,7 @@ export default function Home() {
               <div>
                 <p>
                   Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
-                  dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de 
+                    dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de
                   prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
                 </p>
                 <p>
@@ -43,7 +43,7 @@ export default function Home() {
             <h2 className="titre-section">Principe de calcul</h2>
           </div>
           <div className="bloc gray">
-            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon"/>
+            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" />
           </div>
         </div>
 
@@ -51,29 +51,23 @@ export default function Home() {
           <div className="title-with-side-lines">
             <h2>La mesure des indicateurs vous permet de : </h2>
           </div>
-          <div className="wrapper">
-            <div className="v-group one">
-              <h3>Prendre conscience</h3>
-              <img id="icon-light" src="/images/icon-light.png" alt="icon-light"/>
-              <p>de leurs impacts à l'échelle de leurs activités / Être sensibilisé à la mesure des impacts de leurs activités</p>
-            </div>
-            <div className="v-group two">
+          <div className={"h-group mesure-indicateur"}>
+            <div>
+            <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" />
               <h3>Suivre et valoriser</h3>
-              <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise"/>
               <p>leur performance extra-financière</p>
             </div>
-            <div className="v-group three">
+            <div>
+            <img id="icon-position" src="/images/icon-position.png" alt="icon-position" />
               <h3>Se positionner</h3>
-              <img id="icon-position" src="/images/icon-position.png" alt="icon-position"/>
               <p>par rapport aux objectifs de développement durable</p>
             </div>
-            <div className="v-group four">
+            <div>
+            <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate" />
               <h3>Anticiper</h3>
-              <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate"/>
               <p>de potentiels risques</p>
             </div>
           </div>
-
         </div>
 
         <div className="section">
@@ -86,7 +80,7 @@ export default function Home() {
                 <p>L'outil permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables), les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables Téléchargeables.</p>
               </div>
               <div className="v-group">
-                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp"/>
+                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
                 <div className="buttons-group">
                   <button>Accéder à l'outil</button>
                   {/* <button>Accéder au tutoriel</button> */}
@@ -135,8 +129,8 @@ export default function Home() {
 
       </main>
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }
