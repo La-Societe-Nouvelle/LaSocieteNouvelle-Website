@@ -21,10 +21,10 @@ export default function Home() {
                   et environnementaux qui doivent être considérés en sont absents."
                 </p>
                 <p>
-                  &nbsp;&nbsp; - Rapport <i>Entreprise et intérêt général</i>, Nicolas NOTAT et Dominique SENARD
+                  &nbsp;&nbsp; - Rapport <i>L'entreprise, objet d'intérêt général</i>, Nicole NOTAT et Jean-Dominique SENARD, 2018
                 </p>
                 <p>
-                  Face aux enjeux sociaux et environnementaux, il est désormais incontournable de compléter les informations
+                  Face à l'urgence sociale et environnementale, il est désormais incontournable de compléter les informations
                   comptables et les indicateurs de performance des entreprises. L'objectif de l'approche que nous poussons
                   et de fournir, sur des dimensions clefs, un positionnement de l'entreprise au regard des objectifs collectifs fixés.
                 </p>
@@ -33,11 +33,17 @@ export default function Home() {
                   leur proximité avec les entreprises.
                 </p>
                 <p>
-                  Complétez les livrables comptables à destination de vos clients.
+                  Le complément comptable sur lequel nous travaillons, vous permet de compléter vos livrables en fin d'exercice pour :
+                  <ul>
+                    <li>Sensibiliser vos clients aux enjeux de développement durable</li>
+                    <li>Informer vos clients sur leurs performances sociales et environnementales</li>
+                    <li>Valoriser leurs actions et leurs engagements sociétaux</li>
+                    <li><i>In fine</i>, leur permettre de pleinement contribuer à une économie durable</li>
+                  </ul>
                 </p>
               </div>
               <div className="v-group">
-                <img id="img-screen-video" src="/images/team_working.png" alt="img-screen-video"/>
+                <img id="img-illus-cabinets-comptables" src="/images/team_working.png" alt="img-screen-video"/>
               </div>
             </div>
           </div>
