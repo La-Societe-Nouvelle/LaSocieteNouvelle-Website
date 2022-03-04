@@ -9,16 +9,10 @@ export default function Home()
 {
   return (
     <div className="container">
-
-      <Head>
-        <title>La Société Nouvelle | Portail</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
-
       <Header/>
 
       <main className="main">
-
+{/* 
         <div className="section">
           <div className="bloc blue h-group chiffres-clefs-bdd">
             <div className="h-group chiffre-clef-bdd">
@@ -30,9 +24,9 @@ export default function Home()
               <p>Valeurs publiées</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <h1>Portail d'accès aux données</h1>
+        <h2 className='titre'>Portail d'accès aux données</h2>
 
         <PortailView/>
 

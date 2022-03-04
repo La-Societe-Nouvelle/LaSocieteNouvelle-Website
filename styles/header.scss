@@ -176,13 +176,7 @@
   
       :hover {
         background-color: $secondary-color;
-      }
-  
-      a {
-        color: white;
-        
-      }
-  
+      }  
       @include xs {
         text-align: center;
       }
@@ -254,8 +248,9 @@
       align-items: center;
       justify-content: space-around;
       width: 100%;
-      padding: 3px 5px;
+      padding: 10px 5px;
       color: white;
+      font-weight: 600;
     }
 
     .dropdown {
@@ -316,6 +311,8 @@
           color: $dark-blue;
           padding: 0.5em 1em;
           margin: 0.5em 0;
+          font-weight: normal;
+          font-size: 0.9em;
           &:hover {
             color : #fff;
           }
@@ -326,7 +323,7 @@
         }
         @include sm {
           position: absolute;
-          top: 35px;
+          top: 50px;
           left: 0px;
           white-space: nowrap;
 

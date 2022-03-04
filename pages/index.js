@@ -37,20 +37,36 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 Home.getInitialProps = async () => {
   try {
     const endpoint = `${apiBaseUrl}/serie?indic=GHG&area=FRA&flow=GDP`;
+    const endPointWat = `${apiBaseUrl}/serie?indic=WAT&area=FRA&flow=GDP`;
 
     const response = await fetch(endpoint, { method: 'get' });
+    const responseWat = await fetch(endPointWat, { method: 'get' });
+
     const data = await response.json();
+    const dataWat = await responseWat.json();
 
     const dataFetched = data.header.statut === 200;
+    const dataFetchedWat = dataWat.header.statut === 200;
+
     const header = data.header;
+    const headerWat = dataWat.header;
+
     const serie = data.serie;
+    const serieWat = dataWat.serie;
+
     const title = data.metaData.info;
+    const titleWat = dataWat.metaData.info;
 
     return {
       dataFetched,
+      responseWat,
+      dataFetchedWat,
       header,
+      headerWat,
       serie,
-      title
+      serieWat,
+      title,
+      titleWat,
     };
   }
   catch (error) {
@@ -62,9 +78,11 @@ Home.getInitialProps = async () => {
 export default function Home(props) {
 
   var obj = props.serie;
+  var objWat = props.serieWat;
   var result = Object.keys(obj).map((key) => [Number(key), obj[key]]);
+  var resultWat = Object.keys(objWat).map((key) => [Number(key), objWat[key]]);
 
-  const options = {
+  const optionsGHG = {
     responsive: true,
     plugins: {
       title: {
@@ -73,7 +91,7 @@ export default function Home(props) {
         color: "#191558",
         font: {
           size: 15,
-          family : 'Raleway, sans-serif',
+          family: 'Raleway, sans-serif',
         },
         padding: {
           top: 10,
@@ -87,28 +105,87 @@ export default function Home(props) {
     scales: {
       y: {
         min: 0,
+        title: {
+          display: true,
+          text: 'gCO² e / €',
+          padding : 10,
+          font: {
+            size: 12,
+            weight : "bold",
+          }
+        }
+      }
+    }
+  };
+  
+  const optionsWat = {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: props.titleWat,
+        color: "#191558",
+        font: {
+          size: 15,
+          family: 'Raleway, sans-serif',
+        },
+        padding: {
+          top: 10,
+          bottom: 30
+        }
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        min: 0,
+        title: {
+          display: true,
+          text: 'litres',
+          padding : 10,
+          font: {
+            size: 12,
+            weight : "bold",
+          }
+        }
       }
     }
   };
 
   var labels = [];
+  const labelWat = [];
 
   for (let i = 0; i < result.length; i++) {
     labels.push(result[i][0]);
   }
+  console.log(labels);
 
-  const dataset = [];
+  for (let i = 0; i < resultWat.length; i++) {
+    labelWat.push(resultWat[i][0]);
+  }
+  console.log(labelWat);
+
+
+  const datasetGHG = [];
+  const datasetWAT = [];
 
   for (let i = 0; i < result.length; i++) {
-    dataset.push(result[i][1].value);
+    datasetGHG.push(result[i][1].value);
   }
 
-  const data = {
+  for (let i = 0; i < resultWat.length; i++) {
+    datasetWAT.push(resultWat[i][1].value);
+  }
+
+
+  const dataGHG = {
     labels,
     datasets: [
       {
         label: "Valeur",
-        data: dataset,
+        data: datasetGHG,
         borderColor: 'rgba(250, 89, 103,0.5)',
         backgroundColor: 'rgba(250, 89, 103,1)',
       },
@@ -117,14 +194,21 @@ export default function Home(props) {
   };
 
 
+  const dataWAT = {
+    labels : labelWat,
+    datasets: [
+      {
+        label: "Valeur",
+        data: datasetWAT,
+        borderColor: 'rgba(250, 89, 103,0.5)',
+        backgroundColor: 'rgba(250, 89, 103,1)',
+      },
+
+    ],
+  };
+
   return (
     <div className="container">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <Head>
-        <title>La Société Nouvelle</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
 
       <Header />
 
@@ -192,16 +276,27 @@ export default function Home(props) {
 
         <div className="section">
           <div className="title-with-side-lines">
-            <h2 className="titre-section">Indicateurs clefs</h2>
+            <h2 className="titre-section">Suivi macro-économique</h2>
           </div>
-          <div className="bloc">
+          <div className={"bloc h-group"}>
 
             <div className="graph">
 
               <Line
-                data={data} options={options}
+                data={dataGHG} options={optionsGHG}
               />
+              <p className="source">
+                  Source : Insee, Eurostat | Traitement : La société nouvelle
+                </p>
+            </div>
+            <div className="graph">
 
+              <Line
+                data={dataWAT} options={optionsWat}
+              />
+              <p className="source">
+                  Source : Insee, Eurostat | Traitement : La société nouvelle
+                </p>
             </div>
           </div>
         </div>

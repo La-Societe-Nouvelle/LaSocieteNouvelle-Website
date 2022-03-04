@@ -31,12 +31,6 @@ export async function getStaticProps() {
 export default function Home({data}) {
   return (
     <div className="container">
-
-      <Head>
-        <title>La Société Nouvelle</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
-
       <Header/>
 
       <main className="main">

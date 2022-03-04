@@ -6,12 +6,6 @@ import Footer from '../src/components/footer'
 export default function Home() {
   return (
     <div className="container">
-
-      <Head>
-        <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
-        <link rel="icon" href="/images/logo-lsn-header.png" />
-      </Head>
-
       <Header page="cabinets-comptables"/>
 
       <main className="main">

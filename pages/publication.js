@@ -29,10 +29,6 @@ export default function Home(props)
 {
   return (
     <div className="container">
-      <Head>
-        <title>La Société Nouvelle | Publication</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
       <Header/>
       <main className="main">
         <h1>Declaration - Empreinte Sociétale</h1>
