@@ -7,11 +7,6 @@ export default function Home() {
   return (
     <div className="container">
 
-      <Head>
-        <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
-
       <Header page="entreprises"/>
 
       <main className="main">
@@ -105,7 +100,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="section">
+        {/* <div className="section">
           <div className="title-with-side-lines">
             <h2 className="titre-section">Les cabinets comptables partenaires</h2>
           </div>
@@ -114,7 +109,7 @@ export default function Home() {
             <img className="logo-partner" id="logo-te" src="/images/logo-te-1.png" alt="logo-te"/>
             <img className="logo-partner" id="logo-valoxy" src="/images/logo-valoxy-1.png" alt="logo-valoxy"/>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="section">
           <div className="title-with-side-lines">

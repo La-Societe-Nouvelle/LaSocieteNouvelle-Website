@@ -11,17 +11,12 @@ export default function Home() {
   
   return (
     <div className="container">
-
-      <Head>
-        <title>La Société Nouvelle | Empreinte Sociétale de l'Entreprise</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
-
       <Header/>
 
       <main className="main">
 
-        <div className="section bloc">
+        <div className={"section bloc"}>
+          <h2 className={"titre"}>Liste des indicateurs</h2>
           <ul id="liste-indicateurs">
             {
               metaData.indics.map((indic) => <li onClick={() => window.open('/indicateur/'+indic)}>{metaData[indic].libelle}</li>)

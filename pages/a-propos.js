@@ -6,11 +6,7 @@ export default function Home() {
   
   return (
     <div className="container">
-      
-      <Head>
-        <title>La Société Nouvelle | A propos</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
+
 
       <Header/>
 
