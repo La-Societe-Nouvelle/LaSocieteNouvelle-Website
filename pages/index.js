@@ -263,15 +263,15 @@ export default function Home(props) {
             <div className="v-group">
               <div className="box"
                 onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>
-                <p>Ressources</p>
+                <p><b>Ressources</b></p>
               </div>
               <div className="box"
                 onClick={() => window.open('/portail')}>
-                <p>Données</p>
+                <p><b>Données</b></p>
               </div>
               <div className="box"
                 onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>
-                <p>Outil</p>
+                <p><b>Outil</b></p>
               </div>
             </div>
           </div>
