@@ -112,3 +112,20 @@
     border: 1px solid lighten($primary-color, 10%);
     margin: 2em 0;
 }
+
+.mesure-indicateur {
+  margin: 20px 0;
+  h3 {
+    color : $primary-color;
+    margin: 5px 0;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  img {
+    height: 100px;
+    display: block;
+    margin : 0 auto;
+  }
+}
