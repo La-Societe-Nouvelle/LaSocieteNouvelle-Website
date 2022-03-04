@@ -162,12 +162,10 @@ export default function Home(props) {
   for (let i = 0; i < result.length; i++) {
     labels.push(result[i][0]);
   }
-  console.log(labels);
 
   for (let i = 0; i < resultWat.length; i++) {
     labelWat.push(resultWat[i][0]);
   }
-  console.log(labelWat);
 
 
   const datasetGHG = [];
