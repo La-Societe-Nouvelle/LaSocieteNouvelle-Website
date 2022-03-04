@@ -4,6 +4,8 @@ import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 // Modules
 import React from 'react';
+import { Helmet } from 'react-helmet';
+
 
 import {
   Chart as ChartJS,
@@ -108,16 +110,16 @@ export default function Home(props) {
         title: {
           display: true,
           text: 'gCO² e / €',
-          padding : 10,
+          padding: 10,
           font: {
             size: 12,
-            weight : "bold",
+            weight: "bold",
           }
         }
       }
     }
   };
-  
+
   const optionsWat = {
     responsive: true,
     plugins: {
@@ -144,10 +146,10 @@ export default function Home(props) {
         title: {
           display: true,
           text: 'L / €',
-          padding : 10,
+          padding: 10,
           font: {
             size: 12,
-            weight : "bold",
+            weight: "bold",
           }
         }
       }
@@ -195,7 +197,7 @@ export default function Home(props) {
 
 
   const dataWAT = {
-    labels : labelWat,
+    labels: labelWat,
     datasets: [
       {
         label: "Valeur",
@@ -209,7 +211,9 @@ export default function Home(props) {
 
   return (
     <div className="container">
-
+      <Helmet>
+        <title>La société Nouvelle | Accueil</title>
+      </Helmet>
       <Header />
 
       <main className="main" id="index">
@@ -290,8 +294,8 @@ export default function Home(props) {
                 data={dataGHG} options={optionsGHG}
               />
               <p className="source">
-                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
-                </p>
+                Source : Insee, Eurostat | Traitement : La Société Nouvelle
+              </p>
             </div>
             <div className="graph">
 
@@ -299,8 +303,8 @@ export default function Home(props) {
                 data={dataWAT} options={optionsWat}
               />
               <p className="source">
-                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
-                </p>
+                Source : Insee, Eurostat | Traitement : La Société Nouvelle
+              </p>
             </div>
           </div>
         </div>
@@ -320,6 +324,8 @@ const Vignette = (props) =>
     <p>{props.accroche}</p>
     <p>{props.texte}..</p>
     <div className="buttons">
-      <button className="large">Lire la suite</button>
+      <a href="/blog" class="btn">
+        Lire la suite
+      </a>
     </div>
   </div>

@@ -19,6 +19,7 @@ import '../styles/portail.scss'
 import '../styles/contact.scss'
 import '../styles/approche.scss'
 import '../styles/company-data.scss'
+import '../styles/articles.scss'
 
 function MyApp({ Component, pageProps }) {
   return (<>  
@@ -26,7 +27,6 @@ function MyApp({ Component, pageProps }) {
     <title>La société nouvelle</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="icon" href="favicon.svg" />
-
     </Head>
     <Component {...pageProps} />
   </>)

@@ -1,15 +1,17 @@
 import Head from 'next/head'
+import { Helmet } from 'react-helmet';
+
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
 export default function Home() {
-  
+
   return (
     <div className="container">
-
-
-      <Header/>
-
+      <Helmet>
+        <title>La société Nouvelle | A propos</title>
+      </Helmet>
+      <Header />
       <main className="main">
 
         <div className="section">
@@ -19,15 +21,15 @@ export default function Home() {
               <div className="bloc-container">
                 <div className="text-container" id="mission-text_container">
                   <p>
-                    Notre mission est de fournir, de manière ouverte, les informations nécessaires pour connaître et 
+                    Notre mission est de fournir, de manière ouverte, les informations nécessaires pour connaître et
                     <b> mesurer l'empreinte de la production des entreprises sur des enjeux majeurs de développement durable</b>.
                   </p>
                   <p>
-                    Elle s'inscrit dans la volonté de faire évoluer le modèle de gestion des entreprises en 
+                    Elle s'inscrit dans la volonté de faire évoluer le modèle de gestion des entreprises en
                     intégrant aux éléments comptables une information sur leurs externalités sociales et environnementales.
                   </p>
                   <p>
-                    Les documents, outils et autres éléments développés par La Société Nouvelle sont accessibles et 
+                    Les documents, outils et autres éléments développés par La Société Nouvelle sont accessibles et
                     utilisables librement. La base de données est, et restera toujours, ouverte.
                   </p>
                 </div>
@@ -50,9 +52,9 @@ export default function Home() {
           <div className="bloc gray">
             <div className="bloc-container text-container">
               <p>
-                Nous travaillons en continu sur les indicateurs disponibles: choix méthodologiques, 
-                données utilisées, outils supports, suivi à l'échelle macroéconomique, définition 
-                des objectifs, etc. L'ensemble des indicateurs forment l'Empreinte Sociétale de l'Entreprise. 
+                Nous travaillons en continu sur les indicateurs disponibles: choix méthodologiques,
+                données utilisées, outils supports, suivi à l'échelle macroéconomique, définition
+                des objectifs, etc. L'ensemble des indicateurs forment l'Empreinte Sociétale de l'Entreprise.
                 La gouvernance a vocation à être externalisée et partagée avec des organismes publics et privés.
               </p>
             </div>
@@ -67,7 +69,7 @@ export default function Home() {
             <div className="h-group" id="nos-activites">
               <div className="v-group">
                 <div className="activite">
-                  <img id="icon-database" src="/images/bdd-brf-1-blue.png" alt="icon-database"/>
+                  <img id="icon-database" src="/images/bdd-brf-1-blue.png" alt="icon-database" />
                   <h3>Administration d'une Base de données ouverte</h3>
                   <p>
                     Nous centralisons les données relatives aux indicateurs au sein d'une base de données ouverte accessible via le portail web ou une API pour faciliter l'exploitation des données.
@@ -79,7 +81,7 @@ export default function Home() {
               </div>
               <div className="v-group">
                 <div className="activite">
-                  <img id="icon-tool" src="/images/webapp-brf-1-blue.png" alt="icon-tool"/>
+                  <img id="icon-tool" src="/images/webapp-brf-1-blue.png" alt="icon-tool" />
                   <h3>Développement d'un outil de calcul Open Source</h3>
                   <p>
                     Nous mettons à disposition des documentations et développons des outils libres pour la mesure des indicateurs.
@@ -92,10 +94,10 @@ export default function Home() {
               </div>
               <div className="v-group">
                 <div className="activite">
-                  <img id="icon-support" src="/images/support-brf-1-blue.png" alt="icon-support"/>
+                  <img id="icon-support" src="/images/support-brf-1-blue.png" alt="icon-support" />
                   <h3>Support et Assistance technique</h3>
                   <p>
-                    Nous fournissons un support et une assistance technique pour l'application de la méthodologie comptable et 
+                    Nous fournissons un support et une assistance technique pour l'application de la méthodologie comptable et
                     l'utilisation de l'application web.
                   </p>
                 </div>
@@ -115,32 +117,33 @@ export default function Home() {
           <div className="bloc">
             <div className="h-group" id="photos-equipe">
               <div>
-                <img id="img-laura" src="/images/img-laura.png" alt="img-laura"/>
+                <img id="img-joris" src="/images/joris.jpg" alt="img-joris" />
+                <p className="prenom"><b>Joris</b></p>
+                <p className="poste">Statistiques publiques</p>
+              </div>
+              <div>
+                <img id="img-laura" src="/images/laura.jpg" alt="img-laura" />
                 <p className="prenom"><b>Laura</b></p>
                 <p className="poste">Développement Web</p>
               </div>
               <div>
-                <img id="img-maeva" src="/images/img-maeva.png" alt="img-maeva"/>
+                <img id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
                 <p className="prenom"><b>Maëva</b></p>
                 <p className="poste">Communication</p>
               </div>
               <div>
-                <img id="img-sylvain" src="/images/img-sylvain.png" alt="img-sylvain"/>
+                <img id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain" />
                 <p className="prenom"><b>Sylvain</b></p>
                 <p className="poste">Relation partenaires</p>
               </div>
-              <div>
-                <img id="img-joris" src="/images/img-joris.jpeg" alt="img-joris"/>
-                <p className="prenom"><b>Joris</b></p>
-                <p className="poste">Statistiques publiques</p>
-              </div>
+
             </div>
           </div>
         </div>
 
       </main>
 
-      <Footer/>
+      <Footer />
 
     </div>
   )

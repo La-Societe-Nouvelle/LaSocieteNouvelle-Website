@@ -1,12 +1,16 @@
 import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
+import { Helmet } from 'react-helmet';
+
 
 export default function Home() {
   return (
     <div className="container">
-      
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Services disponibles </title>
+      </Helmet>
+      <Header />
 
       <main className="main">
 
@@ -17,7 +21,7 @@ export default function Home() {
             <li id="declaration" className="services-item">
               <h2>Déclaration</h2>
               <p>Publiez les valeurs de l'Empreinte Sociétale de votre entreprise.</p>
-              <a  href="/publication" className="button">Accès au Formulaire</a>
+              <a href="/publication" className="button">Accès au Formulaire</a>
             </li>
             <li id="mesure-indicateurs" className="services-item">
               <h2>Mesure</h2>
@@ -34,7 +38,7 @@ export default function Home() {
 
       </main>
 
-      <Footer/>
+      <Footer />
 
     </div>
   )

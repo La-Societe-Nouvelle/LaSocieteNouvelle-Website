@@ -1,5 +1,5 @@
 @import 'base';
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Roboto:wght@300;400;700;800;900&display=swap');
 
 html,
 body {
@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   min-width: 100%;
   font-family: $font-family-text;
-  line-height:1.25em;
+  line-height:1.5em;
 }
 
 h1 {
@@ -132,7 +132,7 @@ input {
 
 li {
   list-style-type: square;
-  list-style: $primary-color;
+  color: $primary-color;
 }
 
 textarea {

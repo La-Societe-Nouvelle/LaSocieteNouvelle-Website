@@ -2,11 +2,15 @@ import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+import { Helmet } from 'react-helmet';
+
 
 export default function Home() {
   return (
     <div className="container">
-
+      <Helmet>
+        <title>La société Nouvelle | Pilotez et valorisez votre performance extra-financière </title>
+      </Helmet>
       <Header page="entreprises" />
 
       <main className="main">
@@ -53,17 +57,17 @@ export default function Home() {
           </div>
           <div className={"h-group mesure-indicateur"}>
             <div>
-            <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" />
+              <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" />
               <h3>Suivre et valoriser</h3>
               <p>leur performance extra-financière</p>
             </div>
             <div>
-            <img id="icon-position" src="/images/icon-position.png" alt="icon-position" />
+              <img id="icon-position" src="/images/icon-position.png" alt="icon-position" />
               <h3>Se positionner</h3>
               <p>par rapport aux objectifs de développement durable</p>
             </div>
             <div>
-            <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate" />
+              <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate" />
               <h3>Anticiper</h3>
               <p>de potentiels risques</p>
             </div>

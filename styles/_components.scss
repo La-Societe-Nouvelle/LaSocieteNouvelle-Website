@@ -1,6 +1,7 @@
 @import "base";
 
-button 
+
+button, .btn 
 {
   color: white;
   background-color: $raspberry;
@@ -28,11 +29,11 @@ button
 
   &.large
   {
-    padding: 10px 20px;
+    padding: 1em 1em;
   }
 
   &.small
   {
-    padding: 5px 10px;
+    padding: 0.7em 1em;
   }
 }
