@@ -19,6 +19,7 @@ import '../styles/portail.scss'
 import '../styles/contact.scss'
 import '../styles/approche.scss'
 import '../styles/company-data.scss'
+import '../styles/articles.scss'
 
 function MyApp({ Component, pageProps }) {
   return (<>  

@@ -6,10 +6,7 @@ export default function Home() {
   
   return (
     <div className="container">
-
-
       <Header/>
-
       <main className="main">
 
         <div className="section">
@@ -115,22 +112,22 @@ export default function Home() {
           <div className="bloc">
             <div className="h-group" id="photos-equipe">
               <div>
-                <img id="img-laura" src="/images/img-laura.png" alt="img-laura"/>
+                <img id="img-laura" src="/images/laura.jpg" alt="img-laura"/>
                 <p className="prenom"><b>Laura</b></p>
                 <p className="poste">Développement Web</p>
               </div>
               <div>
-                <img id="img-maeva" src="/images/img-maeva.png" alt="img-maeva"/>
+                <img id="img-maeva" src="/images/maeva.jpg" alt="img-maeva"/>
                 <p className="prenom"><b>Maëva</b></p>
                 <p className="poste">Communication</p>
               </div>
               <div>
-                <img id="img-sylvain" src="/images/img-sylvain.png" alt="img-sylvain"/>
+                <img id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain"/>
                 <p className="prenom"><b>Sylvain</b></p>
                 <p className="poste">Relation partenaires</p>
               </div>
               <div>
-                <img id="img-joris" src="/images/img-joris.jpeg" alt="img-joris"/>
+                <img id="img-joris" src="/images/joris.jpg" alt="img-joris"/>
                 <p className="prenom"><b>Joris</b></p>
                 <p className="poste">Statistiques publiques</p>
               </div>
