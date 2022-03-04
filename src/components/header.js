@@ -16,7 +16,7 @@ export default class Header extends React.Component {
           <a href="/">
             <img id="logo-header" src="/images/logo-lsn-header.png" alt="logo-lsn-header"/>
           </a>
-          <p id="slogan">Mesure, Informer pour une économie durable</p>
+          <p id="slogan">Mesurer, Informer pour une économie durable</p>
           <svg id="slogan-line_container" viewBox="0 0 100 10">
             <line id="slogan-line" x1="0" y1="0" x2="100" y2="0"/>
           </svg>
