@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import Head from 'next/head'
 // Components
@@ -7,8 +8,8 @@ import Footer from '../src/components/footer'
 
 import metaData from '../lib/metaData';
 
-const first_set_indics = ["eco","art","knw","soc","dis","geq"];
-const second_set_indics = ["ghg","nrg","wat","was","mat","haz"];
+const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
+const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
 
 const impacts_euro = [
   "5400 kJ d'énergie",
@@ -21,7 +22,10 @@ export default function Home() {
 
   return (
     <div className="container">
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Empreinte sociale de l'entreprise</title>
+      </Helmet>
+      <Header />
 
       <main className="main">
 
@@ -35,10 +39,10 @@ export default function Home() {
               </div>
               <div id="empreinte-societale-illustration">
                 <Ese_scrolling_informations />
-                <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro"/>
+                <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro" />
                 <svg id="empreinte-societale-traits" viewBox="0 0 200 100">
-                  <line id="trait-diagonal"   x1="125" y1="35" x2="150" y2="10"/>
-                  <line id="trait-horizontal" x1="150" y1="10" x2="200" y2="10"/>
+                  <line id="trait-diagonal" x1="125" y1="35" x2="150" y2="10" />
+                  <line id="trait-horizontal" x1="150" y1="10" x2="200" y2="10" />
                 </svg>
               </div>
             </div>
@@ -50,14 +54,14 @@ export default function Home() {
           <div className="title-with-side-lines">
             <h2 className="titre-section">Indicateurs socio-économiques</h2>
           </div>
-          <IndicatorsPanel indics={first_set_indics}/>
+          <IndicatorsPanel indics={first_set_indics} />
         </div>
 
         <div className="section">
           <div className="title-with-side-lines">
             <h2 className="titre-section">Indicateurs environnementaux</h2>
           </div>
-          <IndicatorsPanel indics={second_set_indics}/>
+          <IndicatorsPanel indics={second_set_indics} />
         </div>
 
         <div className="section">
@@ -65,7 +69,7 @@ export default function Home() {
             <h2 className="titre-section">Principe de calcul</h2>
           </div>
           <div className="bloc gray">
-            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon"/>
+            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" />
           </div>
         </div>
 
@@ -75,17 +79,17 @@ export default function Home() {
           </div>
           <div className="h-group">
             <div className="bloc v-group white">
-              <img className="main-icon" id="icon-documentation" src="/images/documentation-brf-1-raspberry.png" alt="icon-documentation"/>
+              <img className="main-icon" id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
               <h3 className="titre-bloc">Documentation</h3>
               <button className="small">Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
-              <img className="main-icon" id="icon-database" src="/images/bdd-brf-1-raspberry.png" alt="icon-database"/>
+              <img className="main-icon" id="icon-database" src="/images/database.png" alt="icon-database" />
               <h3 className="titre-bloc">Base de données</h3>
               <button className="small">Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
-              <img className="main-icon" id="icon-webapp" src="/images/webapp-brf-1-raspberry.png" alt="icon-webapp"/>
+              <img className="main-icon" id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
               <h3 className="titre-bloc">Application web</h3>
               <button className="small">Accéder à la ressource</button>
             </div>
@@ -103,56 +107,53 @@ export default function Home() {
 
       </main>
 
-      <Footer/>
+      <Footer />
 
     </div>
   )
 }
 
-const Ese_scrolling_informations = () =>
-{
+const Ese_scrolling_informations = () => {
   const [indexContent, setIndexContent] = React.useState(0);
-  const updateText = () => {setIndexContent((indexContent+1)%(impacts_euro.length))}
+  const updateText = () => { setIndexContent((indexContent + 1) % (impacts_euro.length)) }
 
   //setTimeout(updateText,3000)
 
-  return(<p>{impacts_euro[indexContent]}</p>)
+  return (<p>{impacts_euro[indexContent]}</p>)
 }
 
-const IndicatorsPanel = (props) =>
-{
-  const [selectedIndic,setSelectedIndic] = React.useState(props.indics[0]); // or "none"
+const IndicatorsPanel = (props) => {
+  const [selectedIndic, setSelectedIndic] = React.useState(props.indics[0]); // or "none"
 
   const indics = props.indics;
   const listOdds = props.indics.map((indic) => metaData[indic].odds)
-                               .reduce((a,b) => a.concat(b),[])
-                               .filter((value, index, self) => index === self.findIndex(item => item === value))
-                               .sort();
+    .reduce((a, b) => a.concat(b), [])
+    .filter((value, index, self) => index === self.findIndex(item => item === value))
+    .sort();
   const icon = indics.includes("eco") ? "social-brf-1-blue.png" : "environnement-brf-1-blue.png";
 
   return (
     <div className="indicator-section">
       <div className="h-group icons-odd">
-        {listOdds.map((odd) => <img className={"icon-odd"+(selectedIndic!="none" && metaData[selectedIndic].odds.includes(odd) ? "" : " not-concerned")} id={"icon-odd-"+odd} src={"/images/icon-odd-"+odd+".png"} alt="icon-odd"/>)}
+        {listOdds.map((odd) => <img className={"icon-odd" + (selectedIndic != "none" && metaData[selectedIndic].odds.includes(odd) ? "" : " not-concerned")} id={"icon-odd-" + odd} src={"/images/icon-odd-" + odd + ".png"} alt="icon-odd" />)}
       </div>
       <div className="h-group nogap">
         <div className="indicators-panel-view">
-          {selectedIndic=="none" ? <img className="default-icon" id="icon" src={"/images/"+icon} alt="icon"/> : <IndicatorDetails indic={selectedIndic} />}
+          {selectedIndic == "none" ? <img className="default-icon" id="icon" src={"/images/" + icon} alt="icon" /> : <IndicatorDetails indic={selectedIndic} />}
         </div>
         <div className="indicators-panel-list">
           {indics.map((indic) =>
-              <p className={indic==selectedIndic ? "highlighted" : ""}
-                onClick={() => setSelectedIndic(indic)}>
-                {metaData[indic].libelle}
-              </p>)}
+            <p className={indic == selectedIndic ? "highlighted" : ""}
+              onClick={() => setSelectedIndic(indic)}>
+              {metaData[indic].libelle}
+            </p>)}
         </div>
       </div>
     </div>
   )
 }
 
-const IndicatorDetails = ({indic}) =>
-{
+const IndicatorDetails = ({ indic }) => {
   return (
     <div className="indicators-panel-details">
       {/* <h3>{metaData[indic].libelle}</h3> */}

@@ -1,11 +1,16 @@
 import Head from 'next/head'
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
+import { Helmet } from 'react-helmet';
+
 
 export default function Home() {
   return (
     <div className="container">
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Ressources mises à disposition </title>
+      </Helmet>
+      <Header />
 
       <main className="main">
 
@@ -17,7 +22,7 @@ export default function Home() {
           <p>URL de l'API : <a href="http://api.lasocietenouvelle.org">api.lasocietenouvelle.org</a></p>
           <p><a href="../documentation-api">Lien vers la documentation</a></p>
           <p>
-          /!\ Merci de nous contacter en cas d'utilisation intensive de l'API.
+            /!\ Merci de nous contacter en cas d'utilisation intensive de l'API.
           </p>
         </div>
 
@@ -29,7 +34,7 @@ export default function Home() {
 
       </main>
 
-      <Footer/>
+      <Footer />
 
     </div>
   )

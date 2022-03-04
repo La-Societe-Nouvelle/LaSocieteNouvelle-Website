@@ -27,7 +27,7 @@
     .h-group {
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         padding-left: 26px;
         gap : 40px;
@@ -48,6 +48,20 @@
     img {
         float : left;
         margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 44px;
+            left: -12px;
+            overflow: hidden;
+            width: 15px;
+            height: 5px;
+            content: " ";
+            background-color: $secondary-color;
+        }
     }
     h4 {
         font-size: 1.3em;

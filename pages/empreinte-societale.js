@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { Helmet } from 'react-helmet';
+
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
@@ -6,7 +8,10 @@ import Footer from '../src/components/footer'
 export default function Home() {
   return (
     <div className="container">
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Empreinte sociétale de l'entreprise</title>
+      </Helmet>
+      <Header />
 
       <main className="main">
 
@@ -17,12 +22,12 @@ export default function Home() {
           <p>L’Empreinte Sociétale de l’Entreprise (ESE) est un panel d'indicateurs extra-financiers associés au chiffre d'affaires des entreprises.  Il informe sur les externalités sociales et environnementales liées à la production des biens et/ou services vendus par l'entreprise. Les indicateurs prennent en compte les activités propres de l'entreprise (valeur ajoutée nette), mais également les consommations (achats et autres charges externes) et les immobilisations. La mesure des impacts indirects s'appuie sur les données publiées des entreprises sollicitées.</p>
           <p>Le modèle des indicateurs repose sur l'association des externalités à la valeur économique créée. Il permet une intégration directe au sein de la comptabilité des entreprises et une traçabilité le long des chaînes de valeur. Il offre ainsi une solution efficace et opérationnelle pour la mise en place d'une comptabilité sociale et environnementale et la mobilisation des entreprises sur les grands enjeux sociétaux. Enfin, les données produites donnent à chaque entreprise la capacité de mesurer les impacts liés à leur production, de les suivre, pour finalement améliorer la qualité de leur chiffre d'affaires.</p>
           <p>Ainsi, l’usage de l’ESE est triple :</p>
-            <ul>
-              <li>Elément d’information comparable sur la performance sociale et environnementale d’une entreprise ;</li>
-              <li>Outil de pilotage interne de cette performance ;</li>
-              <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
-            </ul>
-          <br/>
+          <ul>
+            <li>Elément d’information comparable sur la performance sociale et environnementale d’une entreprise ;</li>
+            <li>Outil de pilotage interne de cette performance ;</li>
+            <li>Données de mesure, pour assurer une traçabilité le long de la chaîne de valeur.</li>
+          </ul>
+          <br />
           <div>
             <p>Télécharger la documentation : <a className="text-link" href="/EmpreinteSocietale_documentation_v4.4.pdf" target="_blank">Documentation</a></p>
           </div>
@@ -61,12 +66,12 @@ export default function Home() {
           <p>Partage de la valeur :</p>
           <ul>
             <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a>
-                <img className="odd-indic" src="/resources/odd_dis.png" /></li>
+              <img className="odd-indic" src="/resources/odd_dis.png" /></li>
             <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a>
-                <img className="odd-indic" src="/resources/odd_geq.png" /></li>
+              <img className="odd-indic" src="/resources/odd_geq.png" /></li>
           </ul>
-          <br/>
-          <p>*Objectifs de Développement Durable (ODD) : <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a> - <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br/>
+          <br />
+          <p>*Objectifs de Développement Durable (ODD) : <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a> - <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br />
           </p>
         </div>
 
@@ -83,8 +88,8 @@ export default function Home() {
 
       </main>
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }

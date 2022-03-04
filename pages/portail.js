@@ -2,17 +2,20 @@ import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+import { Helmet } from 'react-helmet';
+
 // Modules
 import React from 'react';
 
-export default function Home() 
-{
+export default function Home() {
   return (
     <div className="container">
-      <Header/>
-
+      <Header />
+      <Helmet>
+        <title>La société Nouvelle | Portail </title>
+      </Helmet>
       <main className="main">
-{/* 
+        {/* 
         <div className="section">
           <div className="bloc blue h-group chiffres-clefs-bdd">
             <div className="h-group chiffre-clef-bdd">
@@ -28,11 +31,11 @@ export default function Home()
 
         <h2 className='titre'>Portail d'accès aux données</h2>
 
-        <PortailView/>
+        <PortailView />
 
       </main>
 
-      <Footer/>
+      <Footer />
 
     </div>
   )
@@ -41,30 +44,26 @@ export default function Home()
 
 class PortailView extends React.Component {
 
-  constructor(props) 
-  {
+  constructor(props) {
     super(props);
-    this.state = 
+    this.state =
     {
-        input: '',
-        isLoading: false,
-        isLoaded: false,
-        infoResults: {nbResults: 0},
-        results: {}
+      input: '',
+      isLoading: false,
+      isLoaded: false,
+      infoResults: { nbResults: 0 },
+      results: {}
     };
     this.inputChange = this.inputChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  inputChange(event) 
-  {
-    this.setState({input: event.target.value});
+  inputChange(event) {
+    this.setState({ input: event.target.value });
   }
 
-  handleClick(event) 
-  {
-    if (this.state.input!==undefined && this.state.input!=='') 
-    {
+  handleClick(event) {
+    if (this.state.input !== undefined && this.state.input !== '') {
       this.setState({
         isLoaded: false,
         isLoading: true
@@ -73,45 +72,42 @@ class PortailView extends React.Component {
     }
   }
 
-  getResults(recherche) 
-  {
-    fetch('https://systema-api.azurewebsites.net/api/v2/search?denomination='+recherche,{method:'get'})
-        .then(response => response.json())
-        .then((response) => 
-        {
-          if (response.header.statut==200) {
-            this.setState({
-                isLoaded: true,
-                isLoading: false,
-                infoResults: response.infoResults,
-                results: Object.values(response.results),
-            });
-          } else {
-            this.setState({
-              isLoading: false,
-              infoResults: {nbResults: 0},
-            })
-          }
-        }).catch(error => console.log(error))
+  getResults(recherche) {
+    fetch('https://systema-api.azurewebsites.net/api/v2/search?denomination=' + recherche, { method: 'get' })
+      .then(response => response.json())
+      .then((response) => {
+        if (response.header.statut == 200) {
+          this.setState({
+            isLoaded: true,
+            isLoading: false,
+            infoResults: response.infoResults,
+            results: Object.values(response.results),
+          });
+        } else {
+          this.setState({
+            isLoading: false,
+            infoResults: { nbResults: 0 },
+          })
+        }
+      }).catch(error => console.log(error))
   }
 
-  render() 
-  {
-    const {isLoading,isLoaded,infoResults,results} = this.state;
+  render() {
+    const { isLoading, isLoaded, infoResults, results } = this.state;
     const nbResults = infoResults.nbResults;
 
     return (
       <div className="section portail-view">
-          <SearchBar parent={this}/>
-          {
-            isLoaded || isLoading ? <hr className="h-line"/> : ""
-          }
-          {!isLoaded && !isLoading ? <Informations /> : ""}
-          <div id="results-strip">
-            {isLoading ? <p>Recherche en cours...</p> : ""}
-            {isLoaded && nbResults==0 ? <p>Aucun résultat</p> : ""}
-            {isLoaded && nbResults>0 ? <Results items={results}/> : ""}
-          </div>
+        <SearchBar parent={this} />
+        {
+          isLoaded || isLoading ? <hr className="h-line" /> : ""
+        }
+        {!isLoaded && !isLoading ? <Informations /> : ""}
+        <div id="results-strip">
+          {isLoading ? <p>Recherche en cours...</p> : ""}
+          {isLoaded && nbResults == 0 ? <p>Aucun résultat</p> : ""}
+          {isLoaded && nbResults > 0 ? <Results items={results} /> : ""}
+        </div>
       </div>
     )
   }
@@ -125,32 +121,31 @@ const Informations = () =>
     <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
   </div>
 
-const SearchBar = ({parent}) => 
-    <div id="search-bar">
-      <input id="search-input" type="text"
-             placeholder="Dénomination sociale, N° de siren"
-             value={parent.state.input} onChange={parent.inputChange}></input>
-      <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
-    </div>
+const SearchBar = ({ parent }) =>
+  <div id="search-bar">
+    <input id="search-input" type="text"
+      placeholder="Dénomination sociale, N° de siren"
+      value={parent.state.input} onChange={parent.inputChange}></input>
+    <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
+  </div>
 
-const Results = ({items}) =>
-{
+const Results = ({ items }) => {
   return items.map((item) =>
-      <div key={'item-'+item.siren} className="result-item-container">
-          <div className="result-item-data">
-              <p className="result-item-denomination"><b>{item.denomination}</b></p>
-              <p>siren : {item.siren}</p>
-              <p>
-              Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
-              <br/>
-              Domiciliation : {item.communeSiege} ({item.codePostalSiege})
-              </p>
-          </div>
-          <button className="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+    <div key={'item-' + item.siren} className="result-item-container">
+      <div className="result-item-data">
+        <p className="result-item-denomination"><b>{item.denomination}</b></p>
+        <p>siren : {item.siren}</p>
+        <p>
+          Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
+          <br />
+          Domiciliation : {item.communeSiege} ({item.codePostalSiege})
+        </p>
       </div>
+      <button className="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+    </div>
   )
 }
 
 function showCompanyData(siren) {
-  window.open('http://lasocietenouvelle.org/company-data?siren='+encodeURI(siren));
+  window.open('http://lasocietenouvelle.org/company-data?siren=' + encodeURI(siren));
 }

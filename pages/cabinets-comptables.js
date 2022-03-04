@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { Helmet } from 'react-helmet';
+
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
@@ -6,12 +8,15 @@ import Footer from '../src/components/footer'
 export default function Home() {
   return (
     <div className="container">
-      <Header page="cabinets-comptables"/>
+      <Helmet>
+        <title>La société Nouvelle | Cabinets comptables</title>
+      </Helmet>
+      <Header page="cabinets-comptables" />
 
       <main className="main">
 
         <div className="section">
-          
+
           <div className="bloc blue">
             <h1 className="titre-bloc">Vous êtes un acteur de la comptabilité</h1>
             <div className="h-group">
@@ -43,7 +48,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="v-group">
-                <img id="img-illus-cabinets-comptables" src="/images/team_working.png" alt="img-screen-video"/>
+                <img id="img-illus-cabinets-comptables" src="/images/team_working.png" alt="img-screen-video" />
               </div>
             </div>
           </div>
@@ -57,7 +62,7 @@ export default function Home() {
           <div className="bloc gray">
             <div className="h-group">
               <div className="v-group">
-                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp"/>
+                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
                 <div className="buttons-group">
                   <button>Tester avec la version libre</button>
                 </div>
@@ -85,13 +90,13 @@ export default function Home() {
           <div className="bloc">
             <FigureEtapes />
           </div>
-        </div>        
+        </div>
 
       </main>
 
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }
@@ -108,7 +113,7 @@ const FigureEtapes = () =>
     <div className="step-container">
       <h4>Etats initiaux</h4>
       <p>
-        Initialisation de l'empreinte des comptes de stocks et d'immobilisations à partir des résultats 
+        Initialisation de l'empreinte des comptes de stocks et d'immobilisations à partir des résultats
         de l'exercice précédent ou via l'utilisation de données par défaut.
       </p>
       <p className="step-number">2</p>

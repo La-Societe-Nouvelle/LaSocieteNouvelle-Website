@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import Head from 'next/head'
 // Components
@@ -8,10 +9,13 @@ import Footer from '../src/components/footer'
 import metaData from '../lib/metaData';
 
 export default function Home() {
-  
+
   return (
     <div className="container">
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Liste des indicateurs </title>
+      </Helmet>
+      <Header />
 
       <main className="main">
 
@@ -19,15 +23,15 @@ export default function Home() {
           <h2 className={"titre"}>Liste des indicateurs</h2>
           <ul id="liste-indicateurs">
             {
-              metaData.indics.map((indic) => <li onClick={() => window.open('/indicateur/'+indic)}>{metaData[indic].libelle}</li>)
+              metaData.indics.map((indic) => <li onClick={() => window.open('/indicateur/' + indic)}>{metaData[indic].libelle}</li>)
             }
           </ul>
         </div>
 
       </main>
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }

@@ -2,6 +2,8 @@ import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+import { Helmet } from 'react-helmet';
+
 // Modules
 import React from 'react';
 import fs from 'fs'
@@ -18,26 +20,30 @@ export async function getStaticProps() {
     .use(html)
     .process(fs.readFileSync('./public/md-files/modele.md'));
   const data = {
-      content: String(mdFile).replace(/href/g,'target="_blank" href')}
+    content: String(mdFile).replace(/href/g, 'target="_blank" href')
+  }
   return {
-    props: {data}
+    props: { data }
   }
 }
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <div className="container">
-      <Header/>
-      
+      <Helmet>
+        <title>La société Nouvelle | Modèle des indicateurs </title>
+      </Helmet>
+      <Header />
+
       <main className="main">
-        <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
+        <div className="content-md" dangerouslySetInnerHTML={{ __html: data.content }} />
         <div className="strip">
           <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/md-files/modele.md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>
       </main>
-      
-      <Footer/>
-      
+
+      <Footer />
+
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+import { Helmet } from 'react-helmet';
 
 import fs from 'fs'
 import unified from 'unified'
@@ -17,26 +18,30 @@ export async function getStaticProps() {
     .use(html)
     .process(fs.readFileSync('./public/md-files/guide.md'));
   const data = {
-      content: String(mdFile).replace(/href/g,'target="_blank" href')}
+    content: String(mdFile).replace(/href/g, 'target="_blank" href')
+  }
   return {
-    props: {data}
+    props: { data }
   }
 }
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <div className="container">
-      <Header/>
+      <Helmet>
+        <title>La société Nouvelle | Guide </title>
+      </Helmet>
+      <Header />
       <main className="main">
 
-        <div className="content-md" dangerouslySetInnerHTML={{__html: data.content}}/>
+        <div className="content-md" dangerouslySetInnerHTML={{ __html: data.content }} />
 
         <div className="strip">
           <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/md-files/guide.md"} target="_blanck">Proposer une amélioration de la page</a></p>
         </div>
 
       </main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
