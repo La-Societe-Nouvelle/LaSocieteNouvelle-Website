@@ -23,54 +23,28 @@ export default function Home() {
             <div className="h-group">
               <div>
                 <p>
+                  "Toute compréhension de l'entreprise passe par sa comptabilité. Or les enjeux sociaux
+                  et environnementaux qui doivent être considérés en sont absents."
+                </p>
+                <p>
+                  &nbsp;&nbsp; - Rapport <i>Entreprise et intérêt général</i>, Nicolas NOTAT et Dominique SENARD
+                </p>
+                <p>
+                  Face aux enjeux sociaux et environnementaux, il est désormais incontournable de compléter les informations
+                  comptables et les indicateurs de performance des entreprises. L'objectif de l'approche que nous poussons
+                  et de fournir, sur des dimensions clefs, un positionnement de l'entreprise au regard des objectifs collectifs fixés.
+                </p>
+                <p>
+                  Les cabinets comptables sont les acteurs clefs de la mise en oeuvre de ces indicateurs de par leurs expertises et
+                  leur proximité avec les entreprises.
+                </p>
+                <p>
                   Complétez les livrables comptables à destination de vos clients.
-                </p>
-                <p>
-                  " Tout compréhension de l'entreprise passe par sa comptabilité. Or les enjeux sociaux
-                  et environnementaux qui doivent être considérés en sont absents " - Rapport <i>Entreprise
-                  et intérêt général</i>, Nicolas NOTAT et Dominique SENARD
-                </p>
-                <p>
-                  La comptabilité actuelle ne permet pas de 
                 </p>
               </div>
               <div className="v-group">
                 <img id="img-screen-video" src="/images/team_working.png" alt="img-screen-video"/>
               </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="section">
-
-          <div className="title-with-side-lines">
-            <h2>La mesure des indicateurs permet à vos clients de : </h2>
-          </div>
-          <div className="wrapper">
-
-            <div className="v-group one">
-              <h3>Prendre conscience</h3>
-              <img id="icon-light" src="/images/icon-light.png" alt="icon-light"/>
-              <p>de leurs impacts à l'échelle de leurs activités / Être sensibilisé à la mesure des impacts de leurs activités</p>
-            </div>
-
-            <div className="v-group two">
-              <h3>Suivre et valoriser</h3>
-              <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise"/>
-              <p>leur performance extra-financière</p>
-            </div>
-
-            <div className="v-group three">
-              <h3>Se positionner</h3>
-              <img id="icon-position" src="/images/icon-position.png" alt="icon-position"/>
-              <p>par rapport aux objectifs de développement durable</p>
-            </div>
-
-            <div className="v-group four">
-              <h3>Anticiper</h3>
-              <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate"/>
-              <p>de potentiels risques</p>
             </div>
           </div>
 
