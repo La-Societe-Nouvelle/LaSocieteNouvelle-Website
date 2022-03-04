@@ -157,7 +157,7 @@ textarea {
   width: 95%;
   height: 100%;
   margin-bottom: 25px;
-
+  margin-top : 20px;
   @include lg{
     width:100%;
     padding: 0 10%;
@@ -445,7 +445,15 @@ img.main-icon
 
     &:hover
     {
+      cursor: pointer;
       color: $secondary-color;
     }
   }
+}
+
+
+.source {
+  font-size: 10px;
+  font-style: italic;
+  text-align: right;
 }

@@ -32,13 +32,19 @@
   }
 
 }
+.titre {
 
+  font-size: 2rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+
+}
 /* -------------------- Bloc -------------------- */
 
 .bloc 
 {
   overflow: auto;
-  padding: 10px 10px 25px;
+  padding: 1em 2em;
 
   &.blue 
   {
