@@ -95,7 +95,7 @@ export default function Blog() {
                                 <b>
                                     Administration d’une base de données ouverte :
                                 </b>
-                                Centraliser les données mesurées et publiées des entreprises pour permettre
+                                &nbsp;Centraliser les données mesurées et publiées des entreprises pour permettre
                                 à tous de les exploiter librement et facilement.
 
                             </p>
@@ -103,12 +103,14 @@ export default function Blog() {
                                 <b>
                                     Mise à disposition d’un outil de mesure open source :
                                 </b>
-                                Développer et maintenir une application web pour que chacun puisse calculer les indicateurs et
+                                &nbsp;Développer et maintenir une application web pour que chacun puisse calculer les indicateurs et
                                 apprécier les résultats.
                             </p>
                             <p>
-                                <b>Enfin, accompagner les acteurs qui souhaitent mesurer leurs impacts ou
-                                    porter la méthdologie </b> pour accéler son déploiement au sein des entreprises.
+                                 <b>
+                                    Support et Assistance :
+                                </b>
+                                &nbsp;Accompagner les acteurs qui souhaitent porter la méthodologie pour faciliter son application.
                             </p>
 
                         </div>

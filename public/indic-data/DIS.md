@@ -38,27 +38,3 @@ L’intervalle de confiance est de 50 %.
 
 **Ministère de l’Economie, des Finances et de la Relance**  
 [Rémunération de vos salariés](https://www.economie.gouv.fr/entreprises/remuneration-salaries)
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2019</p>
-    <p id="value-block">29.2</p>
-    <p id="unit-block">/100</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block"> - </p>
-    <p id="unit-block">/100</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block"> - </p>
-    <p id="unit-block">/100</p>
-    </div>
-</div>
-
-**Objectif :** Indice de GINI < 25/100 d’ici 2030
-
-L’objectif est fixé par La Société Nouvelle. Il est défini pour réduire les inégalités liées au revenu du travail. Il est à noter que la structure de calcul (moyenne pondérée) ne permet pas d’avoir un lien direct entre une bonne répartition des rémunérations au sein des entreprises et à l’échelle nationale. Il permet cependant de réduire les inégalités au sein des organisations.

@@ -35,7 +35,7 @@ export default function Home() {
                 </div>
                 <div className="h-group" id="mission-buttons">
                   {/* <button onClick={() => windows.open("/approche")}>Découvrir l'approche</button> */}
-                  <button>Nous contacter</button>
+                  <a className="btn" href="mailto:contact@lasocietenouvelle.org">Nous contacter</a>
                 </div>
               </div>
               {/* <div>
@@ -75,9 +75,9 @@ export default function Home() {
                     Nous centralisons les données relatives aux indicateurs au sein d'une base de données ouverte accessible via le portail web ou une API pour faciliter l'exploitation des données.
                   </p>
                 </div>
-                <div className="buttons-group">
+                {/* <div className="buttons-group">
                   <button>En savoir plus</button>
-                </div>
+                </div> */}
               </div>
               <div className="v-group">
                 <div className="activite">
@@ -88,9 +88,9 @@ export default function Home() {
                     En complément, nous proposons un service de diagnostic pour la mesure des indicateurs.
                   </p>
                 </div>
-                <div className="buttons-group">
+                {/* <div className="buttons-group">
                   <button>En savoir plus</button>
-                </div>
+                </div> */}
               </div>
               <div className="v-group">
                 <div className="activite">
@@ -101,9 +101,9 @@ export default function Home() {
                     l'utilisation de l'application web.
                   </p>
                 </div>
-                <div className="buttons-group">
+                {/* <div className="buttons-group">
                   <button>En savoir plus</button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

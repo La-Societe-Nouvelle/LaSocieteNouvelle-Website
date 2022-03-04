@@ -55,27 +55,3 @@ L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du t
 
 **Conseil National des Chambres Régionales de l’ESS**  
 [CNCRESS (site web)](http://www.esspace.fr/index.html)
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2013</p>
-    <p id="value-block">5.3</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">6.9</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">25.0</p>
-    <p id="unit-block">%</p>
-    </div>
-</div>
-
-**Objectif :** Contribution > 75.0 % d’ici 2030
-
-L’objectif est fixé par La Société Nouvelle. Il est défini pour inciter à la définition de la raison d’être des entreprises. En complément, sur le périmètre spécifique de l’ESS, l’objectif visé est de 10.0 % d’ici 2030.

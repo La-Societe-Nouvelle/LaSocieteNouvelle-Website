@@ -64,11 +64,11 @@ export default function Home() {
               <div className="v-group">
                 <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
                 <div className="buttons-group">
-                  <button>Tester avec la version libre</button>
+                  <a className="btn" href="https://metriz.lasocietenouvelle.org" target="_blank">Tester avec la version libre</a>
                 </div>
               </div>
               <div className="v-group">
-                <p>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</p>
+                <h3>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</h3>
                 <ul>
                   <li>Maintenance évolutive</li>
                   <li>Assistance</li>
@@ -76,7 +76,7 @@ export default function Home() {
                   <li>Ajustements à vos fichiers internes</li>
                 </ul>
                 <div className="buttons-group">
-                  <button>Demander une démonstration</button>
+                  <a className="btn" href="mailto:contact@lasocietenouvelle.org">Demander une démonstration</a>
                 </div>
               </div>
             </div>

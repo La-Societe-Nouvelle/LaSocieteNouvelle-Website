@@ -47,27 +47,3 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 
 **Données INSEE :**
 [Tableaux de synthèse : TES et TEE en 2019](https://www.insee.fr/fr/statistiques/4494213)
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2018</p>
-    <p id="value-block">3489</p>
-    <p id="unit-block">kJ/€</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">2061</p>
-    <p id="unit-block">kJ/€</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">1868</p>
-    <p id="unit-block">kJ/€</p>
-    </div>
-</div>
-
-**Objectif :** Intensité < 1 868 kJ/€ d’ici 2030
-
-L’objectif correspond à la planification pluriannuelle de l’énergie (PPE) jusqu’en 2018 du Ministère de la Transition Ecologique, étendue à 2030 ; avec un objectif de réduction de 14% de la consommation en 2028 par rapport à 2012.

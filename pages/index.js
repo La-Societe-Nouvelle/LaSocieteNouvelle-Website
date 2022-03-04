@@ -320,11 +320,11 @@ export default function Home(props) {
 const Vignette = (props) =>
   <div className="vignette">
     <h3>{props.titre}</h3>
-    <p>Publié le {props.date}</p>
+    <p><i>Publié le {props.date}</i></p>
     <p>{props.accroche}</p>
     <p>{props.texte}..</p>
     <div className="buttons">
-      <a href="/blog" class="btn">
+      <a href="/blog" className="btn">
         Lire la suite
       </a>
     </div>

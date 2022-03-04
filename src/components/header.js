@@ -38,7 +38,7 @@ export default class Header extends React.Component {
                 <div><a href="/liste-indicateurs">Indicateurs</a></div>
                 <div><a href="/portail">Base de données</a></div>
                 <div><a href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</a></div>
-                <div><a href="/approche">Documentation</a></div>
+                <div><a href="https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b" target="_blank">Documentation</a></div>
               </DropDown>
             </li>
             <li className={"menu-item"+(this.props.page=="portail" ? " selected" : "")}><a href="/portail">Données</a></li>

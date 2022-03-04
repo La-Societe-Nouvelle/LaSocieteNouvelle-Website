@@ -59,11 +59,11 @@ export default function Home() {
             <div>
               <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" />
               <h3>Suivre et valoriser</h3>
-              <p>leur performance extra-financière</p>
+              <p>votre performance extra-financière</p>
             </div>
             <div>
               <img id="icon-position" src="/images/icon-position.png" alt="icon-position" />
-              <h3>Se positionner</h3>
+              <h3>Vous positionner</h3>
               <p>par rapport aux objectifs de développement durable</p>
             </div>
             <div>
@@ -81,12 +81,13 @@ export default function Home() {
           <div className="bloc gray">
             <div className="h-group">
               <div>
-                <p>L'outil permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables), les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables Téléchargeables.</p>
+                <p>Une application web Open Source est à votre disposition. Elle permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables), 
+                  les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables téléchargeables.</p>
               </div>
               <div className="v-group">
                 <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
                 <div className="buttons-group">
-                  <button>Accéder à l'outil</button>
+                  <a className="btn" href="https://metriz.lasocietenouvelle.org" target="_blank">Accéder à l'outil</a>
                   {/* <button>Accéder au tutoriel</button> */}
                 </div>
               </div>

@@ -53,27 +53,3 @@ L’intervalle de confiance se situe entre 50 et 100 % et dépend fortement du t
 
 **INSEE**  
 [Tableaux de l'économie française (2020) - Artisanat](https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291)
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2015</p>
-    <p id="value-block">5.7</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">6.5</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">11.5</p>
-    <p id="unit-block">%</p>
-    </div>
-</div>
-
-**Objectif :** Contribution > 25 % d’ici 2030
-
-L’objectif est fixé par La Société Nouvelle. Il est défini arbitrairement pour favoriser et encourager le développement de l’artisanat, des savoir-faire et des capacités créatives. En complément, sur le périmètre spécifique de l’artisanat, l’objectif visé est de 15 % d’ici 2030.

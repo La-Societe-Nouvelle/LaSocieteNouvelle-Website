@@ -54,27 +54,3 @@ L’intervalle de confiance associé à l’utilisation des données est de 1000
 
 **European Environnement Agency (EEA)**  
 [WISE Freshwater](https://water.europa.eu/freshwater)
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2017</p>
-    <p id="value-block">10.6</p>
-    <p id="unit-block">L/€</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">9.3</p>
-    <p id="unit-block">L/€</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">7.1</p>
-    <p id="unit-block">L/€</p>
-    </div>
-</div>
-
-**Objectif :** Intensité < 7.4 L/€ d’ici 2030
-
-L’objectif correspond à une réduction de la consommation de 2 Milliards de m3. Il est défini d’après la diminution des disponibilités en eau du au réchauffement climatique, estimée par Eau France.

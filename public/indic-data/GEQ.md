@@ -40,27 +40,3 @@ L’intervalle de confiance est de 50 %.
 
 **Ministère du Travail, de l’Emploi et de l’Insertion**  
 [L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs](https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533)  
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2018</p>
-    <p id="value-block">18.2</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">13.7</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">5.0</p>
-    <p id="unit-block">%</p>
-    </div>
-</div>
-
-**Objectif :** Ecart < 5.0 % d’ici 2030
-
-L’objectif est fixé par La Société Nouvelle. Il est défini en accord avec une trajectoire visant un écart inférieur à 1% d’ici 2050.

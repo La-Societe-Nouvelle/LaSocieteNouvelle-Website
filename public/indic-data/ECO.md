@@ -56,27 +56,3 @@ L’intervalle de confiance associé à l’utilisation des valeurs statistiques
 **EUROSTAT**  
 [Annual national accounts (Metadata)](https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm)  
 [International trade in goods - trade by enterprise characteristics (Metadata)](https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm)  
-
-### SUIVI MACRO-ECONOMIQUE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2019</p>
-    <p id="value-block">73.2</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">83</p>
-    <p id="unit-block">%</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">91</p>
-    <p id="unit-block">%</p>
-    </div>
-</div>
-
-**Objectif :** Contribution > 82 % d’ici 2030
-
-L’objectif est fixé par La Société Nouvelle. Il est défini dans une optique d’atteinte du plein emploi d’ici 2030 (chômage < 3%), par une relocalisation des activités. Il dépend de l’évolution des activités économiques, de l’emploi et des revenus.

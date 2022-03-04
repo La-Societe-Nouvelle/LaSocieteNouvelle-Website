@@ -81,17 +81,17 @@ export default function Home() {
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
               <h3 className="titre-bloc">Documentation</h3>
-              <button className="small">Accéder à la ressource</button>
+              <button className="small"  onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-database" src="/images/database.png" alt="icon-database" />
               <h3 className="titre-bloc">Base de données</h3>
-              <button className="small">Accéder à la ressource</button>
+              <button className="small" onClick={() => window.open('https://api.lasocietenouvelle.org')}>Accéder à la ressource</button>
             </div>
             <div className="bloc v-group white">
               <img className="main-icon" id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
               <h3 className="titre-bloc">Application web</h3>
-              <button className="small">Accéder à la ressource</button>
+              <button className="small" onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>Accéder à la ressource</button>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ const Ese_scrolling_informations = () => {
   const [indexContent, setIndexContent] = React.useState(0);
   const updateText = () => { setIndexContent((indexContent + 1) % (impacts_euro.length)) }
 
-  //setTimeout(updateText,3000)
+  setTimeout(updateText,3000)
 
   return (<p>{impacts_euro[indexContent]}</p>)
 }

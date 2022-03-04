@@ -52,27 +52,3 @@ Ministère de la Transition écologique
 
 Centre technique de référence en matière de pollution atmosphérique et de changement climatique (CITEPA)  
 [CITEPA (site web)](https://www.citepa.org/fr/)
-
-### SUIVI MACRO-ECONOMIQUE : ECHELLE NATIONALE
-
-<div class="references-blocks">
-    <div id="block-1">
-    <p id="titre-block">situation 2019</p>
-    <p id="value-block">153</p>
-    <p id="unit-block">gCO2e/€</p>
-    </div>
-    <div id="block-2">
-    <p id="titre-block">objectif 2021</p>
-    <p id="value-block">130</p>
-    <p id="unit-block">gCO2e/€</p>
-    </div>
-    <div id="block-3">
-    <p id="titre-block">objectif 2030</p>
-    <p id="value-block">63</p>
-    <p id="unit-block">gCO2e/€</p>
-    </div>
-</div>
-
-**Objectif :** Intensité < 63 gCO2e/€ d’ici 2030 
-
-L’objectif correspond à une réduction des émissions de 55% d’ici 2030 par rapport à 1990, objectif fixé par le Ministère de la Transition Ecologie, et défini à l’échelle européenne. L’objectif dépend également des puits de carbone, de l’évolution des émissions directes des ménages et du volume des activités économiques.
