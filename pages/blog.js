@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 import { Helmet } from 'react-helmet';
 
 // Components

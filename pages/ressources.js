@@ -1,10 +1,11 @@
-import Head from 'next/head'
+
 import Header from '../src/components/header.js'
 import Footer from '../src/components/footer.js'
 import { Helmet } from 'react-helmet';
 
 
-export default function Home() {
+export default function Home() 
+{
   return (
     <div className="container">
       <Helmet>

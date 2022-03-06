@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 // Imports
-import Head from 'next/head'
 
 // Components
 import Header from '../src/components/header'

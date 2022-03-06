@@ -81,8 +81,10 @@ class Form extends React.Component {
     )
   }
 
-  buildForm = () => {
-    switch (this.state.step) {
+  buildForm = () => 
+  {
+    switch (this.state.step) 
+    {
       case 0: return <ErrorMessage />
       case 1: return <SirenInput {...this.state} commitSiren={this.commitSiren.bind(this)} />
       case 2: return <DenominationInput {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)} />

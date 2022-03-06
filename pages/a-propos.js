@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import { Helmet } from 'react-helmet';
 
+import { Helmet } from 'react-helmet';
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
-export default function Home() {
-
+export default function Home() 
+{
   return (
     <div className="container">
       <Helmet>
@@ -144,7 +143,6 @@ export default function Home() {
       </main>
 
       <Footer />
-
     </div>
   )
 }

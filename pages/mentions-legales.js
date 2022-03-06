@@ -1,6 +1,5 @@
 
 // Components
-import Head from 'next/head'
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 import { Helmet } from 'react-helmet';

@@ -13,7 +13,8 @@ import remarkGfm from 'remark-gfm'
 import html from 'remark-html'
 
 
-export async function getStaticProps() {
+export async function getStaticProps() 
+{
   const mdFile = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -27,7 +28,8 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ data }) {
+export default function Home({ data }) 
+{
   return (
     <div className="container">
       <Helmet>

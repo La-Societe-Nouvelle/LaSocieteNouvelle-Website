@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
@@ -18,8 +17,8 @@ const impacts_euro = [
   "78% de production française"
 ]
 
-export default function Home() {
-
+export default function Home() 
+{
   return (
     <div className="container">
       <Helmet>
@@ -119,10 +118,14 @@ const Ese_scrolling_informations = () => {
 
   setTimeout(updateText,3000)
 
-  return (<p>{impacts_euro[indexContent]}</p>)
+  return (
+    <p>
+      {impacts_euro[indexContent]}
+    </p>)
 }
 
-const IndicatorsPanel = (props) => {
+const IndicatorsPanel = (props) => 
+{
   const [selectedIndic, setSelectedIndic] = React.useState(props.indics[0]); // or "none"
 
   const indics = props.indics;
@@ -153,10 +156,10 @@ const IndicatorsPanel = (props) => {
   )
 }
 
-const IndicatorDetails = ({ indic }) => {
+const IndicatorDetails = ({ indic }) => 
+{
   return (
     <div className="indicators-panel-details">
-      {/* <h3>{metaData[indic].libelle}</h3> */}
       <p><b>Description : </b>{metaData[indic].description}</p>
       <p><b>Finalité : </b>{metaData[indic].finalite}</p>
       <p><b>Impact direct mesuré : </b>{metaData[indic].descriptionImpactDirect}</p>
