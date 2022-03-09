@@ -14,7 +14,7 @@ const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
 const impacts_euro = [
   "5400 kJ d'énergie",
   "17.4 L d'eau",
-  "158 gCO2e de gaz à effe de serre",
+  "158 gCO2e de gaz à effet de serre",
   "78% de production française"
 ]
 

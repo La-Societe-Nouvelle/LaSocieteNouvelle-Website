@@ -61,7 +61,7 @@ export default function Blog() {
                             <p>C’est une initiative open data et open source dont la mission est de déployer un système d'information et de comptabilité et ainsi permettre aux entreprises de mesurer, sur des dimensions sociales et environnementales clefs, les impacts de la valeur qu’elles produisent.
                             </p>
                         </div>
-                        <div className="w75">
+                        <div>
 
                             <h3 className="subtitle">
                                 Notre vision
@@ -86,7 +86,7 @@ export default function Blog() {
                                 Les enjeux sont conséquents et nous devons construire dès à présent un monde économique ayant à coeur de mesurer ses impacts de production, pour les générations futures.
                             </p>
                         </div>
-                        <div className="w75">
+                        <div>
 
                             <h3 className="subtitle">
                                 Nos missions
