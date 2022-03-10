@@ -1,4 +1,5 @@
 var React = require('react');
+import { Container } from "react-bootstrap";
 import {DropDown} from "./dropdown";
 
 
@@ -8,9 +9,9 @@ export default class Header extends React.Component {
   {
     return (
 
-    <div className="Header">
+    <header>
+      <Container>
 
-      <div id="header">
 
         <div id="header-strip">
           <a href="/">
@@ -49,9 +50,9 @@ export default class Header extends React.Component {
           </DropDown>
         </div>
 
-      </div>
+      </Container>
 
-    </div>
+    </header>
 
     );
   }

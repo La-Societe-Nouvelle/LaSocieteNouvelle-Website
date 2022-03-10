@@ -32,6 +32,7 @@ ChartJS.register(
 );
 
 import content from '../lib/articles.json';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 
@@ -208,7 +209,8 @@ export default function Home(props) {
   };
 
   return (
-    <div className="container">
+
+    <>
       <Helmet>
         <title>La société Nouvelle | Accueil</title>
       </Helmet>
@@ -216,7 +218,7 @@ export default function Home(props) {
 
       <main className="main" id="index">
 
-        <div className="section">
+        <section>
 
           <div className="bloc blue h-group" id="chiffres-clefs">
             <div className="chiffre-clef">
@@ -245,73 +247,71 @@ export default function Home(props) {
             </div>
           </div>
 
-        </div>
+        </section>
 
-        <div className="section h-group nogap">
+        <Container fluid="lg">
 
-          <div className="bloc">
-            <div className="title-with-left-line">
-              <h2 className="titre-bloc">Actualités</h2>
-            </div>
-            <div className="bloc-actualites">
-              {content.blog.map((articleData) => <Vignette key={articleData.titre} {...articleData} />)}
-            </div>
-          </div>
+          <section>
+            <Row>
+              <Col lg={8}>
+                  <h2 className="titre-bloc">Actualités</h2>
+                <div className="bloc-actualites">
+                  {content.blog.map((articleData) => <Vignette key={articleData.titre} {...articleData} />)}
+                </div>
+              </Col>
+              <Col lg={4}>
+                    <h2 className="titre-bloc">Accès rapide</h2>
+                    <div className="box"
+                      onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>
+                      <p><b>Ressources</b></p>
+                    </div>
+                    <div className="box"
+                      onClick={() => window.open('/portail')}>
+                      <p><b>Données</b></p>
+                    </div>
+                    <div className="box"
+                      onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>
+                      <p><b>Outil</b></p>
+                    </div>
+              </Col>
+            </Row>
 
-          <div className="bloc" id="quick-access_container">
+
+          </section>
+
+          <section>
             <div className="title-with-side-lines">
-              <h2 className="titre-bloc">Accès rapide</h2>
+              <h2 className="titre-section">Suivi macro-économique</h2>
             </div>
-            <div className="v-group">
-              <div className="box"
-                onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>
-                <p><b>Ressources</b></p>
-              </div>
-              <div className="box"
-                onClick={() => window.open('/portail')}>
-                <p><b>Données</b></p>
-              </div>
-              <div className="box"
-                onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>
-                <p><b>Outil</b></p>
-              </div>
-            </div>
-          </div>
+            <Row>
 
-        </div>
+              <Col>
 
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Suivi macro-économique</h2>
-          </div>
-          <div className={"bloc h-group"}>
+                <Line
+                  data={dataGHG} options={optionsGHG}
+                />
+                <p className="source">
+                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
+                </p>
+              </Col>
+              <Col>
 
-            <div className="graph">
-
-              <Line
-                data={dataGHG} options={optionsGHG}
-              />
-              <p className="source">
-                Source : Insee, Eurostat | Traitement : La Société Nouvelle
-              </p>
-            </div>
-            <div className="graph">
-
-              <Line
-                data={dataWAT} options={optionsWat}
-              />
-              <p className="source">
-                Source : Insee, Eurostat | Traitement : La Société Nouvelle
-              </p>
-            </div>
-          </div>
-        </div>
+                <Line
+                  data={dataWAT} options={optionsWat}
+                />
+                <p className="source">
+                  Source : Insee, Eurostat | Traitement : La Société Nouvelle
+                </p>
+              </Col>
+            </Row>
+          </section>
+        </Container>
 
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 

@@ -1,14 +1,18 @@
 @import 'base';
+@import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Roboto:wght@300;400;700;800;900&display=swap');
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  min-width: 100%;
   font-family: $font-family-text;
-  line-height:1.5em;
+  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
+  background-repeat: no-repeat;
+  background-position: left bottom,right bottom;
+  background-attachment: fixed;
+}
+
+section {
+  padding: 1rem 0;
 }
 
 h1 {
@@ -168,33 +172,6 @@ textarea {
 
 /* ----- class ----- */
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
-  background-repeat: no-repeat;
-  background-position: left bottom,right bottom;
-  background-attachment: fixed;
-}
-
-.main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  width: 95%;
-  height: 100%;
-  margin-bottom: 25px;
-  margin-top : 20px;
-  @include lg{
-    width:100%;
-    padding: 0 10%;
-  }
-}
 
 .wrapper {
   img {
@@ -225,18 +202,6 @@ textarea {
 /* -------------------- Index | Chiffre-clef -------------------- */
 
 
-#quick-access_container {
-  max-width: fit-content;
-  //max-width: 250px;
-
-  h2{
-    margin-bottom: 20px;
-  }
-  .box:hover {
-    cursor: pointer;
-  }
-}
-
 .box {
   display: flex;
   align-items: center;
@@ -245,10 +210,7 @@ textarea {
   height: 50px;
   width: 250px;
   background-color: lighten($primary-color, 60%);
-  
-  p {
-    color: $primary-color;
-  }
+ 
 }
 
 /* ----- Approche ----- */
