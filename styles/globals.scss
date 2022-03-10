@@ -9,6 +9,26 @@ body {
   background-position: left bottom,right bottom;
   background-attachment: fixed;
 }
+
+@media screen and (max-width: 1280px)
+{
+  body {
+    background-image: url("/images/img-background.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+  }
+
+  .big-text {
+    font-size: 1.5rem;
+  }
+  
+}
+@media all and (orientation: portrait) {
+  .big-text {
+    font-size: 1rem;
+  }
+}
 main {
   padding-bottom: 3em;
   min-height: calc(100vh - 52px);
@@ -30,7 +50,7 @@ section.bg-primary {
 }
 
 .big-text{
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {

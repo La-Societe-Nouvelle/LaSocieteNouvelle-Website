@@ -5,18 +5,9 @@
 .Footer {
   color: white;
   padding: 1em 0;
-  #links {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content:space-around;
-    padding: 0 5%;
-
-    .link-footer {
-      color: white;
-      font-size: 13px;
-    }
-
+  font-size: 0.8rem;
+  ul li{
+    list-style-type: none;
   }
 
 }
