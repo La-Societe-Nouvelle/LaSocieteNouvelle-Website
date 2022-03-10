@@ -7,6 +7,7 @@ import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
 import metaData from '../lib/metaData';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
@@ -21,23 +22,23 @@ const impacts_euro = [
 export default function Home() {
 
   return (
-    <div className="container">
+    <>
       <Helmet>
         <title>La société Nouvelle | Empreinte sociale de l'entreprise</title>
       </Helmet>
       <Header />
-
+        
       <main className="main">
+      <Container>
 
-        <div className="section">
-
-          <div className="bloc blue">
-            <h1 className="titre-bloc">Empreinte Sociétale de l'Entreprise</h1>
-            <div className="h-group">
-              <div className="v-group with-white-border" id="empreinte-societale-description">
-                <p className="center">L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
-              </div>
-              <div id="empreinte-societale-illustration">
+        <section className='bg-primary'>
+            <h2 className="section-title text-center">Empreinte Sociétale de l'Entreprise</h2>
+            <Row className='align-items-center'>
+                <Col>
+                <p className="">L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
+                </Col>
+                <Col>
+                <div id="empreinte-societale-illustration">
                 <Ese_scrolling_informations />
                 <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro" />
                 <svg id="empreinte-societale-traits" viewBox="0 0 200 100">
@@ -45,33 +46,33 @@ export default function Home() {
                   <line id="trait-horizontal" x1="150" y1="10" x2="200" y2="10" />
                 </svg>
               </div>
-            </div>
-          </div>
+                </Col>
+            </Row>
 
-        </div>
+        </section>
 
-        <div className="section">
+        <section>
           <div className="title-with-side-lines">
             <h2 className="titre-section">Indicateurs socio-économiques</h2>
           </div>
           <IndicatorsPanel indics={first_set_indics} />
-        </div>
+        </section>
 
-        <div className="section">
+        <section>
           <div className="title-with-side-lines">
             <h2 className="titre-section">Indicateurs environnementaux</h2>
           </div>
           <IndicatorsPanel indics={second_set_indics} />
-        </div>
+        </section>
 
-        <div className="section">
+        <section>
           <div className="title-with-side-lines">
             <h2 className="titre-section">Principe de calcul</h2>
           </div>
           <div className="bloc gray">
             <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" />
           </div>
-        </div>
+        </section>
 
         <div className="section" id="section-ressources">
           <div className="title-with-side-lines">
@@ -104,12 +105,12 @@ export default function Home() {
             <img className="logo-partner" id="logo-valoxy" src="/images/logo-valoxy-1.png" alt="logo-valoxy"/>
           </div>
         </div> */}
-
+      </Container>
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 

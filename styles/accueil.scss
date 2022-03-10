@@ -1,14 +1,39 @@
 @import 'base';
 
+#chiffres-clefs {
 
+  font-weight: 600;
+  p {
+    margin: 0;
+    sup {
+      top: -2em;
+    }
+  }
+}
+
+#post {
+  .card-title{
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+}
+
+
+#access {
+  .btn {
+    background-color: $light-blue;
+    border : 1px solid rgba($primary, .15);
+    padding: 0.75rem;
+    margin: 0 0 1em 0;
+  }
+}
 #index
 {
   // Chiffres clefs
-
-  .bloc#chiffres-clefs
-  {
-    padding: 0;  
-  }
   
   .chiffre-clef 
   {
@@ -88,7 +113,7 @@
   justify-content: left;
   display: block;
   margin: 5px 0px;
-  color: $highlight-color;
+  color: $secondary;
 }
 
 #front-page {
@@ -112,27 +137,4 @@
 }
 #titre-logo-accueil {
   margin-bottom: 10px;
-}
-
-.vignette
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px;
-  border: solid 1px $primary-color;
-  margin-top: 10px;
-  background-color: white;
-
-  > * {
-    margin: 7px;
-    width: 100%;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
 }

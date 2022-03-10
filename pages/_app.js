@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import SSRProvider from 'react-bootstrap/SSRProvider'
+
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import '../styles/_groups.scss'
 import '../styles/_section.scss'
@@ -22,14 +25,16 @@ import '../styles/company-data.scss'
 import '../styles/articles.scss'
 
 function MyApp({ Component, pageProps }) {
-  return (<>  
-    <Head>
-    <title>La société nouvelle</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="icon" href="favicon.svg" />
-    </Head>
-    <Component {...pageProps} />
-  </>)
+  return (
+    <SSRProvider>
+      <Head>
+        <title>La société nouvelle</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="favicon.svg" />
+      </Head>
+      <Component {...pageProps} />
+    </SSRProvider>
+  )
 }
 
 export default MyApp

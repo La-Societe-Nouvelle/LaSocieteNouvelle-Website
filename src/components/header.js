@@ -1,6 +1,6 @@
 var React = require('react');
-import { Container } from "react-bootstrap";
-import {DropDown} from "./dropdown";
+import { Container, Row, Col} from "react-bootstrap";
+import CustomDropdown from "./customDropdown";
 
 
 export default class Header extends React.Component {
@@ -11,44 +11,24 @@ export default class Header extends React.Component {
 
     <header>
       <Container>
+        <Row className="align-items-center">
+         <Col>
+         <div className="banner">
+         <img id="logo-header" className="fluid float-start" src="/images/logo-lsn-header.png" alt="logo-lsn-header"/>
 
+          <h1 className="slogan">
+              Mesurer, Informer pour une économie durable
+          </h1>
+           </div>
+         </Col> 
+         <Col>
+           <h2>
+              Initiative OpenData - OpenSource
+             </h2> 
+         </Col>
+        </Row>
 
-        <div id="header-strip">
-          <a href="/">
-            <img id="logo-header" src="/images/logo-lsn-header.png" alt="logo-lsn-header"/>
-          </a>
-          <p id="slogan">Mesurer, Informer pour une économie durable</p>
-          <svg id="slogan-line_container" viewBox="0 0 100 10">
-            <line id="slogan-line" x1="0" y1="0" x2="100" y2="0"/>
-          </svg>
-          <p id="slogan-2">Initiative OpenData - OpenSource</p>
-          <hr className="hr-big-size"/>
-        </div>
-
-        <div id="menu">
-          <DropDown
-                title="Menu"
-                href="##">
-          <ul>
-            <li id="home" className="menu-item"><a href="/"><img id="icon-home" src="/images/icon-home.png" alt="icon-home"/></a></li>
-            <li className="menu-item">
-              <DropDown
-                title="Approche"
-                href="/approche">
-                <div><a href="/approche">Présentation</a></div>
-                <div><a href="/liste-indicateurs">Indicateurs</a></div>
-                <div><a href="/portail">Base de données</a></div>
-                <div><a href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</a></div>
-                <div><a href="https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b" target="_blank">Documentation</a></div>
-              </DropDown>
-            </li>
-            <li className={"menu-item"+(this.props.page=="portail" ? " selected" : "")}><a href="/portail">Données</a></li>
-            <li className={"menu-item"+(this.props.page=="cabinets-comptables" ? " selected" : "")}><a href="/cabinets-comptables">Cabinets comptables</a></li>
-            <li className={"menu-item"+(this.props.page=="entreprises" ? " selected" : "")}><a href="/entreprises">Entreprises</a></li>
-            <li className={"menu-item"+(this.props.page=="a-propos" ? " selected" : "")}><a href="/a-propos">La Société Nouvelle</a></li>
-          </ul>
-          </DropDown>
-        </div>
+        <CustomDropdown />
 
       </Container>
 

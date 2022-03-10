@@ -1,11 +1,13 @@
+import { Container } from 'react-bootstrap';
+
 var React = require('react');
 
 export default class Footer extends React.Component {
   render() {
     return (
 
-    <div className="Footer">
-
+    <div className="Footer bg-primary">
+        <Container>
         <div id="links">
             <a className="link-footer" href="/mentions-legales">Mentions légales</a>
             <a className="link-footer" href="/company-data?siren=889182770">Empreinte Sociétale</a>
@@ -14,6 +16,7 @@ export default class Footer extends React.Component {
             <a className="link-footer" href="https://twitter.com/SHumiliere" target="_blank">Twitter</a>
             {/*<a className="link-footer" href="/contact">Contact</a>*/}
         </div>
+        </Container>
 
     </div>
       

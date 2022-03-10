@@ -88,14 +88,14 @@
   button {
     flex-grow: 1;
     padding: 5px 25px 5px 25px;
-    color: $dark-blue;
+    color: $primary;
     background-color: transparent;
-    border: solid 1px $dark-blue;
+    border: solid 1px $primary;
 
     &.inverse
     {
-      background-color: $dark-blue;
-      border: solid 1px $dark-blue;
+      background-color: $primary;
+      border: solid 1px $primary;
       color: white;
     }
   }

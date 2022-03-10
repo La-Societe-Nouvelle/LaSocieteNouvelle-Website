@@ -6,15 +6,17 @@ import { Helmet } from 'react-helmet';
 
 // Modules
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Header />
       <Helmet>
         <title>La société Nouvelle | Portail </title>
       </Helmet>
       <main className="main">
+       <Container>
         {/* 
         <div className="section">
           <div className="bloc blue h-group chiffres-clefs-bdd">
@@ -29,15 +31,12 @@ export default function Home() {
           </div>
         </div> */}
 
-        <h2 className='titre'>Portail d'accès aux données</h2>
-
+        <h2>Portail d'accès aux données</h2>
         <PortailView />
-
+        </Container> 
       </main>
-
       <Footer />
-
-    </div>
+      </>
   )
 
 }

@@ -20,8 +20,8 @@
 
 .indic-strip-title {
   padding: 5px 0 5px 0;
-  border-top: solid $primary-color 1px;
-  border-bottom: solid $primary-color 1px;
+  border-top: solid $primary 1px;
+  border-bottom: solid $primary 1px;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@
   border-top: none;
   border-bottom: none;
   line-height: 1;
-  color: $primary-color;
+  color: $primary;
   text-align: center;
   font-size : 30px;
 }
@@ -57,8 +57,8 @@
   text-align: center;
   padding: 5px 0;
   margin-top: 50px;
-  border-top: solid $primary-color 1px;
-  border-bottom: solid $primary-color 1px;
+  border-top: solid $primary 1px;
+  border-bottom: solid $primary 1px;
 }
 
 .issue{
@@ -90,10 +90,10 @@
     text-align: center;
     height: 120px;
     width: 150px;
-    border: solid $primary-color 1px;
+    border: solid $primary 1px;
 }
 #block-1 {
-    background-color: $primary-color;
+    background-color: $primary;
 }
 #block-1 p {
     color: white;
@@ -130,7 +130,7 @@
 .content-strip {
 
   a{
-   color: $primary-color;
+   color: $primary;
    font-style: italic;
   }
 }

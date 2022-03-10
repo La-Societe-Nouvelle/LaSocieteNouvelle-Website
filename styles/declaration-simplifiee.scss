@@ -149,8 +149,8 @@
 
         .menu {
 
-            border-top: solid $primary-color 1px;
-            border-bottom: solid $primary-color 1px;
+            border-top: solid $primary 1px;
+            border-bottom: solid $primary 1px;
             padding-bottom: 1px;
     
             .menu-items {
@@ -165,16 +165,16 @@
                     align-items: center;
                     width:unset;
                     background-color: transparent;
-                    color: $primary-color;
+                    color: $primary;
                     
                     :hover {
                         color: white;
-                        background-color: $secondary-color;
+                        background-color: $secondary;
                       }
                     
                     &.menu-button-inverse {
                         color: white;
-                        background-color: $primary-color;
+                        background-color: $primary;
                       }
                     
 
@@ -183,11 +183,11 @@
                         width: 10px;
                         height: 10px;
                         clip-path: polygon(1% 52%, 18% 32%, 38% 50%, 72% 0, 100% 0, 40% 85%);
-                        background-color:$primary-color;
+                        background-color:$primary;
                     }
                     &:not(.selected):hover {
                         color: white;
-                        background-color: $secondary-color;
+                        background-color: $secondary;
 
                         .validated {
                             background-color:white; 
@@ -195,7 +195,7 @@
                     }
                     &.selected {
                         color: white;
-                        background-color: $primary-color;
+                        background-color: $primary;
 
                         .validated {
                             background-color:white; 
@@ -255,7 +255,7 @@
                                         }
                                         padding-bottom: 2%;
                                         :hover{
-                                            color: $secondary-color
+                                            color: $secondary
                                         }
                                     }
 
@@ -301,7 +301,7 @@
                 .prev-arrow{
                     display: block;
                     clip-path: polygon(66% 0, 58% 0%, 33% 50%, 58% 100%, 66% 100%, 41% 50%);
-                    background-color: $primary-color;
+                    background-color: $primary;
                     width: 100%;
                     height: 70px;
                 }
@@ -317,7 +317,7 @@
                 .next-arrow{
                     display: block;
                     clip-path: polygon(33% 0, 41% 0, 66% 50%, 41% 100%, 33% 100%, 58% 50%);
-                    background-color: $primary-color;
+                    background-color: $primary;
                     width: 100%;
                     height: 70px;
                 }
@@ -332,9 +332,9 @@
 
         &:disabled{
             cursor: default;
-            background-color: $highlight-color;
+            background-color: $secondary;
             color: white;
-            border: solid $highlight-color 1px;
+            border: solid $secondary 1px;
         }
         &:not(:disabled){
             cursor: pointer;
@@ -361,8 +361,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border-top: solid $primary-color 1px;
-    border-bottom: solid $primary-color 1px;
+    border-top: solid $primary 1px;
+    border-bottom: solid $primary 1px;
 
     @include xs {
         flex-direction: column;
@@ -403,7 +403,7 @@
     }
 }
 .declarationForm #declared-value {
-    border: solid $primary-color 1px;
+    border: solid $primary 1px;
 }
 .declarationForm .quality-box p {
     text-align: center;

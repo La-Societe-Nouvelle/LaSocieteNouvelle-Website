@@ -52,7 +52,7 @@
   .h-line 
   {
     width: 500px;
-    border: solid $primary-color 1px;
+    border: solid $primary 1px;
     margin: 0 0 50px 0;
   }
 
@@ -85,7 +85,7 @@
   margin-right: auto;
   margin-bottom: 25px;
   width: 80%;
-  border-top: solid $primary-color 1px;
+  border-top: solid $primary 1px;
 }
 
 .result-item-data 
@@ -104,5 +104,5 @@
   display: inline-block;
   vertical-align: top;
   margin: 16px 50px 0 25px;
-  background-color: $dark-blue;
+  background-color: $primary;
 }

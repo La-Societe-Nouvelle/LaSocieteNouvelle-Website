@@ -20,7 +20,7 @@
             width: 30px;
             height: 10px;
             content: " ";
-            background-color: $secondary-color;
+            background-color: $secondary;
         }
     }
 
@@ -60,7 +60,7 @@
             width: 15px;
             height: 5px;
             content: " ";
-            background-color: $secondary-color;
+            background-color: $secondary;
         }
     }
     h4 {
@@ -88,7 +88,7 @@
 
     .big-quote {
         font-weight: 900;
-        color : $primary-color;
+        color : $primary;
         font-size : 2em;
         margin-top: 1em;
         margin-bottom: 2em;
