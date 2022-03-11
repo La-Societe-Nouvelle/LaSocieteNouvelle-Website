@@ -17,7 +17,7 @@ export default class Header extends React.Component {
          <img id="logo-header" className="fluid float-start" src="/images/logo-lsn-header.png" alt="logo-lsn-header"/>
 
           <h1 className="slogan">
-              Mesurer, Informer pour une économie durable
+              Mesurer, Informer pour une <span className="underline"> économie durable </span>
           </h1>
            </div>
          </Col> 

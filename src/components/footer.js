@@ -9,6 +9,9 @@ export default class Footer extends React.Component {
       <div className="Footer bg-primary">
         <Container>
           <ul className='nav justify-content-center'>
+          <li className="nav-item">
+              <a className="nav-link" href="/a-propos">A propos</a>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="/mentions-legales">Mentions légales</a>
             </li>
@@ -17,7 +20,7 @@ export default class Footer extends React.Component {
 
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank">Repertoire GitHub</a>
+              <a className="nav-link" href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank"><i className="bi bi-github"></i> GitHub</a>
 
             </li>
             <li className="nav-item">

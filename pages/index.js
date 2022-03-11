@@ -316,8 +316,9 @@ const Vignette = (props) =>
 
   <>
     <Card>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
+      <img src="images/equipe-la-societe-nouvelle-thumbnail.jpg" className="img-fluid img-thumbnail rounded float-start me-4"/> 
+
         <Card.Title>{props.titre}</Card.Title>
         <Card.Subtitle>{props.accroche}</Card.Subtitle>
         <p className='date'>
