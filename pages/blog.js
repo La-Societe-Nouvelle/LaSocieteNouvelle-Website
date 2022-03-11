@@ -135,8 +135,11 @@ export default function Blog() {
                                     Nos valeurs
                                 </h3>
                                 <Row>
-                                    <Col lg={5} >
-                                        <p className="big-quote">
+                                    <Col lg={6} >
+
+                                    <img src="/images/nos-valeurs.png" alt="Euratechnologies" className="img-responsive w-100" />
+
+                                        {/* <p className="big-quote">
                                             "Enthousiasme"
                                         </p>
                                         <p className="quote">
@@ -150,10 +153,10 @@ export default function Blog() {
                                         </p>
                                         <p className="big-quote">
                                             "Accessibilité"
-                                        </p>
+                                        </p> */}
 
                                     </Col>
-                                    <Col lg={7}>
+                                    <Col lg={6}>
                                         <ul>
                                             <li>
                                                 Maitre mot de notre état d’esprit, le sujet est important, l’enthousiasme est donc de rigueur.
