@@ -18,12 +18,12 @@ export default function Blog() {
                     <section>
                         <div className="article">
                             <Row className="align-items-center">
-                                <Col xs={12}>
+                                <Col xs={12} lg={6}>
                                     <h2 className="big-title">
                                         Mesurer, informer, pour une économie durable
                                     </h2>
                                 </Col>
-                                <Col>
+                                <Col  xs={12} lg={6}>
                                     <img src="/images/equipe-la-societe-nouvelle.jpg" className='img-fluid' alt="L'équipe de la société nouvelle" />
                                 </Col>
                             </Row>
