@@ -2,6 +2,15 @@
 
 /* ----- indicateur ----- */
 
+.list-group-flush {
+  .list-group-item {
+    background: none;
+    color : $primary;
+    &:hover {
+      color : $secondary;
+    }
+  }
+}
 #strip-odd {
   display: flex;
   flex-direction: column;

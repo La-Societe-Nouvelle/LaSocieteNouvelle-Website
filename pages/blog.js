@@ -18,15 +18,13 @@ export default function Blog() {
                     <section>
                         <div className="article">
                             <Row className="align-items-center">
-                                <Col>
+                                <Col xs={12}>
                                     <h2 className="big-title">
                                         Mesurer, informer, pour une économie durable
                                     </h2>
                                 </Col>
                                 <Col>
-                                <figure>
-                                <img src="/images/equipe-la-societe-nouvelle.jpg" className='img-fluid' alt="L'équipe de la société nouvelle" />
-                                 </figure>
+                                    <img src="/images/equipe-la-societe-nouvelle.jpg" className='img-fluid' alt="L'équipe de la société nouvelle" />
                                 </Col>
                             </Row>
 
@@ -39,10 +37,10 @@ export default function Blog() {
                                         Il était une fois la société nouvelle...
                                     </h4>
                                  
-                                    <img src="/images/Euratechnologies.jpg" alt="Euratechnologies" className="img-responsive" />
+                                    <img src="/images/Euratechnologies.jpg" alt="Euratechnologies" className="img-fluid" />
                                 </Col>
 
-                                <Col>
+                                <Col lg={7}>
                                     <div className="post-content">
 
                                         <p>
@@ -70,12 +68,13 @@ export default function Blog() {
 
                                 </Col>
 
-                                <h5>
+                            </Row>
+                            
+                            <h5>
                                             Aujourd’hui, qu’est-ce que La Société Nouvelle ?
                                         </h5>
                                         <p>C’est une initiative open data et open source dont la mission est de déployer un système d'information et de comptabilité et ainsi permettre aux entreprises de mesurer, sur des dimensions sociales et environnementales clefs, les impacts de la valeur qu’elles produisent.
                                         </p>
-                            </Row>
 
                             <div>
 
@@ -137,24 +136,9 @@ export default function Blog() {
                                 <Row>
                                     <Col lg={6} >
 
-                                    <img src="/images/nos-valeurs.png" alt="Euratechnologies" className="img-responsive w-100" />
+                                    <img src="/images/nos-valeurs.png" alt="Euratechnologies" className="img-fluid w-100" />
 
-                                        {/* <p className="big-quote">
-                                            "Enthousiasme"
-                                        </p>
-                                        <p className="quote">
-                                            "Pragmatisme"
-                                        </p>
-                                        <p className="big-quote">
-                                            "Transparence"
-                                        </p>
-                                        <p className="quote">
-                                            "Exigence"
-                                        </p>
-                                        <p className="big-quote">
-                                            "Accessibilité"
-                                        </p> */}
-
+        
                                     </Col>
                                     <Col lg={6}>
                                         <ul>

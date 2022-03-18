@@ -218,12 +218,12 @@ export default function Home(props) {
           <section id="chiffres-clefs" className="bg-primary">
             <Row>
               <Col className='text-center'>
-                <img className="fluid" src="/images/coins.png" alt="icon-coins" />
+                <img className="img-fluid" src="/images/coins.png" alt="icon-coins" />
                 <p className='my-2'> <span className="big-text">2054</span> <sup>Mrd €</sup> </p>
                 <p>Production intérieure - France (2020)</p>
               </Col>
               <Col className='text-center'>
-                <img className="fluid" id="icon-co2" src="/images/carbon-dioxide.png" alt="icon-co2" />
+                <img className="img-fluid" id="icon-co2" src="/images/carbon-dioxide.png" alt="icon-co2" />
 
                 <p className='my-2'><span className="big-text">153</span> <sup>gCO2e/€</sup></p>
                 <p className="chiffre-clef-libelle">Intensité d'émission de gaz à effet de serre</p>
@@ -259,7 +259,6 @@ export default function Home(props) {
                 </Nav>
               </Col>
             </Row>
-
           </section>
           <section>
             <div className="title-with-side-lines">
@@ -301,6 +300,10 @@ export default function Home(props) {
 
               </Col>
             </Row>
+          </section>
+          <section>
+        {/* <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7D62/Mts" width="100%"></iframe>  */}
+
           </section>
         </Container>
 

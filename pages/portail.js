@@ -6,18 +6,18 @@ import { Helmet } from 'react-helmet';
 
 // Modules
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 
 export default function Home() {
   return (
     <>
-      <Header />
       <Helmet>
         <title>La société Nouvelle | Portail </title>
       </Helmet>
+      <Header />
       <main className="main">
-       <Container>
-        {/* 
+        <Container>
+          {/* 
         <div className="section">
           <div className="bloc blue h-group chiffres-clefs-bdd">
             <div className="h-group chiffre-clef-bdd">
@@ -31,12 +31,11 @@ export default function Home() {
           </div>
         </div> */}
 
-        <h2>Portail d'accès aux données</h2>
-        <PortailView />
-        </Container> 
+          <PortailView />
+        </Container>
       </main>
       <Footer />
-      </>
+    </>
   )
 
 }
@@ -96,25 +95,28 @@ class PortailView extends React.Component {
     const nbResults = infoResults.nbResults;
 
     return (
-      <div className="section portail-view">
+      <section className="portail-view">
+        <h2>Portail d'accès aux données</h2>
+
         <SearchBar parent={this} />
-        {
-          isLoaded || isLoading ? <hr className="h-line" /> : ""
-        }
+  
         {!isLoaded && !isLoading ? <Informations /> : ""}
-        <div id="results-strip">
+        <Row id="results-strip">
           {isLoading ? <p>Recherche en cours...</p> : ""}
           {isLoaded && nbResults == 0 ? <p>Aucun résultat</p> : ""}
-          {isLoaded && nbResults > 0 ? <Results items={results} /> : ""}
-        </div>
-      </div>
+          {isLoaded && nbResults > 0 ? 
+          <CardGroup>
+ <Results items={results} />
+          </CardGroup>: ""}
+        </Row>
+      </section>
     )
   }
 
 }
 
 const Informations = () =>
-  <div className="bloc" id="informations">
+  <div id="informations">
     <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
     <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
     <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
@@ -122,26 +124,38 @@ const Informations = () =>
 
 const SearchBar = ({ parent }) =>
   <div id="search-bar">
-    <input id="search-input" type="text"
-      placeholder="Dénomination sociale, N° de siren"
-      value={parent.state.input} onChange={parent.inputChange}></input>
-    <button id="search-button" type="submit" onClick={parent.handleClick}>Rechercher</button>
+      <input id="search-input" type="text" className="form-control form-control-lg"
+        placeholder="Dénomination sociale, N° de siren"
+        value={parent.state.input} onChange={parent.inputChange}></input>
+    <button id="search-button" type="submit" className="btn btn-lg btn-secondary" onClick={parent.handleClick}>Rechercher</button>
   </div>
 
 const Results = ({ items }) => {
   return items.map((item) =>
-    <div key={'item-' + item.siren} className="result-item-container">
-      <div className="result-item-data">
-        <p className="result-item-denomination"><b>{item.denomination}</b></p>
-        <p>siren : {item.siren}</p>
-        <p>
-          Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})
-          <br />
+    <Col key={'item-' + item.siren} lg="4">
+      <Card>
+        <Card.Body>
+        <Card.Title>{item.denomination}</Card.Title>
+        <Card.Text>
+         siren : {item.siren} 
+        </Card.Text>
+
+        <Card.Text>
+
+          Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})        </Card.Text>
+
+          <Card.Text>
           Domiciliation : {item.communeSiege} ({item.codePostalSiege})
-        </p>
-      </div>
-      <button className="button-consulter" onClick={() => showCompanyData(item.siren)}>Consulter</button>
-    </div>
+          </Card.Text>
+
+        </Card.Body>
+        <Card.Footer>
+        <button className="btn btn-primary" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+
+        </Card.Footer>
+      </Card>
+
+    </Col>
   )
 }
 

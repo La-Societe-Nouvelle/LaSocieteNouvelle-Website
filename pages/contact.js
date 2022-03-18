@@ -9,31 +9,33 @@ import Footer from '../src/components/footer'
 
 // API
 import { sendContactMail } from '../pages/api/mail-api.js'
+import { Container } from 'react-bootstrap';
 
 export default function Home() {
 
   return (
-    <div className="container">
+    <>
       <Helmet>
         <title>La société Nouvelle | Nous contacter</title>
       </Helmet>
       <Header />
 
       <main className="main">
+        <Container>
+          <section>
+            <h2 className="titre-bloc">Formulaire de contact</h2>
+            <ContactForm />
 
-        <div className="section">
-          <div className="bloc blue">
-            <h1 className="titre-bloc">Formulaire de contact</h1>
-          </div>
-        </div>
+          </section>
+        </Container>
 
-        <ContactForm />
+
 
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 
@@ -59,18 +61,18 @@ class ContactForm extends React.Component {
       <div id="contact-form" className="section form">
         <div className="form-section v-group">
           <label className="titre-form-section">Objet</label>
-          <input id="objet-input" type="text" value={objet} onChange={this.onObjetChange} />
+          <input id="objet-input" type="text" value={objet} onChange={this.onObjetChange} className="form-control" />
         </div>
         <div className="form-section v-group">
           <label className="titre-form-section">Message</label>
-          <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} />
+          <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} className="form-control" />
         </div>
         <div className="form-section v-group">
           <label className="titre-form-section">Vos coordonnées</label>
-          <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} />
+          <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} className="form-control" />
         </div>
         <div className="form-section v-group">
-          <button className={"submit-button-form" + btnClass} onClick={this.submitContactForm}>{formButtontext}</button>
+          <button className={"btn btn-secondary" + btnClass} onClick={this.submitContactForm} >{formButtontext}</button>
         </div>
       </div>
     )

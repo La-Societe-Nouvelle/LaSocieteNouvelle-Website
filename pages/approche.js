@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
@@ -27,77 +26,86 @@ export default function Home() {
         <title>La société Nouvelle | Empreinte sociale de l'entreprise</title>
       </Helmet>
       <Header />
-        
-      <main className="main">
-      <Container>
 
-        <section className='bg-primary'>
+      <main className="main">
+        <Container>
+          <section className='bg-primary'>
             <h2 className="section-title text-center">Empreinte Sociétale de l'Entreprise</h2>
             <Row className='align-items-center'>
-                <Col>
+              <Col>
                 <p className="">L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
-                </Col>
-                <Col>
+              </Col>
+              <Col>
                 <div id="empreinte-societale-illustration">
-                <Ese_scrolling_informations />
-                <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro" />
-                <svg id="empreinte-societale-traits" viewBox="0 0 200 100">
-                  <line id="trait-diagonal" x1="125" y1="35" x2="150" y2="10" />
-                  <line id="trait-horizontal" x1="150" y1="10" x2="200" y2="10" />
-                </svg>
-              </div>
-                </Col>
+                  <Ese_scrolling_informations />
+                  <img id="icon-euro" src="/images/coin-brf-1-white.png" alt="icon-euro" />
+                  <svg id="empreinte-societale-traits" viewBox="0 0 200 100">
+                    <line id="trait-diagonal" x1="125" y1="35" x2="150" y2="10" />
+                    <line id="trait-horizontal" x1="150" y1="10" x2="200" y2="10" />
+                  </svg>
+                </div>
+              </Col>
             </Row>
+          </section>
 
-        </section>
-
-        <section>
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Indicateurs socio-économiques</h2>
-          </div>
-          <IndicatorsPanel indics={first_set_indics} />
-        </section>
-
-        <section>
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Indicateurs environnementaux</h2>
-          </div>
-          <IndicatorsPanel indics={second_set_indics} />
-        </section>
-
-        <section>
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Principe de calcul</h2>
-          </div>
-          <div className="bloc gray">
-            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" />
-          </div>
-        </section>
-
-        <div className="section" id="section-ressources">
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">A votre disposition</h2>
-          </div>
-          <div className="h-group">
-            <div className="bloc v-group white">
-              <img className="main-icon" id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
-              <h3 className="titre-bloc">Documentation</h3>
-              <button className="small"  onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>Accéder à la ressource</button>
+          <section>
+            <div className="title-with-side-lines">
+              <h2 className="titre-section">Indicateurs socio-économiques</h2>
             </div>
-            <div className="bloc v-group white">
-              <img className="main-icon" id="icon-database" src="/images/database.png" alt="icon-database" />
-              <h3 className="titre-bloc">Base de données</h3>
-              <button className="small" onClick={() => window.open('https://api.lasocietenouvelle.org')}>Accéder à la ressource</button>
-            </div>
-            <div className="bloc v-group white">
-              <img className="main-icon" id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
-              <h3 className="titre-bloc">Application web</h3>
-              <button className="small" onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>Accéder à la ressource</button>
-            </div>
-          </div>
-        </div>
+            <IndicatorsPanel indics={first_set_indics} />
+          </section>
 
-        {/* <div className="section">
+          <section>
+            <div className="title-with-side-lines">
+              <h2 className="titre-section">Indicateurs environnementaux</h2>
+            </div>
+            <IndicatorsPanel indics={second_set_indics} />
+          </section>
+
+          <section>
+            <div className="title-with-side-lines">
+              <h2 className="titre-section">Principe de calcul</h2>
+            </div>
+            <div className="bloc gray">
+              <img id="graph-donut" src="/images/graphique-donut-1.png" className="img-fluid" alt="icon" />
+            </div>
+          </section>
+
+          <section id="section-ressources">
+            <div className="title-with-side-lines">
+              <h2 className="titre-section">A votre disposition</h2>
+            </div>
+            <Row>
+              <Col >
+                <div className="bloc v-group white">
+                  <img className="main-icon" id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
+                  <h3 className="titre-bloc">Documentation</h3>
+                  <a className="btn btn-primary" href="https://docs.lasocietenouvelle.org" target="_blank">Accéder à la ressource</a>
+                </div>
+              </Col>
+              <Col >
+                <div className="bloc v-group white">
+
+                  <img className="main-icon" id="icon-database" src="/images/database.png" alt="icon-database" />
+                  <h3 className="titre-bloc">Base de données</h3>
+                  <a className="btn btn-primary" target="_blank"
+                    href="https://api.lasocietenouvelle.org"
+                  >Accéder à la ressource</a>
+                </div>
+              </Col>
+              <Col >
+                <div className="bloc v-group white">
+                  <img className="main-icon" id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
+                  <h3 className="titre-bloc">Application web</h3>
+                  <a className="btn btn-primary"
+                    href='https://metriz.lasocietenouvelle.org' target="_blank"
+                  >Accéder à la ressource</a>
+                </div>
+              </Col>
+            </Row>
+          </section>
+
+          {/* <div className="section">
           <h1 className="titre-section">Partenaires</h1>
           <div className="h-group logos-partners">
             <img className="logo-partner" id="logo-easi" src="/images/logo-easi-1.png" alt="logo-easi"/>
@@ -105,7 +113,7 @@ export default function Home() {
             <img className="logo-partner" id="logo-valoxy" src="/images/logo-valoxy-1.png" alt="logo-valoxy"/>
           </div>
         </div> */}
-      </Container>
+        </Container>
       </main>
 
       <Footer />
@@ -118,7 +126,7 @@ const Ese_scrolling_informations = () => {
   const [indexContent, setIndexContent] = React.useState(0);
   const updateText = () => { setIndexContent((indexContent + 1) % (impacts_euro.length)) }
 
-  setTimeout(updateText,3000)
+  setTimeout(updateText, 3000)
 
   return (<p>{impacts_euro[indexContent]}</p>)
 }

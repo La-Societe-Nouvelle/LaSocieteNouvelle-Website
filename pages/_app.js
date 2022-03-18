@@ -23,6 +23,7 @@ import '../styles/contact.scss'
 import '../styles/approche.scss'
 import '../styles/company-data.scss'
 import '../styles/articles.scss'
+import { Helmet } from 'react-helmet';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -32,6 +33,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="favicon.svg" />
       </Head>
+      <Helmet>
+      <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
+      </Helmet>
       <Component {...pageProps} />
     </SSRProvider>
   )

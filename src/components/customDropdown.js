@@ -13,9 +13,8 @@ const CustomDropdown = () => {
           <NavDropdown title="Approche" id="nav-dropdown">
             <NavDropdown.Item href="/approche" >Présentation</NavDropdown.Item>
             <NavDropdown.Item href="/liste-indicateurs">Indicateurs</NavDropdown.Item>
-            <NavDropdown.Item href="/portail">Base de données</NavDropdown.Item>
             <NavDropdown.Item href="https://metriz.lasocietenouvelle.org" target="_blank">Application Web</NavDropdown.Item>
-            <NavDropdown.Item href="https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b" target="_blank" eventKey="4.5">Documentation</NavDropdown.Item>
+            <NavDropdown.Item href="https://docs.lasocietenouvelle.org" target="_blank" eventKey="4.5">Documentation</NavDropdown.Item>
           </NavDropdown>
           <Nav.Item>
             <Nav.Link href="/portail">Données</Nav.Link>
