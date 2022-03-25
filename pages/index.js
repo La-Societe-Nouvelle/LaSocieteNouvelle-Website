@@ -30,7 +30,7 @@ ChartJS.register(
 );
 
 import content from '../lib/articles.json';
-import { Container, Row, Col, Nav, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Card } from 'react-bootstrap';
 
 const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 
@@ -72,7 +72,6 @@ Home.getInitialProps = async () => {
   }
   catch (error) {
     console.log(error);
-    throw error;
   }
 }
 
@@ -206,6 +205,7 @@ export default function Home(props) {
     ],
   };
 
+  
   return (
 
     <>
@@ -217,19 +217,19 @@ export default function Home(props) {
         <Container fluid="lg">
           <section id="chiffres-clefs" className="bg-primary">
             <Row>
-              <Col className='text-center'>
+              <Col lg={4} sm={12} className='text-center'>
                 <img className="img-fluid" src="/images/coins.png" alt="icon-coins" />
                 <p className='my-2'> <span className="big-text">2054</span> <sup>Mrd €</sup> </p>
                 <p>Production intérieure - France (2020)</p>
               </Col>
-              <Col className='text-center'>
+              <Col lg={4} sm={12} className='text-center'>
                 <img className="img-fluid" id="icon-co2" src="/images/carbon-dioxide.png" alt="icon-co2" />
 
                 <p className='my-2'><span className="big-text">153</span> <sup>gCO2e/€</sup></p>
                 <p className="chiffre-clef-libelle">Intensité d'émission de gaz à effet de serre</p>
 
               </Col>
-              <Col className='text-center'>
+              <Col lg={4} sm={12} className='text-center'>
                 <img className="chiffre-clef-icone" id="icon-scales" src="/images/balance.png" alt="icon-scales" />
                 <div className="chiffre-clef-valeur">
                   <p className='my-2'><span className="big-text">17.9</span> <sup>%</sup></p>
@@ -253,7 +253,7 @@ export default function Home(props) {
                   <h2>Accès rapide</h2>
                 </div>
                 <Nav className="flex-column">
-                  <Nav.Link className="btn w-100" href="https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b" target="_blank">Ressources</Nav.Link>
+                  <Nav.Link className="btn w-100" href="https://docs.lasocietenouvelle.org" target="_blank">Ressources</Nav.Link>
                   <Nav.Link className="btn w-100" href="/portail">Données</Nav.Link>
                   <Nav.Link className="btn w-100" href="https://metriz.lasocietenouvelle.org" target="_blank">Outils</Nav.Link>
                 </Nav>
@@ -302,7 +302,6 @@ export default function Home(props) {
             </Row>
           </section>
           <section>
-        {/* <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7D62/Mts" width="100%"></iframe>  */}
 
           </section>
         </Container>

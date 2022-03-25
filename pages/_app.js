@@ -23,6 +23,8 @@ import '../styles/contact.scss'
 import '../styles/approche.scss'
 import '../styles/company-data.scss'
 import '../styles/articles.scss'
+import '../styles/newsletter.scss'
+
 import { Helmet } from 'react-helmet';
 
 function MyApp({ Component, pageProps }) {

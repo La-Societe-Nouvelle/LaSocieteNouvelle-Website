@@ -10,9 +10,10 @@ import html from 'remark-html'
 var React = require('react');
 
 import indicData from '../../lib/metaData.json'
-import ReactMarkdown from 'react-markdown'
+import { Helmet } from 'react-helmet'
+import { Container } from 'react-bootstrap'
 
-export default function Post({postData}) {
+export default function Post({ postData }) {
   return (
     <div>
       {build(postData)}
@@ -22,69 +23,68 @@ export default function Post({postData}) {
 
 export async function getStaticPaths() {
   const paths = [
-    {params:{indicateur: "eco"}},
-    {params:{indicateur: "art"}},
-    {params:{indicateur: "soc"}},
-    {params:{indicateur: "knw"}},
-    {params:{indicateur: "dis"}},
-    {params:{indicateur: "geq"}},
-    {params:{indicateur: "ghg"}},
-    {params:{indicateur: "mat"}},
-    {params:{indicateur: "was"}},
-    {params:{indicateur: "nrg"}},
-    {params:{indicateur: "wat"}},
-    {params:{indicateur: "haz"}}
+    { params: { indicateur: "eco" } },
+    { params: { indicateur: "art" } },
+    { params: { indicateur: "soc" } },
+    { params: { indicateur: "knw" } },
+    { params: { indicateur: "dis" } },
+    { params: { indicateur: "geq" } },
+    { params: { indicateur: "ghg" } },
+    { params: { indicateur: "mat" } },
+    { params: { indicateur: "was" } },
+    { params: { indicateur: "nrg" } },
+    { params: { indicateur: "wat" } },
+    { params: { indicateur: "haz" } }
   ];
   return {
     paths,
-    fallback:false
+    fallback: false
   }
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
   const mdFile = await unified()
     .use(markdown)
     .use(html)
-    .process(fs.readFileSync('./public/indic-data/'+params.indicateur.toUpperCase()+'.md'));
+    .process(fs.readFileSync('./public/indic-data/' + params.indicateur.toUpperCase() + '.md'));
   const postData = {
-      indic: params.indicateur,
-      data: indicData,
-      content: String(mdFile).replace(/href/g,'target="_blank" href')}
+    indic: params.indicateur,
+    data: indicData,
+    content: String(mdFile).replace(/href/g, 'target="_blank" href')
+  }
   return {
-    props: {postData}
+    props: { postData }
   }
 }
 
 function build(postData) {
-  const {indic,data,content} = postData;
+  const { indic, data, content } = postData;
   return (
-    <div className="container">
-      <Head>
-        <title>La Société Nouvelle</title>
-        <link rel="icon" href="/resources/logo_miniature.jpg" />
-      </Head>
+    <>
+      <Helmet>
+        <title>La société Nouvelle | {data[indic].libelle} </title>
+      </Helmet>
+      <Header />
 
-      <Header/>
-      <main className="main">
-        <br/>
-        <div id="strip-header" className="strip">
-          <br/>
-          <h2 className="indic-strip-title" id="indic-label">
-          {data[indic].libelle}
-          </h2>
-          <br/>
-        </div>
+      <main >
+        <Container>
+          <section>
 
-        
+            <h2 className="indic-strip-title" id="indic-label">
+              {data[indic].libelle}
+            </h2>
 
-        <div className="content-strip" dangerouslySetInnerHTML={{__html: content}}/>
+            <div  dangerouslySetInnerHTML={{ __html: content }} />
 
-        <div className="strip">
-          <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/indic-data/"+indic.toUpperCase()+".md"} target="_blanck">Proposer une amélioration de la page</a></p>
-        </div>
+              <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/indic-data/" + indic.toUpperCase() + ".md"} target="_blanck">Proposer une amélioration de la page</a></p>
+          </section>
+
+        </Container>
 
       </main>
-      <Footer/>
-    </div>
+
+      <Footer />
+    </>
+
   )
 }

@@ -28,7 +28,7 @@ $light-gray: #F3F3F3;
 $blue : #5262BC;
 $light-blue : #f1f1ff;
 $body-bg: #ffffff;
-$body-color: #111;
+$body-color: #191558;
 
 $font-family-sans-serif: "Roboto", sans-serif !default;
 $font-family-monospace:  $font-family-sans-serif;
@@ -55,6 +55,8 @@ $card-border-color: rgba($primary, .15) !default;
 $dropdown-min-width: 13rem;
 
 $navbar-dark-color : #ffffff;
+$link-color: lighten($primary, 12%)                     
+
 
 
 

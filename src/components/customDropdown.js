@@ -1,9 +1,12 @@
 import {React} from 'react';
-import { Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Nav, NavDropdown, Navbar, Container } from "react-bootstrap";
 
 const CustomDropdown = () => {
   return (
+
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" >
+          <Container>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav variant="pills" className='nav-justified flex-grow-1' >
@@ -30,7 +33,9 @@ const CustomDropdown = () => {
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
+    </Container>
     </Navbar>
+
   );
 }
 

@@ -54,7 +54,7 @@ export default function Home() {
           </div>
             <Row>
               <Col>
-                  <img id="icon-database" src="/images/bdd-brf-1-blue.png" className="w-50" alt="icon-database" />
+                  <img id="icon-database" src="/images/bdd-brf-1-blue.png" className="img-fluid" alt="icon-database" />
                   <h3>Administration d'une Base de données ouverte</h3>
                   <p>
                     Nous centralisons les données relatives aux indicateurs au sein d'une base de données ouverte accessible via le portail web ou une API pour faciliter l'exploitation des données.
@@ -62,7 +62,7 @@ export default function Home() {
     
               </Col>
               <Col>
-                  <img id="icon-tool" className="w-50" src="/images/webapp-brf-1-blue.png" alt="icon-tool" />
+                  <img id="icon-tool" className="img-fluid" src="/images/webapp-brf-1-blue.png" alt="icon-tool" />
                   <h3>Développement d'un outil de calcul Open Source</h3>
                   <p>
                     Nous mettons à disposition des documentations et développons des outils libres pour la mesure des indicateurs.
@@ -72,7 +72,7 @@ export default function Home() {
               </Col>
               <Col>
                 <div className="activite">
-                  <img id="icon-support" src="/images/support-brf-1-blue.png" className="w-50" alt="icon-support" />
+                  <img id="icon-support" src="/images/support-brf-1-blue.png" className="img-fluid" alt="icon-support" />
                   <h3>Support et <br/> Assistance technique</h3>
                   <p>
                     Nous fournissons un support et une assistance technique pour l'application de la méthodologie comptable et

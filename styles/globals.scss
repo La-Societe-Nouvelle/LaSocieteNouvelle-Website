@@ -2,17 +2,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Roboto:wght@300;400;700;800;900&display=swap');
 
-html,
-body {
-  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
-  background-repeat: no-repeat;
-  background-position: left bottom,right bottom;
-  background-attachment: fixed;
-}
-
 @media screen and (max-width: 1280px)
 {
-  body {
+  main {
     background-image: url("/images/img-background.png");
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -32,6 +24,10 @@ body {
 main {
   padding-bottom: 3em;
   min-height: calc(100vh - 52px);
+  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
+  background-repeat: no-repeat;
+  background-position: left bottom,right bottom;
+  background-attachment: fixed;
 }
 section {
   padding: 2rem 0;
@@ -39,8 +35,11 @@ section {
 }
 
 section.bg-primary {
-  padding: 2em;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
+
+
 
 .bg-primary, 
 .bg-primary .section-title,
@@ -272,8 +271,7 @@ textarea {
       
       &.not-concerned 
       {
-        filter: brightness(55%);
-        height: 35px;
+        filter: brightness(25%);
       }
     }
   }

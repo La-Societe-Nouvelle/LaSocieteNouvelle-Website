@@ -27,10 +27,10 @@ export default class Header extends React.Component {
              </h2> 
          </Col>
         </Row>
+        </Container>
 
         <CustomDropdown />
 
-      </Container>
 
     </header>
 
