@@ -24,7 +24,7 @@ export default function Home() {
           <h2>Liste des indicateurs</h2>
           <ListGroup variant="flush">
           {
-              metaData.indics.map((indic) => <ListGroupItem action href={'/indicateur/' + indic}>➥ {metaData[indic].libelle}</ListGroupItem>)
+              metaData.indics.map((indic, index) => <ListGroupItem key={index} action href={'/indicateur/' + indic}>➥ {metaData[indic].libelle}</ListGroupItem>)
             }
           </ListGroup>
 

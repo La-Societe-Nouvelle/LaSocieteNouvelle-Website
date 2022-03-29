@@ -76,7 +76,6 @@ function build(postData) {
 
             <div  dangerouslySetInnerHTML={{ __html: content }} />
 
-              <p id="lien-github"><a href={"https://github.com/SylvainH-LSN/LaSocieteNouvelle-Website/blob/main/public/indic-data/" + indic.toUpperCase() + ".md"} target="_blanck">Proposer une amélioration de la page</a></p>
           </section>
 
         </Container>

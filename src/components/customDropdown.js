@@ -5,9 +5,8 @@ const CustomDropdown = () => {
   return (
 
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" >
-          <Container>
-
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Container>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav variant="pills" className='nav-justified flex-grow-1' >
           <Nav.Item>

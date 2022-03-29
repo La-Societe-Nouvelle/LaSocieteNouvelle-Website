@@ -6,7 +6,7 @@ import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
 import metaData from '../lib/metaData';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
 
 const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
@@ -66,9 +66,7 @@ export default function Home() {
             <div className="title-with-side-lines">
               <h2 className="titre-section">Principe de calcul</h2>
             </div>
-            <div className="bloc gray">
-              <img id="graph-donut" src="/images/graphique-donut-1.png" className="img-fluid" alt="icon" />
-            </div>
+              <img id="graph-donut" src="/images/graphique-donut-1.jpg" className="img-fluid mx-auto d-block" alt="graphique" />
           </section>
 
           <section id="section-ressources">
@@ -77,16 +75,16 @@ export default function Home() {
             </div>
             <Row>
               <Col >
-                <div className="bloc v-group white">
-                  <img className="main-icon" id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
+                <div className="bloc v-group white p-4">
+                  <img  id="icon-documentation" src="/images/document.png" alt="icon-documentation" />
                   <h3 className="titre-bloc">Documentation</h3>
                   <a className="btn btn-primary" href="https://docs.lasocietenouvelle.org" target="_blank">Accéder à la ressource</a>
                 </div>
               </Col>
               <Col >
-                <div className="bloc v-group white">
+                <div className="bloc v-group white p-4">
 
-                  <img className="main-icon" id="icon-database" src="/images/database.png" alt="icon-database" />
+                  <img  id="icon-database" src="/images/database.png" alt="icon-database" />
                   <h3 className="titre-bloc">Base de données</h3>
                   <a className="btn btn-primary" target="_blank"
                     href="https://api.lasocietenouvelle.org"
@@ -94,8 +92,8 @@ export default function Home() {
                 </div>
               </Col>
               <Col >
-                <div className="bloc v-group white">
-                  <img className="main-icon" id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
+                <div className="bloc v-group white p-4">
+                  <img  id="icon-webapp" src="/images/web-development.png" alt="icon-webapp" />
                   <h3 className="titre-bloc">Application web</h3>
                   <a className="btn btn-primary"
                     href='https://metriz.lasocietenouvelle.org' target="_blank"
@@ -142,30 +140,31 @@ const IndicatorsPanel = (props) => {
   const icon = indics.includes("eco") ? "social-brf-1-blue.png" : "environnement-brf-1-blue.png";
 
   return (
-    <div className="indicator-section">
-      <div className="h-group icons-odd">
-        {listOdds.map((odd) => <img className={"icon-odd" + (selectedIndic != "none" && metaData[selectedIndic].odds.includes(odd) ? "" : " not-concerned")} id={"icon-odd-" + odd} src={"/images/icon-odd-" + odd + ".png"} alt="icon-odd" />)}
-      </div>
-      <div className="h-group nogap">
-        <div className="indicators-panel-view">
-          {selectedIndic == "none" ? <img className="default-icon" id="icon" src={"/images/" + icon} alt="icon" /> : <IndicatorDetails indic={selectedIndic} />}
+    <Row className="indicator-section">
+      <Col lg={8}>
+        <Accordion flush defaultActiveKey={0}>
+          {indics.map((indic, index) =>
+            <Accordion.Item eventKey={index} key={index} onClick={() => setSelectedIndic(indic)} >
+              <Accordion.Header> {metaData[indic].libelle}</Accordion.Header>
+              <Accordion.Body>
+                {selectedIndic == "none" ? <img className="default-icon" id="icon" src={"/images/" + icon} alt="icon" /> : <IndicatorDetails indic={selectedIndic} />}
+              </Accordion.Body>
+            </Accordion.Item>
+          )}
+        </Accordion>
+      </Col>
+      <Col lg={4}>
+        <div className="icons-odd">
+          {listOdds.map((odd, index) => <img key={index} className={"icon-odd" + (selectedIndic != "none" && metaData[selectedIndic].odds.includes(odd) ? "" : " not-concerned")} id={"icon-odd-" + odd} src={"/images/icon-odd-" + odd + ".png"} alt="icon-odd" />)}
         </div>
-        <div className="indicators-panel-list">
-          {indics.map((indic) =>
-            <p className={indic == selectedIndic ? "highlighted" : ""}
-              onClick={() => setSelectedIndic(indic)}>
-              {metaData[indic].libelle}
-            </p>)}
-        </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   )
 }
 
 const IndicatorDetails = ({ indic }) => {
   return (
     <div className="indicators-panel-details">
-      {/* <h3>{metaData[indic].libelle}</h3> */}
       <p><b>Description : </b>{metaData[indic].description}</p>
       <p><b>Finalité : </b>{metaData[indic].finalite}</p>
       <p><b>Impact direct mesuré : </b>{metaData[indic].descriptionImpactDirect}</p>

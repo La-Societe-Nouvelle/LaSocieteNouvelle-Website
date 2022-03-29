@@ -161,14 +161,13 @@ function ContentSocialFootprint({ uniteLegale, empreinteSocietale }) {
       </div>
       <div>
         <Nav
-          justified
-          pills
-          tabs
+          pills="true"
+          tabs="true"
           fill
         >
           {Object.entries(views).map(([viewKey, viewValue], _) => (
-            <NavItem>
-              <NavLink key={viewKey}
+            <NavItem key={viewKey}> 
+              <NavLink 
                 onClick={() => setSelectedView(viewKey)}
                 className={(viewKey == selectedView) ? "inverse" : ""}>
                 {viewValue.name}
@@ -256,7 +255,6 @@ function ColumnChart({ title, performance}) {
 
   return (
     <div align="center">
-      {console.log(data)}
       <Bar
         id={title}
         data={data}
