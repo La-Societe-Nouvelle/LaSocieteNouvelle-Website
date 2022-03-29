@@ -19,28 +19,21 @@ export default function Newsletter() {
                             Abonnement à lettre d'information de la Société Nouvelle
                         </h2>
                         <p>
-                             Vous pouvez vous abonner gratuitement à notre lettre d'information. Vous recevrez un courriel sur les dernières actualités ou les dernières missions de la Société Nouvelle.
-                             Votre adresse e-mail est uniquement utilisée pour vous envoyer la lettre d'information. 
-                             Vous pouvez à tout moment vous désinscrire en utilisant le lien de désabonnement en bas de toutes nos lettres d'informations.
-                         </p>
+                            Vous pouvez vous abonner gratuitement à notre lettre d'information. Vous recevrez un courriel sur les dernières actualités ou les dernières missions de la Société Nouvelle.
+                            Votre adresse e-mail est uniquement utilisée pour vous envoyer la lettre d'information.
+                            Vous pouvez à tout moment vous désinscrire en utilisant le lien de désabonnement en bas de toutes nos lettres d'informations.
+                        </p>
+                        <Row>
+                            <Col md={{ span: 8, offset: 2 }} >
+                                <iframe className="mj-w-res-iframe" scrolling="no" src="https://app.mailjet.com/widget/iframe/7D62/Mts"></iframe>
 
-
-                <Row>
-                    <Col  md={{ span: 8, offset: 2 }} >
-                    <iframe className="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7D62/Mts"></iframe>
-
-                    </Col>
-                </Row>
-
+                            </Col>
+                        </Row>
                     </section>
                 </Container>
-
-
             </main>
-
             <Footer />
         </>
-
 
     )
 }
