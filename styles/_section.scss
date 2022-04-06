@@ -48,7 +48,7 @@
 
   &.blue 
   {
-    background-color: $primary-color;
+    background-color: $primary;
 
     h1,h2,p,b,h1.titre-bloc
     {
@@ -68,7 +68,7 @@
     
     button 
     {
-      background-color: $dark-blue;
+      background-color: $primary;
     }
   }
 
@@ -86,37 +86,31 @@
     font-size: 2rem;
     margin-top: 15px;
     margin-bottom: 5px;
-    color: $primary-color;
+    color: $primary;
   }
 
   h2.titre-bloc
   {
     font-size: 25px;
     margin : 10px 0;
-    color: $primary-color;
+    color: $primary;
   }
 
-  > img
-  {
-    display: block;
-    margin: auto;
-    max-height: 100%;
-    max-width: 100%;
-  }
+ 
 }
 
 .graph {
   width: 50%;
   background: #ffffff;
     padding: 2em;
-    border: 1px solid lighten($primary-color, 10%);
+    border: 1px solid lighten($primary, 10%);
     margin: 2em 0;
 }
 
 .mesure-indicateur {
   margin: 20px 0;
   h3 {
-    color : $primary-color;
+    color : $primary;
     margin: 5px 0;
     text-align: center;
   }

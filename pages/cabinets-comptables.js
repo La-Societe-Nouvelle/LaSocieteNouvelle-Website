@@ -3,24 +3,23 @@ import { Helmet } from 'react-helmet';
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
+import { Col, Container, Row } from 'react-bootstrap';
 
 export default function Home() 
 {
   return (
-    <div className="container">
+    <>
       <Helmet>
         <title>La société Nouvelle | Cabinets comptables</title>
       </Helmet>
       <Header page="cabinets-comptables" />
 
       <main className="main">
-
-        <div className="section">
-
-          <div className="bloc blue">
-            <h1 className="titre-bloc">Vous êtes un acteur de la comptabilité</h1>
-            <div className="h-group">
-              <div>
+        <Container>
+          <section className='bg-primary'>
+            <h2 className="section-title text-center">Vous êtes un acteur de la comptabilité</h2>
+            <Row>
+              <Col>
                 <p>
                   "Toute compréhension de l'entreprise passe par sa comptabilité. Or les enjeux sociaux
                   et environnementaux qui doivent être considérés en sont absents."
@@ -46,91 +45,94 @@ export default function Home()
                     <li><i>In fine</i>, leur permettre de pleinement contribuer à une économie durable</li>
                   </ul>
                 </p>
-              </div>
-              <div className="v-group">
+              </Col>
+              <Col>
                 <img id="img-illus-cabinets-comptables" src="/images/team_working.png" alt="img-screen-video" />
-              </div>
+              </Col>
+            </Row>
+
+
+          </section>
+
+          <section>
+            <div className="title-with-side-lines">
+              <h2 className="text-center">Un outil de calcul open source à votre disposition</h2>
             </div>
-          </div>
-
-        </div>
-
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2 className="text-center">Un outil de calcul open source à votre disposition</h2>
-          </div>
-          <div className="bloc gray">
-            <div className="h-group">
-              <div className="v-group">
-                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
-                <div className="buttons-group">
-                  <a className="btn" href="https://metriz.lasocietenouvelle.org" target="_blank">Tester avec la version libre</a>
+              <Row className='justify-content-center'>
+                <Col >
+                <div className='text-center'>
+                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" className="img-fluid" />
                 </div>
-              </div>
-              <div className="v-group">
-                <h3>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</h3>
-                <ul>
-                  <li>Maintenance évolutive</li>
-                  <li>Assistance</li>
-                  <li>Personnalisation de vos livrables</li>
-                  <li>Ajustements à vos fichiers internes</li>
-                </ul>
-                <div className="buttons-group">
-                  <a className="btn" href="mailto:contact@lasocietenouvelle.org">Demander une démonstration</a>
-                </div>
-              </div>
+                <p className='text-center'>
+                <a className="btn btn-primary" href="https://metriz.lasocietenouvelle.org" target="_blank">Tester avec la version libre</a>
+                </p>
+           
+                </Col>
+              
+                <Col> 
+                  <h3>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</h3>
+                  <ul>
+                    <li>Maintenance évolutive</li>
+                    <li>Assistance</li>
+                    <li>Personnalisation de vos livrables</li>
+                    <li>Ajustements à vos fichiers internes</li>
+                  </ul>
+                 
+                    <p className='text-cente'>
+                    <a className="btn btn-secondary" href="mailto:contact@lasocietenouvelle.org">Demander une démonstration</a>
+                      </p>
+                  </Col>              
+                </Row>
+          </section>
+
+          <section>
+            <div className="title-with-side-lines">
+              <h2 className="text-center">Fonctionnement de l'Application</h2>
             </div>
-          </div>
-        </div>
-
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2 className="text-center">Fonctionnement de l'Application</h2>
-          </div>
-          <div className="bloc">
-            <FigureEtapes />
-          </div>
-        </div>
-
+            <div className="bloc">
+              <FigureEtapes />
+            </div>
+          </section>
+        </Container>
       </main>
 
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 
 const FigureEtapes = () =>
-  <div className="h-group" id="etapes">
-    <div className="step-container">
+  <Row id="etapes">
+    <Col className="step-container me-1">
       <h4>Import comptable</h4>
       <p>
         Import des écritures comptables à partir du FEC.
       </p>
       <p className="step-number">1</p>
-    </div>
-    <div className="step-container">
+    </Col>
+    <Col className="step-container me-1">
       <h4>Etats initiaux</h4>
       <p>
         Initialisation de l'empreinte des comptes de stocks et d'immobilisations à partir des résultats
         de l'exercice précédent ou via l'utilisation de données par défaut.
       </p>
       <p className="step-number">2</p>
-    </div>
-    <div className="step-container">
+    </Col>
+    <Col className="step-container me-1">
       <h4>Numéros de siren</h4>
       <p>
         Association des numéros de siren aux comptes fournisseurs auxiliaires, et récupération des empreintes
         de la valeur produite des fournisseurs.
       </p>
       <p className="step-number">3</p>
-    </div>
-    <div className="step-container">
+    </Col>
+    <Col className="step-container me-1">
       <h4>Impacts directs</h4>
       <p>
         Evaluation et déclaration des impacts directs de l'entreprise. Des outils de calcul sont disponibles pour les indicateurs les plus complexes.
       </p>
       <p className="step-number">4</p>
-    </div>
-  </div>
+    </Col>
+  </Row>

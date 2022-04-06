@@ -4,7 +4,7 @@
 button, .btn 
 {
   color: white;
-  background-color: $raspberry;
+  background-color: $secondary;
   border: none;
   border-radius: 5px;
   padding: 15px 25px;
@@ -15,7 +15,7 @@ button, .btn
 
   &:hover 
   {
-    background-color: lighten($secondary-color, 15%);
+    background-color: lighten($secondary, 15%);
     color: #fff;
     cursor: pointer;
   }
@@ -23,8 +23,8 @@ button, .btn
   &:disabled 
   {
     background-color: white;
-    color: $primary-color;
-    border: solid 1px $primary-color;
+    color: $primary;
+    border: solid 1px $primary;
   }
 
   &.large

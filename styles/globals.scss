@@ -1,32 +1,67 @@
 @import 'base';
+@import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Roboto:wght@300;400;700;800;900&display=swap');
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  min-width: 100%;
-  font-family: $font-family-text;
-  line-height:1.5em;
+@media screen and (max-width: 1280px)
+{
+  main {
+    background-image: url("/images/img-background.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+  }
+
+  .big-text {
+    font-size: 1.5rem;
+  }
+  
+}
+@media all and (orientation: portrait) {
+  .big-text {
+    font-size: 1rem;
+  }
+}
+main {
+  padding-bottom: 3em;
+  min-height: calc(100vh - 52px);
+  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
+  background-repeat: no-repeat;
+  background-position: left bottom,right bottom;
+  background-attachment: fixed;
+}
+section {
+  padding: 2rem 0;
+
 }
 
-h1 {
-  color: $primary-color;
-  font-family: $font-family;
-  font-weight: 600;
-  margin: 40px auto;
-  text-align: center;
-  line-height: 1.15;
-  font-size: 40px;
+section.bg-primary {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-h2 {
-  color: $primary-color;
-  font-family: $font-family;
-  margin: 0px 10px 20px 0;
-  font-size: 1.5rem;
-  text-align: left;
+
+
+.bg-primary, 
+.bg-primary .section-title,
+.bg-primary a.nav-link, 
+.bg-primary a.nav-link:hover, .bg-primary a.nav-link:active, .bg-primary a.nav-link:focus {
+  color : #ffffff;
+}
+
+.big-text{
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
+  color : #ffffff;
+}
+
+.card-footer {
+  background-color: lighten($light-blue, 1%);
+    p {
+      margin: 0;
+    }
 }
 
 .title-with-side-lines
@@ -35,7 +70,7 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+margin-bottom: 2rem;
   h2 
   {
     position: relative;
@@ -43,7 +78,6 @@ h2 {
     overflow: hidden;
     text-align: center;
     width: 100%;
-    height: 25px;
   }
 
   h2:before, h2:after 
@@ -54,7 +88,7 @@ h2 {
       width: 50%;
       height: 1px;
       content: '\a0';
-      background-color: $primary-color;
+      background-color: $primary;
   }
   h2:after
   {
@@ -73,7 +107,7 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  margin-bottom: 1.1rem;
   h2 
   {
     position: relative;
@@ -81,7 +115,6 @@ h2 {
     overflow: hidden;
     text-align: left;
     width: 100%;
-    height: 25px;
   }
 
   h2:after 
@@ -92,7 +125,7 @@ h2 {
       width: 100%;
       height: 1px;
       content: '\a0';
-      background-color: $primary-color;
+      background-color: $primary;
   }
   h2:after
   {
@@ -101,15 +134,8 @@ h2 {
 }
 
 p {
-  font-size: 1rem;
-  text-align: justify;
-
-  &.center {
-    text-align: center;
-  }
-
   &.highlighted {
-    color: $secondary-color;
+    color: $secondary;
   }
 }
 
@@ -117,17 +143,11 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-.text-center {
-  text-align: center;
-}
 input {
   height: 25px;
   font-size: 14px;
-  border-color: $primary-color 1px;
+  border-color: $primary 1px;
 }
 
 li {
@@ -138,17 +158,7 @@ textarea {
   font-size: 14px;
 }
 
-@media screen and (max-width: 600px) {
 
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 1.0rem;
-  }
-
-}
 
 .with-white-border 
 {
@@ -168,33 +178,6 @@ textarea {
 
 /* ----- class ----- */
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  background-image: url("/images/img-background.png"),url("/images/img-background-celeste.png");
-  background-repeat: no-repeat;
-  background-position: left bottom,right bottom;
-  background-attachment: fixed;
-}
-
-.main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  width: 95%;
-  height: 100%;
-  margin-bottom: 25px;
-  margin-top : 20px;
-  @include lg{
-    width:100%;
-    padding: 0 10%;
-  }
-}
 
 .wrapper {
   img {
@@ -212,43 +195,15 @@ textarea {
   margin-right: auto;
   width: 95%;
 
-  @include lg{
-    width:75%;
-  }
 }
 
-
-.text-link {
-  font-style: italic;
-}
 
 /* -------------------- Index | Chiffre-clef -------------------- */
 
 
-#quick-access_container {
-  max-width: fit-content;
-  //max-width: 250px;
-
-  h2{
-    margin-bottom: 20px;
-  }
-  .box:hover {
-    cursor: pointer;
-  }
-}
-
 .box {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 10px;
-  height: 50px;
-  width: 250px;
-  background-color: lighten($primary-color, 60%);
-  
-  p {
-    color: $primary-color;
-  }
+  background-color: lighten($primary, 60%);
+ 
 }
 
 /* ----- Approche ----- */
@@ -304,34 +259,22 @@ textarea {
 
   .icons-odd 
   {
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 10px 0 20px;
-    height: 50px;
+
 
     img.icon-odd
     {
-      height: 50px;
-      
+      margin : 0.5rem;
+      height: 100px;      
       &.not-concerned 
       {
-        filter: brightness(55%);
-        height: 35px;
+        opacity: 0.1;
       }
     }
   }
 
   .indicators-panel-view
   {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    min-height: 100%;
-    overflow-y: auto;
-    max-height: 240px;
-    border: 1px solid $dark-blue;
+  
 
     img.default-icon
     {
@@ -354,7 +297,7 @@ textarea {
       h3 
       {
         height: max-content;
-        background-color: lighten($primary-color,50%);
+        background-color: lighten($primary,50%);
         margin: 0px;
         padding: 5px;
         color: white;
@@ -378,7 +321,7 @@ textarea {
 
       &.highlighted
       {
-        background-color: $primary-color;
+        background-color: $primary;
         color: white;
       }
     }
@@ -387,16 +330,10 @@ textarea {
 
 img#graph-donut
 {
-  height: 400px;
-  margin: 25px auto;
+  max-height: 400px;
 }
 
-img.main-icon
-{
-  height: 75px;
-  width: 75px;
-  margin: 25px 0 10px;
-}
+
 
 .logos-partners
 {
@@ -462,10 +399,10 @@ img.main-icon
 .content-md table {
   width: 100%;
   table-layout: auto;
-  border-bottom: solid $primary-color 1px;
+  border-bottom: solid $primary 1px;
 }
 .content-md th {
-  border-bottom: solid $primary-color 1px;
+  border-bottom: solid $primary 1px;
 }
 .content-md thead tr th:first-child,
 .content-md tbody tr td:first-child {
@@ -477,12 +414,12 @@ img.main-icon
   li
   {
     padding: 5px 0;
-    color: $primary-color;
+    color: $primary;
 
     &:hover
     {
       cursor: pointer;
-      color: $secondary-color;
+      color: $secondary;
     }
   }
 }

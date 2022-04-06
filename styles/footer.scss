@@ -1,32 +1,57 @@
 @import "base";
 
 /* ----- footer ----- */
+footer {
+  font-size: 0.8rem;
 
-.Footer {
-  background-color: $dark-blue;
-  color: white;
-  display: flex;
-  justify-content: center;
-  border-top: solid $primary-color 1px;
-  width: 100%;
-  height: auto;
-  padding: 1em 0;
-  #links {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content:space-around;
-    padding: 0 5%;
-
-    .link-footer {
-      height: 100%;
-      color: white;
-      font-size: 13px;
+  h6 {
+    margin: 1rem 0;
+  }
+  .top-footer {
+    padding: 2rem 0;
+    background-color: $light-blue;
+    a {
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 0;
+    }
+     i{
+      font-size: 1.7rem;
+      margin-right: 1rem;
     }
 
-    @include xs {
-      flex-flow: column;
+    .list-group-item {
+      border: none;
+      padding: 0;
+      background: none;
+      margin-right: 1rem;
     }
   }
+
+}
+.footer {
+  color: #ffffff;
+  background-color: $primary;
+  padding: 4rem 0 1rem 0;
+
+  h6, .nav-link{
+    color : #ffffff;
+
+  }
+  .nav-link {
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  }
+  .bottom-footer {
+    padding-top: 1rem;
+    margin-top : 1rem;
+    border-top: 1px solid #443f91;
+  }
+  ul li{
+    list-style-type: none;
+    margin-right: 1rem;
+  }
+
 
 }

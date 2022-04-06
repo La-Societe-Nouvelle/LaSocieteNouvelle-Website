@@ -1,11 +1,9 @@
-import Head from 'next/head'
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 // Modules
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
 
 import {
   Chart as ChartJS,
@@ -32,6 +30,7 @@ ChartJS.register(
 );
 
 import content from '../lib/articles.json';
+import { Container, Row, Col, Nav, Card } from 'react-bootstrap';
 
 const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 
@@ -73,7 +72,6 @@ Home.getInitialProps = async () => {
   }
   catch (error) {
     console.log(error);
-    throw error;
   }
 }
 
@@ -207,123 +205,137 @@ export default function Home(props) {
     ],
   };
 
+  
   return (
-    <div className="container">
+
+    <>
       <Helmet>
         <title>La société Nouvelle | Accueil</title>
       </Helmet>
       <Header />
-
       <main className="main" id="index">
+        <Container fluid="lg">
+          <section id="chiffres-clefs" className="bg-primary">
+            <Row>
+              <Col lg={4} sm={12} className='text-center'>
+                <img className="img-fluid" src="/images/coins.png" alt="icon-coins" />
+                <p className='my-2'> <span className="big-text">2054</span> <sup>Mrd €</sup> </p>
+                <p>Production intérieure - France (2020)</p>
+              </Col>
+              <Col lg={4} sm={12} className='text-center'>
+                <img className="img-fluid" id="icon-co2" src="/images/carbon-dioxide.png" alt="icon-co2" />
 
-        <div className="section">
+                <p className='my-2'><span className="big-text">153</span> <sup>gCO2e/€</sup></p>
+                <p className="chiffre-clef-libelle">Intensité d'émission de gaz à effet de serre</p>
 
-          <div className="bloc blue h-group" id="chiffres-clefs">
-            <div className="chiffre-clef">
-              <img className="chiffre-clef-icone" id="icon-coins" src="/images/coins-brf-1-white.png" alt="icon-coins" />
-              <div className="chiffre-clef-valeur">
-                <p>2 054</p>
-                <span>Mrd €</span>
-              </div>
-              <p className="chiffre-clef-libelle">Production intérieure - France (2020)</p>
-            </div>
-            <div className="chiffre-clef">
-              <img className="chiffre-clef-icone" id="icon-co2" src="/images/co2-brf-1-white.png" alt="icon-co2" />
-              <div className="chiffre-clef-valeur">
-                <p>153</p>
-                <span>gCO2e/€</span>
-              </div>
-              <p className="chiffre-clef-libelle">Intensité d'émission de gaz à effet de serre</p>
-            </div>
-            <div className="chiffre-clef">
-              <img className="chiffre-clef-icone" id="icon-scales" src="/images/scale-brf-1-white.png" alt="icon-scales" />
-              <div className="chiffre-clef-valeur">
-                <p>17.9</p>
-                <span>%</span>
-              </div>
-              <p className="chiffre-clef-libelle">Ecart de rémunération F/H</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="section h-group nogap">
-
-          <div className="bloc">
-            <div className="title-with-left-line">
-              <h2 className="titre-bloc">Actualités</h2>
-            </div>
-            <div className="bloc-actualites">
-              {content.blog.map((articleData) => <Vignette key={articleData.titre} {...articleData} />)}
-            </div>
-          </div>
-
-          <div className="bloc" id="quick-access_container">
+              </Col>
+              <Col lg={4} sm={12} className='text-center'>
+                <img className="chiffre-clef-icone" id="icon-scales" src="/images/balance.png" alt="icon-scales" />
+                <div className="chiffre-clef-valeur">
+                  <p className='my-2'><span className="big-text">17.9</span> <sup>%</sup></p>
+                </div>
+                <p className="chiffre-clef-libelle">Ecart de rémunération F/H</p>
+              </Col>
+            </Row>
+          </section>
+          <section>
+            <Row>
+              <Col lg={9} id="post">
+                <div className="title-with-left-line">
+                  <h2>Actualités</h2>
+                </div>
+                <div className="actualites">
+                  {content.blog.map((articleData) => <Vignette key={articleData.titre} {...articleData} />)}
+                </div>
+              </Col>
+              <Col lg={3} id="access">
+                <div className="title-with-left-line">
+                  <h2>Accès rapide</h2>
+                </div>
+                <Nav className="flex-column">
+                  <Nav.Link className="btn w-100" href="https://docs.lasocietenouvelle.org" target="_blank">Ressources</Nav.Link>
+                  <Nav.Link className="btn w-100" href="/portail">Données</Nav.Link>
+                  <Nav.Link className="btn w-100" href="https://metriz.lasocietenouvelle.org" target="_blank">Outils</Nav.Link>
+                </Nav>
+              </Col>
+            </Row>
+          </section>
+          <section>
             <div className="title-with-side-lines">
-              <h2 className="titre-bloc">Accès rapide</h2>
+              <h2>Suivi macro-économique</h2>
             </div>
-            <div className="v-group">
-              <div className="box"
-                onClick={() => window.open('https://lasocietenouvelle.notion.site/METRIZ-GUIDE-D-UTILISATION-ce7af947e69e47b1a3f90697374ad80b')}>
-                <p><b>Ressources</b></p>
-              </div>
-              <div className="box"
-                onClick={() => window.open('/portail')}>
-                <p><b>Données</b></p>
-              </div>
-              <div className="box"
-                onClick={() => window.open('https://metriz.lasocietenouvelle.org')}>
-                <p><b>Outil</b></p>
-              </div>
-            </div>
-          </div>
+            <Row>
 
-        </div>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Line
+                      data={dataGHG} options={optionsGHG}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
+                    <p className="source">
+                      Source : Insee, Eurostat | Traitement : La Société Nouvelle
+                    </p>
+                  </Card.Footer>
+                </Card>
 
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Suivi macro-économique</h2>
-          </div>
-          <div className={"bloc h-group"}>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
 
-            <div className="graph">
+                    <Line
+                      data={dataWAT} options={optionsWat}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
 
-              <Line
-                data={dataGHG} options={optionsGHG}
-              />
-              <p className="source">
-                Source : Insee, Eurostat | Traitement : La Société Nouvelle
-              </p>
-            </div>
-            <div className="graph">
+                    <p className="source">
+                      Source : Insee, Eurostat | Traitement : La Société Nouvelle
+                    </p>
+                  </Card.Footer>
 
-              <Line
-                data={dataWAT} options={optionsWat}
-              />
-              <p className="source">
-                Source : Insee, Eurostat | Traitement : La Société Nouvelle
-              </p>
-            </div>
-          </div>
-        </div>
+                </Card>
+
+              </Col>
+            </Row>
+          </section>
+          <section>
+
+          </section>
+        </Container>
 
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 
 const Vignette = (props) =>
-  <div className="vignette">
-    <h3>{props.titre}</h3>
-    <p><i>Publié le {props.date}</i></p>
-    <p>{props.accroche}</p>
-    <p>{props.texte}..</p>
-    <div className="buttons">
-      <a href="/blog" className="btn">
-        Lire la suite
-      </a>
-    </div>
-  </div>
+
+  <>
+    <Card>
+      <Card.Body>
+      <img src="images/equipe-la-societe-nouvelle-thumbnail.jpg" className="img-fluid img-thumbnail rounded float-start me-4"/> 
+
+        <Card.Title>{props.titre}</Card.Title>
+        <Card.Subtitle>{props.accroche}</Card.Subtitle>
+        <p className='date'>
+          Publié le {props.date}
+        </p>
+        <Card.Text>
+          {props.texte}
+        </Card.Text>
+        <p className='text-end'>
+          <a href="/blog" className='btn btn-secondary'>
+            Lire la suite
+          </a>
+        </p>
+
+      </Card.Body>
+    </Card>
+
+  </>

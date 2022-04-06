@@ -2,14 +2,16 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
-// Imports
-
 // Components
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 
 // Modules
-import { Chart } from "react-google-charts";
+//import { Chart } from "react-google-charts";
+import { Alert, Card, Col, Container, Nav, NavItem, NavLink, Row } from 'react-bootstrap';
+
+import Chart from 'chart.js/auto';
+import { Bar } from 'react-chartjs-2';
 
 
 /* The base URL of the API */
@@ -82,28 +84,28 @@ Home.getInitialProps = async (ctx) => {
 /* General Page Layout */
 export default function Home(props) {
   return (
-    <div className="container">
+
+    <>
       <Helmet>
         <title>La société Nouvelle | Empreinte sociétale</title>
       </Helmet>
       <Header />
-
       <main className="main" id="company-footprint">
+        <Container fluid="lg">
+          <section>
+            <h2> Empreinte Sociétale #{props.siren}</h2>
 
-        <div className="section">
-          <h1> Empreinte Sociétale #{props.siren}</h1>
-        </div>
-
-        {
-          props.dataFetched ? <ContentSocialFootprint {...props} />
-            : <ContentError {...props} />
-        }
-
+            {
+              props.dataFetched ? <ContentSocialFootprint {...props} />
+                : <ContentError {...props} />
+            }
+          </section>
+        </Container>
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }
 
@@ -115,42 +117,72 @@ function ContentSocialFootprint({ uniteLegale, empreinteSocietale }) {
 
   return (
     <>
-      <div className="section" id="legal-unit-data">
-        <h2> {uniteLegale.denomination} </h2>
-        <p>
-          SIREN : {uniteLegale.siren}
-        </p>
-        <p>
-          Activité principale : {uniteLegale.activitePrincipaleLibelle} <br />
-          Siège : {uniteLegale.communeSiege} ({uniteLegale.codePostalSiege})
-        </p>
+      <div id="legal-unit-data">
+        <Card>
+          <Card.Header>
+            <h3> {uniteLegale.denomination} </h3>
+          </Card.Header>
+          <Card.Body>
+            <ul>
+              <li>
+                SIREN : {uniteLegale.siren}
+              </li>
+              <li>
+                Activité principale : {uniteLegale.activitePrincipaleLibelle}
+              </li>
+              {
+                uniteLegale.communeSiege || uniteLegale.codePostalSiege && (
+                  <li>
+                    Siège :
+                    {uniteLegale.codePostalSiege + " " + uniteLegale.communeSiege}
+                  </li>
+                )
+              }
+            </ul>
+          </Card.Body>
+
+        </Card>
+
+        <div>
+          <Alert
+            color="primary"
+            className="my-4"
+          >
+            <p>
+              <i className="bi bi-exclamation-triangle-fill"></i> Les valeurs affichées peuvent correspondre à des données par défaut non spécifique à l'entreprise,
+              et peuvent donc être éloignées de la réalité de l'entreprise.
+              Merci de prendre ces données avec précaution.
+            </p>
+            <p>
+              La valeur de référence correspond à la valeur de l'indicateur pour l'agrégat macroéconomique le plus proche.
+            </p>
+          </Alert>
+        </div>
+      </div>
+      <div>
+        <Nav
+          pills="true"
+          tabs="true"
+          fill
+        >
+          {Object.entries(views).map(([viewKey, viewValue], _) => (
+            <NavItem key={viewKey}> 
+              <NavLink 
+                onClick={() => setSelectedView(viewKey)}
+                className={(viewKey == selectedView) ? "inverse" : ""}>
+                {viewValue.name}
+              </NavLink>
+            </NavItem>
+          ))}
+
+        </Nav>
       </div>
 
-      <div id="notes">
-        <p>
-          /!\ Les valeurs affichées peuvent correspondre à des données par défaut non spécifique à l'entreprise,
-          et peuvent donc être éloignées de la réalité de l'entreprise.
-          Merci de prendre ces données avec précaution.
-        </p>
-        <p>
-          La valeur de référence correspond à la valeur de l'indicateur pour l'agrégat macroéconomique le plus proche.
-        </p>
-      </div>
-
-      <div className="h-group" id="menu-footprint">
-        {Object.entries(views).map(([viewKey, viewValue], _) => (
-          <button key={viewKey}
-            onClick={() => setSelectedView(viewKey)}
-            className={(viewKey == selectedView) ? "inverse" : ""}>
-            {viewValue.name}
-          </button>))}
-      </div>
-
-      <div id="sfp-view">
+      <Row className="indic-details">
         {selectedIndicatorDetails.map(details => (
           <IndicatorDetails key={details.code} {...details} />
         ))}
-      </div>
+      </Row>
     </>
   )
 }
@@ -158,43 +190,75 @@ function ContentSocialFootprint({ uniteLegale, empreinteSocietale }) {
 
 /* Basic indicator view */
 function IndicatorDetails
-  ({ code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared, viewWindow }) {
+  ({ code, libelle, libelleFlag, uncertainty, year, value, unit, valueDeclared }) {
   const displayedValue = Math.round(10 * value) / 10;
-  const displayedColor = valueDeclared ? "#616161" : "#b0b0b0";
 
   return (
-    <div key={code} className="indic-view">
-      <h4 id="indic-view-label">{libelle}</h4>
-      <ColumnChart title={libelle} viewWindow={viewWindow} performance={displayedValue} color={displayedColor} />
-      <p className={valueDeclared ? "indic-value" : "indic-value default"}>{Math.round(displayedValue)} {unit}</p>
-      <p className="indic-subdata">Source : {libelleFlag}</p>
-      <p className="indic-subdata">Incertitude : {Math.round(uncertainty)} %</p>
-      <p className="indic-subdata">Dernière mise à jour : {year}</p>
-    </div>
+    <Col key={code} className="indic-view" lg={4}>
+      <Card>
+        <Card.Header>
+          <h4 id="indic-view-label">{libelle}</h4>
+        </Card.Header>
+        <Card.Img>
+        </Card.Img>
+        <ColumnChart title={libelle} performance={displayedValue}  />
+        <Card.Body>
+        <p className={valueDeclared ? "indic-value" : "indic-value default"}>{Math.round(displayedValue)} {unit}</p>
+        <p>
+          Incertitude : {Math.round(uncertainty)} %
+        </p>
+        </Card.Body>
+       <Card.Footer className="d-flex justify-content-between">
+          <p>
+          Source : {libelleFlag}
+          </p>
+          <p>
+          Dernière mise à jour : {year}
+          </p>
+        </Card.Footer>  
+      </Card>
+    </Col>
   );
 }
 
-function ColumnChart({ title, performance, color, viewWindow = {} }) {
+function ColumnChart({ title, performance}) {
+
+
+  const data = {
+    datasets: [{
+      barPercentage: 0.5,
+      data: [performance],
+      backgroundColor: ["RGB(251, 122, 127)"],
+    }],
+    labels: ["Unité legale"]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    devicePixelRatio: 2,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+
+      y: {
+        beginAtZero: true,
+        suggestedMax: 100,
+
+      }
+    }
+
+  };
+
   return (
     <div align="center">
-      <Chart
-        width={"80%"}
-        height={"150px"}
-        chartType="ColumnChart"
-        loader={<div>Chargement</div>}
-        data={
-          (performance != NaN && title)
-            ? [
-              ["", title, { role: "style" }],
-              ["Unité légale", performance, color],
-            ]
-            : []}
-        options={{
-          legend: { position: 'none' },
-          vAxis: { viewWindow: viewWindow, viewWindowMode: "explicit" },
-          enableInteractivity: false,
-          animation: { duration: 600, easing: "inAndOut" }
-        }}
+      <Bar
+        id={title}
+        data={data}
+        options={options}
       />
     </div>)
 }

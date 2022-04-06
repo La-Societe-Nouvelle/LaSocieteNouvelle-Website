@@ -3,103 +3,96 @@ import Head from 'next/head'
 import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 import { Helmet } from 'react-helmet';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Helmet>
         <title>La société Nouvelle | Pilotez et valorisez votre performance extra-financière </title>
       </Helmet>
       <Header page="entreprises" />
 
       <main className="main">
+        <Container>
 
-        <div className="section h-group">
+          <section className="bg-primary">
 
-          <div className="bloc blue">
-            <h1 className="titre-bloc">Pilotez et valorisez votre performance extra-financière</h1>
+              <h2 className="section-title text-center">Pilotez et valorisez votre performance extra-financière</h2>
 
-            <div className="h-group">
-              <div>
-                <p>
-                  Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
-                    dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de
-                  prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
+                  <p>
+                    Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
+                      dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de
+                    prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
+                  </p>
+                  <p>
+                    Mesurer les impacts de sa valeur ajoutée et de sa valeur produite permet d'évaluer sa capacité à produire
+                    de la valeur en limitant ses impacts négatifs, de se positionner vis-à-vis de sa branche d'activités et
+                    des objectifs de développement durable fixé.
+                  </p>
+                  <p>
+                    Les indicateurs permettent d'informer vos clients sur les impacts liés à leurs dépenses et apportent
+                    ainsi une véritable transparence.
+                  </p>
+
+          </section>
+
+          <section className='mt-2'>
+            <div className="title-with-side-lines">
+              <h2 className="titre-section">Principe de calcul</h2>
+            </div>
+            <div className="bloc gray">
+              <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" class="img-fluid" />
+            </div>
+          </section>
+
+          <section>
+            <div className="title-with-side-lines">
+              <h2>La mesure des indicateurs vous permet de : </h2>
+            </div>
+            <Row className={"mesure-indicateur"}>
+              <Col>
+                <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" class="img-fluid"  />
+                <h3>Suivre et valoriser</h3>
+                <p>votre performance extra-financière</p>
+              </Col>
+              <Col>
+                <img id="icon-position" src="/images/icon-position.png" alt="icon-position" class="img-fluid" />
+                <h3>Vous positionner</h3>
+                <p>par rapport aux objectifs de développement durable</p>
+              </Col>
+              <Col>
+                <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate" class="img-fluid"  />
+                <h3>Anticiper</h3>
+                <p>de potentiels risques</p>
+              </Col>
+            </Row>
+          </section>
+          
+          <section>
+            <div className="title-with-side-lines">
+              <h2>Comment mesurer ces indicateurs pour mon entreprise ?</h2>
+            </div>
+            <Row className="bloc gray">
+              <Col>
+              <p>
+                Une application web Open Source est à votre disposition. Elle permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables),
+                    les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables téléchargeables.
                 </p>
-                <p>
-                  Mesurer les impacts de sa valeur ajoutée et de sa valeur produite permet d'évaluer sa capacité à produire
-                  de la valeur en limitant ses impacts négatifs, de se positionner vis-à-vis de sa branche d'activités et
-                  des objectifs de développement durable fixé.
-                </p>
-                <p>
-                  Les indicateurs permettent d'informer vos clients sur les impacts liés à leurs dépenses et apportent
-                  ainsi une véritable transparence.
-                </p>
-              </div>
-            </div>
+              </Col>
+              <Col>
+              <p className='text-center'>
+                  <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" className='img-fluid' />
+                  </p>
+                  <p className='text-center'>
+                  <a className="btn btn-secondary" href="https://metriz.lasocietenouvelle.org" target="_blank">Accéder à l'outil</a>
+                    </p>
+              </Col>
+            </Row>
+          </section>
 
-          </div>
-        </div>
-
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2 className="titre-section">Principe de calcul</h2>
-          </div>
-          <div className="bloc gray">
-            <img id="graph-donut" src="/images/graphique-donut-1.png" alt="icon" />
-          </div>
-        </div>
-
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2>La mesure des indicateurs vous permet de : </h2>
-          </div>
-          <div className={"h-group mesure-indicateur"}>
-            <div>
-              <img id="icon-valorise" src="/images/icon-valorise.png" alt="icon-valorise" />
-              <h3>Suivre et valoriser</h3>
-              <p>votre performance extra-financière</p>
-            </div>
-            <div>
-              <img id="icon-position" src="/images/icon-position.png" alt="icon-position" />
-              <h3>Vous positionner</h3>
-              <p>par rapport aux objectifs de développement durable</p>
-            </div>
-            <div>
-              <img id="icon-anticipate" src="/images/icon-anticipate.png" alt="icon-anticipate" />
-              <h3>Anticiper</h3>
-              <p>de potentiels risques</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="section">
-          <div className="title-with-side-lines">
-            <h2>Comment mesurer ces indicateurs pour mon entreprise ?</h2>
-          </div>
-          <div className="bloc gray">
-            <div className="h-group">
-              <div>
-                <p>Une application web Open Source est à votre disposition. Elle permet de faire le lien entre votre FEC (Fichier d'Ecritures Comptables), 
-                  les données disponibles au sein de notre base de données ouverte et vos impacts directs pour produire automatiquement des livrables téléchargeables.</p>
-              </div>
-              <div className="v-group">
-                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" />
-                <div className="buttons-group">
-                  <a className="btn" href="https://metriz.lasocietenouvelle.org" target="_blank">Accéder à l'outil</a>
-                  {/* <button>Accéder au tutoriel</button> */}
-                </div>
-              </div>
-            </div>
-            {/* <h2>Contactez les cabinets comptables partenaires pour bénéficier de leur expertise</h2> */}
-            <div className="h-group">
-
-            </div>
-          </div>
-        </div>
-
-        {/* <div className="section">
+          {/* <div className="section">
           <div className="title-with-side-lines">
             <h2 className="titre-section">Les cabinets comptables partenaires</h2>
           </div>
@@ -110,7 +103,7 @@ export default function Home() {
           </div>
         </div> */}
 
-        {/* <div className="section">
+          {/* <div className="section">
           <div className="title-with-side-lines">
             <h2>Aller plus loin...</h2>
           </div>
@@ -132,10 +125,11 @@ export default function Home() {
           </div>
         </div>      */}
 
+        </Container>
       </main>
 
       <Footer />
 
-    </div>
+    </>
   )
 }

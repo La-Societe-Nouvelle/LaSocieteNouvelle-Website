@@ -2,9 +2,6 @@
 
 .article {
 
-    //background: #fff;
-    padding: 2em 4em;
-
     p {
         text-align: justify; 
     }
@@ -20,21 +17,11 @@
             width: 30px;
             height: 10px;
             content: " ";
-            background-color: $secondary-color;
+            background-color: $secondary;
         }
     }
 
-    .h-group {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 26px;
-        gap : 40px;
-        >div {
-            flex: 0 1 ;
-        }
-    }
+  
 
     .subtitle {
         font-size: 2.7em;
@@ -46,7 +33,6 @@
     }
 
     img {
-        float : left;
         margin-right: 20px;
         margin-bottom: 20px;
     }
@@ -60,38 +46,22 @@
             width: 15px;
             height: 5px;
             content: " ";
-            background-color: $secondary-color;
+            background-color: $secondary;
         }
-    }
-    h4 {
-        font-size: 1.3em;
-        font-family: "Raleway";
-        margin : 1em 0;
-    }
-    h5 {
-        font-size: 1.1em;
-        font-family: "Raleway";
-        margin : 1em 0;
-    }
-    .row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap : 40px;
-        div {
-            flex-basis: 100%;
-        }
-    }
-    .w75 {
-        width: 75%;
     }
 
+    h5 {
+   
+        margin : 1em 0;
+    }
+ 
+   
     .big-quote {
         font-weight: 900;
-        color : $primary-color;
+        color : $primary;
         font-size : 2em;
         margin-top: 1em;
-        margin-bottom: 2em;
+        margin-bottom: 1.5em;
         margin-left : 5em;
     }
     .quote {
@@ -99,7 +69,7 @@
         font-size: 1.5em;
         text-align: right;
         margin-top: 2em;
-        margin-bottom: 2em;
+        margin-bottom: 1.5em;
         margin-right : 5em;
         }
 
