@@ -79,7 +79,7 @@ export default function Home()
                   </ul>
                  
                     <p className='text-cente'>
-                    <a className="btn btn-secondary" href="mailto:contact@lasocietenouvelle.org">Demander une démonstration</a>
+                    <a className="btn btn-secondary" href=" https://calendly.com/sylvain-humiliere/demonstration-application-web" target="_blank">Demander une démonstration</a>
                       </p>
                   </Col>              
                 </Row>
