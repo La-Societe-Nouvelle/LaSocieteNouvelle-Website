@@ -24,12 +24,12 @@ export default function Home() {
                   <p>
                     Climat, inégalités sociales, raréfaction des ressources naturelles... <b>Les entreprises ont un rôle majeur
                       dans la construction d'une société durable</b>. Il est désormais incontournable pour une entreprise de
-                    prendre en compte ses enjeux clefs s'il elle veut assurer sa pérennité.
+                    prendre en compte ses enjeux clefs si elle veut assurer sa pérennité.
                   </p>
                   <p>
                     Mesurer les impacts de sa valeur ajoutée et de sa valeur produite permet d'évaluer sa capacité à produire
                     de la valeur en limitant ses impacts négatifs, de se positionner vis-à-vis de sa branche d'activités et
-                    des objectifs de développement durable fixé.
+                    des objectifs de développement durable fixés.
                   </p>
                   <p>
                     Les indicateurs permettent d'informer vos clients sur les impacts liés à leurs dépenses et apportent
