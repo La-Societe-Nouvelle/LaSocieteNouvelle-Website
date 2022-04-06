@@ -5,8 +5,7 @@ import Header from '../src/components/header'
 import Footer from '../src/components/footer'
 import { Col, Container, Row } from 'react-bootstrap';
 
-export default function Home() 
-{
+export default function Home() {
   return (
     <>
       <Helmet>
@@ -58,31 +57,30 @@ export default function Home()
             <div className="title-with-side-lines">
               <h2 className="text-center">Un outil de calcul open source à votre disposition</h2>
             </div>
-              <Row className='justify-content-center'>
-                <Col >
+            <Row className='justify-content-center'>
+              <Col >
                 <div className='text-center'>
-                <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" className="img-fluid" />
+                  <img id="img-screen-webapp" src="/images/img-screen-webapp.png" alt="img-screen-webapp" className="img-fluid" />
                 </div>
                 <p className='text-center'>
-                <a className="btn btn-primary" href="https://metriz.lasocietenouvelle.org" target="_blank">Tester avec la version libre</a>
+                  <a className="btn btn-primary" href="https://metriz.lasocietenouvelle.org" target="_blank">Tester avec la version libre</a>
                 </p>
-           
-                </Col>
-              
-                <Col> 
-                  <h3>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</h3>
-                  <ul>
-                    <li>Maintenance évolutive</li>
-                    <li>Assistance</li>
-                    <li>Personnalisation de vos livrables</li>
-                    <li>Ajustements à vos fichiers internes</li>
-                  </ul>
-                 
-                    <p className='text-cente'>
-                    <a className="btn btn-secondary" href=" https://calendly.com/sylvain-humiliere/demonstration-application-web" target="_blank">Demander une démonstration</a>
-                      </p>
-                  </Col>              
-                </Row>
+
+              </Col>
+
+              <Col>
+                <h3>Devenez partenaire et bénéficiez d'une version spécifique à votre disposition</h3>
+                <ul>
+                  <li>Maintenance évolutive</li>
+                  <li>Assistance</li>
+                  <li>Personnalisation de vos livrables</li>
+                  <li>Ajustements à vos fichiers internes</li>
+                </ul>
+                <p className='text-cente'>
+                  <a className="btn btn-secondary" href=" https://calendly.com/sylvain-humiliere/demonstration-application-web" target="_blank">Demander une démonstration</a>
+                </p>
+              </Col>
+            </Row>
           </section>
 
           <section>
