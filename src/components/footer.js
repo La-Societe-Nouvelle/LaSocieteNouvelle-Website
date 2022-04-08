@@ -30,7 +30,7 @@ export default class Footer extends React.Component {
                     </a>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <a href="https://twitter.com/SHumiliere" target="_blank"><i className="bi bi-twitter" role="img" ></i></a>
+                    <a href="https://twitter.com/LSN_FR" target="_blank"><i className="bi bi-twitter" role="img" ></i></a>
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <a href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank">
