@@ -144,12 +144,6 @@ a {
 }
 
 
-input {
-  height: 25px;
-  font-size: 14px;
-  border-color: $primary 1px;
-}
-
 li {
   list-style-type: square;
 }
@@ -429,4 +423,8 @@ img#graph-donut
   font-size: 10px;
   font-style: italic;
   text-align: right;
+}
+
+.smaller-text {
+  font-size: 0.8rem;
 }
