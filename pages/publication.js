@@ -189,7 +189,7 @@ const LegalForm = (props) => {
   const [denomination, setDenomination] = useState(props.denomination);
   const onDenominationChange = (event) => setDenomination(event.target.value);
 
-  const handleOnBlur = async (event) => {
+  const handleOnBlur = async () => {
     // fetch denomination
     try {
       const endpoint = `${apiBaseUrl}/siren/${siren}`;
