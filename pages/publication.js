@@ -60,7 +60,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       // Progression
-      step: 4,
+      step: 1,
       siren: "",
       denomination: "",
       year: "",
@@ -86,7 +86,7 @@ class Form extends React.Component {
   buildForm = () => {
     switch (this.state.step) {
       case 0:
-        return <ErrorMessage />;
+        return <ErrorMessage goBack={this.nextStep.bind(this)}/>;
       case 1:
         return (
           <LegalForm
@@ -120,9 +120,7 @@ class Form extends React.Component {
           />
         );
       case 5:
-        return <StatementSendingMessage />;
-      case 6:
-        return <StatementSendMessage />;
+        return <StatementSendMessage     />;
     }
   };
 
@@ -177,7 +175,7 @@ class Form extends React.Component {
       statementFile
     );
 
-    if (resAdmin.status < 300) this.setState({ step: 9 });
+    if (resAdmin.status < 300) this.setState({ step: 6 });
     else this.setState({ step: 0 });
   };
 }
@@ -434,11 +432,24 @@ export const DeclarantForm = (props) => {
   const [email, setEmail] = useState(props.email);
   const [autorisation, setAutorisation] = useState(props.autorisation);
   const [price, setPrice] = useState();
+  const [isDisabled, setDisabled] = useState(true);
   const changePrice = (event) => setPrice(event.target.value);
   const changeDeclarant=  (event) => setDeclarant(event.target.value);
   const changeEmail = (event) => setEmail(event.target.value);
   const changeAutorisation = (event) => setAutorisation(event.target.checked);
   
+  useEffect(() => {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (price && autorisation && declarant.length > 0 ) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  });
+
+
   const onCommit = () => props.commitDeclarant(declarant, email, autorisation, price);
 
   return (
@@ -452,6 +463,7 @@ export const DeclarantForm = (props) => {
             <input
               type="text"
               className="form-control"
+              required
               value={declarant}
               onChange={changeDeclarant}
             />
@@ -462,7 +474,8 @@ export const DeclarantForm = (props) => {
           <div className="col-sm-7">
             <input
               className="form-control"
-              type="text"
+              type="email"
+              required
               value={email}
               onChange={changeEmail}
             />
@@ -553,7 +566,7 @@ export const DeclarantForm = (props) => {
           </button>
           <button
             className="btn btn-primary"
-            // disabled={!isAllValid}
+            disabled={isDisabled}
             onClick={onCommit}
           >
             Valider
@@ -639,16 +652,6 @@ const Summary = ({
 
 /* ---------- END ---------- */
 
-const StatementSendingMessage = () => {
-  return (
-    <>
-      <h3>Déclaration validée</h3>
-      <div className="form_inner">
-        <p>Envoi en cours...</p>
-      </div>
-    </>
-  );
-};
 
 const StatementSendMessage = () => {
   return (
@@ -661,13 +664,16 @@ const StatementSendMessage = () => {
   );
 };
 
-const ErrorMessage = () => {
+const ErrorMessage = ({goBack}) => {
   return (
     <>
       <div className="alert alert-danger">
         Erreur lors de l'envoi de la publication. Si l'erreur persiste, veuillez
         nous contacter.
       </div>
+      <button className="btn btn-primary" onClick={goBack}>
+            Retour
+          </button>
     </>
   );
 };
