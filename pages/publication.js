@@ -1,16 +1,17 @@
 // La Société Nouvelle
 
 // react
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 // Components
-import Head from 'next/head'
-import Header from '../src/components/header.js'
-import Footer from '../src/components/footer.js'
+import Header from "../src/components/header.js";
+import Footer from "../src/components/footer.js";
 
-import { sendStatementToAdmin, sendStatementToDeclarant } from './api/mail-api.js'
+import {
+  sendStatementToAdmin,
+  sendStatementToDeclarant,
+} from "./api/mail-api.js";
 
 /* The base URL of the API */
 /* TODO: Must be exteriorized in a build variable */
@@ -22,39 +23,44 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 
-import metaData from '../lib/metaData';
-import { exportStatementPDF, getBinaryPDF } from '../src/outputs/statementWriter.js';
+import metaData from "../lib/metaData";
+import {
+  exportStatementPDF,
+  getBinaryPDF,
+} from "../src/outputs/statementWriter.js";
+
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 /* ---------- MAIN FUNCTION ---------- */
 
 export default function Home(props) {
   return (
-    <div className="container">
+    <>
       <Helmet>
         <title>La société Nouvelle | Déclaration - Empreinte sociétale </title>
       </Helmet>
       <Header />
       <main className="main">
-        <h1>Declaration - Empreinte Sociétale</h1>
-        <Form defaultData={props.defaultData} />
+        <Container>
+          <section className="report-form">
+            <h2>Declaration - Empreinte Sociétale</h2>
+            <Form defaultData={props.defaultData} />
+          </section>
+        </Container>
       </main>
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
 
 /* ---------- FOOTPRINT STATEMENT FORM ---------- */
 
 class Form extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state =
-    {
+    this.state = {
       // Progression
       step: 1,
-
-      // Legal entity data (steps 1 to 3)
       siren: "",
       denomination: "",
       year: "",
@@ -69,90 +75,93 @@ class Form extends React.Component {
       autorisation: false,
 
       // tarif (step 6)
-      price: ""
-    }
+      price: "",
+    };
   }
 
   render() {
-    return (
-      <div className="declarationForm">
-        {this.buildForm()}
-      </div>
-    )
+    return <Row>{this.buildForm()}</Row>;
   }
 
-  buildForm = () => 
-  {
-    switch (this.state.step) 
-    {
-      case 0: return <ErrorMessage />
-      case 1: return <SirenInput {...this.state} commitSiren={this.commitSiren.bind(this)} />
-      case 2: return <DenominationInput {...this.state} commitDenomination={this.commitDenomination.bind(this)} goBack={this.goBack.bind(this)} />
-      case 3: return <YearInput {...this.state} commitYear={this.commitYear.bind(this)} goBack={this.goBack.bind(this)} />
-      case 4: return <SocialFootprintForm {...this.state} commitSocialFootprint={this.commitSocialFootprint.bind(this)} goBack={this.goBack.bind(this)} />
-      case 5: return <DeclarantForm {...this.state} commitDeclarant={this.commitDeclarant.bind(this)} goBack={this.goBack.bind(this)} />
-      case 6: return <PriceInput {...this.state} commitPrice={this.commitPrice.bind(this)} goBack={this.goBack.bind(this)} />
-      case 7: return <Summary {...this.state} exportStatement={this.exportStatement.bind(this)} submitStatement={this.submitStatement.bind(this)} goBack={this.prevStep.bind(this)} />
-      case 8: return <StatementSendingMessage />
-      case 9: return <StatementSendMessage />
+  buildForm = () => {
+    switch (this.state.step) {
+      case 0:
+        return <ErrorMessage goBack={this.nextStep.bind(this)}/>;
+      case 1:
+        return (
+          <LegalForm
+            {...this.state}
+            commitLegal={this.commitLegal.bind(this)}
+          />
+        );
+      case 2:
+        return (
+          <SocialFootprintForm
+            {...this.state}
+            commitSocialFootprint={this.commitSocialFootprint.bind(this)}
+            goBack={this.goBack.bind(this)}
+          />
+        );
+      case 3:
+        return (
+          <DeclarantForm
+            {...this.state}
+            commitDeclarant={this.commitDeclarant.bind(this)}
+            goBack={this.goBack.bind(this)}
+          />
+        );
+      case 4:
+        return (
+          <Summary
+            {...this.state}
+            exportStatement={this.exportStatement.bind(this)}
+            submitStatement={this.submitStatement.bind(this)}
+            goBack={this.prevStep.bind(this)}
+          />
+        );
+      case 5:
+        return <StatementSendMessage     />;
     }
-  }
+  };
 
   /* --- Submit commit --- */
 
   nextStep = () => this.setState({ step: this.state.step + 1 });
   prevStep = () => this.setState({ step: this.state.step - 1 });
 
-  commit = () => this.setState({ step: this.state.step + 1 })
-  goBack = () => this.setState({ step: this.state.step - 1 })
+  commit = () => this.setState({ step: this.state.step + 1 });
+  goBack = () => this.setState({ step: this.state.step - 1 });
 
-  // Commit siren
-  commitSiren = async (siren) => {
-    // fetch denomination
-    try {
-      const endpoint = `${apiBaseUrl}/siren/${siren}`;
-      const response = await fetch(endpoint, { method: 'get' });
-      const data = await response.json();
-      if (data.header.statut === 200) {
-        this.setState({
-          siren: siren,
-          denomination: data.profil.descriptionUniteLegale.denomination,
-          step: 2
-        })
-      } else {
-        this.setState({
-          siren: siren,
-          denomination: "",
-          step: 2
-        })
-      }
-    } catch (error) {
-      throw error;
-    }
-  }
+  // Commit Legal Data
 
-  // Commit denomination
-  commitDenomination = (denomination) => this.setState({ denomination: denomination, step: 3 })
-
-  // Commit year
-  commitYear = (year) => this.setState({ year: year, step: 4 })
+  commitLegal = (siren, denomination, year) =>
+    this.setState({
+      siren: siren,
+      denomination: denomination,
+      year: year,
+      step: 2,
+    });
 
   // Commit values
-  commitSocialFootprint = (socialfootprint) => this.setState({ socialfootprint: socialfootprint, step: 5 })
+  commitSocialFootprint = (socialfootprint) =>
+    this.setState({ socialfootprint: socialfootprint, step: 3 });
 
   // Commit Declarant
-  commitDeclarant = (declarant, email, autorisation) => this.setState({ declarant: declarant, email: email, autorisation: autorisation, step: 6 })
-
-  // Commit price
-  commitPrice = (price) => this.setState({ price: price, step: 7 })
+  commitDeclarant = (declarant, email, autorisation, price) =>
+    this.setState({
+      declarant: declarant,
+      email: email,
+      autorisation: autorisation,
+      price : price,
+      step: 4,
+    });
 
   // Export statement
-  exportStatement = () => exportStatementPDF(this.state)
+  exportStatement = () => exportStatementPDF(this.state);
 
   /* --- Submit assessment --- */
   submitStatement = async (event) => {
     event.preventDefault();
-    this.setState({ step: 8 })
 
     const statementFile = getBinaryPDF(this.state);
 
@@ -160,127 +169,163 @@ class Form extends React.Component {
     const resAdmin = await sendStatementToAdmin(messageToAdmin, statementFile);
 
     const messageToDeclarant = mailToDeclarantWriter(this.state);
-    const resDeclarant = await sendStatementToDeclarant(this.state.email, messageToDeclarant, statementFile);
+    const resDeclarant = await sendStatementToDeclarant(
+      this.state.email,
+      messageToDeclarant,
+      statementFile
+    );
 
-    if (resAdmin.status < 300) this.setState({ step: 9 })
-    else this.setState({ step: 0 })
-  }
+    if (resAdmin.status < 300) this.setState({ step: 6 });
+    else this.setState({ step: 0 });
+  };
 }
 
-/* ----- SIREN FORM ----- */
-const SirenInput = ({ siren, commitSiren }) => {
-  const [sirenInput, setSiren] = useState(siren);
+/* ---------- LEGAL FORM ---------- */
+
+const LegalForm = (props) => {
+  const [siren, setSiren] = useState(props.siren);
   const onSirenChange = (event) => setSiren(event.target.value);
-  const onEnterPress = (event) => { if (event.which == 13) event.target.blur() }
-  const onCommit = () => commitSiren(sirenInput)
 
-  const isAllValid = /^[0-9]{9}$/.test(sirenInput);
-
-  return (
-    <div className="strip">
-      <h2>Numéro de siren</h2>
-      <div className="form_inner">
-        <div className="siren-input input">
-          <label>Numéro de siren (9 chiffres) : </label>
-          <input id="siren-input" type="text" value={sirenInput} onChange={onSirenChange} onKeyPress={onEnterPress} />
-        </div>
-      </div>
-      <div className="form_footer">
-        <p>Etape 1/7</p>
-        <div className="actions">
-          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ----- DENOMINATION FORM ----- */
-const DenominationInput = ({ denomination, commitDenomination, goBack }) => {
-  const [denominationInput, setDenomination] = useState(denomination);
+  const [denomination, setDenomination] = useState(props.denomination);
   const onDenominationChange = (event) => setDenomination(event.target.value);
-  const onEnterPress = (event) => { if (event.which == 13) event.target.blur() };
-  const onCommit = () => commitDenomination(denominationInput);
-  const onGoBack = () => goBack();
 
-  const isAllValid = denomination.length > 0;
+  const handleOnBlur = async () => {
+    // fetch denomination
+    try {
+      const endpoint = `${apiBaseUrl}/siren/${siren}`;
+      const response = await fetch(endpoint, { method: "get" });
+      const data = await response.json();
 
-  return (
-    <div id="general-data" className="strip">
-      <h2>Informations légales</h2>
-      <div className="form_inner">
-        <div className="siren-input input long left">
-          <label>Dénomination sociale : </label>
-          <input id="denomination-input" type="text" value={denominationInput} onChange={onDenominationChange} onKeyPress={onEnterPress} />
-        </div>
-      </div>
-      <div className="form_footer">
-        <p>Etape 2/7</p>
-        <div className="actions">
-          <button onClick={onGoBack}>Retour</button>
-          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
-        </div>
-      </div>
-    </div>
-  )
-}
+      if (data.header.statut === 200) {
+        setDenomination(data.profil.descriptionUniteLegale.denomination);
+      }
+    } catch (error) {
+      throw error;
+    }
+  };
 
-/* ----- YEAR FORM ----- */
-const YearInput = ({ year, commitYear, goBack }) => {
-  const [yearInput, setYear] = useState(year);
+  const [year, setYear] = useState(props.year);
   const onYearChange = (event) => setYear(event.target.value);
-  const onEnterPress = (event) => { if (event.which == 13) event.target.blur() }
-  const onCommit = () => commitYear(yearInput);
-  const onGoBack = () => goBack();
 
-  const isAllValid = /20[0-1][0-9]/.test(yearInput) || /202[0-1]/.test(yearInput);
+  const [isNextStepAvailable, setNextStepAvailable] = useState(true);
+
+  const onCommit = () => props.commitLegal(siren, denomination, year);
+
+  useEffect(() => {
+    if (
+      (/^[0-9]{9}$/.test(siren) &&
+        denomination.length > 0 &&
+        /20[0-1][0-9]/.test(year)) ||
+      /202[0-1]/.test(year)
+    ) {
+      setNextStepAvailable(false);
+    } else {
+      setNextStepAvailable(true);
+    }
+  });
 
   return (
-    <div id="general-data" className="strip">
-      <h2>Année de référence</h2>
-      <div className="form_inner">
-        <div className="siren-input input">
-          <label>Année de l'exercice<sup>1</sup> : </label>
-          <input id="year-input" type="text" value={yearInput} onChange={onYearChange} onKeyPress={onEnterPress} />
+    <section className="publish-form">
+      <Col lg={6}>
+        <h4>Informations légales</h4>
+        <div className="form-group row">
+          <label className="col-sm-5 col-form-label">
+            Numéro de siren (9 chiffres) :
+          </label>
+          <div className="col-sm-7">
+            <input
+              id="siren-input"
+              className="form-control"
+              maxlength="9"
+              type="text"
+              value={siren}
+              onChange={onSirenChange}
+              onBlur={handleOnBlur}
+            />
+          </div>
         </div>
-        <p className="note"><sup>1</sup> Année en fin d'exercice si l'exercice se déroule sur deux années civiles.</p>
-      </div>
-      <div className="form_footer">
-        <p>Etape 3/7</p>
-        <div className="actions">
-          <button onClick={onGoBack}>Retour</button>
-          <button disabled={!isAllValid} onClick={onCommit}>Valider</button>
+        <div className="form-group row">
+          <label className="col-sm-5 col-form-label">
+            Dénomination sociale :
+          </label>
+          <div className="col-sm-7">
+            <input
+              id="denomination-input"
+              className="form-control"
+              type="text"
+              value={denomination}
+              onChange={onDenominationChange}
+            />
+          </div>
         </div>
-      </div>
-    </div>
-  )
-}
+        <div className="form-group row">
+          <label className="col-sm-5 col-form-label">
+            Année de l'exercice<sup>1</sup>
+          </label>
+          <div className="col-sm-7">
+            <input
+              className="form-control"
+              id="year-input"
+              type="text"
+              value={year}
+              onChange={onYearChange}
+            />
+            <p className="source mt-2">
+              <sup>1</sup> Année en fin d'exercice si l'exercice se déroule sur
+              deux années civiles.
+            </p>
+          </div>
+        </div>
+        <div className="text-end">
+          <Button
+            variant="secondary"
+            disabled={isNextStepAvailable}
+            onClick={onCommit}
+          >
+            Compléter les impacts
+          </Button>
+        </div>
+      </Col>
+    </section>
+  );
+};
 
 /* ---------- SOCIAL FOOTPRINT FORM ---------- */
 
-const SocialFootprintForm = ({ socialfootprint, commitSocialFootprint, goBack }) => {
-  const onUpdateProps = (nextProps) => socialfootprint[nextProps.indic] = nextProps;
+const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack,
+}) => {
+
+  const onUpdateProps = (nextProps) => (socialfootprint[nextProps.indic] = nextProps);
   const onCommit = () => commitSocialFootprint(socialfootprint);
   const onGoBack = () => goBack();
 
   return (
-    <div className="strip">
-      <h2>Déclaration des données</h2>
-      <div className="form_inner">
-        {metaData.indics.map(indic => <IndicatorForm key={indic} indic={indic} {...socialfootprint[indic]} updateProps={onUpdateProps} />)}
-      </div>
-      <div className="form_footer">
-        <p>Etape 4/7</p>
-        <div className="actions">
-          <button onClick={onGoBack}>Retour</button>
-          <button onClick={onCommit}>Valider</button>
+    <section className="publish-form">
+      <Col lg={12}>
+        <h3>Déclaration des données</h3>
+        <Row>
+          {metaData.indics.map((indic) => (
+            <IndicatorForm
+              key={indic}
+              indic={indic}
+              {...socialfootprint[indic]}
+              updateProps={onUpdateProps}
+            />
+          ))}
+        </Row>
+        <div className="mt-2 text-end">
+          <button className="btn btn-primary" onClick={onGoBack}>
+            Retour
+          </button>
+          <button className="btn btn-secondary" onClick={onCommit}>
+            Valider
+          </button>
         </div>
-      </div>
-    </div>
-  )
-}
+      </Col>
+    </section>
+  );
+};
 class IndicatorForm extends React.Component {
-
   // form for each indicator
   // inputs : value / uncertainty / infos
 
@@ -289,254 +334,408 @@ class IndicatorForm extends React.Component {
     this.state = {
       value: props.value || "",
       uncertainty: props.uncertainty || "",
-      info: props.info || ""
-    }
+      info: props.info || "",
+    };
   }
 
   render() {
     const { indic } = this.props;
     const { value, uncertainty, info } = this.state;
-
     const isValueValid = /[0-9]*[.,][0-9]*/.test(value);
-    const isUncertaintyValid = isValueValid && /[0-9]*[.,][0-9]*/.test(uncertainty);
+    const isUncertaintyValid =
+      isValueValid && /[0-9]*[.,][0-9]*/.test(uncertainty);
 
     return (
-      <div className="indicator-form">
-        <h3>{metaData.libelle[indic]}</h3>
-        <div className="input-intro">
-          <a className="text-link" href={"https://lasocietenouvelle.org/indicateur/" + indic} target="_blank">Informations sur l'indicateur</a>
+      <Col lg={6}>
+        <div className="indicator-form">
+          <img
+            src={"images/icon-ese-bleues/" + indic + ".png"}
+            className="mx-auto d-block img-fluid"
+          />
+          <h4>{metaData[indic].libelle}</h4>
+          <div className="source">
+            <a
+              className="text-link"
+              href={"https://lasocietenouvelle.org/indicateur/" + indic}
+              target="_blank"
+            >
+              <i className="bi bi-box-arrow-up-right"></i> Informations sur
+              l'indicateur
+            </a>
+          </div>
+          <div className="my-3 row align-items-center">
+            <label className="col-sm-3 col-form-label">
+              Valeur<span>({metaData[indic].unitCode})</span>
+            </label>
+            <div className="col-sm-9">
+              <input
+                className="form-control"
+                type="text"
+                value={value}
+                onChange={this.onValueChange}
+                onBlur={this.onBlur}
+                onKeyPress={this.onEnterPress}
+              />
+            </div>
+          </div>
+          <div className="my-3 row align-items-center">
+            <label className="col-sm-3 col-form-label">
+              Incertitude<span>(%)</span>
+            </label>
+            <div className="col-sm-9">
+              <input
+                className="form-control"
+                type="text"
+                value={uncertainty}
+                onChange={this.onUncertaintyChange}
+                onBlur={this.onBlur}
+                onKeyPress={this.onEnterPress}
+              />
+            </div>
+          </div>
+
+          <div className="my-3 row align-items-center">
+            <label className="col-sm-3 col-form-label">
+              Informations complémentaires
+            </label>
+            <div className="col-sm-9">
+              <textarea
+                className="form-control"
+                type="text"
+                value={info}
+                onChange={this.onInfoChange}
+                onBlur={this.onBlur}
+              />
+            </div>
+          </div>
         </div>
-        <div className="inputs">
-          <div className="input">
-            <label>Valeur :</label>
-            <input type="text"
-              value={value}
-              onChange={this.onValueChange}
-              onBlur={this.onBlur}
-              onKeyPress={this.onEnterPress} />
-            <span>&nbsp;{metaData.unitCode[indic]}</span>
-          </div>
-          <div className="input">
-            <label>Incertitude :</label>
-            <input type="text"
-              value={uncertainty}
-              onChange={this.onUncertaintyChange}
-              onBlur={this.onBlur}
-              onKeyPress={this.onEnterPress} />
-            <span>&nbsp;%</span>
-          </div>
-          <div className="input-column">
-            <label>Informations complémentaires :</label>
-            <textarea type="text"
-              value={info}
-              onChange={this.onInfoChange}
-              onBlur={this.onBlur} />
-          </div>
-        </div>
-      </div>
-    )
+      </Col>
+    );
   }
 
-  onValueChange = (event) => this.setState({ value: event.target.value })
-  onUncertaintyChange = (event) => this.setState({ uncertainty: event.target.value })
-  onInfoChange = (event) => this.setState({ info: event.target.value })
-  onBlur = () => this.props.updateProps({ indic: this.props.indic, ...this.state })
-  onEnterPress = (event) => { if (event.which == 13) event.target.blur() }
-
+  onValueChange = (event) => this.setState({ value: event.target.value });
+  onUncertaintyChange = (event) =>
+    this.setState({ uncertainty: event.target.value });
+  onInfoChange = (event) => this.setState({ info: event.target.value });
+  onBlur = () =>
+    this.props.updateProps({ indic: this.props.indic, ...this.state });
+  onEnterPress = (event) => {
+    if (event.which == 13) event.target.blur();
+  };
 }
 
 /* ----- DECLARANT FORM ----- */
-class DeclarantForm extends React.Component {
 
-  // form for contact details
+export const DeclarantForm = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      declarant: props.declarant,
-      email: props.declarant,
-      autorisation: props.autorisation
-    }
-  }
-
-  render() {
-    const { declarant, email, autorisation } = this.state;
-
-    const isAllValid = declarant.length > 0 && email.length > 0 && autorisation;
-
-    return (
-      <div id="further-info" className="strip">
-        <h2>Déclarant</h2>
-        <div className="form_inner">
-          <div className="input-column">
-            <label>Nom - Prénom : </label>
-            <textarea className="textarea-line" type="text" value={declarant} onChange={this.onDeclarantChange} />
-          </div>
-          <div className="input-column">
-            <label>Adresse e-mail : </label>
-            <textarea className="textarea-line" type="text" value={email} onChange={this.onEmailChange} />
-          </div>
-          <div className="input" id="certification">
-            <input type="checkbox" onChange={this.onCheckboxChange} /><label htmlFor="certification">Je certifie être autorisé(e) à soumettre la déclaration ci-présente.</label>
-          </div>
-        </div>
-        <div className="form_footer">
-          <p>Etape 5/7</p>
-          <div className="actions">
-            <button onClick={this.onGoBack}>Retour</button>
-            <button disabled={!isAllValid} onClick={this.onCommit}>Valider</button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  /* --- Assessment message --- */
-  onDeclarantChange = (event) => { this.setState({ declarant: event.target.value }) }
-  onEmailChange = (event) => { this.setState({ email: event.target.value }) }
-  onCheckboxChange = () => { this.setState({ autorisation: !this.state.autorisation }) }
-  onCommit = () => this.props.commitDeclarant(this.state.declarant, this.state.email, this.state.autorisation);
-  onGoBack = () => this.props.goBack();
-
-}
-
-/* ----- PRICE FORM ----- */
-const PriceInput = ({ price, commitPrice, goBack }) => {
-  const [priceInput, setPrice] = useState(price);
+  const [declarant, setDeclarant] = useState(props.declarant);
+  const [email, setEmail] = useState(props.email);
+  const [autorisation, setAutorisation] = useState(props.autorisation);
+  const [price, setPrice] = useState();
+  const [isDisabled, setDisabled] = useState(true);
   const changePrice = (event) => setPrice(event.target.value);
-  const onCommit = () => commitPrice(priceInput);
+  const changeDeclarant=  (event) => setDeclarant(event.target.value);
+  const changeEmail = (event) => setEmail(event.target.value);
+  const changeAutorisation = (event) => setAutorisation(event.target.checked);
+  
+  useEffect(() => {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (price && autorisation && declarant.length > 0 ) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  });
+
+
+  const onCommit = () => props.commitDeclarant(declarant, email, autorisation, price);
 
   return (
-    <div id="general-data" className="strip">
-      <h2>Coût de la formalité</h2>
-      <div className="form_inner">
-        <div className="radio-button-input">
-          <div className="input">
-            <input id="price" type="radio" value="0" checked={priceInput == "0"} onChange={changePrice} />
-            <label>Première déclaration : publication offerte</label>
-          </div>
-          <div className="input">
-            <input id="price" type="radio" value="25" checked={priceInput == "25"} onChange={changePrice} />
-            <label>Société unipersonnelle : 25 €</label>
-          </div>
-          <div className="input">
-            <input id="price" type="radio" value="50" checked={priceInput == "50"} onChange={changePrice} />
-            <label>Société : 50 €</label>
-          </div>
-          <div className="input">
-            <input id="price" type="radio" value="10" checked={priceInput == "10"} onChange={changePrice} />
-            <label>Organise à but non lucratif : 10 €</label>
+    <section className="publish-form">
+      <Col lg={6}>
+        <h3>Déclarant</h3>
+
+        <div className="form-group row">
+          <label className="col-sm-4 col-form-label">Nom - Prénom : </label>
+          <div className="col-sm-7">
+            <input
+              type="text"
+              className="form-control"
+              required
+              value={declarant}
+              onChange={changeDeclarant}
+            />
           </div>
         </div>
-      </div>
-      <div>
-        <p>Les revenus couvrent la réalisation des formalités, ainsi que les frais d'hébergement et de maintenance pour l'accessibilité des données.</p>
-      </div>
-      <div className="form_footer">
-        <p>Etape 6/7</p>
-        <div className="actions">
-          <button onClick={goBack}>Retour</button>
-          <button disabled={priceInput == ""} onClick={onCommit}>Valider</button>
+        <div className="form-group row">
+          <label className="col-sm-4 col-form-label">Adresse e-mail : </label>
+          <div className="col-sm-7">
+            <input
+              className="form-control"
+              type="email"
+              required
+              value={email}
+              onChange={changeEmail}
+            />
+          </div>
         </div>
-      </div>
-    </div>
-  )
-}
+
+        <h3 className="mt-5">Coût de la formalité</h3>
+        <div className="form-group">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              name="price"
+              id="price-0"
+              type="radio"
+              value="0"
+              checked={price == "0"}
+              onChange={changePrice}
+            />
+
+            <label className="form-check-label" htmlFor="price-0">
+              Première déclaration : publication offerte
+            </label>
+          </div>
+
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              name="price"
+              id="price-1"
+              type="radio"
+              value="25"
+              checked={price == "25"}
+              onChange={changePrice}
+            />
+            <label className="form-check-label" htmlFor="price-1">
+              Société unipersonnelle : 25 €
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              name="price"
+              id="price-2"
+              type="radio"
+              value="50"
+              checked={price == "50"}
+              onChange={changePrice}
+            />
+            <label className="form-check-label" htmlFor="price-2">
+              Société : 50 €
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              name="price"
+              id="price-3"
+              type="radio"
+              value="10"
+              checked={price == "10"}
+              onChange={changePrice}
+            />
+            <label className="form-check-label" htmlFor="price-3">
+              Organise à but non lucratif : 10 €
+            </label>
+          </div>
+        </div>
+        <p className="my-3 smaller-text">
+          Les revenus couvrent la réalisation des formalités, ainsi que les
+          frais d'hébergement et de maintenance pour l'accessibilité des
+          données.
+        </p>
+        <div className="form-check mt-3">
+          <input
+            className="form-check-input"
+            id="certification"
+            type="checkbox"
+            checked={autorisation}
+            onChange={changeAutorisation}
+          />
+          <label className="form-check-label" htmlFor="certification">
+            Je certifie être autorisé(e) à soumettre la déclaration ci-présente.
+          </label>
+        </div>
+        <div className="mt-4 text-end">
+          <button className="btn btn-secondary" onClick={props.goBack}>
+            Retour
+          </button>
+          <button
+            className="btn btn-primary"
+            disabled={isDisabled}
+            onClick={onCommit}
+          >
+            Valider
+          </button>
+        </div>
+      </Col>
+    </section>
+  );
+};
+
 
 /* ----- DECLARANT FORM ----- */
-const Summary = ({ siren, denomination, socialfootprint, year, declarant, price, exportStatement, submitStatement, goBack }) => {
+const Summary = ({
+  siren,
+  denomination,
+  socialfootprint,
+  year,
+  declarant,
+  price,
+  exportStatement,
+  submitStatement,
+  goBack,
+}) => {
+  let newDate = new Date();
+  let date = newDate.getDate();
+  let month = newDate.getMonth() + 1;
+  let currentYear = newDate.getFullYear();
+
   return (
-    <div className="strip">
-      <h2>Recapitulatif</h2>
-      <div className="summary">
-        <p><b>Siren : </b>{siren}</p>
-        <p><b>Dénomination : </b>{denomination}</p>
-        <p><b>Année : </b>{year}</p>
-        <p><b>Indicateurs : </b></p>
-        {Object.entries(socialfootprint).map(([indic, _]) => <p key={indic}>&emsp;{metaData.libelle[indic]}</p>)}
-        {Object.entries(socialfootprint).length == 0 &&
-          <p>&emsp; - </p>}
-        <p><b>Fait le : </b>25/10/2021</p>
-        <p><b>Déclarant : </b>{declarant}</p>
-        <p><b>Coût de la formalité : </b>{price} €</p>
-      </div>
-      <div className="form_footer">
-        <p>Etape 7/7</p>
-        <div className="actions">
-          <button onClick={goBack}>Retour</button>
-          <button onClick={exportStatement}>Télécharger</button>
-          <button onClick={submitStatement}>Envoyer</button>
+   <section className="publish-form">
+      <Col lg={6}>
+        <h3>Recapitulatif</h3>
+        <div className="summary">
+          <p>
+            Siren : 
+            {siren}
+          </p>
+          <p>
+            Dénomination :
+            {denomination}
+          </p>
+          <p>
+            Année : 
+            {year}
+          </p>
+          <p>
+            Indicateurs : 
+          </p>
+          {Object.entries(socialfootprint).map(([indic, _]) => (
+            <p key={indic}>&emsp;{metaData[indic].libelle}</p>
+          ))}
+          {Object.entries(socialfootprint).length == 0 && <p>&emsp; - </p>}
+          <p>
+            <b>Fait le :</b> {date}/{month}/{currentYear}
+          </p>
+          <p>
+          Déclarant : 
+            {declarant}
+          </p>
+          <p>
+          Coût de la formalité : 
+            {price} €
+          </p>
         </div>
-      </div>
-    </div>
-  )
-}
+        <button className="btn btn-outline-primary" onClick={exportStatement}>
+          <i className="bi bi-file-earmark-arrow-down"></i> Télécharger le
+          récapitulatif
+        </button>
+
+        <div className="mt-4 text-end">
+          <button className="btn btn-primary" onClick={goBack}>
+            Retour
+          </button>
+          <button className="btn btn-secondary" onClick={submitStatement}>
+            Envoyer
+          </button>
+        </div>
+      </Col>
+
+   </section> 
+  );
+};
 
 /* ---------- END ---------- */
 
-const StatementSendingMessage = () => {
-  return (
-    <div className="strip">
-      <h2>Déclaration validée</h2>
-      <div className="form_inner">
-        <p>Envoi en cours...</p>
-      </div>
-    </div>
-  )
-}
 
 const StatementSendMessage = () => {
   return (
-    <div className="strip">
-      <h2>Déclaration validée</h2>
-      <div className="form_inner">
-        <p>Demande de publication envoyée ! Merci.</p>
+    <>
+      <h3>Déclaration validée</h3>
+      <div className="alert alert-success">
+        Demande de publication envoyée ! Merci.
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-const ErrorMessage = () => {
+const ErrorMessage = ({goBack}) => {
   return (
-    <div className="strip">
-      <div className="form_inner">
-        <p>Error</p>
+    <>
+      <div className="alert alert-danger">
+        Erreur lors de l'envoi de la publication. Si l'erreur persiste, veuillez
+        nous contacter.
       </div>
-    </div>
-  )
-}
+      <button className="btn btn-primary" onClick={goBack}>
+            Retour
+          </button>
+    </>
+  );
+};
 
 /* ----- Builder message mails ----- */
 
 const mailToAdminWriter = (statementData) =>
-(
-  "Unité légale : " + statementData.siren + "\r"
-  + "Dénomination : " + statementData.denomination + "\r"
-  + "Année : " + statementData.year + "\r"
-  + "\r"
-  + "Valeurs à publier :" + "\r"
-  + "\r"
-  + Object.entries(statementData.socialfootprint).map(([indic, data]) =>
-    (indic + " : " + data.value + " +/- " + data.uncertainty + " % " + (data.info.length > 0 ? "(" + data.info + ")" : "") + "\r"))
-  + "\r"
-  + "Déclarant :" + "\r"
-  + "Nom : " + statementData.declarant + "\r"
-  + "Mail : " + statementData.email + "\r"
-  + "\r"
-  + "Tarif :" + statementData.price + " €" + "\r"
-)
+  "Unité légale : " +
+  statementData.siren +
+  "\r" +
+  "Dénomination : " +
+  statementData.denomination +
+  "\r" +
+  "Année : " +
+  statementData.year +
+  "\r" +
+  "\r" +
+  "Valeurs à publier :" +
+  "\r" +
+  "\r" +
+  Object.entries(statementData.socialfootprint).map(
+    ([indic, data]) =>
+      indic +
+      " : " +
+      data.value +
+      " +/- " +
+      data.uncertainty +
+      " % " +
+      (data.info.length > 0 ? "(" + data.info + ")" : "") +
+      "\r"
+  ) +
+  "\r" +
+  "Déclarant :" +
+  "\r" +
+  "Nom : " +
+  statementData.declarant +
+  "\r" +
+  "Mail : " +
+  statementData.email +
+  "\r" +
+  "\r" +
+  "Tarif :" +
+  statementData.price +
+  " €" +
+  "\r";
 
 const mailToDeclarantWriter = (statementData) =>
-(
-  ""
-  + statementData.declarant + "," + "\r"
-  + "\r"
-  + "Votre demande de publication a bien été prise en compte. Vous trouverez ci-joint votre déclaration." + "\r"
-  + "Le délai de traitement est de 7 jours." + "\r"
-  + "\r"
-  + "Pour modifier ou supprimer les données publiées, contactez-nous directement via l'adresse mail admin@lasocietenouvelle.org" + "\r"
-  + "\r"
-  + "Bien à vous," + "\r"
-  + "\r"
-  + "La Société Nouvelle." + "\r"
-)
+  "" +
+  statementData.declarant +
+  "," +
+  "\r" +
+  "\r" +
+  "Votre demande de publication a bien été prise en compte. Vous trouverez ci-joint votre déclaration." +
+  "\r" +
+  "Le délai de traitement est de 7 jours." +
+  "\r" +
+  "\r" +
+  "Pour modifier ou supprimer les données publiées, contactez-nous directement via l'adresse mail admin@lasocietenouvelle.org" +
+  "\r" +
+  "\r" +
+  "Bien à vous," +
+  "\r" +
+  "\r" +
+  "La Société Nouvelle." +
+  "\r";

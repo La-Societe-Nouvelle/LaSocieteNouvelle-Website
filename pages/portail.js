@@ -17,20 +17,6 @@ export default function Home() {
       <Header />
       <main className="main">
         <Container>
-          {/* 
-        <div className="section">
-          <div className="bloc blue h-group chiffres-clefs-bdd">
-            <div className="h-group chiffre-clef-bdd">
-              <p className="chiffre-clef-bdd-valeur">27</p>
-              <p>Requêtes effectuées</p>
-            </div>
-            <div className="h-group chiffre-clef-bdd">
-              <p className="chiffre-clef-bdd-valeur">12</p>
-              <p>Valeurs publiées</p>
-            </div>
-          </div>
-        </div> */}
-
           <PortailView />
         </Container>
       </main>
@@ -75,6 +61,7 @@ class PortailView extends React.Component {
       .then(response => response.json())
       .then((response) => {
         if (response.header.statut == 200) {
+        
           this.setState({
             isLoaded: true,
             isLoading: false,
@@ -97,16 +84,15 @@ class PortailView extends React.Component {
     return (
       <section className="portail-view">
         <h2>Portail d'accès aux données</h2>
-
+        <Informations />
         <SearchBar parent={this} />
   
-        {!isLoaded && !isLoading ? <Informations /> : ""}
         <Row id="results-strip">
           {isLoading ? <p>Recherche en cours...</p> : ""}
           {isLoaded && nbResults == 0 ? <p>Aucun résultat</p> : ""}
           {isLoaded && nbResults > 0 ? 
           <CardGroup>
- <Results items={results} />
+            <Results items={results} />
           </CardGroup>: ""}
         </Row>
       </section>
@@ -116,19 +102,20 @@ class PortailView extends React.Component {
 }
 
 const Informations = () =>
-  <div id="informations">
+  <div className='form-text'>
     <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
     <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
     <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
   </div>
 
 const SearchBar = ({ parent }) =>
-  <div id="search-bar">
-      <input id="search-input" type="text" className="form-control form-control-lg"
+  <section className='bg-light p-4'>
+  <h4 className="h6">Rechercher par dénomination ou numéro de Siren</h4>
+      <input id="search-input" type="text" className="form-control"
         placeholder="Dénomination sociale, N° de siren"
         value={parent.state.input} onChange={parent.inputChange}></input>
-    <button id="search-button" type="submit" className="btn btn-lg btn-secondary" onClick={parent.handleClick}>Rechercher</button>
-  </div>
+    <button id="search-button" type="submit" className="btn btn-secondary m-0 mt-2" onClick={parent.handleClick}>Rechercher</button>
+  </section>
 
 const Results = ({ items }) => {
   return items.map((item) =>

@@ -2,7 +2,9 @@
 
 
 /* -------------------- Form -------------------- */
-
+.form-group {
+  margin-bottom: 1rem;
+}
 .section.form 
 {
   display: flex;
@@ -30,5 +32,43 @@
     {
       width: fit-content;
     }
+  }
+
+
+}
+
+.report-form {
+  .btn {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.publish-form {
+  border:1px solid $light-blue;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.indicator-form {
+  h4 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  img{
+    height: 56px;
+    margin-bottom: 1rem;
+  }
+  label{
+    font-size: 0.9rem;
+  }
+  padding: 1rem;
+  border : 1px solid $light-blue;
+  background-color: #fff;
+  margin-bottom: 1rem;
+
+  label span {
+    font-size: 0.6rem;
+    color: gray;
+    padding: 0 0.5rem;
   }
 }

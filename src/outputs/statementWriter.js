@@ -66,14 +66,15 @@ const writeStatementPDF = (data) =>
   doc.text("Incertitude",180,y);
   
   doc.line(10,y+2,200,y+2);
+
   Object.entries(data.socialfootprint).forEach(([indic,indicator]) => 
   {
     y+=6;
     doc.setFont("Calibri","bold");
-    doc.text(metaData.libelle[indic],10,y);
+    doc.text(metaData[indic].libelle,10,y);
     doc.setFont("Calibri","normal");
     doc.text(indicator.value+" ",xValue+7,y,{align: "right"});
-    doc.text(metaData.unitCode[indic],xValue+7,y,{align: "left"});
+    doc.text(metaData[indic].unitCode,xValue+7,y,{align: "left"});
     doc.setFontSize(8);
     doc.text(indicator.uncertainty+" %",xUncertainty+12,y,{align: "right"});
     doc.setFontSize(10);

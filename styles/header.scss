@@ -28,12 +28,21 @@ header {
   }
 
   h2 {
-    font-size: 1.1rem;
-    text-align: right;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: 'roboto', sans-serif;
+    font-weight: 400;
     color : #9e9e9e;
   }
 
+  .btn-cta {
+    background-color: $secondary;
+    color : #fff;
+    margin: 0.5rem;
+  }
+  .btn-publish {
+    background-color: $light-blue;
+    margin: 0.5rem 0;
+  }
   .navbar {
     margin-bottom: 1rem;
 
