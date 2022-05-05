@@ -72,6 +72,7 @@ class PortailView extends React.Component {
           this.setState({
             isLoading: false,
             infoResults: { nbResults: 0 },
+            results: []
           })
         }
       }).catch(error => console.log(error))
@@ -79,8 +80,6 @@ class PortailView extends React.Component {
 
   render() {
     const { isLoading, isLoaded, infoResults, results } = this.state;
-    const nbResults = infoResults.nbResults;
-
     return (
       <section className="portail-view">
         <h2>Portail d'accès aux données</h2>
@@ -89,8 +88,8 @@ class PortailView extends React.Component {
   
         <Row id="results-strip">
           {isLoading ? <p>Recherche en cours...</p> : ""}
-          {isLoaded && nbResults == 0 ? <p>Aucun résultat</p> : ""}
-          {isLoaded && nbResults > 0 ? 
+          {isLoaded && results.length == 0 ? <p>Aucun résultat</p> : ""}
+          {isLoaded && results.length > 0 ? 
           <CardGroup>
             <Results items={results} />
           </CardGroup>: ""}
