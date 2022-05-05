@@ -175,7 +175,7 @@ class Form extends React.Component {
       statementFile
     );
 
-    if (resAdmin.status < 300) this.setState({ step: 6 });
+    if (resAdmin.status < 300) this.setState({ step: 5 });
     else this.setState({ step: 0 });
   };
 }
