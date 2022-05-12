@@ -1,0 +1,125 @@
+@import "custom";
+@import "parts/header.scss";
+@import "parts/footer.scss";
+@import "components/statistics.scss";
+@import "components/posts.scss";
+
+/* Global */
+
+a {
+  text-decoration: none;
+  :hover{
+    color : lighten($primary, 10%);
+  }
+}
+
+.btn {
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.875em;
+  font-family: Raleway, sans-serif;
+  &:hover, &:focus {
+    color :#fff;
+  }
+
+}
+.btn-lg, .btn-group-lg > .btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.btn-outline-secondary {
+  background-color: lighten($secondary, 30%);
+}
+
+.btn-outline-primary {
+  background-color: lighten($primary, 75%);
+}
+
+.btn-secondary {
+  color: #fff;
+}
+
+section{
+  padding: 5rem 0;
+  h2, h3 {
+    margin-bottom: 2rem;
+  }
+}
+/* CTA */
+.cta {
+  background: $primary url("../../public/images/img-background.png") bottom left no-repeat;
+  margin : 2rem 0;
+
+  h2,h3,p{
+    margin-bottom: 2rem;
+    color : #fff;
+  }
+}
+#cta-entreprise{
+  h3{
+    color : #fff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+.cta-metriz {
+  background: $primary url("../../public/images/img-background.png") bottom left no-repeat;
+  margin : 2rem 0;
+
+  h2{
+    margin-bottom: 2rem;
+    color : #fff;
+  }
+  img{
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin : 0;
+    color : #fff;
+  }
+  .btn {
+    margin-top: 1rem;
+  }
+}
+.box {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  margin : 2rem 0;
+}
+
+/* GRAPH */
+
+.graph-section {
+  background: $light url("../../public/images/celeste.png") bottom right no-repeat;
+
+  .card-footer {
+    background-color: $gray-600;
+    text-align: right;
+    font-size: 0.7rem;
+    p{
+      margin: 0;
+    }
+  }
+}
+
+/* STEPS */
+
+.steps {
+
+
+  .number {
+    color : $secondary;
+    margin : 0.5rem 0;
+    font-size: 1.5rem;
+    display: block;
+  }
+
+  p{
+    font-size: 0.9rem;
+  }
+
+}

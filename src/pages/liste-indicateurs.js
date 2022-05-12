@@ -2,8 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 // Components
-import Header from '../src/components/header'
-import Footer from '../src/components/footer'
 
 import metaData from '../lib/metaData';
 import { Container, ListGroup, ListGroupItem } from 'react-bootstrap';
@@ -15,7 +13,6 @@ export default function Home() {
       <Helmet>
         <title>La société Nouvelle | Liste des indicateurs </title>
       </Helmet>
-      <Header />
 
       <main className="main">
       <Container>
@@ -33,7 +30,6 @@ export default function Home() {
 
       </main>
 
-      <Footer />
 
     </>
   )

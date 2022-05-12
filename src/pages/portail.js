@@ -1,7 +1,6 @@
 import Head from 'next/head'
 // Components
-import Header from '../src/components/header'
-import Footer from '../src/components/footer'
+
 import { Helmet } from 'react-helmet';
 
 // Modules
@@ -14,13 +13,11 @@ export default function Home() {
       <Helmet>
         <title>La société Nouvelle | Portail </title>
       </Helmet>
-      <Header />
       <main className="main">
         <Container>
           <PortailView />
         </Container>
       </main>
-      <Footer />
     </>
   )
 

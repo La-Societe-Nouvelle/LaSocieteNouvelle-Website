@@ -1,0 +1,39 @@
+.top-bar {
+    border-bottom: 1px solid $gray-600;
+    .nav-link{
+        padding: 0.325rem;
+        color : $primary;
+    }
+    small {
+        font-size: 0.675em;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+.header h1 {
+    color :  $gray-800;
+;
+}
+
+.navbar-nav {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    
+}
+
+.page-header {
+    background-color: $light;
+    text-align: center;
+    h2{
+        font-size: 1.6rem;
+    }
+    a{
+        font-size: 0.8rem;
+        color : $body-color;
+    }
+}
+
+.menu {
+    border-top : 1px solid  #e9ecef;
+    border-bottom: 1px solid $light;
+}

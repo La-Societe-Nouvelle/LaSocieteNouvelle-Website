@@ -1,0 +1,33 @@
+
+/* make the customizations */
+
+$primary : #191558;
+$secondary : #fa595f;
+$light : #f0f0f8;
+$gray-600 : #f3f3f3;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "light":      $light
+);
+
+$body-color : #222221;
+$link-color : $secondary;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$headings-font-family: 'Raleway', 'Roboto', sans-serif;
+$headings-color : lighten($primary, 10%);
+$headings-font-weight: 600;
+
+$h2-font-size:1.6rem;
+$h3-font-size:1.4rem;
+$h4-font-size:1.2rem;
+
+/* Navbar */
+
+$navbar-light-color :  #212529 ;
+;
+
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";

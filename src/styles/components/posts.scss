@@ -1,0 +1,32 @@
+.post-title h2{
+    margin : 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+#latest-posts {
+    margin-top: 2rem;
+}
+
+.post-meta, .post .post-meta {
+    p {
+        font-size: 0.6rem;
+    }
+}
+
+.last {
+    .post-title h2{
+        margin : 1rem 0 0.5rem 0;
+        font-size: 1.4rem;
+    }
+}
+
+.last a, .post a {
+        font-weight: 600;
+}
+.post {
+    margin-bottom: 1rem;
+  
+    p, a {
+        font-size: 0.8rem;
+    }
+}
