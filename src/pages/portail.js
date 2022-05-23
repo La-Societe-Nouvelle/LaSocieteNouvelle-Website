@@ -5,19 +5,19 @@ import { Helmet } from 'react-helmet';
 
 // Modules
 import React from 'react';
-import { Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, CardGroup, Button } from 'react-bootstrap';
+import PageHeader from '../components/PageHeader';
 
 export default function Home() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Portail </title>
+        <title>La société Nouvelle | Portail d'accès aux données </title>
       </Helmet>
-      <main className="main">
-        <Container>
+      <>
+      <PageHeader title={"Portail de données ouvertes"} path={"portail"} /> 
           <PortailView />
-        </Container>
-      </main>
+      </>
     </>
   )
 
@@ -76,69 +76,79 @@ class PortailView extends React.Component {
   }
 
   render() {
-    const { isLoading, isLoaded, infoResults, results } = this.state;
+    const { isLoading, isLoaded, results } = this.state;
     return (
       <section className="portail-view">
-        <h2>Portail d'accès aux données</h2>
-        <Informations />
-        <SearchBar parent={this} />
+        <Container>
+        <h3>Rechercher l'empreinte sociétale d'une entreprise</h3>
+         <div>
+         <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
+    <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
+    <p>Pour toute publication, mise à jour ou retrait, <a href="/contact" target="_self" > contactez-nous</a>.</p>
+         </div>
+          <SearchBar parent={this} />
+          <Row>
+
+            {isLoading &&
+             <Col>
+              <div className="alert alert-info text-center">
+              <p>Recherche en cours </p><div class="dot-pulse m-auto"></div>
+              </div>
+            </Col>
+             }
+            {isLoaded && results.length == 0 ? <Col><p className="alert alert-info">Aucun résultat</p></Col> : ""}
+            {isLoaded && results.length > 0 ? 
+              <Results items={results}  />
+            : ""}
+            </Row>
+
+        </Container>
   
-        <Row id="results-strip">
-          {isLoading ? <p>Recherche en cours...</p> : ""}
-          {isLoaded && results.length == 0 ? <p>Aucun résultat</p> : ""}
-          {isLoaded && results.length > 0 ? 
-          <CardGroup>
-            <Results items={results} />
-          </CardGroup>: ""}
-        </Row>
       </section>
     )
   }
 
 }
 
-const Informations = () =>
-  <div className='form-text'>
-    <p>Accédez librement aux données publiées aux impacts de la valeur produite par les entreprises françaises.</p>
-    <p>En cas d'absence de données fournies par l'entreprise, des valeurs par défaut sont attribuées selon les caractéristiques de l'entreprise. Ces valeurs peuvent être éloignées de la réalité de l'entreprise, merci d'utiliser ces données avec précautions.</p>
-    <p>Pour toute publication, mise à jour ou retrait, contactez-nous.</p>
-  </div>
 
 const SearchBar = ({ parent }) =>
-  <section className='bg-light p-4'>
-  <h4 className="h6">Rechercher par dénomination ou numéro de Siren</h4>
+  <section className='bg-light p-4 mb-3'>
+    <label>Rechercher par dénomination ou par numéro de Siren</label>
       <input id="search-input" type="text" className="form-control"
-        placeholder="Dénomination sociale, N° de siren"
+        placeholder="Rechercher des données.."
         value={parent.state.input} onChange={parent.inputChange}></input>
     <button id="search-button" type="submit" className="btn btn-secondary m-0 mt-2" onClick={parent.handleClick}>Rechercher</button>
   </section>
 
 const Results = ({ items }) => {
-  return items.map((item) =>
-    <Col key={'item-' + item.siren} lg="4">
-      <Card>
+  return items.map((item, index) =>
+  <Col key={index} lg={3}>
+      <Card className="my-2">
         <Card.Body>
         <Card.Title>{item.denomination}</Card.Title>
         <Card.Text>
-         siren : {item.siren} 
+         <b>Siren :</b> {item.siren} 
         </Card.Text>
 
         <Card.Text>
 
-          Activite : {item.activitePrincipaleLibelle} ({item.activitePrincipale})        </Card.Text>
+        <b>Activité :</b> {item.activitePrincipaleLibelle} ({item.activitePrincipale})        </Card.Text>
 
           <Card.Text>
-          Domiciliation : {item.communeSiege} ({item.codePostalSiege})
+          <b>Domiciliation :</b> {item.communeSiege} ({item.codePostalSiege})
           </Card.Text>
 
         </Card.Body>
         <Card.Footer>
-        <button className="btn btn-primary" onClick={() => showCompanyData(item.siren)}>Consulter</button>
+        <a className="btn btn-outline-secondary" href={"company-data?siren="+item.siren}>
+          
+          Voir l'empreinte</a>
+
 
         </Card.Footer>
       </Card>
+</Col>
 
-    </Col>
   )
 }
 

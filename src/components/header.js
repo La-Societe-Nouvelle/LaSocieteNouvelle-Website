@@ -47,8 +47,9 @@ const Header = () => {
       </div>
       </Container>
       <div className="menu">
-          <Container>
+        
         <Navbar expand="lg">
+          <Container>
             <Navbar.Toggle aria-controls="main-navbar-nav" />
             <Navbar.Collapse id="main-navbar-nav">
               <Nav>
@@ -108,8 +109,8 @@ const Header = () => {
               </Nav>
   
             </Navbar.Collapse>
-        </Navbar>
           </Container>
+        </Navbar>
       </div>
     </div>
   );

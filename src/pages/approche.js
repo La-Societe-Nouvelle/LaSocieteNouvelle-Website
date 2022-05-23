@@ -1,9 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-// Components
-import Header from '../src/components/header'
-import Footer from '../src/components/footer'
 
 import metaData from '../lib/metaData';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
@@ -25,7 +22,6 @@ export default function Home()
       <Helmet>
         <title>La société Nouvelle | Empreinte sociale de l'entreprise</title>
       </Helmet>
-      <Header />
 
       <main className="main">
         <Container>
@@ -114,7 +110,6 @@ export default function Home()
         </Container>
       </main>
 
-      <Footer />
 
     </>
   )

@@ -2,9 +2,6 @@
 // React
 import React from 'react'
 
-import Head from 'next/head'
-import Header from '../../src/components/header'
-import Footer from '../../src/components/footer'
 
 import fs from 'fs'
 import unified from 'unified'
@@ -68,9 +65,7 @@ function build(postData) {
       <Helmet>
         <title>La société Nouvelle | {data[indic].libelle} </title>
       </Helmet>
-      <Header />
 
-      <main >
         <Container>
           <section>
 
@@ -84,9 +79,7 @@ function build(postData) {
 
         </Container>
 
-      </main>
 
-      <Footer />
     </>
 
   )

@@ -1,88 +1,100 @@
 // React
-import React from 'react';
-import { Helmet } from 'react-helmet';
-
-// Components
-import Head from 'next/head'
-import Header from '../src/components/header'
-import Footer from '../src/components/footer'
+import React from "react";
+import { Helmet } from "react-helmet";
 
 // API
-import { sendContactMail } from '../pages/api/mail-api.js'
-import { Container } from 'react-bootstrap';
+import { sendContactMail } from "../pages/api/mail-api.js";
+import { Col, Container, Row } from "react-bootstrap";
+import PageHeader from "../components/PageHeader.js";
 
 export default function Home() {
-
   return (
     <>
       <Helmet>
         <title>La société Nouvelle | Nous contacter</title>
       </Helmet>
-      <Header />
-
-      <main className="main">
+      <PageHeader title={"Contactez-nous"} path={"contact"} /> 
+      <section>
         <Container>
-          <section>
-            <h2 className="titre-bloc">Formulaire de contact</h2>
-            <ContactForm />
-
-          </section>
+          <Row>
+            <Col md={{ span: 6, offset: 3 }}>
+          <h2 className="titre-bloc">Formulaire de contact</h2>
+              <ContactForm />
+            </Col>
+          </Row>
         </Container>
-
-
-
-      </main>
-
-      <Footer />
-
+      </section>
     </>
-  )
+  );
 }
 
 class ContactForm extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state =
-    {
+    this.state = {
       objet: "",
       message: "",
       coordonnees: "",
       formButtontext: "Envoyer le message",
-      messageSend: false
-    }
+      messageSend: false,
+    };
   }
 
   render() {
-    const { objet, message, coordonnees, formButtontext, messageSend } = this.state;
+    const { objet, message, coordonnees, formButtontext, messageSend } =
+      this.state;
     const btnClass = messageSend ? "disabled" : "";
 
     return (
       <div id="contact-form" className="section form">
         <div className="form-section v-group">
           <label className="titre-form-section">Objet</label>
-          <input id="objet-input" type="text" value={objet} onChange={this.onObjetChange} className="form-control" />
+          <input
+            id="objet-input"
+            type="text"
+            value={objet}
+            onChange={this.onObjetChange}
+            className="form-control"
+          />
         </div>
         <div className="form-section v-group">
           <label className="titre-form-section">Message</label>
-          <textarea id="message-input" type="text" value={message} onChange={this.onMessageChange} className="form-control" />
+          <textarea
+            id="message-input"
+            type="text"
+            value={message}
+            onChange={this.onMessageChange}
+            className="form-control"
+          />
         </div>
         <div className="form-section v-group">
           <label className="titre-form-section">Vos coordonnées</label>
-          <textarea id="coordonnees-input" type="text" value={coordonnees} onChange={this.onCoordonneesChange} className="form-control" />
+          <textarea
+            id="coordonnees-input"
+            type="text"
+            value={coordonnees}
+            onChange={this.onCoordonneesChange}
+            className="form-control"
+          />
         </div>
         <div className="form-section v-group">
-          <button className={"btn btn-secondary" + btnClass} onClick={this.submitContactForm} >{formButtontext}</button>
+          <button
+            className={"btn btn-secondary my-3" + btnClass}
+            onClick={this.submitContactForm}
+          >
+            {formButtontext}
+          </button>
         </div>
       </div>
-    )
+    );
   }
 
-  onObjetChange = (event) => this.setState({ objet: event.target.value })
+  onObjetChange = (event) => this.setState({ objet: event.target.value });
 
-  onMessageChange = (event) => this.setState({ message: event.target.value })
+  onMessageChange = (event) => this.setState({ message: event.target.value });
 
-  onCoordonneesChange = (event) => this.setState({ coordonnees: event.target.value })
+  onCoordonneesChange = (event) =>
+    this.setState({ coordonnees: event.target.value });
 
   submitContactForm = async (event) => {
     event.preventDefault();
@@ -96,12 +108,10 @@ class ContactForm extends React.Component {
         message: "",
         coordonnees: "",
         formButtontext: "Message envoyé",
-        messageSend: true
-      })
+        messageSend: true,
+      });
+    } else {
+      this.setState({ formButtontext: "Merci de remplir tous les champs." });
     }
-    else {
-      this.setState({ formButtontext: "Merci de remplir tous les champs." })
-    }
-  }
-
+  };
 }

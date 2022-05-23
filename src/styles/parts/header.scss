@@ -11,7 +11,7 @@
     }
 }
 .header h1 {
-    color :  $gray-800;
+    color :  #191558;
 ;
 }
 
@@ -24,6 +24,7 @@
 .page-header {
     background-color: $light;
     text-align: center;
+    padding: 3rem 0;
     h2{
         font-size: 1.6rem;
     }

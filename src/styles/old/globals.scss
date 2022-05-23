@@ -206,11 +206,7 @@ textarea {
 {
   padding: 0 2%;
 
-  p
-  {
-    font-size: 20px;
-    line-height: 30px;
-  }
+ 
 }
 
 #empreinte-societale-illustration
@@ -248,98 +244,10 @@ textarea {
   }
 }
 
-.indicator-section 
-{
-
-  .icons-odd 
-  {
-
-
-    img.icon-odd
-    {
-      margin : 0.5rem;
-      height: 100px;      
-      &.not-concerned 
-      {
-        opacity: 0.1;
-      }
-    }
-  }
-
-  .indicators-panel-view
-  {
-  
-
-    img.default-icon
-    {
-      display: block;
-      height: 100px;
-      margin: auto;
-    }
-
-    .indicators-panel-details
-    {
-      height: 100%;
-
-      p
-      {
-        padding: 5px 10px;
-        margin: 10px 0;
-        text-align: left;
-      }
-      
-      h3 
-      {
-        height: max-content;
-        background-color: lighten($primary,50%);
-        margin: 0px;
-        padding: 5px;
-        color: white;
-        text-align: center;
-        font-size: 15px;
-      }
-    }
-  }
-
-  .indicators-panel-list
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    p
-    {
-      margin: 0;
-      padding: 10px 10px;
-      width: 100%;
-
-      &.highlighted
-      {
-        background-color: $primary;
-        color: white;
-      }
-    }
-  }
-}
-
-img#graph-donut
-{
-  max-height: 400px;
-}
 
 
 
-.logos-partners
-{
-  justify-content: space-evenly;
 
-  img.logo-partner
-  {
-    height: 75px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-}
 
 /* ----- A-Propos ----- */
 
