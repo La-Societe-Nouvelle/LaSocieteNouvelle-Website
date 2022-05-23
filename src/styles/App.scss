@@ -330,3 +330,23 @@ img.icon-odd.not-concerned {
 .indicator-section .icons-odd img.icon-odd {
   margin: 0.5rem;
 }
+
+section.indic {
+
+  img {
+    width: 100px;
+    display: block;
+    margin: 1rem auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  h3{
+    font-size: 1rem;
+    width: 200px;
+    margin: auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

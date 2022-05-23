@@ -11,6 +11,7 @@ import html from 'remark-html'
 import indicData from '../../lib/metaData.json'
 import { Helmet } from 'react-helmet'
 import { Container } from 'react-bootstrap'
+import PageHeader from '../../components/PageHeader'
 
 export default function Post({ postData }) {
   return (
@@ -65,21 +66,17 @@ function build(postData) {
       <Helmet>
         <title>La société Nouvelle | {data[indic].libelle} </title>
       </Helmet>
-
+      <PageHeader
+        title={data[indic].libelle}
+        prev={"notre-approche"}
+        prevTitle={"Méthodologie"}
+        path={"indicateur/?siren=" + data[indic].libelle}
+      />
         <Container>
           <section>
-
-            <h2 className="indic-strip-title" id="indic-label">
-              {data[indic].libelle}
-            </h2>
-
-            <div  dangerouslySetInnerHTML={{ __html: content }} />
-
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </section>
-
         </Container>
-
-
     </>
 
   )
