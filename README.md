@@ -2,7 +2,7 @@
 
 ## Summary
 
-Ce repository est le code source du site web la-societe-nouvelle.fr
+Ce repository est le code source du site web https://lasocietenouvelle.org/
 
 ## Side Notes
 This is a [Next.js](https://nextjs.org/) project 
