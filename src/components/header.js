@@ -60,8 +60,12 @@ const Header = () => {
                   <NavDropdown.Item href="/notre-approche">
                     Methodologie
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/liste-indicateurs">
+                  <NavDropdown.Item href="/indicateur">
                     Liste des indicateurs
+     
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/sinese">
+                    S.I.N.E.S.E
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/portail">
@@ -72,9 +76,7 @@ const Header = () => {
                     {" "}
                     Application Web - METRIZ
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/sirese">
-                    Système d'informations
-                  </NavDropdown.Item>
+             
                   <NavDropdown.Item
                     href="https://docs.lasocietenouvelle.org"
                     target="_blank"
