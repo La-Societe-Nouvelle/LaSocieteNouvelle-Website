@@ -62,6 +62,7 @@ const Home = () => {
       <div className="content">
         <Container>
           <section className="py-5">
+          <h2>Derniers articles</h2>
             <LatestPosts />
           </section>
         </Container>
@@ -119,15 +120,15 @@ const Home = () => {
           <Container>
             <h2>Mesurez l'empreinte sociétale de votre entreprise</h2>
             <p>
-              Utilisez gratuitement notre outils pour mesurer l'empreinte de votre production selon plusieurs enjeux majeurs et comparez
-              vos résultats à votre secteur d'activité.
+              Utilisez gratuitement notre outils pour mesurer l'empreinte de votre production selon plusieurs enjeux majeurs. 
+              La démarche permet ainsi de disposer de nouveaux ratios de performance, comparables, sur des dimensions sociales et environnementales clefs pour un développement durable.
             </p>
             <Row>
               <Col>
               <div className="box">
                 <Image src="/images/sustainable.svg" height={80} />
                 <h3 className="h6">
-                  Le développement durable
+                Se positionner par rapport à sa branche et aux objectifs sociaux et environnementaux à atteindre
                 </h3>
               </div>
               </Col>
@@ -135,7 +136,7 @@ const Home = () => {
               <div className="box">
                 <Image src="/images/performance.svg" height={80} />
                 <h3  className="h6">
-                  La performance extra-financière
+                Estimer les impacts liés à une dépense et de mettre en place une traçabilité le long des chaines de valeur
                 </h3>
               </div>
               </Col>
@@ -143,7 +144,7 @@ const Home = () => {
               <div className="box">
                 <Image src="/images/goals.svg" height={80} />
                 <h3  className="h6">
-                  Les engagements sociaux-environementaux
+                 Sortir d’une approche purement financière et apprécier le chiffre d’affaires et les autres agrégats financiers de manière plus juste.
                 </h3>
                 </div>
               </Col>

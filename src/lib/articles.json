@@ -1,7 +1,34 @@
 {
-  "blog": [
+  "posts": [
     {
+      "image" : "fiche-methodologique.jpg",
+      "titre" : "Fiche méthodologique | La production des données par défaut pour les entreprises française ! ",
+      "slug" : "fiche-donnees-defaut-entreprises-francaise",
+      "categorie" : "publication",
+      "date" :  "04 mai 2022",
+      "texte" : ""
+    },
+    {
+      "image" : "illu-ese.jpg",
+      "titre": "Qu’est-ce que l’Empreinte Sociétale de l’Entreprise ?",
+      "slug" : "empreinte-societale-entreprise",
+      "categorie" : "article",
+      "date": "25 avril 2022",
+      "texte": "L’Empreinte Sociétale de l’Entreprise (ESE) est un panel d’indicateurs sociaux et environnementaux relatif à la production vendue d’une entreprise."
+    },
+    {
+      "image" : "impact.jpg",
+      "titre": "Pourquoi faut-il mesurer les impacts de la valeur produite des entreprises?",
+      "slug" : "mesurer-impact",
+      "categorie" : "article",
+      "date": "13 avril 2022",
+      "texte": "Mesurer les impacts de la valeur produite c'est-à-dire les impacts liés à un euro de production permet de connaître la capacité d’une entreprise à produire de la valeur en limitant ses impacts négatifs ou en maximisant ses impacts positifs..."
+    },
+    {
+      "image" : "equipe-la-societe-nouvelle.jpg",
       "titre": "Mesurer, Informer pour une économie durable",
+      "slug" : "la-societe-nouvelle",
+      "categorie" : "actu",
       "date": "04 mars 2022",
       "accroche": "Il était une fois La Société Nouvelle...",
       "texte": "C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle : un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition."

@@ -1,134 +1,77 @@
-import React from "react"
-import { Col, Image, Row } from "react-bootstrap"
+import Link from "next/link";
+import React, { useState } from "react";
+import { Col, Image, Row } from "react-bootstrap";
+import articles from "../../lib/articles.json";
 
 function LatestPosts() {
-    return (
-        <div id="latest-posts">
-            <Row>
-                <Col>
-                    <div className="last">
-                        <div className="image-post">
-                            <Image
-                                alt="Photo d'équipe de la Societé Nouvelle"
-                                src="/images/equipe-la-societe-nouvelle.jpg"
-                                fluid />
-                        </div>
-                        <div className="post-title">
-                            <h2> Il était une fois La Société Nouvelle... </h2>
-                        </div>
-                        <div className="post-meta">
-                            <p>Publié le 4 mars 2022</p>
-                        </div>
-                        <div className="post-content">
-                            <p>
-                                C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle :
-                                un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition.
-                            </p>
+  const [posts, setPosts] = useState(articles.posts);
 
-                        </div>
-                        <div className="post-footer">
-                            <a href="/">Lire la suite</a>
-                        </div>
+  return (
+    <div id="latest-posts">
+      <Row>
+        <Col lg={6}>
+          <div className="last">
+            <div className="image-post">
+              <Image
+                alt="Photo d'équipe de la Societé Nouvelle"
+                src={"/images/articles/" + posts[0].image}
+                fluid
+              />
+            </div>
+            <div className="post-title">
+              <h2>{posts[0].titre}</h2>
+            </div>
+            <div className="post-meta">
+              <p>Publié le {posts[0].date}</p>
+            </div>
+            <div className="post-content">
+              <p>{posts[0].texte}</p>
+            </div>
+            <div className="post-footer">
+              <Link href={"/articles/" + posts[0].slug}>Lire la suite</Link>
+            </div>
+          </div>
+        </Col>
+        <Col>
+          {posts.map((post, key) => {
+              return (
+
+              
+            key != 0 && (
+              <div className="post" key={key}>
+                <Row>
+                  <Col lg={4}>
+                    <div className="image-post">
+                      <Image
+                        alt="Photo d'équipe de la Societé Nouvelle" 
+                        src={"/images/articles/thumbnail-" + post.image}
+                        fluid
+                      />
                     </div>
-
-                </Col>
-                <Col>
-                    <div className="post">
-
-                        <Row>
-                            <Col lg={4}>
-                                <div className="image-post">
-                                    <Image
-                                        alt="Photo d'équipe de la Societé Nouvelle"
-                                        src="/images/equipe-la-societe-nouvelle.jpg"
-                                        fluid />
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="post-title">
-                                    <h2> Il était une fois La Société Nouvelle... </h2>
-                                </div>
-                                <div className="post-meta">
-                                    <p>Publié le 4 mars 2022</p>
-                                </div>
-                                <div className="post-content">
-                                    <p>
-                                        C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle :
-                                        un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition.
-                                    </p>
-                                </div>
-                                <div className="post-footer">
-                                    <a href="/">Lire la suite</a>
-                                </div>
-                            </Col>
-                        </Row>
+                  </Col>
+                  <Col>
+                    <div className="post-title">
+                      <h2>{post.titre}</h2>
                     </div>
-                    <div className="post">
-
-                        <Row>
-                            <Col lg={4}>
-                                <div className="image-post">
-                                    <Image
-                                        alt="Photo d'équipe de la Societé Nouvelle"
-                                        src="/images/equipe-la-societe-nouvelle.jpg"
-                                        fluid />
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="post-title">
-                                    <h2> Il était une fois La Société Nouvelle... </h2>
-                                </div>
-                                <div className="post-meta">
-                                    <p>Publié le 4 mars 2022</p>
-                                </div>
-                                <div className="post-content">
-                                    <p>
-                                        C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle :
-                                        un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition.
-                                    </p>
-                                </div>
-                                <div className="post-footer">
-                                    <a href="/">Lire la suite</a>
-                                </div>
-                            </Col>
-                        </Row>
+                    <div className="post-meta">
+                      <p>Publié le {post.date}</p>
                     </div>
-                    <div className="post">
-
-                        <Row>
-                            <Col lg={4}>
-                                <div className="image-post">
-                                    <Image
-                                        alt="Photo d'équipe de la Societé Nouvelle"
-                                        src="/images/equipe-la-societe-nouvelle.jpg"
-                                        fluid />
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="post-title">
-                                    <h2> Il était une fois La Société Nouvelle... </h2>
-                                </div>
-                                <div className="post-meta">
-                                    <p>Publié le 4 mars 2022</p>
-                                </div>
-                                <div className="post-content">
-                                    <p>
-                                        C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle :
-                                        un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition.
-                                    </p>
-                                </div>
-                                <div className="post-footer">
-                                    <a href="/">Lire la suite</a>
-                                </div>
-                            </Col>
-                        </Row>
+                    <div className="post-content">
+                      <p>{post.texte}</p>
                     </div>
-
-                </Col>
-            </Row>
-
-        </div>
-    )
+                    <div className="post-footer">
+                      <Link href={"/articles/" + post.slug}>Lire la suite</Link>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            )
+            )
+          })}
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
-export default LatestPosts
+export default LatestPosts;
