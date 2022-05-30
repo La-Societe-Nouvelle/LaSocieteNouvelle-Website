@@ -13,14 +13,21 @@ const Cabinets = () => {
             <Col>
               <h3>Vous êtes un acteur de la comptabilité ?</h3>
               <p>
-                Face à l'urgence sociale et environnementale, il est désormais incontournable de compléter les informations comptables et les indicateurs de performance des entreprises. L'objectif de l'approche que nous poussons et de fournir,
-                sur des dimensions clefs, un positionnement de l'entreprise au regard des objectifs collectifs fixés.
+                Face à l'urgence sociale et environnementale, il est désormais incontournable de compléter les informations comptables traditionnelles 
+                par des indicateurs de performance extra-financière. 
+                
               </p>
               <p>
-                Les cabinets comptables sont les acteurs clefs de la mise en oeuvre de ces indicateurs de par leurs expertises et leur proximité avec les entreprises.
+                La pérennité d'une entreprise passe désormais par la prise en compte les défis
+                sociaux et environnementaux. Chaque entreprise se doit de s'assurer que la valeur qu'elle produit est compatible avec la transition vers
+                une économie soutenable.
               </p>
               <p>
-                Le complément comptable sur lequel nous travaillons, vous permet de compléter vos livrables en fin d'exercice pour :
+                Les indicateurs sur lesquels nous travaillons fournissent un positionnement de l'entreprise au regard d'objectifs clefs de développement durable.
+                Ils sont comparables par rapport à la branche d'activité de l'entreprise et à des trajectoires cibles et assurent un suivi annuel.
+              </p>
+              <p>
+                Le complément comptable obtenu, vous permet ainsi d'enrichir vos livrables en fin d'exercice pour :
               </p>
               <ul>
                 <li>
@@ -31,11 +38,9 @@ const Cabinets = () => {
                 </li>
                 <li>
                   Valoriser leurs actions et leurs engagements sociétaux
-
                 </li>
                 <li>
                   In fine, leur permettre de pleinement contribuer à une économie durable
-
                 </li>
               </ul>
             </Col>
@@ -75,7 +80,7 @@ const Cabinets = () => {
               </ul>
 
               <Button className="btn-outline-secondary mt-4">
-                Tester la version publique
+                Utiliser l'outil
               </Button>
 
             </Col>
@@ -86,7 +91,7 @@ const Cabinets = () => {
       </section>
       <section className="cta text-center">
         <Container>
-          <h3>Vous souhaitez apprendre à utiliser l'outil ? </h3>
+          <h3>Besoin d'une démonstration ? </h3>
           <p>
             Lors d'une entretien nous vous présenterons l'outil et nous vous proposerons une démonstration personnalisée pour apprendre à utiliser l'outil avec vos données comptables.
           </p>

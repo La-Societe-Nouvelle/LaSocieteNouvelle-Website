@@ -15,7 +15,7 @@ export default function Home() {
         <title>La société Nouvelle | Liste des indicateurs </title>
       </Helmet>
       <PageHeader
-        title="Liste d'indicateurs"
+        title="Panel d'indicateurs"
         prev={"notre-approche"}
         prevTitle={"Méthodologie"}
         path={"indicateur/"}

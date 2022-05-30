@@ -36,7 +36,7 @@ const Home = () => {
                 alt="co²"
               />
               <p className="text-center">
-                <span className="h1">153</span>  <sup>gCOe/€</sup>
+                <span className="h1">153</span>  <sup>gCO2e/€</sup>
               </p>
               <p className="text-center">
                 Intensité d'émission de gaz à effet de serre
@@ -68,9 +68,9 @@ const Home = () => {
         </Container>
         <section className="text-center graph-section">
           <Container>
-            <h2>Suivi macro-économique</h2>
+            <h2>Suivis macro-économiques</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Indicateurs clefs relatifs à l'empreinte sociale et environnementale de l'économie française. 
             </p>
             <Row>
               <Col>
@@ -90,25 +90,25 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg={5}>
-                <h2>Une solution Open Data à votre disposition</h2>
+                <h2>Un base de données ouverte sur les impacts de la production des entreprises</h2>
                   <p>
-                  Nous proposons une solution open data (données ouvertes), c'est à dire, la mise à disposition librement et 
-                  gratuitement des données des impacts de la valeur produite par les entreprises françaises.
-                    </p> 
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Etiam nunc erat, hendrerit consequat libero a, suscipit auctor risus. 
-                    </p>
-                    <p>
-                    Etiam eros purus, eleifend sed neque pellentesque, blandit ullamcorper quam. Sed eu tempor lectus.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                    </p>
-                    <Button className="me-3 mt-4">
-                      Consulter les données
-                    </Button>
-                    <Button variant="secondary" className="mt-4">
-                      Publier mes données
-                    </Button>
+                    Nous administrons une base de données répertoriant les publications
+                    des entreprises françaises sur l'empreinte sociétale de leur production.
+                    La base s'appuie directement sur le répertoire SIRENE.
+                  </p>
+                  <p>
+                    Les données sont accessibles librement et gratuitement via une API publique ou via notre portail web.
+                  </p>
+                  <p>
+                    La publication des données est gratuite. Des frais administratifs pourront s'appliquer à partir du 1er janvier 2023
+                    afin d'assurer la maintenance des ressources informatiques et la pérennité du service.
+                  </p>
+                  <Button className="me-3 mt-4">
+                    Consulter les données
+                  </Button>
+                  <Button variant="secondary" className="mt-4">
+                    Publier mes données
+                  </Button>
               </Col>
               <Col>
                 <Image src="images/illus.svg" fluid />
@@ -120,23 +120,23 @@ const Home = () => {
           <Container>
             <h2>Mesurez l'empreinte sociétale de votre entreprise</h2>
             <p>
-              Utilisez gratuitement notre outils pour mesurer l'empreinte de votre production selon plusieurs enjeux majeurs. 
-              La démarche permet ainsi de disposer de nouveaux ratios de performance, comparables, sur des dimensions sociales et environnementales clefs pour un développement durable.
+              Nous mettons à disposition un outil libre pour mesurer l'empreinte de votre production sur des dimensions sociales et environnementales clefs. 
+              La démarche vous permet de disposer de nouveaux ratios de performance et de participer à la construction d'une économie durable.
             </p>
             <Row>
               <Col>
               <div className="box">
-                <Image src="/images/sustainable.svg" height={80} />
-                <h3 className="h6">
-                Se positionner par rapport à sa branche et aux objectifs sociaux et environnementaux à atteindre
+                <Image src="/images/performance.svg" height={80} />
+                <h3  className="h6">
+                Comprendre l'origine de ses impacts et apprécier son compte de résultats de manière plus juste et plus complète
                 </h3>
               </div>
               </Col>
               <Col>
               <div className="box">
-                <Image src="/images/performance.svg" height={80} />
-                <h3  className="h6">
-                Estimer les impacts liés à une dépense et de mettre en place une traçabilité le long des chaines de valeur
+                <Image src="/images/sustainable.svg" height={80} />
+                <h3 className="h6">
+                Se positionner par rapport à sa branche et aux objectifs sociaux et environnementaux à atteindre pour agir à la hauteur des enjeux
                 </h3>
               </div>
               </Col>
@@ -144,7 +144,7 @@ const Home = () => {
               <div className="box">
                 <Image src="/images/goals.svg" height={80} />
                 <h3  className="h6">
-                 Sortir d’une approche purement financière et apprécier le chiffre d’affaires et les autres agrégats financiers de manière plus juste.
+                 Valoriser ses résultats et être identifiée comme une entreprise engagée pour la transition écologique et sociale
                 </h3>
                 </div>
               </Col>

@@ -23,7 +23,7 @@ const Approche = () => {
         <Container>
           <Row>
               <Col>
-              <h3>Calculer l'empreinte sociétale</h3>
+              <h3>Calcul de l'empreinte sociétale</h3>
           <p>
           L’Empreinte Sociétale est un Panel d’Indicateurs qui rend compte des impacts d’un euro de production vendue, sur des dimensions sociales et environnementales clefs.
           </p>
