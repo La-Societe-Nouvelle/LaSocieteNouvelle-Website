@@ -12,7 +12,8 @@
 }
 .header h1 {
     color :  #191558;
-;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .navbar-nav {
@@ -37,4 +38,42 @@
 .menu {
     border-top : 1px solid  #e9ecef;
     border-bottom: 1px solid $light;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    
+    .dropdown-item {
+        text-transform: initial;
+    }
+    .dropdown-toggle::after {
+        border: none;
+        content: "\F282";
+        display: inline-block;
+        font-family: bootstrap-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-feature-settings: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        vertical-align: -0.125em;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .nav-link{
+        border-bottom: 1px solid transparent;
+      }
+      .nav-link:hover{
+        border-bottom: 1px solid $secondary;
+      }
+
+      .btn-info {
+        font-size: 0.85rem;
+          background-color: $primary;
+          color : #fff;
+      }
+
+      .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left:0;
+        padding-right: 0;
+    }
 }

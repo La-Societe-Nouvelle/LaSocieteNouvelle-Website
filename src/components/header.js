@@ -57,12 +57,12 @@ const Header = () => {
             <Navbar.Brand href="/">
               <img
                 src="/logo.svg"
-                width="120"
-                height="120"
+                width="100"
+                height="100"
                 className="d-inline-block align-center"
                 alt="logo"
               />
-              <h1 className="h6">
+              <h1>
                 Mesurer, Informer pour une économie durable
               </h1>
             </Navbar.Brand>
@@ -78,11 +78,11 @@ const Header = () => {
           </div>
         </Container>
         <div className="menu">
-          <Navbar expand="lg">
+          <Navbar expand="lg" className="p-0">
             <Container>
               <Navbar.Toggle aria-controls="main-navbar-nav" />
-              <Navbar.Collapse id="main-navbar-nav">
-                <Nav>
+              <Navbar.Collapse id="main-navbar-nav" className="justify-content-between">
+                <Nav className="flex-grow-1 justify-content-between">
                   <Nav.Link href="/">Accueil</Nav.Link>
                   <NavDropdown title="Notre approche">
                     <NavDropdown.Item href="/notre-approche">
@@ -95,13 +95,13 @@ const Header = () => {
                       S.I.N.E.S.E
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="/portail">Données</Nav.Link>
-                  <NavDropdown title="Outils">
+                  <NavDropdown title="Ressources " >
                     <NavDropdown.Item href="/metriz">
-                      {" "}
                       Application Web - METRIZ
                     </NavDropdown.Item>
-
+                    <NavDropdown.Item href="/api-lsn">
+                      API
+                    </NavDropdown.Item>
                     <NavDropdown.Item
                       href="https://docs.lasocietenouvelle.org"
                       target="_blank"
@@ -110,18 +110,14 @@ const Header = () => {
                       Documentation
                     </NavDropdown.Item>
                   </NavDropdown>
+                  <Nav.Link href="/entreprises">Entreprises</Nav.Link>
                   <Nav.Link href="/cabinets-comptables">
                     Cabinets comptables
                   </Nav.Link>
-                  <Nav.Link href="/entreprises">Entreprises</Nav.Link>
-                  <NavDropdown title="Actualités">
-                    <NavDropdown.Item href="/blog/publications">
-                      Publications
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="/blog/actualites">
-                      Actualités
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                  <Nav.Link href="/blog">
+                    Actualités
+                  </Nav.Link>
+             
                   <NavDropdown title="A propos">
                     <NavDropdown.Item href="/la-societe-nouvelle">
                       Qui sommes-nous ?
@@ -129,11 +125,12 @@ const Header = () => {
                     <NavDropdown.Item href="/nos-missions">
                       Nos missions
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/notre-equipe">
-                      L'équipe
-                    </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
+                <div className="ms-5">
+                  <a href="/portail" className="btn btn-info"><i className="bi bi-server"></i> Données</a>
+                </div>
+
               </Navbar.Collapse>
             </Container>
           </Navbar>

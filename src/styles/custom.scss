@@ -24,9 +24,9 @@ $h4-font-size:1.2rem;
 
 /* Navbar */
 
-$navbar-light-color :  #212529 ;
-;
-
+$navbar-light-color :  #515050 ;
+$navbar-light-hover-color : $secondary;
+$nav-link-padding-y : 0.85rem;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
