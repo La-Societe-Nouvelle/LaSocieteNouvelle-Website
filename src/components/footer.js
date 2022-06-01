@@ -1,8 +1,53 @@
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { Col, Container, ListGroup, Nav, Row } from "react-bootstrap";
 
 function Footer() {
-  return (
+  const router = useRouter();
+  const [page, setPage] = useState(router.pathname);
+
+  useEffect(() => {
+    setPage(router.pathname);
+  });
+
+  return page == "/portail" ? (
+    <footer className="footer">
+      <Container fluid>
+        <Row>
+          <Col xs={12} lg={4}>
+            <h6>La société nouvelle</h6>
+          </Col>
+        </Row>
+        <div className="bottom-footer">
+            <div className="d-flex justify-content-between align-items-center">
+              <p className="mx-2">© 2022 La Société Nouvelle</p>
+              <ul className="nav">
+                <li className="nav-item">
+                  <a className="nav-link" href="/a-propos">
+                    A propos
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/mentions-legales">
+                    Mentions légales
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/company-data?siren=889182770">
+                    Empreinte Sociétale
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/contact">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </Container>
+    </footer>
+  ) : (
     <footer>
       <div className="top-footer">
         <Container>
@@ -50,10 +95,8 @@ function Footer() {
             <Col xs={12} lg={4}>
               <h6> Contactez-nous</h6>
               <div className="d-flex align-items-center icon-link">
-                  <i className="bi bi-envelope-fill" role="img"></i>
-                <a href="/contact">
-                  Formulaire de contact
-                </a>
+                <i className="bi bi-envelope-fill" role="img"></i>
+                <a href="/contact">Formulaire de contact</a>
               </div>
             </Col>
           </Row>
