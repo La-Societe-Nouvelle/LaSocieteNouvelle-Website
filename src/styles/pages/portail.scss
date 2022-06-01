@@ -1,0 +1,62 @@
+
+// portail de données
+
+.open-data-portal{
+
+    padding-top: 1rem;
+    .info-section {
+        border-top: 1px solid #e9ecef;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+section {
+    padding: 2rem 0;
+}
+.results {
+    border-top: 1px solid $light; 
+}
+.result {
+    padding: 2rem;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+
+    h3{
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    p{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+
+    }
+}
+}
+.search-form {
+
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+
+    margin-bottom: 2rem;
+
+    .form-control:focus {
+        border-color: $primary;
+        box-shadow: none;
+    }
+
+    .form-control-lg {
+        border-radius: 10px 0 0 10px;
+    }
+    .btn {
+        border-radius: 0 10px 10px 0;
+        font-size: 1rem;
+        color:#fff;
+        text-decoration: none;
+    } 
+
+    ::placeholder {
+        color: #82848a;
+        font-size: 1rem;
+      }
+}

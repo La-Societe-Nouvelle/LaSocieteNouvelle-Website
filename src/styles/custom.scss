@@ -12,12 +12,11 @@ $theme-colors: (
   "light":      $light
 );
 
-$body-color : #222221;
+$body-color : #202020;
 $link-color : $secondary;
 $font-family-sans-serif: 'Roboto', sans-serif;
 $headings-font-family: 'Raleway', 'Roboto', sans-serif;
 $headings-color : lighten($primary, 10%);
-$headings-font-weight: 600;
 
 $h2-font-size:1.6rem;
 $h3-font-size:1.4rem;

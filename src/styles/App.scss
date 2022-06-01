@@ -1,6 +1,8 @@
 @import "custom";
 @import "parts/header.scss";
 @import "parts/footer.scss";
+@import "parts/forms.scss";
+@import "pages/portail.scss";
 @import "components/statistics.scss";
 @import "components/posts.scss";
 
@@ -283,8 +285,6 @@ section{
 
 /* ----- Approche ----- */
 
-
-
 #empreinte-societale-illustration
 {
   height: 200px;
@@ -350,3 +350,4 @@ section.indic {
     }
   }
 }
+
