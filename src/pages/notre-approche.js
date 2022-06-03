@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 import IndicatorsPanel from "../components/indic/IndicatorsPanel";
 import PageHeader from "../components/PageHeader";
-import metaData from "../lib/metaData";
 
 const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
@@ -10,13 +10,16 @@ const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
 const impacts_euro = [
   "5400 kJ d'énergie",
   "17.4 L d'eau",
-  "158 gCO2e de gaz à effet de serre",
+  "158 gCO₂e de gaz à effet de serre",
   "78% de production française",
 ];
 
 const Approche = () => {
   return (
     <>
+      <Helmet>
+        <title>La société Nouvelle | Notre approche </title>
+      </Helmet>
       <PageHeader title={"Notre approche"} path={"notre-approche"} />
       <section>
         <Container>
@@ -54,16 +57,18 @@ const Approche = () => {
       </section>
       <section>
         <Container>
-          <h3>Indicateurs socio-économiques</h3>
+          <h3>
+            <i className="bi bi-arrow-right"></i> Indicateurs socio-économiques
+          </h3>
           <IndicatorsPanel indics={first_set_indics} />
+          <h3 className="mt-5">
+            <i className="bi bi-arrow-right"></i> Indicateurs environnementaux
+          </h3>
+          <IndicatorsPanel indics={second_set_indics} />
         </Container>
       </section>
       <section>
-        <Container>
-          <h3> Indicateurs environnementaux</h3>
-
-          <IndicatorsPanel indics={second_set_indics} />
-        </Container>
+        <Container></Container>
       </section>
     </>
   );
