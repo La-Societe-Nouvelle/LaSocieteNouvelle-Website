@@ -13,7 +13,7 @@ $theme-colors: (
 );
 
 $body-color : #202020;
-$link-color : $secondary;
+$link-color : lighten($primary, 20%);
 $font-family-sans-serif: 'Roboto', sans-serif;
 $headings-font-family: 'Raleway', 'Roboto', sans-serif;
 $headings-color : lighten($primary, 10%);

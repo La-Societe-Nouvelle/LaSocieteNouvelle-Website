@@ -1,0 +1,61 @@
+/* ----- Approche ----- */
+
+#empreinte-societale-illustration
+{
+  height: 200px;
+  position: relative;
+  border-radius: 45px;
+
+  p 
+  {
+    position: absolute;
+    left: 225px;
+    top: 40px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  img#icon-euro 
+  {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    height: 100px;
+  }
+
+  svg#empreinte-societale-traits
+  {
+    width: 200px;
+    position: absolute;
+    left: 20px;
+    top: 50px;
+  
+    line 
+    {
+      stroke: white;
+      stroke-width: 4px;
+    }
+  }
+}
+
+img.icon-odd.not-concerned {
+  opacity: .1;
+}
+.indicator-section .icons-odd img.icon-odd {
+  margin: 0.5rem;
+}
+.accordion {
+  border: 1px solid $light;
+}
+.accordion-body {
+  padding: 2rem;
+}
+.accordion-button {
+  font-weight: 600;
+}
+.accordion-button:not(.collapsed) {
+  color: $primary;
+  background-color: $light;
+  box-shadow: inset 0 -1px 0 rgba(25, 21, 88, 0.2);
+}

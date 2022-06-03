@@ -2,7 +2,9 @@
 @import "parts/header.scss";
 @import "parts/footer.scss";
 @import "parts/forms.scss";
+// import pages
 @import "pages/portail.scss";
+@import "pages/notre-approche.scss";
 @import "components/statistics.scss";
 @import "components/posts.scss";
 
@@ -18,20 +20,18 @@ a {
 .btn {
   font-weight: 600;
   padding: 0.65rem 1.5rem;
-  font-family: Raleway, sans-serif;
-  &:hover, &:focus {
-    color :#fff;
-  }
+  font-family: 'Raleway', sans-serif;
+}
+.btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.1rem rgb(250 89 95 / 50%);
+}
 
-}
-.btn-lg, .btn-group-lg > .btn {
-  padding: 0.5rem 1.5rem;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
 
 .btn-outline-secondary {
   background-color: lighten($secondary, 30%);
+  &:hover,  &:focus {
+    color : #fff;
+  }
 }
 
 .btn-outline-primary {
@@ -40,6 +40,9 @@ a {
 
 .btn-secondary {
   color: #fff;
+  &:hover,  &:focus {
+    color : #fff;
+  }
 }
 
 section{
@@ -291,53 +294,7 @@ section{
   }
 }
 
-/* ----- Approche ----- */
 
-#empreinte-societale-illustration
-{
-  height: 200px;
-  position: relative;
-  border-radius: 45px;
-
-  p 
-  {
-    position: absolute;
-    left: 225px;
-    top: 40px;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
-
-  img#icon-euro 
-  {
-    position: absolute;
-    left: 50px;
-    top: 50px;
-    height: 100px;
-  }
-
-  svg#empreinte-societale-traits
-  {
-    width: 200px;
-    position: absolute;
-    left: 20px;
-    top: 50px;
-  
-    line 
-    {
-      stroke: white;
-      stroke-width: 4px;
-    }
-  }
-}
-
-img.icon-odd.not-concerned {
-  opacity: .1;
-}
-.indicator-section .icons-odd img.icon-odd {
-  margin: 0.5rem;
-}
 
 section.indic {
 
@@ -356,6 +313,17 @@ section.indic {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+.info-supp {
+  
+  li{
+    font-size: 0.8rem;
+  }
+  ul {
+    padding-left: 1rem;
+    list-style-type: circle;
   }
 }
 

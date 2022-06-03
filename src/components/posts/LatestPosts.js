@@ -28,7 +28,7 @@ function LatestPosts() {
               <p>{posts[0].texte}</p>
             </div>
             <div className="post-footer">
-              <Link href={"/articles/" + posts[0].slug}>Lire la suite</Link>
+              <Link href={"/blog/" + posts[0].slug}>Lire la suite</Link>
             </div>
           </div>
         </Col>
@@ -60,7 +60,7 @@ function LatestPosts() {
                       <p>{post.texte}</p>
                     </div>
                     <div className="post-footer">
-                      <Link href={"/articles/" + post.slug}>Lire la suite</Link>
+                      <Link href={"/blog/" + post.slug}>Lire la suite</Link>
                     </div>
                   </Col>
                 </Row>
