@@ -88,7 +88,7 @@ const Header = () => {
                     <NavDropdown.Item href="/notre-approche">
                       Methodologie
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/indicateur">
+                    <NavDropdown.Item href="/indicateurs">
                       Liste des indicateurs
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/sinese">

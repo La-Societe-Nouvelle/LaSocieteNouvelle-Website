@@ -20,7 +20,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 // // CSS specific to pages
 // import '../styles/accueil.scss'
 // import '../styles/a-propos.scss'
-// import '../styles/indicateur.scss'
+// import '../styles/indicateurs.scss'
 // import '../styles/portail.scss'
 // import '../styles/contact.scss'
 // import '../styles/approche.scss'

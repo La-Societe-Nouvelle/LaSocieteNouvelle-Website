@@ -30,3 +30,14 @@
         font-size: 0.8rem;
     }
 }
+
+.article {
+    border: 1px solid #f0f0f8;
+    padding: 3rem;
+    margin: 2rem 0;
+
+    .post-image img{
+        display: block;
+        margin: 0 auto 3rem auto;
+    }
+}

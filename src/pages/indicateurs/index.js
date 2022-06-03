@@ -28,10 +28,10 @@ export default function Home() {
         {metaData.indics.map((indic, index) => (
                 <Col lg={3} key={index} className="mb-3">
                   <Card className="indics text-center" >
-                    <Link href={"/indicateur/" + indic}>
+                    <Link href={"/indicateurs/" + indic}>
                       <Image roundedCircle src={"/ESE/" + indic + ".png"} />
                     </Link>
-                    <Link href={"/indicateur/" + indic}>
+                    <Link href={"/indicateurs/" + indic}>
                     <h3 className="mb-4"> <a>
                         {metaData[indic].libelle}
                       </a></h3>

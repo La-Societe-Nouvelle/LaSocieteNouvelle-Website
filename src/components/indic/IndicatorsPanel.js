@@ -79,7 +79,7 @@ const IndicatorDetails = ({ indic }) => {
         <b>Impact direct mesuré : </b>
         {metaData[indic].descriptionImpactDirect}
       </p>
-      <a className="btn btn-primary" href={"/indicateur/" + indic}> En savoir plus</a>
+      <a className="btn btn-primary" href={"/indicateurs/" + indic}> En savoir plus</a>
     </div>
   );
 };

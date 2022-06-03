@@ -356,7 +356,7 @@ class IndicatorForm extends React.Component {
           <div className="source">
             <a
               className="text-link"
-              href={"https://lasocietenouvelle.org/indicateur/" + indic}
+              href={"https://lasocietenouvelle.org/indicateurs/" + indic}
               target="_blank"
             >
               <i className="bi bi-box-arrow-up-right"></i> Informations sur
