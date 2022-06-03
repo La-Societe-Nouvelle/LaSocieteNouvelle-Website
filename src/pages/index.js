@@ -1,9 +1,8 @@
 // Components
-import Header from '../components/header'
-import Footer from '../components/footer'
+
 // Modules
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/Graph";
 import LatestPosts from "../components/posts/LatestPosts";
@@ -11,6 +10,9 @@ import LatestPosts from "../components/posts/LatestPosts";
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>La société Nouvelle | Accueil </title>
+      </Helmet>
       <div className="bloc-statistics py-4 bg-light">
         <Container>
           <div className="d-flex justify-content-between">
@@ -24,19 +26,17 @@ const Home = () => {
               <p className="text-center">
                 <span className="h1">2054</span> <sup> Mrd €</sup>
               </p>
-              <p className="text-center">
-                Production intérieure
-              </p>
+              <p className="text-center">Production intérieure</p>
             </div>
             <div className="statistic-item">
               <img
-                src="images/CO2.png" 
+                src="images/CO2.png"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="co²"
               />
               <p className="text-center">
-                <span className="h1">153</span>  <sup>gCO2e/€</sup>
+                <span className="h1">153</span> <sup>gCO₂e/€</sup>
               </p>
               <p className="text-center">
                 Intensité d'émission de gaz à effet de serre
@@ -50,11 +50,9 @@ const Home = () => {
                 alt="Egalité"
               />
               <p className="text-center">
-                <span className="h1">17,9</span>  <sup>%</sup>
+                <span className="h1">17,9</span> <sup>%</sup>
               </p>
-              <p className="text-center">
-                Ecart de rémunération F/H
-              </p>
+              <p className="text-center">Ecart de rémunération F/H</p>
             </div>
           </div>
         </Container>
@@ -62,7 +60,7 @@ const Home = () => {
       <div className="content">
         <Container>
           <section className="py-5">
-          <h2>Derniers articles</h2>
+            <h2>Derniers articles</h2>
             <LatestPosts />
           </section>
         </Container>
@@ -70,18 +68,18 @@ const Home = () => {
           <Container>
             <h2>Suivis macro-économiques</h2>
             <p>
-              Indicateurs clefs relatifs à l'empreinte sociale et environnementale de l'économie française. 
+              Indicateurs clefs relatifs à l'empreinte sociale et
+              environnementale de l'économie française.
             </p>
             <Row>
               <Col>
-              
                 <Graph indic={"GHG"} unit={"gCO² e"} />
               </Col>
               <Col>
-               <Graph indic={"WAT"} unit={"L"} />
+                <Graph indic={"WAT"} unit={"L"} />
               </Col>
               <Col>
-              <Graph indic={"NRG"} unit={"KJ"}/>
+                <Graph indic={"NRG"} unit={"KJ"} />
               </Col>
             </Row>
           </Container>
@@ -90,25 +88,37 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg={5}>
-                <h2>Un base de données ouverte sur les impacts de la production des entreprises</h2>
-                  <p>
-                    Nous administrons une base de données répertoriant les publications
-                    des entreprises françaises sur l'empreinte sociétale de leur production.
-                    La base s'appuie directement sur le répertoire SIRENE.
-                  </p>
-                  <p>
-                    Les données sont accessibles librement et gratuitement via une API publique ou via notre portail web.
-                  </p>
-                  <p>
-                    La publication des données est gratuite. Des frais administratifs pourront s'appliquer à partir du 1er janvier 2023
-                    afin d'assurer la maintenance des ressources informatiques et la pérennité du service.
-                  </p>
-                  <Button className="me-3 mt-4">
-                    Consulter les données
-                  </Button>
-                  <Button variant="secondary" className="mt-4">
-                    Publier mes données
-                  </Button>
+                <h2>
+                  Un base de données ouverte sur les impacts de la production
+                  des entreprises
+                </h2>
+                <p>
+                  Nous administrons une base de données répertoriant les
+                  publications des entreprises françaises sur{" "}
+                  <b>l'empreinte sociétale</b> de leur production. La base
+                  s'appuie directement sur le répertoire SIRENE.
+                </p>
+                <p>
+                  Les données sont accessibles{" "}
+                  <strong>librement et gratuitement</strong> via une API
+                  publique ou via notre portail web.
+                </p>
+                <p>
+                  La publication des données est gratuite. Des frais
+                  administratifs pourront s'appliquer à partir du 1er janvier
+                  2023 afin d'assurer la maintenance des ressources
+                  informatiques et la pérennité du service.
+                </p>
+                <Button className="me-3 mt-4" href="/portail">
+                  Consulter les données
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="mt-4"
+                  href="/publier-mes-donnees"
+                >
+                  Publier mes données
+                </Button>
               </Col>
               <Col>
                 <Image src="images/illus.svg" fluid />
@@ -120,37 +130,51 @@ const Home = () => {
           <Container>
             <h2>Mesurez l'empreinte sociétale de votre entreprise</h2>
             <p>
-              Nous mettons à disposition un outil libre pour mesurer l'empreinte de votre production sur des dimensions sociales et environnementales clefs. 
-              La démarche vous permet de disposer de nouveaux ratios de performance et de participer à la construction d'une économie durable.
+              Nous mettons à disposition un outil libre pour mesurer l'empreinte
+              de votre production sur des dimensions sociales et
+              environnementales clefs. La démarche vous permet de disposer de
+              nouveaux ratios de performance et de participer à la construction
+              d'une économie durable.
             </p>
             <Row>
               <Col>
-              <div className="box">
-                <Image src="/images/performance.svg" height={80} />
-                <h3  className="h6">
-                Comprendre l'origine de ses impacts et apprécier son compte de résultats de manière plus juste et plus complète
-                </h3>
-              </div>
+                <div className="box">
+                  <Image src="/images/performance.svg" height={80} />
+                  <h3 className="h6">
+                    Comprendre <strong>l'origine de ses impacts</strong> et
+                    apprécier son compte de résultats de manière plus juste et
+                    plus complète
+                  </h3>
+                </div>
               </Col>
               <Col>
-              <div className="box">
-                <Image src="/images/sustainable.svg" height={80} />
-                <h3 className="h6">
-                Se positionner par rapport à sa branche et aux objectifs sociaux et environnementaux à atteindre pour agir à la hauteur des enjeux
-                </h3>
-              </div>
+                <div className="box">
+                  <Image src="/images/sustainable.svg" height={80} />
+                  <h3 className="h6">
+                    <b>Se positionner</b> par rapport à sa branche et aux{" "}
+                    <strong>objectifs sociaux et environnementaux</strong> à
+                    atteindre pour agir à la hauteur des enjeux
+                  </h3>
+                </div>
               </Col>
               <Col>
-              <div className="box">
-                <Image src="/images/goals.svg" height={80} />
-                <h3  className="h6">
-                 Valoriser ses résultats et être identifiée comme une entreprise engagée pour la transition écologique et sociale
-                </h3>
+                <div className="box">
+                  <Image src="/images/goals.svg" height={80} />
+                  <h3 className="h6">
+                    Valoriser ses résultats et être identifié comme une
+                    entreprise engagée pour la{" "}
+                    <strong>transition écologique et sociale</strong>
+                  </h3>
                 </div>
               </Col>
             </Row>
             <p>
-              <a className="btn btn-secondary " href="https://metriz.lasocietenouvelle.org" target="_blank" rel="noreferrer">
+              <a
+                className="btn btn-secondary "
+                href="https://metriz.lasocietenouvelle.org"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Utiliser l'outil <i className="bi bi-arrow-right"></i>
               </a>
             </p>
@@ -158,19 +182,16 @@ const Home = () => {
         </section>
         <section className="partenaires">
           <Container>
-              <div className="d-flex"></div>
-              <div>
-                <h4>Ils nous soutiennent</h4>
-              </div>
-              <div></div>
+            <div className="d-flex"></div>
+            <div>
+              <h4>Ils nous soutiennent</h4>
+            </div>
+            <div></div>
           </Container>
-
         </section>
-
       </div>
     </>
   );
 };
 
 export default Home;
-
