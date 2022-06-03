@@ -109,6 +109,7 @@ const portail = () => {
             </Container>
           </section>
         )}
+
         {isLoaded && results.length > 0 && (
           <section className="results bg-light">
             <Container>
@@ -152,11 +153,10 @@ const portail = () => {
                       <div className="text-end">
                         <a
                           className="btn btn-outline-secondary"
-                          href={"company-data?siren=" + item.siren}
+                          href={"portail/company/" + item.siren}
                         >
 
-                          Voir l'empreinte
-                          <i className="bi bi-arrow-right-circle-fill"></i>
+                          Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
                         </a>
                       </div>
                     </Col>
@@ -179,10 +179,8 @@ const portail = () => {
                   l'entreprise, merci d'utiliser ces données avec précautions.
                 </p>
                 <p>
-                  Pour toute publication, mise à jour ou retrait{" "}
-                  <a href="/contact" target="_self">
-                    {" "}
-                    contactez-nous.
+                  Pour toute publication, mise à jour ou retrait
+                  <a href="/contact" target="_self"> contactez-nous.
                   </a>
                 </p>
               </Col>
