@@ -14,7 +14,7 @@ const Header = () => {
     page == "/portail" ? (
       <Navbar bg="dark" expand="lg">
         <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/portail">
               <img
                 src="/logo.svg"
                 width="80"
@@ -27,7 +27,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/portail">Accueil</Nav.Link>
-              <Nav.Link href="">API</Nav.Link>
+              <Nav.Link href="/api-lsn">API</Nav.Link>
               <Nav.Link href="https://docs.lasocietenouvelle.org/public-api" target="_blank">Documentation</Nav.Link>
               <Nav.Link href="/">La société nouvelle</Nav.Link>
             </Nav>
@@ -39,13 +39,13 @@ const Header = () => {
         <Container>
           <div className="top-bar d-flex justify-content-between align-items-center">
             <Nav className="socials">
-              <Nav.Link href="">
+              <Nav.Link href="https://twitter.com/LSN_FR" target="_blank" rel="noreferrer">
                 <i className="bi bi-twitter"></i>
               </Nav.Link>
-              <Nav.Link href="">
+              <Nav.Link href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank" rel="noreferrer" >
                 <i className="bi bi-linkedin"></i>
               </Nav.Link>
-              <Nav.Link href="">
+              <Nav.Link href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank" rel="noreferrer">
                 <i className="bi bi-github"></i>
               </Nav.Link>
             </Nav>
@@ -68,10 +68,10 @@ const Header = () => {
             </Navbar.Brand>
             <div></div>
             <div>
-              <Button href="#" variant="outline-secondary">
+              <Button href="https://metriz.lasocietenouvelle.org" variant="outline-secondary" target="_blank" rel="noreferrer">
                 Mesurer mon impact
               </Button>
-              <Button href="#" variant="outline-primary" className="ms-2">
+              <Button href="/publier-mes-donnees" variant="outline-primary" className="ms-2">
                 Publier mes données
               </Button>
             </div>
