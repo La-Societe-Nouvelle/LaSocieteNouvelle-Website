@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 // Components
 
 import metaData from "../../lib/metaData";
-import { Card, Col, Container, Image, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../../components/PageHeader";
 import Link from "next/link";
 
