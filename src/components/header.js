@@ -91,9 +91,9 @@ const Header = () => {
                     <NavDropdown.Item href="/indicateurs">
                       Liste des indicateurs
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/sinese">
+                    {/* <NavDropdown.Item href="/sinese">
                       S.I.N.E.S.E
-                    </NavDropdown.Item>
+                    </NavDropdown.Item> */}
                   </NavDropdown>
                   <NavDropdown title="Ressources " >
                     <NavDropdown.Item href="/metriz">
@@ -119,7 +119,7 @@ const Header = () => {
                   </Nav.Link>
              
                   <NavDropdown title="A propos">
-                    <NavDropdown.Item href="/la-societe-nouvelle">
+                    <NavDropdown.Item href="/a-propos-la-societe-nouvelle">
                       Qui sommes-nous ?
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/nos-missions">

@@ -42,7 +42,7 @@ const About = () => {
             </Col>
             <Col>
               <Image
-                src="images/equipe-la-societe-nouvelle.jpg"
+                src="images/articles/equipe-la-societe-nouvelle.jpg"
                 alt="Photo d'équipe"
                 fluid
                 className="mt-5"
@@ -61,8 +61,7 @@ const About = () => {
             environnementales clefs, les impacts de la valeur qu’elles
             produisent.
           </p>
-          <Button variant="secondary">Nos missions</Button>{" "}
-          <Button variant="outline-secondary">Nos outils</Button>
+          <Button variant="secondary" href="/nos-missions">Nos missions</Button>
         </Container>
       </section>
       <section>
@@ -90,8 +89,6 @@ const About = () => {
       </section>
       <section className="bg-light">
         <Container>
-          <Row>
-            <Col lg={8}>
               <div>
                 <h3 className="subtitle">Notre positionnement</h3>
                 <p>
@@ -105,14 +102,10 @@ const About = () => {
                   de leurs consommations.
                 </p>
               </div>
-            </Col>
-            <Col>
-              <Image alt="Planète terre" src="/images/earth.jpg" fluid />
-            </Col>
-          </Row>
+     
         </Container>
       </section>
-      <section>
+      <section className="pb-0">
         <Container>
           <div className="nos-valeurs">
             <h3 className="subtitle">Nos valeurs</h3>
@@ -149,6 +142,35 @@ const About = () => {
             </Row>
           </div>
         </Container>
+      </section>
+      <section>
+       <Container>
+      
+            <h2 className="text-center mb-5">Notre Equipe</h2>
+            <Row className='text-center'>
+              <Col>
+                <img id="img-joris" src="/images/joris.jpg" alt="img-joris" />
+                <p className="prenom"><b>Joris</b></p>
+                <p className="poste">Statistiques publiques</p>
+              </Col>
+              <Col>
+                <img id="img-laura" src="/images/laura.jpg" alt="img-laura" />
+                <p className="prenom"><b>Laura</b></p>
+                <p className="poste">Développement Web</p>
+              </Col>
+              <Col>
+                <img id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
+                <p className="prenom"><b>Maëva</b></p>
+                <p className="poste">Communication</p>
+              </Col>
+              <Col>
+                <img id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain" />
+                <p className="prenom"><b>Sylvain</b></p>
+                <p className="poste">Relation partenaires</p>
+              </Col>
+            </Row>
+        
+        </Container> 
       </section>
     </>
   );

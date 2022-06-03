@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "image": "video.jpg",
+      "titre": "L'approche de La Société Nouvelle",
+      "slug": "approche-societe-nouvelle",
+      "categorie": "video",
+      "date": "02 juin 2022",
+      "texte": "Pour mieux comprendre notre approche, nous avons réalisé une vidéos explicative." 
+    },
+    {
       "image": "fiche-methodologique.jpg",
       "titre": "Fiche méthodologique | La production des données par défaut pour les entreprises française ! ",
       "slug": "fiche-donnees-defaut-entreprises-francaise",
@@ -19,7 +27,7 @@
     {
       "image": "impact.jpg",
       "titre": "Pourquoi faut-il mesurer les impacts de la valeur produite des entreprises?",
-      "slug": "mesurer-impact",
+      "slug": "mesurer-impact-production-entreprise",
       "categorie": "article",
       "date": "13 avril 2022",
       "texte": "Mesurer les impacts de la valeur produite c'est-à-dire les impacts liés à un euro de production permet de connaître la capacité d’une entreprise à produire de la valeur en limitant ses impacts négatifs ou en maximisant ses impacts positifs..."

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Container} from "react-bootstrap";
+import {  Container} from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -46,15 +46,13 @@ const Post = () => {
             </p>
             <p>
             Aujourd’hui le panel comprend <a href="/indicateurs">12 indicateurs</a> : 6 indicateurs socio-économiques et 6 indicateurs environnementaux.
+            Le choix des indicateurs s’appuient sur les 17 Objectifs de Développement Durable émis par l’ONU (Organisation des Nations Unies) en 2015, pour l’horizon 2030. Les indicateurs sont évolutifs – ajout, modification de la définition, retrait – pour cibler les enjeux critiques et pertinents à l’échelle de l’entreprise. Un comité de gouvernance des indicateurs est en cours de constitution.
+            </p>
+            <p>
+            L’Empreinte Sociétale complète ainsi une approche RSE, en ciblant des enjeux communs sur lesquels chaque entreprise doit rendre compte de son impact (même s’il ne s’agit pas d’un enjeu majeur pour elle).
             </p>
           </div>
-          <Button
-            href="https://lasocietenouvelle.org/LSN_Fiche-methodologique_production-des-donnees-par-defaut-pour-les-entreprises-francaises_indicateur-eco.pdf"
-            variant="secondary"
-            target="_blank"
-          >
-            Télécharger la fiche
-          </Button>
+       
         </div>
       </Container>
     </>

@@ -5,29 +5,6 @@ import SSRProvider from 'react-bootstrap/SSRProvider'
 import "../styles/App.scss";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-// import '../styles/_groups.scss'
-// import '../styles/_section.scss'
-// import '../styles/_wrapper.scss'
-// import '../styles/_components.scss'
-// import '../styles/_md.scss'
-// import '../styles/_form.scss'
-
-// // CSS specific to components
-// import '../styles/globals.scss'
-// import '../styles/header.scss'
-// import '../styles/footer.scss'
-
-// // CSS specific to pages
-// import '../styles/accueil.scss'
-// import '../styles/a-propos.scss'
-// import '../styles/indicateurs.scss'
-// import '../styles/portail.scss'
-// import '../styles/contact.scss'
-// import '../styles/approche.scss'
-// import '../styles/company-data.scss'
-// import '../styles/articles.scss'
-// import '../styles/newsletter.scss'
-
 import { Helmet } from 'react-helmet';
 import Header from '../components/header';
 import Footer from '../components/footer';

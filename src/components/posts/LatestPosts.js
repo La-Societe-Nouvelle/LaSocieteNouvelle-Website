@@ -4,7 +4,8 @@ import { Col, Image, Row } from "react-bootstrap";
 import articles from "../../lib/articles.json";
 
 function LatestPosts() {
-  const [posts, setPosts] = useState(articles.posts);
+
+  const [posts, setPosts] = useState(articles.posts.slice(0, 4));
 
   return (
     <div id="latest-posts">
@@ -34,39 +35,37 @@ function LatestPosts() {
         </Col>
         <Col>
           {posts.map((post, key) => {
-              return (
-
-              
-            key != 0 && (
-              <div className="post" key={key}>
-                <Row>
-                  <Col lg={4}>
-                    <div className="image-post">
-                      <Image
-                        alt="Photo d'équipe de la Societé Nouvelle" 
-                        src={"/images/articles/thumbnail-" + post.image}
-                        fluid
-                      />
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="post-title">
-                      <h2>{post.titre}</h2>
-                    </div>
-                    <div className="post-meta">
-                      <p>Publié le {post.date}</p>
-                    </div>
-                    <div className="post-content">
-                      <p>{post.texte}</p>
-                    </div>
-                    <div className="post-footer">
-                      <Link href={"/blog/" + post.slug}>Lire la suite</Link>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
-            )
-            )
+            return (
+              key != 0 && (
+                <div className="post" key={key}>
+                  <Row>
+                    <Col lg={4}>
+                      <div className="image-post">
+                        <Image
+                          alt="Photo d'équipe de la Societé Nouvelle"
+                          src={"/images/articles/thumbnail-" + post.image}
+                          fluid
+                        />
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="post-title">
+                        <h2>{post.titre}</h2>
+                      </div>
+                      <div className="post-meta">
+                        <p>Publié le {post.date}</p>
+                      </div>
+                      <div className="post-content">
+                        <p>{post.texte}</p>
+                      </div>
+                      <div className="post-footer">
+                        <Link href={"/blog/" + post.slug}>Lire la suite</Link>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              )
+            );
           })}
         </Col>
       </Row>
