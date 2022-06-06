@@ -1,13 +1,46 @@
 
 // portail de données
-
+.info-section {
+    border-top: 1px solid #e9ecef;
+    font-size: 0.8rem;
+    text-align: center;
+}
 .open-data-portal{
 
     padding-top: 1rem;
-    .info-section {
-        border-top: 1px solid #e9ecef;
-        font-size: 0.8rem;
-        text-align: center;
+    min-height: calc(100vh - 350px);
+
+    .nav {
+        background-color: $primary;
+        a{
+            text-transform: uppercase;
+            color : #fff;
+        }
+        .selected {
+            background-color: $secondary;
+        }
+    }
+
+    .footprint {
+        border : 1px solid $light;
+        padding: 2rem;
+        #indic-view-label {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .value {
+            font-size: 1.5rem;
+            color : $primary;
+            font-weight: 600;
+        }
+        .incertitude {
+            color : grey;
+            font-size: 0.7rem;
+        }
+        .icon-ese {
+            height: 40px;
+            margin-right: 1rem;
+        }
     }
 
 section {

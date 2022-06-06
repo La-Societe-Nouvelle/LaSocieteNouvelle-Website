@@ -166,27 +166,7 @@ const portail = () => {
             </Container>
           </section>
         )}
-        <section className="info-section">
-          <Container fluid>
-            <Row>
-              <Col>
-                <p>
-                  En cas d'absence de données fournies par l'entreprise, des
-                  valeurs par défaut sont attribuées selon les caractéristiques
-                  de l'entreprise.
-                  <br />
-                  Ces valeurs peuvent être éloignées de la réalité de
-                  l'entreprise, merci d'utiliser ces données avec précautions.
-                </p>
-                <p>
-                  Pour toute publication, mise à jour ou retrait
-                  <a href="/contact" target="_self"> contactez-nous.
-                  </a>
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </section>
+
       </div>
     </>
   );

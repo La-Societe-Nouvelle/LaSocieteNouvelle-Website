@@ -10,17 +10,47 @@ function Footer() {
     setPage(router.pathname);
   });
 
-  return page == "/portail" ? (
-    <footer className="footer">
-      <Container fluid>
-        <Row>
-          <Col xs={12} lg={4}>
-            <h6>La société nouvelle</h6>
-          </Col>
-        </Row>
-        <div className="bottom-footer">
+  return page.includes("portail") ? (
+    <>
+      <section className="info-section pb-4">
+        <Container fluid>
+          <Row>
+            <Col>
+              <p>
+                En cas d'absence de données fournies par l'entreprise, des
+                valeurs par défaut sont attribuées selon les caractéristiques de
+                l'entreprise.
+                <br />
+                Ces valeurs peuvent être éloignées de la réalité de
+                l'entreprise, merci d'utiliser ces données avec précautions.
+              </p>
+              <p>
+                Pour toute publication, mise à jour ou retrait
+                <a href="/contact" target="_self">
+                  {" "}
+                  contactez-nous.
+                </a>
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <footer className="footer pt-4 ">
+        <Container fluid>
+          <div className="">
             <div className="d-flex justify-content-between align-items-center">
               <p className="mx-2">© 2022 La Société Nouvelle</p>
+              <Nav className="socials">
+              <Nav.Link href="https://twitter.com/LSN_FR" target="_blank" rel="noreferrer">
+                <i className="bi bi-twitter mx-2"></i>
+              </Nav.Link>
+              <Nav.Link href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank" rel="noreferrer" >
+                <i className="bi bi-linkedin  mx-2"></i>
+              </Nav.Link>
+              <Nav.Link href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank" rel="noreferrer">
+                <i className="bi bi-github  mx-2"></i>
+              </Nav.Link>
+            </Nav>
               <ul className="nav">
                 <li className="nav-item">
                   <a className="nav-link" href="/a-propos">
@@ -44,9 +74,10 @@ function Footer() {
                 </li>
               </ul>
             </div>
-        </div>
-      </Container>
-    </footer>
+          </div>
+        </Container>
+      </footer>
+    </>
   ) : (
     <footer>
       <div className="top-footer">

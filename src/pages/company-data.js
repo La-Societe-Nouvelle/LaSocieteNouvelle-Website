@@ -14,7 +14,6 @@ import {
   NavLink,
   Row,
 } from "react-bootstrap";
-import Chart from "chart.js/auto";
 
 import { Bar } from "react-chartjs-2";
 import PageHeader from "../components/PageHeader";

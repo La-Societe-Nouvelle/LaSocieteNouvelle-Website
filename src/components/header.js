@@ -11,7 +11,7 @@ const Header = () => {
   });
 
   return (
-    page == "/portail" ? (
+    page.includes("portail")? (
       <Navbar bg="dark" expand="lg">
         <Container fluid>
         <Navbar.Brand href="/portail">
@@ -26,7 +26,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/portail">Accueil</Nav.Link>
+              <Nav.Link href="/portail"><i className="bi bi-search"></i> Portail</Nav.Link>
               <Nav.Link href="/api-lsn">API</Nav.Link>
               <Nav.Link href="https://docs.lasocietenouvelle.org/public-api" target="_blank">Documentation</Nav.Link>
               <Nav.Link href="/">La société nouvelle</Nav.Link>
