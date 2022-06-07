@@ -57,7 +57,7 @@ const Header = () => {
             <Navbar.Brand href="/">
               <img
                 src="/logo.svg"
-                height="145"
+                height="110"
                 alt="logo"
               />
           
