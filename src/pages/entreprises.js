@@ -92,14 +92,20 @@ const Entreprises = () => {
             <Col>
               <h3> Principe de calcul</h3>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Mauris blandit dolor sem. Quisque posuere at diam vitae pharetra.
-              Suspendisse quis metus eu ante accumsan luctus eget sit amet lorem. Donec nec commodo nibh. 
+                Du fait des consommations intermédiaires et de capital fixe, la valeur produite d'une entreprise 
+                fait intervenir celles d’autres entreprises. La mesure des indicateurs fait donc appel aux empreintes 
+                sociétales des fournisseurs pour estimer les impacts de ces flux sortants.
               </p>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Mauris blandit dolor sem. Quisque posuere at diam vitae pharetra.
-              Suspendisse quis metus eu ante accumsan luctus eget sit amet lorem. Donec nec commodo nibh. 
+                Le modèle des indicateurs suit ainsi les principes suivants : 
+              </p>
+              <ul>
+                <li>Les impacts liés à la valeur ajoutée nette (production réduite des consommations) correspondent aux impacts directs de l'entreprise sur son périmètre opérationnel ;</li>
+                <li>Les impacts liés flux économiques sortants (consommations intermédiaires et consommations de capital fixe) sont obtenus via l'empreinte sociétale des fournisseurs.</li>
+              </ul>
+              <p>
+                Le modèle permet ainsi de mettre en place une traçabilité le long des chaines de valeurs. L’empreinte sociétale d’une entreprise dépend de celles de ses 
+                fournisseurs et impacte celles de ses clients.
               </p>
             </Col>
             <Col>
