@@ -41,7 +41,7 @@ const Missions = () => {
           <Container>
           <Row>
             <Col>
-              <Image src="/images/bdd.png" fluid className="my-2" />
+              <Image src="/images/db.svg" height="80" className="my-2" />
 
               <h4>
                 Administration d’une <br></br>base de données ouverte
@@ -52,7 +52,7 @@ const Missions = () => {
               </p>
             </Col>
             <Col>
-              <Image src="/images/support.png" fluid className="my-2" />
+              <Image src="/images/support.svg"  height="80"  className="my-2" />
 
               <h4>Mise à disposition d’un outil de mesure open source</h4>
               <p>
@@ -61,11 +61,10 @@ const Missions = () => {
               </p>
             </Col>
             <Col>
-              <Image src="/images/outils.png" fluid className="my-2" />
+              <Image src="/images/outils.svg"  height="80"  className="my-2" />
 
               <h4>
-                Support et <br />
-                Assistance{" "}
+                Un support et une assistance aux différents acteurs
               </h4>
               <p>
                 Accompagner les acteurs qui souhaitent porter la méthodologie
@@ -81,7 +80,8 @@ const Missions = () => {
            <p>
            Nous travaillons en continu sur les indicateurs disponibles: choix méthodologiques, données utilisées, outils supports, suivi à l'échelle macroéconomique, définition des objectifs, etc. L'ensemble des indicateurs forment l'Empreinte Sociétale de l'Entreprise. La gouvernance a vocation à être externalisée et partagée avec des organismes publics et privés.
            </p>
-           <Button variant="primary">Les indicateurs</Button>  <Button variant="secondary">Documentation</Button>
+           <Button variant="primary" href="/indicateurs" className="me-2">Les indicateurs</Button>
+           <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale" target="_blank"> Documentation <i className="bi bi-box-arrow-up-right"></i> </Button>
 
             </Container>
         </section>
