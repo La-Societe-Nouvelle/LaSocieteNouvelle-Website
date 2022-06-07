@@ -61,28 +61,31 @@ const Cabinets = () => {
       </section>
       <section>
         <Container>
-          <Row>
+          <Row className="align-items-center">
             <Col>
-              <Image fluid alt="Metriz" src="images/metriz.png"  className="pe-4" />
+              <Image  alt="Metriz" src="images/metriz-partenaires.png" />
             </Col>
             <Col>
               <h3>
-                Un outil de calcul open source à votre disposition
+                Un outil de calcul sur mesure pour les partenaires
               </h3>
               <p>
-                Devenez partenaire et bénéficiez d'une version spécifique à votre disposition
+                Devenez partenaire et bénéficiez d'une version spécifique à votre disposition.
               </p>
               <ul>
                 <li>Maintenance évolutive</li>
                 <li>Assistance</li>
                 <li>Livrables personnalisés</li>
                 <li>Ajustement de l'outils à vos fichiers internes</li>
+                <li>...</li>
               </ul>
 
-              <Button className="btn-outline-secondary mt-4">
-                Utiliser l'outil
+              <Button className="btn-outline-secondary me-3" href="/metriz">
+                En savoir plus
               </Button>
-
+              <Button className="btn-outline-primary " href="/contact">
+                Contactez-nous
+              </Button>
             </Col> 
 
           </Row>
@@ -100,7 +103,20 @@ const Cabinets = () => {
           </Button>
         </Container>
       </section>
+      <section className="partenaires">
+          <Container>
+              <h3>Nos partenaires</h3>
+              <div className="d-flex justify-content-between">
+              <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
+              <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
+              <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
+              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image>
    
+           
+              </div>
+
+          </Container>
+        </section>
     </>
   )
 }

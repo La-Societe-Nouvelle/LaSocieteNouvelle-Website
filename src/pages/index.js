@@ -187,7 +187,7 @@ const Home = () => {
               <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
               <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
               <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
-              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable Valoxy"></Image>
+              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image>
               <Image thumbnail src="/partners/euratech.svg" alt="Euratech"></Image>
               <Image thumbnail src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
               <Image  thumbnail src="/partners/Logo_du_Mouvement_Impact_France.png" alt="Impact France"></Image>
