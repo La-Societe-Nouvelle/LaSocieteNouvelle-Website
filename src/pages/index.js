@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <div className="statistic-item">
               <img
-                 src="ESE/icon-ese-bleues/ghg.svg"
+                src="ESE/icon-ese-bleues/ghg.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="co²"
@@ -44,7 +44,7 @@ const Home = () => {
             </div>
             <div className="statistic-item">
               <img
-                 src="ESE/icon-ese-bleues/dis.svg"
+                src="ESE/icon-ese-bleues/dis.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="Egalité"
@@ -151,8 +151,7 @@ const Home = () => {
                 <div className="box">
                   <Image src="/images/sustainable.svg" height={80} />
                   <h3 className="h6">
-                    <b>Se positionner</b> par rapport à sa branche et aux{" "}
-                    <strong>objectifs sociaux et environnementaux</strong> à
+                    <b>Se positionner</b> par rapport à sa branche et aux <strong>objectifs sociaux et environnementaux</strong> à
                     atteindre pour agir à la hauteur des enjeux
                   </h3>
                 </div>
@@ -162,8 +161,7 @@ const Home = () => {
                   <Image src="/images/goals.svg" height={80} />
                   <h3 className="h6">
                     Valoriser ses résultats et être identifié comme une
-                    entreprise engagée pour la{" "}
-                    <strong>transition écologique et sociale</strong>
+                    entreprise engagée pour la <strong>transition écologique et sociale</strong>
                   </h3>
                 </div>
               </Col>
@@ -182,18 +180,38 @@ const Home = () => {
         </section>
         <section className="partenaires">
           <Container>
-              <h3>Ils s'engagent</h3>
-              <div className="d-flex justify-content-between">
-              <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
+            <h3>Nos partenaires</h3>
+            <div className="d-flex justify-content-between">
+              {/* <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
               <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
               <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
-              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image>
-              <Image thumbnail src="/partners/euratech.svg" alt="Euratech"></Image>
-              <Image thumbnail src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
-              <Image  thumbnail src="/partners/Logo_du_Mouvement_Impact_France.png" alt="Impact France"></Image>
-           
-              </div>
+              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image> */}
+              <a href="https://www.euratechnologies.com/" target="_blank">
+                <Image
+                  thumbnail
+                  src="/partners/euratech.svg"
+                  alt="Euratech"
+                ></Image>
+              </a>
+              <a
+                href="https://www.bpifrance.fr/communaute-du-coq-vert"
+                target="_blank"
+              >
+                <Image
+                  thumbnail
+                  src="/partners/Coq_Vert_RVB.png"
+                  alt="Coq Vert"
+                ></Image>
+              </a>
+              <a href="https://www.impactfrance.eco/" target="_blank">
 
+              <Image
+                thumbnail
+                src="/partners/Logo_du_Mouvement_Impact_France.png"
+                alt="Impact France"
+              ></Image>
+              </a>
+            </div>
           </Container>
         </section>
       </div>

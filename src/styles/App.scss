@@ -49,6 +49,24 @@ a {
   }
 }
 
+.underline{
+
+  position: relative;
+
+  &::after{
+    
+    content: "";
+    width: 100%;
+    position: absolute;
+    background-color: #fa595f;
+    height: 10px;
+    bottom: .1rem;
+    left: .1em;
+    z-index: -1;
+    opacity: .7;
+  }
+}
+
 section{
   padding: 4rem 0;
   h2, h3 {
