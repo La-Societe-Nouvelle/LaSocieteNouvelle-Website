@@ -70,13 +70,13 @@ const Cabinets = () => {
                 Un outil de calcul sur mesure pour les partenaires
               </h3>
               <p>
-                Devenez partenaire et bénéficiez d'une version spécifique à votre disposition.
+                Devenez partenaire et bénéficiez d'une version spécifique à votre disposition. Vous disposerez également :
               </p>
-              <ul>
-                <li>Maintenance évolutive</li>
-                <li>Assistance</li>
-                <li>Livrables personnalisés</li>
-                <li>Ajustement de l'outils à vos fichiers internes</li>
+              <ul className="list-unstyled">
+                <li><i className="bi bi-check2"></i> Une maintenance évolutive</li>
+                <li><i className="bi bi-check2"></i> Un support technique</li>
+                <li><i className="bi bi-check2"></i> Des livrables personnalisés</li>
+                <li><i className="bi bi-check2"></i> Un ajustement de l'outils à vos fichiers internes</li>
                 <li>...</li>
               </ul>
 
