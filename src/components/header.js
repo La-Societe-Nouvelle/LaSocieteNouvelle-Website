@@ -77,7 +77,7 @@ const Header = () => {
             </div>
             <div>
               <Button href="https://metriz.lasocietenouvelle.org" variant="outline-secondary" target="_blank" rel="noreferrer">
-              <i className="bi bi-box-arrow-up-right"></i> Mesurer mon impact
+             Mesurer mon impact  <i className="bi bi-box-arrow-up-right"></i> 
               </Button>
               <Button href="/publication" variant="outline-primary" className="ms-2">
                 Publier mes données
@@ -99,9 +99,7 @@ const Header = () => {
                     <NavDropdown.Item href="/indicateurs">
                       Liste des indicateurs
                     </NavDropdown.Item>
-                    {/* <NavDropdown.Item href="/sinese">
-                      S.I.N.E.S.E
-                    </NavDropdown.Item> */}
+         
                   </NavDropdown>
                   <NavDropdown title="Ressources " >
                     <NavDropdown.Item href="/metriz">
@@ -115,7 +113,7 @@ const Header = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                     <i className="bi bi-box-arrow-up-right"></i>  Documentation
+                      Documentation <i className="bi bi-box-arrow-up-right"></i> 
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="/entreprises">Entreprises</Nav.Link>
@@ -136,7 +134,7 @@ const Header = () => {
                   </NavDropdown>
                 </Nav>
                 <div className="ms-5">
-                  <a href="/portail" className="btn btn-info"><i className="bi bi-server"></i> Données</a>
+                  <a href="/portail" target="_blank" className="btn btn-info"><i className="bi bi-server"></i> Données</a>
                 </div>
 
               </Navbar.Collapse>
