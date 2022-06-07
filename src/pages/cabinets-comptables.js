@@ -103,7 +103,7 @@ const Cabinets = () => {
           </Button>
         </Container>
       </section>
-      <section className="partenaires">
+      {/* <section className="partenaires">
           <Container>
               <h3>Nos partenaires</h3>
               <div className="d-flex justify-content-between">
@@ -111,12 +111,11 @@ const Cabinets = () => {
               <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
               <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
               <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image>
-   
-           
+          
               </div>
 
           </Container>
-        </section>
+        </section> */}
     </>
   )
 }
