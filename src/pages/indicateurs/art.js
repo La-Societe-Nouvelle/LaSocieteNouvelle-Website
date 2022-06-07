@@ -23,6 +23,8 @@ const art = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/ART.svg" height="80" className="mb-3"/>
+        
               <p>
                 Part de la valeur produite par des entreprises artisanales,
                 créatives ou dont le savoir-faire est reconnu ; exprimée en %
@@ -31,7 +33,6 @@ const art = () => {
                 valorisation des savoir-faire et des métiers de l'artisanat
                 auprès des consommateurs finaux.
               </p>
-              <Image fluid src="/ESE/ART.svg" className="my-3" />
               <p>
                 <b>Code : </b> ART
               </p>
@@ -40,7 +41,13 @@ const art = () => {
               </Button>
             </Col>
             <Col className="odd">
-              <h3>Objectifs de développement durable</h3>
+              <h3 >Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_art.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 8.3 : Promouvoir des politiques axées sur le développement qui
                 favorisent , la créativité et l’innovation et stimulent la
@@ -51,12 +58,7 @@ const art = () => {
                 9.2 : Promouvoir une industrialisation durable qui profite à
                 tous .
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_art.svg"
-                alt="logo odd"
-                fluid
-              />
+        
             </Col>
           </Row>
         </Container>

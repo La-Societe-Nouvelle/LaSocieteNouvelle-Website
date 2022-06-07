@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -22,6 +22,7 @@ const ghg = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image  src="/ESE/GHG.svg"  height="80" className="mb-3" />
               <p>
                 Quantité de gaz à effet de serre émise par unité de valeur
                 produite, exprimée en gCO2e/€ (grammes de CO2 équivalent par
@@ -37,13 +38,21 @@ const ghg = () => {
                 climatique.
               </p>
 
-              <Image fluid src="/ESE/GHG.svg" className="my-3" />
               <p>
                 <b>Code : </b> GHG
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-ghg" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_ghg.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 7.2 : D’ici à 2030, accroître nettement la part de l’énergie
                 renouvelable dans le bouquet énergétique mondial.
@@ -82,12 +91,7 @@ const ghg = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_ghg.svg"
-                alt="logo odd"
-                fluid
-              />
+         
             </Col>
           </Row>
         </Container>

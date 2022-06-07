@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -20,6 +20,7 @@ const was = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/WAS.svg" height="80" className="mb-3" />
               <p>
               Quantité d’eau consommée par unité de valeur produite, exprimée en L/€ (litres par euro)
               </p>
@@ -33,13 +34,21 @@ const was = () => {
                 indicateurs spécifiques pourront être mis en place pour ces
                 catégories.
               </p>
-              <Image fluid src="/ESE/WAS.svg" className="my-3" />
               <p>
                 <b>Code : </b> WAS
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-was" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_was.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de
                 maladies dus à des substances chimiques dangereuses et à la
@@ -76,12 +85,7 @@ const was = () => {
               <p>
               15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_was.svg"
-                alt="logo odd"
-                fluid
-              />
+         
             </Col>
           </Row>
         </Container>

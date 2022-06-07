@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -22,6 +22,7 @@ const haz = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/HAZ.svg" height="80" className="mb-3" />
               <p>
                 Quantité utilisée de produits classifiés comme dangereux pour la
                 santé ou l’environnement par unité de valeur produite, exprimée
@@ -48,13 +49,21 @@ const haz = () => {
                 spécifiques, il conviendra alors de construire un indicateur ad
                 hoc.
               </p>
-              <Image fluid src="/ESE/HAZ.svg" className="my-3" />
               <p>
                 <b>Code : </b> HAZ
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-haz" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_haz.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de
                 maladies dus à des substances chimiques dangereuses et à la
@@ -90,12 +99,7 @@ const haz = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_haz.svg"
-                alt="logo odd"
-                fluid
-              />
+            
             </Col>
           </Row>
         </Container>

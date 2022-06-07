@@ -18,7 +18,7 @@ const Home = () => {
           <div className="d-flex justify-content-between">
             <div className="statistic-item">
               <img
-                src="images/france.png"
+                src="ESE/icon-ese-bleues/eco.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="eco"
@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <div className="statistic-item">
               <img
-                src="images/CO2.png"
+                 src="ESE/icon-ese-bleues/ghg.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="co²"
@@ -44,7 +44,7 @@ const Home = () => {
             </div>
             <div className="statistic-item">
               <img
-                src="images/egalites.png"
+                 src="ESE/icon-ese-bleues/dis.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="Egalité"
@@ -184,7 +184,7 @@ const Home = () => {
           <Container>
               <h3>Ils s'engagent</h3>
               <div className="d-flex justify-content-between">
-              <Image thumbnail src="/partners/logo-easi-1.png" alt="Cabinet comptable Easi"></Image>
+              <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
               <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
               <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
               <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable Valoxy"></Image>

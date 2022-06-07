@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -20,6 +20,7 @@ const wat = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image  src="/ESE/WAT.svg" height="80" className="mb-3" />
               <p>
                 Quantité d’eau consommée par unité de valeur produite, exprimée
                 en L/€ (litres par euro)
@@ -32,13 +33,21 @@ const wat = () => {
                 conséquence du dérèglement climatique.
               </p>
 
-              <Image fluid src="/ESE/WAT.svg" className="my-3" />
               <p>
                 <b>Code : </b> WAT
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-wat" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_wat.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de
                 maladies dus à des substances chimiques dangereuses et à la
@@ -81,12 +90,7 @@ const wat = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_wat.svg"
-                alt="logo odd"
-                fluid
-              />
+         
             </Col>
           </Row>
         </Container>

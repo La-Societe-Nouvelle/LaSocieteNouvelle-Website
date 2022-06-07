@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet"; 
 import PageHeader from "../../components/PageHeader";
 
@@ -23,6 +23,7 @@ const knw = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/KNW.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite, contribuant à la recherche, à la
                 formation ou à l’enseignement, exprimée en % (de la valeur).
@@ -32,13 +33,21 @@ const knw = () => {
                 dédiée à la formation, la recherche ou l’enseignement.
               </p>
 
-              <Image fluid src="/ESE/KNW.svg" className="my-3" />
               <p>
                 <b>Code : </b> KNW
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-knw" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_knw.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 4.3 : D’ici à 2030, faire en sorte que les femmes et les hommes
                 aient tous accès dans des conditions d’égalité à un enseignement
@@ -64,12 +73,7 @@ const knw = () => {
                 accroissant les dépenses publiques et privées consacrées à la
                 recherche et au développement d’ici à 2030.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_knw.svg"
-                alt="logo odd"
-                fluid
-              />
+              
             </Col>
           </Row>
         </Container>

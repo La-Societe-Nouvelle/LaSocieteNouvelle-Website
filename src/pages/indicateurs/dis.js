@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -22,6 +22,8 @@ const dis = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image  src="/ESE/DIS.svg" height="80" className="mb-3" />
+
               <p>
                 Coefficient de GINI. Valeur sans unité, comprise entre 0
                 (égalité parfaite) et 100 (inégalité parfaite).
@@ -41,13 +43,21 @@ const dis = () => {
                 raison des disparités existantes entre certaines branches
                 d’activités.*
               </p>
-              <Image fluid src="/ESE/DIS.svg" className="my-3" />
               <p>
                 <b>Code : </b> DIS
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-dis" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col  className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_dis.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 8.5 : D’ici à 2030, parvenir au plein emploi productif et
                 garantir à toutes les femmes et à tous les hommes, y compris les
@@ -60,12 +70,7 @@ const dis = () => {
                 population augmentent plus rapidement que le revenu moyen
                 national, et ce de manière durable
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_dis.svg"
-                alt="logo odd"
-                fluid
-              />
+     
             </Col>
           </Row>
         </Container>

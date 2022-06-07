@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -22,6 +22,8 @@ const geq = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/GEQ.svg" height="80" className="mb-3" />
+
               <p>
                 Ecart entre le taux horaire brut moyen des femmes et des hommes
                 (en pourcentage du taux horaire moyen), exprimé en % (du taux
@@ -39,14 +41,21 @@ const geq = () => {
                 </a>
                 ).
               </p>
-
-              <Image fluid src="/ESE/GEQ.svg" className="my-3" />
               <p>
                 <b>Code : </b> GEQ
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-geq" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col  className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_geq.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 5.1 : Mettre fin, dans le monde entier, à toutes les formes de
                 discrimination à l’égard des femmes et des filles.
@@ -70,12 +79,7 @@ const geq = () => {
                 leur race, de leur appartenance ethnique, de leurs origines, de
                 leur religion ou de leur statut économique ou autre.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_geq.svg"
-                alt="logo odd"
-                fluid
-              />
+          
             </Col>
           </Row>
         </Container>

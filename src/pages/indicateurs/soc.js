@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -22,9 +22,10 @@ const soc = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/SOC.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite dans un intérêt social défini (raison
-                d’être, etc.), exprimée en % (de la valeur).{" "}
+                d’être, etc.), exprimée en % (de la valeur).
               </p>
               <p>
                 Face aux enjeux environnementaux et sociétaux, l’entreprise doit
@@ -32,13 +33,21 @@ const soc = () => {
                 employés et ne devrait plus se qualifier uniquement par la
                 recherche de profit.
               </p>
-              <Image fluid src="/ESE/SOC.svg" className="my-3" />
               <p>
                 <b>Code : </b> SOC
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-soc" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_soc.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 12.1 : Mettre en œuvre le Cadre décennal de programmation
                 concernant les modes de consommation et de production durables
@@ -50,14 +59,9 @@ const soc = () => {
                 12.6 : Encourager les entreprises, en particulier les grandes et
                 les transnationales, à adopter des pratiques viables et à
                 intégrer dans les rapports qu’elles établissent des informations
-                sur la viabilité.{" "}
+                sur la viabilité.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_soc.svg"
-                alt="logo odd"
-                fluid
-              />
+       
             </Col>
           </Row>
         </Container>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
 import PageHeader from '../../components/PageHeader'
 
@@ -20,6 +20,8 @@ const mat = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/mat.svg"  height="80" className="mb-3" />
+
               <p>
               Quantité de matières premières extraite (minerais, fossiles, biomasse) par unité de valeur produite, exprimée en g/€ (en grammes par euro).
               </p>
@@ -28,13 +30,21 @@ const mat = () => {
 L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
               </p>
 
-              <Image fluid src="/ESE/mat.svg" className="my-3" />
               <p>
                 <b>Code : </b> MAT
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-mat" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_MAT.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
               8.4 : Améliorer progressivement, jusqu’en 2030, l’efficience de l’utilisation des ressources mondiales du point de vue de la consommation comme de la production et s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement, comme prévu dans le cadre décennal de programmation relatif à la consommation et à la production durables, les pays développés montrant l’exemple en la matière.
               </p>
@@ -50,12 +60,7 @@ L’objectif est de réduire l’extraction de matières premières et de favori
               <p>
               15.2 : D’ici à 2020, promouvoir la gestion durable de tous les types de forêt, mettre un terme à la déforestation, restaurer les forêts dégradées et accroître considérablement le boisement et le reboisement au niveau mondial
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_MAT.svg"
-                alt="logo odd"
-                fluid
-              />
+           
             </Col>
           </Row>
         </Container>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -20,6 +20,7 @@ const eco = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/ECO.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite sur le territoire français, exprimée
                 en % (de la valeur).
@@ -42,13 +43,21 @@ const eco = () => {
                 nationale bien que des rémunérations ou des dividendes soient
                 versés à l’étranger.*
               </p>
-              <Image fluid src="/ESE/ECO.svg" className="my-3" />
               <p>
                 <b>Code : </b> ECO
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-eco" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_eco.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
                 8.3 : Promouvoir des politiques axées sur le développement qui
                 favorisent des activités productives, la création d’emplois
@@ -74,12 +83,7 @@ const eco = () => {
                 qui crée des emplois et met en valeur la culture et les produits
                 locaux.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_eco.svg"
-                alt="logo odd"
-                fluid
-              />
+         
             </Col>
           </Row>
         </Container>

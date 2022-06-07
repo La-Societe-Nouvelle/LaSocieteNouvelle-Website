@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
 import PageHeader from '../../components/PageHeader'
 
@@ -20,6 +20,7 @@ const geq = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
+              <Image src="/ESE/NRG.svg" height="80" className="mb-3" />
               <p>
               Consommation d’énergie primaire par unité de valeur produite, exprimée en kJ/€ (kilojoules par euro).
               </p>
@@ -30,13 +31,21 @@ const geq = () => {
               <p>
               Associé à l’intensité d’émissions de gaz à effet de serre, il permet de connaître l’intensité carbone de l’énergie consommée.
               </p>
-              <Image fluid src="/ESE/NRG.svg" className="my-3" />
               <p>
                 <b>Code : </b> NRG
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-nrg" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
+              <Image
+                id="logo-odd"
+                src="/images/odd/odd_nrg.png"
+                alt="logo odd"
+                className="mb-3"
+              />
               <p>
               7.3 : D’ici à 2030, multiplier par deux le taux mondial d’amélioration de l’efficacité énergétique.
               </p>
@@ -49,12 +58,7 @@ const geq = () => {
               <p>
               13.1 : Renforcer, dans tous les pays, la résilience et les capacités d’adaptation face aux aléas climatiques et aux catastrophes naturelles liées au climat.
               </p>
-              <Image
-                id="logo-odd"
-                src="/images/odd/odd_nrg.svg"
-                alt="logo odd"
-                fluid
-              />
+           
             </Col>
           </Row>
         </Container>

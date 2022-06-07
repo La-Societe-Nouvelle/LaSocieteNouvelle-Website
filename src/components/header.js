@@ -17,7 +17,6 @@ const Header = () => {
         <Navbar.Brand href="/portail">
               <img
                 src="/logo.svg"
-                width="80"
                 height="80"
                 className="d-inline-block align-center"
                 alt="logo"
