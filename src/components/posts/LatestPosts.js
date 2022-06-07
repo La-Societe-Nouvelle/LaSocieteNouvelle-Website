@@ -20,7 +20,7 @@ function LatestPosts() {
               />
             </div>
             <div className="post-title">
-              <h2>{posts[0].titre}</h2>
+               <h2><a href={"/blog/" + posts[0].slug}> {posts[0].titre} </a></h2>
             </div>
             <div className="post-meta">
               <p>Publié le {posts[0].date}</p>
@@ -50,7 +50,7 @@ function LatestPosts() {
                     </Col>
                     <Col>
                       <div className="post-title">
-                        <h2>{post.titre}</h2>
+                        <h2><a href={"/blog/" + post.slug}>{post.titre}</a></h2>
                       </div>
                       <div className="post-meta">
                         <p>Publié le {post.date}</p>
