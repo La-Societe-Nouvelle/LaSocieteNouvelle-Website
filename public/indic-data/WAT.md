@@ -8,7 +8,7 @@ Il s’inscrit dans une volonté de gestion globale des ressources naturelles, e
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_wat.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_wat.png alt="logo"/>
 </div>
 
 * 3.9 : D’ici à 2030, réduire nettement le nombre de décès et de maladies dus à des substances chimiques dangereuses et à la pollution et à la contamination de l’air, de l’eau et du sol.

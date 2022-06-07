@@ -32,7 +32,7 @@ const wat = () => {
                 conséquence du dérèglement climatique.
               </p>
 
-              <Image fluid src="/ESE/WAT.png" className="my-3" />
+              <Image fluid src="/ESE/WAT.svg" className="my-3" />
               <p>
                 <b>Code : </b> WAT
               </p>
@@ -83,7 +83,7 @@ const wat = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_wat.png"
+                src="/images/odd/odd_wat.svg"
                 alt="logo odd"
                 fluid
               />

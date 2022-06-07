@@ -9,7 +9,7 @@ L’indicateur vise à fournir un élément d’information sur la répartition 
 ### OBJECTIFS DE DVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_dis.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_dis.png alt="logo"/>
 </div>
 
 * 8.5 : D’ici à 2030, parvenir au plein emploi productif et garantir à toutes les femmes et à tous les hommes, y compris les jeunes et les personnes handicapées, un travail décent et un salaire égal pour un travail de valeur égale.

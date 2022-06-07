@@ -48,7 +48,7 @@ const haz = () => {
                 spécifiques, il conviendra alors de construire un indicateur ad
                 hoc.
               </p>
-              <Image fluid src="/ESE/HAZ.png" className="my-3" />
+              <Image fluid src="/ESE/HAZ.svg" className="my-3" />
               <p>
                 <b>Code : </b> HAZ
               </p>
@@ -92,7 +92,7 @@ const haz = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_haz.png"
+                src="/images/odd/odd_haz.svg"
                 alt="logo odd"
                 fluid
               />

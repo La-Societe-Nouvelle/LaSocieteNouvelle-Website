@@ -29,7 +29,7 @@ export default function Home() {
                 <Col lg={3} key={index} className="mb-3">
                   <Card className="indics text-center" >
                     <Link href={"/indicateurs/" + indic}>
-                      <Image roundedCircle src={"/ESE/" + indic + ".png"} />
+                      <Image roundedCircle src={"/ESE/" + indic + ".svg"} />
                     </Link>
                     <Link href={"/indicateurs/" + indic}>
                     <h3 className="mb-4"> <a>

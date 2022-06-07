@@ -30,7 +30,7 @@ const geq = () => {
               <p>
               Associé à l’intensité d’émissions de gaz à effet de serre, il permet de connaître l’intensité carbone de l’énergie consommée.
               </p>
-              <Image fluid src="/ESE/NRG.png" className="my-3" />
+              <Image fluid src="/ESE/NRG.svg" className="my-3" />
               <p>
                 <b>Code : </b> NRG
               </p>
@@ -51,7 +51,7 @@ const geq = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_nrg.png"
+                src="/images/odd/odd_nrg.svg"
                 alt="logo odd"
                 fluid
               />

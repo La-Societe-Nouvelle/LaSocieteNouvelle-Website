@@ -32,7 +32,7 @@ const knw = () => {
                 dédiée à la formation, la recherche ou l’enseignement.
               </p>
 
-              <Image fluid src="/ESE/KNW.png" className="my-3" />
+              <Image fluid src="/ESE/KNW.svg" className="my-3" />
               <p>
                 <b>Code : </b> KNW
               </p>
@@ -66,7 +66,7 @@ const knw = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_knw.png"
+                src="/images/odd/odd_knw.svg"
                 alt="logo odd"
                 fluid
               />

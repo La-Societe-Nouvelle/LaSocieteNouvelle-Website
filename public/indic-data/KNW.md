@@ -7,7 +7,7 @@ L’indicateur informe sur la part des revenus de l’entreprise dédiée à la 
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_knw.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_knw.png alt="logo"/>
 </div>
 
 * 4.3 : D’ici à 2030, faire en sorte que les femmes et les hommes aient tous accès dans des conditions d’égalité à un enseignement technique, professionnel ou tertiaire, y compris universitaire, de qualité et d’un coût abordable.

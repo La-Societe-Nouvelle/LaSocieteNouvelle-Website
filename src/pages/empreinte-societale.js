@@ -46,29 +46,29 @@ export default function Home() {
           <p>Les Indicateurs de Qualité de la Valeur Economique (IQVE) qui composent l’ESE sont en lien direct avec les 17 Objectifs de Développement Durable (ODD)*. Ils sont construits et sélectionnés pour leur pertinence vis-à-vis du développement durable, de l’entreprise et du consommateur final.</p>
           <p>Emplois des ressources :</p>
           <ul>
-            <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale </a><img className="odd-indic" src="/resources/odd_eco.png" /></li>
-            <li><a className="text-link" href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire </a><img className="odd-indic" src="/resources/odd_art.png" /></li>
-            <li><a className="text-link" href="indicateur/soc">Contribution aux acteurs d'intérêt social </a><img className="odd-indic" src="/resources/odd_soc.png" /></li>
-            <li><a className="text-link" href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances </a><img className="odd-indic" src="/resources/odd_knw.png" /></li>
+            <li><a className="text-link" href="indicateur/eco">Contribution à l'économie nationale </a><img className="odd-indic" src="/images/odd/odd_eco.png" /></li>
+            <li><a className="text-link" href="indicateur/art">Contribution aux métiers d'art et aux savoir-faire </a><img className="odd-indic" src="/images/odd/odd_art.png" /></li>
+            <li><a className="text-link" href="indicateur/soc">Contribution aux acteurs d'intérêt social </a><img className="odd-indic" src="/images/odd/odd_soc.png" /></li>
+            <li><a className="text-link" href="indicateur/knw">Contribution à l'évolution des compétences et des connaissances </a><img className="odd-indic" src="/images/odd/odd_knw.png" /></li>
           </ul>
           <p>Impacts environnementaux :</p>
           <ul>
-            <li><a className="text-link" href="indicateur/ghg">Intensité d'émission de gaz à effet de serre </a><img className="odd-indic" src="/resources/odd_ghg.png" /></li>
-            <li><a className="text-link" href="indicateur/was">Intensité de production de déchets </a><img className="odd-indic" src="/resources/odd_was.png" /></li>
-            <li><a className="text-link" href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement </a><img className="odd-indic" src="/resources/odd_haz.png" /></li>
+            <li><a className="text-link" href="indicateur/ghg">Intensité d'émission de gaz à effet de serre </a><img className="odd-indic" src="/images/odd/odd_ghg.png" /></li>
+            <li><a className="text-link" href="indicateur/was">Intensité de production de déchets </a><img className="odd-indic" src="/images/odd/odd_was.png" /></li>
+            <li><a className="text-link" href="indicateur/haz">Intensité d'utilisation de produits dangereux pour la santé et l'environnement </a><img className="odd-indic" src="/images/odd/odd_haz.png" /></li>
           </ul>
           <p>Ressources naturelles :</p>
           <ul>
-            <li><a className="text-link" href="indicateur/mat">Intensité d'extraction de matières premières </a><img className="odd-indic" src="/resources/odd_mat.png" /></li>
-            <li><a className="text-link" href="indicateur/nrg">Intensité de consommation d'énergie </a><img className="odd-indic" src="/resources/odd_nrg.png" /></li>
-            <li><a className="text-link" href="indicateur/wat">Intensité de consommation d'eau </a><img className="odd-indic" src="/resources/odd_wat.png" /></li>
+            <li><a className="text-link" href="indicateur/mat">Intensité d'extraction de matières premières </a><img className="odd-indic" src="/images/odd/odd_mat.png" /></li>
+            <li><a className="text-link" href="indicateur/nrg">Intensité de consommation d'énergie </a><img className="odd-indic" src="/images/odd/odd_nrg.png" /></li>
+            <li><a className="text-link" href="indicateur/wat">Intensité de consommation d'eau </a><img className="odd-indic" src="/images/odd/odd_wat.png" /></li>
           </ul>
           <p>Partage de la valeur :</p>
           <ul>
             <li><a className="text-link" href="indicateur/dis">Indice de répartition des rémunérations </a>
-              <img className="odd-indic" src="/resources/odd_dis.png" /></li>
+              <img className="odd-indic" src="/images/odd/odd_dis.png" /></li>
             <li><a className="text-link" href="indicateur/geq">Indice d'écart de rémunérations femmes/hommes </a>
-              <img className="odd-indic" src="/resources/odd_geq.png" /></li>
+              <img className="odd-indic" src="/images/odd/odd_geq.png" /></li>
           </ul>
           <br />
           <p>*Objectifs de Développement Durable (ODD) : <a className="text-link" href="https://www.un.org/sustainabledevelopment/fr/" target="_blank">Site de l'ONU</a> - <a className="text-link" href="https://www.agenda-2030.fr/">Site de l'Agenda 2030</a><br />

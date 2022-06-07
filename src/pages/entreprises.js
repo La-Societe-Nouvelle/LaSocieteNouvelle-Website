@@ -49,18 +49,17 @@ const Entreprises = () => {
             <Col>
               <div className="box shadow-sm">
                 <div>
-                  <Image src="images/icon-valorise.png" alt="icon" />
+                  <Image src="images/performance-extra-financiere.png" alt="Performance Extra-financière" />
                 </div>
                 <h4 className="h6">
                   Suivez et valorisez votre performance extra-financière
-
                 </h4>
               </div>
             </Col>
             <Col>
               <div className="box shadow-sm">
                 <div>
-                  <Image src="images/icon-position.png" alt="icon" />
+                  <Image src="images/position-odd.png" alt="Objectifs développement durable" />
                 </div>
                 <h4 className="h6">
                   Positionnez vous rapport aux objectifs de développement durable
@@ -70,7 +69,7 @@ const Entreprises = () => {
             <Col>
               <div className="box shadow-sm">
                 <div>
-                  <Image src="images/icon-anticipate.png" alt="icon" />
+                  <Image src="images/analyse-risques.png" alt="Risques" />
                 </div>
                 <h4 className="h6" >
                   Anticipez de protentiels <br/>risques
@@ -81,7 +80,7 @@ const Entreprises = () => {
             </Col>
           </Row>
           <div className="text-center mt-3">
-            <Button variant="secondary" className="btn-lg" >
+            <Button variant="secondary" href="https://metriz.la-societe-nouvelle.org" target='_blank' rel="noreferrer" >
                 Utiliser l'application
             </Button>
           </div>

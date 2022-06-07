@@ -115,7 +115,7 @@ const Home = () => {
                 <Button
                   variant="secondary"
                   className="mt-4"
-                  href="/publier-mes-donnees"
+                  href="/publication"
                 >
                   Publier mes données
                 </Button>
@@ -182,11 +182,18 @@ const Home = () => {
         </section>
         <section className="partenaires">
           <Container>
-            <div className="d-flex"></div>
-            <div>
-              <h4>Ils nous soutiennent</h4>
-            </div>
-            <div></div>
+              <h3>Ils s'engagent</h3>
+              <div className="d-flex justify-content-between">
+              <Image thumbnail src="/partners/logo-easi-1.png" alt="Cabinet comptable Easi"></Image>
+              <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
+              <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
+              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable Valoxy"></Image>
+              <Image thumbnail src="/partners/euratech.svg" alt="Euratech"></Image>
+              <Image thumbnail src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
+              <Image  thumbnail src="/partners/Logo_du_Mouvement_Impact_France.png" alt="Impact France"></Image>
+           
+              </div>
+
           </Container>
         </section>
       </div>

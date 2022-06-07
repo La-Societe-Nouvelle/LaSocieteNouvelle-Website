@@ -40,7 +40,7 @@ const geq = () => {
                 ).
               </p>
 
-              <Image fluid src="/ESE/GEQ.png" className="my-3" />
+              <Image fluid src="/ESE/GEQ.svg" className="my-3" />
               <p>
                 <b>Code : </b> GEQ
               </p>
@@ -72,7 +72,7 @@ const geq = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_geq.png"
+                src="/images/odd/odd_geq.svg"
                 alt="logo odd"
                 fluid
               />

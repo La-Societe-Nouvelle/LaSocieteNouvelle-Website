@@ -37,7 +37,7 @@ const ghg = () => {
                 climatique.
               </p>
 
-              <Image fluid src="/ESE/GHG.png" className="my-3" />
+              <Image fluid src="/ESE/GHG.svg" className="my-3" />
               <p>
                 <b>Code : </b> GHG
               </p>
@@ -84,7 +84,7 @@ const ghg = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_ghg.png"
+                src="/images/odd/odd_ghg.svg"
                 alt="logo odd"
                 fluid
               />

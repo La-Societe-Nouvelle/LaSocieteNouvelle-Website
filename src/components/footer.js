@@ -63,7 +63,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/company-data?siren=889182770">
+                  <a className="nav-link" href="/portail/company/889182770">
                     Empreinte Sociétale
                   </a>
                 </li>
@@ -185,7 +185,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/company-data?siren=889182770">
+                  <a className="nav-link" href="/portail/company/889182770">
                     Empreinte Sociétale
                   </a>
                 </li>

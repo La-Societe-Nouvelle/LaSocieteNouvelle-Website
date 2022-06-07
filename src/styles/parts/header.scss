@@ -10,10 +10,27 @@
         letter-spacing: 1px;
     }
 }
+.header {
+    .border {
+        margin: 1rem 0 1rem 0;
+        padding: 10px;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            font-size: 0.6rem;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}
 .header h1 {
-    color :  #191558;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: 2px;
+    font-family: 'Roboto';
 }
 
 .navbar-nav {

@@ -83,7 +83,7 @@ const Cabinets = () => {
                 Utiliser l'outil
               </Button>
 
-            </Col>
+            </Col> 
 
           </Row>
         </Container>
@@ -95,7 +95,7 @@ const Cabinets = () => {
           <p>
             Lors d'une entretien nous vous présenterons l'outil et nous vous proposerons une démonstration personnalisée pour apprendre à utiliser l'outil avec vos données comptables.
           </p>
-          <Button variant="secondary">
+          <Button variant="secondary" href='https://calendly.com/sylvain-humiliere/demonstration-application-web' target="_blank" >
             Demander une démonstration
           </Button>
         </Container>

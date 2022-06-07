@@ -7,7 +7,7 @@ L’indicateur informe sur la quantité émise de gaz à effet de serre liée à
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_ghg.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_ghg.png alt="logo"/>
 </div>
 
 * 7.2 : D’ici à 2030, accroître nettement la part de l’énergie renouvelable dans le bouquet énergétique mondial.

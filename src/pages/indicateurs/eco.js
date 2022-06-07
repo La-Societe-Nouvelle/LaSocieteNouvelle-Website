@@ -42,7 +42,7 @@ const eco = () => {
                 nationale bien que des rémunérations ou des dividendes soient
                 versés à l’étranger.*
               </p>
-              <Image fluid src="/ESE/ECO.png" className="my-3" />
+              <Image fluid src="/ESE/ECO.svg" className="my-3" />
               <p>
                 <b>Code : </b> ECO
               </p>
@@ -76,7 +76,7 @@ const eco = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_eco.png"
+                src="/images/odd/odd_eco.svg"
                 alt="logo odd"
                 fluid
               />

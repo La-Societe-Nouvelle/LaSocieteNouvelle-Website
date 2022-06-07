@@ -32,7 +32,7 @@ const soc = () => {
                 employés et ne devrait plus se qualifier uniquement par la
                 recherche de profit.
               </p>
-              <Image fluid src="/ESE/SOC.png" className="my-3" />
+              <Image fluid src="/ESE/SOC.svg" className="my-3" />
               <p>
                 <b>Code : </b> SOC
               </p>
@@ -54,7 +54,7 @@ const soc = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_soc.png"
+                src="/images/odd/odd_soc.svg"
                 alt="logo odd"
                 fluid
               />

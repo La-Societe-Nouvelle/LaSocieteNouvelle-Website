@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 
@@ -31,26 +31,29 @@ const art = () => {
                 valorisation des savoir-faire et des métiers de l'artisanat
                 auprès des consommateurs finaux.
               </p>
-              <Image fluid src="/ESE/ART.png" className="my-3" />
+              <Image fluid src="/ESE/ART.svg" className="my-3" />
               <p>
                 <b>Code : </b> ART
               </p>
+              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-art" target="_blank" rel="noreferrer">
+                Documentation
+              </Button>
             </Col>
-            <Col>
+            <Col className="odd">
               <h3>Objectifs de développement durable</h3>
               <p>
-                * 8.3 : Promouvoir des politiques axées sur le développement qui
+                8.3 : Promouvoir des politiques axées sur le développement qui
                 favorisent , la créativité et l’innovation et stimulent la
                 croissance des micro-entreprises et des petites et moyennes
                 entreprises.
               </p>
               <p>
-                * 9.2 : Promouvoir une industrialisation durable qui profite à
+                9.2 : Promouvoir une industrialisation durable qui profite à
                 tous .
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_art.png"
+                src="/images/odd/odd_art.svg"
                 alt="logo odd"
                 fluid
               />

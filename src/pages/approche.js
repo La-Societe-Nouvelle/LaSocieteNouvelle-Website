@@ -29,7 +29,12 @@ export default function Home()
             <h2 className="section-title text-center">Empreinte Sociétale de l'Entreprise</h2>
             <Row className='align-items-center'>
               <Col>
-                <p className="">L’Empreinte Sociétale est un <b>Panel d’Indicateurs</b> qui rend compte des <b>impacts d’un euro de production vendue</b>, sur des dimensions sociales et environnementales clefs.</p>
+                <p>
+                L’Empreinte Sociétale de l’Entreprise (ESE) est un panel d’indicateurs extra-financiers sociaux et environnementaux relatif à la production vendue d’une entreprise. Elle exprime sur des dimensions sociales et environnementales (émissions de gaz à effet de serre, écart de rémunérations femmes/hommes, consommation d’eau, etc.) les impacts d’un euro de production vendue.
+                </p>
+                <p>    
+L’Empreinte Sociétale complète ainsi une approche RSE, en ciblant des enjeux communs sur lesquels chaque entreprise doit rendre compte de son impact (même s’il ne s’agit pas d’un enjeu majeur pour elle).
+                </p>
               </Col>
               <Col>
                 <div id="empreinte-societale-illustration">
@@ -45,6 +50,10 @@ export default function Home()
           </section>
 
           <section>
+            <h2>Les indicateurs</h2>
+            <p>
+            Aujourd’hui le panel comprend 12 indicateurs : 6 indicateurs socio-économiques et 6 indicateurs environnementaux. Le choix des indicateurs s’appuient sur les 17 Objectifs de Développement Durable émis par l’ONU (Organisation des Nations Unies) en 2015, pour l’horizon 2030. Les indicateurs sont évolutifs – ajout, modification de la définition, retrait – pour cibler les enjeux critiques et pertinents à l’échelle de l’entreprise. Un comité de gouvernance des indicateurs est en cours de constitution.
+            </p>
             <div className="title-with-side-lines">
               <h2 className="titre-section">Indicateurs socio-économiques</h2>
             </div>

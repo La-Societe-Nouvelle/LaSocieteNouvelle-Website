@@ -164,7 +164,7 @@ function IndicatorDetails({
       <Card>
         <Card.Body>
           <div className="d-flex align-items-center">
-            <Image className="icon-ese" fluid src={"/ESE/icon-ese-bleues/" + code + ".png"}  alt={code}/>
+            <Image className="icon-ese" fluid src={"/ESE/icon-ese-bleues/" + code + ".svg"}  alt={code}/>
             <h4 id="indic-view-label">{libelle} </h4>
           </div>
           <div className="indic-value text-center">

@@ -41,7 +41,7 @@ const dis = () => {
                 raison des disparités existantes entre certaines branches
                 d’activités.*
               </p>
-              <Image fluid src="/ESE/DIS.png" className="my-3" />
+              <Image fluid src="/ESE/DIS.svg" className="my-3" />
               <p>
                 <b>Code : </b> DIS
               </p>
@@ -62,7 +62,7 @@ const dis = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_dis.png"
+                src="/images/odd/odd_dis.svg"
                 alt="logo odd"
                 fluid
               />

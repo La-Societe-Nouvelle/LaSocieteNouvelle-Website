@@ -4,10 +4,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
-// Components
-import Header from "../src/components/header.js";
-import Footer from "../src/components/footer.js";
-
 import {
   sendStatementToAdmin,
   sendStatementToDeclarant,
@@ -23,13 +19,12 @@ const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
    - the associated indicators.
 */
 
-import metaData from "../lib/metaData";
-import {
-  exportStatementPDF,
-  getBinaryPDF,
-} from "../src/outputs/statementWriter.js";
+import metaData from "../lib/metaData.json";
 
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { exportStatementPDF, getBinaryPDF } from "../outputs/statementWriter";
+
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import PageHeader from "../components/PageHeader.js";
 
 /* ---------- MAIN FUNCTION ---------- */
 
@@ -39,16 +34,20 @@ export default function Home(props) {
       <Helmet>
         <title>La société Nouvelle | Déclaration - Empreinte sociétale </title>
       </Helmet>
-      <Header />
-      <main className="main">
+      <PageHeader
+        title={"Publier mon empreinte sociétale"}
+        path={"/publication"}
+      />
+      <Container>
+        <section className="report-form">
+          <Form defaultData={props.defaultData} />
+        </section>
+      </Container>
+      <section className="cta">
         <Container>
-          <section className="report-form">
-            <h2>Declaration - Empreinte Sociétale</h2>
-            <Form defaultData={props.defaultData} />
-          </section>
+        <h4>Vous souhaitez connaître votre empreinte sociétale ?</h4>
         </Container>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 }
@@ -86,7 +85,7 @@ class Form extends React.Component {
   buildForm = () => {
     switch (this.state.step) {
       case 0:
-        return <ErrorMessage goBack={this.nextStep.bind(this)}/>;
+        return <ErrorMessage goBack={this.nextStep.bind(this)} />;
       case 1:
         return (
           <LegalForm
@@ -120,7 +119,7 @@ class Form extends React.Component {
           />
         );
       case 5:
-        return <StatementSendMessage     />;
+        return <StatementSendMessage />;
     }
   };
 
@@ -152,7 +151,7 @@ class Form extends React.Component {
       declarant: declarant,
       email: email,
       autorisation: autorisation,
-      price : price,
+      price: price,
       step: 4,
     });
 
@@ -225,10 +224,20 @@ const LegalForm = (props) => {
   });
 
   return (
-    <section className="publish-form">
-      <Col lg={6}>
-        <h4>Informations légales</h4>
-        <div className="form-group row">
+    <div className="publish-form">
+      <Row>
+
+      <Col>
+      <h3>Je connais mon empreinte</h3>
+        <p>
+          Vous avez déjà mesuré votre empreinte sociétale et vous souhaitez publier vos données sur notre portail ? 
+        </p>
+        <p>
+        Complétez les différentes étapes du formulaire de publication des données.
+        </p>
+        <h4>formulaire de publication</h4>
+        <h5>1. Informations légales</h5>
+        <div className="mb-3 row">
           <label className="col-sm-5 col-form-label">
             Numéro de siren (9 chiffres) :
           </label>
@@ -236,7 +245,7 @@ const LegalForm = (props) => {
             <input
               id="siren-input"
               className="form-control"
-              maxlength="9"
+              maxLength="9"
               type="text"
               value={siren}
               onChange={onSirenChange}
@@ -244,7 +253,7 @@ const LegalForm = (props) => {
             />
           </div>
         </div>
-        <div className="form-group row">
+        <div className="mb-3 row">
           <label className="col-sm-5 col-form-label">
             Dénomination sociale :
           </label>
@@ -258,7 +267,7 @@ const LegalForm = (props) => {
             />
           </div>
         </div>
-        <div className="form-group row">
+        <div className="mb-3 row">
           <label className="col-sm-5 col-form-label">
             Année de l'exercice<sup>1</sup>
           </label>
@@ -286,21 +295,37 @@ const LegalForm = (props) => {
           </Button>
         </div>
       </Col>
-    </section>
+      <Col>
+        <h3>Je ne connais pas mon empreinte sociétale</h3>
+        <p>
+          Vous souhaitez calculez les impacts de votre entreprise ?
+        </p>
+        <p>
+          Un outil gratuit et open source vous permet de calculez l'impact de votre de votre entreprise grâce à votre fichier
+          d'écriture comptabme
+        </p>
+        <Button variant="secondary" href="/metriz">En savoir plus</Button>
+      </Col>
+      </Row>
+
+    </div>
   );
 };
 
 /* ---------- SOCIAL FOOTPRINT FORM ---------- */
 
-const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack,
+const SocialFootprintForm = ({
+  socialfootprint,
+  commitSocialFootprint,
+  goBack,
 }) => {
-
-  const onUpdateProps = (nextProps) => (socialfootprint[nextProps.indic] = nextProps);
+  const onUpdateProps = (nextProps) =>
+    (socialfootprint[nextProps.indic] = nextProps);
   const onCommit = () => commitSocialFootprint(socialfootprint);
   const onGoBack = () => goBack();
 
   return (
-    <section className="publish-form">
+    <div className="publish-form">
       <Col lg={12}>
         <h3>Déclaration des données</h3>
         <Row>
@@ -314,7 +339,7 @@ const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack,
           ))}
         </Row>
         <div className="mt-2 text-end">
-          <button className="btn btn-primary" onClick={onGoBack}>
+          <button className="btn btn-primary me-2" onClick={onGoBack}>
             Retour
           </button>
           <button className="btn btn-secondary" onClick={onCommit}>
@@ -322,7 +347,7 @@ const SocialFootprintForm = ({socialfootprint,commitSocialFootprint,goBack,
           </button>
         </div>
       </Col>
-    </section>
+    </div>
   );
 };
 class IndicatorForm extends React.Component {
@@ -347,68 +372,71 @@ class IndicatorForm extends React.Component {
 
     return (
       <Col lg={6}>
-        <div className="indicator-form">
-          <img
-            src={"images/icon-ese-bleues/" + indic + ".png"}
-            className="mx-auto d-block img-fluid"
-          />
-          <h4>{metaData[indic].libelle}</h4>
-          <div className="source">
-            <a
-              className="text-link"
-              href={"https://lasocietenouvelle.org/indicateurs/" + indic}
-              target="_blank"
-            >
-              <i className="bi bi-box-arrow-up-right"></i> Informations sur
-              l'indicateur
-            </a>
-          </div>
-          <div className="my-3 row align-items-center">
-            <label className="col-sm-3 col-form-label">
-              Valeur<span>({metaData[indic].unitCode})</span>
-            </label>
-            <div className="col-sm-9">
-              <input
-                className="form-control"
-                type="text"
-                value={value}
-                onChange={this.onValueChange}
-                onBlur={this.onBlur}
-                onKeyPress={this.onEnterPress}
+        <Card className="mb-3">
+          <Card.Body className="indicator-form">
+            <div className="d-flex align-items-center">
+              <img
+                src={"images/icon-ese-bleues/" + indic + ".png"}
+                className="img-fluid me-3"
               />
+              <div className="indic-libelle">
+                <h5>{metaData[indic].libelle}</h5>
+                <a
+                  href={"https://lasocietenouvelle.org/indicateurs/" + indic}
+                  target="_blank"
+                >
+               Informations sur l'indicateur    <i className="bi bi-box-arrow-up-right"></i> 
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="my-3 row align-items-center">
-            <label className="col-sm-3 col-form-label">
-              Incertitude<span>(%)</span>
-            </label>
-            <div className="col-sm-9">
-              <input
-                className="form-control"
-                type="text"
-                value={uncertainty}
-                onChange={this.onUncertaintyChange}
-                onBlur={this.onBlur}
-                onKeyPress={this.onEnterPress}
-              />
+            <div className="source"></div>
+            <div className="my-3 row align-items-center">
+              <label className="col-sm-3 col-form-label">
+                Valeur<span>({metaData[indic].unitCode})</span>
+              </label>
+              <div className="col-sm-9">
+                <input
+                  className="form-control"
+                  type="text"
+                  value={value}
+                  onChange={this.onValueChange}
+                  onBlur={this.onBlur}
+                  onKeyPress={this.onEnterPress}
+                />
+              </div>
             </div>
-          </div>
+            <div className="my-3 row align-items-center">
+              <label className="col-sm-3 col-form-label">
+                Incertitude<span>(%)</span>
+              </label>
+              <div className="col-sm-9">
+                <input
+                  className="form-control"
+                  type="text"
+                  value={uncertainty}
+                  onChange={this.onUncertaintyChange}
+                  onBlur={this.onBlur}
+                  onKeyPress={this.onEnterPress}
+                />
+              </div>
+            </div>
 
-          <div className="my-3 row align-items-center">
-            <label className="col-sm-3 col-form-label">
-              Informations complémentaires
-            </label>
-            <div className="col-sm-9">
-              <textarea
-                className="form-control"
-                type="text"
-                value={info}
-                onChange={this.onInfoChange}
-                onBlur={this.onBlur}
-              />
+            <div className="my-3 row align-items-center">
+              <label className="col-sm-3 col-form-label">
+                Informations complémentaires
+              </label>
+              <div className="col-sm-9">
+                <textarea
+                  className="form-control"
+                  type="text"
+                  value={info}
+                  onChange={this.onInfoChange}
+                  onBlur={this.onBlur}
+                />
+              </div>
             </div>
-          </div>
-        </div>
+          </Card.Body>
+        </Card>
       </Col>
     );
   }
@@ -427,37 +455,35 @@ class IndicatorForm extends React.Component {
 /* ----- DECLARANT FORM ----- */
 
 export const DeclarantForm = (props) => {
-
   const [declarant, setDeclarant] = useState(props.declarant);
   const [email, setEmail] = useState(props.email);
   const [autorisation, setAutorisation] = useState(props.autorisation);
   const [price, setPrice] = useState();
   const [isDisabled, setDisabled] = useState(true);
   const changePrice = (event) => setPrice(event.target.value);
-  const changeDeclarant=  (event) => setDeclarant(event.target.value);
+  const changeDeclarant = (event) => setDeclarant(event.target.value);
   const changeEmail = (event) => setEmail(event.target.value);
   const changeAutorisation = (event) => setAutorisation(event.target.checked);
-  
+
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    if (price && autorisation && declarant.length > 0 ) {
+    if (price && autorisation && declarant.length > 0) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
   });
 
-
-  const onCommit = () => props.commitDeclarant(declarant, email, autorisation, price);
+  const onCommit = () =>
+    props.commitDeclarant(declarant, email, autorisation, price);
 
   return (
     <section className="publish-form">
       <Col lg={6}>
         <h3>Déclarant</h3>
 
-        <div className="form-group row">
+        <div className="mb-3 row">
           <label className="col-sm-4 col-form-label">Nom - Prénom : </label>
           <div className="col-sm-7">
             <input
@@ -469,7 +495,7 @@ export const DeclarantForm = (props) => {
             />
           </div>
         </div>
-        <div className="form-group row">
+        <div className="mb-3 row">
           <label className="col-sm-4 col-form-label">Adresse e-mail : </label>
           <div className="col-sm-7">
             <input
@@ -561,7 +587,7 @@ export const DeclarantForm = (props) => {
           </label>
         </div>
         <div className="mt-4 text-end">
-          <button className="btn btn-secondary" onClick={props.goBack}>
+          <button className="btn btn-secondary me-2" onClick={props.goBack}>
             Retour
           </button>
           <button
@@ -576,7 +602,6 @@ export const DeclarantForm = (props) => {
     </section>
   );
 };
-
 
 /* ----- DECLARANT FORM ----- */
 const Summary = ({
@@ -596,25 +621,14 @@ const Summary = ({
   let currentYear = newDate.getFullYear();
 
   return (
-   <section className="publish-form">
+    <section className="publish-form">
       <Col lg={6}>
         <h3>Recapitulatif</h3>
         <div className="summary">
-          <p>
-            Siren : 
-            {siren}
-          </p>
-          <p>
-            Dénomination :
-            {denomination}
-          </p>
-          <p>
-            Année : 
-            {year}
-          </p>
-          <p>
-            Indicateurs : 
-          </p>
+          <p>Siren :{siren}</p>
+          <p>Dénomination :{denomination}</p>
+          <p>Année :{year}</p>
+          <p>Indicateurs :</p>
           {Object.entries(socialfootprint).map(([indic, _]) => (
             <p key={indic}>&emsp;{metaData[indic].libelle}</p>
           ))}
@@ -622,14 +636,8 @@ const Summary = ({
           <p>
             <b>Fait le :</b> {date}/{month}/{currentYear}
           </p>
-          <p>
-          Déclarant : 
-            {declarant}
-          </p>
-          <p>
-          Coût de la formalité : 
-            {price} €
-          </p>
+          <p>Déclarant :{declarant}</p>
+          <p>Coût de la formalité :{price} €</p>
         </div>
         <button className="btn btn-outline-primary" onClick={exportStatement}>
           <i className="bi bi-file-earmark-arrow-down"></i> Télécharger le
@@ -637,7 +645,7 @@ const Summary = ({
         </button>
 
         <div className="mt-4 text-end">
-          <button className="btn btn-primary" onClick={goBack}>
+          <button className="btn btn-primary me-2 " onClick={goBack}>
             Retour
           </button>
           <button className="btn btn-secondary" onClick={submitStatement}>
@@ -645,13 +653,11 @@ const Summary = ({
           </button>
         </div>
       </Col>
-
-   </section> 
+    </section>
   );
 };
 
 /* ---------- END ---------- */
-
 
 const StatementSendMessage = () => {
   return (
@@ -664,7 +670,7 @@ const StatementSendMessage = () => {
   );
 };
 
-const ErrorMessage = ({goBack}) => {
+const ErrorMessage = ({ goBack }) => {
   return (
     <>
       <div className="alert alert-danger">
@@ -672,8 +678,8 @@ const ErrorMessage = ({goBack}) => {
         nous contacter.
       </div>
       <button className="btn btn-primary" onClick={goBack}>
-            Retour
-          </button>
+        Retour
+      </button>
     </>
   );
 };

@@ -28,7 +28,7 @@ const mat = () => {
 L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
               </p>
 
-              <Image fluid src="/ESE/mat.png" className="my-3" />
+              <Image fluid src="/ESE/mat.svg" className="my-3" />
               <p>
                 <b>Code : </b> MAT
               </p>
@@ -52,7 +52,7 @@ L’objectif est de réduire l’extraction de matières premières et de favori
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_MAT.png"
+                src="/images/odd/odd_MAT.svg"
                 alt="logo odd"
                 fluid
               />

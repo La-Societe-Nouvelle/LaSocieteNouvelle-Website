@@ -33,7 +33,7 @@ const was = () => {
                 indicateurs spécifiques pourront être mis en place pour ces
                 catégories.
               </p>
-              <Image fluid src="/ESE/WAS.png" className="my-3" />
+              <Image fluid src="/ESE/WAS.svg" className="my-3" />
               <p>
                 <b>Code : </b> WAS
               </p>
@@ -78,7 +78,7 @@ const was = () => {
               </p>
               <Image
                 id="logo-odd"
-                src="/resources/odd_was.png"
+                src="/images/odd/odd_was.svg"
                 alt="logo odd"
                 fluid
               />

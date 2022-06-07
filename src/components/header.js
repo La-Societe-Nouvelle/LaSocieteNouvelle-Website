@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/portail"><i className="bi bi-search"></i> Portail</Nav.Link>
-              <Nav.Link href="/api-lsn">API</Nav.Link>
+              <Nav.Link href="https://api.lasocietenouvelle.org" target="_blank" rel="noreferrer">API</Nav.Link>
               <Nav.Link href="https://docs.lasocietenouvelle.org/public-api" target="_blank">Documentation</Nav.Link>
               <Nav.Link href="/">La société nouvelle</Nav.Link>
             </Nav>
@@ -54,24 +54,33 @@ const Header = () => {
             </div>
           </div>
           <div className="middle-header d-flex justify-content-between align-items-center ">
+            <div className="d-flex align-item-center">
             <Navbar.Brand href="/">
               <img
                 src="/logo.svg"
-                width="100"
-                height="100"
-                className="d-inline-block align-center"
+                height="145"
                 alt="logo"
               />
-              <h1>
-                Mesurer, Informer pour une économie durable
-              </h1>
+          
             </Navbar.Brand>
-            <div></div>
+    
+            <div className="border img-thumbnail">
+              <Image  src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
+              <p >
+                Communauté <br/> Coq Vert
+              </p>
+                </div>
+            </div>
+          
+ 
+            <div>
+              <h1>Système d'Information national <br></br>sur les <strong>impacts des entreprises</strong></h1>
+            </div>
             <div>
               <Button href="https://metriz.lasocietenouvelle.org" variant="outline-secondary" target="_blank" rel="noreferrer">
-                Mesurer mon impact
+              <i className="bi bi-box-arrow-up-right"></i> Mesurer mon impact
               </Button>
-              <Button href="/publier-mes-donnees" variant="outline-primary" className="ms-2">
+              <Button href="/publication" variant="outline-primary" className="ms-2">
                 Publier mes données
               </Button>
             </div>
@@ -107,7 +116,7 @@ const Header = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Documentation
+                     <i className="bi bi-box-arrow-up-right"></i>  Documentation
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="/entreprises">Entreprises</Nav.Link>

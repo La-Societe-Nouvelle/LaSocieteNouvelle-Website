@@ -1,7 +1,5 @@
 
 // Components
-import Header from '../src/components/header'
-import Footer from '../src/components/footer'
 import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
 
@@ -12,9 +10,10 @@ export default function Home() {
       <Helmet>
         <title>La société Nouvelle | Mentions légales </title>
       </Helmet>
-      <Header />
-
-      <main >
+      <PageHeader
+        title="Mentions légales"
+        path={"mentions-legales"}
+      />
         <Container>
           <section>
             <h2>Mentions légales</h2>
@@ -49,11 +48,7 @@ export default function Home() {
                 <a href="https://vercel.com" target="_blank">https://vercel.com</a>
               </p>
           </section>
-        </Container>
-      </main>
-
-      <Footer />
-
+    </Container>
     </>
   )
 }
