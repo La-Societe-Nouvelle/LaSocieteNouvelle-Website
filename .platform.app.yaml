@@ -21,7 +21,8 @@ hooks:
 # The configuration of the application when it is exposed to the web.
 web:
     commands:
-        start: next start
+        start: |
+          NODE_ENV=production yarn start
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
