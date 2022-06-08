@@ -13,11 +13,18 @@ function LatestPosts() {
         <Col lg={6}>
           <div className="last">
             <div className="image-post">
-              <Image
+              {
+                posts[0].categorie == 'video' ? 
+                <>
+                </>
+                :
+                <Image
                 alt="Photo d'équipe de la Societé Nouvelle"
                 src={"/images/articles/" + posts[0].image}
                 fluid
               />
+              }
+        
             </div>
             <div className="post-title">
                <h2><a href={"/blog/" + posts[0].slug}> {posts[0].titre} </a></h2>
@@ -41,11 +48,19 @@ function LatestPosts() {
                   <Row>
                     <Col lg={4}>
                       <div className="image-post">
-                        <Image
-                          alt="Photo d'équipe de la Societé Nouvelle"
-                          src={"/images/articles/thumbnail-" + post.image}
-                          fluid
-                        />
+                      {
+                posts.categorie == 'video' ? 
+                <>
+                </>
+                :
+                <Image
+                alt="Photo d'équipe de la Societé Nouvelle"
+                src={"/images/articles/thumbnail-" + post.image}
+                fluid
+              
+              />
+              }
+                    
                       </div>
                     </Col>
                     <Col>

@@ -2,6 +2,7 @@
 // Components
 import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
+import PageHeader from '../components/PageHeader';
 
 
 export default function Home() {
