@@ -15,8 +15,7 @@ function LatestPosts() {
             <div className="image-post">
               {
                 posts[0].categorie == 'video' ? 
-                <>
-                </>
+                <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+posts[0].lien} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 :
                 <Image
                 alt="Photo d'équipe de la Societé Nouvelle"
@@ -50,8 +49,8 @@ function LatestPosts() {
                       <div className="image-post">
                       {
                 posts.categorie == 'video' ? 
-                <>
-                </>
+                <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+post.lien} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                 :
                 <Image
                 alt="Photo d'équipe de la Societé Nouvelle"

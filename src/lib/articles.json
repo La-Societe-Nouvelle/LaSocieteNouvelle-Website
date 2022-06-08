@@ -2,12 +2,12 @@
   "posts": [
     {
       "image": "video.jpg",
-      "titre": "L'approche de La Société Nouvelle",
+      "titre": "Pourquoi faire évoluer la comptabilité des entreprises?",
       "slug": "approche-societe-nouvelle",
       "categorie": "video",
       "date": "02 juin 2022",
       "texte": "Pour mieux comprendre notre approche, nous avons réalisé une vidéos explicative." ,
-      "lien" : "https://www.youtube.com/watch?v=XTdiVnrm-BI"
+      "lien" : "XTdiVnrm-BI"
     },
     {
       "image": "fiche-methodologique.jpg",
