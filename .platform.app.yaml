@@ -1,37 +1,49 @@
+# .platform.app.yaml
 
-      # The name of this app. Must be unique within a project.
-name: 'app'
+# The name of this application, which must be unique within a project.
+name: app
 
-# The runtime the application uses. The 'type' key defines the base container
-# image that will be used to run the application. There is a separate base
-# container image for each primary language for the application,
-# in multiple versions. Check the Node.js documentation
-# (https://docs.platform.sh/languages/nodejs.html#supported-versions)
-# to find the supported versions for the 'nodejs' type.
-type: 'nodejs:16'
-      
+# The type key specifies the language and version for your application.
+type: 'nodejs:14'
+
+dependencies:
+    nodejs:
+        yarn: "^1.22.0"
+
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    # The build hook runs after yarn has been downloaded.
+    # No services are available but the disk is writeable.
+    build: |
+        yarn
+        yarn build
+        # Move committed files in soon-to-be mounts into temp directory.
+        chmod +x handle_mounts.sh
+        ./handle_mounts.sh
+    # The deploy hook runs after your application has been deployed and started.
+    # Code cannot be modified at this point but the database is available.
+    # The site is not accepting requests while this script runs so keep it
+    # fast.
+    deploy: |
+        # Move committed files from temp directory back into mounts.
+        ./handle_mounts.sh
+# The configuration of the application when it is exposed to the web.
+web:
+    commands:
+        start: npx next start -p $PORT
+
+# The size of the persistent disk of the application (in MB).
 disk: 2048
 
-# The following block defines a single writable directory, 'web/uploads'
-# The 'source' specifies where the writable mount is. The 'local' source
-# indicates that the mount point will point to a local directory on the
-# application container. The 'source_path' specifies the subdirectory
-# from within the source that the mount should point at. 
+# The mounts that will be performed when the package is deployed.
 mounts:
-  'web/uploads':
-    source: local
-    source_path: uploads
-    
-dependencies:
-  nodejs:
-      yarn: "*"
+    # Next.js will try to cache files, so it must be writeable.
+    '/.next':
+        source: local
+        source_path: 'next'
 
-hooks:
-  build: |
-    npm run build
-
-web:
-  commands: 
-    start: "node index.js"
-
-
+source:
+  operations:
+    auto-update:
+      command: |
+        curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
