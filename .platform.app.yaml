@@ -26,6 +26,6 @@ mounts:
 
 web:
   commands: 
-    start: "node index.js"
+    start: "node _app.js"
 
 
