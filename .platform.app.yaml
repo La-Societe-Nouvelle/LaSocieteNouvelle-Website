@@ -25,3 +25,6 @@ mounts:
 web:
   commands: 
     start: "node index.js"
+
+disk: 128
+
