@@ -180,7 +180,7 @@ const Home = () => {
         </section>
         <section className="partenaires">
           <Container>
-            <h3>Nos partenaires</h3>
+            <h3 className="text-center">Nos partenaires</h3>
             <div className="d-flex justify-content-between">
               {/* <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
               <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
