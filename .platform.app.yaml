@@ -22,10 +22,12 @@ mounts:
     source: local
     source_path: uploads
     
-    
+dependencies:
+  nodejs:
+      npm: "*"
 
 web:
   commands: 
-    start: "node _app.js"
+    start: "node index.js"
 
 
