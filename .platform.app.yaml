@@ -1,6 +1,6 @@
 
       # The name of this app. Must be unique within a project.
-name: app
+name: 'app'
 
 # The runtime the application uses. The 'type' key defines the base container
 # image that will be used to run the application. There is a separate base
@@ -10,6 +10,7 @@ name: app
 # to find the supported versions for the 'nodejs' type.
 type: 'nodejs:16'
       
+disk: 2048
 
 # The following block defines a single writable directory, 'web/uploads'
 # The 'source' specifies where the writable mount is. The 'local' source
@@ -26,5 +27,4 @@ web:
   commands: 
     start: "node index.js"
 
-disk: 128
 
