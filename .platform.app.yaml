@@ -1,6 +1,6 @@
 
       # The name of this app. Must be unique within a project.
-name: 'app'
+name: app
 
 # The runtime the application uses. The 'type' key defines the base container
 # image that will be used to run the application. There is a separate base
@@ -18,16 +18,21 @@ disk: 2048
 # application container. The 'source_path' specifies the subdirectory
 # from within the source that the mount should point at. 
 mounts:
-  'web/uploads':
+  run:
     source: local
-    source_path: uploads
+    source_path: run
+
+hooks:
+  build: |
+    npm install
+    npm run build
     
 dependencies:
   nodejs:
-      npm: "*"
+      pm2: "^4.5.0"
 
 web:
   commands: 
-    start: "node index.js"
+    start: "PM2_HOME=/app/run pm2 start index.js --no-daemon"
 
 
