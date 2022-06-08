@@ -15,14 +15,13 @@ hooks:
     # The build hook runs after yarn has been downloaded.
     # No services are available but the disk is writeable.
     build: |
-        yarn
-        yarn build
+        npm
+        npm build
 
 # The configuration of the application when it is exposed to the web.
 web:
     commands:
-        start: |
-          NODE_ENV=production yarn start
+        start: "npm start"
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
