@@ -298,7 +298,7 @@ const LegalForm = (props) => {
       <Col>
         <h3>Je ne connais pas mon empreinte sociétale</h3>
         <p>
-          Vous souhaitez calculez les impacts de votre entreprise ?
+          Vous souhaitez calculer les impacts de votre entreprise ?
         </p>
         <p>
           Un outil gratuit et open source vous permet de calculez l'impact de votre de votre entreprise grâce à votre fichier
