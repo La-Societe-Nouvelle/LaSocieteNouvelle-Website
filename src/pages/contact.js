@@ -20,6 +20,10 @@ export default function Home() {
             <Col md={{ span: 6, offset: 3 }}>
           <h2 className="titre-bloc">Formulaire de contact</h2>
               <ContactForm />
+              <hr/>
+              <p className="small">
+                Nous nous engageons à n’utiliser les informations communiquées dans ce formulaire que pour les traitements nécessaires à une réponse la plus précise possible.
+              </p>
             </Col>
           </Row>
         </Container>
