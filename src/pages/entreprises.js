@@ -80,7 +80,7 @@ const Entreprises = () => {
             </Col>
           </Row>
           <div className="text-center mt-3">
-            <Button variant="secondary" href="https://metriz.la-societe-nouvelle.org" target='_blank' rel="noreferrer" >
+            <Button variant="secondary" href="https://metriz.lasocietenouvelle.org" target='_blank' rel="noreferrer" >
                 Utiliser l'application
             </Button>
           </div>

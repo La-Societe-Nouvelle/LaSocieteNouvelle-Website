@@ -43,11 +43,7 @@ export default function Home(props) {
           <Form defaultData={props.defaultData} />
         </section>
       </Container>
-      <section className="cta">
-        <Container>
-        <h4>Vous souhaitez connaître votre empreinte sociétale ?</h4>
-        </Container>
-      </section>
+
     </>
   );
 }
@@ -227,15 +223,16 @@ const LegalForm = (props) => {
     <div className="publish-form">
       <Row>
 
-      <Col>
-      <h3>Je connais mon empreinte</h3>
+      <Col xs={12} lg={7}>
+      <h3>Publier ses données</h3>
         <p>
           Vous avez déjà mesuré votre empreinte sociétale et vous souhaitez publier vos données sur notre portail ? 
         </p>
         <p>
         Complétez les différentes étapes du formulaire de publication des données.
         </p>
-        <h4>formulaire de publication</h4>
+        <hr/>
+      
         <h5>1. Informations légales</h5>
         <div className="mb-3 row">
           <label className="col-sm-5 col-form-label">
@@ -295,16 +292,22 @@ const LegalForm = (props) => {
           </Button>
         </div>
       </Col>
-      <Col>
-        <h3>Je ne connais pas mon empreinte sociétale</h3>
+      <Col xs={12} lg={5}>
+        <div className="card">
+          <div className="card-body">
+          <h3>Calculer l'impact de son entreprise</h3>
         <p>
-          Vous souhaitez calculer les impacts de votre entreprise ?
+         Vous ne connaissez pas encore votre empreinte sociétale et vous souhaitez calculer les impacts de votre entreprise ?
         </p>
         <p>
-          Un outil gratuit et open source vous permet de calculez l'impact de votre de votre entreprise grâce à votre fichier
-          d'écriture comptabme
+          Un outil gratuit et open source vous permet de faire ce calcul grâce à votre fichier
+          d'écriture comptable.
         </p>
         <Button variant="secondary" href="/metriz">En savoir plus</Button>
+          </div>
+
+        </div>
+  
       </Col>
       </Row>
 

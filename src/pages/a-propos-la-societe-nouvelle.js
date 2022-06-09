@@ -84,7 +84,7 @@ const About = () => {
             économique ayant à coeur de mesurer ses impacts de production, pour
             les générations futures.
           </p>
-          <Button variant="secondary">Notre méthodologie</Button>
+          <Button variant="secondary" href="notre-approche">Notre méthodologie</Button>
         </Container>
       </section>
       <section className="bg-light">
