@@ -22,7 +22,7 @@ const haz = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/HAZ.svg" height="80" className="mb-3" />
+              <Image src="/ESE/haz.svg" height="80" className="mb-3" />
               <p>
                 Quantité utilisée de produits classifiés comme dangereux pour la
                 santé ou l’environnement par unité de valeur produite, exprimée

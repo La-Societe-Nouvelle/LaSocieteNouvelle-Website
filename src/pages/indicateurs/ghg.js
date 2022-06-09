@@ -22,7 +22,7 @@ const ghg = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/GHG.svg"  height="80" className="mb-3" />
+              <Image  src="/ESE/ghg.svg"  height="80" className="mb-3" />
               <p>
                 Quantité de gaz à effet de serre émise par unité de valeur
                 produite, exprimée en gCO2e/€ (grammes de CO2 équivalent par

@@ -22,7 +22,7 @@ const dis = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/DIS.svg" height="80" className="mb-3" />
+              <Image  src="/ESE/dis.svg" height="80" className="mb-3" />
 
               <p>
                 Coefficient de GINI. Valeur sans unité, comprise entre 0

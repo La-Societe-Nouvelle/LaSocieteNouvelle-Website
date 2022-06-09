@@ -20,7 +20,7 @@ const wat = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/WAT.svg" height="80" className="mb-3" />
+              <Image  src="/ESE/was.svg" height="80" className="mb-3" />
               <p>
                 Quantité d’eau consommée par unité de valeur produite, exprimée
                 en L/€ (litres par euro)

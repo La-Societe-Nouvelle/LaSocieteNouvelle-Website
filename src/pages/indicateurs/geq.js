@@ -22,7 +22,7 @@ const geq = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/GEQ.svg" height="80" className="mb-3" />
+              <Image src="/ESE/geq.svg" height="80" className="mb-3" />
 
               <p>
                 Ecart entre le taux horaire brut moyen des femmes et des hommes

@@ -20,7 +20,7 @@ const geq = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/NRG.svg" height="80" className="mb-3" />
+              <Image src="/ESE/nrg.svg" height="80" className="mb-3" />
               <p>
               Consommation d’énergie primaire par unité de valeur produite, exprimée en kJ/€ (kilojoules par euro).
               </p>
