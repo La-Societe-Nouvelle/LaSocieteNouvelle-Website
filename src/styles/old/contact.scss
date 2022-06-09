@@ -1,0 +1,24 @@
+@import "base";
+
+/* -------------------- Forms -------------------- */
+
+#contact-form
+{
+  flex-grow: 1;
+
+  #objet-input
+  {
+    height: auto;
+  }
+
+  #coordonnees-input 
+  {
+    height: 50px;
+  }
+  
+  #message-input 
+  {
+    height: 150px;
+  }
+}
+

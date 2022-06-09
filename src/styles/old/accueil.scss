@@ -1,0 +1,139 @@
+@import 'base';
+
+#chiffres-clefs {
+
+  p {
+    margin: 0;
+    sup {
+      top: -2em;
+    }
+  }
+}
+
+#post {
+  .card-title{
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+}
+
+
+#access {
+  .btn {
+    background-color: $light-blue;
+    border : 1px solid rgba($primary, .15);
+    padding: 0.75rem;
+    margin: 0 0 1em 0;
+  }
+}
+#index
+{
+  // Chiffres clefs
+  
+  .chiffre-clef 
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 20px;
+  
+    .chiffre-clef-icone
+    {
+      height: 50px;
+      margin: 10px;
+    }
+    
+    .chiffre-clef-valeur 
+    {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-around;
+  
+      p 
+      {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 20px 10px 20px 0;
+      }
+  
+      span 
+      {
+        margin-top: 12px;
+        color: white;
+      }
+    }
+  
+    .chiffre-clef-libelle 
+    {
+      margin: 0;
+    }
+  }
+  
+
+  .chiffres-clefs-bdd
+  {
+    justify-content: space-evenly;
+  
+    .chiffre-clef-bdd
+    {
+      justify-content: center;
+      align-items: center;
+  
+      .chiffre-clef-bdd-valeur
+      {
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#head-accueil {
+  justify-content: left;
+  margin: 20px 10px 10px 10px;
+  width: 100%;
+}
+
+.head-accueil-item {
+  text-align: left;
+  justify-content: left;
+  display: block;
+  margin: 5px 0px;
+}
+
+.head-accueil-item-highlight {
+  text-align: left;
+  justify-content: left;
+  display: block;
+  margin: 5px 0px;
+  color: $secondary;
+}
+
+#front-page {
+  flex-grow: 1;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#logo-accueil {
+  width: 30%;
+}
+
+#texte-logo-accueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#titre-logo-accueil {
+  margin-bottom: 10px;
+}

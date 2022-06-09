@@ -1,0 +1,422 @@
+@import 'base';
+
+.declarationForm {
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .strip {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .form_inner {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px 0 25px;
+        }
+
+        .form_footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 10px 0;
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            button {
+                margin-left: 5px;
+            }
+        }
+
+        .summary {
+            flex-grow: 1;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+
+            p {
+                margin: 5px 0;
+            }
+        }
+    }
+
+    h2 {
+        margin: 30px 0;
+    }
+
+    input {
+        margin: 0 5px;
+        text-align: right;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5px 0;
+
+        &.long input {
+            width: 500px;
+        }
+        &.left input {
+            text-align: left;
+        }
+
+        @include xs {
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .input-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin: 5px 0;
+
+        &.long input {
+            width: 500px;
+        }
+        &.left input {
+            text-align: left;
+        }
+
+        @include xs {
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    a {
+        margin: 5px 0;
+    }
+
+    .indicator-form {
+        width: 100%;
+        padding-bottom: 25px;
+
+        label {
+            min-width: 100px;
+        }
+
+        .input-intro {
+            margin-bottom: 10px;
+        }
+
+        .inputs {
+            margin: 5px 0;
+        }
+    }
+
+    textarea {
+        width: 100%;
+
+        &.textarea-line {
+            height: 50px;
+        }
+    }
+
+    .radio-button-input {
+        align-items: baseline;
+    }
+
+    #indicators {
+        h2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu {
+
+            border-top: solid $primary 1px;
+            border-bottom: solid $primary 1px;
+            padding-bottom: 1px;
+    
+            .menu-items {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                background-color: white;
+                width: 100%;
+            
+                .menu-button {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width:unset;
+                    background-color: transparent;
+                    color: $primary;
+                    
+                    :hover {
+                        color: white;
+                        background-color: $secondary;
+                      }
+                    
+                    &.menu-button-inverse {
+                        color: white;
+                        background-color: $primary;
+                      }
+                    
+
+                    .ticked {
+                        display: flex;
+                        width: 10px;
+                        height: 10px;
+                        clip-path: polygon(1% 52%, 18% 32%, 38% 50%, 72% 0, 100% 0, 40% 85%);
+                        background-color:$primary;
+                    }
+                    &:not(.selected):hover {
+                        color: white;
+                        background-color: $secondary;
+
+                        .validated {
+                            background-color:white; 
+                        }
+                    }
+                    &.selected {
+                        color: white;
+                        background-color: $primary;
+
+                        .validated {
+                            background-color:white; 
+                        }
+                    }
+                }
+            }
+        }
+
+        #indicator-view {
+            display: grid;
+            grid-template-columns: 1fr 8fr 1fr;
+            align-items: center;
+            justify-items: center;
+            
+            .embla {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                overflow-x: hidden;
+                
+                .embla__viewport {
+                    overflow-x: hidden;
+                    width: 100%;
+
+                    .embla__container {
+                        display: flex;
+                        user-select: none;
+                        -webkit-touch-callout: none;
+                        -khtml-user-select: none;
+                        -webkit-tap-highlight-color: transparent;
+                        width:100%;
+
+                        .embla__slide {
+                            position: relative;
+                            min-width:100%;
+
+                            .embla__slide__inner {
+                                position: relative;
+                                overflow-x: hidden;
+                                padding: 1px;
+
+                                .indicateur-form{
+                                    align-items: left;
+                                    flex-direction: column;
+                                    display: flex;
+
+                                    h3 {
+                                       text-align:center;
+                                    }
+                        
+                                    .info-indicateur {
+                                        a {
+                                            text-decoration: underline;
+                                            font-style: italic;
+                                        }
+                                        padding-bottom: 2%;
+                                        :hover{
+                                            color: $secondary
+                                        }
+                                    }
+
+                                    .input {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: left;
+                                        label {
+                                            //width: 100%;
+                                            min-width: 125px;
+                                        } 
+
+                                        @include xs {
+                                            flex-direction: column;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .embla__viewport.is-draggable {
+                    cursor: move;
+                    cursor: grab;
+                }
+              
+                .embla__viewport.is-dragging {
+                    cursor: grabbing;
+                }
+            }
+    
+            .prev-btn{
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background-color: transparent;
+
+                .prev-arrow{
+                    display: block;
+                    clip-path: polygon(66% 0, 58% 0%, 33% 50%, 58% 100%, 66% 100%, 41% 50%);
+                    background-color: $primary;
+                    width: 100%;
+                    height: 70px;
+                }
+            }
+    
+            .next-btn{
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background-color: transparent;
+
+                .next-arrow{
+                    display: block;
+                    clip-path: polygon(33% 0, 41% 0, 66% 50%, 41% 100%, 33% 100%, 58% 50%);
+                    background-color: $primary;
+                    width: 100%;
+                    height: 70px;
+                }
+            }
+        }
+    }
+
+    .form-btn {
+
+        margin: 20px 0;
+        width: 100%;
+
+        &:disabled{
+            cursor: default;
+            background-color: $secondary;
+            color: white;
+            border: solid $secondary 1px;
+        }
+        &:not(:disabled){
+            cursor: pointer;
+        }
+
+        @include xs {
+            height: auto;
+        }
+    }
+    
+}
+
+.declarationForm #general-data {
+    min-height: 150px;
+}
+.declarationForm #note {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.declarationForm .quality-boxes {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: solid $primary 1px;
+    border-bottom: solid $primary 1px;
+
+    @include xs {
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
+}
+.declarationForm .quality-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 200px;
+
+    @include xs {
+        height: auto;
+        margin-bottom: 5px;
+    }
+}
+.declarationForm .quality-title {
+    min-height: 50px;
+
+    @include xs {
+        min-height: auto;
+        padding: 10px 0;
+    }
+}
+.declarationForm .quality-value {
+    padding: 20px 10px;
+    min-width: 150px;
+    font-size: 30px;
+    font-weight: bold;
+
+    @include xs {
+        font-size: 25px;
+        padding: 10px 5px;
+    }
+}
+.declarationForm #declared-value {
+    border: solid $primary 1px;
+}
+.declarationForm .quality-box p {
+    text-align: center;
+    margin: 0;
+}
+.declarationForm .uncertainty {
+    font-size: 12px;
+}
+
+#indicators-assessments {
+    margin-left: 20px;
+}
+
+#assessment {
+    justify-content: left;
+}

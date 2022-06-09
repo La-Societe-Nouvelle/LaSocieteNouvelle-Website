@@ -1,0 +1,85 @@
+@import 'base';
+
+/* -------------------- Company-data -------------------- */
+
+#company-footprint
+{
+ 
+
+  #notes > p
+  {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+
+  .indic-details 
+  {
+
+    .indic-view 
+    {
+      margin: 2rem 0;
+
+        h4{
+          font-size: 1rem;
+          margin: 1rem 0;
+        } 
+
+        
+      .indic-value 
+      {
+        font-weight: bold;
+        font-size: 2rem;
+        margin: 0;
+        &.default
+        {
+          color: #b0b0b0;
+        }
+      }
+        .card {
+          height: 400px;
+        }
+        .card-header {
+          text-align: center;
+        }
+  
+        .card-body {
+          font-size: 0.8rem;
+          text-align: center;
+        }
+        .card-footer {
+          font-size: 0.8rem;
+        }
+      
+     
+  
+    }
+  }
+
+  #default-message 
+  {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // components
+
+  .nav-link {
+    padding : 0.5rem 1rem;
+    color: $primary;
+    background-color: #fbfbff;
+    border: 1px solid rgba(25,21,88,.15);
+
+    &.inverse
+    {
+      background-color: $primary;
+      color: white;
+      border-color: $primary;
+    }
+  }
+}

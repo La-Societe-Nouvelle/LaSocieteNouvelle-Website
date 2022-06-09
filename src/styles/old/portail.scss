@@ -1,0 +1,34 @@
+@import 'base';
+
+/* ----- portail ----- */
+
+.portail-view 
+{
+  
+  #search-bar 
+  {
+    background-color: #fff;
+    border: 1px solid $light-blue;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+    padding: 3rem;
+
+  }
+
+
+  #informations
+  {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+}
+
+.portail-view {
+  .card {
+    margin: 2rem 2rem 0 0rem;
+    height: 300px;
+  }
+}

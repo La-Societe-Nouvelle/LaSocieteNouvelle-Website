@@ -1,0 +1,125 @@
+@import 'base';
+
+
+/* -------------------- Section -------------------- */
+
+.section 
+{
+  width: 100%;
+  margin: 10px 0 20px;
+  padding: 0px;
+
+  &.h-group 
+  {
+    padding: 0;
+    gap: 10px;
+    
+    > div 
+    {
+      flex: 1 1 0px;
+      margin: 0px;
+    }
+  }
+
+  // components
+
+  .titre-section
+  {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+}
+.titre {
+
+  font-size: 2rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+
+}
+/* -------------------- Bloc -------------------- */
+
+.bloc 
+{
+  overflow: auto;
+  padding: 1em 2em;
+
+  &.blue 
+  {
+    background-color: $primary;
+
+    h1,h2,p,b,h1.titre-bloc
+    {
+      color: white;
+    }
+  }
+  
+  &.gray 
+  {
+    background-color: $light-gray;
+  }
+  
+  &.white 
+  {
+    border: 1px solid #c6c3f0;
+    background: #ffffff;
+    
+    button 
+    {
+      background-color: $primary;
+    }
+  }
+
+  // Inner
+
+  .bloc-container
+  {
+    margin-bottom: 20px;
+  }
+
+  // Components
+  
+  h1.titre-bloc
+  {
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: $primary;
+  }
+
+  h2.titre-bloc
+  {
+    font-size: 25px;
+    margin : 10px 0;
+    color: $primary;
+  }
+
+ 
+}
+
+.graph {
+  width: 50%;
+  background: #ffffff;
+    padding: 2em;
+    border: 1px solid lighten($primary, 10%);
+    margin: 2em 0;
+}
+
+.mesure-indicateur {
+  margin: 20px 0;
+  h3 {
+    color : $primary;
+    margin: 5px 0;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  img {
+    height: 100px;
+    display: block;
+    margin : 0 auto;
+  }
+}

@@ -1,0 +1,15 @@
+.bloc-statistics{
+
+
+    font-family: 'Raleway';
+
+    .h1 {
+        font-weight: 600a;
+    }
+    p {
+        color :$primary;
+    }
+    p:last-of-type{
+        text-transform: uppercase;
+    }
+}

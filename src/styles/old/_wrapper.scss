@@ -1,0 +1,46 @@
+@import "base";
+
+.wrapper 
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+  grid-auto-rows: 1fr;
+
+  > div 
+  {
+    border: 1px solid $primary;
+  }
+
+  h3 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  /* --- position --- */
+
+  > .one 
+  {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  > .two 
+  {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  > .three 
+  {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  > .four 
+  {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}

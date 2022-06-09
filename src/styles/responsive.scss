@@ -1,0 +1,26 @@
+@media all and (orientation: portrait) {
+
+    .header {
+        .btn {
+            display: block;
+            margin: 10px 0 !important;
+            width: 100%;
+        }
+    }
+
+    #open-data {
+        .btn {
+            display: block;
+            margin : 20px 0 0 0 !important;
+            width : 100%;
+        }
+    }
+
+    .open-data-portal {
+        .search-form{
+           .bg-secondary{
+               margin-top: 20px;
+           }
+        }
+    }
+}

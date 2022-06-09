@@ -1,0 +1,145 @@
+@import 'base';
+
+/* ----- indicateur ----- */
+
+.list-group-flush {
+  .list-group-item {
+    background: none;
+    color : $primary;
+    &:hover {
+      color : $secondary;
+    }
+  }
+}
+#strip-odd {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 35px 0px;
+
+  @include lg{
+    justify-content: flex-start;
+  }
+}
+
+#strip-header {
+  margin-bottom: 0;
+}
+
+.indic-strip-title {
+  padding: 5px 0 5px 0;
+  border-top: solid $primary 1px;
+  border-bottom: solid $primary 1px;
+  text-align: center;
+}
+
+#indic-label {
+  border-top: none;
+  border-bottom: none;
+  line-height: 1;
+  color: $primary;
+  text-align: center;
+  font-size : 30px;
+}
+
+#logo-odd {
+  margin: 0;
+  height: 100px;
+  width: auto;
+}
+
+.ReactMarkdown {
+  display: flex;
+}
+
+.content-strip {
+  width: 95%;
+  margin-bottom: 50px;
+
+  @include lg{
+    width:75%;
+  }
+}
+
+.content-strip > h3 {
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 50px;
+  border-top: solid $primary 1px;
+  border-bottom: solid $primary 1px;
+}
+
+.issue{
+  width : 95%;
+  @include lg{
+    width:75%;
+  }
+}
+
+#lien-github {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.references-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#block-1,
+#block-2,
+#block-3 {
+    padding: 10px;
+    margin: 0px 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 120px;
+    width: 150px;
+    border: solid $primary 1px;
+}
+#block-1 {
+    background-color: $primary;
+}
+#block-1 p {
+    color: white;
+}
+
+.references-blocks p {
+    text-align: center;
+    margin: 0;
+}
+#value-block {
+    font-size: 35px;
+    margin: auto;
+
+    @include sm{
+      font-size: 50px;
+    }
+}
+
+#graph {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#graph-img {
+  width: 100%;
+  margin: 25px auto;
+  text-align: center;
+
+  @include lg {
+    width: 75%;
+  }
+}
+
+.content-strip {
+
+  a{
+   color: $primary;
+   font-style: italic;
+  }
+}
