@@ -22,7 +22,7 @@ const soc = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/SOC.svg" height="80" className="mb-3" />
+              <Image src="/ESE/soc.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite dans un intérêt social défini (raison
                 d’être, etc.), exprimée en % (de la valeur).

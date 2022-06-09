@@ -25,11 +25,7 @@ function Footer() {
                 l'entreprise, merci d'utiliser ces données avec précautions.
               </p>
               <p>
-                Pour toute publication, mise à jour ou retrait
-                <a href="/contact" target="_self">
-                  {" "}
-                  contactez-nous.
-                </a>
+                Pour toute publication, mise à jour ou retrait <a href="/contact" target="_self">contactez-nous.</a>
               </p>
             </Col>
           </Row>
@@ -47,13 +43,13 @@ function Footer() {
               <Nav.Link href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank" rel="noreferrer" >
                 <i className="bi bi-linkedin  mx-2"></i>
               </Nav.Link>
-              <Nav.Link href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank" rel="noreferrer">
+              <Nav.Link href="https://github.com/La-Societe-Nouvelle/" target="_blank" rel="noreferrer">
                 <i className="bi bi-github  mx-2"></i>
               </Nav.Link>
             </Nav>
               <ul className="nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/a-propos">
+                  <a className="nav-link" href="/a-propos-la-societe-nouvelle">
                     A propos
                   </a>
                 </li>
@@ -96,7 +92,7 @@ function Footer() {
               <ListGroup horizontal>
                 <ListGroup.Item>
                   <a
-                    href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website"
+                    href="https://github.com/La-Societe-Nouvelle/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -139,9 +135,9 @@ function Footer() {
             <Col xs={12} lg={4}>
               <h6>La société nouvelle</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="/blog">Qui sommes-nous ?</Nav.Link>
-                <Nav.Link href="/approche">Notre approche</Nav.Link>
-                <Nav.Link href="/liste-indicateurs">
+                <Nav.Link href="/a-propos-la-societe-nouvelle">Qui sommes-nous ?</Nav.Link>
+                <Nav.Link href="/notre-approche">Notre approche</Nav.Link>
+                <Nav.Link href="/indicateurs">
                   Liste des indicateurs
                 </Nav.Link>
               </Nav>
@@ -149,13 +145,13 @@ function Footer() {
             <Col xs={12} lg={4}>
               <h6>Nos outils</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="https://metriz.lasocietenouvelle.org/">
+                <Nav.Link href="https://metriz.lasocietenouvelle.org/" target="_blank">
                   Application Web
                 </Nav.Link>
-                <Nav.Link href="https://docs.lasocietenouvelle.org/">
+                <Nav.Link href="https://docs.lasocietenouvelle.org/" target="_blank">
                   Documentation
                 </Nav.Link>
-                <Nav.Link href="/portail">Publications des données</Nav.Link>
+                <Nav.Link href="/portail" target="_blank">Portail d'accès aux données</Nav.Link>
               </Nav>
             </Col>
             <Col xs={12} lg={4}>

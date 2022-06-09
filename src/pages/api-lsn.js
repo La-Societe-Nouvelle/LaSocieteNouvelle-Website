@@ -42,8 +42,8 @@ const API = () => {
       </section>
       <section className="bg-light">
         <Container>
-          <div className="d-flex justify-content-between">
-            <div>
+          <Row className=" justify-content-between">
+            <Col>
               <p className="h1 text-center">
                 <i className="bi bi-building"></i>
               </p>
@@ -53,8 +53,8 @@ const API = () => {
               <p className="text-center">
                 Entreprises analysées depuis le 1er mars 2022
               </p>
-            </div>
-            <div>
+            </Col>
+            <Col>
               <p className="h1 text-center">
                 <i className="bi bi-arrow-left-right"></i>
               </p>
@@ -64,17 +64,17 @@ const API = () => {
               <p className="text-center">
               Requêtes reçues* par l’API depuis le 1er janvier 2022
               </p>
-            </div>
-            <div>
+            </Col>
+            <Col>
               <p className="h1 text-center">
               <i className="bi bi-server"></i>
               </p>
               <p className="text-center">
                 <span className="h1">7 931</span> 
               </p>
-              <p className="text-center">Données publiées et disponibles via l’API</p>
-            </div>
-          </div>
+              <p className="text-center">Données publiées</p>
+            </Col>
+          </Row>
         </Container>
       </section>
       <section className="text-center">
@@ -103,6 +103,7 @@ const API = () => {
             <Button
               variant="secondary"
               href="https://docs.lasocietenouvelle.org/public-api"
+              target="_blank"
             >
               Consulter la Documentation
             </Button>

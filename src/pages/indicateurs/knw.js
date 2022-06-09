@@ -23,7 +23,7 @@ const knw = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/KNW.svg" height="80" className="mb-3" />
+              <Image src="/ESE/knw.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite, contribuant à la recherche, à la
                 formation ou à l’enseignement, exprimée en % (de la valeur).

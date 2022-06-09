@@ -71,7 +71,7 @@ const Post = () => {
                 qu’elles produisent.
               </p>
             </div>
-            <Button href="/la-societe-nouvelle" variant="secondary">En savoir plus</Button>
+            <Button href="/a-propos-la-societe-nouvelle" variant="secondary">En savoir plus</Button>
           </div>
       </Container>
     </>

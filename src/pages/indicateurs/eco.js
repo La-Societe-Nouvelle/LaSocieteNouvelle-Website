@@ -20,7 +20,7 @@ const eco = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/ECO.svg" height="80" className="mb-3" />
+              <Image src="/ESE/eco.svg" height="80" className="mb-3" />
               <p>
                 Part de la valeur produite sur le territoire français, exprimée
                 en % (de la valeur).

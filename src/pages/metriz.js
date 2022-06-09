@@ -42,7 +42,7 @@ const Metriz = () => {
                 Utiliser l'application <i className="bi bi-chevron-right"></i>
               </a>
               <a
-                href="https://docs.lasocietenouvelle.org"
+                href="https://docs.lasocietenouvelle.org/application-web"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-secondary"
@@ -115,6 +115,7 @@ const Metriz = () => {
             <Button
               variant="secondary"
               href="https://docs.lasocietenouvelle.org/application-web/tutorial"
+              target="_blank"
             >
               Consulter le tutoriel
             </Button>
@@ -150,7 +151,7 @@ const Metriz = () => {
             imports de fichiers, personnalisation des livrables) et d’un support
             technique, n’hésitez pas à nous contacter.
           </p>
-          <Button variant="secondary">
+          <Button variant="secondary" href="/contact">
               Contactez-nous 
           </Button>
         </Container>
@@ -184,7 +185,7 @@ const Metriz = () => {
                 l’outil et du code et une préservation de cette licence pour les
                 modifications apportées.
               </p>
-              <a className="btn btn-primary">
+              <a className="btn btn-primary" href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-METRIZ-WebApp" target="_blank">
                 <i className="bi bi-github"></i> Accéder au code source
               </a>
             </Col>

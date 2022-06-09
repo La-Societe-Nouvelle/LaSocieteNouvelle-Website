@@ -16,7 +16,7 @@ const Header = () => {
     
       <Navbar bg="dark" expand="lg">
         <Container fluid>
-        <Navbar.Brand href="/portail">
+        <Navbar.Brand href="/">
               <img
                 src="/logo.svg"
                 height="80"
@@ -46,7 +46,7 @@ const Header = () => {
               <Nav.Link href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank" rel="noreferrer" >
                 <i className="bi bi-linkedin"></i>
               </Nav.Link>
-              <Nav.Link href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-Website" target="_blank" rel="noreferrer">
+              <Nav.Link href="https://github.com/La-Societe-Nouvelle/" target="_blank" rel="noreferrer">
                 <i className="bi bi-github"></i>
               </Nav.Link>
             </Nav>
