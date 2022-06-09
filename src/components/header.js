@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Col, Container, Image, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -11,7 +11,9 @@ const Header = () => {
   });
 
   return (
+
     page.includes("portail")? (
+    
       <Navbar bg="dark" expand="lg">
         <Container fluid>
         <Navbar.Brand href="/portail">
@@ -52,16 +54,17 @@ const Header = () => {
               <small>Initiative OpenData - OpenSource</small>
             </div>
           </div>
-          <div className="middle-header d-flex justify-content-between align-items-center ">
-            <div className="d-flex align-item-center">
-            <Navbar.Brand href="/">
-              <img
-                src="/logo.svg"
-                height="110"
-                alt="logo"
-              />
-          
-            </Navbar.Brand>
+
+          <Row className="middle-header d-flex justify-content-between align-items-center ">
+            <Col xs={12} lg={4} className="d-flex align-item-center" >
+              <Navbar.Brand href="/">
+                <img
+                  src="/logo.svg"
+                  height="110"
+                  alt="logo"
+                />
+            
+              </Navbar.Brand>
     
             <div className="border img-thumbnail">
               <Image  src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
@@ -69,21 +72,19 @@ const Header = () => {
                 Communauté <br/> Coq Vert
               </p>
                 </div>
-            </div>
-          
- 
-            <div>
-              <h1>Système d'Information national <br></br>sur les <strong>impacts des entreprises</strong></h1>
-            </div>
-            <div>
+            </Col>         
+            <Col  xs={12} lg={3} className="text-center" >
+              <h1>Système d'Information national sur les <strong>impacts des entreprises</strong></h1>
+            </Col>
+            <Col  xs={12} lg={5} className="text-end" >
               <Button href="https://metriz.lasocietenouvelle.org" variant="outline-secondary" target="_blank" rel="noreferrer">
-             Mesurer mon impact  <i className="bi bi-box-arrow-up-right"></i> 
+                 Mesurer mon impact  <i className="bi bi-box-arrow-up-right"></i> 
               </Button>
               <Button href="/publication" variant="outline-primary" className="ms-2">
                 Publier mes données
               </Button>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Container>
         <div className="menu">
           <Navbar expand="lg" className="p-0">

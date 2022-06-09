@@ -15,8 +15,8 @@ const Home = () => {
       </Helmet>
       <div className="bloc-statistics py-4 bg-light">
         <Container>
-          <div className="d-flex justify-content-between">
-            <div className="statistic-item">
+          <Row className="d-flex justify-content-between">
+            <Col className="statistic-item" xs={12} lg={4}>
               <img
                 src="ESE/icon-ese-bleues/eco.svg"
                 height="60"
@@ -27,8 +27,8 @@ const Home = () => {
                 <span className="h1">2054</span> <sup> Mrd €</sup>
               </p>
               <p className="text-center">Production intérieure</p>
-            </div>
-            <div className="statistic-item">
+            </Col>
+            <Col className="statistic-item" xs={12} lg={4}>
               <img
                 src="ESE/icon-ese-bleues/ghg.svg"
                 height="60"
@@ -41,8 +41,8 @@ const Home = () => {
               <p className="text-center">
                 Intensité d'émission de gaz à effet de serre
               </p>
-            </div>
-            <div className="statistic-item">
+            </Col>
+            <Col className="statistic-item" xs={12} lg={4}>
               <img
                 src="ESE/icon-ese-bleues/dis.svg"
                 height="60"
@@ -53,8 +53,8 @@ const Home = () => {
                 <span className="h1">17,9</span> <sup>%</sup>
               </p>
               <p className="text-center">Ecart de rémunération F/H</p>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Container>
       </div>
       <div className="content">
@@ -84,7 +84,7 @@ const Home = () => {
             </Row>
           </Container>
         </section>
-        <section className="py-5">
+        <section className="py-5" id="open-data">
           <Container>
             <Row>
               <Col lg={5}>
@@ -99,9 +99,7 @@ const Home = () => {
                   s'appuie directement sur le répertoire SIRENE.
                 </p>
                 <p>
-                  Les données sont accessibles{" "}
-                  <strong>librement et gratuitement</strong> via une API
-                  publique ou via notre portail web.
+                  Les données sont accessibles <strong>librement et gratuitement</strong> via une API publique ou via notre portail web.
                 </p>
                 <p>
                   La publication des données est gratuite. Des frais
