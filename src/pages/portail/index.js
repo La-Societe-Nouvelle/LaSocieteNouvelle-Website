@@ -13,6 +13,15 @@ const portail = () => {
     setInput(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode == 13) {
+      handleClick();
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleClick = () => {
     if (input !== undefined && input !== "") {
       setIsLoaded(false);
@@ -71,6 +80,7 @@ const portail = () => {
                       type="text"
                       placeholder="Nom de l'entreprise ou numéro de Siren"
                       onChange={inputChange}
+                      onKeyDown={handleKeyPress}
                     />
                   </Col>
                   <Col lg={4} className="p-0 bg-secondary">
@@ -155,8 +165,8 @@ const portail = () => {
                           className="btn btn-outline-secondary"
                           href={"portail/company/" + item.siren}
                         >
-
-                          Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
+                          Voir l'empreinte{" "}
+                          <i className="bi bi-arrow-right-circle-fill"></i>
                         </a>
                       </div>
                     </Col>
@@ -166,7 +176,6 @@ const portail = () => {
             </Container>
           </section>
         )}
-
       </div>
     </>
   );
