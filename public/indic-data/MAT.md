@@ -8,7 +8,7 @@ L’objectif est de réduire l’extraction de matières premières et de favori
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_mat.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_mat.png alt="logo"/>
 </div>
 
 * 8.4 : Améliorer progressivement, jusqu’en 2030, l’efficience de l’utilisation des ressources mondiales du point de vue de la consommation comme de la production et s’attacher à ce que la croissance économique n’entraîne plus la dégradation de l’environnement, comme prévu dans le cadre décennal de programmation relatif à la consommation et à la production durables, les pays développés montrant l’exemple en la matière.

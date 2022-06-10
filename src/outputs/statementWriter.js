@@ -4,7 +4,7 @@
 import { jsPDF } from 'jspdf';
 
 // Libraries
-import metaData from '../../lib/metaData.json';
+import metaData from '../lib/metaData.json';
 
 export function exportStatementPDF(data) 
 {

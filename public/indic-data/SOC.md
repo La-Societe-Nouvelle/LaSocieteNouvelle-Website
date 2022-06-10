@@ -7,7 +7,7 @@ Face aux enjeux environnementaux et sociétaux, l’entreprise doit se positionn
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_soc.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_soc.png alt="logo"/>
 </div>
 
 * 12.1 : Mettre en œuvre le Cadre décennal de programmation concernant les modes de consommation et de production durables avec la participation de tous les pays, les pays développés montrant l’exemple en la matière, compte tenu du degré de développement et des capacités des pays en développement.

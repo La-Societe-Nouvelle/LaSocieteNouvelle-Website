@@ -9,7 +9,7 @@ Code : ART
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_art.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_art.png alt="logo"/>
 </div>
 
 * 8.3 : Promouvoir des politiques axées sur le développement qui favorisent \[...\], la créativité et l’innovation et stimulent la croissance des micro-entreprises et des petites et moyennes entreprises \[...\].

@@ -11,7 +11,7 @@ Il permet de rendre compte de la part de la valeur produite en France et celle i
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_eco.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_eco.png alt="logo"/>
 </div>
 
 * 8.3 : Promouvoir des politiques axées sur le développement qui favorisent des activités productives, la création d’emplois décents, l’entrepreneuriat,\[...\] et stimulent la croissance des micro-entreprises et des petites et moyennes entreprises \[...\].

@@ -7,7 +7,7 @@ L’indicateur informe sur les écarts de salaires entre les femmes et les homme
 ### OBJECTIFS DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_geq.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_geq.png alt="logo"/>
 </div>
 
 * 5.1 : Mettre fin, dans le monde entier, à toutes les formes de discrimination à l’égard des femmes et des filles.

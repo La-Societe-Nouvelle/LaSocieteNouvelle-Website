@@ -25,7 +25,7 @@ export class IndicatorAssessmentView extends React.Component {
       <div className="indicateur-form">
         <h3>{IndicData.indicateurs.libelle[indic]}</h3>
         <div className="info-indicateur">
-          <a href={"../indicateur/"+indic} target="_blank">Description de l'indicateur</a>
+          <a href={"../indicateurs/"+indic} target="_blank">Description de l'indicateur</a>
         </div>
         <div>
           <p>Valeur à renseigner : {IndicData.indicateurs.description[indic]} (en {IndicData.indicateurs.unitCode[indic]})</p>

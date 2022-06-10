@@ -23,6 +23,7 @@
     "marked": "^4.0.12",
     "next": "^12.1.0",
     "nodemailer": "^6.6.0",
+    "platformsh-config":"^2.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "qs": "^6.10.1",

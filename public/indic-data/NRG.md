@@ -11,7 +11,7 @@ Associé à l’intensité d’émissions de gaz à effet de serre, il permet de
 ### OBJECTIF DE DEVELOPPEMENT DURABLE
 
 <div id="strip-odd" className="strip">
-    <img id="logo-odd" src=/resources/odd_nrg.png alt="logo"/>
+    <img id="logo-odd" src=/images/odd/odd_nrg.png alt="logo"/>
 </div>
 
 * 7.3 : D’ici à 2030, multiplier par deux le taux mondial d’amélioration de l’efficacité énergétique.

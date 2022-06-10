@@ -1,0 +1,16 @@
+.indicator-form {
+    img {
+        height: 50px;
+    }
+
+    .indic-libelle{
+        font-weight: 600;
+    font-size: 0.8rem;
+    color: $secondary;
+    }
+}
+
+.publish-form{
+    padding: 2rem;
+    border: 1px solid $light;
+}
