@@ -72,13 +72,13 @@ const Home = () => {
               environnementale de l'économie française.
             </p>
             <Row>
-              <Col>
+              <Col lg={4} xs={12} className="mb-2">
                 <Graph indic={"GHG"} unit={"gCO² e"} />
               </Col>
-              <Col>
+              <Col lg={4} xs={12} className="mb-2">
                 <Graph indic={"WAT"} unit={"L"} />
               </Col>
-              <Col>
+              <Col lg={4} xs={12} className="mb-2">
                 <Graph indic={"NRG"} unit={"KJ"} />
               </Col>
             </Row>
