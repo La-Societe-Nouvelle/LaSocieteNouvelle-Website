@@ -94,14 +94,14 @@ const eco = () => {
           <p>
             <b>Grandeur mesurée : </b>Valeur nette créée sur le territoire
             français (en euros). La valeur nette créée correspond à la valeur
-            créée réduite des dotations aux amortissements.
+            ajoutée nette : production réduite des consommations intermédiaires et des dotations aux amortissements.
           </p>
 
           <p>
-            *Note : L'impact direct est associé à la valeur ajoutée nette de
+            Note : L'impact direct est associé à la valeur ajoutée nette de
             l'entreprise. Pour la valeur produite, la mesure est complétée par
             les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées*
+            obtenus à partir des données des entreprises sollicitées
           </p>
         </Container>
       </section>
