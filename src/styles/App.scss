@@ -9,6 +9,10 @@
 @import "components/statistics.scss";
 @import "components/posts.scss";
 
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap');
+
 /* Global */
 
 html, body {
@@ -24,7 +28,7 @@ a {
 
 .btn {
   font-weight: 600;
-  padding: 0.65rem 1.5rem;
+  padding: 0.65rem 1.5rem; 
   font-family: 'Raleway', sans-serif;
 }
 .btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
