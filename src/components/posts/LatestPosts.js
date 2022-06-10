@@ -65,11 +65,13 @@ function LatestPosts() {
                             allowFullScreen
                           ></iframe>
                         ) : (
-                          <Image
-                            alt="Photo d'équipe de la Societé Nouvelle"
-                            src={"/images/articles/thumbnail-" + post.image}
-                            fluid
-                          />
+                          <a href={"/blog/" + post.slug}>
+                            <Image
+                              alt="Photo d'équipe de la Societé Nouvelle"
+                              src={"/images/articles/thumbnail-" + post.image}
+                              fluid
+                            />
+                          </a>
                         )}
                       </div>
                     </Col>
