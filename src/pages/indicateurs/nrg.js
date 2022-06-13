@@ -89,13 +89,16 @@ const geq = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-          Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
+            Elles correspondent à l'intensité de consommation d'énergie de la production de la division économique à laquelle appartient l'unité légale.
           </p>
           <p>
-          Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives à la consommation d'énergie. La consommation finale d’énergie des branches est associée au volume de la valeur ajoutée. La consommation indirecte liée aux consommations intermédiaires est obtenue à partir de la ventilation des consommations par branche (cf. TES INSEE).
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux ressources et emplois d'énergie par activité, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
           </p>
           <p>
-          L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 500 % pour les valeurs sectorielles. (Travaux en cours).
+            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
         </Container>
       </section>
@@ -105,13 +108,14 @@ const geq = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-            Ministère de la Transition Ecologique
+            Ministère de la Transition Ecologique -{" "}
               <a href="https://www.ecologie.gouv.fr/politiques/energies">
               Politiques publiques - Energies
               </a>
             </li>
             <li>
-            Données INSEE <a href="https://www.insee.fr/fr/statistiques/4494213">
+            Données INSEE -{" "}
+            <a href="https://www.insee.fr/fr/statistiques/4494213">
               Tableaux de synthèse : TES et TEE en 2019
               </a>
             </li>

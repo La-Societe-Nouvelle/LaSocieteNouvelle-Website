@@ -108,25 +108,17 @@ const knw = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-          Les données macroéconomiques disponibles se limitent à la part du PIB dédiée à la formation professionnelle à l’échelle nationale, pour les pays de l'Union Européenne.
+            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale.
+            Elles correspondent au taux de contribution à l’évolution des compétences et des connaissances de la production de la division économique à laquelle l'unité légale appartient. 
           </p>
-           <p>
-           La valeur par défaut des unités légales  correspond à la valeur par défaut à l'échelle nationale, excepté pour les unités légales des branches de l’éducation, de la formation ou de la recherche pour lesquelles la valeur ajoutée est considérée comme entièrement contributrice à l’évolution des compétences et des connaissances. Le cas échant le taux de valeur ajoutée correspond à celui de la branche économique concernée. Les valeurs par défaut à l'échelle française et européenne sont affectées aux consommations domestiques et aux importations.
-           </p>
-           <p>
-           La valeur par défaut associé aux importations correspond à la contribution de la production intérieure européenne.
-            </p>   
-            <p>
-            Les jeux de données ouvertes du ministère de l’Enseignement supérieur, de la Recherche et de l’Innovation sont en cours d’exploitation pour une ventilation des dépenses en R&D par taille et branche d’activité.
-            </p>
-            <p>
-            L’intervalle de confiance si situe aux alentours de 25 % pour les valeurs ajustées (branches spécifiques) et de 500 % dans les autres cas i.e. une contribution entre 0.1 % et 10 %.
-            </p>
-            <p>
-               Données EUROSTAT : <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr">
-              Coûts des cours FPC par type et activité de la NACE Rév. 2
-              </a>
-            </p>
+          <p>
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux coûts des formations professionnelles, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
+          </p>
+          <p>
+            L’intervalle de confiance si situe aux alentours de 500 % pour les valeurs associées aux unités légales.
+          </p>
 
         </Container>
       </section>
@@ -136,20 +128,26 @@ const knw = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-            Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation
-              <a href="https://www.enseignementsup-recherche.gouv.fr/">
+              Données EUROSTAT : -{" "}
+              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr" target="_blank">
+              Coûts des cours FPC par type et activité de la NACE Rév. 2
+              </a>
+            </li>
+            <li>
+            Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation -{" "}
+              <a href="https://www.enseignementsup-recherche.gouv.fr/" target="_blank">
               Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation
               </a>
             </li>
             <li>
-              Ministère du Travail, de l’Emploi et de l’Insertion 
-              <a href="https://travail-emploi.gouv.fr/formation-professionnelle/">
+              Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
+              <a href="https://travail-emploi.gouv.fr/formation-professionnelle/" target="_blank">
               Formation professionnelle
               </a>
             </li>
             <li>
-            Ministère de l’Economie, des Finances et de la Relance
-              <a href="https://www.economie.gouv.fr/entreprises/innovation-et-data">
+            Ministère de l’Economie, des Finances et de la Relance -{" "}
+              <a href="https://www.economie.gouv.fr/entreprises/innovation-et-data" target="_blank">
               Innovation et data
               </a>
             </li>

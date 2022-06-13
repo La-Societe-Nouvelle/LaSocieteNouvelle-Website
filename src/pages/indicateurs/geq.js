@@ -94,10 +94,10 @@ const geq = () => {
           </p>
 
           <p>
-            *Note : L'impact direct est associé à la valeur ajoutée nette de
+            Note : L'impact direct est associé à la valeur ajoutée nette de
             l'entreprise. Pour la valeur produite, la mesure est complétée par
             les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées*
+            obtenus à partir des données des entreprises sollicitées
           </p>
         </Container>
       </section>
@@ -105,22 +105,25 @@ const geq = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles se limitent à l’écart de rémunération à
-            l’échelle nationale pour les revenus des ménages avant transferts
-            sociaux.
-          </p>
-
-          <p>
-            La valeur par défaut est appliquée à l’ensemble des unités légales
-            dont les effectifs sont supérieurs à 2 collaborateurs. Pour les
-            unités légales dont les effectifs ne dépassent pas
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale et leur tranche d'effectifs.
           </p>
           <p>
-            2 collaborateurs, l'écart est défini comme nul pour la valeur
-            ajoutée, et la valeur par défaut est appliqué pour les
-            consommations.
+            Pour les unités légales ayant plus de deux employés, la valeur correspond à l'écart de rémunérations F/H relatif à la production de la division économique à laquelle l'unité légale appartient.
           </p>
-          <p>L’intervalle de confiance est de 50 %.</p>
+          <p>
+            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée et l'écart de rémunérations F/H relatif aux consommations intermédiaires de la division économique à laquelle l'unité légale appartient.
+            L'écart de rémunérations F/H relatif à la valeur ajoutée nette de l'unité légale est égal à 0%.
+          </p>
+          <p>
+            Pour les données par défaut génériques, les valeurs correspondent aux écarts de rémunérations F/H relatifs à la production des divisions économiques (x88).  
+          </p>
+          <p>
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux salaires horaires, des comptes de production des divisions économiques, 
+            des modélisations des flux de consommations et de produits entre les branches d’activités et des volumes des importations par produits.
+          </p>
+          <p>
+            L’intervalle de confiance est de 50 %.
+          </p>
         </Container>
       </section>
       <section className="info-supp">
@@ -129,13 +132,13 @@ const geq = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Données EUROSTAT 
+              Données EUROSTAT -{" "}
               <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr">
                 Enquête sur la structure des salaires : salaires horaires
               </a>
             </li>
             <li>
-            Ministère du Travail, de l’Emploi et de l’Insertion
+            Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
               <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533">
               L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs
                 </a>                

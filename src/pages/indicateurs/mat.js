@@ -27,7 +27,7 @@ const mat = () => {
               </p>
               <p>
               L’indicateur informe sur le recours à l’extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure.
-L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
+              L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
               </p>
 
               <p>
@@ -90,21 +90,16 @@ L’objectif est de réduire l’extraction de matières premières et de favori
         <Container>
           <h3>Données par défaut</h3>
           <p>
-          Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
+            Elles correspondent à l'intensité d'extraction de matières premières de la production de la division économique à laquelle appartient l'unité légale.
           </p>
           <p>
-          Elles sont obtenues à partir des apports directs 
-          (extractions intérieures et importations) à l'échelle nationale et 
-          de la répartition de la consommation de matières premières par produits 
-          (nomenclature CPA) à l'échelle européenne. 
-          La consommation de matières est directement associée à la production des 
-          branches économiques via la classification des produits (alignés sur la noméclature des activités).         
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux comptes de flux de matières, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
           </p>
           <p>
-          L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
-          </p>
-          <p>
-          Données EUROSTAT : <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr">Comptes de flux de matières</a> , <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr">Comptes de flux de matières en équivalent matières premières par consommation finale de produits - modélisation</a>
+            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
         </Container>
       </section>
@@ -114,8 +109,16 @@ L’objectif est de réduire l’extraction de matières premières et de favori
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-            Ministère de la Transition écologique
-              <a href="https://www.ecologie.gouv.fr/productivite-des-ressources">
+            Données EUROSTAT -{" "}
+            <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr" target="_blank">Comptes de flux de matières</a>
+            </li>
+            <li>
+            Données EUROSTAT -{" "}
+            <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr" target="_blank">Comptes de flux de matières en équivalent matières premières par consommation finale de produits - modélisation</a>
+            </li>
+            <li>
+            Ministère de la Transition écologique -{" "}
+              <a href="https://www.ecologie.gouv.fr/productivite-des-ressources" target="_blank">
               La productivité des ressources
               </a>
             </li>

@@ -117,20 +117,16 @@ const wat = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles sont ventilées selon quatre secteurs :
-            Agriculture, industrie, énergie et services. Ces derniers sont
-            associés à la NACE selon la correspondance suivante : Agriculture :
-            A, Industrie : B-E (hors D), Energie : E36, Service : H-U.
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
+            Elles correspondent à l'intensité de consommation d'eau de la production de la division économique à laquelle appartient l'unité légale.
           </p>
           <p>
-            Les quantités consommées sont associés à la valeur ajoutée des
-            agrégats. Les intensités moyennes de la production française et
-            mondiale sont affectées aux consommations selon le taux
-            d’importations.
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux prélèvements annuels d'eau par secteur, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
           </p>
           <p>
-            L’intervalle de confiance associé à l’utilisation des données est de
-            1000 %.{" "}
+            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
         </Container>
       </section>
@@ -140,20 +136,20 @@ const wat = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de la Transition Ecologique
-              <a href="https://www.ecologie.gouv.fr/politiques/eau">
+              Ministère de la Transition Ecologique -{" "}
+              <a href="https://www.ecologie.gouv.fr/politiques/eau" target="_blank">
                 Politiques publiques - Eau
               </a>
             </li>
             <li>
-              <a href="https://www.eaufrance.fr/">Eau France</a>
+              <a href="https://www.eaufrance.fr/" target="_blank">Eau France</a>
             </li>
             <li>
-              <a href="http://www.lesagencesdeleau.fr/">Agences de l’eau</a>
+              <a href="http://www.lesagencesdeleau.fr/" target="_blank">Agences de l’eau</a>
             </li>
             <li>
-              European Environnement Agency (EEA)
-              <a href="https://water.europa.eu/freshwater">WISE Freshwater</a>
+              European Environnement Agency (EEA) -{" "}
+              <a href="https://water.europa.eu/freshwater" target="_blank">WISE Freshwater</a>
             </li>
           </ul>
         </Container>

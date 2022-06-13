@@ -109,69 +109,29 @@ const eco = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles sont ventilées par branche économique
-            (NACE-Rev.2). Elles sont obtenues à partir des agrégats de la
-            comptabilité nationale exprimés à l’échelle des branches économiques
-            (Production, Valeur ajoutée, Consommations intermédiaires). La
-            valeur ajoutée nette est par définition entièrement contributrice à
-            l’économie française ; et inversement la contribution des
-            importations est considérée comme nulle. Pour les consommations
-            intermédiaires domestiques (consommations hors importations), la
-            contribution associée correspond à la part de la production
-            intérieure dans la production disponible (production intérieure et
-            importations).
+            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale et la localisation de leur(s) établissement(s), France ou étranger.
+          </p>
+          <p>
+            Le calcul prend en compte :
+          </p>
+          <ul>
+            <li>Le taux de valeur ajoutée et le taux de contribution à l’économie nationale des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
+            <li>Le taux de présence en France de ses établissement (ex. 100 % si tous les établissements sont situés en France), assimilé au taux de contribution à l’économie nationale de la valeur ajoutée de l’unité légale.</li>
+          </ul>
+          <p>
+            Pour les données par défaut génériques, les valeurs correspondent aux taux de contribution à l’économie nationale de la production des divisions économiques (x88).  
+          </p>
+          <p>
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des comptes de production des divisions économiques, 
+            des modélisations des flux de consommations et de produits entre les branches d’activités et des volumes des importations par produits.
+          </p>
+          <p>
+            Pour les espaces économiques hors France, les valeurs sont nulles.
+          </p>
+          <p>
+            L'intervalle de confiance est de 75% pour les données sectorielles et les données affectées aux unités légales.
           </p>
 
-          <p>
-            Le volume des importations directes de chaque branche s’appuie sur
-            les données TEC (Trade in Goods Statistics by Entreprise
-            Characteristics) pour les importations de biens ; et sur un taux
-            d’importation de service défini à l’échelle nationale, pour les
-            importations de services (Part des importations de services sur le
-            volume total des consommations intermédiaires hors importations de
-            biens).
-          </p>
-          <p>
-            Les valeurs affectées par défaut aux unités légales s’appuient sur
-            leur activité principale (APE) attribuée par l’INSEE, enregistrée au
-            sein du répertoire de SIRENE. Un ajustement de la contribution de la
-            valeur ajoutée nette est effectué à partir de la localisation des
-            établissements actifs de l’unité légale concernée.
-          </p>
-          <p>
-            L’intervalle de confiance associé à l’utilisation des valeurs
-            statistiques varie de 25 à 100 % selon la granularité des données
-            macroéconomiques utilisées et les informations spécifiques à
-            l’entreprise disponibles.
-          </p>
-          <h4>Données EUROSTAT</h4>
-          <ul>
-            <li>
-              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_a64&lang=fr">
-                Tableaux de l'économie française (2020) - Production des
-                branches
-              </a>
-            </li>
-            <li>
-              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ext_tec01&lang=fr">
-                Importations - Données trimestrielles
-              </a>
-            </li>
-          </ul>
-          <h4>Données INSEE</h4>
-          <ul>
-            <li>
-              <a href="https://www.insee.fr/fr/statistiques/4277775?sommaire=4318291">
-                Tableaux de l'économie française (2020) - Production des
-                branches
-              </a>
-            </li>
-            <li>
-              <a href="https://www.insee.fr/fr/statistiques/2830182">
-                Importations - Données trimestrielles
-              </a>
-            </li>
-          </ul>
         </Container>
       </section>
       <section className="info-supp">
@@ -180,17 +140,17 @@ const eco = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              <a href="https://www.insee.fr/fr/statistiques/4166056">
+              <a href="https://www.insee.fr/fr/statistiques/4166056" target="_blank">
                 Insee Première n°1756 - "Made In France
               </a>
             </li>
             <li>
-              EUROSTAT <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm">
+              EUROSTAT <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm" target="_blank">
                 Annual national accounts (Metadata)
               </a>
             </li>
             <li>
-              <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm">
+              <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm" target="_blank">
                 International trade in goods - trade by enterprise
                 characteristics (Metadata)
               </a>

@@ -124,32 +124,27 @@ const soc = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données macroéconomiques disponibles se limitent à la valeur
-            ajoutée des structures de l’ESS, obtenue à partir des publications
-            de{" "}
-            <a href="https://ess-france.org/fr/less-en-chiffres">ESS France </a>{" "}
-            (Observatoire National de l’ESS).
+            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale 
+            et l’appartenance de l’unité légale à l’ESS (variable disponible au sein du répertoire SIRENE).
           </p>
           <p>
-            La valeur par défaut des unités légales s’appuie sur la variable
-            relative à l’Economie Sociale et Solidaire au sein du répertoire
-            SIRENE, pour la valeur ajoutée nette, et sur la valeur par défaut à
-            l’échelle nationale pour les consommations domestiques. La
-            contribution relative aux importations est considérée comme nulle.
-            Les taux de valeur ajoutée, de consommation et d’importation sont
-            obtenus à partir des agrégats de la comptabilité nationale de la
-            branche économique au sein de laquelle se situe l’unité légale
-            (activité principale).
+           Le calcul prend en compte :
+          </p>
+          <ul>
+            <li>Le taux de valeur ajoutée et le taux de contribution aux acteurs d’intérêt social des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
+            <li>L’appartenance de l’unité légale à l’ESS : le taux de contribution aux acteurs d’intérêt social pour la valeur ajoutée sera de 100% si l’unité légale appartient à l’ESS et de 0% la cas contraire.</li>
+          </ul>
+          <p>
+            Pour les données par défaut génériques, les valeurs correspondent au taux de contribution aux acteurs d’intérêt social de la production des divisions économiques (x88). 
           </p>
           <p>
-            Dès son apparition au sein du répertoire SIRENE, la qualité "Société
-            à Mission" sera intégrée dans la valeur par defaut fournie pour
-            l'unité légale.
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données de l’ONESS (Observatoire National de l'ESS), des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités et des volumes des importations par produits.
           </p>
           <p>
-            L’intervalle de confiance se situe entre 50 et 100 % et dépend
-            fortement du taux de valeur ajoutée de l'entreprise. Pour une unité
-            légale non reconnue, l’intervalle de confiance est de 500%.
+            Pour les espaces économiques hors France, les valeurs sont nulles.
+          </p>
+          <p>
+            L'intervalle de confiance est de 100% pour les données sectorielles et entre 50% et 100% pour les données affectées aux unités légales.
           </p>
         </Container>
       </section>
@@ -159,7 +154,7 @@ const soc = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de l’Economie, des Finances et de la Relance
+              Ministère de l’Economie, des Finances et de la Relance -{" "}
               <a href="https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises">
                 Redéfinir la raison d'être des entreprises
               </a>

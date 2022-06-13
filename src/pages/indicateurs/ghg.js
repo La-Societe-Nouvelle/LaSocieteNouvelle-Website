@@ -123,35 +123,16 @@ const ghg = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles sont ventilées par branche économique
-            (NACE-Rev.2).
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
+            Elles correspondent à l'intensité d'émission de gaz à effet de serre de la production de la division économique à laquelle appartient l'unité légale.
           </p>
           <p>
-            Elles sont obtenues à partir des comptes macroéconomiques des
-            branches économiques et des données EUROSTAT relatives aux émissions
-            de gaz à effet de serre. Les émissions directes des branches sont
-            associées au volume de la valeur ajoutée. Les émissions indirectes
-            liées aux consommations intermédiaires sont obtenues à partir de la
-            ventilation des consommations par branche (cf. TES INSEE).
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux émissions directes de gaz à effet de serre, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
           </p>
           <p>
-            L’intervalle de confiance associé à l’utilisation des valeurs
-            statistiques est de 500 % pour les valeurs sectorielles. (Travaux en
-            cours)
-          </p>
-          <p>
-            <b>Données brutes :</b>
-          </p>
-          <p>
-            <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr">
-              Compte d'émissions atmosphériques par activité de la NACE Rév. 2
-            </a>
-          </p>
-          <p>
-            <b>Données financières :</b>
-          </p>
-          <p>
-            <a href="https://www.insee.fr/fr/statistiques/4494213">Tableaux de synthèse : TES et TEE en 2019</a>
+            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
         </Container>
       </section>
@@ -161,13 +142,18 @@ const ghg = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de la Transition écologique
-              <a href="https://www.ecologie.gouv.fr/politiques/climat">
+              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr" target="_blank">
+                Compte d'émissions atmosphériques par activité de la NACE Rév. 2
+              </a>
+            </li>
+            <li>
+              Ministère de la Transition écologique -{" "}
+              <a href="https://www.ecologie.gouv.fr/politiques/climat" target="_blank">
                 Politiques publiques - Climat
               </a>
             </li>
             <li>
-              <a href="https://www.citepa.org/fr/">
+              <a href="https://www.citepa.org/fr/" target="_blank">
                 Centre technique de référence en matière de pollution
                 atmosphérique et de changement climatique (CITEPA)
               </a>

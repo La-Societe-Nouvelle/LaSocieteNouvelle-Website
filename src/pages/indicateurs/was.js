@@ -114,14 +114,16 @@ const was = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            
-Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
+            Elles correspondent à l'intensité de production de déchets de la production de la division économique à laquelle appartient l'unité légale.
           </p>
           <p>
-          Elles sont obtenues à partir des comptes macroéconomiques des branches économiques et des données EUROSTAT relatives à la production de déchets. La production directe de déchets est associée à la valeur ajoutée nette, les intensités de production de déchets de la production française et mondiale sont affectées aux consommations domestiques et aux importations.
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux déchets générés par activité, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
+            et des volumes des importations par produits.
           </p>
           <p>
-          L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.
+            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
         </Container>
       </section>
@@ -131,14 +133,14 @@ Les données disponibles sont ventilées par branche économique (NACE-Rev.2).
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de la Transition Ecologique
-              <a href="https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets">
+              Ministère de la Transition Ecologique - {" "}
+              <a href="https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets" target="_blank">
               Politiques publiques - Économie circulaire et déchets
               </a>
             </li>
             <li>
-             Agence de la Transition écologique (ADEME)
-              <a href="https://www.ademe.fr/expertises/dechets">
+             Agence de la Transition écologique (ADEME) - {" "}
+              <a href="https://www.ademe.fr/expertises/dechets" target="_blank">
                Expertises - Déchets
               </a>
             </li>

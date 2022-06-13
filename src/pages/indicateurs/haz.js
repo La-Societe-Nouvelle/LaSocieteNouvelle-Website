@@ -119,10 +119,10 @@ const haz = () => {
             <li>Toxique</li>
           </ul>
           <p>
-            *Note : L'impact direct est associé à la valeur ajoutée nette de
+            Note : L'impact direct est associé à la valeur ajoutée nette de
             l'entreprise. Pour la valeur produite, la mesure est complétée par
             les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées*
+            obtenus à partir des données des entreprises sollicitées
           </p>
         </Container>
       </section>
@@ -130,13 +130,10 @@ const haz = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles se limitent à l’intensité d’utilisation de
-            produits dangereux à l’échelle de la production intérieure
-            européenne. Elle est affectée à l’ensemble des unités légales.
+            Les valeurs par défaut affectées aux unités légales correspondent à l'intensité d'utilisation de produits dangereux de la production intérieure européenne.
           </p>
           <p>
-            L’intervalle de confiance associé à l’utilisation de la valeur est à
-            1000 %.{" "}
+            Du fait de l'absence de données macro-économiques sectorielles, l’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.{" "}
           </p>
         </Container>
       </section>
@@ -146,19 +143,19 @@ const haz = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de la Transition Ecologique{" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/produits-chimiques">
+              Ministère de la Transition Ecologique -{" "}
+              <a href="https://www.ecologie.gouv.fr/politiques/produits-chimiques" target="_blank">
                 Politiques publiques - Produits chimiques
               </a>
             </li>
             <li>
-              Institut National de Recherche et de Sécurité (INRS)
-              <a href="https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html">
+              Institut National de Recherche et de Sécurité (INRS) -{" "}
+              <a href="https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html" target="_blank">
                 Agents chimiques CMR
               </a>
             </li>
             <li>
-              <a href="https://echa.europa.eu/fr/home">
+              <a href="https://echa.europa.eu/fr/home" target="_blank">
                 European Chemicals Agency (ECHA)
               </a>
             </li>

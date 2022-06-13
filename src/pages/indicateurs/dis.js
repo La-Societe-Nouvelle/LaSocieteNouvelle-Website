@@ -83,10 +83,10 @@ const dis = () => {
           </p>
 
           <p>
-            *Note : L'impact direct est associé à la valeur ajoutée nette de
+            Note : L'impact direct est associé à la valeur ajoutée nette de
             l'entreprise. Pour la valeur produite, la mesure est complétée par
             les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées*
+            obtenus à partir des données des entreprises sollicitées
           </p>
         </Container>
       </section>
@@ -94,14 +94,17 @@ const dis = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles se limitent à l’indice de GINI à l’échelle
-            nationale pour les revenus des ménages avant transferts sociaux. La
-            valeur par défaut est appliquée à l’ensemble des unités légales dont
-            les effectifs sont supérieurs à 2 collaborateurs.
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale, leur tranche d'effectifs et l'indice de GINI des revenus disponibles en France.
           </p>
-
           <p>
-            L’intervalle de confiance est de <b>50 %</b>.
+           Pour les unités légales ayant plus de deux employés, la valeur correspond à l'indice de GINI des revenus disponibles en France.
+          </p>
+          <p>
+            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée de la division économique à laquelle l'unité légale appartient.
+            L'indice associé à la valeur ajoutée nette est égal à 0 (aucun inégalité) et l'indice associé aux consommations intermédiaires correspond à l'indice de GINI des revenus disponibles en France.
+          </p>
+          <p>
+            L’intervalle de confiance est de 50 %.
           </p>
         </Container>
       </section>
@@ -111,13 +114,13 @@ const dis = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère du Travail, de l’Emploi et de l’Insertion
+              Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
               <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement">
                 Le salaire : fixation et paiement
               </a>
             </li>
             <li>
-              Ministère de l’Economie, des Finances et de la Relance
+              Ministère de l’Economie, des Finances et de la Relance -{" "}
               <a href="https://www.economie.gouv.fr/entreprises/remuneration-salaries">
                 Rémunération de vos salariés
               </a>

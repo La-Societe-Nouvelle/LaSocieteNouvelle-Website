@@ -97,32 +97,31 @@ const art = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les données disponibles à l’échelle macroéconomique se limitent à la
-            valeur ajoutée des entreprises artisanales. Elle est obtenue à
-            partir du{" "}
-            <a href="https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat">
-              rapport de la DGE{" "}
-            </a>
-            (Direction Générale des Entreprises) sur l’artisanat.
+            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale et 
+            l’inscription de l’activité principale de leur(s) établissement(s) au registre des métiers, disponibles 
+            au sein du répertoire SIRENE.
           </p>
           <p>
-            La valeur par défaut des unités légales s’appuie sur l’activité
-            principale au registre des métiers des établissements, à partir du
-            répertoire SIRENE, pour la valeur ajoutée nette, et sur la valeur
-            par défaut à l’échelle nationale pour les consommations domestiques.
-            La contribution relative aux importations est considérée comme
-            nulle.
+          Le calcul prend en compte :
+          </p>
+          <ul>
+            <li>Le taux de valeur ajoutée et le taux de contribution aux métiers d’art et aux savoir-faire des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
+            <li>Le taux d’inscription des activités des établissements au registre des métiers, assimilé au taux de contribution aux métiers d’art et aux savoir-faire de la valeur ajoutée de l’unité légale (ex. 10% si pour 10% des établissements actifs, l’activité est inscrite au registre des métiers).</li>
+          </ul>
+          <p>
+            Pour les données par défaut génériques, les valeurs correspondent au taux de contribution aux métiers d’arts 
+            et aux savoir-faire de la production des divisions économiques (x88).
           </p>
           <p>
-            Les taux de valeur ajoutée, de consommation et d’importation sont
-            obtenus à partir des agrégats de la comptabilité nationale de la
-            branche économique au sein de laquelle se situe l’unité légale
-            (activité principale).
+            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données de la DGE (Direction Générales des Entreprises) sur l’Artisanat, 
+            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre 
+            les branches d’activités et des volumes des importations par produits.
           </p>
           <p>
-            L’intervalle de confiance se situe entre 50 et 100 % et dépend
-            fortement du taux de valeur ajoutée de l'entreprise. Pour une unité
-            légale non reconnue, l’intervalle de confiance est de 500%.
+            Pour les espaces économiques hors France, les valeurs sont nulles.
+          </p>
+          <p>
+            L'intervalle de confiance est de 75% pour les données sectorielles et de 50% pour les données affectées aux unités légales.
           </p>
         </Container>
       </section>
@@ -132,7 +131,13 @@ const art = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de l’Economie, des Finances et de la Relance{" "}
+              Direction Générale des Entreprises -{" "}
+              <a href="https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat">
+                Rapport de la DGE{" "}
+              </a>
+            </li>
+            <li>
+              Ministère de l’Economie, des Finances et de la Relance -{" "}
               <a href="https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire">
                 Labels et reconnaissance de savoir-faire
               </a>
