@@ -31,7 +31,6 @@ const portail = () => {
   };
 
   const getResults = (input) => {
-    console.log(input);
     fetch(
       "https://systema-api.azurewebsites.net/api/v2/search?denomination=" +
         input,
@@ -164,9 +163,7 @@ const portail = () => {
                         <a
                           className="btn btn-outline-secondary"
                           href={"portail/company/" + item.siren}
-                        >
-                          Voir l'empreinte{" "}
-                          <i className="bi bi-arrow-right-circle-fill"></i>
+                        > Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
                         </a>
                       </div>
                     </Col>

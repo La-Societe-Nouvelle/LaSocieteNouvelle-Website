@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Card, Col, Container, Image, Nav, NavItem, NavLink, Row } from "react-bootstrap";
+import {
+  Card,
+  Col,
+  Container,
+  Image,
+  Nav,
+  NavItem,
+  NavLink,
+  Row,
+} from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
 /* The base URL of the API */
 const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
 
-import Chart from 'chart.js/auto';
+import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 const CompanyData = () => {
@@ -43,7 +52,7 @@ const CompanyData = () => {
     },
   });
   const [selectedView, setSelectedView] = useState("empreinteEconomique");
-  const [dataFetched, isDataFetched] = useState();
+  const [dataFetched, isDataFetched] = useState(false);
   const [uniteLegale, setUniteLegale] = useState();
   const [empreinte, setEmpreinte] = useState();
 
@@ -51,13 +60,12 @@ const CompanyData = () => {
     setSiren(router.query.siren);
 
     if (router.query.siren) {
-      getData(router.query.siren);
+     getData(router.query.siren);
     }
   }, [router]);
 
   async function getData(siren) {
     try {
-
       const endpoint = `${apiBaseUrl}/siren/${siren}`;
 
       const response = await fetch(endpoint, { method: "get" });
@@ -83,38 +91,57 @@ const CompanyData = () => {
       </Helmet>
       <div className="open-data-portal p-0">
         <Container fluid>
-          <section className="px-3">
-       
+          <section>
+            {!dataFetched && (
+              <>
+                <h2 className="text-center">
+                  Empreinte Sociétale de l'entreprise <b>#{siren}</b>
+                </h2>
+                <div className="text-center">
+                  <p>Chargement des données... </p>
+                  <div className="dot-pulse m-auto"></div>
+                </div>
+              </>
+            )}
             {dataFetched && empreinte && (
               <>
                 <h2 className="text-center">
-                  Empreinte Sociétale de <b>{uniteLegale.denomination + " #" + siren}</b>
+                  Empreinte Sociétale de{" "}
+                  <b>{uniteLegale.denomination + " #" + siren}</b>
                 </h2>
-                  <div className="d-flex justify-content-between">
-                    <p>
-                      <b>SIREN :</b> {uniteLegale.siren}</p>
-                    <p>
-                      <b>Activité principale : </b>{uniteLegale.activitePrincipaleLibelle}
-                    </p>
-                    <p>
-                      <b>Siège : </b> {uniteLegale.codePostalSiege + " " + uniteLegale.communeSiege}
-                    </p>
-                  </div>
-              <div className="footprint graph-section ">
-                <Nav pills="true" tabs="true" fill>
-                  {Object.entries(views).map(([viewKey, viewValue], _) => (
-                    <NavItem
-                      key={viewKey}
-                      className={viewKey == selectedView ? "selected" : ""}
-                    >
-                      <NavLink onClick={() => setSelectedView(viewKey)}>
-                        {viewValue.name}
-                      </NavLink>
-                    </NavItem>
-                  ))}
-                </Nav>
-                <ContentSocialFootprint views={views} selectedView={selectedView} empreinteSocietale={empreinte} />
-
+                <div className="d-flex justify-content-between">
+                  <p>
+                    <b>SIREN :</b> {uniteLegale.siren}
+                  </p>
+                  <p>
+                    <b>Activité principale : </b>
+                    {uniteLegale.activitePrincipaleLibelle}
+                  </p>
+                  <p>
+                    <b>Siège : </b>{" "}
+                    {uniteLegale.codePostalSiege +
+                      " " +
+                      uniteLegale.communeSiege}
+                  </p>
+                </div>
+                <div className="footprint graph-section ">
+                  <Nav pills="true" tabs="true" fill>
+                    {Object.entries(views).map(([viewKey, viewValue], _) => (
+                      <NavItem
+                        key={viewKey}
+                        className={viewKey == selectedView ? "selected" : ""}
+                      >
+                        <NavLink onClick={() => setSelectedView(viewKey)}>
+                          {viewValue.name}
+                        </NavLink>
+                      </NavItem>
+                    ))}
+                  </Nav>
+                  <ContentSocialFootprint
+                    views={views}
+                    selectedView={selectedView}
+                    empreinteSocietale={empreinte}
+                  />
                 </div>
               </>
             )}
@@ -126,8 +153,7 @@ const CompanyData = () => {
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint({ views,selectedView, empreinteSocietale }) {
-
+function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
   const selectedIndicatorDetails = Object.entries(
     views[selectedView].indicators
   ).map(([code, viewWindow], _) => ({
@@ -164,7 +190,12 @@ function IndicatorDetails({
       <Card>
         <Card.Body>
           <div className="d-flex align-items-center">
-            <Image className="icon-ese" fluid src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}  alt={code}/>
+            <Image
+              className="icon-ese"
+              fluid
+              src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
+              alt={code}
+            />
             <h4 id="indic-view-label">{libelle} </h4>
           </div>
           <div className="indic-value text-center">
