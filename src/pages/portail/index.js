@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Alert, Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 
 const portail = () => {
@@ -70,6 +70,9 @@ const portail = () => {
               Accédez librement aux données publiées sur les impacts de la
               valeur produite par les entreprises françaises.
             </p>
+            <Alert variant="warning ">
+            <i className="bi bi-tools"></i>  L'API est actuellement indisponible pour des raisons de maintenance. Veuillez nous excuser pour la gêne occassionée.
+            </Alert>
             <Row className="mt-5">
               <Col md={{ span: 6, offset: 3 }}>
                 <Row className="justify-content-md-center search-form">
