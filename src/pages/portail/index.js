@@ -70,9 +70,7 @@ const portail = () => {
               Accédez librement aux données publiées sur les impacts de la
               valeur produite par les entreprises françaises.
             </p>
-            <Alert variant="warning ">
-            <i className="bi bi-tools"></i>  L'API est actuellement indisponible pour des raisons de maintenance. Veuillez nous excuser pour la gêne occassionée.
-            </Alert>
+  
             <Row className="mt-5">
               <Col md={{ span: 6, offset: 3 }}>
                 <Row className="justify-content-md-center search-form">
