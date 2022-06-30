@@ -72,7 +72,7 @@ const Entreprises = () => {
                   <Image src="images/analyse-risques.png" alt="Risques" />
                 </div>
                 <h4 className="h6" >
-                  Anticipez de protentiels <br/>risques
+                  Anticipez de potentiels <br/>risques
                 </h4>
 
               </div>

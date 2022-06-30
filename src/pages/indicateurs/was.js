@@ -22,7 +22,7 @@ const was = () => {
               <h3>Description de l'indicateur</h3>
               <Image src="/ESE/was.svg" height="80" className="mb-3" />
               <p>
-              Quantité d’eau consommée par unité de valeur produite, exprimée en L/€ (litres par euro)
+              Quantité produite de déchets par unité de valeur produite, exprimée en g/€ (grammes par euro)
               </p>
               <p>
                 L’indicateur informe sur la quantité de déchets produite, avec
@@ -106,7 +106,7 @@ const was = () => {
           Les co-produits ne sont pas comptabilisés. Un co-produit correspond à un produit / résidu de production non vendu et transmis à une autre société en vue d’être transformé, sans destruction, en un produit vendu.
           </p>
           <p>
-          Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées
+          Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
           </p>
         </Container>
       </section>

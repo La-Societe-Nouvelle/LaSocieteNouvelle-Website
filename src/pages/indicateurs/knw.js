@@ -100,7 +100,7 @@ const knw = () => {
             </li>
           </ul>
           <p>
-          Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées
+          Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
           </p>
         </Container>
       </section>
@@ -117,7 +117,7 @@ const knw = () => {
             et des volumes des importations par produits.
           </p>
           <p>
-            L’intervalle de confiance si situe aux alentours de 500 % pour les valeurs associées aux unités légales.
+            L’intervalle de confiance se situe aux alentours de 500 % pour les valeurs associées aux unités légales.
           </p>
 
         </Container>
