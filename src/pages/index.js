@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Accueil </title>
+        <title>La société Nouvelle | Système d'Information national sur les impacts des entreprises </title>
       </Helmet>
       <div className="bloc-statistics py-4 bg-light">
         <Container>
