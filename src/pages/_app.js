@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>La société nouvelle</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="favicon.svg" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <Helmet>
       <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
