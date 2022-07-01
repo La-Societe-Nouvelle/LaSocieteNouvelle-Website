@@ -49,7 +49,7 @@
     "unitCode": "%",
     "unitCodeGrossImpact": "%",
     "defaultUncertainty": 0,
-    "descriptionImpactDirect": "Ecart absolu entre le taux horaires moyens bruts des femmes et celui des hommes, en pourcentage du taux horaire brut moyen",
+    "descriptionImpactDirect": "Ecart absolu entre le taux horaire brut moyen des femmes et celui des hommes, en pourcentage du taux horaire brut moyen",
     "finalite": "L’indicateur informe sur les écarts de salaires entre les femmes et les hommes au sein des entreprises ayant contribué à la production de la valeur. Il vise à encourager les actions en faveur de la réduction de l'écart de rémunérations entre les femmes/hommes ; en 2017 cet écart était de 16.8 % dans le secteur privé (INSEE).",
     "odds": ["05","10"]
   },
