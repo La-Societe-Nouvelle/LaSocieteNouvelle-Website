@@ -41,7 +41,7 @@ const mat = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_MAT.png"
+                src="/images/odd/odd_mat.png"
                 alt="logo odd"
                 className="mb-3"
               />
