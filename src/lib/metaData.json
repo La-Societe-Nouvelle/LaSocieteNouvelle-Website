@@ -27,7 +27,7 @@
     "unitCode": "/100",
     "unitCodeGrossImpact": "/100",
     "defaultUncertainty": 0,
-    "descriptionImpactDirect": "Ecart de rémunération femmes/hommes",
+    "descriptionImpactDirect": "Indice de GINI relatif aux taux horaires bruts des effectifs",
     "finalite": "L’indicateur vise à fournir un élément d’information sur la répartition des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite. D'autres indicateurs tel que le rapport interdécile D1/D9 sont en réflexion pour compléter cette information.",
     "odds": ["08","10"]
   },
