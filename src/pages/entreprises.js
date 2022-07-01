@@ -101,7 +101,7 @@ const Entreprises = () => {
               </p>
               <ul>
                 <li>Les impacts liés à la valeur ajoutée nette (production réduite des consommations) correspondent aux impacts directs de l'entreprise sur son périmètre opérationnel ;</li>
-                <li>Les impacts liés flux économiques sortants (consommations intermédiaires et consommations de capital fixe) sont obtenus via l'empreinte sociétale des fournisseurs.</li>
+                <li>Les impacts liés aux flux économiques sortants (consommations intermédiaires et consommations de capital fixe) sont obtenus via l'empreinte sociétale des fournisseurs.</li>
               </ul>
               <p>
                 Le modèle permet ainsi de mettre en place une traçabilité le long des chaines de valeurs. L’empreinte sociétale d’une entreprise dépend de celles de ses 
