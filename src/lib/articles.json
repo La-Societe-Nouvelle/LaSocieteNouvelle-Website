@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "image": "fiche-methodologique-2.jpg",
+      "titre": "Fiche méthodologique – Intensité d’émission de gaz à effet de serre ",
+      "slug": "fiche-donnees-defaut-entreprises-francaises-ghg",
+      "categorie": "publication",
+      "date": "19 juillet 2022",
+      "texte": "L’indicateur « Intensité d’émission de gaz à effet de serre » (codifié GHG) a pour but d’informer sur l’intensité d’émission de gaz à effet de serre de la production d’une entreprise."
+    },
+    {
       "image": "video.jpg",
       "titre": "Pourquoi faire évoluer la comptabilité des entreprises?",
       "slug": "approche-societe-nouvelle",
