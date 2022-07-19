@@ -11,7 +11,7 @@ export default function Newsletter() {
       <Helmet>
         <title>La société Nouvelle | Newsletter</title>
       </Helmet>
-      <PageHeader title={"Inscription à notre Newsletter"} path={"newsletter"} />
+      <PageHeader title="Inscription à notre Newsletter" path="newsletter" />
       <section>
         <Container>
           <h2>Abonnez-vous à lettre d'information de la Société Nouvelle</h2>
@@ -34,6 +34,13 @@ export default function Newsletter() {
             </Col>
           </Row>
         </Container>
+      </section>
+      <section>
+        <Container>
+          <h2>Nos anciennes newsletters</h2>
+
+        </Container>
+
       </section>
     </>
   );
