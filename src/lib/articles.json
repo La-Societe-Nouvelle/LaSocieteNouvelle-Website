@@ -4,7 +4,7 @@
       "image": "fiche-methodologique-2.jpg",
       "titre": "Fiche méthodologique – Intensité d’émission de gaz à effet de serre ",
       "slug": "fiche-donnees-defaut-entreprises-francaises-ghg",
-      "categorie": "publication",
+      "categorie": "Publication",
       "date": "19 juillet 2022",
       "texte": "L’indicateur « Intensité d’émission de gaz à effet de serre » (codifié GHG) a pour but d’informer sur l’intensité d’émission de gaz à effet de serre de la production d’une entreprise."
     },
@@ -12,24 +12,24 @@
       "image": "video.jpg",
       "titre": "Pourquoi faire évoluer la comptabilité des entreprises?",
       "slug": "approche-societe-nouvelle",
-      "categorie": "video",
+      "categorie": "Video",
       "date": "02 juin 2022",
       "texte": "Pour mieux comprendre notre approche, nous avons réalisé une vidéo explicative." ,
       "lien" : "XTdiVnrm-BI"
     },
-    {
-      "image": "fiche-methodologique.jpg",
-      "titre": "Fiche méthodologique | La production des données par défaut pour les entreprises françaises ! ",
-      "slug": "fiche-donnees-defaut-entreprises-francaises",
-      "categorie": "publication",
-      "date": "04 mai 2022",
-      "texte": ""
+    { 
+      "image": "cp.jpg",
+      "titre": "Communiqué de presse - La Société Nouvelle fait bouger la comptabilité des entreprises pour y intégrer les objectifs de développement durable",
+      "slug": "cp-30-05",
+      "categorie": "Publication",
+      "date": "30 mai 2022",
+      "texte": "La Société Nouvelle est une start-up lilloise domiciliée à Euratechnologies. Sa mission est d’apporter de la transparence sur les impacts de la production des entreprises, sur des enjeux clefs de développement durable..."
     },
     {
       "image": "illu-ese.jpg",
       "titre": "Qu’est-ce que l’Empreinte Sociétale de l’Entreprise ?",
       "slug": "empreinte-societale-entreprise",
-      "categorie": "article",
+      "categorie": "Article",
       "date": "25 avril 2022",
       "texte": "L’Empreinte Sociétale de l’Entreprise (ESE) est un panel d’indicateurs sociaux et environnementaux relatif à la production vendue d’une entreprise."
     },
@@ -37,7 +37,7 @@
       "image": "impact.jpg",
       "titre": "Pourquoi faut-il mesurer les impacts de la valeur produite des entreprises?",
       "slug": "mesurer-impact-production-entreprise",
-      "categorie": "article",
+      "categorie": "Article",
       "date": "13 avril 2022",
       "texte": "Mesurer les impacts de la valeur produite c'est-à-dire les impacts liés à un euro de production permet de connaître la capacité d’une entreprise à produire de la valeur en limitant ses impacts négatifs ou en maximisant ses impacts positifs..."
     },
@@ -45,7 +45,7 @@
       "image": "equipe-la-societe-nouvelle.jpg",
       "titre": "Mesurer, Informer pour une économie durable",
       "slug": "la-societe-nouvelle",
-      "categorie": "actu",
+      "categorie": "Actualité",
       "date": "04 mars 2022",
       "accroche": "Il était une fois La Société Nouvelle...",
       "texte": "C’est avec la volonté de contribuer à la construction d’une société durable que La Société Nouvelle prit son premier souffle : un nom choisi par l’envie de faire bouger les choses, pour marquer son engagement au service de cette transition."

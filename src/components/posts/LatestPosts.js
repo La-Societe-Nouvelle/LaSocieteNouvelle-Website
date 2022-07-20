@@ -24,7 +24,7 @@ function LatestPosts() {
                 ></iframe>
               ) : (
                 <Image
-                  alt="Photo d'équipe de la Societé Nouvelle"
+                  alt={posts[0].titre}
                   src={"/images/articles/" + posts[0].image}
                   fluid
                 />
@@ -35,7 +35,8 @@ function LatestPosts() {
                 <a href={"/blog/" + posts[0].slug}> {posts[0].titre} </a>
               </h2>
             </div>
-            <div className="post-meta">
+            <div className="post-meta d-flex justify-content-between">
+              <p className="category">{posts[0].categorie}</p>
               <p>Publié le {posts[0].date}</p>
             </div>
             <div className="post-content">
@@ -76,14 +77,16 @@ function LatestPosts() {
                       </div>
                     </Col>
                     <Col>
-                      <div className="post-title">
+                      <div className="post-title ">
                         <h2>
                           <a href={"/blog/" + post.slug}>{post.titre}</a>
                         </h2>
                       </div>
-                      <div className="post-meta">
-                        <p>Publié le {post.date}</p>
-                      </div>
+                            <div className="post-meta d-flex justify-content-between">
+                            <p className="category ">{post.categorie}</p>
+
+                    <p>Publié le {post.date}</p>
+                  </div>
                       <div className="post-content">
                         <p>{post.texte}</p>
                       </div>

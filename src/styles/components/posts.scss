@@ -24,10 +24,9 @@
         font-weight: 600;
 }
 .post {
-    margin-bottom: 1rem;
   
     p, a {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -40,4 +39,10 @@
         display: block;
         margin: 0 auto 3rem auto;
     }
+}
+
+.category {
+    background-color: $primary;
+    color : #ffffff;
+    padding: 2px 5px;
 }

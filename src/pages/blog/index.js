@@ -32,7 +32,7 @@ export default function Blog() {
         {posts.map((post, key) => {
             return (
             
-                <div className="post mb-3" key={key}>
+                <div className="post mb-5" key={key}>
                   <Row>
                     <Col lg={3}>
                       <div className="image-post">
@@ -44,18 +44,22 @@ export default function Blog() {
                       </div>
                     </Col>
                     <Col>
-                      <div className="post-title">
-                        <h2>{post.titre}</h2>
-                      </div>
-                      <div className="post-meta">
-                        <p>Publié le {post.date}</p>
-                      </div>
-                      <div className="post-content">
-                        <p>{post.texte}</p>
-                      </div>
-                      <div className="post-footer">
-                        <Link href={"/blog/" + post.slug}>Lire la suite</Link>
-                      </div>
+                    <div>
+                        <div className="post-title">
+                          <h2>{post.titre}</h2>
+                          <div className="post-meta d-flex justify-content-between">
+                          <p className="category ">{post.categorie}</p>
+
+                            <p>Publié le {post.date}</p>
+                          </div>
+                        </div>
+                        <div className="post-content">
+                          <p>{post.texte}</p>
+                        </div>
+                        <div className="post-footer">
+                          <Link href={"/blog/" + post.slug}>Lire la suite</Link>
+                        </div>
+                    </div>
                     </Col>
                   </Row>
                 </div>
