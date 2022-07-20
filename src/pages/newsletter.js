@@ -35,13 +35,6 @@ export default function Newsletter() {
           </Row>
         </Container>
       </section>
-      <section>
-        <Container>
-          <h2>Nos anciennes newsletters</h2>
-
-        </Container>
-
-      </section>
     </>
   );
 }
