@@ -23,11 +23,24 @@
 .last a, .post a {
         font-weight: 600;
 }
+.post, .last {
+    border: 1px solid #efeff7;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
 .post {
-  
+ 
     p, a {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
+}
+.post-footer a{
+    padding: 0.5rem;
+    font-weight: normal;
+    border-radius: 0.25rem;
+    background-color: #feeeee;
+    color: #fa595f;
+    border-color: #fa595f;
 }
 
 .article {

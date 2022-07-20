@@ -32,7 +32,7 @@ export default function Blog() {
         {posts.map((post, key) => {
             return (
             
-                <div className="post mb-5" key={key}>
+                <div className="post" key={key}>
                   <Row>
                     <Col lg={3}>
                       <div className="image-post">
@@ -57,7 +57,7 @@ export default function Blog() {
                           <p>{post.texte}</p>
                         </div>
                         <div className="post-footer">
-                          <Link href={"/blog/" + post.slug}>Lire la suite</Link>
+                          <Link href={"/blog/" + post.slug} >Lire la suite</Link>
                         </div>
                     </div>
                     </Col>
