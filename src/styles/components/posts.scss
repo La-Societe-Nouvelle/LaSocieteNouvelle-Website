@@ -9,7 +9,7 @@
 
 .post-meta, .post .post-meta {
     p {
-        font-size: 0.6rem;
+        font-size: 0.6rem !important;
     }
 }
 
@@ -28,7 +28,7 @@
     padding: 1rem;
     margin-bottom: 1rem;
 }
-.post {
+#latest-posts .post {
  
     p, a {
         font-size: 0.8rem;
@@ -55,7 +55,8 @@
 }
 
 .category {
-    background-color: $primary;
-    color : #ffffff;
+    background-color: $light;
+    color : $primary;
     padding: 2px 5px;
+    border: 1px solid darken( $light, 5%);
 }

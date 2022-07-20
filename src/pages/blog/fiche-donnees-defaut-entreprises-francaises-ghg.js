@@ -17,7 +17,7 @@ const Post = () => {
         title="Fiche méthodologique – Intensité d’émission de gaz à effet de serre  "
         prev={"blog"}
         prevTitle={"blog"}
-        path={"blog/fiche-donnees-defaut-entreprises-francaise"}
+        path={"blog/fiche-donnees-defaut-entreprises-francaise-ghg"}
       />
       <Container>
         <div className="article">

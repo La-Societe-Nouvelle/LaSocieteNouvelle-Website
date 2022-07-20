@@ -46,17 +46,17 @@ export default function Blog() {
                     <Col>
                     <div>
                         <div className="post-title">
-                          <h2>{post.titre}</h2>
+                          <h2>   <a href={"/blog/" + post.slug}>{post.titre}</a> </h2>
                           <div className="post-meta d-flex justify-content-between">
                           <p className="category ">{post.categorie}</p>
 
                             <p>Publié le {post.date}</p>
                           </div>
                         </div>
-                        <div className="post-content">
+                        <div className="post-content my-2">
                           <p>{post.texte}</p>
                         </div>
-                        <div className="post-footer">
+                        <div className="post-footer mt-4 mb-3">
                           <Link href={"/blog/" + post.slug} >Lire la suite</Link>
                         </div>
                     </div>
