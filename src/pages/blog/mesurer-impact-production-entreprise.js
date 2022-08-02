@@ -1,6 +1,6 @@
 import React from "react";
 
-import {  Container} from "react-bootstrap";
+import {  Container, Image} from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
 

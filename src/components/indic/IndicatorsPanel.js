@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Col, Image, Row } from "react-bootstrap";
+import { Accordion, Image } from "react-bootstrap";
 
 import metaData from "../../lib/metaData.json";
 

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 
 import metaData from '../lib/metaData';
-import { Container, Row, Col, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Accordion, Image } from 'react-bootstrap';
 
 const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
