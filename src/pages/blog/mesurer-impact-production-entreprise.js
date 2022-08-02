@@ -27,7 +27,7 @@ const Post = () => {
             <p>Publié le 13 avril 2022</p>
           </div>
           <div className="post-image">
-            <img
+            <Image
               src="/images/articles/impact.jpg"
               className="img-fluid"
               alt="Impact "

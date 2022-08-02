@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import { Col, Container, Image, Row, Tab, Tabs } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import IndicatorsPanel from "../components/indic/IndicatorsPanel";
 import PageHeader from "../components/PageHeader";
@@ -45,7 +45,7 @@ const Approche = () => {
             <Col>
               <div id="empreinte-societale-illustration" className="cta">
                 <Ese_scrolling_informations />
-                <img
+                <Image
                   id="icon-euro"
                   src="/images/coin-brf-1-white.png"
                   alt="icon-euro"

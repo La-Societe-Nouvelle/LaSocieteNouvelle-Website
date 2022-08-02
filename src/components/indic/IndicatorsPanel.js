@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Col, Row } from "react-bootstrap";
+import { Accordion, Col, Image, Row } from "react-bootstrap";
 
 import metaData from "../../lib/metaData.json";
 
@@ -31,14 +31,14 @@ const IndicatorsPanel = (props) => {
             <Accordion.Body>
               <div className="d-flex mb-5 align-items-center">
                 <div className="me-2">
-                  <img
+                  <Image
                     src={"/ESE/" + selectedIndic + ".png"}
                     alt=""
                   />
                 </div>
                 <div className="icons-odd ">
                   {listOdds.map((odd, index) => (
-                    <img
+                    <Image
                       key={index}
                       className={
                         "icon-odd" +

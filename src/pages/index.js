@@ -17,7 +17,7 @@ const Home = () => {
         <Container>
           <Row className="d-flex justify-content-between">
             <Col className="statistic-item" xs={12} lg={4}>
-              <img
+              <Image
                 src="ESE/icon-ese-bleues/eco.svg"
                 height="60"
                 className="mx-auto d-block my-2"
@@ -29,7 +29,7 @@ const Home = () => {
               <p className="text-center">Production intérieure</p>
             </Col>
             <Col className="statistic-item" xs={12} lg={4}>
-              <img
+              <Image
                 src="ESE/icon-ese-bleues/ghg.svg"
                 height="60"
                 className="mx-auto d-block my-2"
@@ -43,7 +43,7 @@ const Home = () => {
               </p>
             </Col>
             <Col className="statistic-item" xs={12} lg={4}>
-              <img
+              <Image
                 src="ESE/icon-ese-bleues/dis.svg"
                 height="60"
                 className="mx-auto d-block my-2"

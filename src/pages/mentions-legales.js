@@ -34,7 +34,7 @@ export default function Home() {
                 Responsable : Sylvain HUMILIERE
                 </li>
                 <li>
-                Contact : sylvain.humiliere@lasocietenouvelle.org
+                Contact : <a href="mailto:contact@lasocietenouvelle.org">contact@lasocietenouvelle.org</a>
                 </li>
               </ul>
 

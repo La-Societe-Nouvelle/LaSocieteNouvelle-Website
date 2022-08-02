@@ -111,7 +111,7 @@ const About = () => {
             <h3 className="subtitle">Nos valeurs</h3>
             <Row>
               <Col lg={6}>
-                <img
+                <Image 
                   src="/images/nos-valeurs.png"
                   alt="Euratechnologies"
                   className="img-fluid w-100"
@@ -149,22 +149,22 @@ const About = () => {
             <h2 className="text-center mb-5">Notre Equipe</h2>
             <Row className='text-center'>
               <Col>
-                <img id="img-joris" src="/images/joris.jpg" alt="img-joris" />
+                <Image  id="img-joris" src="/images/joris.jpg" alt="img-joris" />
                 <p className="prenom"><b>Joris</b></p>
                 <p className="poste">Statistiques publiques</p>
               </Col>
               <Col>
-                <img id="img-laura" src="/images/laura.jpg" alt="img-laura" />
+                <Image  id="img-laura" src="/images/laura.jpg" alt="img-laura" />
                 <p className="prenom"><b>Laura</b></p>
                 <p className="poste">Développement Web</p>
               </Col>
               <Col>
-                <img id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
+                <Image  id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
                 <p className="prenom"><b>Maëva</b></p>
                 <p className="poste">Communication</p>
               </Col>
               <Col>
-                <img id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain" />
+                <Image  id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain" />
                 <p className="prenom"><b>Sylvain</b></p>
                 <p className="poste">Relation partenaires</p>
               </Col>

@@ -45,7 +45,7 @@ const Cabinets = () => {
               </ul>
             </Col>
             <Col>
-              <Image fluid src="/images/accounting-illu.jpg" alt="Illustration cabinet compotable" />
+              <Image  src="/images/accounting-illu.jpg" alt="Illustration cabinet compotable" quality="1"/>
 
             </Col>
           </Row>

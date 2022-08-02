@@ -171,7 +171,7 @@ function Footer() {
               <p className="mx-2">© 2022 La Société Nouvelle</p>
               <ul className="nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/a-propos">
+                  <a className="nav-link" href="/a-propos-la-societe-nouvelle">
                     A propos
                   </a>
                 </li>

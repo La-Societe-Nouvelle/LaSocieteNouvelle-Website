@@ -17,12 +17,11 @@ const Header = () => {
       <Navbar bg="dark" expand="lg">
         <Container fluid>
         <Navbar.Brand href="/">
-              <img
-                src="/logo.svg"
+        <Image src="/logo.svg"
                 height="80"
                 className="d-inline-block align-center"
-                alt="logo"
-              />
+                alt="logo"/>
+           
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -58,12 +57,11 @@ const Header = () => {
           <Row className="middle-header d-flex justify-content-between align-items-center ">
             <Col xs={12} lg={4} className="d-flex align-item-center" >
               <Navbar.Brand href="/">
-                <img
-                  src="/logo.svg"
-                  height="110"
-                  alt="logo"
-                />
-            
+
+              <Image src="/logo.svg"
+                height="110"
+                className="d-inline-block align-center"
+                alt="logo"/>
               </Navbar.Brand>
     
             <div className="border img-thumbnail">

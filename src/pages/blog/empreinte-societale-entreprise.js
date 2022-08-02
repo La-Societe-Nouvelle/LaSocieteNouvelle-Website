@@ -27,7 +27,7 @@ const Post = () => {
             <p>Publié le 25 avril 2022</p>
           </div>
           <div className="post-image">
-            <img
+            <Image
               src="/images/articles/illu-ese.jpg"
               className="img-fluid"
               alt="Empreinte Sociétale de l’Entreprise "
