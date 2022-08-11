@@ -1,5 +1,13 @@
 {
-  "posts": [
+  "posts": [ 
+    {
+      "image": "fiche-methodo-snbc.jfif",
+      "titre": "Fiche méthodologique – Production des objectifs sectoriels 2030 d’intensité d’émission de gaz à effet de serre compatibles avec la SNBC",
+      "slug": "fiche-objectifs-SNBC-2030-intensite-emissission-gaz-effet-de-serre", 
+      "categorie": "Publication",
+      "date": "11 août 2022",
+      "texte": "Par la loi du 17 août 2015 relative à la transition énergétique pour la croissance verte, l'Etat s'est doté d'une Stratégie Nationale Bas-Carbone (SNBC). Elle prend la forme d'une feuille de route détaillant les orientations et objectifs (budgets carbone quadri-annuels) français selon 6 grands secteurs..."
+    },
     {
       "image": "fiche-methodologique-2.jpg",
       "titre": "Fiche méthodologique – Intensité d’émission de gaz à effet de serre ",
