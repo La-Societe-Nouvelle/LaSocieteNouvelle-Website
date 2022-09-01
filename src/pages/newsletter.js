@@ -25,12 +25,8 @@ export default function Newsletter() {
           </p>
           <Row>
             <Col md={{ span: 8, offset: 2 }}>
-              <iframe
-              width="100%"
-                className="mj-w-res-iframe"
-                scrolling="no"
-                src="https://app.mailjet.com/widget/iframe/7D62/Mts"
-              ></iframe>
+            <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7EBb/NVE" width="100%"></iframe>
+            <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
             </Col>
           </Row>
         </Container>
