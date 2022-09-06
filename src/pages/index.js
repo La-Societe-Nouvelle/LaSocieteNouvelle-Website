@@ -11,7 +11,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Système d'Information national sur les impacts des entreprises </title>
+        <title>
+          La société Nouvelle | Système d'Information national sur les impacts
+          des entreprises{" "}
+        </title>
       </Helmet>
       <div className="bloc-statistics py-4 bg-light">
         <Container>
@@ -99,7 +102,9 @@ const Home = () => {
                   s'appuie directement sur le répertoire SIRENE.
                 </p>
                 <p>
-                  Les données sont accessibles <strong>librement et gratuitement</strong> via une API publique ou via notre portail web.
+                  Les données sont accessibles{" "}
+                  <strong>librement et gratuitement</strong> via une API
+                  publique ou via notre portail web.
                 </p>
                 <p>
                   La publication des données est gratuite. Des frais
@@ -149,7 +154,8 @@ const Home = () => {
                 <div className="box">
                   <Image src="/images/sustainable.svg" height={80} />
                   <h3 className="h6">
-                    <b>Se positionner</b> par rapport à sa branche et aux <strong>objectifs sociaux et environnementaux</strong> à
+                    <b>Se positionner</b> par rapport à sa branche et aux{" "}
+                    <strong>objectifs sociaux et environnementaux</strong> à
                     atteindre pour agir à la hauteur des enjeux
                   </h3>
                 </div>
@@ -159,7 +165,8 @@ const Home = () => {
                   <Image src="/images/goals.svg" height={80} />
                   <h3 className="h6">
                     Valoriser ses résultats et être identifié comme une
-                    entreprise engagée pour la <strong>transition écologique et sociale</strong>
+                    entreprise engagée pour la{" "}
+                    <strong>transition écologique et sociale</strong>
                   </h3>
                 </div>
               </Col>
@@ -176,38 +183,47 @@ const Home = () => {
             </p>
           </Container>
         </section>
-        <section className="partenaires">
-          <Container>
-            <h3 className="text-center">Nos partenaires</h3>
-            <div className="d-flex justify-content-between">
-              {/* <Image thumbnail src="/partners/easi.jpg" alt="Cabinet comptable Easi"></Image>
-              <Image thumbnail src="/partners/logo-te-1.png" alt="Cabinet comptable Terre Entrepreneur"></Image>
-              <Image thumbnail src="/partners/logo-valoxy-1.png" alt="Cabinet comptable Valoxy"></Image>
-              <Image thumbnail src="/partners/ACE4RSE.jpg" alt="Cabinet comptable ACE4RSE"></Image> */}
+        <section className="partenaires ">
+          <Container >
+            <h3 className="text-center">Avec le soutien de</h3>
+            <div className="d-flex justify-content-between align-items-center">
+           
               <a href="https://www.euratechnologies.com/" target="_blank">
-                <Image
-                  thumbnail
-                  src="/partners/euratech.svg"
-                  alt="Euratech"
-                ></Image>
+                <Image src="/partners/euratech.svg" alt="Euratech"></Image>
               </a>
               <a
                 href="https://www.bpifrance.fr/communaute-du-coq-vert"
                 target="_blank"
               >
-                <Image
-                  thumbnail
-                  src="/partners/Coq_Vert_RVB.png"
-                  alt="Coq Vert"
-                ></Image>
+                <Image src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
               </a>
               <a href="https://www.impactfrance.eco/" target="_blank">
-
-              <Image
-                thumbnail
-                src="/partners/Logo_du_Mouvement_Impact_France.png"
-                alt="Impact France"
-              ></Image>
+                <Image
+                  src="/partners/Logo_du_Mouvement_Impact_France.png"
+                  alt="Impact France"
+                ></Image>
+              </a>
+              <a href="https://www.bpifrance.fr/" target="_blank">
+                <Image src="/partners/bpifrance.svg" alt="BPI France" style={{height:"50px"}}></Image>
+              </a>
+              <a href="https://www.hautsdefrance.fr/" target="_blank">
+                <Image
+                  src="/partners/HDF-financementLogo-r.png"
+                  alt="Financement Hauts-De-France"
+                ></Image>
+              </a>
+              <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image
+                  src="/partners/ministere_de_l_economie.svg"
+                  alt="Ministère de l'économie "
+                  style={{height:"80px"}}
+                ></Image>
+              </a>
+              <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image
+                  src="/partners/Logotype-rouge-bleu.png"
+                  alt="France 2030"
+                ></Image>
               </a>
             </div>
           </Container>

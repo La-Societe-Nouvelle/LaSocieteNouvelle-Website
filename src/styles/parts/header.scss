@@ -14,9 +14,9 @@
     }
 }
 .header {
-    .border {
-        margin: 0.5rem 0 0.5rem 0;
-        padding: 8px;
+    .logos {
+        border: none;
+        margin: 0 0.5rem;
         img {
             display: block;
             margin: 0 auto;
@@ -28,12 +28,16 @@
             margin: 0;
         }
     }
+
+    .btn{
+        font-size: 0.9rem;
+    }
 }
 .header h1 {
     font-size: 1.1rem;
-    font-weight: 900;
+        font-weight: 900;
     color: #000;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-family: 'Roboto';
 }
 
