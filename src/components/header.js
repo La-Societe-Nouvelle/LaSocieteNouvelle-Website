@@ -87,7 +87,7 @@ const Header = () => {
         </div>
 
         <Row className="middle-header d-flex justify-content-between align-items-center ">
-          <Col xs={12} lg={4} className="d-flex align-items-center">
+          <Col xs={12} lg={4} className="d-flex align-items-center py-2">
             <Navbar.Brand href="/">
               <Image
                 src="/logo.svg"
