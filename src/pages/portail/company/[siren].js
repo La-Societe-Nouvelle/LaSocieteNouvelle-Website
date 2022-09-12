@@ -9,19 +9,23 @@ import {
   NavLink,
   Row,
 } from "react-bootstrap";
+
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
 /* The base URL of the API */
-const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
-
 import Chart from "chart.js/auto";
+
 import { Bar } from "react-chartjs-2";
+
+import axios from "axios";
 
 const CompanyData = () => {
   const router = useRouter();
 
   const [siren, setSiren] = useState(router.query.siren);
+  const [error, setError] = useState();
+
   const [views, setView] = useState({
     empreinteEconomique: {
       name: "Création de la valeur",
@@ -53,40 +57,38 @@ const CompanyData = () => {
   });
   const [selectedView, setSelectedView] = useState("empreinteEconomique");
   const [dataFetched, isDataFetched] = useState(false);
-  const [uniteLegale, setUniteLegale] = useState();
-  const [empreinte, setEmpreinte] = useState();
+  const [legalUnit, setLegalUnit] = useState();
+  const [footprint, setFootprint] = useState();
 
   useEffect(() => {
     setSiren(router.query.siren);
-
-    if (router.query.siren) {
-     getData(router.query.siren);
+    console.log(siren)
+    if(siren) {
+      getData(siren)
     }
-  }, [router]);
+  }, [router,siren]);
 
   async function getData(siren) {
-    try {
-      const endpoint = `${apiBaseUrl}/siren/${siren}`;
+    console.log("fetch")
+    axios
+    .get(`https://api.test.lasocietenouvelle.org/legalunitFootprint/${siren}`)
+    .then((response) => {
+      if (response.data.header.code == 200) {
+        isDataFetched(true);
+        setLegalUnit(response.data.legalUnit);
+        setFootprint(response.data.footprint);
+      } else {
+        setError(response.data.header);
+      }
+    })
 
-      const response = await fetch(endpoint, { method: "get" });
-      const data = await response.json();
-
-      const dataFetched = data.header.statut === 200;
-      const profil = data.profil;
-      isDataFetched(dataFetched);
-      setUniteLegale(profil.descriptionUniteLegale);
-      setEmpreinte(profil.empreinteSocietale);
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
   }
 
   return (
     <>
       <Helmet>
         <title>
-          Portail La société Nouvelle | Empreinte sociétale de l'entreprise
+         {` Portail La société Nouvelle | Empreinte sociétale de l'entreprise #`+siren}
         </title>
       </Helmet>
       <div className="open-data-portal p-0">
@@ -103,25 +105,26 @@ const CompanyData = () => {
                 </div>
               </>
             )}
-            {dataFetched && empreinte && (
+       
+            {dataFetched && footprint && (
               <>
                 <h2 className="text-center">
                   Empreinte Sociétale de{" "}
-                  <b>{uniteLegale.denomination + " #" + siren}</b>
+                  <b>{legalUnit.denominationunitelegale + " #" + siren}</b>
                 </h2>
                 <div className="d-flex justify-content-between">
                   <p>
-                    <b>SIREN :</b> {uniteLegale.siren}
+                    <b>SIREN :</b> {legalUnit.siren}
                   </p>
                   <p>
                     <b>Activité principale : </b>
-                    {uniteLegale.activitePrincipaleLibelle}
+                    {legalUnit.activiteprincipalelibelle}
                   </p>
                   <p>
                     <b>Siège : </b>{" "}
-                    {uniteLegale.codePostalSiege +
+                    {legalUnit.codepostaletablissement +
                       " " +
-                      uniteLegale.communeSiege}
+                      legalUnit.libellecommuneetablissement}
                   </p>
                 </div>
                 <div className="footprint graph-section ">
@@ -140,7 +143,7 @@ const CompanyData = () => {
                   <ContentSocialFootprint
                     views={views}
                     selectedView={selectedView}
-                    empreinteSocietale={empreinte}
+                    empreinteSocietale={footprint}
                   />
                 </div>
               </>
@@ -159,7 +162,9 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
   ).map(([code, viewWindow], _) => ({
     ...empreinteSocietale[code],
     viewWindow,
+    code
   }));
+
 
   return (
     <section className="px-4">
@@ -175,13 +180,13 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
 /* Basic indicator view */
 function IndicatorDetails({
   code,
-  libelle,
-  libelleFlag,
+  label,
+  source,
   uncertainty,
   year,
   value,
   unit,
-  valueDeclared,
+  labeldeclaredvalue,
 }) {
   const displayedValue = Math.round(10 * value) / 10;
 
@@ -196,10 +201,10 @@ function IndicatorDetails({
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{libelle} </h4>
+            <h4 id="indic-view-label">{label} </h4>
           </div>
           <div className="indic-value text-center">
-            <p className={valueDeclared ? "value" : "value default"}>
+            <p className={labeldeclaredvalue ? "value" : "value default"}>
               {Math.round(displayedValue)} {unit}
             </p>
             <p className="incertitude">
@@ -207,11 +212,11 @@ function IndicatorDetails({
             </p>
           </div>
 
-          <ColumnChart title={libelle} performance={displayedValue} />
+          <ColumnChart title={label} performance={displayedValue} />
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
-          <p>Source : {libelleFlag}</p>
-          <p>Dernière mise à jour : {year}</p>
+          <p>Source : {source}</p>
+        {year &&   <p>Dernière mise à jour : {year}</p>}
         </Card.Footer>
       </Card>
     </Col>

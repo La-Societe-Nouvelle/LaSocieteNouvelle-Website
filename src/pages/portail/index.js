@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import { Alert, Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import ErrorAlert from "../../components/Error";
 
 const portail = () => {
-  const [input, setInput] = useState();
+  const [search, setSearch] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [infoResults, setInfo] = useState({ nbResults: 0 });
-  const [results, setResults] = useState([]);
+  const [legalUnits, setLegalUnits] = useState([]);
+  const [error, setError] = useState();
+
+  useEffect(() => {}, []);
 
   const inputChange = (e) => {
-    setInput(e.target.value);
+    setSearch(e.target.value);
   };
 
   const handleKeyPress = (e) => {
@@ -22,55 +26,113 @@ const portail = () => {
     }
   };
 
-  const handleClick = () => {
-    if (input !== undefined && input !== "") {
-      setIsLoaded(false);
-      setIsLoading(true);
-      getResults(input);
-    }
+  const handleClick = async () => {
+    setIsLoading(true);
+    await searchLegalUnits(search);
   };
 
-  const getResults = (input) => {
-    fetch(
-      "https://systema-api.azurewebsites.net/api/v2/search?denomination=" +
-        input,
-      { method: "get" }
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.header.statut == 200) {
-          setIsLoaded(true);
-          setIsLoading(false);
-          console.log(response);
-          setInfo(response.infoResults);
-          setResults(Object.values(response.results));
-        } else {
-          setIsLoading(false);
+  const searchLegalUnits = async (search) => {
+    if (!/[0-9]{9}/.test(search)) {
+      // replace accents
+      let string = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-          setInfo({ nbResults: 0 });
-          setResults();
-        }
-      })
-      .catch((error) => console.log(error));
+      axios
+        .get(`https://api.test.lasocietenouvelle.org/legalunit/${string}`)
+        .then((response) => {
+          if (response.data.header.code == 200) {
+            setLegalUnits(response.data.legalUnits);
+          } else {
+            setError(response.data.header);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      axios
+        .get(
+          `https://api.test.lasocietenouvelle.org/legalunitFootprint/${search}`
+        )
+        .then((response) => {
+          if (response.data.header.code == 200) {
+            setLegalUnits(response.data.legalUnits);
+          } else {
+            setError(response.data.header.code);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    setIsLoading(false);
+  };
+
+  const LegalUnitCard = (props) => {
+    let legalUnit = props.legalUnit;
+    return (
+      <Card className="legalUnitCard">
+        <Card.Header as="h5">{legalUnit.denominationunitelegale}</Card.Header>
+        <Card.Body>
+        <Row className="align-items-center">
+          <Col lg={9}>
+            <Row className="align-content-center">
+              <Col>
+                <h4 className="h6">Siren</h4>
+                <p>{legalUnit.siren}</p>
+              </Col>
+              <Col>
+                <h3 className="h6">Activité</h3>
+                <p>
+                  {legalUnit.activiteprincipalelibelle} (
+                  {legalUnit.activiteprincipaleetablissement})
+                </p>
+              </Col>
+              <Col>
+                <h3 className="h6">Domiciliation</h3>
+                <p>
+                  {legalUnit.codepostaletablissement}{" "}
+                  {legalUnit.libellecommuneetablissement}
+                </p>
+              </Col>
+            </Row>
+          </Col>
+          <Col>
+            <div className="text-end">
+              <a
+                className="btn btn-outline-secondary"
+                href={"portail/company/" + legalUnit.siren}
+              > Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
+              </a>
+            </div>
+          </Col>
+        </Row>
+        </Card.Body>
+       
+      </Card>
+    );
   };
 
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Portail d'accès aux données </title>
+        <title>
+          La société Nouvelle | Portail des empreintes sociétales des
+          entreprises françaises{" "}
+        </title>
       </Helmet>
-      <div className="open-data-portal">
-        <section className="text-center">
-          <Container>
+      <section className="open-data-portal">
+        <Container>
+          <div className="text-center">
             <h1>
               Toute l'information sur <br /> <b>l'empreinte sociétale</b> des
               entreprises
             </h1>
             <p className="pt-2 fs-5 mb-5">
-              Accédez librement aux données publiées sur les impacts de la
+              Consultez librement les données publiées sur les impacts de la
               valeur produite par les entreprises françaises.
             </p>
-  
+
             <Row className="mt-5">
               <Col md={{ span: 6, offset: 3 }}>
                 <Row className="justify-content-md-center search-form">
@@ -89,9 +151,7 @@ const portail = () => {
                         variant="link"
                         type="submit"
                         onClick={handleClick}
-                        disabled={
-                          input !== undefined && input !== "" ? false : true
-                        }
+                        disabled={!search}
                       >
                         Rechercher
                       </Button>
@@ -100,81 +160,39 @@ const portail = () => {
                 </Row>
               </Col>
             </Row>
-          </Container>
-        </section>
-        {isLoading && (
-          <section className="results  bg-light">
-            <Container>
-              <div className="alert alert-info text-center">
-                <p>Recherche en cours </p>
-                <div className="dot-pulse m-auto"></div>
-              </div>
-            </Container>
-          </section>
-        )}
-        {isLoaded && results.length == 0 && (
-          <section className="results bg-light">
-            <Container>
-              <p className="alert alert-info">Aucun résultat</p>
-            </Container>
-          </section>
-        )}
-
-        {isLoaded && results.length > 0 && (
-          <section className="results bg-light">
-            <Container>
-              <h2 className="mb-0">Résultats de la recherche</h2>
-              {results.length > 1 ? (
+          </div>
+          {isLoading && (
+            <section className="results  bg-light">
+              <Container>
+                <div className="alert alert-info text-center">
+                  <p>Recherche en cours </p>
+                  <div className="dot-pulse m-auto"></div>
+                </div>
+              </Container>
+            </section>
+          )}
+          {legalUnits.length > 0 &&
+          <>
+              {legalUnits.length > 1 ? (
                 <p>
-                  <b>{results.length}</b> entreprises trouvées.
+                  <b>{legalUnits.length}</b> entreprises correspondent à votre recherche.
                 </p>
               ) : (
                 <p>
-                  <b>{results.length}</b> entreprise trouvée.
+                  <b>{legalUnits.length}</b> entreprise correspond à votre recherche.
                 </p>
               )}
+          {
+            legalUnits.map((legalUnit, index) => {
+              return <LegalUnitCard legalUnit={legalUnit} key={index} />;
+            })}
 
-              {results.map((item, index) => (
-                <div className="result" key={index}>
-                  <Row className="align-items-center">
-                    <Col lg={9}>
-                      <h3 className="h5">{item.denomination}</h3>
-                      <Row className="align-content-center">
-                        <Col>
-                          <h4 className="h6">Siren</h4>
-                          <p>{item.siren}</p>
-                        </Col>
-                        <Col>
-                          <h3 className="h6">Activité</h3>
-                          <p>
-                            {item.activitePrincipaleLibelle} (
-                            {item.activitePrincipale})
-                          </p>
-                        </Col>
-                        <Col>
-                          <h3 className="h6">Domiciliation</h3>
-                          <p>
-                            {item.communeSiege} ({item.codePostalSiege})
-                          </p>
-                        </Col>
-                      </Row>
-                    </Col>
-                    <Col>
-                      <div className="text-end">
-                        <a
-                          className="btn btn-outline-secondary"
-                          href={"portail/company/" + item.siren}
-                        > Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-              ))}
-            </Container>
-          </section>
-        )}
-      </div>
+          </>
+          }
+
+          {error && <ErrorAlert code={error.code} />}
+        </Container>
+      </section>
     </>
   );
 };
