@@ -20,7 +20,7 @@ const Header = () => {
   });
 
   return page.includes("portail") ? (
-    <Navbar bg="dark" expand="lg">
+    <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">
           <Image
