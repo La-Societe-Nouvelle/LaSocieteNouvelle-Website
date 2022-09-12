@@ -19,6 +19,7 @@ import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 import axios from "axios";
+import ErrorAlert from "../../../components/Error";
 
 const CompanyData = () => {
   const router = useRouter();
@@ -62,38 +63,35 @@ const CompanyData = () => {
 
   useEffect(() => {
     setSiren(router.query.siren);
-    console.log(siren)
-    if(siren) {
-      getData(siren)
+    if (siren) {
+      getData(siren);
     }
-  }, [router,siren]);
+  }, [router, siren]);
 
   async function getData(siren) {
-    console.log("fetch")
     axios
-    .get(`https://api.test.lasocietenouvelle.org/legalunitFootprint/${siren}`)
-    .then((response) => {
-      if (response.data.header.code == 200) {
+      .get(`https://api.test.lasocietenouvelle.org/legalunitFootprint/${siren}`)
+      .then((response) => {
         isDataFetched(true);
-        setLegalUnit(response.data.legalUnit);
-        setFootprint(response.data.footprint);
-      } else {
-        setError(response.data.header);
-      }
-    })
-
+        if (response.data.header.code == 200) {
+          setLegalUnit(response.data.legalUnit);
+          setFootprint(response.data.footprint);
+        } else {
+          setError(response.data.header);
+        }
+      });
   }
 
   return (
     <>
       <Helmet>
         <title>
-         {` Portail La société Nouvelle | Empreinte sociétale de l'entreprise #`+siren}
+          {` Portail La société Nouvelle | Empreinte sociétale de l'entreprise #` +
+            siren}
         </title>
       </Helmet>
-      <div className="open-data-portal p-0">
-        <Container fluid>
-          <section>
+      <section className="open-data-portal">
+        <Container >
             {!dataFetched && (
               <>
                 <h2 className="text-center">
@@ -105,12 +103,13 @@ const CompanyData = () => {
                 </div>
               </>
             )}
-       
+            {error && <ErrorAlert code={error.code} />}
             {dataFetched && footprint && (
               <>
+              <div className="legalUnit">
+
                 <h2 className="text-center">
-                  Empreinte Sociétale de{" "}
-                  <b>{legalUnit.denominationunitelegale + " #" + siren}</b>
+                  Empreinte Sociétale de <b>{legalUnit.denominationunitelegale + " #" + siren}</b>
                 </h2>
                 <div className="d-flex justify-content-between">
                   <p>
@@ -127,7 +126,8 @@ const CompanyData = () => {
                       legalUnit.libellecommuneetablissement}
                   </p>
                 </div>
-                <div className="footprint graph-section ">
+                </div>
+                <div className="footprint">
                   <Nav pills="true" tabs="true" fill>
                     {Object.entries(views).map(([viewKey, viewValue], _) => (
                       <NavItem
@@ -148,39 +148,37 @@ const CompanyData = () => {
                 </div>
               </>
             )}
-          </section>
         </Container>
-      </div>
+        </section>
     </>
   );
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
 function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
+
+  console.log(empreinteSocietale)
   const selectedIndicatorDetails = Object.entries(
     views[selectedView].indicators
   ).map(([code, viewWindow], _) => ({
     ...empreinteSocietale[code],
     viewWindow,
-    code
+    code,
   }));
 
-
   return (
-    <section className="px-4">
       <Row className="indic-details">
         {selectedIndicatorDetails.map((details) => (
           <IndicatorDetails key={details.code} {...details} />
         ))}
       </Row>
-    </section>
   );
 }
 
 /* Basic indicator view */
 function IndicatorDetails({
   code,
-  label,
+  shortlabel,
   source,
   uncertainty,
   year,
@@ -191,17 +189,17 @@ function IndicatorDetails({
   const displayedValue = Math.round(10 * value) / 10;
 
   return (
-    <Col key={code} className="indic-view mb-4" lg={4}>
+    <Col key={code} className="indic-view my-4" lg={4}>
       <Card>
         <Card.Body>
-          <div className="d-flex align-items-center">
+          <div className="indic d-flex align-items-center">
             <Image
               className="icon-ese"
               fluid
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{label} </h4>
+            <h4 id="indic-view-label">{shortlabel} </h4>
           </div>
           <div className="indic-value text-center">
             <p className={labeldeclaredvalue ? "value" : "value default"}>
@@ -212,11 +210,11 @@ function IndicatorDetails({
             </p>
           </div>
 
-          <ColumnChart title={label} performance={displayedValue} />
+          <ColumnChart title={shortlabel} performance={displayedValue} />
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
           <p>Source : {source}</p>
-        {year &&   <p>Dernière mise à jour : {year}</p>}
+          {year && <p>Dernière mise à jour : {year}</p>}
         </Card.Footer>
       </Card>
     </Col>
