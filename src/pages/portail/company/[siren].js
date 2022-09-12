@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Button,
   Card,
   Col,
   Container,
@@ -148,6 +149,9 @@ const CompanyData = () => {
                 </div>
               </>
             )}
+            <p className="text-end">
+              <Button title="Retour au portail" href="/portail" variant="secondary">« Retour </Button>
+            </p>
         </Container>
         </section>
     </>
