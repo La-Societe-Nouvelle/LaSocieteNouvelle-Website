@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import ErrorAlert from "../../components/Error";
+import PaginatedLegalunit from "../../components/PaginatedLegalunit";
+import PaginatedItems from "../../components/PaginatedLegalunit";
 
 const portail = () => {
   const [search, setSearch] = useState();
@@ -27,6 +29,8 @@ const portail = () => {
   };
 
   const handleClick = async () => {
+    setLegalUnits([]);
+    setError();
     setIsLoading(true);
     await searchLegalUnits(search);
   };
@@ -34,8 +38,8 @@ const portail = () => {
   const searchLegalUnits = async (search) => {
     if (!/[0-9]{9}/.test(search)) {
       // replace accents
-      let string = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
+      let string = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+      console.log(string);
       axios
         .get(`https://api.test.lasocietenouvelle.org/legalunit/${string}`)
         .then((response) => {
@@ -55,7 +59,8 @@ const portail = () => {
         )
         .then((response) => {
           if (response.data.header.code == 200) {
-            setLegalUnits(response.data.legalUnits);
+
+            setLegalUnits(legalUnits => [...legalUnits, response.data.legalUnit]);
           } else {
             setError(response.data.header.code);
           }
@@ -68,50 +73,7 @@ const portail = () => {
     setIsLoading(false);
   };
 
-  const LegalUnitCard = (props) => {
-    let legalUnit = props.legalUnit;
-    return (
-      <Card className="legalUnitCard">
-        <Card.Header as="h5">{legalUnit.denominationunitelegale}</Card.Header>
-        <Card.Body>
-        <Row className="align-items-center">
-          <Col lg={9}>
-            <Row className="align-content-center">
-              <Col>
-                <h4 className="h6">Siren</h4>
-                <p>{legalUnit.siren}</p>
-              </Col>
-              <Col>
-                <h3 className="h6">Activité</h3>
-                <p>
-                  {legalUnit.activiteprincipalelibelle} (
-                  {legalUnit.activiteprincipaleetablissement})
-                </p>
-              </Col>
-              <Col>
-                <h3 className="h6">Domiciliation</h3>
-                <p>
-                  {legalUnit.codepostaletablissement}{" "}
-                  {legalUnit.libellecommuneetablissement}
-                </p>
-              </Col>
-            </Row>
-          </Col>
-          <Col>
-            <div className="text-end">
-              <a
-                className="btn btn-outline-secondary"
-                href={"portail/company/" + legalUnit.siren}
-              > Voir l'empreinte <i className="bi bi-arrow-right-circle-fill"></i>
-              </a>
-            </div>
-          </Col>
-        </Row>
-        </Card.Body>
-       
-      </Card>
-    );
-  };
+
 
   return (
     <>
@@ -171,25 +133,25 @@ const portail = () => {
               </Container>
             </section>
           )}
-          {legalUnits.length > 0 &&
-          <>
+          {legalUnits.length > 0 && (
+            <>
+
               {legalUnits.length > 1 ? (
                 <p>
-                  <b>{legalUnits.length}</b> entreprises correspondent à votre recherche.
+                  <b>{legalUnits.length}</b> entreprises correspondent à votre
+                  recherche.
                 </p>
               ) : (
                 <p>
-                  <b>{legalUnits.length}</b> entreprise correspond à votre recherche.
+                  <b>{legalUnits.length}</b> entreprise correspond à votre
+                  recherche.
                 </p>
               )}
-          {
-            legalUnits.map((legalUnit, index) => {
-              return <LegalUnitCard legalUnit={legalUnit} key={index} />;
-            })}
+                                    <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
 
-          </>
-          }
 
+            </>
+          )}
           {error && <ErrorAlert code={error.code} />}
         </Container>
       </section>
