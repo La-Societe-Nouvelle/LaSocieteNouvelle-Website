@@ -35,6 +35,7 @@ function Graph({ indic, unit }) {
 
     let [title, setTitle] = useState('');
     let [serie, setSerie] = useState('');
+let [error, setError] = useState(false);
 
     const fetchData = useCallback(() => {
 
@@ -46,6 +47,20 @@ function Graph({ indic, unit }) {
             .catch((error) => {
                 console.log(error)
             })
+
+            // axios
+            // .get(`https://api.test.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_DIV?area=FRA&code=TOTAL&aggregate=GDP`)
+            // .then((response) => {
+            //   if (response.data.header.code == 200) {
+            //     console.log(response.data);
+            //   } else {
+            //     setError(response.data.header);
+            //   }
+            // })
+            // .catch((error) => {
+            //   console.log(error);
+            // });
+
     }, [indic])
 
     useEffect(() => {

@@ -92,25 +92,25 @@ const CompanyData = () => {
         </title>
       </Helmet>
       <section className="open-data-portal">
-        <Container >
-            {!dataFetched && (
-              <>
-                <h2 className="text-center">
-                  Empreinte Sociétale de l'entreprise <b>#{siren}</b>
-                </h2>
-                <div className="text-center">
-                  <p>Chargement des données... </p>
-                  <div className="dot-pulse m-auto"></div>
-                </div>
-              </>
-            )}
-            {error && <ErrorAlert code={error.code} />}
-            {dataFetched && footprint && (
-              <>
+        <Container>
+          {!dataFetched && (
+            <>
+              <h2 className="text-center">
+                Empreinte Sociétale de l'entreprise <b>#{siren}</b>
+              </h2>
+              <div className="text-center">
+                <p>Chargement des données... </p>
+                <div className="dot-pulse m-auto"></div>
+              </div>
+            </>
+          )}
+          {error && <ErrorAlert code={error.code} />}
+          {dataFetched && footprint && (
+            <>
               <div className="legalUnit">
-
                 <h2 className="text-center">
-                  Empreinte Sociétale de <b>{legalUnit.denominationunitelegale + " #" + siren}</b>
+                  Empreinte Sociétale de{" "}
+                  <b>{legalUnit.denomination + " #" + siren}</b>
                 </h2>
                 <div className="d-flex justify-content-between">
                   <p>
@@ -118,50 +118,53 @@ const CompanyData = () => {
                   </p>
                   <p>
                     <b>Activité principale : </b>
-                    {legalUnit.activiteprincipalelibelle}
+                    {legalUnit.activitePrincipaleLibelle}
                   </p>
                   <p>
                     <b>Siège : </b>{" "}
-                    {legalUnit.codepostaletablissement +
-                      " " +
-                      legalUnit.libellecommuneetablissement}
+                    {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
                   </p>
                 </div>
-                </div>
-                <div className="footprint">
-                  <Nav pills="true" tabs="true" fill>
-                    {Object.entries(views).map(([viewKey, viewValue], _) => (
-                      <NavItem
-                        key={viewKey}
-                        className={viewKey == selectedView ? "selected" : ""}
-                      >
-                        <NavLink onClick={() => setSelectedView(viewKey)}>
-                          {viewValue.name}
-                        </NavLink>
-                      </NavItem>
-                    ))}
-                  </Nav>
-                  <ContentSocialFootprint
-                    views={views}
-                    selectedView={selectedView}
-                    empreinteSocietale={footprint}
-                  />
-                </div>
-              </>
-            )}
-            <p className="text-end">
-              <Button title="Retour au portail" href="/portail" variant="secondary">« Retour </Button>
-            </p>
+              </div>
+              <div className="footprint">
+                <Nav pills="true" tabs="true" fill>
+                  {Object.entries(views).map(([viewKey, viewValue], _) => (
+                    <NavItem
+                      key={viewKey}
+                      className={viewKey == selectedView ? "selected" : ""}
+                    >
+                      <NavLink onClick={() => setSelectedView(viewKey)}>
+                        {viewValue.name}
+                      </NavLink>
+                    </NavItem>
+                  ))}
+                </Nav>
+                <ContentSocialFootprint
+                  views={views}
+                  selectedView={selectedView}
+                  empreinteSocietale={footprint}
+                />
+              </div>
+            </>
+          )}
+          <p className="text-end">
+            <Button
+              title="Retour au portail"
+              href="/portail"
+              variant="secondary"
+            >
+              « Retour{" "}
+            </Button>
+          </p>
         </Container>
-        </section>
+      </section>
     </>
   );
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
 function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
-
-  console.log(empreinteSocietale)
+  console.log(empreinteSocietale);
   const selectedIndicatorDetails = Object.entries(
     views[selectedView].indicators
   ).map(([code, viewWindow], _) => ({
@@ -171,24 +174,28 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
   }));
 
   return (
-      <Row className="indic-details">
-        {selectedIndicatorDetails.map((details) => (
-          <IndicatorDetails key={details.code} {...details} />
-        ))}
-      </Row>
+    <Row className="indic-details">
+      {selectedIndicatorDetails.map(
+        (details) => (
+          console.log(details),
+          (<IndicatorDetails key={details.code} {...details} />)
+        )
+      )}
+    </Row>
   );
 }
 
 /* Basic indicator view */
 function IndicatorDetails({
   code,
-  shortlabel,
+  label,
   source,
   uncertainty,
   year,
   value,
-  unit,
-  labeldeclaredvalue,
+  unitsymbol,
+  flag,
+  info,
 }) {
   const displayedValue = Math.round(10 * value) / 10;
 
@@ -203,21 +210,22 @@ function IndicatorDetails({
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{shortlabel} </h4>
+            <h4 id="indic-view-label">{label} </h4>
           </div>
           <div className="indic-value text-center">
-            <p className={labeldeclaredvalue ? "value" : "value default"}>
-              {Math.round(displayedValue)} {unit}
+            <p className={flag ? "value" : "value default"}>
+              {Math.round(displayedValue)} {unitsymbol}
             </p>
             <p className="incertitude">
               Incertitude : {Math.round(uncertainty)} %
             </p>
           </div>
 
-          <ColumnChart title={shortlabel} performance={displayedValue} />
+          <ColumnChart title={label} performance={displayedValue} />
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
-          <p>Source : {source}</p>
+          {source && <p>Source : {source}</p>}
+
           {year && <p>Dernière mise à jour : {year}</p>}
         </Card.Footer>
       </Card>

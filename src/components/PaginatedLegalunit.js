@@ -57,7 +57,7 @@ const Items = ({ currentItems }) => {
         currentItems.map((legalUnit, index) => (
           <Card className="legalUnitCard" key={index}>
             <Card.Header as="h5">
-              {legalUnit.denominationunitelegale}
+              {legalUnit.denomination}
             </Card.Header>
             <Card.Body>
               <Row className="align-items-center">
@@ -70,15 +70,14 @@ const Items = ({ currentItems }) => {
                     <Col>
                       <h3 className="h6">Activité</h3>
                       <p>
-                        {legalUnit.activiteprincipalelibelle} (
-                        {legalUnit.activiteprincipaleetablissement})
+                        {legalUnit.activitePrincipaleLibelle}
                       </p>
                     </Col>
                     <Col>
                       <h3 className="h6">Domiciliation</h3>
                       <p>
-                        {legalUnit.codepostaletablissement}{" "}
-                        {legalUnit.libellecommuneetablissement}
+                        {legalUnit.codePostalSiege}{" "}
+                        {legalUnit.communeSiege}
                       </p>
                     </Col>
                   </Row>

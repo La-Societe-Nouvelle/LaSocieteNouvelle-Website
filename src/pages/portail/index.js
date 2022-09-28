@@ -38,12 +38,16 @@ const portail = () => {
   const searchLegalUnits = async (search) => {
     if (!/[0-9]{9}/.test(search)) {
       // replace accents
-      let string = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
-      console.log(string);
+      let string = search
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toUpperCase();
+        
       axios
         .get(`https://api.test.lasocietenouvelle.org/legalunit/${string}`)
         .then((response) => {
           if (response.data.header.code == 200) {
+            console.log(response.data);
             setLegalUnits(response.data.legalUnits);
           } else {
             setError(response.data.header);
@@ -59,8 +63,10 @@ const portail = () => {
         )
         .then((response) => {
           if (response.data.header.code == 200) {
-
-            setLegalUnits(legalUnits => [...legalUnits, response.data.legalUnit]);
+            setLegalUnits((legalUnits) => [
+              ...legalUnits,
+              response.data.legalUnit,
+            ]);
           } else {
             setError(response.data.header.code);
           }
@@ -72,8 +78,6 @@ const portail = () => {
 
     setIsLoading(false);
   };
-
-
 
   return (
     <>
@@ -135,7 +139,6 @@ const portail = () => {
           )}
           {legalUnits.length > 0 && (
             <>
-
               {legalUnits.length > 1 ? (
                 <p>
                   <b>{legalUnits.length}</b> entreprises correspondent à votre
@@ -147,9 +150,7 @@ const portail = () => {
                   recherche.
                 </p>
               )}
-                                    <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
-
-
+              <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
             </>
           )}
           {error && <ErrorAlert code={error.code} />}
