@@ -76,13 +76,13 @@ const Home = () => {
             </p>
             <Row>
               <Col lg={4} xs={12} className="mb-2">
-                <Graph indic={"GHG"} unit={"gCO² e"} />
+                <Graph indic={"GHG"} />
               </Col>
               <Col lg={4} xs={12} className="mb-2">
-                <Graph indic={"WAT"} unit={"L"} />
+                <Graph indic={"WAT"}/>
               </Col>
               <Col lg={4} xs={12} className="mb-2">
-                <Graph indic={"NRG"} unit={"KJ"} />
+                <Graph indic={"NRG"}  />
               </Col>
             </Row>
           </Container>

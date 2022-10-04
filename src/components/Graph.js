@@ -31,35 +31,32 @@ ChartJS.register(
 
 
 
-function Graph({ indic, unit }) {
+function Graph({ indic }) {
 
     let [title, setTitle] = useState('');
     let [serie, setSerie] = useState('');
+    let [source, setSource] = useState();
+    let [unit, setUnit] = useState();
 let [error, setError] = useState(false);
 
     const fetchData = useCallback(() => {
 
-        axios.get(`https://systema-api.azurewebsites.net/api/v2/serie?indic=${indic}&area=FRA&flow=GDP`)
+
+            axios
+            .get(`https://api.test.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`)
             .then((response) => {
-                setTitle(response.data.metaData.info);
-                setSerie(response.data.serie);
+              if (response.data.header.code == 200) {
+                setTitle(response.data.meta.label);
+                setSerie(response.data.data);
+                setSource(response.data.meta.source);
+                setUnit(response.data.meta.unitSymbol);
+              } else {
+                setError(response.data.header);
+              }
             })
             .catch((error) => {
-                console.log(error)
-            })
-
-            // axios
-            // .get(`https://api.test.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_DIV?area=FRA&code=TOTAL&aggregate=GDP`)
-            // .then((response) => {
-            //   if (response.data.header.code == 200) {
-            //     console.log(response.data);
-            //   } else {
-            //     setError(response.data.header);
-            //   }
-            // })
-            // .catch((error) => {
-            //   console.log(error);
-            // });
+              console.log(error);
+            });
 
     }, [indic])
 
@@ -92,7 +89,7 @@ let [error, setError] = useState(false);
                 min: 0,
                 title: {
                     display: true,
-                    text: unit + '/€',
+                    text: unit ,
                     padding: 10,
                     font: {
                         size: 12,
@@ -137,7 +134,10 @@ let [error, setError] = useState(false);
             </Card.Body>
             <Card.Footer>
                 <p className="source">
-                    Source : Insee, Eurostat | Traitement : La Société Nouvelle
+                    Source : {source} 
+                </p>
+                <p className="source">
+                     Traitement : La Société Nouvelle
                 </p>
             </Card.Footer>
         </Card>)
