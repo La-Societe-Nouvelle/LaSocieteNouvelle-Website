@@ -14,7 +14,6 @@ import {
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
-/* The base URL of the API */
 import Chart from "chart.js/auto";
 
 import { Bar } from "react-chartjs-2";
@@ -164,7 +163,6 @@ const CompanyData = () => {
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
 function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
-  console.log(empreinteSocietale);
   const selectedIndicatorDetails = Object.entries(
     views[selectedView].indicators
   ).map(([code, viewWindow], _) => ({
@@ -177,7 +175,6 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
     <Row className="indic-details">
       {selectedIndicatorDetails.map(
         (details) => (
-          console.log(details),
           (<IndicatorDetails key={details.code} {...details} />)
         )
       )}

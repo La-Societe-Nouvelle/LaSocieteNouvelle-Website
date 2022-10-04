@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import ErrorAlert from "../../components/Error";
 import PaginatedLegalunit from "../../components/PaginatedLegalunit";
-import PaginatedItems from "../../components/PaginatedLegalunit";
 
 const portail = () => {
   const [search, setSearch] = useState();
@@ -36,45 +35,26 @@ const portail = () => {
   };
 
   const searchLegalUnits = async (search) => {
-    if (!/[0-9]{9}/.test(search)) {
-      // replace accents
-      let string = search
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toUpperCase();
-        
-      axios
-        .get(`https://api.test.lasocietenouvelle.org/legalunit/${string}`)
-        .then((response) => {
-          if (response.data.header.code == 200) {
-            console.log(response.data);
-            setLegalUnits(response.data.legalUnits);
-          } else {
-            setError(response.data.header);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      axios
-        .get(
-          `https://api.test.lasocietenouvelle.org/legalunitFootprint/${search}`
-        )
-        .then((response) => {
-          if (response.data.header.code == 200) {
-            setLegalUnits((legalUnits) => [
-              ...legalUnits,
-              response.data.legalUnit,
-            ]);
-          } else {
-            setError(response.data.header.code);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+    // replace accents
+    let string = search
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase();
+
+    axios
+      .get(
+        `https://api.test.lasocietenouvelle.org/legalunit/${string}`
+      )
+      .then((response) => {
+        if (response.data.header.code == 200) {
+          setLegalUnits(response.data.legalUnits);
+        } else {
+          setError(response.data.header.code);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     setIsLoading(false);
   };
@@ -150,6 +130,7 @@ const portail = () => {
                   recherche.
                 </p>
               )}
+
               <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
             </>
           )}

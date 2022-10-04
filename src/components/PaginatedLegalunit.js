@@ -10,7 +10,6 @@ const PaginatedLegalunit = (props) => {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    console.log("test");
     const endOffset = itemOffset + itemsPerPage;
 
     setCurrentItems(items.slice(itemOffset, endOffset));
