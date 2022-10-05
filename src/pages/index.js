@@ -7,7 +7,8 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/Graph";
 import LatestPosts from "../components/posts/LatestPosts";
 
-const Home = () => {
+const Home = () => 
+{
   return (
     <>
       <Helmet>
