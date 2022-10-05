@@ -13,8 +13,7 @@ const Home = () =>
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Système d'Information national sur les impacts
-          des entreprises{" "}
+          La société Nouvelle | Système d'Information national sur les impacts des entreprises
         </title>
       </Helmet>
       <div className="bloc-statistics py-4 bg-light">
