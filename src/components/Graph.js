@@ -98,20 +98,18 @@ let [error, setError] = useState(false);
             }
         }
     };
-
-    let result = Object.keys(serie).map((key) => [Number(key), serie[key]]);
-
+console.log(serie);
+    //let result = Object.keys(serie).map((key) => [Number(key), serie[key]]);
     let labels = [];
-
-    for (let i = 0; i < result.length; i++) {
-        labels.push(result[i][0]);
-    }
-
     const dataset = [];
 
-    for (let i = 0; i < result.length; i++) {
-        dataset.push(result[i][1].value);
+    for (let i = 0; i < serie.length; i++) {
+        labels.push(serie[i].year);
+        dataset.push(serie[i].value.toFixed(2));
     }
+
+
+
     const data = {
         labels,
         datasets: [

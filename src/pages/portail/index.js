@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useEffect } from "react";
 import { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
@@ -12,7 +11,6 @@ const portail = () => {
   const [legalUnits, setLegalUnits] = useState([]);
   const [error, setError] = useState();
 
-  useEffect(() => {}, []);
 
   const inputChange = (e) => {
     setSearch(e.target.value);
@@ -32,6 +30,7 @@ const portail = () => {
     setError();
     setIsLoading(true);
     await searchLegalUnits(search);
+
   };
 
   const searchLegalUnits = async (search) => {
@@ -41,22 +40,24 @@ const portail = () => {
       .replace(/[\u0300-\u036f]/g, "")
       .toUpperCase();
 
-    axios
+    await axios
       .get(
         `https://api.test.lasocietenouvelle.org/legalunit/${string}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {
           setLegalUnits(response.data.legalUnits);
+          
         } else {
           setError(response.data.header.code);
         }
+        setIsLoading(false);
+
       })
       .catch((error) => {
         console.log(error);
       });
 
-    setIsLoading(false);
   };
 
   return (
@@ -107,18 +108,14 @@ const portail = () => {
               </Col>
             </Row>
           </div>
-          {isLoading && (
-            <section className="results  bg-light">
-              <Container>
+          {isLoading && ( 
                 <div className="alert alert-info text-center">
-                  <p>Recherche en cours </p>
+                  <h4>Recherche en cours </h4>
                   <div className="dot-pulse m-auto"></div>
                 </div>
-              </Container>
-            </section>
           )}
           {legalUnits.length > 0 && (
-            <>
+            <section className="result">
               {legalUnits.length > 1 ? (
                 <p>
                   <b>{legalUnits.length}</b> entreprises correspondent à votre
@@ -132,7 +129,7 @@ const portail = () => {
               )}
 
               <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
-            </>
+            </section>
           )}
           {error && <ErrorAlert code={error.code} />}
         </Container>

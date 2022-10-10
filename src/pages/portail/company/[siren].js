@@ -91,6 +91,7 @@ const CompanyData = () => {
         </title>
       </Helmet>
       <section className="open-data-portal">
+
         <Container>
           {!dataFetched && (
             <>
@@ -173,6 +174,7 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
 
   return (
     <Row className="indic-details">
+   
       {selectedIndicatorDetails.map(
         (details) => (
           (<IndicatorDetails key={details.code} {...details} />)
@@ -185,14 +187,13 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
 /* Basic indicator view */
 function IndicatorDetails({
   code,
-  label,
+  flag,
+  indicatorLabel,
   source,
   uncertainty,
   year,
   value,
-  unitsymbol,
-  flag,
-  info,
+  unitSymbol,
 }) {
   const displayedValue = Math.round(10 * value) / 10;
 
@@ -207,22 +208,24 @@ function IndicatorDetails({
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{label} </h4>
+            <h4 id="indic-view-label">{indicatorLabel} </h4>
           </div>
           <div className="indic-value text-center">
-            <p className={flag ? "value" : "value default"}>
-              {Math.round(displayedValue)} {unitsymbol}
+            <h5 className={flag ? "value" : "value default"}>
+              {Math.round(displayedValue)} {unitSymbol}
+            </h5>
+            <p className="small"> 
+            {flag && flag == 'p' ? <p> : Valeur publiée </p> : <p> Valeur par défaut</p>}
             </p>
             <p className="incertitude">
               Incertitude : {Math.round(uncertainty)} %
             </p>
           </div>
 
-          <ColumnChart title={label} performance={displayedValue} />
+          <ColumnChart title={indicatorLabel} performance={displayedValue} />
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
           {source && <p>Source : {source}</p>}
-
           {year && <p>Dernière mise à jour : {year}</p>}
         </Card.Footer>
       </Card>
