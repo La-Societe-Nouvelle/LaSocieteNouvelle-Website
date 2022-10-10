@@ -12,8 +12,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Système d'Information national sur les impacts
-          des entreprises{" "}
+          La société Nouvelle | Système d'Information national sur les impacts des entreprises 
         </title>
       </Helmet>
       <div className="bloc-statistics py-4 bg-light">
@@ -27,7 +26,7 @@ const Home = () => {
                 alt="eco"
               />
               <p className="text-center">
-                <span className="h1">2054</span> <sup> Mrd €</sup>
+                <span className="h1">2500,9</span> <sup> Mrd €</sup>
               </p>
               <p className="text-center">Production intérieure</p>
             </Col>
@@ -39,7 +38,7 @@ const Home = () => {
                 alt="co²"
               />
               <p className="text-center">
-                <span className="h1">153</span> <sup>gCO₂e/€</sup>
+                <span className="h1">210</span> <sup>gCO₂e/€</sup>
               </p>
               <p className="text-center">
                 Intensité d'émission de gaz à effet de serre
@@ -53,13 +52,15 @@ const Home = () => {
                 alt="Egalité"
               />
               <p className="text-center">
-                <span className="h1">17,9</span> <sup>%</sup>
+                <span className="h1">17,2</span> <sup>%</sup>
               </p>
               <p className="text-center">Ecart de rémunération F/H</p>
             </Col>
+            <p className="source text-end mt-2">* Source : Insee, eurostat, branque mondiale</p>
           </Row>
         </Container>
       </div>
+
       <div className="content">
         <Container>
           <section className="py-5">

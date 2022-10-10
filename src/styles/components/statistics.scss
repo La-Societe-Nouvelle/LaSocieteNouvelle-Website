@@ -12,4 +12,8 @@
     p:last-of-type{
         text-transform: uppercase;
     }
+    p.source {
+        font-size: 0.6rem;
+        text-transform: none;
+    }
 }
