@@ -98,14 +98,14 @@ let [error, setError] = useState(false);
             }
         }
     };
-console.log(serie);
-    //let result = Object.keys(serie).map((key) => [Number(key), serie[key]]);
     let labels = [];
     const dataset = [];
 
     for (let i = 0; i < serie.length; i++) {
-        labels.push(serie[i].year);
-        dataset.push(serie[i].value.toFixed(2));
+        if(serie[i].year != '2021') {
+            labels.push(serie[i].year);
+            dataset.push(serie[i].value.toFixed(2));
+        }
     }
 
 
