@@ -13,10 +13,10 @@ const Home = () =>
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Système d'Information national sur les impacts des entreprises 
+          La Société Nouvelle | Système d'Information national sur les impacts des entreprises 
         </title>
       </Helmet>
-      <div className="bloc-statistics py-4 bg-light">
+      <div className="bloc-statistics pt-5 pb-2 bg-light">
         <Container>
           <Row className="d-flex justify-content-between">
             <Col className="statistic-item" xs={12} lg={4}>
@@ -27,7 +27,7 @@ const Home = () =>
                 alt="eco"
               />
               <p className="text-center">
-                <span className="h1">2500,9</span> <sup> Mrd €</sup>
+                <span className="h1">1733,52</span> <sup> Mrd €</sup>
               </p>
               <p className="text-center">Production intérieure nette</p>
             </Col>
@@ -57,7 +57,7 @@ const Home = () =>
               </p>
               <p className="text-center">Ecart de rémunération F/H</p>
             </Col>
-            <p className="source text-end mt-2">Source : Insee, Eurostat et Banque mondiale</p>
+            <p className="source text-end mt-3">Données estimées par La Société Nouvelle pour l'année 2021 | Sources : Insee, Eurostat et Banque mondiale</p>
           </Row>
         </Container>
       </div>

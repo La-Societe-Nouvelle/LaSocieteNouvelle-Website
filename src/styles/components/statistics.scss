@@ -3,17 +3,18 @@
 
     font-family: 'Raleway';
 
-    .h1 {
-        font-weight: 600a;
-    }
+
     p {
-        color :$primary;
+        font-weight: 600;
+        color : $primary;
     }
     p:last-of-type{
         text-transform: uppercase;
     }
     p.source {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         text-transform: none;
+        font-family: 'Roboto';
+        font-weight: normal;
     }
 }
