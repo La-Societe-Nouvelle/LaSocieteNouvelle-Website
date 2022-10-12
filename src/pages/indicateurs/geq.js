@@ -8,7 +8,7 @@ const geq = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Indice d'Ecart des Rémunérations Femmes/Hommes
+          La Société Nouvelle | Indice d'Ecart des Rémunérations Femmes/Hommes
         </title>
       </Helmet>
       <PageHeader

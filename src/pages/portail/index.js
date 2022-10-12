@@ -64,7 +64,7 @@ const portail = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Portail des empreintes sociétales des
+          La Société Nouvelle | Portail des empreintes sociétales des
           entreprises françaises{" "}
         </title>
       </Helmet>

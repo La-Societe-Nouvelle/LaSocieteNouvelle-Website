@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Nous contacter</title>
+        <title>La Société Nouvelle | Nous contacter</title>
       </Helmet>
       <PageHeader title={"Contactez-nous"} path={"contact"} /> 
       <section>

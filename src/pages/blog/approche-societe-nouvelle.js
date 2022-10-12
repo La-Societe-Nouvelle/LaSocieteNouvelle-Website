@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Vidéo - Pourquoi faire évoluer la comptabilité
+          La Société Nouvelle | Vidéo - Pourquoi faire évoluer la comptabilité
           des entreprises?
         </title>
       </Helmet>

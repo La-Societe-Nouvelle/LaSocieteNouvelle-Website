@@ -8,7 +8,7 @@ const soc = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Contribution aux Acteurs d'Intérêt social
+          La Société Nouvelle | Contribution aux Acteurs d'Intérêt social
         </title>
       </Helmet>
       <PageHeader

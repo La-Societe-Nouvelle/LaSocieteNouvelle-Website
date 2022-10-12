@@ -88,7 +88,7 @@ export default function Home(props) {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Empreinte sociétale</title>
+        <title>La Société Nouvelle | Empreinte sociétale</title>
       </Helmet>
       <PageHeader
         title={"Empreinte sociétale de " + props.uniteLegale.denomination}

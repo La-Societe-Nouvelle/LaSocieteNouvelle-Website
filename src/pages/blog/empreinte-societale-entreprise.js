@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Qu’est-ce que l’Empreinte Sociétale de l’Entreprise ?
+          La Société Nouvelle | Qu’est-ce que l’Empreinte Sociétale de l’Entreprise ?
         </title>
       </Helmet>
       <PageHeader

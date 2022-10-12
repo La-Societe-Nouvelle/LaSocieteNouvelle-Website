@@ -7,7 +7,7 @@ const eco = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Contribution à l'Economie Nationale</title>
+        <title>La Société Nouvelle | Contribution à l'Economie Nationale</title>
       </Helmet>
       <PageHeader
         title="Contribution à l'Economie Nationale"

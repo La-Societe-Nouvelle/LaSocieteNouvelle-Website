@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Fiche méthodologique – Intensité d’émission de
+          La Société Nouvelle | Fiche méthodologique – Intensité d’émission de
           gaz à effet de serre
         </title>
       </Helmet>

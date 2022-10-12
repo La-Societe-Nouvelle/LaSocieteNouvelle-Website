@@ -20,7 +20,7 @@ export default function Home()
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Empreinte sociale de l'entreprise</title>
+        <title>La Société Nouvelle | Empreinte sociale de l'entreprise</title>
       </Helmet>
 
       <main className="main">

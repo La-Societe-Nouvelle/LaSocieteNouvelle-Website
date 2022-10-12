@@ -21,7 +21,7 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Blog </title>
+        <title>La Société Nouvelle | Blog </title>
       </Helmet>
       <PageHeader
         title="Blog"

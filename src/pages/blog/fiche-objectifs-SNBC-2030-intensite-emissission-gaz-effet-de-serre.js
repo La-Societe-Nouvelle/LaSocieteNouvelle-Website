@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Fiche méthodologique – Production des objectifs
+          La Société Nouvelle | Fiche méthodologique – Production des objectifs
           sectoriels 2030 d’intensité d’émission de gaz à effet de serre
           compatibles avec la SNBC
         </title>

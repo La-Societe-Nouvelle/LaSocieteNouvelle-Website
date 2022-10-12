@@ -8,7 +8,7 @@ const art = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Contribution aux Métiers d'art et aux
+          La Société Nouvelle | Contribution aux Métiers d'art et aux
           Savoir-faire
         </title>
       </Helmet>

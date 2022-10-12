@@ -8,7 +8,7 @@ const knw = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Contribution à l'Evolution des Compétences et
+          La Société Nouvelle | Contribution à l'Evolution des Compétences et
           des Connaissances
         </title>
       </Helmet>

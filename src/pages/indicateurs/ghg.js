@@ -8,7 +8,7 @@ const ghg = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Intensité d'Emission de Gaz à Effet de Serre
+          La Société Nouvelle | Intensité d'Emission de Gaz à Effet de Serre
         </title>
       </Helmet>
       <PageHeader

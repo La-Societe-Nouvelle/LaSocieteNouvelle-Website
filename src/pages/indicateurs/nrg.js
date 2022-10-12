@@ -7,7 +7,7 @@ const geq = () => {
   return (
     <>
     <Helmet>
-      <title>La société Nouvelle | Intensité de Consommation d'Energie</title>
+      <title>La Société Nouvelle | Intensité de Consommation d'Energie</title>
     </Helmet>
     <PageHeader
       title="Intensité de Consommation d'Energie"

@@ -9,7 +9,7 @@ export default function Newsletter() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Newsletter</title>
+        <title>La Société Nouvelle | Newsletter</title>
       </Helmet>
       <PageHeader title="Inscription à notre Newsletter" path="newsletter" />
         <Container>

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Liste des indicateurs </title>
+        <title>La Société Nouvelle | Liste des indicateurs </title>
       </Helmet>
       <PageHeader
         title="Panel d'indicateurs"

@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Mesurer, informer, pour une économie durable
+          La Société Nouvelle | Mesurer, informer, pour une économie durable
         </title>
       </Helmet>
       <PageHeader

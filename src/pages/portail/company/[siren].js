@@ -86,7 +86,7 @@ const CompanyData = () => {
     <>
       <Helmet>
         <title>
-          {` Portail La société Nouvelle | Empreinte sociétale de l'entreprise #` +
+          {` Portail La Société Nouvelle | Empreinte sociétale de l'entreprise #` +
             siren}
         </title>
       </Helmet>

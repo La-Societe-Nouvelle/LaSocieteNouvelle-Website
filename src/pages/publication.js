@@ -32,7 +32,7 @@ export default function Home(props) {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Déclaration - Empreinte sociétale </title>
+        <title>La Société Nouvelle | Déclaration - Empreinte sociétale </title>
       </Helmet>
       <PageHeader
         title={"Publier mon empreinte sociétale"}

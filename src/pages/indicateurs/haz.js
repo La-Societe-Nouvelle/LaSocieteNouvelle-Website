@@ -8,7 +8,7 @@ const haz = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Intensité d'Utilisation de produits dangereux{" "}
+          La Société Nouvelle | Intensité d'Utilisation de produits dangereux{" "}
         </title>
       </Helmet>
       <PageHeader

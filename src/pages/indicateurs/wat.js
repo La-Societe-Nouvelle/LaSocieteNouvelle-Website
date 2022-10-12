@@ -7,7 +7,7 @@ const wat = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Intensité de Consommation d'Eau </title>
+        <title>La Société Nouvelle | Intensité de Consommation d'Eau </title>
       </Helmet>
       <PageHeader
         title="Intensité de Consommation d'Eau"

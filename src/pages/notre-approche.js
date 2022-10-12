@@ -18,7 +18,7 @@ const Approche = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Notre approche </title>
+        <title>La Société Nouvelle | Notre approche </title>
       </Helmet>
       <PageHeader title={"Notre approche"} path={"notre-approche"} />
       <section>

@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Fiche méthodologique - La production des données
+          La Société Nouvelle | Fiche méthodologique - La production des données
           par défaut pour les entreprises française
         </title>
       </Helmet>

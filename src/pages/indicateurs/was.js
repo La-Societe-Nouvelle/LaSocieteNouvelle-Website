@@ -7,7 +7,7 @@ const was = () => {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Intensité de Production de Déchets</title>
+        <title>La Société Nouvelle | Intensité de Production de Déchets</title>
       </Helmet>
       <PageHeader
         title="Intensité de Production de Déchets"

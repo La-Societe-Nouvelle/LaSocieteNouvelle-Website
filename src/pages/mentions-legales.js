@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>La société Nouvelle | Mentions légales </title>
+        <title>La Société Nouvelle | Mentions légales </title>
       </Helmet>
       <PageHeader
         title="Mentions légales"

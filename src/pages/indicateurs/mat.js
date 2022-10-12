@@ -7,7 +7,7 @@ const mat = () => {
   return (
     <>
     <Helmet>
-      <title>La société Nouvelle | Intensité d'Extraction de Matières Premières</title>
+      <title>La Société Nouvelle | Intensité d'Extraction de Matières Premières</title>
     </Helmet>
     <PageHeader
       title="Intensité d'Extraction de Matières Premières"

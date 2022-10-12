@@ -9,7 +9,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Pourquoi faut-il mesurer les impacts de la valeur produite des entreprises?
+          La Société Nouvelle | Pourquoi faut-il mesurer les impacts de la valeur produite des entreprises?
         </title>
       </Helmet>
       <PageHeader

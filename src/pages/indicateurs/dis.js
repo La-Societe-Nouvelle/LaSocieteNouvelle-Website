@@ -8,7 +8,7 @@ const dis = () => {
     <>
       <Helmet>
         <title>
-          La société Nouvelle | Indice de Répartition des Rémunérations
+          La Société Nouvelle | Indice de Répartition des Rémunérations
         </title>
       </Helmet>
       <PageHeader
