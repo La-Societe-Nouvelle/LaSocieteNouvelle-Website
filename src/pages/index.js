@@ -29,7 +29,7 @@ const Home = () =>
               <p className="text-center">
                 <span className="h1">2500,9</span> <sup> Mrd €</sup>
               </p>
-              <p className="text-center">Production intérieure</p>
+              <p className="text-center">Production intérieure nette</p>
             </Col>
             <Col className="statistic-item" xs={12} lg={4}>
               <Image
@@ -57,7 +57,7 @@ const Home = () =>
               </p>
               <p className="text-center">Ecart de rémunération F/H</p>
             </Col>
-            <p className="source text-end mt-2">* Source : Insee, eurostat, branque mondiale</p>
+            <p className="source text-end mt-2">Source : Insee, Eurostat et Banque mondiale</p>
           </Row>
         </Container>
       </div>
