@@ -23,7 +23,7 @@ import metaData from "../lib/metaData.json";
 
 import { exportStatementPDF, getBinaryPDF } from "../outputs/statementWriter";
 
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader.js";
 
 /* ---------- MAIN FUNCTION ---------- */
