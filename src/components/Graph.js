@@ -43,7 +43,7 @@ let [error, setError] = useState(false);
 
 
             axios
-            .get(`https://api.test.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`)
+            .get(`https://api.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`)
             .then((response) => {
               if (response.data.header.code == 200) {
                 setTitle(response.data.meta.label);

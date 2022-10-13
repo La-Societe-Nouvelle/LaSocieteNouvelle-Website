@@ -70,7 +70,7 @@ const CompanyData = () => {
 
   async function getData(siren) {
     axios
-      .get(`https://api.test.lasocietenouvelle.org/legalunitFootprint/${siren}`)
+      .get(`https://api.lasocietenouvelle.org/legalunitFootprint/${siren}`)
       .then((response) => {
         isDataFetched(true);
         if (response.data.header.code == 200) {

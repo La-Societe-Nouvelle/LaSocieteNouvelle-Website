@@ -42,7 +42,7 @@ const portail = () => {
 
     await axios
       .get(
-        `https://api.test.lasocietenouvelle.org/legalunit/${string}`
+        `https://api.lasocietenouvelle.org/legalunit/${string}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {
