@@ -323,7 +323,7 @@ const SocialFootprintForm = ({
 }) => {
   const onUpdateProps = (nextProps) =>
     (socialfootprint[nextProps.indic] = nextProps);
-  const onCommit = () => commitSocialFootprint(socialfootprint);
+  const onCommit = () =>{commitSocialFootprint(socialfootprint)};
   const onGoBack = () => goBack();
 
   return (
@@ -468,14 +468,13 @@ export const DeclarantForm = (props) => {
   const changeAutorisation = (event) => setAutorisation(event.target.checked);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
 
     if (price && autorisation && declarant.length > 0) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  });
+  },[price,autorisation,declarant]);
 
   const onCommit = () =>
     props.commitDeclarant(declarant, email, autorisation, price);
