@@ -94,7 +94,7 @@ const Home = () =>
             <Row>
               <Col lg={5}>
                 <h2>
-                  Un base de données ouverte sur les impacts de la production
+                  Une base de données ouverte sur les impacts de la production
                   des entreprises
                 </h2>
                 <p>
