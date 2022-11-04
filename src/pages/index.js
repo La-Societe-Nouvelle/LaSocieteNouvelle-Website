@@ -167,8 +167,7 @@ const Home = () =>
                   <Image src="/images/goals.svg" height={80} />
                   <h3 className="h6">
                     Valoriser ses résultats et être identifié comme une
-                    entreprise engagée pour la{" "}
-                    <strong>transition écologique et sociale</strong>
+                    entreprise engagée pour la <strong>transition écologique et sociale</strong>
                   </h3>
                 </div>
               </Col>
@@ -188,46 +187,67 @@ const Home = () =>
         <section className="partenaires ">
           <Container >
             <h3 className="text-center">Avec le soutien de</h3>
-            <div className="d-flex justify-content-between align-items-center">
-           
+            <Row className="align-items-center">
+              <Col className="text-center" xs={4} lg={2}>
               <a href="https://www.euratechnologies.com/" target="_blank">
-                <Image src="/partners/euratech.svg" alt="Euratech"></Image>
+                <Image  fluid src="/partners/euratech.svg" alt="Euratech"></Image>
               </a>
+              </Col>
+              <Col className="text-center" xs={4} lg={2}>
               <a
                 href="https://www.bpifrance.fr/communaute-du-coq-vert"
                 target="_blank"
               >
-                <Image src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
+                <Image fluid src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
               </a>
+              </Col >
+              <Col className="text-center" xs={4} lg={2}>
               <a href="https://www.impactfrance.eco/" target="_blank">
-                <Image
+                <Image fluid
                   src="/partners/Logo_du_Mouvement_Impact_France.png"
                   alt="Impact France"
                 ></Image>
               </a>
+              </Col>
+              <Col className="text-center" xs={4} lg={2}>
+               
               <a href="https://www.bpifrance.fr/" target="_blank">
-                <Image src="/partners/bpifrance.svg" alt="BPI France" style={{height:"50px"}}></Image>
+                <Image fluid src="/partners/bpifrance.svg" alt="BPI France" style={{height:"50px"}}></Image>
               </a>
+              </Col>
+              <Col className="text-center">
               <a href="https://www.hautsdefrance.fr/" target="_blank">
-                <Image
+                <Image fluid
                   src="/partners/HDF-financementLogo-r.png"
                   alt="Financement Hauts-De-France"
                 ></Image>
               </a>
-              <a href="https://www.economie.gouv.fr/" target="_blank">
-                <Image
-                  src="/partners/ministere_de_l_economie.svg"
-                  alt="Ministère de l'économie "
-                  style={{height:"80px"}}
-                ></Image>
-              </a>
-              <a href="https://www.economie.gouv.fr/" target="_blank">
-                <Image
+              </Col>
+              <Col xs={4} lg={2}>
+              <Row>
+              <Col className="text-center" lg={5} xs={4}> 
+                <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image fluid
                   src="/partners/Logotype-rouge-bleu.png"
                   alt="France 2030"
                 ></Image>
               </a>
-            </div>
+                </Col>
+                <Col className="text-center" lg={7}  xs={8}>
+                <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image fluid
+                  src="/partners/ministere_de_l_economie.svg"
+                  alt="Ministère de l'économie "
+                ></Image>
+              </a>
+                </Col>
+  
+              </Row>
+          
+              </Col>
+
+            </Row>
+          
           </Container>
         </section>
       </div>

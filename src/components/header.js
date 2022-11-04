@@ -90,6 +90,7 @@ const Header = () => {
           <Col xs={12} lg={4} className="d-flex align-items-center py-2">
             <Navbar.Brand href="/">
               <Image
+              fluid
                 src="/logo.svg"
                 height="110"
                 className="d-inline-block align-center"
@@ -98,13 +99,13 @@ const Header = () => {
             </Navbar.Brand>
 
             <div className="logos">
-              <Image src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
+              <Image fluid src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
               <p>
                 Communauté <br /> Coq Vert
               </p>
-            </div>
+            </div> 
             <div className="logos">
-              <Image
+              <Image fluid
                 src="/partners/Logotype-rouge-bleu.png"
                 alt="France 2030"
               ></Image>
