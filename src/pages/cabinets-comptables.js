@@ -18,7 +18,7 @@ const Cabinets = () => {
                 
               </p>
               <p>
-                La pérennité d'une entreprise passe désormais par la prise en compte les défis
+                La pérennité d'une entreprise passe désormais par la prise en compte des défis
                 sociaux et environnementaux. Chaque entreprise se doit de s'assurer que la valeur qu'elle produit est compatible avec la transition vers
                 une économie soutenable.
               </p>
@@ -76,7 +76,7 @@ const Cabinets = () => {
                 <li><i className="bi bi-check2"></i> Une maintenance évolutive</li>
                 <li><i className="bi bi-check2"></i> Un support technique</li>
                 <li><i className="bi bi-check2"></i> Des livrables personnalisés</li>
-                <li><i className="bi bi-check2"></i> Un ajustement de l'outils à vos fichiers internes</li>
+                <li><i className="bi bi-check2"></i> Un ajustement de l'outil à vos fichiers internes</li>
                 <li>...</li>
               </ul>
 
@@ -96,7 +96,7 @@ const Cabinets = () => {
         <Container>
           <h3>Besoin d'une démonstration ? </h3>
           <p>
-            Lors d'une entretien nous vous présenterons l'outil et nous vous proposerons une démonstration personnalisée pour apprendre à utiliser l'outil avec vos données comptables.
+            Lors d'un entretien nous vous présenterons l'outil et nous vous proposerons une démonstration personnalisée pour apprendre à utiliser l'outil avec vos données comptables.
           </p>
           <Button variant="secondary" href='https://calendly.com/sylvain-humiliere/demonstration-application-web' target="_blank" >
             Demander une démonstration

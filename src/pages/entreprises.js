@@ -15,7 +15,7 @@ const Entreprises = () => {
                 Pilotez et valorisez votre performance extra-financière
               </h3>
               <p>
-                Climat, inégalités sociales, raréfaction des ressources naturelles... Les entreprises ont un rôle majeur dans la construction d'une société durable. Il est désormais incontournable pour une entreprise de prendre en compte ses enjeux clefs si elle veut assurer sa pérennité.
+                Climat, inégalités sociales, raréfaction des ressources naturelles... Les entreprises ont un rôle majeur dans la construction d'une société durable. Il est désormais incontournable pour une entreprise de prendre en compte ces enjeux clefs si elle veut assurer sa pérennité.
               </p>
               <p>
                 Mesurer les impacts de sa valeur ajoutée et de sa valeur produite permet d'évaluer sa capacité à produire de la valeur en limitant ses impacts négatifs, 
@@ -62,7 +62,7 @@ const Entreprises = () => {
                   <Image src="images/position-odd.png" alt="Objectifs développement durable" />
                 </div>
                 <h4 className="h6">
-                  Positionnez vous rapport aux objectifs de développement durable
+                  Positionnez vous par rapport aux objectifs de développement durable
                 </h4>
               </div>
             </Col>
@@ -93,7 +93,7 @@ const Entreprises = () => {
               <h3> Principe de calcul</h3>
               <p>
                 Du fait des consommations intermédiaires et de capital fixe, la valeur produite d'une entreprise 
-                fait intervenir celles d’autres entreprises. La mesure des indicateurs fait donc appel aux empreintes 
+                fait intervenir celle d’autres entreprises. La mesure des indicateurs fait donc appel aux empreintes 
                 sociétales des fournisseurs pour estimer les impacts de ces flux sortants.
               </p>
               <p>
@@ -104,8 +104,8 @@ const Entreprises = () => {
                 <li>Les impacts liés aux flux économiques sortants (consommations intermédiaires et consommations de capital fixe) sont obtenus via l'empreinte sociétale des fournisseurs.</li>
               </ul>
               <p>
-                Le modèle permet ainsi de mettre en place une traçabilité le long des chaines de valeurs. L’empreinte sociétale d’une entreprise dépend de celles de ses 
-                fournisseurs et impacte celles de ses clients.
+                Le modèle permet ainsi de mettre en place une traçabilité le long des chaines de valeurs. L’empreinte sociétale d’une entreprise dépend de celle de ses 
+                fournisseurs et impacte celle de ses clients.
               </p>
             </Col>
             <Col>
