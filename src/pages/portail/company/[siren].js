@@ -215,7 +215,7 @@ function IndicatorDetails({
               {Math.round(displayedValue)} {unitSymbol}
             </h5>
             <p className="small"> 
-            {flag && flag == 'p' ? <p> : Valeur publiée </p> : <p> Valeur par défaut</p>}
+            {flag && flag == 'p' ? <p> Valeur publiée </p> : <p> Valeur par défaut</p>}
             </p>
             <p className="incertitude">
               Incertitude : {Math.round(uncertainty)} %
