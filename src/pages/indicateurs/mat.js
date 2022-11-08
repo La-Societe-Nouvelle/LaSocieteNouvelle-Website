@@ -26,7 +26,7 @@ const mat = () => {
               Quantité de matières premières extraite (minerais, fossiles, biomasse) par unité de valeur produite, exprimée en g/€ (en grammes par euro).
               </p>
               <p>
-              L’indicateur informe sur le recours à l’extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure.
+              L’indicateur informe sur le recours à l’extraction de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure.
               L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.
               </p>
 
