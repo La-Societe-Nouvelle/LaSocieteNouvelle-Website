@@ -48,7 +48,7 @@ const API = () => {
                 <i className="bi bi-building"></i>
               </p>
               <p className="text-center">
-                <span className="h1">100</span>
+                <span className="h1">400</span>
               </p>
               <p className="text-center">
                 Entreprises analysées depuis le 1er mars 2022
@@ -59,10 +59,10 @@ const API = () => {
                 <i className="bi bi-arrow-left-right"></i>
               </p>
               <p className="text-center">
-                <span className="h1">35 534</span>
+                <span className="h1">84 435</span>
               </p>
               <p className="text-center">
-              Requêtes reçues* par l’API depuis le 1er janvier 2022
+              Requêtes reçues par l’API depuis le 1er janvier 2022
               </p>
             </Col>
             <Col>
@@ -70,7 +70,7 @@ const API = () => {
               <i className="bi bi-server"></i>
               </p>
               <p className="text-center">
-                <span className="h1">7 931</span> 
+                <span className="h1">15 642</span> 
               </p>
               <p className="text-center">Données publiées</p>
             </Col>
