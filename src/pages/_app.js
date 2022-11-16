@@ -4,6 +4,7 @@ import Head from 'next/head'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 import "../styles/App.scss";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Analytics } from '@vercel/analytics/react';
 
 import { Helmet } from 'react-helmet';
 import Header from '../components/header';
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
       <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
       </Helmet>
       <Header />
+      <Analytics />
       <Component {...pageProps} />
       <Footer />
     </SSRProvider>
