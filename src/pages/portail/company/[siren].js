@@ -60,6 +60,7 @@ const CompanyData = () => {
   const [dataFetched, isDataFetched] = useState(false);
   const [legalUnit, setLegalUnit] = useState();
   const [footprint, setFootprint] = useState();
+  const [meta, setMeta] = useState();
 
   useEffect(() => {
     setSiren(router.query.siren);
@@ -76,6 +77,8 @@ const CompanyData = () => {
         if (response.data.header.code == 200) {
           setLegalUnit(response.data.legalUnit);
           setFootprint(response.data.footprint);
+          setMeta(response.data.metaData);
+          
         } else {
           setError(response.data.header);
         }
@@ -105,7 +108,7 @@ const CompanyData = () => {
             </>
           )}
           {error && <ErrorAlert code={error.code} />}
-          {dataFetched && footprint && (
+          {dataFetched && footprint && meta && (
             <>
               <div className="legalUnit">
                 <h2 className="text-center">
@@ -143,6 +146,7 @@ const CompanyData = () => {
                   views={views}
                   selectedView={selectedView}
                   empreinteSocietale={footprint}
+                  meta={meta}
                 />
               </div>
             </>
@@ -163,18 +167,19 @@ const CompanyData = () => {
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint({ views, selectedView, empreinteSocietale }) {
+function ContentSocialFootprint({ views, selectedView, empreinteSocietale,meta }) {
   const selectedIndicatorDetails = Object.entries(
     views[selectedView].indicators
   ).map(([code, viewWindow], _) => ({
     ...empreinteSocietale[code],
+    ...meta[code],
     viewWindow,
     code,
   }));
 
   return (
     <Row className="indic-details">
-   
+
       {selectedIndicatorDetails.map(
         (details) => (
           (<IndicatorDetails key={details.code} {...details} />)
@@ -212,17 +217,17 @@ function IndicatorDetails({
           </div>
           <div className="indic-value text-center">
             <h5 className={flag ? "value" : "value default"}>
-              {Math.round(displayedValue)} {unitSymbol}
+              {Math.round(displayedValue)} <span className="symbol">{unitSymbol}</span>
             </h5>
             <p className="small"> 
-            {flag && flag == 'p' ? <p> Valeur publiée </p> : <p> Valeur par défaut</p>}
+            {flag && flag == 'p' ? <p> Valeur publiée </p> : <p> Valeur par défaut *</p>}
             </p>
             <p className="incertitude">
               Incertitude : {Math.round(uncertainty)} %
             </p>
           </div>
 
-          <ColumnChart title={indicatorLabel} performance={displayedValue} />
+          <ColumnChart title={indicatorLabel} performance= {Math.round(displayedValue)} />
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
           {source && <p>Source : {source}</p>}
@@ -257,7 +262,7 @@ function ColumnChart({ title, performance }) {
     scales: {
       y: {
         beginAtZero: true,
-        suggestedMax: 100,
+        suggestedMax : 10,
       },
     },
   };

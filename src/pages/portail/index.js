@@ -42,20 +42,24 @@ const portail = () => {
 
     await axios
       .get(
-        `https://api.lasocietenouvelle.org/legalunit/${string}`
+        `https://api.lasocietenouvelle.org/legalunit/${string}`, {timeout : 15000}
       )
       .then((response) => {
         if (response.data.header.code == 200) {
           setLegalUnits(response.data.legalUnits);
           
         } else {
+         
           setError(response.data.header.code);
         }
         setIsLoading(false);
 
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+
+        setError(504);
+        setIsLoading(false);
+
       });
 
   };
@@ -65,7 +69,7 @@ const portail = () => {
       <Helmet>
         <title>
           La Société Nouvelle | Portail des empreintes sociétales des
-          entreprises françaises{" "}
+          entreprises françaises
         </title>
       </Helmet>
       <section className="open-data-portal">
@@ -131,7 +135,7 @@ const portail = () => {
               <PaginatedLegalunit itemsPerPage={10} data={legalUnits} />
             </section>
           )}
-          {error && <ErrorAlert code={error.code} />}
+          {error && <ErrorAlert code={error} />}
         </Container>
       </section>
     </>

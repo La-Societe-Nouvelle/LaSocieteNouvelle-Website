@@ -217,8 +217,7 @@ section {
 
 .alert-info {
   border: 1px solid $light;
-  background-color: lighten($light,2%);
-  font-size: 0.8rem;
+  background-color: #fbfbff;
 
   p, h4 {
     margin-bottom: 1rem;
@@ -321,4 +320,8 @@ section.indic {
   color: #664d03;
   background-color: #fff3cd;
   border-color: #ffecb5;
+}
+
+.symbol {
+  font-size: 1rem;
 }

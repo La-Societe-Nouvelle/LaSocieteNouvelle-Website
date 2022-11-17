@@ -1,7 +1,7 @@
 // portail de données
 .info-section {
   border-top: 1px solid #e9ecef;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -52,9 +52,10 @@
       padding-bottom: 1rem;
       border-bottom:1px solid $light;
       margin-bottom: 2rem;
+      height: 100px;
     }
     .value {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: $primary;
       font-weight: 600;
     }

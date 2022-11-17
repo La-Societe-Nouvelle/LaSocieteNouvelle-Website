@@ -10,11 +10,13 @@ const ErrorAlert = (props) => {
     case 500:
       message =
         "Erreur lors de la récupération des informations. Veuillez réessayer plus tard.";
-
+    case 504:
+      message =
+        "Recherche imprécise. Veuillez affiner votre recherche.";
     default:
       break;
   }
-  return <Alert variant="warning">{message}</Alert>;
+  return <Alert variant="info"><p className="mb-0">{message}</p></Alert>;
 };
 
 export default ErrorAlert;
