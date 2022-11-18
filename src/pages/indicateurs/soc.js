@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const soc = () => {
@@ -53,7 +54,7 @@ const soc = () => {
                 concernant les modes de consommation et de production durables
                 avec la participation de tous les pays, les pays développés
                 montrant l’exemple en la matière, compte tenu du degré de
-                développement et des capacités des pays en développement.{" "}
+                développement et des capacités des pays en développement.
               </p>
               <p>
                 12.6 : Encourager les entreprises, en particulier les grandes et
@@ -92,7 +93,7 @@ const soc = () => {
             </li>
             <li>
               <a href="https://www.economie.gouv.fr/cedef/societe-mission">
-                {" "}
+                
                 Que sont les sociétés à mission ?
               </a>
             </li>
@@ -104,7 +105,7 @@ const soc = () => {
             <li>Agrément ESUS (Entreprise Solidaire d'Utilité Sociale) </li>
             <li>
               Entreprise à mission / Raison d’être inscrite dans les statuts de
-              l’entreprise{" "}
+              l’entreprise
             </li>
           </ul>
 
@@ -146,6 +147,11 @@ const soc = () => {
           <p>
             L'intervalle de confiance est de 100% pour les données sectorielles et entre 50% et 100% pour les données affectées aux unités légales.
           </p>
+          <DownloadFile
+            year={"2015"}
+            file={"SOC-donnees-branches-2015"}
+            title={"Contribution aux Acteurs d'Intérêt social"}
+          />
         </Container>
       </section>
       <section className="info-supp">
@@ -154,7 +160,7 @@ const soc = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de l’Economie, des Finances et de la Relance -{" "}
+              Ministère de l’Economie, des Finances et de la Relance -
               <a href="https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises">
                 Redéfinir la raison d'être des entreprises
               </a>

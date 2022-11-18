@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const geq = () => {
@@ -8,11 +9,11 @@ const geq = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Indice d'Ecart des Rémunérations Femmes/Hommes
+          La Société Nouvelle | Indice d'écart de rémunérations Femmes/Hommes
         </title>
       </Helmet>
       <PageHeader
-        title="Indice d'Ecart des Rémunérations Femmes/Hommes"
+        title="Indice d'écart de rémunérations Femmes/Hommes"
         prev={"indicateur"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/geq"}
@@ -124,6 +125,11 @@ const geq = () => {
           <p>
             L’intervalle de confiance est de 50 %.
           </p>
+          <DownloadFile
+            year={"2018"}
+            file={"GEQ-donnees-branches-2018"}
+            title={"Indice d'écart de rémunérations Femmes/Hommes"}
+          />
         </Container>
       </section>
       <section className="info-supp">

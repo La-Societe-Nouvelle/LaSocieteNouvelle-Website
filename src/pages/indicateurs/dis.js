@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const dis = () => {
@@ -8,11 +9,11 @@ const dis = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Indice de Répartition des Rémunérations
+          La Société Nouvelle | Indice de répartition des rémunérations
         </title>
       </Helmet>
       <PageHeader
-        title="Indice de Répartition des Rémunérations"
+        title="Indice de répartition des rémunérations"
         prev={"indicateur"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/dis"}
@@ -106,6 +107,11 @@ const dis = () => {
           <p>
             L’intervalle de confiance est de 50 %.
           </p>
+          <DownloadFile
+            year={"2018"}
+            file={"DIS-donnees-branches-2018"}
+            title={"Indice de répartition des rémunérations"}
+          />
         </Container>
       </section>
       <section className="info-supp">

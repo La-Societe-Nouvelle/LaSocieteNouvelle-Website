@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
+import DownloadFile from '../../components/indic/DownloadFile';
 import PageHeader from '../../components/PageHeader'
 
 const geq = () => {
@@ -100,6 +101,11 @@ const geq = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
+          <DownloadFile
+                year={"2018"}
+                file={"NRG-donnees-branches-2018"}
+                title={"Intensité de Consommation d'Energie"}
+              />
         </Container>
       </section>
       <section className="info-supp">

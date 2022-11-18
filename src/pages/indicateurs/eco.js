@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const eco = () => {
@@ -131,7 +132,11 @@ const eco = () => {
           <p>
             L'intervalle de confiance est de 75% pour les données sectorielles et les données affectées aux unités légales.
           </p>
-
+          <DownloadFile
+            year={"2018"}
+            file={"ECO-donnees-branches-2018"}
+            title={"Contribution à l'Economie Nationale"}
+          />
         </Container>
       </section>
       <section className="info-supp">

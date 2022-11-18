@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const was = () => {
@@ -85,7 +86,7 @@ const was = () => {
               <p>
               15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux.
               </p>
-         
+
             </Col>
           </Row>
         </Container>
@@ -125,6 +126,11 @@ const was = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
+          <DownloadFile
+                year={"2018"}
+                file={"WAS-donnees-branches-2018"}
+                title={"Intensité de Production de Déchets"}
+              />
         </Container>
       </section>
       <section className="info-supp">

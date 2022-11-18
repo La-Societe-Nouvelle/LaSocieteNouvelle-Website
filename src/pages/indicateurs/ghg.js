@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const ghg = () => {
@@ -8,11 +9,11 @@ const ghg = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Intensité d'Emission de Gaz à Effet de Serre
+          La Société Nouvelle | Intensité d'Emission de Gaz à effet de serre
         </title>
       </Helmet>
       <PageHeader
-        title="Intensité d'Emission de Gaz à Effet de Serre"
+        title="Intensité d'Emission de Gaz à effet de serre"
         prev={"indicateur"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/ghg"}
@@ -134,6 +135,11 @@ const ghg = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
+          <DownloadFile
+            year={"2018"}
+            file={"GHG-donnees-branches-2018"}
+            title={"Intensité d'Emission de Gaz à effet de serre"}
+          />
         </Container>
       </section>
       <section className="info-supp">

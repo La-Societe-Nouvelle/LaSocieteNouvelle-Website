@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const haz = () => {
@@ -8,11 +9,11 @@ const haz = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Intensité d'Utilisation de produits dangereux{" "}
+          La Société Nouvelle | Intensité d'Utilisation de Produits dangereux
         </title>
       </Helmet>
       <PageHeader
-        title="Intensité d'Utilisation de produits dangereux"
+        title="Intensité d'Utilisation de Produits dangereux"
         prev={"indicateur"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/haz"}
@@ -124,6 +125,7 @@ const haz = () => {
             les impacts indirects liés aux consommations et aux amortissements,
             obtenus à partir des données des entreprises sollicitées.
           </p>
+
         </Container>
       </section>
       <section className="pb-0">
@@ -135,6 +137,11 @@ const haz = () => {
           <p>
             Du fait de l'absence de données macro-économiques sectorielles, l’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.{" "}
           </p>
+          <DownloadFile
+            year={"2018"}
+            file={"HAZ-donnees-branches-2018"}
+            title={"Intensité d'Utilisation de Produits dangereux"}
+          />
         </Container>
       </section>
       <section className="info-supp">

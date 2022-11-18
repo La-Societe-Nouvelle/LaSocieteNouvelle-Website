@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const art = () => {
@@ -23,8 +24,8 @@ const art = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/art.svg" height="80" className="mb-3"/>
-        
+              <Image src="/ESE/art.svg" height="80" className="mb-3" />
+
               <p>
                 Part de la valeur produite par des entreprises artisanales,
                 créatives ou dont le savoir-faire est reconnu ; exprimée en %
@@ -36,12 +37,17 @@ const art = () => {
               <p>
                 <b>Code : </b> ART
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-art" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-art"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
             <Col className="odd">
-              <h3 >Objectifs de développement durable</h3>
+              <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
                 src="/images/odd/odd_art.png"
@@ -58,7 +64,6 @@ const art = () => {
                 9.2 : Promouvoir une industrialisation durable qui profite à
                 tous .
               </p>
-        
             </Col>
           </Row>
         </Container>
@@ -97,32 +102,51 @@ const art = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale et 
-            l’inscription de l’activité principale de leur(s) établissement(s) au registre des métiers, disponibles 
-            au sein du répertoire SIRENE.
+            Les valeurs par défaut affectées aux unités légales s’appuient sur
+            leur activité principale et l’inscription de l’activité principale
+            de leur(s) établissement(s) au registre des métiers, disponibles au
+            sein du répertoire SIRENE.
           </p>
-          <p>
-          Le calcul prend en compte :
-          </p>
+          <p>Le calcul prend en compte :</p>
           <ul>
-            <li>Le taux de valeur ajoutée et le taux de contribution aux métiers d’art et aux savoir-faire des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
-            <li>Le taux d’inscription des activités des établissements au registre des métiers, assimilé au taux de contribution aux métiers d’art et aux savoir-faire de la valeur ajoutée de l’unité légale (ex. 10% si pour 10% des établissements actifs, l’activité est inscrite au registre des métiers).</li>
+            <li>
+              Le taux de valeur ajoutée et le taux de contribution aux métiers
+              d’art et aux savoir-faire des consommations intermédiaires de la
+              division économique à laquelle l’unité légale appartient ;
+            </li>
+            <li>
+              Le taux d’inscription des activités des établissements au registre
+              des métiers, assimilé au taux de contribution aux métiers d’art et
+              aux savoir-faire de la valeur ajoutée de l’unité légale (ex. 10%
+              si pour 10% des établissements actifs, l’activité est inscrite au
+              registre des métiers).
+            </li>
           </ul>
           <p>
-            Pour les données par défaut génériques, les valeurs correspondent au taux de contribution aux métiers d’arts 
-            et aux savoir-faire de la production des divisions économiques (x88).
+            Pour les données par défaut génériques, les valeurs correspondent au
+            taux de contribution aux métiers d’arts et aux savoir-faire de la
+            production des divisions économiques (x88).
           </p>
           <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données de la DGE (Direction Générales des Entreprises) sur l’Artisanat, 
-            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre 
-            les branches d’activités et des volumes des importations par produits.
+            Les données macro-économiques à l’échelle des divisions sont
+            obtenues à partir des données de la DGE (Direction Générales des
+            Entreprises) sur l’Artisanat, des comptes de production des
+            divisions économiques, des modélisations des flux de consommations
+            et de produits entre les branches d’activités et des volumes des
+            importations par produits.
           </p>
           <p>
             Pour les espaces économiques hors France, les valeurs sont nulles.
           </p>
           <p>
-            L'intervalle de confiance est de 75% pour les données sectorielles et de 50% pour les données affectées aux unités légales.
+            L'intervalle de confiance est de 75% pour les données sectorielles
+            et de 50% pour les données affectées aux unités légales.
           </p>
+          <DownloadFile
+            year={"2015"}
+            file={"ART-donnees-branches-2015"}
+            title={"Contribution aux Métiers d'Art et aux Savoir-Faire"}
+          />
         </Container>
       </section>
       <section className="info-supp">
@@ -131,13 +155,13 @@ const art = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Direction Générale des Entreprises -{" "}
+              Direction Générale des Entreprises -
               <a href="https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat">
-                Rapport de la DGE{" "}
+                Rapport de la DGE
               </a>
             </li>
             <li>
-              Ministère de l’Economie, des Finances et de la Relance -{" "}
+              Ministère de l’Economie, des Finances et de la Relance -
               <a href="https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire">
                 Labels et reconnaissance de savoir-faire
               </a>
