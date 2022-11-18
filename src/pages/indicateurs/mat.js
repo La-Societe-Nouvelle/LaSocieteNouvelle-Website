@@ -1,16 +1,17 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from '../../components/PageHeader'
 
 const mat = () => {
   return (
     <>
     <Helmet>
-      <title>La Société Nouvelle | Intensité d'Extraction de Matières Premières</title>
+      <title>La Société Nouvelle | Intensité d'Extraction de Matières premières</title>
     </Helmet>
     <PageHeader
-      title="Intensité d'Extraction de Matières Premières"
+      title="Intensité d'Extraction de Matières premières"
       prev={"indicateur"}
       prevTitle={"Liste des indicateurs"}
       path={"indicateur/mat"}
@@ -101,6 +102,11 @@ const mat = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
+          <DownloadFile
+            year={"2018"}
+            file={"MAT-donnees-branches-2018"}
+            title={"Intensité d'Extraction de Matières premières"}
+          />
         </Container>
       </section>
       <section className="info-supp">

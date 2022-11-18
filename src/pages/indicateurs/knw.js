@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet"; 
+import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
 
 const knw = () => {
@@ -13,7 +14,7 @@ const knw = () => {
         </title>
       </Helmet>
       <PageHeader
-        title="Contribution à l'Evolution des Compétences et des Connaissances"
+        title="Contribution à l'Evolution des compétences et des connaissances"
         prev={"indicateur"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/knw"}
@@ -119,7 +120,11 @@ const knw = () => {
           <p>
             L’intervalle de confiance se situe aux alentours de 500 % pour les valeurs associées aux unités légales.
           </p>
-
+          <DownloadFile
+            year={"2015"}
+            file={"KNW-donnees-branches-2015"}
+            title={"Contribution à l'Evolution des compétences et des connaissances"}
+          />
         </Container>
       </section>
       <section className="info-supp">
