@@ -14,7 +14,7 @@ const geq = () => {
       </Helmet>
       <PageHeader
         title="Indice d'écart de rémunérations Femmes/Hommes"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/geq"}
       />

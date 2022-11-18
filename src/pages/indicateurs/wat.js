@@ -12,7 +12,7 @@ const wat = () => {
       </Helmet>
       <PageHeader
         title="Intensité de Consommation d'Eau"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/wat"}
       />

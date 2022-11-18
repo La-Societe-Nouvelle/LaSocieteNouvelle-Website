@@ -12,7 +12,7 @@ const eco = () => {
       </Helmet>
       <PageHeader
         title="Contribution à l'Economie Nationale"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/eco"}
       />

@@ -14,7 +14,7 @@ const haz = () => {
       </Helmet>
       <PageHeader
         title="Intensité d'Utilisation de Produits dangereux"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/haz"}
       />

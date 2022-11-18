@@ -15,7 +15,7 @@ const knw = () => {
       </Helmet>
       <PageHeader
         title="Contribution à l'Evolution des compétences et des connaissances"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/knw"}
       />

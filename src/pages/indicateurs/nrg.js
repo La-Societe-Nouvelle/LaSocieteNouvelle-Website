@@ -12,7 +12,7 @@ const geq = () => {
     </Helmet>
     <PageHeader
       title="Intensité de Consommation d'Energie"
-      prev={"indicateur"}
+      prev={"indicateurs"}
       prevTitle={"Liste des indicateurs"}
       path={"indicateur/geq"}
     />

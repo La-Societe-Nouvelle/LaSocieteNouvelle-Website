@@ -15,7 +15,7 @@ const art = () => {
       </Helmet>
       <PageHeader
         title="Contribution aux Métiers d'art et aux Savoir-faire"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/art"}
       />

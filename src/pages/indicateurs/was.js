@@ -12,7 +12,7 @@ const was = () => {
       </Helmet>
       <PageHeader
         title="Intensité de Production de Déchets"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/was"}
       />

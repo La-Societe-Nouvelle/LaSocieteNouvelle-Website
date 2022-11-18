@@ -12,7 +12,7 @@ const mat = () => {
     </Helmet>
     <PageHeader
       title="Intensité d'Extraction de Matières premières"
-      prev={"indicateur"}
+      prev={"indicateurs"}
       prevTitle={"Liste des indicateurs"}
       path={"indicateur/mat"}
     />

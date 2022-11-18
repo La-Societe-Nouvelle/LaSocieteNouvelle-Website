@@ -14,7 +14,7 @@ const soc = () => {
       </Helmet>
       <PageHeader
         title="Contribution aux Acteurs d'Intérêt social"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/soc"}
       />

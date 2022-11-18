@@ -14,7 +14,7 @@ const ghg = () => {
       </Helmet>
       <PageHeader
         title="Intensité d'Emission de Gaz à effet de serre"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/ghg"}
       />

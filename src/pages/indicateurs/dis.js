@@ -14,7 +14,7 @@ const dis = () => {
       </Helmet>
       <PageHeader
         title="Indice de répartition des rémunérations"
-        prev={"indicateur"}
+        prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateur/dis"}
       />
