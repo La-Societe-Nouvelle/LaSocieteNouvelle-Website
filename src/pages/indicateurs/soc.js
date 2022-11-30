@@ -133,7 +133,7 @@ const soc = () => {
           </p>
           <ul>
             <li>Le taux de valeur ajoutée et le taux de contribution aux acteurs d’intérêt social des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
-            <li>L’appartenance de l’unité légale à l’ESS : le taux de contribution aux acteurs d’intérêt social pour la valeur ajoutée sera de 100% si l’unité légale appartient à l’ESS et de 0% la cas contraire.</li>
+            <li>L’appartenance de l’unité légale à l’ESS : le taux de contribution aux acteurs d’intérêt social pour la valeur ajoutée sera de 100% si l’unité légale appartient à l’ESS et de 0% le cas contraire.</li>
           </ul>
           <p>
             Pour les données par défaut génériques, les valeurs correspondent au taux de contribution aux acteurs d’intérêt social de la production des divisions économiques (x88). 

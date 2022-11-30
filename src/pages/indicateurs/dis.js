@@ -95,7 +95,7 @@ const dis = () => {
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale, leur tranche d'effectifs et l'indice de GINI des revenus disponibles en France.
+            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale, leur tranche d'effectif et l'indice de GINI des revenus disponibles en France.
           </p>
           <p>
            Pour les unités légales ayant plus de deux employés, la valeur correspond à l'indice de GINI des revenus disponibles en France.

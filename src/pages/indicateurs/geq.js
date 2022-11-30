@@ -9,11 +9,11 @@ const geq = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Indice d'écart de rémunérations Femmes/Hommes
+          La Société Nouvelle | Indice d'écart de rémunération Femmes/Hommes
         </title>
       </Helmet>
       <PageHeader
-        title="Indice d'écart de rémunérations Femmes/Hommes"
+        title="Indice d'écart de rémunération Femmes/Hommes"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
         path={"indicateurs/geq"}
@@ -34,7 +34,7 @@ const geq = () => {
                 L’indicateur informe sur les écarts de salaires entre les femmes
                 et les hommes au sein des entreprises ayant contribué à la
                 production de la valeur. Il vise à encourager les actions en
-                faveur de la réduction de l'écart de rémunérations entre les
+                faveur de la réduction de l'écart de rémunération entre les
                 femmes/hommes ; en 2017 cet écart était de 16.8 % dans le
                 secteur privé (
                 <a href="https://www.insee.fr/fr/statistiques/4514861#figure3_radio1">
@@ -89,8 +89,8 @@ const geq = () => {
         <Container>
           <h3>Impact direct mesuré</h3>
           <p>
-            <b>Grandeur mesurée : </b>Ecart absolu entre le taux horaires moyens
-            bruts des femmes et celui des hommes, en pourcentage du taux horaire
+            <b>Grandeur mesurée : </b>Ecart absolu entre le taux horaires moyen
+            brut des femmes et celui des hommes, en pourcentage du taux horaire
             brut moyen
           </p>
 
@@ -109,14 +109,14 @@ const geq = () => {
             Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale et leur tranche d'effectifs.
           </p>
           <p>
-            Pour les unités légales ayant plus de deux employés, la valeur correspond à l'écart de rémunérations F/H relatif à la production de la division économique à laquelle l'unité légale appartient.
+            Pour les unités légales ayant plus de deux employés, la valeur correspond à l'écart de rémunération F/H relatif à la production de la division économique à laquelle l'unité légale appartient.
           </p>
           <p>
-            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée et l'écart de rémunérations F/H relatif aux consommations intermédiaires de la division économique à laquelle l'unité légale appartient.
-            L'écart de rémunérations F/H relatif à la valeur ajoutée nette de l'unité légale est égal à 0%.
+            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée et l'écart de rémunération F/H relatif aux consommations intermédiaires de la division économique à laquelle l'unité légale appartient.
+            L'écart de rémunération F/H relatif à la valeur ajoutée nette de l'unité légale est égal à 0%.
           </p>
           <p>
-            Pour les données par défaut génériques, les valeurs correspondent aux écarts de rémunérations F/H relatifs à la production des divisions économiques (x88).  
+            Pour les données par défaut génériques, les valeurs correspondent aux écarts de rémunération F/H relatifs à la production des divisions économiques (x88).  
           </p>
           <p>
             Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux salaires horaires, des comptes de production des divisions économiques, 
@@ -128,7 +128,7 @@ const geq = () => {
           <DownloadFile
             year={"2018"}
             file={"GEQ-donnees-branches-2018"}
-            title={"Indice d'écart de rémunérations Femmes/Hommes"}
+            title={"Indice d'écart de rémunération Femmes/Hommes"}
           />
         </Container>
       </section>
