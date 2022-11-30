@@ -16,7 +16,7 @@ const geq = () => {
         title="Indice d'écart de rémunérations Femmes/Hommes"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/geq"}
+        path={"indicateurs/geq"}
       />
       <section>
         <Container>

@@ -36,7 +36,7 @@ export default function Home(props) {
       </Helmet>
       <PageHeader
         title={"Publier mon empreinte sociétale"}
-        path={"/publication"}
+        path={"publication"}
       />
       <Container>
         <section className="report-form">

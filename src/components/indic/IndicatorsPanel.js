@@ -31,9 +31,11 @@ const IndicatorsPanel = (props) => {
             <Accordion.Body>
               <div className="d-flex mb-5 align-items-center">
                 <div className="me-2">
-                  <Image
-                    src={"/ESE/" + selectedIndic + ".png"}
-                    alt=""
+                  <Image 
+                                        width="50px"
+
+                    src={"/ESE/icon-ese-bleues/" + selectedIndic + ".svg"}
+                    alt={selectedIndic}
                   />
                 </div>
                 <div className="icons-odd ">
@@ -49,7 +51,7 @@ const IndicatorsPanel = (props) => {
                       }
                       id={"icon-odd-" + odd}
                       src={"/images/icon-odd-" + odd + ".png"}
-                      width="50px"
+                      width="30px"
                       alt="icon-odd"
                     />
                   ))}

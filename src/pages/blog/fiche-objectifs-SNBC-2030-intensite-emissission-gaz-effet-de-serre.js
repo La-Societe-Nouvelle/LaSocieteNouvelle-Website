@@ -19,7 +19,7 @@ const Post = () => {
         prev={"blog"}
         prevTitle={"blog"}
         path={
-          "blog/fiche-objectifs-SNBC-2030-intensité-emissission-gaz-effet-de-serre"
+          "blog/fiche-objectifs-SNBC-2030-intensite-emissission-gaz-effet-de-serre"
         }
       />
       <Container>

@@ -16,7 +16,7 @@ const soc = () => {
         title="Contribution aux Acteurs d'Intérêt social"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/soc"}
+        path={"indicateurs/soc"}
       />
       <section>
         <Container>

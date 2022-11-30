@@ -17,7 +17,7 @@ const art = () => {
         title="Contribution aux Métiers d'art et aux Savoir-faire"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/art"}
+        path={"indicateurs/art"}
       />
       <section>
         <Container>

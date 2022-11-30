@@ -16,7 +16,7 @@ const dis = () => {
         title="Indice de répartition des rémunérations"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/dis"}
+        path={"indicateurs/dis"}
       />
       <section>
         <Container>

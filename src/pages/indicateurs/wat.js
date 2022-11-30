@@ -14,7 +14,7 @@ const wat = () => {
         title="Intensité de Consommation d'Eau"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/wat"}
+        path={"indicateurs/wat"}
       />
       <section>
         <Container>

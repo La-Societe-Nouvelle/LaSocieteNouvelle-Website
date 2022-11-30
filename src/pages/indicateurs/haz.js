@@ -16,7 +16,7 @@ const haz = () => {
         title="Intensité d'Utilisation de Produits dangereux"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/haz"}
+        path={"indicateurs/haz"}
       />
       <section>
         <Container>

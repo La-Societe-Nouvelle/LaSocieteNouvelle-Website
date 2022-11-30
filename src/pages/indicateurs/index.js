@@ -18,7 +18,7 @@ export default function Home() {
         title="Panel d'indicateurs"
         prev={"notre-approche"}
         prevTitle={"Méthodologie"}
-        path={"indicateur/"}
+        path={"indicateurs/"}
       />
 
       <section className="indic">

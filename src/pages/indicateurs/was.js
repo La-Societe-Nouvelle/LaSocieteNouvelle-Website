@@ -14,7 +14,7 @@ const was = () => {
         title="Intensité de Production de Déchets"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/was"}
+        path={"indicateurs/was"}
       />
       <section>
         <Container>

@@ -14,7 +14,7 @@ const mat = () => {
       title="Intensité d'Extraction de Matières premières"
       prev={"indicateurs"}
       prevTitle={"Liste des indicateurs"}
-      path={"indicateur/mat"}
+      path={"indicateurs/mat"}
     />
       <section>
         <Container>

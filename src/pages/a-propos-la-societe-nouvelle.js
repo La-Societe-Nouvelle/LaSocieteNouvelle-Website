@@ -5,7 +5,7 @@ import PageHeader from "../components/PageHeader";
 const About = () => {
   return (
     <>
-      <PageHeader title={"La Société Nouvelle"} path={"la-societe-nouvelle"} />
+      <PageHeader title={"La Société Nouvelle"} path={"a-propos-la-societe-nouvelle"} />
       <section>
         <Container>
           <Row>

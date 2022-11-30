@@ -17,7 +17,7 @@ const knw = () => {
         title="Contribution à l'Evolution des compétences et des connaissances"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/knw"}
+        path={"indicateurs/knw"}
       />
       <section>
         <Container>

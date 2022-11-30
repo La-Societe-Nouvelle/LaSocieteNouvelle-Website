@@ -16,7 +16,7 @@ const ghg = () => {
         title="Intensité d'Emission de Gaz à effet de serre"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/ghg"}
+        path={"indicateurs/ghg"}
       />
       <section>
         <Container>

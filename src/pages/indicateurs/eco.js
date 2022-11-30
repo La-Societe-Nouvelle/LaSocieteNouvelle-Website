@@ -14,7 +14,7 @@ const eco = () => {
         title="Contribution à l'Economie Nationale"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateur/eco"}
+        path={"indicateurs/eco"}
       />
       <section>
         <Container>

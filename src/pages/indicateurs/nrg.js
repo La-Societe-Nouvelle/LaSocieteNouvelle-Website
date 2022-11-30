@@ -14,7 +14,7 @@ const geq = () => {
       title="Intensité de Consommation d'Energie"
       prev={"indicateurs"}
       prevTitle={"Liste des indicateurs"}
-      path={"indicateur/geq"}
+      path={"indicateurs/geq"}
     />
       <section>
         <Container>
