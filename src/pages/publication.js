@@ -9,10 +9,6 @@ import {
   sendStatementToDeclarant,
 } from "./api/mail-api.js";
 
-/* The base URL of the API */
-/* TODO: Must be exteriorized in a build variable */
-const apiBaseUrl = "https://systema-api.azurewebsites.net/api/v2";
-
 /* Defines every possible views. Each key is a view.
    Each value contains:
    - the name of the view.
@@ -25,6 +21,7 @@ import { exportStatementPDF, getBinaryPDF } from "../outputs/statementWriter";
 
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader.js";
+import axios from "axios";
 
 /* ---------- MAIN FUNCTION ---------- */
 
@@ -179,23 +176,29 @@ class Form extends React.Component {
 const LegalForm = (props) => {
   const [siren, setSiren] = useState(props.siren);
   const onSirenChange = (event) => setSiren(event.target.value);
-
+  const [error,setError] = useState(false);
   const [denomination, setDenomination] = useState(props.denomination);
   const onDenominationChange = (event) => setDenomination(event.target.value);
 
   const handleOnBlur = async () => {
-    // fetch denomination
-    try {
-      const endpoint = `${apiBaseUrl}/siren/${siren}`;
-      const response = await fetch(endpoint, { method: "get" });
-      const data = await response.json();
 
-      if (data.header.statut === 200) {
-        setDenomination(data.profil.descriptionUniteLegale.denomination);
-      }
-    } catch (error) {
-      throw error;
+    if(/^[0-9]{9}$/.test(siren)) {
+      axios
+      .get(`https://api.lasocietenouvelle.org/legalunit/${siren}`)
+      .then((response) => {
+        if (response.data.header.code == 200) {
+          setDenomination(response.data.legalUnits[0].denomination);
+          setError(false)
+        } else {
+          setError(true);
+        }
+      });
     }
+    else{
+      setError(true)
+    }
+
+
   };
 
   const [year, setYear] = useState(props.year);
@@ -247,6 +250,8 @@ const LegalForm = (props) => {
               onChange={onSirenChange}
               onBlur={handleOnBlur}
             />
+                      {error && <p className="small text-secondary mb-0">Numéro de siren incorrect</p>}
+
           </div>
         </div>
         <div className="mb-3 row">
