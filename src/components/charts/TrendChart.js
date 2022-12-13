@@ -227,7 +227,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
       const data = {
         datasets: [
           {
-            label: "Tendance de la codee",
+            label: "Tendance de la branche",
             data: trendsData,
             borderColor: "rgb(255, 182, 66)",
             backgroundColor: "rgb(255, 182, 66)",
@@ -253,7 +253,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
         }));
 
         data.datasets.push({
-          label: "Objectif de la codee",
+          label: "Objectif de la branche",
           data: targetData,
           skipNull: true,
           borderColor: "rgb(255, 238, 200)",
