@@ -4,7 +4,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import Graph from "../components/Graph";
+import Graph from "../components/charts/Graph";
 import LatestPosts from "../components/posts/LatestPosts";
 
 const Home = () => 
@@ -69,8 +69,8 @@ const Home = () =>
             <LatestPosts />
           </section>
         </Container>
-        <section className="text-center graph-section">
-          <Container>
+        <section className="text-center graph-section ">
+          <Container >
             <h2>Suivis macro-économiques</h2>
             <p>
               Indicateurs clefs relatifs à l'empreinte sociale et
