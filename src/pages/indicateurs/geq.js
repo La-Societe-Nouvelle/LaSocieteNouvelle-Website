@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import DownloadFile from "../../components/indic/DownloadFile";
+import TrendsChartBox from "../../components/indic/TrendsChartBox";
 import PageHeader from "../../components/PageHeader";
 
 const geq = () => {
@@ -102,7 +103,7 @@ const geq = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section >
         <Container>
           <h3>Données par défaut</h3>
           <p>
@@ -125,14 +126,19 @@ const geq = () => {
           <p>
             L’intervalle de confiance est de 50 %.
           </p>
-          <DownloadFile
-            year={"2018"}
-            file={"GEQ-donnees-branches-2018"}
-            title={"Indice d'écart de rémunération Femmes/Hommes"}
-          />
+
         </Container>
       </section>
-      <section className="info-supp">
+      
+      <TrendsChartBox indic="GEQ" />
+
+      <DownloadFile
+        year={"2018"}
+        file={"GEQ-donnees-branches-2018"}
+        title={"Indice d'écart de rémunération Femmes/Hommes"}
+      />
+
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>

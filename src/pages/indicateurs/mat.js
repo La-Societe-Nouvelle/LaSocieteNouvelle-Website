@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
 import DownloadFile from "../../components/indic/DownloadFile";
+import TrendsChartBox from '../../components/indic/TrendsChartBox';
 import PageHeader from '../../components/PageHeader'
 
 const mat = () => {
@@ -87,7 +88,7 @@ const mat = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section >
         <Container>
           <h3>Données par défaut</h3>
           <p>
@@ -102,14 +103,17 @@ const mat = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
-          <DownloadFile
-            year={"2018"}
-            file={"MAT-donnees-branches-2018"}
-            title={"Intensité d'Extraction de Matières premières"}
-          />
         </Container>
       </section>
-      <section className="info-supp">
+
+      <TrendsChartBox indic="MAT" />
+
+      <DownloadFile
+        year={"2018"}
+        file={"MAT-donnees-branches-2018"}
+        title={"Intensité d'Extraction de Matières premières"}
+      />
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>

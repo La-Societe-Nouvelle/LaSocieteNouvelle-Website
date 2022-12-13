@@ -128,15 +128,20 @@ const wat = () => {
           </p>
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
-          </p>
-          <DownloadFile
-                year={"2018"}
-                file={"WAT-donnees-branches-2018"}
-                title={"Intensité de Consommation d'Eau"}
-              />
+          </p>          
+   
         </Container>
       </section>
-      <section className="info-supp">
+             
+      <TrendsChartBox indic="WAT" />
+
+      <DownloadFile
+            year={"2018"}
+            file={"WAT-donnees-branches-2018"}
+            title={"Intensité de Consommation d'Eau"}
+          />
+
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>

@@ -1,8 +1,10 @@
 import React from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
+
 import DownloadFile from "../../components/indic/DownloadFile";
 import PageHeader from "../../components/PageHeader";
+import TrendsChartBox from "../../components/indic/TrendsChartBox";
 
 const eco = () => {
   return (
@@ -47,7 +49,12 @@ const eco = () => {
               <p>
                 <b>Code : </b> ECO
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-eco" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-eco"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
@@ -62,8 +69,8 @@ const eco = () => {
               <p>
                 8.3 : Promouvoir des politiques axées sur le développement qui
                 favorisent des activités productives, la création d’emplois
-                décents, l’entrepreneuriat, et stimulent la croissance
-                des micro-entreprises et des petites et moyennes entreprises.
+                décents, l’entrepreneuriat, et stimulent la croissance des
+                micro-entreprises et des petites et moyennes entreprises.
               </p>
               <p>
                 8.5 : D’ici à 2030, parvenir au plein emploi productif et
@@ -84,7 +91,6 @@ const eco = () => {
                 qui crée des emplois et met en valeur la culture et les produits
                 locaux.
               </p>
-         
             </Col>
           </Row>
         </Container>
@@ -95,7 +101,8 @@ const eco = () => {
           <p>
             <b>Grandeur mesurée : </b>Valeur nette créée sur le territoire
             français (en euros). La valeur nette créée correspond à la valeur
-            ajoutée nette : production réduite des consommations intermédiaires et des dotations aux amortissements.
+            ajoutée nette : production réduite des consommations intermédiaires
+            et des dotations aux amortissements.
           </p>
 
           <p>
@@ -106,56 +113,84 @@ const eco = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section>
         <Container>
           <h3>Données par défaut</h3>
           <p>
-            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale et la localisation de leur(s) établissement(s), France ou étranger.
+            Les valeurs par défaut affectées aux unités légales s’appuient sur
+            leur activité principale et la localisation de leur(s)
+            établissement(s), France ou étranger.
           </p>
-          <p>
-            Le calcul prend en compte :
-          </p>
+          <p>Le calcul prend en compte :</p>
           <ul>
-            <li>Le taux de valeur ajoutée et le taux de contribution à l’économie nationale des consommations intermédiaires de la division économique à laquelle l’unité légale appartient ;</li>
-            <li>Le taux de présence en France de ses établissement (ex. 100 % si tous les établissements sont situés en France), assimilé au taux de contribution à l’économie nationale de la valeur ajoutée de l’unité légale.</li>
+            <li>
+              Le taux de valeur ajoutée et le taux de contribution à l’économie
+              nationale des consommations intermédiaires de la division
+              économique à laquelle l’unité légale appartient ;
+            </li>
+            <li>
+              Le taux de présence en France de ses établissement (ex. 100 % si
+              tous les établissements sont situés en France), assimilé au taux
+              de contribution à l’économie nationale de la valeur ajoutée de
+              l’unité légale.
+            </li>
           </ul>
           <p>
-            Pour les données par défaut génériques, les valeurs correspondent aux taux de contribution à l’économie nationale de la production des divisions économiques (x88).  
+            Pour les données par défaut génériques, les valeurs correspondent
+            aux taux de contribution à l’économie nationale de la production des
+            divisions économiques (x88).
           </p>
           <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des comptes de production des divisions économiques, 
-            des modélisations des flux de consommations et de produits entre les branches d’activités et des volumes des importations par produits.
+            Les données macro-économiques à l’échelle des divisions sont
+            obtenues à partir des comptes de production des divisions
+            économiques, des modélisations des flux de consommations et de
+            produits entre les branches d’activités et des volumes des
+            importations par produits.
           </p>
           <p>
             Pour les espaces économiques hors France, les valeurs sont nulles.
           </p>
           <p>
-            L'intervalle de confiance est de 75% pour les données sectorielles et les données affectées aux unités légales.
+            L'intervalle de confiance est de 75% pour les données sectorielles
+            et les données affectées aux unités légales.
           </p>
-          <DownloadFile
-            year={"2018"}
-            file={"ECO-donnees-branches-2018"}
-            title={"Contribution à l'Economie Nationale"}
-          />
         </Container>
       </section>
-      <section className="info-supp">
-        <Container>
-          <hr></hr>
-          <h4 className="mt-5">Pour aller plus loin </h4>
+
+      <TrendsChartBox indic="ECO" />
+
+      <DownloadFile
+        year={"2018"}
+        file={"ECO-donnees-branches-2018"}
+        title={"Contribution à l'Economie Nationale"}
+      />
+
+      <section className="info-supp pt-2">
+        <Container className="border-top pt-4">
+          <h5 className="">Pour aller plus loin </h5>
           <ul>
             <li>
-              <a href="https://www.insee.fr/fr/statistiques/4166056" target="_blank">
+              <a
+                href="https://www.insee.fr/fr/statistiques/4166056"
+                target="_blank"
+              >
                 Insee Première n°1756 - "Made In France
               </a>
             </li>
             <li>
-              EUROSTAT <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm" target="_blank">
+              EUROSTAT{" "}
+              <a
+                href="https://ec.europa.eu/eurostat/cache/metadata/fr/nama10_esms.htm"
+                target="_blank"
+              >
                 Annual national accounts (Metadata)
               </a>
             </li>
             <li>
-              <a href="https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm" target="_blank">
+              <a
+                href="https://ec.europa.eu/eurostat/cache/metadata/fr/ext_tec_sims.htm"
+                target="_blank"
+              >
                 International trade in goods - trade by enterprise
                 characteristics (Metadata)
               </a>

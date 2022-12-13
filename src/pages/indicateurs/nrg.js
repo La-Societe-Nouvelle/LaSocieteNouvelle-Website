@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from 'react-helmet'
 import DownloadFile from '../../components/indic/DownloadFile';
+import TrendsChartBox from '../../components/indic/TrendsChartBox';
 import PageHeader from '../../components/PageHeader'
 
 const geq = () => {
@@ -86,7 +87,7 @@ const geq = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section>
         <Container>
           <h3>Données par défaut</h3>
           <p>
@@ -101,14 +102,18 @@ const geq = () => {
           <p>
             L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
           </p>
-          <DownloadFile
-                year={"2018"}
-                file={"NRG-donnees-branches-2018"}
-                title={"Intensité de Consommation d'Energie"}
-              />
+
         </Container>
       </section>
-      <section className="info-supp">
+
+      <TrendsChartBox indic="NRG" />
+
+       <DownloadFile
+          year={"2018"}
+          file={"NRG-donnees-branches-2018"}
+          title={"Intensité de Consommation d'Energie"}
+        />
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>

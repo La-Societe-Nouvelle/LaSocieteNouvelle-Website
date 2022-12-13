@@ -12,9 +12,12 @@
         text-transform: uppercase;
     }
     p.source {
-        font-size: 0.7rem;
         text-transform: none;
         font-family: 'Roboto';
         font-weight: normal;
     }
+}
+p.source {
+    font-size: 0.7rem;
+
 }

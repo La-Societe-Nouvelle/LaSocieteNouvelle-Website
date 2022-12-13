@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet"; 
 import DownloadFile from "../../components/indic/DownloadFile";
+import TrendsChartBox from "../../components/indic/TrendsChartBox";
 import PageHeader from "../../components/PageHeader";
 
 const knw = () => {
@@ -105,7 +106,7 @@ const knw = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section>
         <Container>
           <h3>Données par défaut</h3>
           <p>
@@ -120,14 +121,17 @@ const knw = () => {
           <p>
             L’intervalle de confiance se situe aux alentours de 500 % pour les valeurs associées aux unités légales.
           </p>
-          <DownloadFile
-            year={"2015"}
-            file={"KNW-donnees-branches-2015"}
-            title={"Contribution à l'Evolution des compétences et des connaissances"}
-          />
         </Container>
       </section>
-      <section className="info-supp">
+
+      <TrendsChartBox indic="KNW" />
+
+      <DownloadFile
+        year={"2015"}
+        file={"KNW-donnees-branches-2015"}
+        title={"Contribution à l'Evolution des compétences et des connaissances"}
+      />
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>

@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import DownloadFile from "../../components/indic/DownloadFile";
+import TrendsChartBox from "../../components/indic/TrendsChartBox";
 import PageHeader from "../../components/PageHeader";
 
 const art = () => {
@@ -98,7 +99,7 @@ const art = () => {
           </p>
         </Container>
       </section>
-      <section className="pb-0">
+      <section >
         <Container>
           <h3>Données par défaut</h3>
           <p>
@@ -142,14 +143,16 @@ const art = () => {
             L'intervalle de confiance est de 75% pour les données sectorielles
             et de 50% pour les données affectées aux unités légales.
           </p>
+
+        </Container>
+      </section>
+      <TrendsChartBox indic="ART" />
           <DownloadFile
             year={"2015"}
             file={"ART-donnees-branches-2015"}
             title={"Contribution aux Métiers d'Art et aux Savoir-Faire"}
           />
-        </Container>
-      </section>
-      <section className="info-supp">
+      <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>
