@@ -46,11 +46,16 @@ const geq = () => {
               <p>
                 <b>Code : </b> GEQ
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-geq" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-geq"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
-            <Col  className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -81,55 +86,27 @@ const geq = () => {
                 leur race, de leur appartenance ethnique, de leurs origines, de
                 leur religion ou de leur statut économique ou autre.
               </p>
-          
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Ecart absolu entre le taux horaires moyen
-            brut des femmes et celui des hommes, en pourcentage du taux horaire
-            brut moyen
-          </p>
+          <div className="mt-5 pt-4 border-top">
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Ecart absolu entre le taux horaires
+              moyen brut des femmes et celui des hommes, en pourcentage du taux
+              horaire brut moyen
+            </p>
 
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
-      <section >
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale et leur tranche d'effectifs.
-          </p>
-          <p>
-            Pour les unités légales ayant plus de deux employés, la valeur correspond à l'écart de rémunération F/H relatif à la production de la division économique à laquelle l'unité légale appartient.
-          </p>
-          <p>
-            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée et l'écart de rémunération F/H relatif aux consommations intermédiaires de la division économique à laquelle l'unité légale appartient.
-            L'écart de rémunération F/H relatif à la valeur ajoutée nette de l'unité légale est égal à 0%.
-          </p>
-          <p>
-            Pour les données par défaut génériques, les valeurs correspondent aux écarts de rémunération F/H relatifs à la production des divisions économiques (x88).  
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux salaires horaires, des comptes de production des divisions économiques, 
-            des modélisations des flux de consommations et de produits entre les branches d’activités et des volumes des importations par produits.
-          </p>
-          <p>
-            L’intervalle de confiance est de 50 %.
-          </p>
 
-        </Container>
-      </section>
-      
       <TrendsChartBox indic="GEQ" />
 
       <DownloadFile
@@ -150,11 +127,12 @@ const geq = () => {
               </a>
             </li>
             <li>
-            Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
+              Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
               <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533">
-              L’égalité de rémunération entre les femmes et les hommes et les obligations des employeurs
-                </a>                
-            </li>     
+                L’égalité de rémunération entre les femmes et les hommes et les
+                obligations des employeurs
+              </a>
+            </li>
           </ul>
         </Container>
       </section>

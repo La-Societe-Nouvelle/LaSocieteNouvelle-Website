@@ -24,7 +24,7 @@ const dis = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/dis.svg" height="80" className="mb-3" />
+              <Image src="/ESE/dis.svg" height="80" className="mb-3" />
 
               <p>
                 Coefficient de GINI. Valeur sans unité, comprise entre 0
@@ -48,11 +48,16 @@ const dis = () => {
               <p>
                 <b>Code : </b> DIS
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-dis" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-dis"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
-            <Col  className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -72,43 +77,22 @@ const dis = () => {
                 population augmentent plus rapidement que le revenu moyen
                 national, et ce de manière durable
               </p>
-     
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Indice de GINI des taux horaires bruts
-          </p>
+          <div className="mt-5 pt-4 border-top">
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Indice de GINI des taux horaires bruts
+            </p>
 
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale, leur tranche d'effectif et l'indice de GINI des revenus disponibles en France.
-          </p>
-          <p>
-           Pour les unités légales ayant plus de deux employés, la valeur correspond à l'indice de GINI des revenus disponibles en France.
-          </p>
-          <p>
-            Pour les autres unités légales, le calcul prend en compte le taux de valeur ajoutée de la division économique à laquelle l'unité légale appartient.
-            L'indice associé à la valeur ajoutée nette est égal à 0 (aucun inégalité) et l'indice associé aux consommations intermédiaires correspond à l'indice de GINI des revenus disponibles en France.
-          </p>
-          <p>
-            L’intervalle de confiance est de 50 %.
-          </p>
-
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
 

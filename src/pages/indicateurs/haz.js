@@ -54,11 +54,16 @@ const haz = () => {
               <p>
                 <b>Code : </b> HAZ
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-haz" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-haz"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -101,44 +106,29 @@ const haz = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux
               </p>
-            
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Quantité utilisée de produits dangereux
-            pour la santé et/ou l’environnement (en kg)
-          </p>
-          <p>Les dangers considérés sont :</p>
-          <ul>
-            <li>Dangereux, nocif et irritant</li>
-            <li>Polluant pour l’environnement</li>
-            <li>Produit dangereux pour la santé</li>
-            <li>Toxique</li>
-          </ul>
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
-
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales correspondent à l'intensité d'utilisation de produits dangereux de la production intérieure européenne.
-          </p>
-          <p>
-            Du fait de l'absence de données macro-économiques sectorielles, l’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 1000 %.{" "}
-          </p>
-
+          <div className="mt-5 pt-4 border-top">
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Quantité utilisée de produits dangereux
+              pour la santé et/ou l’environnement (en kg)
+            </p>
+            <p>Les dangers considérés sont :</p>
+            <ul>
+              <li>Dangereux, nocif et irritant</li>
+              <li>Polluant pour l’environnement</li>
+              <li>Produit dangereux pour la santé</li>
+              <li>Toxique</li>
+            </ul>
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
 
@@ -156,13 +146,19 @@ const haz = () => {
           <ul>
             <li>
               Ministère de la Transition Ecologique -{" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/produits-chimiques" target="_blank">
+              <a
+                href="https://www.ecologie.gouv.fr/politiques/produits-chimiques"
+                target="_blank"
+              >
                 Politiques publiques - Produits chimiques
               </a>
             </li>
             <li>
               Institut National de Recherche et de Sécurité (INRS) -{" "}
-              <a href="https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html" target="_blank">
+              <a
+                href="https://www.inrs.fr/risques/cmr-agents-chimiques/ce-qu-il-faut-retenir.html"
+                target="_blank"
+              >
                 Agents chimiques CMR
               </a>
             </li>

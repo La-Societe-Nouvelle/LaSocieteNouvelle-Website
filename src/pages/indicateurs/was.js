@@ -43,7 +43,7 @@ const was = () => {
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -90,44 +90,24 @@ const was = () => {
 
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Quantité produite de déchets (en kg)
-          </p>
-          <p>Catégories de déchets :</p>
-          <ul>
-            <li>Déchets dangereux</li>
-            <li>Déchets non-dangereux valorisés (recyclage, etc.)</li>
-            <li>Déchets non-dangereux non-valorisé</li>
-          </ul>
-          <p>
-          Les co-produits ne sont pas comptabilisés. Un co-produit correspond à un produit / résidu de production non vendu et transmis à une autre société en vue d’être transformé, sans destruction, en un produit vendu.
-          </p>
-          <p>
-          Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
-          </p>
-        </Container>
-      </section>
-      <section className="pb-0">
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
-            Elles correspondent à l'intensité de production de déchets de la production de la division économique à laquelle appartient l'unité légale.
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux déchets générés par activité, 
-            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
-            et des volumes des importations par produits.
-          </p>
-          <p>
-            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
-          </p>
-
+          <div className="mt-5 pt-4 border-top">
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Quantité produite de déchets (en kg)
+            </p>
+            <p>Catégories de déchets :</p>
+            <ul>
+              <li>Déchets dangereux</li>
+              <li>Déchets non-dangereux valorisés (recyclage, etc.)</li>
+              <li>Déchets non-dangereux non-valorisé</li>
+            </ul>
+            <p>
+            Les co-produits ne sont pas comptabilisés. Un co-produit correspond à un produit / résidu de production non vendu et transmis à une autre société en vue d’être transformé, sans destruction, en un produit vendu.
+            </p>
+            <p>
+            Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
 

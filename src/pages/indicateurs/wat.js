@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import DownloadFile from "../../components/indic/DownloadFile";
+import TrendsChartBox from "../../components/indic/TrendsChartBox";
 import PageHeader from "../../components/PageHeader";
 
 const wat = () => {
@@ -41,7 +42,7 @@ const wat = () => {
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -94,10 +95,7 @@ const wat = () => {
          
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
+          <div className="mt-5 pt-4 border-top">
           <h3>Impact direct mesuré</h3>
           <p>
             <b>Grandeur mesurée : </b>Quantité consommée d’eau (en m³)
@@ -112,26 +110,11 @@ const wat = () => {
             les impacts indirects liés aux consommations et aux amortissements,
             obtenus à partir des données des entreprises sollicitées.
           </p>
+          </div>
         </Container>
       </section>
-      <section className="pb-0">
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s'appuient sur leur activité principale. 
-            Elles correspondent à l'intensité de consommation d'eau de la production de la division économique à laquelle appartient l'unité légale.
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux prélèvements annuels d'eau par secteur, 
-            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
-            et des volumes des importations par produits.
-          </p>
-          <p>
-            L’intervalle de confiance associé à l’utilisation des valeurs statistiques est de 100 % pour les valeurs sectorielles.
-          </p>          
    
-        </Container>
-      </section>
+
              
       <TrendsChartBox indic="WAT" />
 

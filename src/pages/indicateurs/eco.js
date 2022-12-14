@@ -58,7 +58,7 @@ const eco = () => {
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -93,67 +93,24 @@ const eco = () => {
               </p>
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Valeur nette créée sur le territoire
-            français (en euros). La valeur nette créée correspond à la valeur
-            ajoutée nette : production réduite des consommations intermédiaires
-            et des dotations aux amortissements.
-          </p>
 
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s’appuient sur
-            leur activité principale et la localisation de leur(s)
-            établissement(s), France ou étranger.
-          </p>
-          <p>Le calcul prend en compte :</p>
-          <ul>
-            <li>
-              Le taux de valeur ajoutée et le taux de contribution à l’économie
-              nationale des consommations intermédiaires de la division
-              économique à laquelle l’unité légale appartient ;
-            </li>
-            <li>
-              Le taux de présence en France de ses établissement (ex. 100 % si
-              tous les établissements sont situés en France), assimilé au taux
-              de contribution à l’économie nationale de la valeur ajoutée de
-              l’unité légale.
-            </li>
-          </ul>
-          <p>
-            Pour les données par défaut génériques, les valeurs correspondent
-            aux taux de contribution à l’économie nationale de la production des
-            divisions économiques (x88).
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont
-            obtenues à partir des comptes de production des divisions
-            économiques, des modélisations des flux de consommations et de
-            produits entre les branches d’activités et des volumes des
-            importations par produits.
-          </p>
-          <p>
-            Pour les espaces économiques hors France, les valeurs sont nulles.
-          </p>
-          <p>
-            L'intervalle de confiance est de 75% pour les données sectorielles
-            et les données affectées aux unités légales.
-          </p>
+          <div className="mt-5 pt-4 border-top">
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Valeur nette créée sur le territoire
+              français (en euros). La valeur nette créée correspond à la valeur
+              ajoutée nette : production réduite des consommations
+              intermédiaires et des dotations aux amortissements.
+            </p>
+
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
 

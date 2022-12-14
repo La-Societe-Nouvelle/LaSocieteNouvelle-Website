@@ -16,7 +16,6 @@ import { useCallback } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Card } from "react-bootstrap";
 
 ChartJS.register(
   CategoryScale,

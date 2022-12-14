@@ -227,7 +227,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
       const data = {
         datasets: [
           {
-            label: "Tendance de la branche",
+            label: "Historique",
             data: trendsData,
             borderColor: "rgb(255, 182, 66)",
             backgroundColor: "rgb(255, 182, 66)",
@@ -235,7 +235,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
             borderWidth: 4,
           },
           {
-            label: "Evolution de la tendance",
+            label: "Tendance",
             data: trendsDataForecast,
             borderColor: "rgb(255, 182, 66)",
             backgroundColor: "rgb(255, 182, 66)",
@@ -253,7 +253,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
         }));
 
         data.datasets.push({
-          label: "Objectif de la branche",
+          label: "Objectif",
           data: targetData,
           skipNull: true,
           borderColor: "rgb(255, 238, 200)",
@@ -275,13 +275,13 @@ function TrendChart({ indic, aggregate, code, branch }) {
         <div className="mt-5 small">
           <p>
             Note : Tendance pour
-            {code == "TOTAL" ? "toutes les activités" : "la branche " + branch}
+            {code == "TOTAL" ? " toutes les activités" : " la branche \"" + branch + "\""}
             {infoTarget && ", " + infoTarget}
           </p>
 
           <p className="small-text">
-            Sources : {sourceTrend}
-            {sourceTarget && ", " + sourceTarget}
+            Sources : {sourceTrend} (Historique)
+            {sourceTarget && ", " + sourceTarget + " (Objectif) "}
           </p>
         </div>
       </div>

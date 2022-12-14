@@ -42,7 +42,7 @@ const knw = () => {
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -78,10 +78,7 @@ const knw = () => {
               
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
+          <div className="mt-5 pt-4 border-top">
           <h3>Impact direct mesuré</h3>
           <p>
             <b>Grandeur mesurée : </b> Montant total des charges (hors charges
@@ -104,23 +101,7 @@ const knw = () => {
           <p>
           Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
           </p>
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s’appuient sur leur activité principale.
-            Elles correspondent au taux de contribution à l’évolution des compétences et des connaissances de la production de la division économique à laquelle l'unité légale appartient. 
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont obtenues à partir des données EUROSTAT relatives aux coûts des formations professionnelles, 
-            des comptes de production des divisions économiques, des modélisations des flux de consommations et de produits entre les branches d’activités 
-            et des volumes des importations par produits.
-          </p>
-          <p>
-            L’intervalle de confiance se situe aux alentours de 500 % pour les valeurs associées aux unités légales.
-          </p>
+                  </div>
         </Container>
       </section>
 

@@ -21,7 +21,7 @@ const art = () => {
         path={"indicateurs/art"}
       />
       <section>
-        <Container>
+      <Container>
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
@@ -47,7 +47,7 @@ const art = () => {
                 Documentation
               </Button>
             </Col>
-            <Col className="odd">
+            <Col className="odd small">
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
@@ -67,10 +67,7 @@ const art = () => {
               </p>
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
+          <div className="mt-5 pt-4 border-top">
           <h3>Impact direct mesuré</h3>
           <p>
             <b>Grandeur mesurée : </b>Valeur nette créée issue de l’artisanat ou
@@ -97,61 +94,17 @@ const art = () => {
             les impacts indirects liés aux consommations et aux amortissements,
             obtenus à partir des données des entreprises sollicitées.
           </p>
+          </div>
         </Container>
       </section>
-      <section >
-        <Container>
-          <h3>Données par défaut</h3>
-          <p>
-            Les valeurs par défaut affectées aux unités légales s’appuient sur
-            leur activité principale et l’inscription de l’activité principale
-            de leur(s) établissement(s) au registre des métiers, disponibles au
-            sein du répertoire SIRENE.
-          </p>
-          <p>Le calcul prend en compte :</p>
-          <ul>
-            <li>
-              Le taux de valeur ajoutée et le taux de contribution aux métiers
-              d’art et aux savoir-faire des consommations intermédiaires de la
-              division économique à laquelle l’unité légale appartient ;
-            </li>
-            <li>
-              Le taux d’inscription des activités des établissements au registre
-              des métiers, assimilé au taux de contribution aux métiers d’art et
-              aux savoir-faire de la valeur ajoutée de l’unité légale (ex. 10%
-              si pour 10% des établissements actifs, l’activité est inscrite au
-              registre des métiers).
-            </li>
-          </ul>
-          <p>
-            Pour les données par défaut génériques, les valeurs correspondent au
-            taux de contribution aux métiers d’arts et aux savoir-faire de la
-            production des divisions économiques (x88).
-          </p>
-          <p>
-            Les données macro-économiques à l’échelle des divisions sont
-            obtenues à partir des données de la DGE (Direction Générales des
-            Entreprises) sur l’Artisanat, des comptes de production des
-            divisions économiques, des modélisations des flux de consommations
-            et de produits entre les branches d’activités et des volumes des
-            importations par produits.
-          </p>
-          <p>
-            Pour les espaces économiques hors France, les valeurs sont nulles.
-          </p>
-          <p>
-            L'intervalle de confiance est de 75% pour les données sectorielles
-            et de 50% pour les données affectées aux unités légales.
-          </p>
 
-        </Container>
-      </section>
+
       <TrendsChartBox indic="ART" />
-          <DownloadFile
-            year={"2015"}
-            file={"ART-donnees-branches-2015"}
-            title={"Contribution aux Métiers d'Art et aux Savoir-Faire"}
-          />
+      <DownloadFile
+        year={"2015"}
+        file={"ART-donnees-branches-2015"}
+        title={"Contribution aux Métiers d'Art et aux Savoir-Faire"}
+      />
       <section className="info-supp pt-2">
         <Container>
           <hr></hr>
