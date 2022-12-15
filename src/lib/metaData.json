@@ -1,9 +1,9 @@
 {
-  "indics": ["eco","art","soc","knw","dis","geq","ghg","mat","was","nrg","wat","haz"],
+  "indics": ["eco","art","soc","knw","idr","geq","ghg","mat","was","nrg","wat","haz"],
   "odds": ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17"],
   "indics-es": {
     "libelle": "Indicateurs socio-économiques",
-    "indics": ["eco","art","knw","soc","dis","geq"]
+    "indics": ["eco","art","knw","soc","idr","geq"]
   },
   "indics-env": {
     "libelle": "Indicateurs environnementaux",
@@ -20,15 +20,15 @@
     "finalite": "L'indicateur vise à informer sur la part artisanale de la valeur produite dans un objectif de valorisation des savoir-faire et des métiers de l'artisanat auprès des consommateurs finaux.",
     "odds": ["08","09","12"]
   },
-  "dis": {
-    "libelle": "Indice de Répartition des Rémunérations",
-    "description": "Indice de GINI",
-    "unitLabel": "Base 100 où 0 correspond à une égalité parfaite",
-    "unitCode": "/100",
-    "unitCodeGrossImpact": "/100",
+  "idr": {
+    "libelle": "Indice d'Ecart des Rémunérations",
+    "description": "Rapport interdécile D9/D1",
+    "unitLabel": "Sans unité",
+    "unitCode": "",
+    "unitCodeGrossImpact": "",
     "defaultUncertainty": 0,
-    "descriptionImpactDirect": "Indice de GINI relatif aux taux horaires bruts des effectifs",
-    "finalite": "L’indicateur vise à fournir un élément d’information sur la répartition des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite. D'autres indicateurs tel que le rapport interdécile D1/D9 sont en réflexion pour compléter cette information.",
+    "descriptionImpactDirect": "Rapport interdécile D9/D1 relatif aux taux horaires bruts des effectifs",
+    "finalite": "L’indicateur vise à fournir un élément d’information sur l'écart des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite.",
     "odds": ["08","10"]
   },
   "eco": {
