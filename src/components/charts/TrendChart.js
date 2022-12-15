@@ -96,18 +96,48 @@ function TrendChart({ indic, aggregate, code, branch }) {
   }, [aggregate, code]);
 
   useEffect(async () => {
+
     if (trends.length > 1) {
+
       const trendsData = trends.map((data) =>
-        data.year <= 2020
+      data.flag == 'e'
           ? { x: data.year, y: data.value }
           : { x: data.year, y: null }
       );
 
+      let lastNonNull = trendsData.findLast((element) => element.y != null);
       const trendsDataForecast = trends.map((data) =>
-        data.year >= 2020
+      data.flag == 'f' || data.year == lastNonNull.x
           ? { x: data.year, y: data.value }
           : { x: data.year, y: null }
       );
+
+      let suggestedMax;
+      if (unit == "%") {
+        let max = Math.max(...trends.map((o) => o.value));
+  
+        if(max < 10) {
+          suggestedMax = 10;
+        }
+       
+        switch (true) {
+          case max < 10:
+             suggestedMax = 10;
+            break;
+          case max > 10 && max < 25:
+             suggestedMax = 25;
+            break;
+          case max > 25 && max < 50:
+             suggestedMax = 50;
+            break;
+          default:
+            suggestedMax = 100;
+            break;
+        }
+      } else {
+        suggestedMax = null;
+      }
+      console.log(suggestedMax)
 
       const options = {
         pointRadius: 0,
@@ -115,7 +145,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
           y: {
             display: true,
             min: 0,
-            suggestedMax: 100,
+            suggestedMax: suggestedMax,
             title: {
               display: true,
               text: unit,
