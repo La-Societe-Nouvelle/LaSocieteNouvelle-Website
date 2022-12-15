@@ -47,7 +47,7 @@ const Home = () =>
             </Col>
             <Col className="statistic-item" xs={12} lg={4}>
               <Image
-                src="ESE/icon-ese-bleues/dis.svg"
+                src="ESE/icon-ese-bleues/idr.svg"
                 height="60"
                 className="mx-auto d-block my-2"
                 alt="Egalité"

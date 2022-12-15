@@ -292,8 +292,8 @@ function TrendChart({ indic, aggregate, code, branch }) {
 const getTargetSerieId = (indic) => {
   let id;
   switch (indic) {
-    case "DIS":
-      id = "MACRO_TARGET_DIS_LSN_FRA_BRANCH";
+    case "IDR":
+      id = "MACRO_TARGET_IDR_LSN_FRA_BRANCH";
       break;
     case "GEQ":
       id = "MACRO_TARGET_GEQ_LSN_FRA_BRANCH";

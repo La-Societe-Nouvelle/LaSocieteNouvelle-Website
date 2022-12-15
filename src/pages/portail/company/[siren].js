@@ -50,7 +50,7 @@ const CompanyData = () => {
     empreinteSociale: {
       name: "Empreinte sociale",
       indicators: {
-        DIS: { min: 0, max: 100 },
+        IDR: { min: 0, max: 10 },
         GEQ: { min: 0, max: 100 },
         KNW: { min: 0, max: 100 },
       },

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import IndicatorsPanel from "../components/indic/IndicatorsPanel";
 import PageHeader from "../components/PageHeader";
 
-const first_set_indics = ["eco", "art", "knw", "soc", "dis", "geq"];
+const first_set_indics = ["eco", "art", "knw", "soc", "idr", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
 
 const impacts_euro = [

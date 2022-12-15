@@ -17,14 +17,14 @@ const idr = () => {
         title="Indice d'écart des rémunérations"
         prev={"indicateurs"}
         prevTitle={"Liste des indicateurs"}
-        path={"indicateurs/dis"}
+        path={"indicateurs/idr"}
       />
       <section>
         <Container>
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/dis.svg" height="80" className="mb-3" />
+              <Image src="/ESE/idr.svg" height="80" className="mb-3" />
 
               <p>
                 Rapport interdécile D9/D1. Valeur sans unité, correspondant au rapport du taux horaire entre le dernier et le premier décile.
@@ -58,7 +58,7 @@ const idr = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_dis.png"
+                src="/images/odd/odd_idr.png"
                 alt="logo odd"
                 className="mb-3"
               />
