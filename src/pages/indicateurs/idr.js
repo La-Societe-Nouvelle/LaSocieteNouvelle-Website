@@ -95,11 +95,11 @@ const idr = () => {
 
       <TrendsChartBox indic="IDR" />
 
-      {/* <DownloadFile
+      <DownloadFile
         year={"2018"}
         file={"IDR-donnees-branches-2018"}
         title={"Indice d'écart des rémunérations"}
-      /> */}
+      />
       <section className="info-supp pt-2">
         <Container>
           <hr></hr>

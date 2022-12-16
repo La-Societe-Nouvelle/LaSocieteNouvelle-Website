@@ -398,8 +398,8 @@ class IndicatorForm extends React.Component {
             </div>
             <div className="source"></div>
             <div className="my-3 row align-items-center">
-              <label className="col-sm-3 col-form-label">
-                Valeur<span>({metaData[indic].unitCode})</span>
+              <label className="col-sm-3 col-form-label small">
+                Valeur<span>{metaData[indic].unitCode && " ("+metaData[indic].unitCode +")"}</span>
               </label>
               <div className="col-sm-9">
                 <input
@@ -414,7 +414,7 @@ class IndicatorForm extends React.Component {
             </div>
             <div className="my-3 row align-items-center">
               <label className="col-sm-3 col-form-label">
-                Incertitude<span>(%)</span>
+                Incertitude <span>(%)</span>
               </label>
               <div className="col-sm-9">
                 <input
