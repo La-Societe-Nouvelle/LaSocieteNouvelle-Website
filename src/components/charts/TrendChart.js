@@ -137,7 +137,6 @@ function TrendChart({ indic, aggregate, code, branch }) {
       } else {
         suggestedMax = null;
       }
-      console.log(suggestedMax)
 
       const options = {
         pointRadius: 0,

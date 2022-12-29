@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Image,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-} from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
 import Chart from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+
+Chart.register(ChartDataLabels);
 
 import { Bar } from "react-chartjs-2";
 
@@ -27,36 +20,6 @@ const CompanyData = () => {
   const [siren, setSiren] = useState(router.query.siren);
   const [error, setError] = useState();
 
-  const [views, setView] = useState({
-    empreinteEconomique: {
-      name: "Création de la valeur",
-      indicators: {
-        ECO: { min: 0, max: 100 },
-        ART: { min: 0, max: 100 },
-        SOC: { min: 0, max: 100 },
-      },
-    },
-    empreinteEnvironnementale: {
-      name: "Empreinte environnementale",
-      indicators: {
-        GHG: { min: 0 },
-        MAT: { min: 0 },
-        WAS: { min: 0 },
-        NRG: { min: 0 },
-        WAT: { min: 0 },
-        HAZ: { min: 0 },
-      },
-    },
-    empreinteSociale: {
-      name: "Empreinte sociale",
-      indicators: {
-        IDR: { min: 0, max: 10 },
-        GEQ: { min: 0, max: 100 },
-        KNW: { min: 0, max: 100 },
-      },
-    },
-  });
-  const [selectedView, setSelectedView] = useState("empreinteEconomique");
   const [dataFetched, isDataFetched] = useState(false);
   const [legalUnit, setLegalUnit] = useState();
   const [footprint, setFootprint] = useState();
@@ -65,11 +28,11 @@ const CompanyData = () => {
   useEffect(() => {
     setSiren(router.query.siren);
     if (siren) {
-      getData(siren);
+      getLegalUnitFootprint(siren);
     }
   }, [router, siren]);
 
-  async function getData(siren) {
+  async function getLegalUnitFootprint(siren) {
     axios
       .get(`https://api.lasocietenouvelle.org/legalunitFootprint/${siren}`)
       .then((response) => {
@@ -78,7 +41,6 @@ const CompanyData = () => {
           setLegalUnit(response.data.legalUnit);
           setFootprint(response.data.footprint);
           setMeta(response.data.metaData);
-          
         } else {
           setError(response.data.header);
         }
@@ -93,8 +55,7 @@ const CompanyData = () => {
             siren}
         </title>
       </Helmet>
-      <section className="open-data-portal">
-
+      <section className="open-data-portal bg-light">
         <Container>
           {!dataFetched && (
             <>
@@ -110,44 +71,29 @@ const CompanyData = () => {
           {error && <ErrorAlert code={error.code} />}
           {dataFetched && footprint && meta && (
             <>
-              <div className="legalUnit">
-                <h2 className="text-center">
-                  Empreinte Sociétale de{" "}
-                  <b>{legalUnit.denomination + " #" + siren}</b>
+              <div className="legalUnit bg-white p-4 border rounded-3 ">
+                <h2>
+                  Empreinte Sociétale de <b>{legalUnit.denomination}</b>
                 </h2>
-                <div className="d-flex justify-content-between">
-                  <p>
-                    <b>SIREN :</b> {legalUnit.siren}
-                  </p>
-                  <p>
-                    <b>Activité principale : </b>
-                    {legalUnit.activitePrincipaleLibelle}
-                  </p>
-                  <p>
-                    <b>Siège : </b>{" "}
-                    {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
-                  </p>
+                <div>
+                  <ul className="list-unstyled">
+                    <li>Siren : {legalUnit.siren}</li>
+                    <li>
+                      Activité principale :{" "}
+                      {legalUnit.activitePrincipaleLibelle}
+                    </li>
+                    <li>
+                      Siège :{" "}
+                      {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
+                    </li>
+                    {!legalUnit.societeMission && (
+                      <li>Société à mission : Oui</li>
+                    )}
+                  </ul>
                 </div>
               </div>
               <div className="footprint">
-                <Nav pills="true" tabs="true" fill>
-                  {Object.entries(views).map(([viewKey, viewValue], _) => (
-                    <NavItem
-                      key={viewKey}
-                      className={viewKey == selectedView ? "selected" : ""}
-                    >
-                      <NavLink onClick={() => setSelectedView(viewKey)}>
-                        {viewValue.name}
-                      </NavLink>
-                    </NavItem>
-                  ))}
-                </Nav>
-                <ContentSocialFootprint
-                  views={views}
-                  selectedView={selectedView}
-                  empreinteSocietale={footprint}
-                  meta={meta}
-                />
+                <ContentSocialFootprint footprint={footprint} meta={meta} />
               </div>
             </>
           )}
@@ -157,7 +103,7 @@ const CompanyData = () => {
               href="/portail"
               variant="secondary"
             >
-              « Retour{" "}
+              « Retour
             </Button>
           </p>
         </Container>
@@ -167,24 +113,20 @@ const CompanyData = () => {
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint({ views, selectedView, empreinteSocietale,meta }) {
-  const selectedIndicatorDetails = Object.entries(
-    views[selectedView].indicators
-  ).map(([code, viewWindow], _) => ({
-    ...empreinteSocietale[code],
+function ContentSocialFootprint({ footprint, meta }) {
+  const indicators = Object.entries(footprint).filter(([k, v]) => k !== "DIS");
+
+  const indicatorsDetails = indicators.map(([code], _) => ({
+    ...footprint[code],
     ...meta[code],
-    viewWindow,
     code,
   }));
 
   return (
     <Row className="indic-details">
-
-      {selectedIndicatorDetails.map(
-        (details) => (
-          (<IndicatorDetails key={details.code} {...details} />)
-        )
-      )}
+      {indicatorsDetails.map((details) => (
+        <IndicatorDetails key={details.code} {...details} />
+      ))}
     </Row>
   );
 }
@@ -193,7 +135,9 @@ function ContentSocialFootprint({ views, selectedView, empreinteSocietale,meta }
 function IndicatorDetails({
   code,
   flag,
+  description,
   indicatorLabel,
+  info,
   source,
   uncertainty,
   year,
@@ -203,73 +147,151 @@ function IndicatorDetails({
   const displayedValue = Math.round(10 * value) / 10;
 
   return (
-    <Col key={code} className="indic-view my-4" lg={4}>
+    <Col key={code} className=" mb-4" lg={4}>
       <Card>
         <Card.Body>
-          <div className="indic d-flex align-items-center">
+          <div className="d-flex align-items-center mb-4 pb-3">
             <Image
-              className="icon-ese"
-              fluid
+              height="30px"
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{indicatorLabel} </h4>
-          </div>
-          <div className="indic-value text-center">
-            <h5 className={flag ? "value" : "value default"}>
-              {Math.round(displayedValue)} <span className="symbol">{unitSymbol}</span>
-            </h5>
-            <p className="small"> 
-            {flag && flag == 'p' ? <p> Valeur publiée </p> : <p> Valeur par défaut *</p>}
-            </p>
-            <p className="incertitude">
-              Incertitude : {Math.round(uncertainty)} %
-            </p>
+            <h3 className="ms-2 mb-0 h6">{indicatorLabel} </h3>
           </div>
 
-          <ColumnChart title={indicatorLabel} performance= {Math.round(displayedValue)} />
+          <ColumnChart
+            performance={Math.round(displayedValue)}
+            unit={unitSymbol}
+            flag={flag}
+          />
+          <div className="small mt-3 ">
+            {/* {info && <p className="mb-1">{info}</p>} */}
+            <p className="mb-1">&#9642; Incertitude : {Math.round(uncertainty)} %</p>
+            {year && <p className="mb-0">&#9642; Dernière mise à jour : {year}</p>}
+          </div>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-between">
+        <Card.Footer>
           {source && <p>Source : {source}</p>}
-          {year && <p>Dernière mise à jour : {year}</p>}
         </Card.Footer>
       </Card>
     </Col>
   );
 }
 
-function ColumnChart({ title, performance }) {
+function ColumnChart({ performance, unit, flag }) {
+  let bgColor;
+  let legend;
+
+  if (flag == "p") {
+    bgColor = "RGBA(250, 89, 95,0.8)";
+    legend = "Valeur publiée";
+  } else {
+    bgColor = "RGBA(25, 21, 88,0.8)";
+    legend = "Valeur par défaut";
+  }
+
   const data = {
     datasets: [
       {
-        barPercentage: 0.5,
+        label: legend,
+        barPercentage: 0.3,
         data: [performance],
-        backgroundColor: ["RGB(251, 122, 127)"],
+        backgroundColor: [bgColor],
       },
     ],
     labels: ["Unité legale"],
   };
 
+  let suggestedMax;
+
+  if (unit == "%") {
+    switch (true) {
+      case performance < 10:
+        suggestedMax = 10;
+        break;
+      case performance > 10 && performance < 25:
+        suggestedMax = 25;
+        break;
+      case performance > 25 && performance < 50:
+        suggestedMax = 50;
+        break;
+      default:
+        suggestedMax = 100;
+        break;
+    }
+  } else {
+    suggestedMax = null;
+  }
+
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     devicePixelRatio: 2,
+    layout: {
+      padding: {
+        top: 30,
+        bottom : 10,
+        left : 10,
+        right : 10
+      },
+    },
     plugins: {
       legend: {
-        display: false,
+        display: true,
+        labels: {
+          color: "#373c42",
+          padding: 20,
+          boxWidth: 5,
+          boxHeight: 5,
+        },
+        position: "bottom",
+  
+      },
+      datalabels: {
+        anchor: "end",
+        align: "top",
+        formatter: function (value, context) {
+          return value + " " + unit;
+        },
+        color: bgColor,
+        font: {
+          size: 18,
+          family: "Raleway",
+          weight: "bold",
+        },
+      },
+      tooltip: {
+        enabled: false //
       },
     },
     scales: {
       y: {
         beginAtZero: true,
-        suggestedMax : 10,
+        suggestedMax: suggestedMax,
+
+        ticks: {
+          color: "#191558",
+          font: {
+            size: 10,
+            family: "Roboto",
+          },
+        },
+        grid: {
+          color: "#ececff",
+        },
+      },
+      x: {
+        display: false,
+        grid: {
+          color: "#ececff",
+        },
       },
     },
   };
 
   return (
-    <div align="center">
-      <Bar id={title} data={data} options={options} />
+    <div className="border"  >
+      <Bar data={data} options={options} />
     </div>
   );
 }

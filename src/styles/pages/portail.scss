@@ -1,12 +1,12 @@
 // portail de données
 .info-section {
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #d7dcfb  ;
   font-size: 0.9rem;
   text-align: center;
 }
 
 .navbar {
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #d7dcfb  ;
   text-transform: uppercase;
   font-size: 0.9rem;
 
@@ -20,25 +20,11 @@
   background: url('/celeste.svg') 100% 100% no-repeat;
 
   .legalUnit {
-    border: 1px solid $light;
-    padding: 1rem;
     margin-bottom: 1.5rem;
   }
-  .nav {
-    background-color: $light;
-    a {
-      text-transform: uppercase;
-      color: $primary;
-      border : 1px solid darken($light, 10%);
-    }
 
-    .selected {
-      background-color: $secondary;
-      .nav-link {
-        color : #FFF;
-        border: 1px solid $secondary;
-      }
-    }
+  .card {
+    border-color : #d7dcfb ;
   }
 
   .footprint {
@@ -58,16 +44,6 @@
       font-size: 1.8rem;
       color: $primary;
       font-weight: 600;
-    }
-
-    .incertitude {
-      color: grey;
-      font-size: 0.7rem;
-    }
-
-    .icon-ese {
-      height: 40px;
-      margin-right: 1rem;
     }
 
     .card-footer {
