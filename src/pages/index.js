@@ -1,14 +1,81 @@
 // Components
 
 // Modules
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/charts/Graph";
 import LatestPosts from "../components/posts/LatestPosts";
+import axios from "axios";
 
 const Home = () => 
 {
+
+  const [pinKeyfigure, setPinKeyFigure] = useState();
+  const [geqKeyFigure, setGeqKeyFigure] = useState();
+  const [ghgKeyFigure, setGhgKeyFigure] = useState();
+
+  useEffect(() => {
+    fetchKeyFiguresData();
+
+  }, []);
+
+  const fetchKeyFiguresData = async() => {
+
+    const getPinKeyFigure = axios.get(
+      `http://localhost:8080/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=NVA`
+    );
+
+    const getGhgKeyFigure =  axios.get(
+        `http://localhost:8080/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+      );
+    
+    const getGeqKeyFigure = axios.get(
+      `http://localhost:8080/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+    );
+      
+    await axios
+    .all([getPinKeyFigure, getGhgKeyFigure, getGeqKeyFigure])
+    .then(
+      axios.spread((...responses) => {
+
+        const pinKeyfigure = responses[0];
+        const ghgKeyFigure = responses[1];
+        const geqKeyFigure = responses[2];
+
+        if (pinKeyfigure.data.header.code == 200) {
+
+          console.log(pinKeyfigure)
+          const value = pinKeyfigure.data.data[0].value.toFixed(0);
+
+          setPinKeyFigure(value);
+        }
+    
+
+        if (ghgKeyFigure.data.header.code == 200) {
+
+          const value = ghgKeyFigure.data.data[0].value.toFixed(0);
+
+          setGhgKeyFigure(value);
+        }
+    
+        if (geqKeyFigure.data.header.code == 200) {
+
+          const value = geqKeyFigure.data.data[0].value.toFixed(1);
+
+          setGeqKeyFigure(value)
+
+        }
+   
+  
+      })
+    )
+    .catch((error) => {
+      console.log(error)
+    });
+
+  };
+
   return (
     <>
       <Helmet>
@@ -20,6 +87,7 @@ const Home = () =>
         <Container>
           <Row className="d-flex justify-content-between">
             <Col className="statistic-item" xs={12} lg={4}>
+       
               <Image
                 src="ESE/icon-ese-bleues/eco.svg"
                 height="60"
@@ -27,7 +95,7 @@ const Home = () =>
                 alt="eco"
               />
               <p className="text-center">
-                <span className="h1">1733,52</span> <sup> Mrd €</sup>
+                <span className="h1">{pinKeyfigure}</span> <sup> Mds €</sup>
               </p>
               <p className="text-center">Production intérieure nette</p>
             </Col>
@@ -39,7 +107,7 @@ const Home = () =>
                 alt="co²"
               />
               <p className="text-center">
-                <span className="h1">210</span> <sup>gCO₂e/€</sup>
+                <span className="h1">{ghgKeyFigure}</span> <sup>gCO₂e/€</sup>
               </p>
               <p className="text-center">
                 Intensité d'émission de gaz à effet de serre
@@ -53,7 +121,7 @@ const Home = () =>
                 alt="Egalité"
               />
               <p className="text-center">
-                <span className="h1">17,2</span> <sup>%</sup>
+                <span className="h1">{geqKeyFigure}</span> <sup>%</sup>
               </p>
               <p className="text-center">Ecart de rémunération F/H</p>
             </Col>
