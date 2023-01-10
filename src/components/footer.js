@@ -10,71 +10,7 @@ function Footer() {
     setPage(router.pathname);
   });
 
-  return page.includes("portail") ? (
-    <>
-      <section className="info-section pb-4">
-        <Container fluid>
-          <Row>
-            <Col>
-              <p>
-                En cas d'absence de données fournies par l'entreprise, des
-                valeurs par défaut sont attribuées selon les caractéristiques de
-                l'entreprise.
-                <br />
-                Ces valeurs peuvent être éloignées de la réalité de
-                l'entreprise, merci d'utiliser ces données avec précautions.
-              </p>
-              <p>
-                Pour toute publication, mise à jour ou retrait <a href="/contact" target="_self">contactez-nous.</a>
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <footer className="footer pt-4 ">
-        <Container fluid>
-          <div className="">
-            <div className="d-flex justify-content-between align-items-center">
-              <p className="mx-2">© 2022 La Société Nouvelle</p>
-              <Nav className="socials">
-              <Nav.Link href="https://twitter.com/LSN_FR" target="_blank" rel="noreferrer">
-                <i className="bi bi-twitter mx-2"></i>
-              </Nav.Link>
-              <Nav.Link href="https://www.linkedin.com/company/la-societe-nouvelle/" target="_blank" rel="noreferrer" >
-                <i className="bi bi-linkedin  mx-2"></i>
-              </Nav.Link>
-              <Nav.Link href="https://github.com/La-Societe-Nouvelle/" target="_blank" rel="noreferrer">
-                <i className="bi bi-github  mx-2"></i>
-              </Nav.Link>
-            </Nav>
-              <ul className="nav">
-                <li className="nav-item">
-                  <a className="nav-link" href="/a-propos-la-societe-nouvelle">
-                    A propos
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/mentions-legales">
-                    Mentions légales
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/portail/company/889182770">
-                    Empreinte Sociétale
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/contact">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Container>
-      </footer>
-    </>
-  ) : (
+  return ( 
     <footer>
       <div className="top-footer">
         <Container>

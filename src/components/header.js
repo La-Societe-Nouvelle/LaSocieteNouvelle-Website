@@ -33,15 +33,16 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/portail">
-              <i className="bi bi-search"></i> Portail
+          <Nav.Link href="/portail" className="border-end border-3">
+              <i className="bi bi-search"></i> Rechercher une entreprise 
             </Nav.Link>
+          <Nav.Link href="/">La Société Nouvelle</Nav.Link>
             <Nav.Link
               href="https://api.lasocietenouvelle.org"
               target="_blank"
               rel="noreferrer"
             >
-              API
+              API publique
             </Nav.Link>
             <Nav.Link
               href="https://docs.lasocietenouvelle.org/public-api"
@@ -49,7 +50,8 @@ const Header = () => {
             >
               Documentation
             </Nav.Link>
-            <Nav.Link href="/">La société nouvelle</Nav.Link>
+
+       
           </Nav>
         </Navbar.Collapse>
       </Container>
