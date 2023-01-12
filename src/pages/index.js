@@ -1,7 +1,7 @@
 // Components
 
 // Modules
-import React, { useCallback, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/charts/Graph";
@@ -23,7 +23,7 @@ const Home = () =>
   const fetchKeyFiguresData = async() => {
 
     const getPinKeyFigure = axios.get(
-      `http://localhost:8080/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=NVA`
+      `http://localhost:8080/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`
     );
 
     const getGhgKeyFigure =  axios.get(
@@ -45,10 +45,9 @@ const Home = () =>
 
         if (pinKeyfigure.data.header.code == 200) {
 
-          console.log(pinKeyfigure)
           const value = pinKeyfigure.data.data[0].value.toFixed(0);
-
-          setPinKeyFigure(value);
+          const convertedValue = (value / 1000).toFixed(2);
+          setPinKeyFigure(convertedValue);
         }
     
 
@@ -60,9 +59,7 @@ const Home = () =>
         }
     
         if (geqKeyFigure.data.header.code == 200) {
-
           const value = geqKeyFigure.data.data[0].value.toFixed(1);
-
           setGeqKeyFigure(value)
 
         }
