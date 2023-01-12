@@ -112,21 +112,43 @@ const CompanyData = () => {
             <>
               <div className="legalUnit bg-white mb-4 p-5 rounded-3 ">
                 <Row>
+                  <h1 className="mb-4 border-bottom border-3 pb-2">
+                    Empreinte Sociétale de l'entreprise
+                  </h1>
                   <Col lg={4}>
-                    <h2 className="h1">{legalUnit.denomination}</h2>
+                    <h2 className="text-wrap mb-2">{legalUnit.denomination}</h2>
+                    {legalUnit.denominationUsuelle && (
+                      <h3>( {legalUnit.denominationUsuelle} )</h3>
+                    )}
+                    {legalUnit.societeMission && (
+                      <Badge pill bg="secondary" className="me-2">
+                        Société à mission
+                      </Badge>
+                    )}
+                    {legalUnit.economieSocialeSolidaire && (
+                      <Badge pill bg="secondary" className="me-2">
+                        Économie sociale et solidaire
+                      </Badge>
+                    )}
+                    {legalUnit.hasCraftedActivities && (
+                      <Badge pill bg="secondary" className="">
+                        Activité(s) enregistrée(s) au registre des métiers
+                      </Badge>
+                    )}
                   </Col>
                   <Col>
-                    <h3 className="fw-bold">Informations sur l'entreprise</h3>
-                    <p>SIREN : {legalUnit.siren}</p>
                     <p>
-                      Activité principale :{legalUnit.activitePrincipaleLibelle}{" "}
-                      ({legalUnit.activitePrincipaleCode})
+                      <b>SIREN</b> : {legalUnit.siren}
                     </p>
                     <p>
-                      Siège :
+                      <b>Activité principale </b> :{" "}
+                      {legalUnit.activitePrincipaleLibelle}(
+                      {legalUnit.activitePrincipaleCode})
+                    </p>
+                    <p>
+                      <b>Siège</b> :
                       {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
                     </p>
-                    {legalUnit.societeMission && <p>Société à mission : Oui</p>}
                   </Col>
                 </Row>
               </div>
@@ -137,42 +159,7 @@ const CompanyData = () => {
                   divisionFootprint={divisionFootprint}
                 />
               </div>
-              <Row>
-                <Col>
-                  <div className="bg-white p-5 rounded-3 mt-3">
-                    <Image src="/images/Analyze-rafiki.svg" alt="Illustration calcul données par défaut" height={200} className="mx-auto d-block"/>
-                    <h4 className="my-3 text-center">
-                      A quoi correspond les valeurs par défaut ? 
-                    </h4>
-                    <p className="my-4">
-                      Les données par défaut correspondent aux données utilisées
-                      lorsque l'empreinte sociétale d'une entreprise n'est pas
-                      publiée. Elles visent à fournir une estimation des impacts
-                      indirects de l'entreprise en s'appuyant sur les
-                      caractéristiques connues des fournisseurs.
-                    </p>
-                    <div className="text-center">
-                      <Button  src="https://docs.lasocietenouvelle.org/donnees" target="_blank" title="Accéder à la documentation complète">Voir la documentation</Button>
-                    </div>
-                  </div>
-                </Col>
-                <Col>
-                <div className="bg-white p-5 rounded-3 mt-3">
-                    <Image src="/images/Devices-rafiki.svg" alt="Illustration publication de données" height={200} className="mx-auto d-block"/>
-                    <h4 className="my-3 text-center">
-                      Comment publier mon empreinte sociétale ? 
-                    </h4>
-                    <p className="my-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et felis quis nibh pharetra viverra a eu ante. 
-                    Vestibulum vel nibh dignissim, lobortis lectus non, tristique orci.
-                    Ut elit massa, posuere ac varius in, porttitor eu tellus. Aliquam euismod rhoncus accumsan. 
-                    </p>
-                    <div className="text-center">
-                      <Button variant="secondary"  src="https://docs.lasocietenouvelle.org/donnees" target="_blank" title="Accéder à la documentation complète">Publier mon empreinte</Button>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
+       
             </>
           )}
           <p className="text-end mt-3">
@@ -185,6 +172,80 @@ const CompanyData = () => {
               « Retour
             </Button>
           </p>
+        </Container>
+      </section>
+      <section>
+        <Container>
+        <Row>
+                <Col>
+                  <div className="bg-white p-5 rounded-3 mt-3">
+                    <Image
+                      src="/images/Analyze-rafiki.svg"
+                      alt="Illustration calcul données par défaut"
+                      height={200}
+                      className="mx-auto d-block"
+                    />
+                    <h4 className="my-3 text-center">
+                      A quoi correspond les valeurs par défaut ?
+                    </h4>
+                    <p className="my-4">
+                      Les données par défaut correspondent aux données utilisées
+                      lorsque l'empreinte sociétale d'une entreprise n'est pas
+                      publiée. Elles visent à fournir une estimation des impacts
+                      indirects de l'entreprise en s'appuyant sur les
+                      caractéristiques connues des fournisseurs.
+                    </p>
+                    <div className="text-center">
+                      <Button
+                        src="https://docs.lasocietenouvelle.org/donnees"
+                        target="_blank"
+                        title="Accéder à la documentation complète"
+                      >
+                        Voir la documentation
+                      </Button>
+                    </div>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="bg-white p-5 rounded-3 mt-3">
+                    <Image
+                      src="/images/Devices-rafiki.svg"
+                      alt="Illustration publication de données"
+                      height={200}
+                      className="mx-auto d-block"
+                    />
+                    <h4 className="my-3 text-center">
+                      Comment publier mon empreinte sociétale ?
+                    </h4>
+                    <p className="my-4">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Proin et felis quis nibh pharetra viverra a eu ante.
+                      Vestibulum vel nibh dignissim, lobortis lectus non,
+                      tristique orci. Ut elit massa, posuere ac varius in,
+                      porttitor eu tellus. Aliquam euismod rhoncus accumsan.
+                    </p>
+                    <div className="text-center">
+                      <Button
+                        variant="secondary"
+                        src="https://docs.lasocietenouvelle.org/donnees"
+                        target="_blank"
+                        title="Accéder à la documentation complète"
+                        className="me-2"
+                      >
+                        Mesurer mon empreinte
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        src="https://docs.lasocietenouvelle.org/donnees"
+                        target="_blank"
+                        title="Accéder à la documentation complète"
+                      >
+                        Publier mon empreinte
+                      </Button>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
         </Container>
       </section>
     </>
@@ -260,7 +321,10 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
         </Accordion.Item>
         <Accordion.Item eventKey="1">
           <Accordion.Header>Empreinte sociale</Accordion.Header>
-          <Accordion.Body>  <Row> {socialFootprintComponents}</Row></Accordion.Body>
+          <Accordion.Body>
+            {" "}
+            <Row> {socialFootprintComponents}</Row>
+          </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">
           <Accordion.Header>Empreinte environnementale</Accordion.Header>
@@ -289,12 +353,9 @@ function IndicatorDetails({
   const displayedValue = Math.round(10 * value) / 10;
   const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
 
-
   return (
     <Col key={code} className="my-4" lg={4}>
       <div className="p-3 border border-3 rounded-3">
-
-
         <div className="indic-title">
           <div className="indic-icon">
             <Image
@@ -303,44 +364,68 @@ function IndicatorDetails({
               alt={code}
             />
           </div>
-          <h3 className="h6">{indicatorLabel} </h3>
-        </div>
-        <p className="source text-end">
-          <a href={"/indicateurs/" + code.toLowerCase() } title="Plus d'informations sur l'indicateur" >Détails &raquo;</a>
+          <div>
+            <h3 className="h6">{indicatorLabel} </h3>
+            <p className="source mt-1">
+          <a
+            href={"/indicateurs/" + code.toLowerCase()}
+            title="Plus d'informations sur l'indicateur"
+          >
+            Informations sur l'indicateur &raquo;
+          </a>
         </p>
+          </div>
+        </div>
+        <div className="text-end">
+        <a href=""><i className="bi bi-plus-circle-fill"></i> Détails </a> 
+          </div>
         <ColumnChart
           performance={displayedValue}
           comparative={divisionValue}
           unit={unitSymbol}
           flag={flag}
         />
-              <div className="mb-3">
-            {flag == "p" ? (
-              <Badge  pill bg="secondary" title="Valeur publiée par l'entreprise">
-                Valeur Publiée{" "}
-              </Badge>
-            ) : (
-              <Badge pill bg="primary" title="Valeur proposée à partir de données statistiques">
-                Valeur par défaut*{" "}
-              </Badge>
-            )}
-                <Badge pill bg="light" className="ms-2 text-body" title="Intervalle de confiance ">
-                {Math.round(uncertainty)} % d'incertitude
-              </Badge>
+        <div className="mb-3">
+          {flag == "p" ? (
+            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
+              Valeur Publiée{" "}
+            </Badge>
+          ) : (
+            <Badge
+              pill
+              bg="primary"
+              title="Valeur proposée à partir de données statistiques"
+            >
+              Valeur par défaut*{" "}
+            </Badge>
+          )}
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-body"
+            title="Intervalle de confiance "
+          >
+            {Math.round(uncertainty)} % d'incertitude
+          </Badge>
+          <Badge
+            pill
+            bg="info"
+            className="ms-2 text-body"
+            title="Intervalle de confiance "
+          >
+           <Button size="sm" type="button" variant="outline-info"><i className="bi bi-plus-circle-fill"></i> Détails </Button> 
+          </Badge>
         </div>
- 
+  
+
         <div className="mt-2 text-end">
           <p className="source mb-0">
-          {year && year != "NA" && (
-              <>Données publiées en {year}  | </>
-            )}
-           Source : 
-          {source ? (
-            <> {source}</>
-          ) : (
-            <> La Société Nouvelle</>
-          )}
-          </p>
+            {year && year != "NA" && <>Données publiées en {year}</>} 
+            </p>
+            <p className="source mb-0">
+            Source : { divisionFootprint[code].source} (Valeur de la branche)
+            </p>
+          
     
         </div>
       </div>
