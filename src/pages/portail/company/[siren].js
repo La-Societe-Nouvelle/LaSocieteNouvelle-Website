@@ -3,10 +3,10 @@ import {
   Accordion,
   Badge,
   Button,
-  Card,
   Col,
   Container,
   Image,
+  Modal,
   Row,
 } from "react-bootstrap";
 
@@ -24,6 +24,7 @@ import axios from "axios";
 import ErrorAlert from "../../../components/Error";
 
 const CompanyData = () => {
+
   const router = useRouter();
 
   const [siren, setSiren] = useState(router.query.siren);
@@ -174,11 +175,11 @@ const CompanyData = () => {
           </p>
         </Container>
       </section>
-      <section>
+      <section className="bg-white">
         <Container>
         <Row>
                 <Col>
-                  <div className="bg-white p-5 rounded-3 mt-3">
+                  <div className="border border-3 p-5 rounded-3 mt-3">
                     <Image
                       src="/images/Analyze-rafiki.svg"
                       alt="Illustration calcul données par défaut"
@@ -207,7 +208,7 @@ const CompanyData = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="bg-white p-5 rounded-3 mt-3">
+                  <div className="border border-3 p-5 rounded-3 mt-3">
                     <Image
                       src="/images/Devices-rafiki.svg"
                       alt="Illustration publication de données"
@@ -338,18 +339,20 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
 }
 
 /* Basic indicator view */
-function IndicatorDetails({
+const IndicatorDetails = ({
   code,
   flag,
   info,
   indicatorLabel,
-  source,
   uncertainty,
   year,
   value,
   unitSymbol,
   divisionFootprint,
-}) {
+}) =>  {
+
+  const [modalOpen, setModalOpen] = useState(null);
+
   const displayedValue = Math.round(10 * value) / 10;
   const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
 
@@ -377,44 +380,43 @@ function IndicatorDetails({
           </div>
         </div>
         <div className="text-end">
-        <a href=""><i className="bi bi-plus-circle-fill"></i> Détails </a> 
-          </div>
+        <Badge
+              pill
+              bg="info"
+              className="ms-2 text-body"
+              title="Plus de détails"
+            >
+            <i className="bi bi-plus-circle-fill"></i> <button className="btn-badge" onClick={() => setModalOpen(code)}> Détails &raquo;</button>
+            </Badge>          </div>
         <ColumnChart
           performance={displayedValue}
           comparative={divisionValue}
           unit={unitSymbol}
           flag={flag}
         />
-        <div className="mb-3">
-          {flag == "p" ? (
-            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-              Valeur Publiée{" "}
-            </Badge>
-          ) : (
+
+        <div className="mb-3 d-flex justify-content-evenly">
+            {flag == "p" ? (
+              <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
+                Valeur Publiée{" "}
+              </Badge>
+            ) : (
+              <Badge
+                pill
+                bg="primary"
+                title="Valeur proposée à partir de données statistiques"
+              >
+                Valeur par défaut*{" "}
+              </Badge>
+            )}
             <Badge
               pill
-              bg="primary"
-              title="Valeur proposée à partir de données statistiques"
+              bg="light"
+              className="ms-2 text-body"
+              title="Intervalle de confiance "
             >
-              Valeur par défaut*{" "}
+              {Math.round(uncertainty)} % d'incertitude
             </Badge>
-          )}
-          <Badge
-            pill
-            bg="light"
-            className="ms-2 text-body"
-            title="Intervalle de confiance "
-          >
-            {Math.round(uncertainty)} % d'incertitude
-          </Badge>
-          <Badge
-            pill
-            bg="info"
-            className="ms-2 text-body"
-            title="Intervalle de confiance "
-          >
-           <Button size="sm" type="button" variant="outline-info"><i className="bi bi-plus-circle-fill"></i> Détails </Button> 
-          </Badge>
         </div>
   
 
@@ -425,10 +427,29 @@ function IndicatorDetails({
             <p className="source mb-0">
             Source : { divisionFootprint[code].source} (Valeur de la branche)
             </p>
-          
-    
         </div>
       </div>
+
+      {
+        modalOpen == code &&
+        <Modal show={true} onHide={() => setModalOpen(null)} centered size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bg-white rounded-3">
+          <h4>Informations</h4>
+          <h4>Méthodologie</h4>
+          <h5 className="h6">Incertitudes</h5>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setModalOpen(null)}>
+            Fermer
+          </Button>
+
+        </Modal.Footer>
+      </Modal>
+      }
+  
     </Col>
   );
 }
