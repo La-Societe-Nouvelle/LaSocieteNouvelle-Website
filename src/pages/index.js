@@ -23,15 +23,15 @@ const Home = () =>
   const fetchKeyFiguresData = async() => {
 
     const getPinKeyFigure = axios.get(
-      `http://localhost:8080/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`
+      `https://api.lasocietenouvelle.org/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`
     );
 
     const getGhgKeyFigure =  axios.get(
-        `http://localhost:8080/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+        `https://api.lasocietenouvelle.org/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
       );
     
     const getGeqKeyFigure = axios.get(
-      `http://localhost:8080/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+      `https://api.lasocietenouvelle.org/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
     );
       
     await axios
