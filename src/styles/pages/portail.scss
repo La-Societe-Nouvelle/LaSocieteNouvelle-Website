@@ -4,19 +4,19 @@
   text-align: center;
 }
 
-
+.bg-year {
+  background-color: lighten($secondary, 10%)
+}
 
 .open-data-portal {
 
   min-height: calc(100vh - 370px);
   background: url('/celeste.svg') 100% 100% no-repeat;
 
-.btn-badge {
-  background: transparent;
-  border: none;
-}
-
-
+  .btn-badge {
+    background: transparent;
+    border: none;
+  }
 
   .accordion-item {
     margin-bottom: 1rem;

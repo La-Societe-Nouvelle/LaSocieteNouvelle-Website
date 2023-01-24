@@ -22,9 +22,9 @@ import { Bar } from "react-chartjs-2";
 
 import axios from "axios";
 import ErrorAlert from "../../../components/Error";
+import Description from "../../indicateurs/parts/Description";
 
 const CompanyData = () => {
-
   const router = useRouter();
 
   const [siren, setSiren] = useState(router.query.siren);
@@ -113,7 +113,7 @@ const CompanyData = () => {
             <>
               <div className="legalUnit bg-white mb-4 p-5 rounded-3 ">
                 <Row>
-                  <h1 className="mb-4 border-bottom border-3 pb-2">
+                  <h1 className=" h2 mb-4 border-bottom border-3 pb-2">
                     Empreinte Sociétale de l'entreprise
                   </h1>
                   <Col lg={4}>
@@ -143,11 +143,11 @@ const CompanyData = () => {
                     </p>
                     <p>
                       <b>Activité principale </b> :{" "}
-                      {legalUnit.activitePrincipaleLibelle}(
+                      {legalUnit.activitePrincipaleLibelle} (
                       {legalUnit.activitePrincipaleCode})
                     </p>
                     <p>
-                      <b>Siège</b> :
+                      <b>Siège</b> :{" "}
                       {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
                     </p>
                   </Col>
@@ -160,7 +160,6 @@ const CompanyData = () => {
                   divisionFootprint={divisionFootprint}
                 />
               </div>
-       
             </>
           )}
           <p className="text-end mt-3">
@@ -177,76 +176,77 @@ const CompanyData = () => {
       </section>
       <section className="bg-white">
         <Container>
-        <Row>
-                <Col>
-                  <div className="border border-3 p-5 rounded-3 mt-3">
-                    <Image
-                      src="/images/Analyze-rafiki.svg"
-                      alt="Illustration calcul données par défaut"
-                      height={200}
-                      className="mx-auto d-block"
-                    />
-                    <h4 className="my-3 text-center">
-                      A quoi correspond les valeurs par défaut ?
-                    </h4>
-                    <p className="my-4">
-                      Les données par défaut correspondent aux données utilisées
-                      lorsque l'empreinte sociétale d'une entreprise n'est pas
-                      publiée. Elles visent à fournir une estimation des impacts
-                      indirects de l'entreprise en s'appuyant sur les
-                      caractéristiques connues des fournisseurs.
-                    </p>
-                    <div className="text-center">
-                      <Button
-                        src="https://docs.lasocietenouvelle.org/donnees"
-                        target="_blank"
-                        title="Accéder à la documentation complète"
-                      >
-                        Voir la documentation
-                      </Button>
-                    </div>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="border border-3 p-5 rounded-3 mt-3">
-                    <Image
-                      src="/images/Devices-rafiki.svg"
-                      alt="Illustration publication de données"
-                      height={200}
-                      className="mx-auto d-block"
-                    />
-                    <h4 className="my-3 text-center">
-                      Comment publier mon empreinte sociétale ?
-                    </h4>
-                    <p className="my-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin et felis quis nibh pharetra viverra a eu ante.
-                      Vestibulum vel nibh dignissim, lobortis lectus non,
-                      tristique orci. Ut elit massa, posuere ac varius in,
-                      porttitor eu tellus. Aliquam euismod rhoncus accumsan.
-                    </p>
-                    <div className="text-center">
-                      <Button
-                        variant="secondary"
-                        src="https://docs.lasocietenouvelle.org/donnees"
-                        target="_blank"
-                        title="Accéder à la documentation complète"
-                        className="me-2"
-                      >
-                        Mesurer mon empreinte
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        src="https://docs.lasocietenouvelle.org/donnees"
-                        target="_blank"
-                        title="Accéder à la documentation complète"
-                      >
-                        Publier mon empreinte
-                      </Button>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
+          <Row>
+            <Col>
+              <div className="border border-3 p-5 rounded-3 mt-3">
+                <Image
+                  src="/illustrations/default-data-illu.png"
+                  alt="Illustration calcul données par défaut"
+                  className="mx-auto d-block"
+                />
+                <h4 className="my-3 text-center">
+                  A quoi correspond les valeurs par défaut ?
+                </h4>
+                <p className="my-4">
+                  Les données par défaut correspondent aux données utilisées
+                  lorsque l'empreinte sociétale d'une entreprise n'est pas
+                  publiée. Elles visent à fournir une estimation des impacts
+                  indirects de l'entreprise en s'appuyant sur les
+                  caractéristiques connues des fournisseurs.
+                </p>
+                <div className="text-center">
+                  <Button
+                                      size="sm"
+                    src="https://docs.lasocietenouvelle.org/donnees"
+                    target="_blank"
+                    title="Accéder à la documentation complète"
+                  >
+                    Voir la documentation
+                  </Button>
+                </div>
+              </div>
+            </Col>
+            <Col>
+              <div className="border border-3 p-5 rounded-3 mt-3">
+                <Image
+                  src="/illustrations/publish-footprint-illu.png"
+                  alt="Illustration publication de données"
+                  className="mx-auto d-block"
+                />
+                <h4 className="my-3 text-center">
+                  Comment publier mon empreinte sociétale ?
+                </h4>
+                <p className="my-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                  et felis quis nibh pharetra viverra a eu ante. Vestibulum vel
+                  nibh dignissim, lobortis lectus non, tristique orci. Ut elit
+                  massa, posuere ac varius in, porttitor eu tellus. Aliquam
+                  euismod rhoncus accumsan.
+                </p>
+                <div className="text-center">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    src="https://docs.lasocietenouvelle.org/donnees"
+                    target="_blank"
+                    title="Accéder à la documentation complète"
+                    className="me-2"
+                  >
+                    Mesurer mon empreinte
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    src="https://docs.lasocietenouvelle.org/donnees"
+                    target="_blank"
+                    title="Accéder à la documentation complète"
+                  >
+                    Publier mon empreinte
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </section>
     </>
@@ -280,6 +280,7 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
         code={key}
         unitSymbol={meta[key].unitSymbol}
         indicatorLabel={meta[key].indicatorLabel}
+        source={meta[key].source}
         divisionFootprint={divisionFootprint}
         {...data}
       />
@@ -293,6 +294,7 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
         code={key}
         unitSymbol={meta[key].unitSymbol}
         indicatorLabel={meta[key].indicatorLabel}
+        source={meta[key].source}
         divisionFootprint={divisionFootprint}
         {...data}
       />
@@ -306,6 +308,7 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
       code={key}
       unitSymbol={meta[key].unitSymbol}
       indicatorLabel={meta[key].indicatorLabel}
+      source={meta[key].source}
       divisionFootprint={divisionFootprint}
       {...data}
     />
@@ -323,7 +326,6 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
         <Accordion.Item eventKey="1">
           <Accordion.Header>Empreinte sociale</Accordion.Header>
           <Accordion.Body>
-            {" "}
             <Row> {socialFootprintComponents}</Row>
           </Accordion.Body>
         </Accordion.Item>
@@ -342,15 +344,17 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
 const IndicatorDetails = ({
   code,
   flag,
+  lastupdate,
   info,
+  description,
   indicatorLabel,
   uncertainty,
+  source,
   year,
   value,
   unitSymbol,
   divisionFootprint,
-}) =>  {
-
+}) => {
   const [modalOpen, setModalOpen] = useState(null);
 
   const displayedValue = Math.round(10 * value) / 10;
@@ -370,24 +374,28 @@ const IndicatorDetails = ({
           <div>
             <h3 className="h6">{indicatorLabel} </h3>
             <p className="source mt-1">
-          <a
-            href={"/indicateurs/" + code.toLowerCase()}
-            title="Plus d'informations sur l'indicateur"
-          >
-            Informations sur l'indicateur &raquo;
-          </a>
-        </p>
+              <a
+                href={"/indicateurs/" + code.toLowerCase()}
+                title="Plus d'informations sur l'indicateur"
+              >
+                Informations sur l'indicateur &raquo;
+              </a>
+            </p>
           </div>
         </div>
         <div className="text-end">
-        <Badge
-              pill
-              bg="info"
-              className="ms-2 text-body"
-              title="Plus de détails"
-            >
-            <i className="bi bi-plus-circle-fill"></i> <button className="btn-badge" onClick={() => setModalOpen(code)}> Détails &raquo;</button>
-            </Badge>          </div>
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-primary"
+            title="Plus de détails"
+          >
+            <i className="bi bi-plus-circle-fill"></i>{" "}
+            <button className="btn-badge" onClick={() => setModalOpen(code)}>
+              Détails &raquo;
+            </button>
+          </Badge>
+        </div>
         <ColumnChart
           performance={displayedValue}
           comparative={divisionValue}
@@ -396,63 +404,94 @@ const IndicatorDetails = ({
         />
 
         <div className="mb-3 d-flex justify-content-evenly">
-            {flag == "p" ? (
-              <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-                Valeur Publiée{" "}
-              </Badge>
-            ) : (
-              <Badge
-                pill
-                bg="primary"
-                title="Valeur proposée à partir de données statistiques"
-              >
-                Valeur par défaut*{" "}
-              </Badge>
-            )}
+          {flag == "p" ? (
+            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
+              Valeur Publiée
+            </Badge>
+          ) : (
             <Badge
               pill
-              bg="light"
-              className="ms-2 text-body"
-              title="Intervalle de confiance "
+              bg="primary"
+              title="Valeur proposée à partir de données statistiques"
             >
-              {Math.round(uncertainty)} % d'incertitude
+              Valeur par défaut*
             </Badge>
+          )}
+
+          {year && year != "NA" && (
+            <Badge pill bg="year" title="Année de référence">
+              {year}
+            </Badge>
+          )}
+
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-body"
+            title="Intervalle de confiance "
+          >
+            {Math.round(uncertainty)} % d'incertitude
+          </Badge>
         </div>
-  
 
         <div className="mt-2 text-end">
           <p className="source mb-0">
-            {year && year != "NA" && <>Données publiées en {year}</>} 
-            </p>
-            <p className="source mb-0">
-            Source : { divisionFootprint[code].source} (Valeur de la branche)
-            </p>
+            Source : {divisionFootprint[code].source} (Valeur de la branche)
+          </p>
         </div>
       </div>
 
-      {
-        modalOpen == code &&
+      {modalOpen == code && (
         <Modal show={true} onHide={() => setModalOpen(null)} centered size="lg">
-        <Modal.Header closeButton>
-          <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="bg-white rounded-3">
-          <h4>Informations</h4>
-          <h4>Méthodologie</h4>
-          <h5 className="h6">Incertitudes</h5>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setModalOpen(null)}>
-            Fermer
-          </Button>
+          <Modal.Header closeButton>
+            <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bg-white rounded-3 mx-3">
+            <h4>Informations</h4>
+            <ul className="list-unstyled">
+              <li className="mb-1">
+                Valeur : <b>{displayedValue + unitSymbol}</b>
+              </li>
+              <li className="mb-1">
+                Type de donnée :{" "}
+                <b>{flag == "p" ? "Donnée publiée" : "Donnée par défaut"}</b>
+              </li>
+              {flag == "p" && (
+                <li className="mb-1">
+                  Année de référence : <b>{year}</b>
+                </li>
+              )}
+              <li className="mb-1">
+                Incertitude : <b> {uncertainty}%</b>
+              </li>
+              <li className="mb-1">
+                Dernière mise à jour :{" "}
+                <b>{new Date(lastupdate).toLocaleDateString("fr-FR")}</b>
+              </li>
+            </ul>
+            <h5>Informations complémentaires</h5>
+            {description && <p>{description}</p>}
+            {info && <p>{info}</p>}
+            {source && <p>Source : {source}</p>}
+            <h5>Précisions sur l'indicateur</h5>
 
-        </Modal.Footer>
-      </Modal>
-      }
+            <Description indic={code} />
   
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setModalOpen(null)}
+            >
+              Fermer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </Col>
   );
-}
+};
 
 function ColumnChart({ performance, unit, flag, comparative }) {
   let bgColor;
