@@ -185,14 +185,14 @@ const CompanyData = () => {
                   className="mx-auto d-block"
                 />
                 <h4 className="my-3 text-center">
-                  A quoi correspond les valeurs par défaut ?
+                  A quoi correspondent les valeurs par défaut ?
                 </h4>
                 <p className="my-4">
-                  Les données par défaut correspondent aux données utilisées
+                  Les données par défaut correspondent aux valeurs utilisées
                   lorsque l'empreinte sociétale d'une entreprise n'est pas
-                  publiée. Elles visent à fournir une estimation des impacts
-                  indirects de l'entreprise en s'appuyant sur les
-                  caractéristiques connues des fournisseurs.
+                  publiée. Elles visent à permettre une estimation des impacts
+                  indirects d'une dépense auprès de cette entreprise, en s'appuyant 
+                  sur ses caractéristiques (activité principale, effectifs, etc.).
                 </p>
                 <div className="text-center">
                   <Button
@@ -217,11 +217,11 @@ const CompanyData = () => {
                   Comment publier mon empreinte sociétale ?
                 </h4>
                 <p className="my-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  et felis quis nibh pharetra viverra a eu ante. Vestibulum vel
-                  nibh dignissim, lobortis lectus non, tristique orci. Ut elit
-                  massa, posuere ac varius in, porttitor eu tellus. Aliquam
-                  euismod rhoncus accumsan.
+                  Une demande de publication doit être envoyée via le formulaire
+                  de publication, accessible ci-dessous. Un outil libre et open 
+                  source est à votre disposition pour faciliter la mesure des 
+                  indicateurs. Vous pouvez également solliciter votre expert comptable
+                  sur ce sujet.
                 </p>
                 <div className="text-center">
                   <Button
