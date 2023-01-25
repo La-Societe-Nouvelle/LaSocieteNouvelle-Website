@@ -470,9 +470,9 @@ const IndicatorDetails = ({
               </li>
             </ul>
             <h5>Informations complémentaires</h5>
-            {description && <p>{description}</p>}
-            {info && <p>{info}</p>}
-            {source && <p>Source : {source}</p>}
+            {/* {description && <p>{description}</p>} */}
+            {info  ? <p>{info}</p> : <p className="fst-italic">Aucune précision ajoutée.</p>}
+            {source && <p>Source : {source} (Valeur par défaut)</p>}
             <h5>Précisions sur l'indicateur</h5>
 
             <Description indic={code} />
