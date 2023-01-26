@@ -53,7 +53,7 @@ const CompanyData = () => {
 
   async function getLegalUnitFootprint(siren) {
     axios
-      .get(`http://localhost:8080/legalunitFootprint/${siren}`)
+      .get(`https://api.lasocietenouvelle.org/legalunitFootprint/${siren}`)
       .then((response) => {
         if (response.data.header.code == 200) {
           setLegalUnit(response.data.legalUnit);
@@ -71,7 +71,7 @@ const CompanyData = () => {
   async function getDivisionFootprint(code) {
     axios
       .get(
-        `http://localhost:8080/defaultfootprint/?code=${code}&aggregate=PRD&area=FRA`
+        `https://api.lasocietenouvelle.org/defaultfootprint/?code=${code}&aggregate=PRD&area=FRA`
       )
       .then((response) => {
         isDataFetched(true);
@@ -191,13 +191,15 @@ const CompanyData = () => {
                   Les données par défaut correspondent aux valeurs utilisées
                   lorsque l'empreinte sociétale d'une entreprise n'est pas
                   publiée. Elles visent à permettre une estimation des impacts
-                  indirects d'une dépense auprès de cette entreprise, en s'appuyant 
-                  sur ses caractéristiques (activité principale, effectifs, etc.).
+                  indirects d'une dépense auprès de cette entreprise, en
+                  s'appuyant sur ses caractéristiques (activité principale,
+                  effectifs, etc.).
                 </p>
                 <div className="text-center">
                   <Button
-                                      size="sm"
-                    src="https://docs.lasocietenouvelle.org/donnees"
+                    variant="primary"
+                    size="sm"
+                    href="https://docs.lasocietenouvelle.org/donnees"
                     target="_blank"
                     title="Accéder à la documentation complète"
                   >
@@ -218,30 +220,31 @@ const CompanyData = () => {
                 </h4>
                 <p className="my-4">
                   Une demande de publication doit être envoyée via le formulaire
-                  de publication, accessible ci-dessous. Un outil libre et open 
-                  source est à votre disposition pour faciliter la mesure des 
-                  indicateurs. Vous pouvez également solliciter votre expert comptable
-                  sur ce sujet.
+                  de publication, accessible ci-dessous. Un outil libre et open
+                  source est à votre disposition pour faciliter la mesure des
+                  indicateurs. Vous pouvez également solliciter votre expert
+                  comptable sur ce sujet.
                 </p>
                 <div className="text-center">
                   <Button
                     variant="secondary"
                     size="sm"
-                    src="https://docs.lasocietenouvelle.org/donnees"
+                    href="/publication"
                     target="_blank"
-                    title="Accéder à la documentation complète"
+                    title="Publier directement vos résultats"
                     className="me-2"
                   >
-                    Mesurer mon empreinte
+                    Publier mon empreinte
                   </Button>
                   <Button
-                    variant="secondary"
+                    variant="outline-secondary"
                     size="sm"
-                    src="https://docs.lasocietenouvelle.org/donnees"
+                    href="https://metriz.lasocietenouvelle.org"
                     target="_blank"
-                    title="Accéder à la documentation complète"
+                    title="Mesurer l'empreinte sociétale de votre entreprise"
                   >
-                    Publier mon empreinte
+                    Mesurer mon empreinte{" "}
+                    <i className="bi bi-box-arrow-up-right"></i>
                   </Button>
                 </div>
               </div>
@@ -316,7 +319,7 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
 
   return (
     <Row className="indic-details">
-      <Accordion defaultActiveKey="0">
+      <Accordion defaultActiveKey={["0", "1", "2"]} alwaysOpen>
         <Accordion.Item eventKey="0">
           <Accordion.Header as={"h3"}>Création de la valeur</Accordion.Header>
           <Accordion.Body>
@@ -340,6 +343,18 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
   );
 }
 
+const getFlagLabel = (flag) => {
+  switch (flag) {
+    case "p":
+      return "Valeur publiée";
+      break;
+    case "e":
+      return "Valeur Estimée";
+    default:
+      return "Valeur par défaut";
+      break;
+  }
+};
 /* Basic indicator view */
 const IndicatorDetails = ({
   code,
@@ -376,6 +391,7 @@ const IndicatorDetails = ({
             <p className="source mt-1">
               <a
                 href={"/indicateurs/" + code.toLowerCase()}
+                target="_blank"
                 title="Plus d'informations sur l'indicateur"
               >
                 Informations sur l'indicateur &raquo;
@@ -402,19 +418,28 @@ const IndicatorDetails = ({
           unit={unitSymbol}
           flag={flag}
         />
-
         <div className="mb-3 d-flex justify-content-evenly">
-          {flag == "p" ? (
+          {flag == "p" && (
             <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
               Valeur Publiée
             </Badge>
-          ) : (
+          )}
+          {flag == "d" && (
             <Badge
               pill
               bg="primary"
               title="Valeur proposée à partir de données statistiques"
             >
               Valeur par défaut*
+            </Badge>
+          )}
+          {flag == "e" && (
+            <Badge
+              pill
+              bg="primary"
+              title="Valeur estimée à partir de données publiée par l'entreprise"
+            >
+              Valeur estimée
             </Badge>
           )}
 
@@ -453,8 +478,7 @@ const IndicatorDetails = ({
                 Valeur : <b>{displayedValue + unitSymbol}</b>
               </li>
               <li className="mb-1">
-                Type de donnée :{" "}
-                <b>{flag == "p" ? "Donnée publiée" : "Donnée par défaut"}</b>
+                Type de donnée : <b>{getFlagLabel(flag)}</b>
               </li>
               {flag == "p" && (
                 <li className="mb-1">
@@ -471,12 +495,15 @@ const IndicatorDetails = ({
             </ul>
             <h5>Informations complémentaires</h5>
             {/* {description && <p>{description}</p>} */}
-            {info  ? <p>{info}</p> : <p className="fst-italic">Aucune précision ajoutée.</p>}
-            {source && <p>Source : {source} (Valeur par défaut)</p>}
+            {info ? (
+              <p>{info}</p>
+            ) : (
+              <p className="fst-italic">Aucune précision ajoutée.</p>
+            )}
+            {source && <p>Source : {source} </p>}
             <h5>Précisions sur l'indicateur</h5>
 
             <Description indic={code} />
-  
           </Modal.Body>
           <Modal.Footer>
             <Button
