@@ -1,108 +1,78 @@
 // portail de données
 .info-section {
-  border-top: 1px solid #e9ecef;
   font-size: 0.9rem;
   text-align: center;
 }
 
-.navbar {
-  border-bottom: 1px solid #e9ecef;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-
+.bg-year {
+  background-color: lighten($secondary, 10%)
 }
 
 .open-data-portal {
 
-  padding-top: 2rem;
   min-height: calc(100vh - 370px);
-
   background: url('/celeste.svg') 100% 100% no-repeat;
 
-  .legalUnit {
-    border: 1px solid $light;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+  .btn-badge {
+    background: transparent;
+    border: none;
   }
-  .nav {
-    background-color: $light;
-    a {
-      text-transform: uppercase;
-      color: $primary;
-      border : 1px solid darken($light, 10%);
+
+  .accordion-item {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid $light;
+    border-radius: 1rem;
+
+    &:first-of-type {
+      border-radius: 1rem;
+
     }
 
-    .selected {
-      background-color: $secondary;
-      .nav-link {
-        color : #FFF;
-        border: 1px solid $secondary;
+    &:last-of-type {
+      border-radius: 1rem;
+
+      .accordion-collapse {
+        border-radius: 1rem;
       }
     }
-  }
 
-  .footprint {
-
-    #indic-view-label {
-      font-size: 1.2rem;
-      font-weight: 600;
+    .indic-title {
+      display: flex;
+      height: 75px;
     }
 
-    .indic {
-      padding-bottom: 1rem;
-      border-bottom:1px solid $light;
-      margin-bottom: 2rem;
-      height: 100px;
-    }
-    .value {
-      font-size: 1.8rem;
-      color: $primary;
-      font-weight: 600;
-    }
-
-    .incertitude {
-      color: grey;
-      font-size: 0.7rem;
-    }
-
-    .icon-ese {
-      height: 40px;
-      margin-right: 1rem;
-    }
-
-    .card-footer {
-      background-color: transparent;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 0.7rem;
-      p{
-        margin: 0;
-      }
-    }
-  }
-
-
-  .results {
-    border-top: 1px solid $light;
-  }
-
-  .result {
-    padding: 2rem;
-    background-color: #fff;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
 
     h3 {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
     }
 
-    p {
-      margin-bottom: 0;
-      font-size: 0.8rem;
+    .indic-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      margin-right: 1rem;
+      background-color: $light;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
 
     }
   }
+
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    border-bottom: 3px solid $light;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+
+  .accordion-button {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 1rem;
+  }
+
 }
 
 .search-form {
@@ -119,6 +89,8 @@
 
   .form-control-lg {
     border-radius: 10px 0 0 10px;
+    border: 3px solid #f3f2f6;
+    border-right: 0;
   }
 
   .btn {
@@ -126,6 +98,7 @@
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
+    border-width: 3px;
   }
 
   ::placeholder {
@@ -137,19 +110,11 @@
 .legalUnitCard {
   margin-bottom: 1rem;
 
-  .card-header {
-    background-color: $light;
-    font-weight: 600;
-  }
-
   .card-body p {
     font-size: 0.8rem;
   }
-
-  h6 {
-    font-weight: 600;
-  }
 }
+
 
 /**
  * ==============================================

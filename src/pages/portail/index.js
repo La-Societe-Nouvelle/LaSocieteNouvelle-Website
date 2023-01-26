@@ -113,13 +113,13 @@ const portail = () => {
             </Row>
           </div>
           {isLoading && ( 
-                <div className="alert alert-info text-center">
+                <div className="text-center">
                   <h4>Recherche en cours </h4>
                   <div className="dot-pulse m-auto"></div>
                 </div>
           )}
           {legalUnits.length > 0 && (
-            <section className="result">
+            <section className="result bg-light p-4 rounded-3">
               {legalUnits.length > 1 ? (
                 <p>
                   <b>{legalUnits.length}</b> entreprises correspondent à votre

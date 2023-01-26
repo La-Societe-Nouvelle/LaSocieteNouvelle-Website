@@ -18,6 +18,7 @@
 html,
 body {
   height: 100%;
+  cursor: default;
 }
 
 a {
@@ -28,6 +29,9 @@ a {
   }
 }
 
+.border-light {
+  border-color: #f0f0f8 !important;
+}
 .btn {
   font-weight: 600;
   padding: 0.65rem 1.5rem;

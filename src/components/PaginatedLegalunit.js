@@ -55,7 +55,7 @@ const Items = ({ currentItems }) => {
       {currentItems &&
         currentItems.map((legalUnit, index) => (
           <Card className="legalUnitCard" key={index}>
-            <Card.Header as="h5">
+            <Card.Header as="h3" className="h5">
               {legalUnit.denomination}
             </Card.Header>
             <Card.Body>
@@ -84,10 +84,9 @@ const Items = ({ currentItems }) => {
                 <Col>
                   <div className="text-end">
                     <a
-                      className="btn btn-outline-secondary"
+                      className="btn btn-primary btn-sm"
                       href={"portail/company/" + legalUnit.siren}
                     > Voir l'empreinte  
-                      <i className="bi bi-arrow-right-circle-fill ms-2"></i>
                     </a>
                   </div>
                 </Col>

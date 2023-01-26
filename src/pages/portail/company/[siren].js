@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
+  Accordion,
+  Badge,
   Button,
-  Card,
   Col,
   Container,
   Image,
-  Nav,
-  NavItem,
-  NavLink,
+  Modal,
   Row,
 } from "react-bootstrap";
 
@@ -15,11 +14,15 @@ import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
 import Chart from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+
+Chart.register(ChartDataLabels);
 
 import { Bar } from "react-chartjs-2";
 
 import axios from "axios";
 import ErrorAlert from "../../../components/Error";
+import Description from "../../indicateurs/parts/Description";
 
 const CompanyData = () => {
   const router = useRouter();
@@ -27,61 +30,60 @@ const CompanyData = () => {
   const [siren, setSiren] = useState(router.query.siren);
   const [error, setError] = useState();
 
-  const [views, setView] = useState({
-    empreinteEconomique: {
-      name: "Création de la valeur",
-      indicators: {
-        ECO: { min: 0, max: 100 },
-        ART: { min: 0, max: 100 },
-        SOC: { min: 0, max: 100 },
-      },
-    },
-    empreinteEnvironnementale: {
-      name: "Empreinte environnementale",
-      indicators: {
-        GHG: { min: 0 },
-        MAT: { min: 0 },
-        WAS: { min: 0 },
-        NRG: { min: 0 },
-        WAT: { min: 0 },
-        HAZ: { min: 0 },
-      },
-    },
-    empreinteSociale: {
-      name: "Empreinte sociale",
-      indicators: {
-        IDR: { min: 0, max: 10 },
-        GEQ: { min: 0, max: 100 },
-        KNW: { min: 0, max: 100 },
-      },
-    },
-  });
-  const [selectedView, setSelectedView] = useState("empreinteEconomique");
   const [dataFetched, isDataFetched] = useState(false);
   const [legalUnit, setLegalUnit] = useState();
   const [footprint, setFootprint] = useState();
+  const [divisionFootprint, setDivisionFootpint] = useState();
   const [meta, setMeta] = useState();
 
-  useEffect(() => {
+  useEffect(async () => {
     setSiren(router.query.siren);
+
     if (siren) {
-      getData(siren);
+      await getLegalUnitFootprint(siren);
     }
   }, [router, siren]);
 
-  async function getData(siren) {
+  useEffect(async () => {
+    if (legalUnit) {
+      const code = legalUnit.activitePrincipaleCode.slice(0, 2);
+      await getDivisionFootprint(code);
+    }
+  }, [legalUnit]);
+
+  async function getLegalUnitFootprint(siren) {
     axios
       .get(`https://api.lasocietenouvelle.org/legalunitFootprint/${siren}`)
       .then((response) => {
-        isDataFetched(true);
         if (response.data.header.code == 200) {
           setLegalUnit(response.data.legalUnit);
           setFootprint(response.data.footprint);
           setMeta(response.data.metaData);
-          
         } else {
           setError(response.data.header);
         }
+      })
+      .catch((error) => {
+        setError({ code: 500 });
+        return error;
+      });
+  }
+  async function getDivisionFootprint(code) {
+    axios
+      .get(
+        `https://api.lasocietenouvelle.org/defaultfootprint/?code=${code}&aggregate=PRD&area=FRA`
+      )
+      .then((response) => {
+        isDataFetched(true);
+        if (response.data.header.code == 200) {
+          setDivisionFootpint(response.data.footprint);
+        } else {
+          setError(response.data.header);
+        }
+      })
+      .catch((error) => {
+        setError({ code: 500 });
+        return error;
       });
   }
 
@@ -93,11 +95,10 @@ const CompanyData = () => {
             siren}
         </title>
       </Helmet>
-      <section className="open-data-portal">
-
+      <section className="open-data-portal bg-light">
         <Container>
-          {!dataFetched && (
-            <>
+          {!error && !dataFetched && (
+            <div className="bg-white p-5 rounded-3">
               <h2 className="text-center">
                 Empreinte Sociétale de l'entreprise <b>#{siren}</b>
               </h2>
@@ -105,61 +106,150 @@ const CompanyData = () => {
                 <p>Chargement des données... </p>
                 <div className="dot-pulse m-auto"></div>
               </div>
-            </>
+            </div>
           )}
           {error && <ErrorAlert code={error.code} />}
-          {dataFetched && footprint && meta && (
+          {dataFetched && footprint && divisionFootprint && meta && (
             <>
-              <div className="legalUnit">
-                <h2 className="text-center">
-                  Empreinte Sociétale de{" "}
-                  <b>{legalUnit.denomination + " #" + siren}</b>
-                </h2>
-                <div className="d-flex justify-content-between">
-                  <p>
-                    <b>SIREN :</b> {legalUnit.siren}
-                  </p>
-                  <p>
-                    <b>Activité principale : </b>
-                    {legalUnit.activitePrincipaleLibelle}
-                  </p>
-                  <p>
-                    <b>Siège : </b>{" "}
-                    {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
-                  </p>
-                </div>
+              <div className="legalUnit bg-white mb-4 p-5 rounded-3 ">
+                <Row>
+                  <h1 className=" h2 mb-4 border-bottom border-3 pb-2">
+                    Empreinte Sociétale de l'entreprise
+                  </h1>
+                  <Col lg={4}>
+                    <h2 className="text-wrap mb-2">{legalUnit.denomination}</h2>
+                    {legalUnit.denominationUsuelle && (
+                      <h3>( {legalUnit.denominationUsuelle} )</h3>
+                    )}
+                    {legalUnit.societeMission && (
+                      <Badge pill bg="secondary" className="me-2">
+                        Société à mission
+                      </Badge>
+                    )}
+                    {legalUnit.economieSocialeSolidaire && (
+                      <Badge pill bg="secondary" className="me-2">
+                        Économie sociale et solidaire
+                      </Badge>
+                    )}
+                    {legalUnit.hasCraftedActivities && (
+                      <Badge pill bg="secondary" className="">
+                        Activité(s) enregistrée(s) au registre des métiers
+                      </Badge>
+                    )}
+                  </Col>
+                  <Col>
+                    <p>
+                      <b>SIREN</b> : {legalUnit.siren}
+                    </p>
+                    <p>
+                      <b>Activité principale </b> :{" "}
+                      {legalUnit.activitePrincipaleLibelle} (
+                      {legalUnit.activitePrincipaleCode})
+                    </p>
+                    <p>
+                      <b>Siège</b> :{" "}
+                      {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
+                    </p>
+                  </Col>
+                </Row>
               </div>
               <div className="footprint">
-                <Nav pills="true" tabs="true" fill>
-                  {Object.entries(views).map(([viewKey, viewValue], _) => (
-                    <NavItem
-                      key={viewKey}
-                      className={viewKey == selectedView ? "selected" : ""}
-                    >
-                      <NavLink onClick={() => setSelectedView(viewKey)}>
-                        {viewValue.name}
-                      </NavLink>
-                    </NavItem>
-                  ))}
-                </Nav>
                 <ContentSocialFootprint
-                  views={views}
-                  selectedView={selectedView}
-                  empreinteSocietale={footprint}
+                  footprint={footprint}
                   meta={meta}
+                  divisionFootprint={divisionFootprint}
                 />
               </div>
             </>
           )}
-          <p className="text-end">
+          <p className="text-end mt-3">
             <Button
               title="Retour au portail"
               href="/portail"
               variant="secondary"
+              size="sm"
             >
-              « Retour{" "}
+              « Retour
             </Button>
           </p>
+        </Container>
+      </section>
+      <section className="bg-white">
+        <Container>
+          <Row>
+            <Col>
+              <div className="border border-3 p-5 rounded-3 mt-3">
+                <Image
+                  src="/illustrations/default-data-illu.png"
+                  alt="Illustration calcul données par défaut"
+                  className="mx-auto d-block"
+                />
+                <h4 className="my-3 text-center">
+                  A quoi correspondent les valeurs par défaut ?
+                </h4>
+                <p className="my-4">
+                  Les données par défaut correspondent aux valeurs utilisées
+                  lorsque l'empreinte sociétale d'une entreprise n'est pas
+                  publiée. Elles visent à permettre une estimation des impacts
+                  indirects d'une dépense auprès de cette entreprise, en
+                  s'appuyant sur ses caractéristiques (activité principale,
+                  effectifs, etc.).
+                </p>
+                <div className="text-center">
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    href="https://docs.lasocietenouvelle.org/donnees"
+                    target="_blank"
+                    title="Accéder à la documentation complète"
+                  >
+                    Voir la documentation
+                  </Button>
+                </div>
+              </div>
+            </Col>
+            <Col>
+              <div className="border border-3 p-5 rounded-3 mt-3">
+                <Image
+                  src="/illustrations/publish-footprint-illu.png"
+                  alt="Illustration publication de données"
+                  className="mx-auto d-block"
+                />
+                <h4 className="my-3 text-center">
+                  Comment publier mon empreinte sociétale ?
+                </h4>
+                <p className="my-4">
+                  Une demande de publication doit être envoyée via le formulaire
+                  de publication, accessible ci-dessous. Un outil libre et open
+                  source est à votre disposition pour faciliter la mesure des
+                  indicateurs. Vous pouvez également solliciter votre expert
+                  comptable sur ce sujet.
+                </p>
+                <div className="text-center">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    href="/publication"
+                    target="_blank"
+                    title="Publier directement vos résultats"
+                    className="me-2"
+                  >
+                    Publier mon empreinte
+                  </Button>
+                  <Button
+                    variant="outline-secondary"
+                    size="sm"
+                    href="https://metriz.lasocietenouvelle.org"
+                    target="_blank"
+                    title="Mesurer l'empreinte sociétale de votre entreprise"
+                  >
+                    Mesurer mon empreinte{" "}
+                    <i className="bi bi-box-arrow-up-right"></i>
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </section>
     </>
@@ -167,109 +257,380 @@ const CompanyData = () => {
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint({ views, selectedView, empreinteSocietale,meta }) {
-  const selectedIndicatorDetails = Object.entries(
-    views[selectedView].indicators
-  ).map(([code, viewWindow], _) => ({
-    ...empreinteSocietale[code],
-    ...meta[code],
-    viewWindow,
-    code,
-  }));
+function ContentSocialFootprint({ footprint, meta, divisionFootprint }) {
+  //  INDICATORS CATEGORIES
+  const valueCreation = ["ECO", "ART", "SOC"];
+  const socialFootprint = ["IDR", "GEQ", "KNW"];
+  const environmentalFootprint = ["GHG", "NRG", "WAT", "MAT", "WAS", "HAZ"];
+
+  const valueCreationList = Object.fromEntries(
+    Object.entries(footprint).filter(([key]) => valueCreation.includes(key))
+  );
+
+  const socialFootprintList = Object.fromEntries(
+    Object.entries(footprint).filter(([key]) => socialFootprint.includes(key))
+  );
+  const environmentalFootprintList = Object.fromEntries(
+    Object.entries(footprint).filter(([key]) =>
+      environmentalFootprint.includes(key)
+    )
+  );
+
+  const valueCreationComponents = Object.entries(valueCreationList).map(
+    ([key, data]) => (
+      <IndicatorDetails
+        key={key}
+        code={key}
+        unitSymbol={meta[key].unitSymbol}
+        indicatorLabel={meta[key].indicatorLabel}
+        source={meta[key].source}
+        divisionFootprint={divisionFootprint}
+        {...data}
+      />
+    )
+  );
+
+  const socialFootprintComponents = Object.entries(socialFootprintList).map(
+    ([key, data]) => (
+      <IndicatorDetails
+        key={key}
+        code={key}
+        unitSymbol={meta[key].unitSymbol}
+        indicatorLabel={meta[key].indicatorLabel}
+        source={meta[key].source}
+        divisionFootprint={divisionFootprint}
+        {...data}
+      />
+    )
+  );
+  const environmentalFootprintComponents = Object.entries(
+    environmentalFootprintList
+  ).map(([key, data]) => (
+    <IndicatorDetails
+      key={key}
+      code={key}
+      unitSymbol={meta[key].unitSymbol}
+      indicatorLabel={meta[key].indicatorLabel}
+      source={meta[key].source}
+      divisionFootprint={divisionFootprint}
+      {...data}
+    />
+  ));
 
   return (
     <Row className="indic-details">
-
-      {selectedIndicatorDetails.map(
-        (details) => (
-          (<IndicatorDetails key={details.code} {...details} />)
-        )
-      )}
+      <Accordion defaultActiveKey={["0", "1", "2"]} alwaysOpen>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header as={"h3"}>Création de la valeur</Accordion.Header>
+          <Accordion.Body>
+            <Row>{valueCreationComponents}</Row>
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Empreinte sociale</Accordion.Header>
+          <Accordion.Body>
+            <Row> {socialFootprintComponents}</Row>
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Empreinte environnementale</Accordion.Header>
+          <Accordion.Body>
+            <Row>{environmentalFootprintComponents}</Row>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     </Row>
   );
 }
 
+const getFlagLabel = (flag) => {
+  switch (flag) {
+    case "p":
+      return "Valeur publiée";
+      break;
+    case "e":
+      return "Valeur Estimée";
+    default:
+      return "Valeur par défaut";
+      break;
+  }
+};
 /* Basic indicator view */
-function IndicatorDetails({
+const IndicatorDetails = ({
   code,
   flag,
+  lastupdate,
+  info,
+  description,
   indicatorLabel,
-  source,
   uncertainty,
+  source,
   year,
   value,
   unitSymbol,
-}) {
+  divisionFootprint,
+}) => {
+  const [modalOpen, setModalOpen] = useState(null);
+
   const displayedValue = Math.round(10 * value) / 10;
+  const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
 
   return (
-    <Col key={code} className="indic-view my-4" lg={4}>
-      <Card>
-        <Card.Body>
-          <div className="indic d-flex align-items-center">
+    <Col key={code} className="my-4" lg={4}>
+      <div className="p-3 border border-3 rounded-3">
+        <div className="indic-title">
+          <div className="indic-icon">
             <Image
-              className="icon-ese"
-              fluid
+              height="20px"
               src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
               alt={code}
             />
-            <h4 id="indic-view-label">{indicatorLabel} </h4>
           </div>
-          <div className="indic-value text-center">
-            <h5 className={flag ? "value" : "value default"}>
-              {Math.round(displayedValue)} <span className="symbol">{unitSymbol}</span>
-            </h5>
-            <p className="small"> 
-            {flag && flag == 'p' ? <p> Valeur publiée </p> : <p> Valeur par défaut *</p>}
-            </p>
-            <p className="incertitude">
-              Incertitude : {Math.round(uncertainty)} %
+          <div>
+            <h3 className="h6">{indicatorLabel} </h3>
+            <p className="source mt-1">
+              <a
+                href={"/indicateurs/" + code.toLowerCase()}
+                target="_blank"
+                title="Plus d'informations sur l'indicateur"
+              >
+                Informations sur l'indicateur &raquo;
+              </a>
             </p>
           </div>
+        </div>
+        <div className="text-end">
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-primary"
+            title="Plus de détails"
+          >
+            <i className="bi bi-plus-circle-fill"></i>{" "}
+            <button className="btn-badge" onClick={() => setModalOpen(code)}>
+              Détails &raquo;
+            </button>
+          </Badge>
+        </div>
+        <ColumnChart
+          performance={displayedValue}
+          comparative={divisionValue}
+          unit={unitSymbol}
+          flag={flag}
+        />
+        <div className="mb-3 d-flex justify-content-evenly">
+          {flag == "p" && (
+            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
+              Valeur Publiée
+            </Badge>
+          )}
+          {flag == "d" && (
+            <Badge
+              pill
+              bg="primary"
+              title="Valeur proposée à partir de données statistiques"
+            >
+              Valeur par défaut*
+            </Badge>
+          )}
+          {flag == "e" && (
+            <Badge
+              pill
+              bg="primary"
+              title="Valeur estimée à partir de données publiée par l'entreprise"
+            >
+              Valeur estimée
+            </Badge>
+          )}
 
-          <ColumnChart title={indicatorLabel} performance= {Math.round(displayedValue)} />
-        </Card.Body>
-        <Card.Footer className="d-flex justify-content-between">
-          {source && <p>Source : {source}</p>}
-          {year && <p>Dernière mise à jour : {year}</p>}
-        </Card.Footer>
-      </Card>
+          {year && year != "NA" && (
+            <Badge pill bg="year" title="Année de référence">
+              {year}
+            </Badge>
+          )}
+
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-body"
+            title="Intervalle de confiance "
+          >
+            {Math.round(uncertainty)} % d'incertitude
+          </Badge>
+        </div>
+
+        <div className="mt-2 text-end">
+          <p className="source mb-0">
+            Source : {divisionFootprint[code].source} (Valeur de la branche)
+          </p>
+        </div>
+      </div>
+
+      {modalOpen == code && (
+        <Modal show={true} onHide={() => setModalOpen(null)} centered size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bg-white rounded-3 mx-3">
+            <h4>Informations</h4>
+            <ul className="list-unstyled">
+              <li className="mb-1">
+                Valeur : <b>{displayedValue + unitSymbol}</b>
+              </li>
+              <li className="mb-1">
+                Type de donnée : <b>{getFlagLabel(flag)}</b>
+              </li>
+              {flag == "p" && (
+                <li className="mb-1">
+                  Année de référence : <b>{year}</b>
+                </li>
+              )}
+              <li className="mb-1">
+                Incertitude : <b> {uncertainty}%</b>
+              </li>
+              <li className="mb-1">
+                Dernière mise à jour :{" "}
+                <b>{new Date(lastupdate).toLocaleDateString("fr-FR")}</b>
+              </li>
+            </ul>
+            <h5>Informations complémentaires</h5>
+            {/* {description && <p>{description}</p>} */}
+            {info ? (
+              <p>{info}</p>
+            ) : (
+              <p className="fst-italic">Aucune précision ajoutée.</p>
+            )}
+            {source && <p>Source : {source} </p>}
+            <h5>Précisions sur l'indicateur</h5>
+
+            <Description indic={code} />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setModalOpen(null)}
+            >
+              Fermer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </Col>
   );
-}
+};
 
-function ColumnChart({ title, performance }) {
+function ColumnChart({ performance, unit, flag, comparative }) {
+  let bgColor;
+
+  if (flag == "p") {
+    bgColor = "RGBA(250, 89, 95,1)";
+  } else {
+    bgColor = "RGBA(25, 21, 88,1)";
+  }
+
   const data = {
+    labels: ["Unité Légale", "Branche"],
     datasets: [
       {
-        barPercentage: 0.5,
-        data: [performance],
-        backgroundColor: ["RGB(251, 122, 127)"],
+        label: "Empreinte",
+        barPercentage: 0.4,
+        categoryPercentage: 0.4,
+        data: [performance, comparative],
+        backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
       },
     ],
-    labels: ["Unité legale"],
   };
+
+  let suggestedMax;
+
+  if (unit == "%") {
+    switch (true) {
+      case performance < 10:
+        suggestedMax = 10;
+        break;
+      case performance > 10 && performance < 25:
+        suggestedMax = 25;
+        break;
+      case performance > 25 && performance < 50:
+        suggestedMax = 50;
+        break;
+      default:
+        suggestedMax = 100;
+        break;
+    }
+  } else {
+    suggestedMax = null;
+  }
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     devicePixelRatio: 2,
+    layout: {
+      padding: {
+        top: 30,
+        bottom: 10,
+        left: 0,
+        right: 0,
+      },
+    },
     plugins: {
       legend: {
         display: false,
+      },
+      datalabels: {
+        anchor: "end",
+        align: "top",
+        formatter: function (value, context) {
+          return value + " " + unit;
+        },
+        color: "#191558",
+        font: {
+          size: 12,
+          family: "Roboto",
+          weight: "bold",
+        },
+      },
+      tooltip: {
+        enabled: false, //
       },
     },
     scales: {
       y: {
         beginAtZero: true,
-        suggestedMax : 10,
+        suggestedMax: suggestedMax,
+
+        ticks: {
+          color: "#191558",
+          font: {
+            size: 10,
+            family: "Roboto",
+          },
+        },
+        grid: {
+          color: "#ececff",
+        },
+      },
+      x: {
+        display: true,
+        ticks: {
+          color: "#191558",
+          font: {
+            size: 12,
+            family: "Roboto",
+          },
+        },
+        grid: {
+          color: "#ececff",
+        },
       },
     },
   };
 
   return (
-    <div align="center">
-      <Bar id={title} data={data} options={options} />
+    <div className="mt-3 mb-3">
+      <Bar data={data} options={options} />
     </div>
   );
 }
