@@ -6,11 +6,13 @@ $secondary : #fa595f;
 $light : #f0f0f8;
 $gray-600 : #f3f3f3;
 $info : $light;
+$light-secondary : lighten($secondary,8%);
 
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
-  "light":      $light
+  "light":      $light,
+  "light-secondary" : $light-secondary,
 );
 
 $body-color: #3c3b49;

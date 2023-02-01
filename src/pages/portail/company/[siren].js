@@ -430,14 +430,14 @@ const IndicatorDetails = ({
               bg="primary"
               title="Valeur proposée à partir de données statistiques"
             >
-              Valeur par défaut*
+              Valeur par défaut
             </Badge>
           )}
           {flag == "e" && (
             <Badge
               pill
-              bg="primary"
-              title="Valeur estimée à partir de données publiée par l'entreprise"
+              bg="light-secondary"
+              title="Valeur estimée à partir de données publiées par l'entreprise"
             >
               Valeur estimée
             </Badge>
@@ -525,6 +525,8 @@ function ColumnChart({ performance, unit, flag, comparative }) {
 
   if (flag == "p") {
     bgColor = "RGBA(250, 89, 95,1)";
+  } else if (flag == "e") {
+    bgColor = "rgb(251, 129, 133)";
   } else {
     bgColor = "RGBA(25, 21, 88,1)";
   }
