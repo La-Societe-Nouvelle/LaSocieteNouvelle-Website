@@ -71,6 +71,10 @@ const portail = () => {
           La Société Nouvelle | Portail des empreintes sociétales des
           entreprises françaises
         </title>
+        <meta property="og:title" content="Portail des empreintes sociétales des
+          entreprises françaises" />
+        <meta property="og:url" content="https://portail.lasocietenouvelle.org" />
+        <meta property="og:image" content="/images/portail.jpg" />
       </Helmet>
       <section className="open-data-portal">
         <Container>

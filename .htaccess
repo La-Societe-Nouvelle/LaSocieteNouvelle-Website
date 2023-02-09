@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^lasocietenouvelle.org$ [NC]
+RewriteRule ^portail$ https://portail.lasocietenouvelle.org [R=301,L]
+RewriteCond %{HTTP_HOST} ^portail.lasocietenouvelle.org$ [NC]
+RewriteRule ^$ https://lasocietenouvelle.org/portail [R=301,L]
