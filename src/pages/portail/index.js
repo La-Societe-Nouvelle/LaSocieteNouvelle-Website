@@ -11,7 +11,6 @@ const portail = () => {
   const [legalUnits, setLegalUnits] = useState([]);
   const [error, setError] = useState();
 
-
   const inputChange = (e) => {
     setSearch(e.target.value);
   };
@@ -30,7 +29,6 @@ const portail = () => {
     setError();
     setIsLoading(true);
     await searchLegalUnits(search);
-
   };
 
   const searchLegalUnits = async (search) => {
@@ -41,27 +39,21 @@ const portail = () => {
       .toUpperCase();
 
     await axios
-      .get(
-        `https://api.lasocietenouvelle.org/legalunit/${string}`, {timeout : 15000}
-      )
+      .get(`https://api.lasocietenouvelle.org/legalunit/${string}`, {
+        timeout: 15000,
+      })
       .then((response) => {
         if (response.data.header.code == 200) {
           setLegalUnits(response.data.legalUnits);
-          
         } else {
-         
           setError(response.data.header.code);
         }
         setIsLoading(false);
-
       })
       .catch(() => {
-
         setError(504);
         setIsLoading(false);
-
       });
-
   };
 
   return (
@@ -71,10 +63,24 @@ const portail = () => {
           La Société Nouvelle | Portail des empreintes sociétales des
           entreprises françaises
         </title>
-        <meta property="og:title" content="Portail des empreintes sociétales des
-          entreprises françaises" />
-        <meta property="og:url" content="https://portail.lasocietenouvelle.org" />
-        <meta property="og:image" content="/images/portail.jpg" />
+
+        <meta
+          property="og:title"
+          content="Portail des empreintes sociétales des
+          entreprises françaises"
+        />
+        <meta
+          property="og:url"
+          content="https://lasocietenouvelle.org/portail"
+        />
+        <meta
+          property="og:description"
+          content="Consultez librement les données publiées sur les impacts de la valeur produite par les entreprises françaises."
+        />
+        <meta
+          property="og:image"
+          content="https://lasocietenouvelle.org/images/portail.jpg"
+        />
       </Helmet>
       <section className="open-data-portal">
         <Container>
@@ -116,11 +122,11 @@ const portail = () => {
               </Col>
             </Row>
           </div>
-          {isLoading && ( 
-                <div className="text-center">
-                  <h4>Recherche en cours </h4>
-                  <div className="dot-pulse m-auto"></div>
-                </div>
+          {isLoading && (
+            <div className="text-center">
+              <h4>Recherche en cours </h4>
+              <div className="dot-pulse m-auto"></div>
+            </div>
           )}
           {legalUnits.length > 0 && (
             <section className="result bg-light p-4 rounded-3">
