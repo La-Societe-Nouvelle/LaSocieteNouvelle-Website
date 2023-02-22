@@ -79,6 +79,21 @@ const Home = () =>
         <title>
           La Société Nouvelle | Système d'Information national sur les impacts des entreprises 
         </title>
+
+        <meta
+          property="og:title"
+          content="Portail des empreintes sociétales des
+          entreprises françaises"
+        />
+        <meta
+          property="og:url"
+          content="https://lasocietenouvelle.org/"
+        />
+
+        <meta
+          property="og:image"
+          content="/images/website-screen.jpg"
+        />
       </Helmet>
       <div className="bloc-statistics pt-5 pb-2 bg-light">
         <Container>
