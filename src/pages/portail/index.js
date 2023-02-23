@@ -79,7 +79,7 @@ const portail = () => {
         />
         <meta
           property="og:image"
-          content="https://lasocietenouvelle.org/images/portail.jpg"
+          content="/portail.jpg"
         />
       </Helmet>
       <section className="open-data-portal">

@@ -92,8 +92,11 @@ const Home = () =>
 
         <meta
           property="og:image"
-          content="/images/website-screen.jpg"
+          content="/website-screen.jpg"
         />
+
+
+
       </Helmet>
       <div className="bloc-statistics pt-5 pb-2 bg-light">
         <Container>
