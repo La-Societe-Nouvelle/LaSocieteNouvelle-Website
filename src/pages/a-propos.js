@@ -5,12 +5,11 @@ import PageHeader from "../components/PageHeader";
 const About = () => {
   return (
     <>
-      <PageHeader title={"La Société Nouvelle"} path={"a-propos-la-societe-nouvelle"} />
       <section>
         <Container>
-          <Row>
-            <Col>
-              <h3>Il était une fois la société nouvelle...</h3>
+          <Row className=" align-items-center">
+            <Col lg={7} className="align-items-center">
+              <h2>La Société Nouvelle</h2>
               <p>
                 C’est avec la volonté de contribuer à la construction d’une
                 société durable que La Société Nouvelle prit son premier souffle
@@ -22,36 +21,34 @@ const About = () => {
                 à l’Ecole Centrale de Lille, initie le projet avec comme
                 conviction que la transition écologique et sociale ne pourra se
                 faire sans une information fiable et pertinente sur et pour les
-                entreprises. Durant les premiers mois, l’approche comptable se
-                précise, le premier panel d’indicateurs est constitué, la base
-                de données ouverte est initialisée et le premier outil de calcul
-                est élaboré.
+                entreprises.
               </p>
               <p>
-                En septembre, la Société Nouvelle rejoint l’incubateur
-                Euratechnologies à Lille pour structurer son développement.
-                Depuis, elle n’a de cesse d’améliorer les ressources qu’elle met
-                à disposition des entreprises et veille à rendre tous ses
-                travaux publics et accessibles.
+                En septembre 2020, nous avons rejoint l’incubateur
+                Euratechnologies à Lille afin de poursuivre son développement.
+                L’équipe s’est agrandie avec l’arrivée 5 nouveaux membres dans
+                l’équipe depuis février 2022.
               </p>
               <p>
-                En février 2022, l’équipe s’agrandit avec l’arrivée de Maëva,
-                Laura et Joris. Désormais, l’objectif est d’accéler le
-                déploiement de la méthode et de la parachever.
+                Depuis, nous n’avons de cesse que d’améliorer les ressources que
+                nous mettons à disposition aux entreprises et nous veillons à
+                rendre tous nos travaux publics et accessibles. Nous vous
+                invitons à vous engager dans la transition écologie en nous
+                rejoignant dans cette aventure !
               </p>
             </Col>
             <Col>
               <Image
-                src="images/articles/equipe-la-societe-nouvelle.jpg"
+                src="images/notre-equipe.jpg"
                 alt="Photo d'équipe"
                 fluid
-                className="mt-5"
+                rounded
               />
             </Col>
           </Row>
         </Container>
       </section>
-      <section className="cta text-center">
+      <section className="bg-light">
         <Container>
           <h3>Aujourd’hui, qu’est-ce que La Société Nouvelle ?</h3>
           <p>
@@ -61,7 +58,9 @@ const About = () => {
             environnementales clefs, les impacts de la valeur qu’elles
             produisent.
           </p>
-          <Button variant="secondary" href="/nos-missions">Nos missions</Button>
+          <Button variant="secondary" href="/nos-missions">
+            Nos missions
+          </Button>
         </Container>
       </section>
       <section>
@@ -84,25 +83,26 @@ const About = () => {
             économique ayant à coeur de mesurer ses impacts de production, pour
             les générations futures.
           </p>
-          <Button variant="secondary" href="notre-approche">Notre méthodologie</Button>
+          <Button variant="secondary" href="notre-approche">
+            Notre méthodologie
+          </Button>
         </Container>
       </section>
       <section className="bg-light">
         <Container>
-              <div>
-                <h3 className="subtitle">Notre positionnement</h3>
-                <p>
-                  La Société Nouvelle oeuvre à la mise en place d’un service
-                  d’intérêt général. Nous avons à cœur de pousser le plus
-                  d’organisations possible à prendre conscience de leurs impacts
-                  à l’échelle de leurs activités. Dans cette optique, notre
-                  ambition est de compléter les pratiques comptables pour
-                  insérer l’information extra-financière au coeur des tableaux
-                  de gestion et informer entreprises et particuliers des impacts
-                  de leurs consommations.
-                </p>
-              </div>
-     
+          <div>
+            <h3 className="subtitle">Notre positionnement</h3>
+            <p>
+              La Société Nouvelle oeuvre à la mise en place d’un service
+              d’intérêt général. Nous avons à cœur de pousser le plus
+              d’organisations possible à prendre conscience de leurs impacts à
+              l’échelle de leurs activités. Dans cette optique, notre ambition
+              est de compléter les pratiques comptables pour insérer
+              l’information extra-financière au coeur des tableaux de gestion et
+              informer entreprises et particuliers des impacts de leurs
+              consommations.
+            </p>
+          </div>
         </Container>
       </section>
       <section className="pb-0">
@@ -111,7 +111,7 @@ const About = () => {
             <h3 className="subtitle">Nos valeurs</h3>
             <Row>
               <Col lg={6}>
-                <Image 
+                <Image
                   src="/images/nos-valeurs.png"
                   alt="Euratechnologies"
                   className="img-fluid w-100"
@@ -135,8 +135,9 @@ const About = () => {
                   vérifiables et réutilisables par tous.
                 </p>
                 <p>
-                  Nous nous efforçons de fournir la <b>meilleure qualité de service</b> pour proposer une méthode crédible et rigoureuse et
-                  ambitionner sa large diffusion.
+                  Nous nous efforçons de fournir la{" "}
+                  <b>meilleure qualité de service</b> pour proposer une méthode
+                  crédible et rigoureuse et ambitionner sa large diffusion.
                 </p>
               </Col>
             </Row>
@@ -144,33 +145,43 @@ const About = () => {
         </Container>
       </section>
       <section>
-       <Container>
-      
-            <h2 className="text-center mb-5">Notre Equipe</h2>
-            <Row className='text-center'>
-              <Col>
-                <Image  id="img-joris" src="/images/joris.jpg" alt="img-joris" />
-                <p className="prenom"><b>Joris</b></p>
-                <p className="poste">Statistiques publiques</p>
-              </Col>
-              <Col>
-                <Image  id="img-laura" src="/images/laura.jpg" alt="img-laura" />
-                <p className="prenom"><b>Laura</b></p>
-                <p className="poste">Développement Web</p>
-              </Col>
-              <Col>
-                <Image  id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
-                <p className="prenom"><b>Maëva</b></p>
-                <p className="poste">Communication</p>
-              </Col>
-              <Col>
-                <Image  id="img-sylvain" src="/images/sylvain.jpg" alt="img-sylvain" />
-                <p className="prenom"><b>Sylvain</b></p>
-                <p className="poste">Relation partenaires</p>
-              </Col>
-            </Row>
-        
-        </Container> 
+        <Container>
+          <h2 className="text-center mb-5">Notre Equipe</h2>
+          <Row className="text-center">
+            <Col>
+              <Image id="img-joris" src="/images/joris.jpg" alt="img-joris" />
+              <p className="prenom">
+                <b>Joris</b>
+              </p>
+              <p className="poste">Statistiques publiques</p>
+            </Col>
+            <Col>
+              <Image id="img-laura" src="/images/laura.jpg" alt="img-laura" />
+              <p className="prenom">
+                <b>Laura</b>
+              </p>
+              <p className="poste">Développement Web</p>
+            </Col>
+            <Col>
+              <Image id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
+              <p className="prenom">
+                <b>Maëva</b>
+              </p>
+              <p className="poste">Communication</p>
+            </Col>
+            <Col>
+              <Image
+                id="img-sylvain"
+                src="/images/sylvain.jpg"
+                alt="img-sylvain"
+              />
+              <p className="prenom">
+                <b>Sylvain</b>
+              </p>
+              <p className="poste">Relation partenaires</p>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </>
   );

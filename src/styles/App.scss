@@ -21,6 +21,7 @@ body {
   cursor: default;
 }
 
+
 a {
   text-decoration: none;
 
@@ -37,7 +38,9 @@ a {
   padding: 0.65rem 1.5rem;
   font-family: 'Raleway', sans-serif;
 }
-
+.bg-light-secondary {
+  background-color: $light-secondary;
+}
 .btn-check:focus+.btn-outline-secondary,
 .btn-outline-secondary:focus {
   box-shadow: 0 0 0 0.1rem rgb(250 89 95 / 50%);
@@ -87,10 +90,6 @@ a {
 section {
   padding: 4rem 0;
 
-  h2,
-  h3 {
-    margin-bottom: 2rem;
-  }
 }
 
 /* CTA */
@@ -146,19 +145,7 @@ section {
 
 /* GRAPH */
 
-.graph-section {
-  background: $light url("../../public/images/celeste.png") bottom right no-repeat;
 
-  .card-footer {
-    background-color: $gray-600;
-    text-align: right;
-    font-size: 0.7rem;
-
-    p {
-      margin: 0;
-    }
-  }
-}
 
 /* STEPS */
 

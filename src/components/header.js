@@ -33,10 +33,10 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link href="/portail" className="border-end border-3">
-              <i className="bi bi-search"></i> Rechercher une entreprise 
+            <Nav.Link href="/portail" className="border-end border-3">
+              <i className="bi bi-search"></i> Rechercher une entreprise
             </Nav.Link>
-          <Nav.Link href="/">La Société Nouvelle</Nav.Link>
+            <Nav.Link href="/">La Société Nouvelle</Nav.Link>
             <Nav.Link
               href="https://api.lasocietenouvelle.org"
               target="_blank"
@@ -50,8 +50,6 @@ const Header = () => {
             >
               Documentation
             </Nav.Link>
-
-       
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -88,58 +86,48 @@ const Header = () => {
           </div>
         </div>
 
-        <Row className="middle-header d-flex justify-content-between align-items-center ">
-          <Col xs={12} lg={4} className="d-flex align-items-center py-2">
+        <Row className="py-3 align-items-center ">
+          <Col xs={12} lg={4}>
             <Navbar.Brand href="/">
               <Image
-              fluid
-                src="/logo.svg"
-                height="110"
+                fluid
+                src="/logo-La-Societe-Nouvelle.png"
                 className="d-inline-block align-center"
                 alt="logo"
               />
             </Navbar.Brand>
-
-            <div className="logos">
-              <Image fluid src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
-              <p>
-                Communauté <br /> Coq Vert
-              </p>
-            </div> 
-            <div className="logos">
-              <Image fluid
-                src="/partners/Logotype-rouge-bleu.png"
-                alt="France 2030"
-              ></Image>
-            </div>
           </Col>
           <Col xs={12} lg={4} className="text-center">
             <h1>
-              Système d'Information national sur <br />
-              les <strong>impacts des entreprises</strong>
+              Système d'Information national sur les impacts des entreprises
             </h1>
           </Col>
-          <Col xs={12} lg={4} className="text-end">
-            <Button
-              href="https://metriz.lasocietenouvelle.org"
-              variant="outline-secondary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
-            </Button>
-            <Button
-              href="/publication"
-              variant="outline-primary"
-              className="ms-2"
-            >
-              Publier mes données
-            </Button>
+          <Col xs={12} lg={3} className="offset-lg-1 text-end">
+            <div class="d-flex flex-column ps-5">
+              <Button
+                href="https://metriz.lasocietenouvelle.org"
+                size="sm"
+                variant="outline-secondary"
+                target="_blank"
+                rel="noreferrer"
+                className=""
+              >
+                Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
+              </Button>
+              <Button
+                href="/publication"
+                variant="secondary"
+                size="sm"
+                className="mt-2"
+              >
+                Consulter les données
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>
       <div className="menu">
-        <Navbar expand="lg" className="p-0">
+        <Navbar expand="lg">
           <Container>
             <Navbar.Toggle aria-controls="main-navbar-nav" />
             <Navbar.Collapse
@@ -184,11 +172,6 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <div className="ms-5">
-                <a href="/portail" target="_blank" className="btn btn-info">
-                  <i className="bi bi-server"></i> Données
-                </a>
-              </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>

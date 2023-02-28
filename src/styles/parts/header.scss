@@ -2,7 +2,7 @@
 
 
 .top-bar {
-    border-bottom: 1px solid $gray-600;
+    border-bottom: 1px solid $light;
     .nav-link{
         padding: 0.325rem;
         color : $primary;
@@ -13,36 +13,15 @@
         letter-spacing: 1px;
     }
 }
-.header {
-    .logos {
-        border: none;
-        margin: 0 0.5rem;
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-        p {
-            font-size: 0.6rem;
-            text-align: center;
-            margin: 0;
-        }
-    }
 
-    .btn{
-        font-size: 0.9rem;
-    }
-}
 .header h1 {
-    font-size: 1.1rem;
-        font-weight: 900;
-    color: #000;
-    letter-spacing: 1px;
-    font-family: 'Roboto';
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .navbar-nav {
     font-family: $headings-font-family;
-    font-weight: 600;
+    font-weight: 700;
     
 }
 
@@ -60,11 +39,11 @@
 }
 
 .menu {
-    border-top : 1px solid  #e9ecef;
+    border-top : 1px solid  $light;
     border-bottom: 1px solid $light;
     font-size: 0.85rem;
     text-transform: uppercase;
-    
+     
     .dropdown-item {
         text-transform: initial;
     }
@@ -88,12 +67,6 @@
       }
       .nav-link:hover{
         border-bottom: 1px solid $secondary;
-      }
-
-      .btn-info {
-        font-size: 0.85rem;
-          background-color: $primary;
-          color : #fff;
       }
 
       .navbar-expand-lg .navbar-nav .nav-link {
