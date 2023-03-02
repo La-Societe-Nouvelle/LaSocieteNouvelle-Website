@@ -20,7 +20,7 @@ const Approche = () => {
       <Helmet>
         <title>La Société Nouvelle | Notre approche </title>
       </Helmet>
-      <PageHeader title={"Notre approche"} path={"notre-approche"} />
+      <PageHeader title={"Notre approche"} path={"notre-approche"} hasBreadcrumbs={false} />
       <section>
         <Container>
           <Row>

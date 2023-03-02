@@ -136,19 +136,19 @@ const Header = () => {
             >
               <Nav className="flex-grow-1 justify-content-between">
                 <Nav.Link href="/">Accueil</Nav.Link>
-                <NavDropdown title="Notre approche">
-                  <NavDropdown.Item href="/notre-approche">
-                    Methodologie
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/indicateurs">
-                    Liste des indicateurs
-                  </NavDropdown.Item>
-                </NavDropdown>
+                <Nav.Link href="/notre-approche">Notre approche</Nav.Link>
+
                 <NavDropdown title="Ressources ">
-                  <NavDropdown.Item href="/metriz">
-                    Application Web - METRIZ
+                  <NavDropdown.Item href="/ressources/application-mesure-impact">
+                    Metriz - Application de mesure d'impact
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/api-lsn">API</NavDropdown.Item>
+                  <NavDropdown.Item href="/ressources/api-publique-lsn">
+                    API Publique
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item href="/ressources/consulter-impacts-entreprises">
+                    Portail d'accès aux données des entreprises
+                  </NavDropdown.Item>
                   <NavDropdown.Item
                     href="https://docs.lasocietenouvelle.org"
                     target="_blank"
@@ -164,7 +164,7 @@ const Header = () => {
                 <Nav.Link href="/blog">Actualités</Nav.Link>
 
                 <NavDropdown title="A propos">
-                  <NavDropdown.Item href="/a-propos-la-societe-nouvelle">
+                  <NavDropdown.Item href="/a-propos">
                     Qui sommes-nous ?
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/nos-missions">

@@ -71,7 +71,7 @@ function Footer() {
             <Col xs={12} lg={4}>
               <h6>La société nouvelle</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="/a-propos-la-societe-nouvelle">Qui sommes-nous ?</Nav.Link>
+                <Nav.Link href="/a-propos">Qui sommes-nous ?</Nav.Link>
                 <Nav.Link href="/notre-approche">Notre approche</Nav.Link>
                 <Nav.Link href="/indicateurs">
                   Liste des indicateurs
@@ -107,7 +107,7 @@ function Footer() {
               <p className="mx-2">© 2022 La Société Nouvelle</p>
               <ul className="nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/a-propos-la-societe-nouvelle">
+                  <a className="nav-link" href="/a-propos">
                     A propos
                   </a>
                 </li>

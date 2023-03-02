@@ -80,13 +80,11 @@ const Home = () => {
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
 
-      {/* // statistic */}
-
       <section>
         <Container>
-          <Row>
-            <Col>
-              <h2>Comptabilité Extra-Financière</h2>
+          <Row className="align-items-center">
+            <Col lg={8}>
+              <h2 className="mb-4">Comptabilité Extra-Financière</h2>
               <p>
                 Nous proposons un outil de mesure de comptabilité
                 extra-financière axés sur la durabilité et le développement
@@ -104,10 +102,18 @@ const Home = () => {
                 produisent.
               </p>
             </Col>
-            <Col></Col>
+            <Col className="text-end">
+            <Image
+              fluid
+                src="/illustrations/compta-extra-financiere.png"
+                alt="Illustration Comptabilité Extra-financière"
+              />
+           
+            </Col>
           </Row>
         </Container>
       </section>
+
       <section className="bg-light">
         <Container>
           <Row className="d-flex justify-content-between">
@@ -156,21 +162,20 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      <section>
+      <section className="mt-4">
         <Container>
-          <Row>
+          <Row className="align-items-center">
             <Col lg={9}>
               <h2>Mesurez l’impact de la production de votre entreprise</h2>
               <p>
-                Grâce à
-                <a href="https://metriz.lasocietenouvelle.org" target="_blank">
+                Grâce à <a href="https://metriz.lasocietenouvelle.org" target="_blank">
                   l’application Web Metriz
                 </a>
                 , vous pouvez rendre compte des impacts sociaux -
                 environnementaux d’un euro de production vendu.
               </p>
 
-              <h3 className="h4">Pourquoi mesurer son empreinte?</h3>
+              <h3>Pourquoi mesurer son empreinte?</h3>
               <ol>
                 <li>
                   Se positionner par rapport à sa branche et aux objectifs
@@ -186,8 +191,9 @@ const Home = () => {
                 </Button>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} className="text-end">
               <Image
+              fluid
                 src="/illustrations/diminuer-impact.png"
                 alt="Illustration Mesure de l'impact"
               />
@@ -196,10 +202,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="mb-4">
         <Container>
-          <Row>
-            <Col lg={4}>
+          <Row className="align-items-center">
+            <Col lg={4} >
               <Image
                 src="/illustrations/default-data-illu.png"
                 alt="Illustration Base de données ouverte"
@@ -215,10 +221,10 @@ const Home = () => {
                 entreprises. Ces données peuvent être des valeurs par défaut ou
                 provenir directement de la publication des entreprises.
               </p>
-              <h3 className="h4">Pourquoi publier son empreinte?</h3>
+              <h3>Pourquoi publier son empreinte?</h3>
               <ol>
                 <li>Valoriser votre performance et informer vos clients</li>
-                <li>Contribue à une économie pus transparente</li>
+                <li>Contribue à une économie plus transparente</li>
                 <li>
                   Permettre aux acteurs de votre marché de vous identifier comme
                   acteur de la transition écologique et sociale

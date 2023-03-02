@@ -1,5 +1,15 @@
 import React from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  Carousel,
+  Col,
+  Container,
+  Image,
+  Row,
+  Stack,
+} from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
 
 const About = () => {
@@ -39,7 +49,7 @@ const About = () => {
             </Col>
             <Col>
               <Image
-                src="images/notre-equipe.jpg"
+                src="images/equipe/notre-equipe.jpg"
                 alt="Photo d'équipe"
                 fluid
                 rounded
@@ -50,137 +60,270 @@ const About = () => {
       </section>
       <section className="bg-light">
         <Container>
-          <h3>Aujourd’hui, qu’est-ce que La Société Nouvelle ?</h3>
-          <p>
-            C’est une initiative open data et open source dont la mission est de
-            déployer un système d'information et de comptabilité et ainsi
-            permettre aux entreprises de mesurer, sur des dimensions sociales et
-            environnementales clefs, les impacts de la valeur qu’elles
-            produisent.
-          </p>
-          <Button variant="secondary" href="/nos-missions">
-            Nos missions
-          </Button>
+          <Carousel>
+            <Carousel.Item>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Card>
+                <Card.Body>
+                  <Card.Title className="text-center">
+                    {" "}
+                    <h3 className="text-secondary">Nos valeurs</h3>
+                  </Card.Title>
+                  <Card.Text>
+                    Maitre mot de notre état d’esprit, le sujet est
+                    important,l’enthousiasme est donc de rigueur. Et sous les
+                    bons conseils de Voltaire : “Rien ne se fait sans un peu
+                    d’enthousiasme”.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous souhaitons mettre en oeuvre des solutions
+                    opérationnelles, avec le souci de l’efficacité. Nos travaux
+                    sont rendus publics : les ressources, données et
+                    méthodologies sont ainsi librement acessibles, vérifiables
+                    et réutilisables par tous. Nous nous efforçons de fournir la
+                    meilleure qualité de service pour proposer une méthode
+                    crédible et rigoureuse et ambitionner sa large diffusion.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous nous efforçons de fournir la meilleure qualité de
+                    service pour proposer une méthode crédible et rigoureuse et
+                    ambitionner sa large diffusion.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Card>
+                <Card.Body>
+                  <Card.Title className="text-center">
+                    {" "}
+                    <h3 className="text-secondary">Nos valeurs</h3>
+                  </Card.Title>
+                  <Card.Text>
+                    Maitre mot de notre état d’esprit, le sujet est
+                    important,l’enthousiasme est donc de rigueur. Et sous les
+                    bons conseils de Voltaire : “Rien ne se fait sans un peu
+                    d’enthousiasme”.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous souhaitons mettre en oeuvre des solutions
+                    opérationnelles, avec le souci de l’efficacité. Nos travaux
+                    sont rendus publics : les ressources, données et
+                    méthodologies sont ainsi librement acessibles, vérifiables
+                    et réutilisables par tous. Nous nous efforçons de fournir la
+                    meilleure qualité de service pour proposer une méthode
+                    crédible et rigoureuse et ambitionner sa large diffusion.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous nous efforçons de fournir la meilleure qualité de
+                    service pour proposer une méthode crédible et rigoureuse et
+                    ambitionner sa large diffusion.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>{" "}
+            <Carousel.Item>
+              <Card>
+                <Card.Body>
+                  <Card.Title className="text-center">
+                    <h3 className="text-secondary">Nos valeurs</h3>
+                  </Card.Title>
+                  <Card.Text>
+                    Maitre mot de notre état d’esprit, le sujet est
+                    important,l’enthousiasme est donc de rigueur. Et sous les
+                    bons conseils de Voltaire : “Rien ne se fait sans un peu
+                    d’enthousiasme”.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous souhaitons mettre en oeuvre des solutions
+                    opérationnelles, avec le souci de l’efficacité. Nos travaux
+                    sont rendus publics : les ressources, données et
+                    méthodologies sont ainsi librement acessibles, vérifiables
+                    et réutilisables par tous. Nous nous efforçons de fournir la
+                    meilleure qualité de service pour proposer une méthode
+                    crédible et rigoureuse et ambitionner sa large diffusion.
+                  </Card.Text>
+                  <Card.Text>
+                    Nous nous efforçons de fournir la meilleure qualité de
+                    service pour proposer une méthode crédible et rigoureuse et
+                    ambitionner sa large diffusion.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+          </Carousel>
         </Container>
       </section>
-      <section>
-        <Container>
-          <h3> Notre vision</h3>
-          <h4> Pourquoi mesurer ce panel d'indicateurs ? </h4>
-          <p>
-            Dans le contexte social et écologique actuel, il est incontournable
-            pour une entreprise de connaître, a minima sur les enjeux clefs, ses
-            impacts. Au-delà de sa pérennité, il s’agit d’un maillon essentiel
-            pour identifier les entreprises les plus performantes sur les
-            dimensions sociales et environnementales concernées.
-          </p>
-          <p>
-            Plus globalement, il s’agit de repenser la valeur économique, en
-            associant à sa dimension quantitative (volume monétaire), une
-            approche qualitative et d’apprécier de manière plus juste et plus
-            complète la valeur créée et produite d’une entreprise. Les enjeux
-            sont conséquents et nous devons construire dès à présent un monde
-            économique ayant à coeur de mesurer ses impacts de production, pour
-            les générations futures.
-          </p>
-          <Button variant="secondary" href="notre-approche">
-            Notre méthodologie
-          </Button>
-        </Container>
-      </section>
-      <section className="bg-light">
-        <Container>
-          <div>
-            <h3 className="subtitle">Notre positionnement</h3>
-            <p>
-              La Société Nouvelle oeuvre à la mise en place d’un service
-              d’intérêt général. Nous avons à cœur de pousser le plus
-              d’organisations possible à prendre conscience de leurs impacts à
-              l’échelle de leurs activités. Dans cette optique, notre ambition
-              est de compléter les pratiques comptables pour insérer
-              l’information extra-financière au coeur des tableaux de gestion et
-              informer entreprises et particuliers des impacts de leurs
-              consommations.
-            </p>
-          </div>
-        </Container>
-      </section>
-      <section className="pb-0">
-        <Container>
-          <div className="nos-valeurs">
-            <h3 className="subtitle">Nos valeurs</h3>
-            <Row>
-              <Col lg={6}>
-                <Image
-                  src="/images/nos-valeurs.png"
-                  alt="Euratechnologies"
-                  className="img-fluid w-100"
-                />
-              </Col>
-              <Col lg={6}>
-                <p>
-                  Maitre mot de notre état d’esprit, le sujet est important,
-                  <b>l’enthousiasme </b> est donc de rigueur. Et sous les bons
-                  conseils de Voltaire : “Rien ne se fait sans un peu
-                  d’enthousiasme”.
-                </p>
-                <p>
-                  Nous souhaitons mettre en oeuvre des solutions
-                  opérationnelles, avec le souci de l’<b>efficacité</b>.
-                </p>
 
-                <p>
-                  Nos travaux sont rendus <b>publics </b> : les ressources,
-                  données et méthodologies sont ainsi librement acessibles,
-                  vérifiables et réutilisables par tous.
-                </p>
-                <p>
-                  Nous nous efforçons de fournir la{" "}
-                  <b>meilleure qualité de service</b> pour proposer une méthode
-                  crédible et rigoureuse et ambitionner sa large diffusion.
-                </p>
-              </Col>
-            </Row>
-          </div>
-        </Container>
-      </section>
       <section>
         <Container>
-          <h2 className="text-center mb-5">Notre Equipe</h2>
-          <Row className="text-center">
+          <Row>
             <Col>
-              <Image id="img-joris" src="/images/joris.jpg" alt="img-joris" />
-              <p className="prenom">
-                <b>Joris</b>
+              <h3>Nos missions</h3>
+              <p>
+                Notre mission est de fournir, de manière ouverte, les
+                informations nécessaires pour connaître et mesurer l’empreinte
+                de la production des entreprises sur des enjeux majeurs de
+                développement durable. Elle s’inscrit dans la volonté de faire
+                évoluer le modèle de gestion des entreprises en intégrant aux
+                éléments comptables une information sur leurs externalités
+                sociales et environnementales.
               </p>
-              <p className="poste">Statistiques publiques</p>
+              <p>
+                Les documents, outils et autres éléments développés par La
+                Société Nouvelle sont accessibles et utilisables librement. La
+                base de données est, et restera toujours, ouverte.
+              </p>
             </Col>
             <Col>
-              <Image id="img-laura" src="/images/laura.jpg" alt="img-laura" />
-              <p className="prenom">
-                <b>Laura</b>
+              <h3>Nos activités</h3>
+              <h4 className="h5 text-secondary">
+                Administration d’une base de données ouverte
+              </h4>
+              <p>
+                Centraliser les données mesurées et publiées des entreprises
+                pour permettre à tous de les exploiter librement et facilement.
               </p>
-              <p className="poste">Développement Web</p>
-            </Col>
-            <Col>
-              <Image id="img-maeva" src="/images/maeva.jpg" alt="img-maeva" />
-              <p className="prenom">
-                <b>Maëva</b>
+              <h4 className="h5 text-secondary">
+                Mise à disposition d’un outil de mesure open source
+              </h4>
+              <p>
+                Développer et maintenir une application web pour que chacun
+                puisse calculer les indicateurs et apprécier les résultats.
               </p>
-              <p className="poste">Communication</p>
-            </Col>
-            <Col>
-              <Image
-                id="img-sylvain"
-                src="/images/sylvain.jpg"
-                alt="img-sylvain"
-              />
-              <p className="prenom">
-                <b>Sylvain</b>
+              <h4 className="h5 text-secondary">
+                Un support et une assistance aux différents acteurs
+              </h4>
+              <p>
+                Accompagner les acteurs qui souhaitent porter la méthodologie
+                pour faciliter son application.
               </p>
-              <p className="poste">Relation partenaires</p>
             </Col>
           </Row>
+        </Container>
+      </section>
+      <section className="text-center">
+        <Container>
+          <h3> Notre équipe</h3>
+          <Row>
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Sylvain.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">
+                    Sylvain Humilière
+                  </Card.Title>
+                  <Card.Text>Président - Fondateur</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Laura.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Laura Roost</Card.Title>
+                  <Card.Text>Dévelopeur informatique</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Joris.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Joris Blain</Card.Title>
+                  <Card.Text>Economètre</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Maelysse.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">
+                    Maëlysse Lemaire
+                  </Card.Title>
+                  <Card.Text>Chargée de communication</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Manal.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Manal </Card.Title>
+                  <Card.Text>Chargée de relations partenaires</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card className="px-5">
+                <Card.Img
+                  variant="top"
+                  src="images/equipe/Guillaume.jpg"
+                  className="rounded"
+                />
+                <Card.Body>
+                  <Card.Title className="text-center">Guillaume </Card.Title>
+                  <Card.Text>Chargé de relations partenaires</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="text-center">
+        <Container>
+          <h4 className="h2">Gourvernance des indicateurs</h4>
+          <p>
+            Nous travaillons en continu sur les indicateurs disponibles: choix
+            méthodologiques, données utilisées, outils supports, suivi à
+            l’échelle macroéconomique, définition des objectifs, etc. L’ensemble
+            des indicateurs forment l’Empreinte Sociétale de l’Entreprise. La
+            gouvernance a vocation à être externalisée et partagée avec des
+            organismes publics et privés.
+          </p>
+          <ButtonGroup>
+          <Button>
+            Les indicateurs
+          </Button>
+          <Button variant="info">
+            La Documentation
+          </Button>
+          </ButtonGroup>
+     
         </Container>
       </section>
     </>
