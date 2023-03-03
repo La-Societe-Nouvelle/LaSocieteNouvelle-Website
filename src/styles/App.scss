@@ -7,6 +7,7 @@
 // import pages
 @import "pages/portail.scss";
 @import "pages/notre-approche.scss";
+@import "pages/blog.scss";
 @import "components/statistics.scss";
 @import "components/posts.scss";
 @import "components/components.scss";
@@ -90,52 +91,6 @@ ol {
 
 section {
   padding: 4rem 0;
-}
-
-/* CTA */
-.cta {
-  background: $primary url("../../public/images/img-background.png") bottom left
-    no-repeat;
-
-  h2,
-  h3,
-  p,
-  ul {
-    margin-bottom: 2rem;
-    color: #fff;
-  }
-}
-
-#cta-entreprise {
-  h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.cta-metriz {
-  background: $primary url("../../public/images/img-background.png") bottom left
-    no-repeat;
-  margin: 2rem 0;
-
-  h2 {
-    margin-bottom: 2rem;
-    color: #fff;
-  }
-
-  img {
-    margin-bottom: 2rem;
-  }
-
-  p {
-    margin: 0;
-    color: #fff;
-  }
-
-  .btn {
-    margin-top: 1rem;
-  }
 }
 
 .box {

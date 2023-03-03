@@ -72,7 +72,7 @@ function Footer() {
               <h6>La société nouvelle</h6>
               <Nav defaultActiveKey="/" className="flex-column">
                 <Nav.Link href="/a-propos">Qui sommes-nous ?</Nav.Link>
-                <Nav.Link href="/notre-approche">Notre approche</Nav.Link>
+                <Nav.Link href="/mesurer-empreinte-societale">Notre approche</Nav.Link>
                 <Nav.Link href="/indicateurs">
                   Liste des indicateurs
                 </Nav.Link>

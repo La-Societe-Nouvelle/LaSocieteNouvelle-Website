@@ -16,7 +16,7 @@ export default function Home() {
       </Helmet>
       <PageHeader
         title="Panel d'indicateurs"
-        prev={"notre-approche"}
+        prev={"mesurer-empreinte-societale"}
         prevTitle={"Méthodologie"}
         path={"indicateurs/"}
       />

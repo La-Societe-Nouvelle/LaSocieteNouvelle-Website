@@ -2,66 +2,15 @@
 
 // Modules
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/charts/Graph";
-import LatestPosts from "../components/posts/LatestPosts";
-import axios from "axios";
 import { MetrizButton } from "../components/buttons/MetrizButton";
+import { KeyFigures } from "../components/KeyFigures";
 
 const Home = () => {
-  const [pinKeyfigure, setPinKeyFigure] = useState();
-  const [geqKeyFigure, setGeqKeyFigure] = useState();
-  const [ghgKeyFigure, setGhgKeyFigure] = useState();
-
-  useEffect(() => {
-    fetchKeyFiguresData();
-  }, []);
-
-  const fetchKeyFiguresData = async () => {
-    const getPinKeyFigure = axios.get(
-      `https://api.test.lasocietenouvelle.org/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`
-    );
-
-    const getGhgKeyFigure = axios.get(
-      `https://api.test.lasocietenouvelle.org/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
-    );
-
-    const getGeqKeyFigure = axios.get(
-      `https://api.test.lasocietenouvelle.org/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
-    );
-
-    await axios
-      .all([getPinKeyFigure, getGhgKeyFigure, getGeqKeyFigure])
-      .then(
-        axios.spread((...responses) => {
-          const pinKeyfigure = responses[0];
-          const ghgKeyFigure = responses[1];
-          const geqKeyFigure = responses[2];
-
-          if (pinKeyfigure.data.header.code == 200) {
-            const value = pinKeyfigure.data.data[0].value.toFixed(0);
-            const convertedValue = (value / 1000).toFixed(2);
-            setPinKeyFigure(convertedValue);
-          }
-
-          if (ghgKeyFigure.data.header.code == 200) {
-            const value = ghgKeyFigure.data.data[0].value.toFixed(0);
-
-            setGhgKeyFigure(value);
-          }
-
-          if (geqKeyFigure.data.header.code == 200) {
-            const value = geqKeyFigure.data.data[0].value.toFixed(1);
-            setGeqKeyFigure(value);
-          }
-        })
-      )
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <>
       <Helmet>
@@ -103,72 +52,25 @@ const Home = () => {
               </p>
             </Col>
             <Col className="text-end">
-            <Image
-              fluid
+              <Image
+                fluid
                 src="/illustrations/compta-extra-financiere.png"
                 alt="Illustration Comptabilité Extra-financière"
               />
-           
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="bg-light">
-        <Container>
-          <Row className="d-flex justify-content-between">
-            <Col className="statistic-item" xs={12} lg={4}>
-              <Image
-                src="ESE/icon-ese-bleues/eco.svg"
-                height="60"
-                className="mx-auto d-block my-2"
-                alt="eco"
-              />
-              <p className="text-center">
-                <span className="h1">{pinKeyfigure}</span> <sup> Mds €</sup>
-              </p>
-              <p className="text-center">Production intérieure nette</p>
-            </Col>
-            <Col className="statistic-item" xs={12} lg={4}>
-              <Image
-                src="ESE/icon-ese-bleues/ghg.svg"
-                height="60"
-                className="mx-auto d-block my-2"
-                alt="co²"
-              />
-              <p className="text-center">
-                <span className="h1">{ghgKeyFigure}</span> <sup>gCO₂e/€</sup>
-              </p>
-              <p className="text-center">
-                Intensité d'émission de gaz à effet de serre
-              </p>
-            </Col>
-            <Col className="statistic-item" xs={12} lg={4}>
-              <Image
-                src="ESE/icon-ese-bleues/idr.svg"
-                height="60"
-                className="mx-auto d-block my-2"
-                alt="Egalité"
-              />
-              <p className="text-center">
-                <span className="h1">{geqKeyFigure}</span> <sup>%</sup>
-              </p>
-              <p className="text-center">Ecart de rémunération F/H</p>
-            </Col>
-            <p className="source text-end mt-3">
-              Données estimées par La Société Nouvelle pour l'année 2021 |
-              Sources : Insee, Eurostat et Banque mondiale
-            </p>
-          </Row>
-        </Container>
-      </section>
+      <KeyFigures></KeyFigures>
       <section className="mt-4">
         <Container>
           <Row className="align-items-center">
             <Col lg={9}>
               <h2>Mesurez l’impact de la production de votre entreprise</h2>
               <p>
-                Grâce à <a href="https://metriz.lasocietenouvelle.org" target="_blank">
+                Grâce à{" "}
+                <a href="https://metriz.lasocietenouvelle.org" target="_blank">
                   l’application Web Metriz
                 </a>
                 , vous pouvez rendre compte des impacts sociaux -
@@ -193,7 +95,7 @@ const Home = () => {
             </Col>
             <Col lg={3} className="text-end">
               <Image
-              fluid
+                fluid
                 src="/illustrations/diminuer-impact.png"
                 alt="Illustration Mesure de l'impact"
               />
@@ -205,7 +107,7 @@ const Home = () => {
       <section className="mb-4">
         <Container>
           <Row className="align-items-center">
-            <Col lg={4} >
+            <Col lg={4}>
               <Image
                 src="/illustrations/default-data-illu.png"
                 alt="Illustration Base de données ouverte"
@@ -231,12 +133,8 @@ const Home = () => {
                 </li>
               </ol>
               <div className="mt-4">
-                <Button variant="secondary">
-                  Consulter les données
-                </Button>
-                <Button className="mx-2">
-                  Publier les données
-                </Button>
+                <Button variant="secondary">Consulter les données</Button>
+                <Button className="mx-2">Publier les données</Button>
               </div>
             </Col>
           </Row>
@@ -263,16 +161,16 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-    <section>
-      <Container>
-        <h4 className="h3">Nos actualités</h4>
-      </Container>
-    </section>
-    <section>
-      <Container>
-        <h4 className="h3">FAQ</h4>
-      </Container>
-    </section>
+      <section>
+        <Container>
+          <h4 className="h3">Nos actualités</h4>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <h4 className="h3">FAQ</h4>
+        </Container>
+      </section>
       {/* Partenaires */}
       <section className="partenaires ">
         <Container>

@@ -1,15 +1,15 @@
 import React from "react";
 import { Col, Container, Image, Row, Button } from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
-
+import {MetrizButton} from "../components/buttons/MetrizButton"
 const Entreprises = () => {
   return (
     <>
       <PageHeader title={"Entreprises"} path={"entreprises"} />
       <section>
         <Container>
-          <Row>
-            <Col>
+          <Row className="align-items-center">
+            <Col lg={8}>
               <h3>Pilotez et valorisez votre performance extra-financière</h3>
               <p>
                 Climat, inégalités sociales, raréfaction des ressources
@@ -37,19 +37,19 @@ const Entreprises = () => {
                 atteindre une économie soutenable.
               </p>
             </Col>
-            <Col>
+            <Col className="text-end">
               <Image
                 fluid
-                src="/images/entreprise.jpg"
+                src="/illustrations/mesure-entreprise.svg"
                 alt="Illustration Entreprises"
               />
             </Col>
           </Row>
         </Container>
       </section>
-      <section id="cta-entreprise" className="text-center cta-metriz">
+      <section className="text-center bg-light">
         <Container>
-          <h3 className="h4">
+          <h3 >
             Mesurer vos indicateurs grâce à notre application web
           </h3>
           <p>
@@ -59,13 +59,15 @@ const Entreprises = () => {
             à vos fournisseurs et vos impacts directs pour produire
             automatiquement des livrables téléchargeables.
           </p>
-          <Row>
+          <Row className="mt-5">
             <Col>
               <div className="box shadow-sm">
                 <div>
                   <Image
-                    src="images/performance-extra-financiere.png"
+                    src="illustrations/performance-extra-financiere.svg"
                     alt="Performance Extra-financière"
+                    height={80}
+                    className="mb-4"
                   />
                 </div>
                 <h4 className="h6">
@@ -77,8 +79,10 @@ const Entreprises = () => {
               <div className="box shadow-sm">
                 <div>
                   <Image
-                    src="images/position-odd.png"
+                    src="illustrations/objectif-developpement.svg"
                     alt="Objectifs développement durable"
+                    height={80}
+                    className="mb-4"
                   />
                 </div>
                 <h4 className="h6">
@@ -90,7 +94,12 @@ const Entreprises = () => {
             <Col>
               <div className="box shadow-sm">
                 <div>
-                  <Image src="images/analyse-risques.png" alt="Risques" />
+                  <Image
+                    src="illustrations/anticipation-risque.svg"
+                    alt="Risques"
+                    height={80}
+                    className="mb-4"
+                  />
                 </div>
                 <h4 className="h6">
                   Anticipez de potentiels <br />
@@ -99,22 +108,16 @@ const Entreprises = () => {
               </div>
             </Col>
           </Row>
-          <div className="text-center mt-3">
-            <Button
-              variant="secondary"
-              href="https://metriz.lasocietenouvelle.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Utiliser l'application
-            </Button>
+          <div className="text-center mt-5">
+
+            <MetrizButton />
           </div>
         </Container>
       </section>
       <section>
         <Container>
-          <Row>
-            <Col>
+          <Row className="align-items-center">
+            <Col lg={8}>
               <h3> Principe de calcul</h3>
               <p>
                 Du fait des consommations intermédiaires et de capital fixe, la

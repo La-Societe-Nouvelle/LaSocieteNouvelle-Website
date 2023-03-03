@@ -19,6 +19,7 @@
     "embla-carousel": "^4.5.3",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "graphql-request": "^5.2.0",
     "html-loader": "^2.1.2",
     "jspdf": "^2.4.0",
     "markdown-loader": "^8.0.0",

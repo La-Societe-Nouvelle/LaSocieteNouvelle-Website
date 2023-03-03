@@ -103,7 +103,7 @@ const Header = () => {
             </h1>
           </Col>
           <Col xs={12} lg={3} className="offset-lg-1 text-end">
-            <div class="d-flex flex-column ps-5">
+            <div className="d-flex flex-column ps-5">
               <Button
                 href="https://metriz.lasocietenouvelle.org"
                 size="sm"
@@ -136,7 +136,9 @@ const Header = () => {
             >
               <Nav className="flex-grow-1 justify-content-between">
                 <Nav.Link href="/">Accueil</Nav.Link>
-                <Nav.Link href="/notre-approche">Notre approche</Nav.Link>
+                <Nav.Link href="/mesurer-empreinte-societale">
+                  Notre approche
+                </Nav.Link>
 
                 <NavDropdown title="Ressources ">
                   <NavDropdown.Item href="/ressources/application-mesure-impact">
@@ -162,15 +164,7 @@ const Header = () => {
                   Cabinets comptables
                 </Nav.Link>
                 <Nav.Link href="/blog">Actualités</Nav.Link>
-
-                <NavDropdown title="A propos">
-                  <NavDropdown.Item href="/a-propos">
-                    Qui sommes-nous ?
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/nos-missions">
-                    Nos missions
-                  </NavDropdown.Item>
-                </NavDropdown>
+                <Nav.Link href="/a-propos">A propos</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
