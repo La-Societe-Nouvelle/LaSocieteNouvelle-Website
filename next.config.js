@@ -13,3 +13,25 @@ module.exports = (env) => {
             basePath: 'https://lasocietenouvelle.org'};
   return baseConfig;
 }
+ 
+
+module.exports = {
+  reactStrictMode: true,
+
+  // async rewrites() {
+  async redirects() {
+    return [
+      {
+        source: "/:portail*",
+        has: [
+          {
+            type: "host",
+            value: "portail.lasocietenouvelle.org",
+          },
+        ],
+        destination: "https://lasocietenouvelle.org/portail",
+        permanent: true,
+      },
+    ];
+  },
+};
