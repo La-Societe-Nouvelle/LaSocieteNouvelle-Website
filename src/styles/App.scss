@@ -233,9 +233,23 @@ section.indic {
 }
 
 hr {
-  color: lighten(#191558, 50%);
+  color: $light;
 }
-
+hr:not([size]) {
+  height: 4px;
+}
 .col-form-label {
   font-size: 0.9rem;
+}
+
+
+.faq {
+  .question-box {
+    background-color: lighten( $light, 2%);
+
+    p {
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+  }
 }

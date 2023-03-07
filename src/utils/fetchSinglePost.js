@@ -7,14 +7,13 @@ const client = new GraphQLClient(HYGRAPH_URL, {
   },
 });
 
-const fetchPostBySlug = async (slug) => {
+const fetchSinglePost = async (slug) => {
   const query = gql`
     query GetPostBySlug($slug: String!) {
       post(where: { slug: $slug }) {
-        createdAt
+        date
         date
         title
-        tags
         slug
         coverImage {
           url
@@ -38,4 +37,4 @@ const fetchPostBySlug = async (slug) => {
 
   return response.post;
 };
-export default fetchPostBySlug;
+export default fetchSinglePost;

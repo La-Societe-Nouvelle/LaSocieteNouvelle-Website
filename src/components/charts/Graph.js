@@ -38,7 +38,7 @@ function Graph({ indic }) {
   const fetchData = useCallback(() => {
     axios
       .get(
-        `https://api.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+        `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
       )
       .then((response) => {
         if (response.data.header.code == 200) {

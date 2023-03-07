@@ -115,7 +115,7 @@ const Header = () => {
                 Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
               </Button>
               <Button
-                href="/publication"
+                href="/portail"
                 variant="secondary"
                 size="sm"
                 className="mt-2"
@@ -163,7 +163,7 @@ const Header = () => {
                 <Nav.Link href="/cabinets-comptables">
                   Cabinets comptables
                 </Nav.Link>
-                <Nav.Link href="/blog">Actualités</Nav.Link>
+                <Nav.Link href="/publication">Publications</Nav.Link>
                 <Nav.Link href="/a-propos">A propos</Nav.Link>
               </Nav>
             </Navbar.Collapse>

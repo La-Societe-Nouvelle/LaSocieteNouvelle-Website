@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { GetStaticProps } from "next";
 import axios from "axios";
 
-const API_URL = "http://localhost:8080";
 
 export const KeyFigures = () => {
   const [pinKeyFigure, setPinKeyFigure] = useState("");
@@ -16,9 +14,9 @@ export const KeyFigures = () => {
 
   const fetchKeyFiguresData = async () => {
     const urls = [
-      `${API_URL}/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`,
-      `${API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
-      `${API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
     ];
 
     const requests = urls.map((url) => axios.get(url));
@@ -42,7 +40,7 @@ export const KeyFigures = () => {
       setGhgKeyFigure(ghgKeyFigure);
       setGeqKeyFigure(geqKeyFigure);
 
-      console.log(success);
+    
     } catch (error) {
       console.log(error);
     }

@@ -32,7 +32,7 @@ function LatestPosts() {
             </div>
             <div className="post-title">
               <h2>
-                <a href={"/blog/" + posts[0].slug}> {posts[0].titre} </a>
+                <a href={"/publication/" + posts[0].slug}> {posts[0].titre} </a>
               </h2>
             </div>
             <div className="post-meta d-flex justify-content-between">
@@ -43,7 +43,7 @@ function LatestPosts() {
               <p>{posts[0].texte}</p>
             </div>
             <div className="post-footer">
-              <Link href={"/blog/" + posts[0].slug}>Lire la suite</Link>
+              <Link href={"/publication/" + posts[0].slug}>Lire la suite</Link>
             </div>
           </div>
         </Col>
@@ -66,7 +66,7 @@ function LatestPosts() {
                             allowFullScreen
                           ></iframe>
                         ) : (
-                          <a href={"/blog/" + post.slug}>
+                          <a href={"/publication/" + post.slug}>
                             <Image
                               alt="Photo d'équipe de la Societé Nouvelle"
                               src={"/images/articles/thumbnail-" + post.image}
@@ -79,7 +79,7 @@ function LatestPosts() {
                     <Col>
                       <div className="post-title ">
                         <h2>
-                          <a href={"/blog/" + post.slug}>{post.titre}</a>
+                          <a href={"/publication/" + post.slug}>{post.titre}</a>
                         </h2>
                       </div>
                             <div className="post-meta d-flex justify-content-between">
@@ -91,7 +91,7 @@ function LatestPosts() {
                         <p>{post.texte}</p>
                       </div>
                       <div className="post-footer">
-                        <Link href={"/blog/" + post.slug}>Lire la suite</Link>
+                        <Link href={"/publication/" + post.slug}>Lire la suite</Link>
                       </div>
                     </Col>
                   </Row>

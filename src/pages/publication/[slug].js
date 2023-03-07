@@ -1,9 +1,8 @@
 import { Container, Image } from "react-bootstrap";
 import { useRouter } from "next/router";
-import fetchPosts from "../../utils/fetchPosts";
-import fetchPostBySlug from "../../utils/fetchPostBySlug";
+import fetchSinglePost from "../../utils/fetchSinglePost";
 import { Helmet } from "react-helmet";
-import PageHeader from "../../components/PageHeader";
+import { fetchPosts } from "../../utils/fetchPosts";
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function Post({ post }) {
       <header className="bg-light pt-4 pb-2">
         <Container>
           <div className="breadcrumb">
-            <a href="/">Accueil</a> / <a href={"/blog"}> Blog/</a>
+            <a href="/">Accueil</a> / <a href={"/publication"}> Blog/</a>
             <a href={"/" + post.slug}>{post.title}</a>
           </div>
         </Container>
@@ -44,7 +43,7 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await fetchPostBySlug(params.slug);
+  const post = await fetchSinglePost(params.slug);
   return {
     props: { post },
   };
@@ -55,5 +54,6 @@ export async function getStaticPaths() {
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
+ 
   return { paths, fallback: false };
 }

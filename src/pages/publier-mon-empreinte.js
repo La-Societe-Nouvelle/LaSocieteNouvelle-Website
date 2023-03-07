@@ -184,7 +184,7 @@ const LegalForm = (props) => {
 
     if(/^[0-9]{9}$/.test(siren)) {
       axios
-      .get(`https://api.lasocietenouvelle.org/legalunit/${siren}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunit/${siren}`)
       .then((response) => {
         if (response.data.header.code == 200) {
           setDenomination(response.data.legalUnits[0].denomination);

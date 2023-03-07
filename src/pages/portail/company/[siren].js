@@ -53,7 +53,7 @@ const CompanyData = () => {
 
   async function getLegalUnitFootprint(siren) {
     axios
-      .get(`https://api.lasocietenouvelle.org/legalunitFootprint/${siren}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunitFootprint/${siren}`)
       .then((response) => {
         if (response.data.header.code == 200) {
           setLegalUnit(response.data.legalUnit);

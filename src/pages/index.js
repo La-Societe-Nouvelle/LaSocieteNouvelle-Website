@@ -166,26 +166,73 @@ const Home = () => {
           <h4 className="h3">Nos actualités</h4>
         </Container>
       </section>
-      <section>
+      <section className="faq">
         <Container>
           <h4 className="h3">FAQ</h4>
+          <Row>
+            <Col lg={6}>
+              <div className="question-box p-4 rounded">
+                <p>
+                  <a href="/faq/#mesure-empreinte-societale">
+                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
+                  </a>
+                </p>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="question-box p-4 rounded">
+                <a href="/faq/#business-model">
+                  <p>
+                    Quel est notre business model ?
+                  </p>
+                </a>
+              </div>
+            </Col>
+          </Row>
+          <Row className="mt-4">
+            <Col lg={6}>
+              <div className="question-box p-4 rounded">
+                <p>
+                  <a href="/faq/#mesure-empreinte-societale">
+                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
+                  </a>
+                </p>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="question-box p-4 rounded">
+                <a href="/faq/#business-model">
+                  <p>
+                    Quel est notre business model ?
+                  </p>
+                </a>
+              </div>
+            </Col>
+          </Row>
+          <p className="text-end fw-bold mt-5">
+             &raquo; D'autres questions ? 
+          </p>
         </Container>
+
       </section>
+      <hr className="container"></hr>
+
       {/* Partenaires */}
-      <section className="partenaires ">
+      <div className="partenaires mb-5 pt-3">
         <Container>
+          
           <h3 className="text-center">Avec le soutien de</h3>
-          <Row className="align-items-center">
-            <Col className="text-center" xs={4} lg={2}>
+          <div className=" d-flex justify-content-between align-items-center mt-5">
+            <div>
               <a href="https://www.euratechnologies.com/" target="_blank">
                 <Image
-                  fluid
+                  height={80}
                   src="/partners/euratech.svg"
                   alt="Euratech"
                 ></Image>
               </a>
-            </Col>
-            <Col className="text-center" xs={4} lg={2}>
+            </div>
+            <div>
               <a
                 href="https://www.bpifrance.fr/communaute-du-coq-vert"
                 target="_blank"
@@ -196,60 +243,54 @@ const Home = () => {
                   alt="Coq Vert"
                 ></Image>
               </a>
-            </Col>
-            <Col className="text-center" xs={4} lg={2}>
+            </div>
+            <div>
               <a href="https://www.impactfrance.eco/" target="_blank">
                 <Image
-                  fluid
-                  src="/partners/Logo_du_Mouvement_Impact_France.png"
+                  height={80}
+                  src="/partners/Logo_du_Mouvement_Impact_France.svg"
                   alt="Impact France"
                 ></Image>
               </a>
-            </Col>
-            <Col className="text-center" xs={4} lg={2}>
+            </div>
+            <div>
               <a href="https://www.bpifrance.fr/" target="_blank">
                 <Image
-                  fluid
+                  height={80}
                   src="/partners/bpifrance.svg"
                   alt="BPI France"
                   style={{ height: "50px" }}
                 ></Image>
               </a>
-            </Col>
-            <Col className="text-center">
+            </div>
+            <div className="text-center">
               <a href="https://www.hautsdefrance.fr/" target="_blank">
                 <Image
-                  fluid
-                  src="/partners/HDF-financementLogo-r.png"
+                  height={80}
+                  src="/partners/logo-hdf.svg"
                   alt="Financement Hauts-De-France"
                 ></Image>
               </a>
-            </Col>
-            <Col xs={4} lg={2}>
-              <Row>
-                <Col className="text-center" lg={5} xs={4}>
-                  <a href="https://www.economie.gouv.fr/" target="_blank">
-                    <Image
-                      fluid
-                      src="/partners/Logotype-rouge-bleu.png"
-                      alt="France 2030"
-                    ></Image>
-                  </a>
-                </Col>
-                <Col className="text-center" lg={7} xs={8}>
-                  <a href="https://www.economie.gouv.fr/" target="_blank">
-                    <Image
-                      fluid
-                      src="/partners/ministere_de_l_economie.svg"
-                      alt="Ministère de l'économie "
-                    ></Image>
-                  </a>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+            </div>
+            <div>
+              <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image
+                  height={80}
+                  src="/partners/logotype-rouge-bleu.png"
+                  alt="France 2030"
+                ></Image>
+              </a>
+              <a href="https://www.economie.gouv.fr/" target="_blank">
+                <Image
+                  src="/partners/ministere_de_l_economie.svg"
+                  alt="Ministère de l'économie "
+                  height={80}
+                ></Image>
+              </a>
+            </div>
+          </div>
         </Container>
-      </section>
+      </div>
     </>
   );
 };

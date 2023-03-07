@@ -69,7 +69,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
 
     await axios
       .get(
-        `https://api.lasocietenouvelle.org/serie/${id}?area=FRA&code=${code}&aggregate=${aggregate}`
+        `${process.env.NEXT_PUBLIC_API_URL}/serie/${id}?area=FRA&code=${code}&aggregate=${aggregate}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {

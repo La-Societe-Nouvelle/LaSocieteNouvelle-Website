@@ -3,8 +3,6 @@ import { Alert } from "react-bootstrap";
 const ErrorAlert = (props) => {
   let message;
  
-
-  console.log(props.code)
   switch (props.code) {
     case 404:
       message = "Aucun résultat";
@@ -19,7 +17,6 @@ const ErrorAlert = (props) => {
       message = "Une erreur est survenue"
       break;
   }
-  console.log(message)
   return <Alert variant="info"><p className="mb-0">{message}</p></Alert>;
 };
 
