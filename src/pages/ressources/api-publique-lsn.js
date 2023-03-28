@@ -45,8 +45,8 @@ const API = () => {
                 <DocButton />
               </div>
             </Col>
-            <Col>
-              <Image fluid src="/illustrations/test.svg"  alt="Illustration API" />
+            <Col className="text-end">
+              <Image fluid src="/images/API.png"  alt="Illustration API" />
             </Col>
           </Row>
         </Container>
@@ -100,16 +100,16 @@ const API = () => {
           <h3>Services disponibles via l'API</h3>
           <Row>
             <Col>
-              <Image src="/illustrations/recherche-siren.svg" />
-              <h4>Recherche unitaire par unité légale</h4>
+              <h4 className="my-4">Recherche unitaire par unité légale</h4>
+              <Image src="/illustrations/recherche-siren.svg" height={250} className="mb-4" />
               <p>
                 Le service d’interrogation unitaire permet à partir du numéro de
                 siren d'obtenir l'empreinte sociétale de l'unité légale.
               </p>
             </Col>
             <Col>
-              <Image src="/illustrations/donnees-par-defaut.svg" />
-              <h4> Données par défaut</h4>
+            <h4 className="my-4">  Données par défaut</h4>
+              <Image src="/illustrations/donnees-par-defaut.svg" height={250} className="mb-4"/>
               <p>
                 Retourne les valeurs par défaut proposées à partir de la zone
                 économique et l'activité principale , et pour
@@ -117,8 +117,8 @@ const API = () => {
               </p>
             </Col>
             <Col>
-              <Image src="illustrations/default-data.png" />
-              <h4>Séries de données</h4>
+              <h4 className="my-4"> Séries de données</h4>
+              <Image src="/illustrations/series-data-illu.svg" height={250} className="mb-4"/>
               <p>
                 Les séries de données correspondent aux données statistiques
                 macroéconomiques mises à disposition par La Société Nouvelle.

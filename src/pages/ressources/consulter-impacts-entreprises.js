@@ -47,10 +47,10 @@ const Page = () => {
                 <DocButton />
               </div>
             </Col>
-            <Col>
+            <Col className="text-end">
               <Image
                 fluid
-                src="/illustrations/test.svg"
+                src="/images/portail-donnees-impacts-entreprises.png"
                 alt="Illustration API"
               />
             </Col>

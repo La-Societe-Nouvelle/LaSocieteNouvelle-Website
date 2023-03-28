@@ -1,5 +1,14 @@
 import React from "react";
-import { Col, Container, Image, Row, Tab, Tabs } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  Col,
+  Container,
+  Image,
+  Row,
+  Tab,
+  Tabs,
+} from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import IndicatorsPanel from "../components/indic/IndicatorsPanel";
 import PageHeader from "../components/PageHeader";
@@ -40,29 +49,19 @@ const Approche = () => {
                 majeur pour elle).
               </p>
             </Col>
-            <Col></Col>
-          </Row>
-        </Container>
-      </section>
-      <section className="bg-light-secondary">
-        <Container>
-          <Row>
-            <Col lg={{ span: 6, offset: 3 }}>
-              <div className="text-center">
-                <p className="fw-bold">
-                  Pour en savoir plus au sujet de nos méthodes de calcul, le
-                  guide d'utilisation ou encore concernant les données
-                  utilisées, consultez notre espace de documentation.
-                </p>
-                <DocButton />
-              </div>
+            <Col className="text-end">
+              <Image
+                fluid
+                src="/illustrations/metriz_illus.svg"
+                alt="Illustration Application mesure impact"
+              />
             </Col>
           </Row>
         </Container>
       </section>
       <section>
         <Container>
-          <h2>Les indicateurs </h2>
+          <h3 className="mb-4">Les indicateurs </h3>
           <p>
             Aujourd'hui le panel comprend 12 indicateurs : 6 indicateurs
             socio-économiques et 6 indicateurs environnementaux. Le choix des
@@ -73,7 +72,7 @@ const Approche = () => {
             pertinents à l'échelle de l'entreprise. Un comité de gouvernance des
             indicateurs est en cours de constitution.
           </p>
-          <Tabs defaultActiveKey="soc" className="mR-5 panel-indicateurs" fill>
+          <Tabs defaultActiveKey="soc" className="mt-4 panel-indicateurs" fill>
             <Tab
               eventKey="soc"
               title="Indicateurs
@@ -89,6 +88,27 @@ const Approche = () => {
               <IndicatorsPanel indics={second_set_indics} />
             </Tab>
           </Tabs>
+
+          <div className="text-center mt-5">
+            <hr></hr>
+            <h4 className="h2 mt-5">Gourvernance des indicateurs</h4>
+            <p>
+              Nous travaillons en continu sur les indicateurs disponibles: choix
+              méthodologiques, données utilisées, outils supports, suivi à
+              l'échelle macroéconomique, définition des objectifs, etc.La
+              gouvernance a vocation à être externalisée et partagée avec des
+              organismes publics et privés.
+            </p>
+            <p>
+              Pour en savoir plus au sujet de nos méthodes de calcul, le guide
+              d'utilisation ou encore concernant les données utilisées,
+              consultez notre espace de documentation.
+            </p>
+            <ButtonGroup>
+              <Button>Les indicateurs</Button>
+              <Button variant="info">La Documentation</Button>
+            </ButtonGroup>
+          </div>
         </Container>
       </section>
     </>

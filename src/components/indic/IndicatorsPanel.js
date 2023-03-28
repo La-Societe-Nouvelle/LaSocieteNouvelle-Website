@@ -50,7 +50,7 @@ const IndicatorsPanel = (props) => {
                           : " not-concerned")
                       }
                       id={"icon-odd-" + odd}
-                      src={"/images/icon-odd-" + odd + ".png"}
+                      src={"/images/odd/icon-odd-" + odd + ".png"}
                       width="30px"
                       alt="icon-odd"
                     />

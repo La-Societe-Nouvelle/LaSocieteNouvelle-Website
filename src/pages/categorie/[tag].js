@@ -7,14 +7,15 @@ import PostPreview from "../../components/posts/PostPreview";
 import PostPreviewLoading from "../../components/posts/PostPreviewLoading";
 import { fetchPostsByTag, fetchTags, getTag } from "../../utils/fetchPosts";
 
-export default function TagPage({ postsByTag, tag }) {
+export default function TagPage({ data, tag }) {
 
   const [posts, setPosts] = useState();
   const [tagName] = useState(tag.tag.name);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setPosts(postsByTag.posts);
+    console.log(data)
+    setPosts(data.posts);
     setIsLoading(false);
   }, []);
 
@@ -41,7 +42,7 @@ export default function TagPage({ postsByTag, tag }) {
 export async function getStaticPaths() {
   
   const { tags } = await fetchTags();
-  console.log(tags)
+ 
   const paths = tags.map((tag) => ({ params: { tag } }));
 
   return { paths, fallback: false };
@@ -49,6 +50,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const data = await fetchPostsByTag(params.tag);
+
   const tag = await getTag(params.tag);
 
   return {
