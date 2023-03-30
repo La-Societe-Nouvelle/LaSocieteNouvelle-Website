@@ -9,6 +9,8 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Graph from "../components/charts/Graph";
 import { MetrizButton } from "../components/buttons/MetrizButton";
 import { KeyFigures } from "../components/KeyFigures";
+import LatestPosts from "../components/posts/LatestPosts";
+import BoxNewsletter from "../components/BoxNewsletter";
 
 const Home = () => {
   return (
@@ -159,11 +161,19 @@ const Home = () => {
               <Graph indic={"NRG"} />
             </Col>
           </Row>
+
+     
         </Container>
       </section>
+      
       <section>
         <Container>
           <h4 className="h3">Nos actualités</h4>
+          <LatestPosts></LatestPosts>
+          <p className="text-end fw-bold mb-5">
+             &raquo; Plus d'articles ? 
+          </p>
+          <BoxNewsletter></BoxNewsletter>
         </Container>
       </section>
       <section className="faq">
@@ -210,7 +220,10 @@ const Home = () => {
             </Col>
           </Row>
           <p className="text-end fw-bold mt-5">
-             &raquo; D'autres questions ? 
+            <a href="/faq" >
+              &raquo; D'autres questions ? 
+
+            </a>
           </p>
         </Container>
 

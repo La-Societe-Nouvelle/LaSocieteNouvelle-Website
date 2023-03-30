@@ -74,11 +74,17 @@ const Header = () => {
               <i className="bi bi-linkedin"></i>
             </Nav.Link>
             <Nav.Link
-              href="https://github.com/La-Societe-Nouvelle/"
+              href="/https://github.com/La-Societe-Nouvelle/"
               target="_blank"
               rel="noreferrer"
             >
               <i className="bi bi-github"></i>
+            </Nav.Link>
+            <Nav.Link href="/blog" rel="noreferrer">
+              <span className="top-bar-link"> Blog</span>
+            </Nav.Link>
+            <Nav.Link href="faq" rel="noreferrer">
+              <span className="top-bar-link"> Aide</span>
             </Nav.Link>
           </Nav>
           <div className="text-end">
@@ -90,8 +96,8 @@ const Header = () => {
           <Col xs={12} lg={4}>
             <Navbar.Brand href="/">
               <Image
-                fluid
-                src="/logo-La-Societe-Nouvelle.png"
+                src="/logo-La-Societe-Nouvelle.svg"
+                height={120}
                 className="d-inline-block align-center"
                 alt="logo"
               />
@@ -163,7 +169,7 @@ const Header = () => {
                 <Nav.Link href="/cabinets-comptables">
                   Cabinets comptables
                 </Nav.Link>
-                <Nav.Link href="/publication">Publications</Nav.Link>
+                <Nav.Link href="/publications">Publications</Nav.Link>
                 <Nav.Link href="/a-propos">A propos</Nav.Link>
               </Nav>
             </Navbar.Collapse>

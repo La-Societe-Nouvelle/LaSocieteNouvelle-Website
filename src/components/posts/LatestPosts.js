@@ -1,106 +1,122 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import articles from "../../lib/articles.json";
+import { useEffect } from "react";
+import { Badge, Button, Card, Col, Image, Row } from "react-bootstrap";
+import { fetchLatestPosts } from "../../utils/fetchPosts";
+import { cutString } from "../../utils/utils";
 
 function LatestPosts() {
-  const [posts, setPosts] = useState(articles.posts.slice(0, 4));
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    getLatestPosts();
+  }, []);
+
+  const getLatestPosts = async () => {
+    try {
+      const data = await fetchLatestPosts();
+      setPosts(data.posts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div id="latest-posts">
-      <Row>
-        <Col lg={6}>
-          <div className="last">
-            <div className="image-post">
-              {posts[0].categorie == "video" ? (
-                <iframe
-                  width="560"
-                  height="315"
-                  src={"https://www.youtube.com/embed/" + posts[0].lien}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <Image
-                  alt={posts[0].titre}
-                  src={"/images/articles/" + posts[0].image}
-                  fluid
-                />
-              )}
-            </div>
-            <div className="post-title">
-              <h2>
-                <a href={"/publication/" + posts[0].slug}> {posts[0].titre} </a>
-              </h2>
-            </div>
-            <div className="post-meta d-flex justify-content-between">
-              <p className="category">{posts[0].categorie}</p>
-              <p>Publié le {posts[0].date}</p>
-            </div>
-            <div className="post-content">
-              <p>{posts[0].texte}</p>
-            </div>
-            <div className="post-footer">
-              <Link href={"/publication/" + posts[0].slug}>Lire la suite</Link>
-            </div>
-          </div>
-        </Col>
-        <Col>
-          {posts.map((post, key) => {
-            return (
-              key != 0 && (
-                <div className="post" key={key}>
-                  <Row>
-                    <Col lg={4}>
-                      <div className="image-post">
-                        {posts.categorie == "video" ? (
-                          <iframe
-                            width="560"
-                            height="315"
-                            src={"https://www.youtube.com/embed/" + post.lien}
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          ></iframe>
-                        ) : (
-                          <a href={"/publication/" + post.slug}>
-                            <Image
-                              alt="Photo d'équipe de la Societé Nouvelle"
-                              src={"/images/articles/thumbnail-" + post.image}
-                              fluid
-                            />
-                          </a>
-                        )}
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="post-title ">
-                        <h2>
-                          <a href={"/publication/" + post.slug}>{post.titre}</a>
-                        </h2>
-                      </div>
-                            <div className="post-meta d-flex justify-content-between">
-                            <p className="category ">{post.categorie}</p>
-
-                    <p>Publié le {post.date}</p>
-                  </div>
-                      <div className="post-content">
-                        <p>{post.texte}</p>
-                      </div>
-                      <div className="post-footer">
-                        <Link href={"/publication/" + post.slug}>Lire la suite</Link>
-                      </div>
-                    </Col>
-                  </Row>
+      {posts.length > 0 && (
+        <Row>
+          <Col>
+            <Card className="mb-3 post-preview">
+              <div className="img-container">
+                {posts[0].coverImage && (
+                  <Card.Img src={posts[0].coverImage.url} />
+                )}
+              </div>
+              <Card.Body>
+                <div className="posts-tags">
+                  <Badge bg="light">{posts[0].tag.name}</Badge>
                 </div>
-              )
-            );
-          })}
-        </Col>
-      </Row>
+                <Card.Title>
+                  <h4 className="mt-3">
+                    <a
+                      href={`/${posts[0].slug}`}
+                      title={posts[0].title}
+                    >
+                      {cutString(posts[0].title, 80)}
+                    </a>
+                  </h4>
+                </Card.Title>
+
+                <Card.Text className="small">
+                  {cutString(posts[0].excerpt, 400)}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col>
+            <Card className="mb-3 border-2 border-light ">
+              <Row>
+                <Col lg={4}>
+                  <div className="img-container">
+                    {posts[1].coverImage && (
+                      <Card.Img
+                        className="mt-4 rounded-0"
+                        src={posts[1].coverImage.url}
+                      />
+                    )}
+                  </div>
+                </Col>
+                <Col>
+                  <Card.Body>
+                    <div className="posts-tags">
+                      <Badge bg="light">{posts[1].tag.name}</Badge>
+                    </div>
+                    <Card.Title>
+                      <h4 className="h6 mt-3">
+                        <a href={`/${posts[1].slug}`} title={posts[1].title}>
+                          {cutString(posts[1].title, 80)}
+                        </a>
+                      </h4>
+                    </Card.Title>
+                    <Card.Text className="small">
+                      {cutString(posts[0].excerpt, 100)}
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
+
+            <Card className="mb-3 border-2 border-light ">
+              <Card.Body>
+                <Card.Title>
+                  <Badge bg="light" className="me-2">
+                    {posts[2].tag.name}
+                  </Badge>
+                  <h4 className="h6 mt-3">
+                    <a href={`/${posts[2].slug}`} title={posts[2].title}>
+                      {posts[2].title}
+                    </a>
+                  </h4>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card className="mb-3 border-2 border-light ">
+              <Card.Body>
+                <Card.Title>
+                  <Badge bg="light">{posts[3].tag.name}</Badge>
+                  <h4 className="h6 mt-3">
+                    <a href={`/${posts[3].slug}`} title={posts[3].title}>
+                      {posts[3].title}
+                    </a>
+                  </h4>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 }

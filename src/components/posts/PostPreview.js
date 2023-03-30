@@ -11,12 +11,12 @@ function PostPreview({post}) {
           {post.coverImage && <Card.Img src={post.coverImage.url} />}
         </div>
         <Card.Body>
-          <div className="=post-tags">
-            <Badge bg="light">{post.tag.name}</Badge>
+          <div className="post-tags">
+            <Badge bg="light"><a href={ "/blog/" + post.tag.slug}>{post.tag.name}</a></Badge>
           </div>
           <Card.Title>
             <h3 className="h4 mt-3">
-              <a href={`/publication/${post.slug}`} title={post.title}>
+              <a href={`/blog/${post.slug}`} title={post.title}>
                 {cutString(post.title, 80)}
               </a>
             </h3>
@@ -26,7 +26,7 @@ function PostPreview({post}) {
             {cutString(post.excerpt, 140)}
           </Card.Text>
           <div className="text-end">
-            <Button size="sm" variant="primary" href={`/publication/${post.slug}`}>
+            <Button size="sm" variant="primary" href={`/blog/${post.slug}`}>
               Lire la suite
             </Button>
           </div>

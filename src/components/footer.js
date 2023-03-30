@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { Col, Container, ListGroup, Nav, Row } from "react-bootstrap";
+import { Col, Container, Image, ListGroup, Nav, Row } from "react-bootstrap";
 
 function Footer() {
   const router = useRouter();
   const [page, setPage] = useState(router.pathname);
+  const year = new Date().getFullYear();
 
   useEffect(() => {
     setPage(router.pathname);
   });
 
-  return ( 
+  return (
     <footer>
       <div className="top-footer">
         <Container>
@@ -19,7 +20,9 @@ function Footer() {
               <h6>Abonnez-vous !</h6>
               <div className="d-flex align-items-center icon-link">
                 <i className="bi bi-envelope-paper" role="img"></i>
-                <a href="/newsletter">Newsletter</a>
+                <a href="/newsletter" title="Inscription à la newsletter">
+                  Newsletter
+                </a>
               </div>
             </Col>
             <Col xs={12} lg={4}>
@@ -31,6 +34,7 @@ function Footer() {
                     href="https://github.com/La-Societe-Nouvelle/"
                     target="_blank"
                     rel="noreferrer"
+                    title="GitHub"
                   >
                     <i className="bi bi-github" role="img"></i>
                   </a>
@@ -40,6 +44,7 @@ function Footer() {
                     href="https://twitter.com/LSN_FR"
                     target="_blank"
                     rel="noreferrer"
+                    title="Twitter"
                   >
                     <i className="bi bi-twitter" role="img"></i>
                   </a>
@@ -49,6 +54,7 @@ function Footer() {
                     href="https://www.linkedin.com/company/la-societe-nouvelle/"
                     target="_blank"
                     rel="noreferrer"
+                    title="LinkedIn"
                   >
                     <i className="bi bi-linkedin" role="img"></i>
                   </a>
@@ -59,7 +65,9 @@ function Footer() {
               <h6> Contactez-nous</h6>
               <div className="d-flex align-items-center icon-link">
                 <i className="bi bi-envelope-fill" role="img"></i>
-                <a href="/contact">Formulaire de contact</a>
+                <a href="/contact" title="Contactez nous">
+                  Formulaire de contact
+                </a>
               </div>
             </Col>
           </Row>
@@ -68,29 +76,38 @@ function Footer() {
       <div className="footer">
         <Container>
           <Row>
-            <Col xs={12} lg={4}>
+            <Col xs={12} lg={3}>
               <h6>La société nouvelle</h6>
               <Nav defaultActiveKey="/" className="flex-column">
                 <Nav.Link href="/a-propos">Qui sommes-nous ?</Nav.Link>
-                <Nav.Link href="/mesurer-empreinte-societale">Notre approche</Nav.Link>
-                <Nav.Link href="/indicateurs">
-                  Liste des indicateurs
+                <Nav.Link href="/mesurer-empreinte-societale">
+                  Notre approche
                 </Nav.Link>
+                <Nav.Link href="/indicateurs">Liste des indicateurs</Nav.Link>
               </Nav>
             </Col>
-            <Col xs={12} lg={4}>
-              <h6>Nos outils</h6>
+            <Col xs={12} lg={3}>
+              <h6>Nos ressources</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="https://metriz.lasocietenouvelle.org/" target="_blank">
-                  Application Web
+                <Nav.Link href="/ressources/application-mesure-impact">
+                  Metriz - Application Web de mesure d'impact
                 </Nav.Link>
-                <Nav.Link href="https://docs.lasocietenouvelle.org/" target="_blank">
+                <Nav.Link href="/ressources/api-publique-lsn">
+                  API publique
+                </Nav.Link>
+                <Nav.Link href="/ressources/consulter-impacts-entreprises">
+                  Portail d'accès aux données des entreprises
+                </Nav.Link>
+
+                <Nav.Link
+                  href="https://docs.lasocietenouvelle.org/"
+                  target="_blank"
+                >
                   Documentation
                 </Nav.Link>
-                <Nav.Link href="/portail" target="_blank">Portail d'accès aux données</Nav.Link>
               </Nav>
             </Col>
-            <Col xs={12} lg={4}>
+            <Col xs={12} lg={3}>
               <h6>Nos services</h6>
               <Nav defaultActiveKey="/" className="flex-column">
                 <Nav.Link href="/cabinets-comptables">
@@ -99,18 +116,27 @@ function Footer() {
                 <Nav.Link href="/entreprises">Entreprises</Nav.Link>
               </Nav>
             </Col>
+            <Col xs={12} lg={3}>
+              <h6>Nos articles</h6>
+              <Nav defaultActiveKey="/" className="flex-column">
+                <Nav.Link href="/notes-analyse">Notes d'analyse</Nav.Link>
+                <Nav.Link href="/fiches-methodologiques">
+                  Fiches méthodologiques
+                </Nav.Link>
+                <Nav.Link href="/infographies">Infographies</Nav.Link>
+                <Nav.Link href="/actualites">Actualités </Nav.Link>
+              </Nav>
+            </Col>
           </Row>
         </Container>
+        <div className="text-center mt-4">
+          <Image src="/celeste-blanc.svg" height={30}></Image>
+        </div>
         <div className="bottom-footer">
           <Container>
             <div className="d-flex justify-content-between align-items-center">
-              <p className="mx-2">© 2022 La Société Nouvelle</p>
+              <p className="mx-2 mb-0">&copy;{year} La Société Nouvelle</p>
               <ul className="nav">
-                <li className="nav-item">
-                  <a className="nav-link" href="/a-propos">
-                    A propos
-                  </a>
-                </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/mentions-legales">
                     Mentions légales

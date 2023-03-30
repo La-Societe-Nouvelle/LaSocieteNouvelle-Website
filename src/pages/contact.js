@@ -13,17 +13,21 @@ export default function Home() {
       <Helmet>
         <title>La Société Nouvelle | Nous contacter</title>
       </Helmet>
-      <PageHeader title={"Contactez-nous"} path={"contact"} /> 
+      <PageHeader title={"Contactez-nous"} path={"contact"} />
       <section>
         <Container>
           <Row>
-            <Col md={{ span: 6, offset: 3 }}>
-          <h2 className="titre-bloc">Formulaire de contact</h2>
-              <ContactForm />
-              <hr/>
-              <p className="small">
-                Nous nous engageons à n’utiliser les informations communiquées dans ce formulaire que pour les traitements nécessaires à une réponse la plus précise possible.
-              </p>
+            <Col md={{ span: 8, offset: 2 }}>
+              <div className="border border-2 rounded border-light p-4">
+                <h3 className="text-center my-3">Formulaire de contact</h3>
+                <ContactForm />
+                <hr />
+                <p className="small">
+                  Nous nous engageons à n’utiliser les informations communiquées
+                  dans ce formulaire que pour les traitements nécessaires à une
+                  réponse la plus précise possible.
+                </p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -50,7 +54,7 @@ class ContactForm extends React.Component {
     const btnClass = messageSend ? "disabled" : "";
 
     return (
-      <div id="contact-form" className="section form">
+      <div id="contact-form" className="section form mx-3">
         <div className="form-section v-group">
           <label className="titre-form-section">Objet</label>
           <input

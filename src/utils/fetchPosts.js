@@ -10,7 +10,39 @@ const client = new GraphQLClient(HYGRAPH_URL, {
 async function fetchPosts() {
   const query = gql`
     query GetPosts {
-      posts {
+      posts(orderBy: publishedAt_DESC, stage: PUBLISHED) {
+        id
+        title
+        slug
+        excerpt
+        date
+        tag {
+          name
+          slug
+        }
+        coverImage {
+          url
+        }
+      }
+    }
+  `;
+
+  try {
+    const data = await client.request(query);
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(
+      "Une erreur s'est produite lors de la récupération des articles."
+    );
+  }
+}
+
+
+async function fetchLatestPosts() {
+  const query = gql`
+    query getLatestPosts {
+      posts(orderBy: publishedAt_DESC, stage: PUBLISHED, last: 4) {
         id
         title
         slug
@@ -41,7 +73,7 @@ async function fetchPosts() {
 async function fetchPublications() {
   const query = gql`
     query GetPublications {
-      posts(where: { tag: { slug_not_in: "actualites" } }) {
+      posts(orderBy: publishedAt_DESC, stage: PUBLISHED where: { tag: { slug_not_in: "actualites" } }) {
         id
         title
         slug
@@ -115,7 +147,6 @@ async function fetchTags() {
   `;
 
   const data = await client.request(query);
-  console.log(data);
 
   const tags = new Set();
 
@@ -152,4 +183,4 @@ async function getTag(tag) {
   }
 }
 
-export { getTag, fetchTags, fetchPublications, fetchPosts, fetchPostsByTag };
+export { getTag, fetchTags, fetchPublications, fetchPosts, fetchPostsByTag, fetchLatestPosts };

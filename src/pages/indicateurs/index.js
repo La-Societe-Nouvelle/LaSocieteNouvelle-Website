@@ -23,24 +23,23 @@ export default function Home() {
 
       <section className="indic">
         <Container>
-        <Row>
-
-        {metaData.indics.map((indic, index) => (
-                <Col lg={3} key={index} className="mb-3">
-                  <Card className="indics text-center" >
-                    <Link href={"/indicateurs/" + indic}>
-                      <Image roundedCircle src={"/ESE/" + indic + ".svg"} />
-                    </Link>
-                    <Link href={"/indicateurs/" + indic}>
-                    <h3 className="mb-4"> <a>
-                        {metaData[indic].libelle}
-                      </a></h3>
-                    </Link>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-
+          <Row>
+            {metaData.indics.map((indic, index) => (
+              <Col lg={3} key={index} className="mb-3">
+                <Card className="indics text-center border-2 border-light">
+                  <Link href={"/indicateurs/" + indic}>
+                    <Image roundedCircle src={"/ESE/" + indic + ".svg"} />
+                  </Link>
+                  <Link href={"/indicateurs/" + indic}>
+                    <h3 className="mb-4">
+                      {" "}
+                      <a>{metaData[indic].libelle}</a>
+                    </h3>
+                  </Link>
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </Container>
       </section>
     </>

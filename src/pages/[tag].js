@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import PageHeader from "../../components/PageHeader";
-import PostPreview from "../../components/posts/PostPreview";
-import PostPreviewLoading from "../../components/posts/PostPreviewLoading";
-import { fetchPostsByTag, fetchTags, getTag } from "../../utils/fetchPosts";
+import PageHeader from "../components/PageHeader";
+import PostPreview from "../components/posts/PostPreview";
+import PostPreviewLoading from "../components/posts/PostPreviewLoading";
+import { fetchPostsByTag, fetchTags, getTag } from "../utils/fetchPosts";
 
 export default function TagPage({ data, tag }) {
 
@@ -49,8 +49,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await fetchPostsByTag(params.tag);
 
+  const data = await fetchPostsByTag(params.tag);
   const tag = await getTag(params.tag);
 
   return {

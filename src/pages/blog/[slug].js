@@ -1,4 +1,4 @@
-import { Container, Image } from "react-bootstrap";
+import { Badge, Col, Container, Image, Row } from "react-bootstrap";
 import { useRouter } from "next/router";
 import fetchSinglePost from "../../utils/fetchSinglePost";
 import { Helmet } from "react-helmet";
@@ -23,21 +23,36 @@ export default function Post({ post }) {
       <header className="bg-light pt-4 pb-2">
         <Container>
           <div className="breadcrumb">
-            <a href="/">Accueil</a> / <a href={"/publication"}> Blog/</a>
+            <a href="/">Accueil</a> / <a href={"/blog/"}> Blog/</a>
             <a href={"/" + post.slug}>{post.title}</a>
           </div>
         </Container>
       </header>
-      <article className="py-5">
-        <Container>
-          <h2 className="text-center h1">{post.title}</h2>
-          <div className="text-center">
-            <Image src={post.coverImage.url} fluid />
-          </div>
+      <Container>
+        <Row>
+          <Col md={{ span: 10, offset: 1 }}>
+            <article className="m-5">
+              <h2>{post.title}</h2>
+              <div className="post-tags">
+                <Badge bg="light">
+                  <a href={"/" + post.tag.slug}>{post.tag.name}</a>
+                </Badge>
+              </div>
 
-          <div dangerouslySetInnerHTML={{ __html: post.content.html }}></div>
-        </Container>
-      </article>
+              <div className="text-center my-4">
+                <Image src={post.coverImage.url} fluid alt="Image Article"/>
+              </div>
+              <div
+                dangerouslySetInnerHTML={{ __html: post.content.html }}
+              ></div>
+              <hr></hr>
+              <div className="text-end">
+                <p className="small">Publié le {post.date}</p>
+              </div>
+            </article>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
@@ -54,6 +69,6 @@ export async function getStaticPaths() {
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
- 
+
   return { paths, fallback: false };
 }

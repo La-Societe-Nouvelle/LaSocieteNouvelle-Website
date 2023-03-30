@@ -21,7 +21,7 @@ const Approche = () => {
   return (
     <>
       <Helmet>
-        <title>La Société Nouvelle | Notre approche </title>
+        <title>La Société Nouvelle | Notre approche : Mesurer l'empreinte sociétale des entreprises</title>
       </Helmet>
       <PageHeader
         title={"Notre approche"}

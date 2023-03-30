@@ -6,7 +6,13 @@
     .nav-link{
         padding: 0.325rem;
         color : $primary;
-    }
+        .top-bar-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-left: 1px solid $primary;
+            padding-left: 0.5rem;
+        }
+    } 
     small {
         font-size: 0.675em;
         font-weight: 600;
@@ -25,12 +31,10 @@
     
 }
 
-.page-header {
-    background-color: $light;
-    text-align: center;
-    padding: 3rem 0;
+header {
+
     h2{
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
     a{
         font-size: 0.8rem;

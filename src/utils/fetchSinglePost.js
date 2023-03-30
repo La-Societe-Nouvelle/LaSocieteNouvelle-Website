@@ -15,6 +15,10 @@ const fetchSinglePost = async (slug) => {
         date
         title
         slug
+        tag {
+          name
+          slug
+        }
         coverImage {
           url
         }

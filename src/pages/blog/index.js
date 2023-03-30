@@ -4,7 +4,8 @@ import PageHeader from "../../components/PageHeader";
 import { Container, Row } from "react-bootstrap";
 import PostPreview from "../../components/posts/PostPreview";
 import PostPreviewLoading from "../../components/posts/PostPreviewLoading";
-import { fetchPublications } from "../../utils/fetchPosts";
+import { fetchPosts } from "../../utils/fetchPosts";
+import BoxNewsletter from "../../components/BoxNewsletter";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -17,7 +18,7 @@ const Posts = () => {
   const getPosts = async () => {
     try {
       setIsLoading(true);
-      const data = await fetchPublications();
+      const data = await fetchPosts();
       setPosts(data.posts);
     } catch (error) {
       console.error(error);
@@ -28,15 +29,19 @@ const Posts = () => {
   return (
     <>
       <Helmet>
-        <title>La Société Nouvelle | Publications </title>
+        <title>La Société Nouvelle | Blog </title>
       </Helmet>
-      <PageHeader title="Publications" path={"publications"} />
+      <PageHeader title="Blog" path={"blog"} />
       <section id="Posts">
         <Container>
           <Row>
             {isLoading && <PostPreviewLoading />}
             {!isLoading && posts.map((post) => <PostPreview post={post} />)}
           </Row>
+          <hr></hr>
+          <div className="mt-4 mx-3">
+            <BoxNewsletter></BoxNewsletter>
+          </div>
         </Container>
       </section>
     </>
