@@ -17,12 +17,12 @@ function PostPreview({post}) {
           <Card.Title>
             <h3 className="h4 mt-3">
               <a href={`/blog/${post.slug}`} title={post.title}>
-                {cutString(post.title, 80)}
+                {cutString(post.title, 70)}
               </a>
             </h3>
           </Card.Title>
 
-          <Card.Text className="small">
+          <Card.Text className="small excerpt">
             {cutString(post.excerpt, 140)}
           </Card.Text>
           <div className="text-end">

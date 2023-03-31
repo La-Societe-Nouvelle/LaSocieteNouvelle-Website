@@ -10,7 +10,7 @@ const client = new GraphQLClient(HYGRAPH_URL, {
 async function fetchPosts() {
   const query = gql`
     query GetPosts {
-      posts(orderBy: publishedAt_DESC, stage: PUBLISHED) {
+      posts(orderBy: date_DESC, stage: PUBLISHED) {
         id
         title
         slug
@@ -42,7 +42,7 @@ async function fetchPosts() {
 async function fetchLatestPosts() {
   const query = gql`
     query getLatestPosts {
-      posts(orderBy: publishedAt_DESC, stage: PUBLISHED, last: 4) {
+      posts(orderBy: date_DESC, stage: PUBLISHED, last: 4) {
         id
         title
         slug
@@ -73,7 +73,8 @@ async function fetchLatestPosts() {
 async function fetchPublications() {
   const query = gql`
     query GetPublications {
-      posts(orderBy: publishedAt_DESC, stage: PUBLISHED where: { tag: { slug_not_in: "actualites" } }) {
+      posts(orderBy: date_DESC, stage: PUBLISHED where: { tag: { slug_not_in: "actualites" } }) {
+        publishedAt
         id
         title
         slug
@@ -105,6 +106,7 @@ async function fetchPostsByTag(slug) {
   const query = gql`
     query GetPostsByTag($slug: String!) {
       posts(where: { tag: { slug: $slug } }) {
+        date
         id
         excerpt
         slug

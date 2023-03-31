@@ -40,7 +40,9 @@ export default function Post({ post }) {
               </div>
 
               <div className="text-center my-4">
-                <Image src={post.coverImage.url} fluid alt="Image Article"/>
+                {post.coverImage && post.tag.slug != "infographies" && (
+                  <Image src={post.coverImage.url} fluid alt="Image Article" />
+                )}
               </div>
               <div
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
