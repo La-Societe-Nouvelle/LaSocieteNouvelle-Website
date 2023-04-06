@@ -2,9 +2,26 @@
   color: darken($light, 40%);
   font-weight: 600;
 }
+#latest-posts .border-2{
+  border-width: 2px;
+}
 #latest-posts .post-preview {
   .img-container {
     height: 225px;
+  }
+}
+.horizontal-preview {
+  .img-container {
+    height: 170px;
+    overflow: hidden;
+  }
+  .card-img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
   }
 }
 .post-preview {

@@ -55,13 +55,13 @@ function LatestPosts() {
           </Col>
 
           <Col>
-            <Card className="mb-3 border-2 border-light ">
+            <Card className="mb-3 border-2 border-light horizontal-preview ">
               <Row>
                 <Col lg={4}>
-                  <div className="img-container">
+                  <div className="img-container ">
                     {posts[1].coverImage && (
                       <Card.Img
-                        className="mt-4 rounded-0"
+                        className=""
                         src={posts[1].coverImage.url}
                       />
                     )}

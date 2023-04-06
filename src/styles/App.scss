@@ -243,6 +243,13 @@ hr:not([size]) {
 }
 
 
+p {
+
+
+  a {
+    color : $secondary;
+  }
+}
 .faq {
   padding-top: 0;
   .question-box {
@@ -251,6 +258,10 @@ hr:not([size]) {
     p {
       margin-bottom: 0;
       font-weight: 700;
+
+      a {
+        color : $secondary;
+      }
     }
   }
 }
