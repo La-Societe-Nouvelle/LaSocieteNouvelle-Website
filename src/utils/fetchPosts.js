@@ -1,9 +1,9 @@
 import { GraphQLClient, gql } from "graphql-request";
-import { HYGRAPH_PERMANENTAUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
+import { HYGRAPH_DEV_AUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
 
 const client = new GraphQLClient(HYGRAPH_URL, {
   headers: {
-    Authorization: `Bearer ${HYGRAPH_PERMANENTAUTH_TOKEN}`,
+    Authorization: `Bearer ${HYGRAPH_DEV_AUTH_TOKEN}`,
   },
 });
 

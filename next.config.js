@@ -11,9 +11,14 @@ module.exports = (env) => {
   if(env.production)
     return {...baseConfig,
             basePath: 'https://lasocietenouvelle.org'};
-  return baseConfig;
+  return {
+    ...baseConfig,
+    experimental: {
+      workerThreads: false,
+      cpus: 1
+    },
+  };
 }
- 
 
 module.exports = {
   reactStrictMode: true,
