@@ -106,6 +106,7 @@ async function fetchPublications() {
   }
 }
 
+
 async function fetchPostsByTag(slug) {
   const query = gql`
     query GetPostsByTag($slug: String!) {
@@ -132,7 +133,7 @@ async function fetchPostsByTag(slug) {
   };
 
   try {
-    const { data } = await client.query({ query });
+    const { data } = await client.query({ query, variables });
     return data;
     
   } catch (error) {
