@@ -1,10 +1,11 @@
-import { GraphQLClient, gql } from "graphql-request";
-import { HYGRAPH_DEV_AUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
+import { HYGRAPH_PERMANENTAUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
 
-const client = new GraphQLClient(HYGRAPH_URL, {
-  headers: {
-    Authorization: `Bearer ${HYGRAPH_DEV_AUTH_TOKEN}`,
-  },
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { gql } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: HYGRAPH_URL, // URL de l'API GraphQL
+  cache: new InMemoryCache(), // Utilise une cache en mémoire
 });
 
 async function fetchPosts() {
@@ -28,7 +29,7 @@ async function fetchPosts() {
   `;
 
   try {
-    const data = await client.request(query);
+    const { data } = await client.query({ query });
     return data;
   } catch (error) {
     console.error(error);
@@ -37,7 +38,6 @@ async function fetchPosts() {
     );
   }
 }
-
 
 async function fetchLatestPosts() {
   const query = gql`
@@ -60,7 +60,7 @@ async function fetchLatestPosts() {
   `;
 
   try {
-    const data = await client.request(query);
+    const { data } = await client.query({ query });
     return data;
   } catch (error) {
     console.error(error);
@@ -73,7 +73,11 @@ async function fetchLatestPosts() {
 async function fetchPublications() {
   const query = gql`
     query GetPublications {
-      posts(orderBy: date_DESC, stage: PUBLISHED where: { tag: { slug_not_in: "actualites" } }) {
+      posts(
+        orderBy: date_DESC
+        stage: PUBLISHED
+        where: { tag: { slug_not_in: "actualites" } }
+      ) {
         publishedAt
         id
         title
@@ -92,7 +96,7 @@ async function fetchPublications() {
   `;
 
   try {
-    const data = await client.request(query);
+    const { data } = await client.query({ query });
     return data;
   } catch (error) {
     console.error(error);
@@ -128,9 +132,9 @@ async function fetchPostsByTag(slug) {
   };
 
   try {
-    const data = await client.request(query, variables);
-
+    const { data } = await client.query({ query });
     return data;
+    
   } catch (error) {
     console.error(error);
     throw new Error(
@@ -148,8 +152,8 @@ async function fetchTags() {
     }
   `;
 
-  const data = await client.request(query);
-
+  const { data } = await client.query({ query });
+  
   const tags = new Set();
 
   data.tags.forEach((tag) => {
@@ -174,7 +178,7 @@ async function getTag(tag) {
     tag,
   };
   try {
-    const data = await client.request(query, variables);
+    const { data } = await client.query({ query });
 
     return data;
   } catch (error) {
@@ -185,4 +189,11 @@ async function getTag(tag) {
   }
 }
 
-export { getTag, fetchTags, fetchPublications, fetchPosts, fetchPostsByTag, fetchLatestPosts };
+export {
+  getTag,
+  fetchTags,
+  fetchPublications,
+  fetchPosts,
+  fetchPostsByTag,
+  fetchLatestPosts,
+};
