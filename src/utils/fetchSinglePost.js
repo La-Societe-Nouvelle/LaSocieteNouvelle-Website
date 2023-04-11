@@ -1,13 +1,14 @@
-import { GraphQLClient, gql } from "graphql-request";
-import { HYGRAPH_PERMANENTAUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
+import {HYGRAPH_URL } from "../lib/constants";
 
-const client = new GraphQLClient(HYGRAPH_URL, {
-  headers: {
-    Authorization: `Bearer ${HYGRAPH_PERMANENTAUTH_TOKEN}`,
-  },
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { gql } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: HYGRAPH_URL, // URL de l'API GraphQL
+  cache: new InMemoryCache(), // Utilise une cache en mémoire
 });
 
-const fetchSinglePost = async (slug) => {
+const fetchPostBySlug = async (slug) => {
   const query = gql`
     query GetPostBySlug($slug: String!) {
       post(where: { slug: $slug }) {
@@ -33,12 +34,12 @@ const fetchSinglePost = async (slug) => {
     slug,
   };
 
-  const response = await client.request(query, variables);
+  const response = await client.query({query, variables});
 
-  if (!response.post) {
+  if (!response.data.post) {
     throw new Error(`No post found with slug "${slug}"`);
   }
 
-  return response.post;
+  return response.data.post;
 };
-export default fetchSinglePost;
+export default fetchPostBySlug;
