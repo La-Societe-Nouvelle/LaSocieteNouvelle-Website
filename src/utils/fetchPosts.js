@@ -1,4 +1,4 @@
-import { HYGRAPH_PERMANENTAUTH_TOKEN, HYGRAPH_URL } from "../lib/constants";
+import { HYGRAPH_URL } from "../lib/constants";
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
@@ -180,8 +180,8 @@ async function getTag(tag) {
   };
   try {
     const { data } = await client.query({ query,variables });
-
-    return data;
+    console.log(data.tag.name)
+    return data.tag.name;
   } catch (error) {
     console.error(error);
     throw new Error(

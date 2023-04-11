@@ -19,6 +19,7 @@ const Posts = () => {
     try {
       setIsLoading(true);
       const data = await fetchPosts();
+      console.log(data)
       setPosts(data.posts);
     } catch (error) {
       console.error(error);
@@ -36,7 +37,7 @@ const Posts = () => {
         <Container>
           <Row>
             {isLoading && <PostPreviewLoading />}
-            {!isLoading && posts.map((post) => <PostPreview post={post} />)}
+            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id} />)}
           </Row>
           <hr></hr>
           <div className="mt-4 mx-3">

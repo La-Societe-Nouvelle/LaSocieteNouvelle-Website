@@ -1,23 +1,43 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
+
 import { Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+
+import { fetchPostsByTag, getTag } from "../utils/fetchPosts";
+
 import PageHeader from "../components/PageHeader";
 import PostPreview from "../components/posts/PostPreview";
 import PostPreviewLoading from "../components/posts/PostPreviewLoading";
-import { fetchPostsByTag, fetchTags, getTag } from "../utils/fetchPosts";
 
-export default function TagPage({ data, tag }) {
+export default function TagPage() {
+  const router = useRouter();
+  const { tag } = router.query;
 
-  const [posts, setPosts] = useState();
-  const [tagName] = useState(tag.tag.name);
+  const [posts, setPosts] = useState([]);
+  const [tagName, setTagName] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log(data)
+    if (tag) {
+      fetchTagName();
+      fetchData();
+      setIsLoading(false);
+    }
+  }, [router]);
+
+  const fetchTagName = async () => {
+    const tagName = await getTag(tag);
+
+    setTagName(tagName);
+  };
+
+  const fetchData = async () => {
+    const data = await fetchPostsByTag(tag);
     setPosts(data.posts);
-    setIsLoading(false);
-  }, []);
+  };
 
   return (
     <>
@@ -31,29 +51,11 @@ export default function TagPage({ data, tag }) {
           <Row>
             {isLoading && <PostPreviewLoading />}
             {!isLoading &&
+              posts.length > 0 &&
               posts.map((post) => <PostPreview post={post} key={post.id} />)}
           </Row>
         </Container>
       </section>
     </>
   );
-}
-
-export async function getStaticPaths() {
-  
-  const { tags } = await fetchTags();
- 
-  const paths = tags.map((tag) => ({ params: { tag } }));
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
-
-  const data = await fetchPostsByTag(params.tag);
-  const tag = await getTag(params.tag);
-
-  return {
-    props: { data, tag },
-  };
 }
