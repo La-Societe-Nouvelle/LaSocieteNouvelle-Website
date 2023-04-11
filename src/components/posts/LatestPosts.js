@@ -39,7 +39,7 @@ function LatestPosts() {
                 <Card.Title>
                   <h4 className="mt-3">
                     <a
-                      href={`/${posts[0].slug}`}
+                      href={`/blog/${posts[0].slug}`}
                       title={posts[0].title}
                     >
                       {cutString(posts[0].title, 80)}
@@ -74,7 +74,7 @@ function LatestPosts() {
                     </div>
                     <Card.Title>
                       <h4 className="h6 mt-3">
-                        <a href={`/${posts[1].slug}`} title={posts[1].title}>
+                        <a href={`/blog/${posts[1].slug}`} title={posts[1].title}>
                           {cutString(posts[1].title, 80)}
                         </a>
                       </h4>
@@ -94,7 +94,7 @@ function LatestPosts() {
                     {posts[2].tag.name}
                   </Badge>
                   <h4 className="h6 mt-3">
-                    <a href={`/${posts[2].slug}`} title={posts[2].title}>
+                    <a href={`/blog/${posts[2].slug}`} title={posts[2].title}>
                       {posts[2].title}
                     </a>
                   </h4>
@@ -107,7 +107,7 @@ function LatestPosts() {
                 <Card.Title>
                   <Badge bg="light">{posts[3].tag.name}</Badge>
                   <h4 className="h6 mt-3">
-                    <a href={`/${posts[3].slug}`} title={posts[3].title}>
+                    <a href={`/blog/${posts[3].slug}`} title={posts[3].title}>
                       {posts[3].title}
                     </a>
                   </h4>

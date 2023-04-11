@@ -1,10 +1,9 @@
-import { HYGRAPH_URL } from "../lib/constants";
 
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: HYGRAPH_URL, // URL de l'API GraphQL
+  uri: process.env.NEXT_PUBLIC_HYGRAPH_URL, // URL de l'API GraphQL
   cache: new InMemoryCache(), // Utilise une cache en mémoire
 });
 
