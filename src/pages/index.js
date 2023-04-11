@@ -161,17 +161,18 @@ const Home = () => {
               <Graph indic={"NRG"} />
             </Col>
           </Row>
-
-     
         </Container>
       </section>
-      
+
       <section>
         <Container>
           <h4 className="h3">Nos actualités</h4>
           <LatestPosts></LatestPosts>
           <p className="text-end fw-bold mb-5">
-             &raquo; Plus d'articles ? 
+            <a href="/blog" title="Plus d'articles">
+              {" "}
+              &raquo; Plus d'articles ?{" "}
+            </a>
           </p>
           <BoxNewsletter></BoxNewsletter>
         </Container>
@@ -183,19 +184,19 @@ const Home = () => {
             <Col lg={6}>
               <div className="question-box p-4 rounded">
                 <p>
-                  <a href="/faq/#mesure-empreinte-societale">
-                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
+                  <a href="/faq#qg-0" className="text-primary">
+                    Qu'est-ce que l'empreinte sociétale ?
                   </a>
                 </p>
               </div>
             </Col>
             <Col lg={6}>
               <div className="question-box p-4 rounded">
-                <a href="/faq/#business-model">
-                  <p>
-                    Quel est notre business model ?
-                  </p>
-                </a>
+                <p>
+                <a href="/faq#qg-1" className="text-primary">
+                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
+                  </a>
+                </p>
               </div>
             </Col>
           </Row>
@@ -203,37 +204,30 @@ const Home = () => {
             <Col lg={6}>
               <div className="question-box p-4 rounded">
                 <p>
-                  <a href="/faq/#mesure-empreinte-societale">
-                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
-                  </a>
+                  <a href="/faq#qt-0" className="text-primary">Qu'est-ce que l'open-source ?</a>
                 </p>
               </div>
             </Col>
             <Col lg={6}>
               <div className="question-box p-4 rounded">
-                <a href="/faq/#business-model">
-                  <p>
+                <p>
+                  <a href="/faq#qg-7" className="text-primary">
                     Quel est notre business model ?
-                  </p>
-                </a>
+                  </a>
+                </p>
               </div>
             </Col>
           </Row>
           <p className="text-end fw-bold mt-5">
-            <a href="/faq" >
-              &raquo; D'autres questions ? 
-
-            </a>
+            <a href="/faq">&raquo; D'autres questions ?</a>
           </p>
         </Container>
-
       </section>
       <hr className="container"></hr>
 
       {/* Partenaires */}
       <div className="partenaires mb-5 pt-3">
         <Container>
-          
           <h3 className="text-center">Avec le soutien de</h3>
           <div className=" d-flex justify-content-between align-items-center mt-5">
             <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   Col,
@@ -10,8 +10,26 @@ import {
 } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../components/PageHeader";
+import { useRouter } from "next/router";
 
 const Faq = () => {
+
+  const router = useRouter();
+  const [activeKey, setActiveKey] = useState("qg"); 
+  const [eventKey, setEvenKey] = useState("qg-0");
+
+  useEffect(() => {
+
+    const key = router.asPath.split('#')[1]; // extrait l'activeKey de l'URL
+    if (key) {
+      
+      setActiveKey(key.slice(0,2));
+      setEvenKey(key);
+    }
+  }, [router.query]);
+
+
+
   return (
     <>
       <Helmet>
@@ -22,7 +40,6 @@ const Faq = () => {
         path={"faq"}
         hasBreadcrumbs={false}
       />
-
       <section>
         <Container>
           <p>
@@ -37,11 +54,11 @@ const Faq = () => {
             .
           </p>
 
-          <Tabs defaultActiveKey="qg" className="mt-5 panel-indicateurs" fill>
+          <Tabs activeKey={activeKey || "qg"} className="mt-5 panel-indicateurs" fill>
             <Tab eventKey="qg" title="Questions générales">
               <div className="m-4">
-                <Accordion defaultActiveKey="0">
-                  <Accordion.Item eventKey="0">
+                <Accordion activeKey={eventKey}>
+                  <Accordion.Item eventKey="qg-0">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Qu'est-ce que l'empreinte sociétale ?
@@ -54,7 +71,7 @@ const Faq = () => {
                       environnementales.
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="1">
+                  <Accordion.Item eventKey="qg-1" >
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi mesurer l'empreinte sociétale de ses activités
@@ -74,7 +91,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="2">
+                  <Accordion.Item eventKey="qg-2">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi publier votre empreinte sociale ?
@@ -94,7 +111,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="3">
+                  <Accordion.Item eventKey="qg-3">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les indicateurs utilisés au sein de
@@ -119,7 +136,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="4">
+                  <Accordion.Item eventKey="qg-4">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quelle est la particularité de la méthodologie de mesure
@@ -154,7 +171,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="5">
+                  <Accordion.Item eventKey="qg-5">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les tarifs lorsque l'on mesure notre
@@ -172,7 +189,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="6">
+                  <Accordion.Item eventKey="qg-6">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les tarifs lorsque l'on publie notre
@@ -210,7 +227,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="7">
+                  <Accordion.Item eventKey="qg-7" id="qg-7">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quel est notre business model ?
@@ -238,7 +255,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="8">
+                  <Accordion.Item eventKey="qg-8">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je modifier les informations une fois publiées ?
@@ -266,7 +283,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="9">
+                  <Accordion.Item eventKey="qg-9">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quand mesurer mon empreinte et à quelle fréquence ?
@@ -285,7 +302,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="10">
+                  <Accordion.Item eventKey="qg-10">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Me situer par rapport à ma branche est-il suffisant ?
@@ -309,7 +326,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="11">
+                  <Accordion.Item eventKey="qg-11">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         J'ai réalisé un bilan carbone, puis-je utiliser les
@@ -339,8 +356,8 @@ const Faq = () => {
             </Tab>
             <Tab eventKey="qt" title="Questions techniques">
               <div className="m-4">
-                <Accordion defaultActiveKey="0">
-                  <Accordion.Item eventKey="0">
+                <Accordion defaultActiveKey="qt-0">
+                  <Accordion.Item eventKey="qt-0" id="open-source">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Qu'est-ce que l'Open Source ?
@@ -356,7 +373,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="1">
+                  <Accordion.Item eventKey="qt-1">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Qu'est-ce que l'Open Data ?
@@ -377,7 +394,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="2">
+                  <Accordion.Item eventKey="qt-2">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Comment l'utilisation de Metriz est-elle sécurisée ?
@@ -404,7 +421,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="3">
+                  <Accordion.Item eventKey="qt-3">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Où le code source de l'Application Web est-il disponible
@@ -416,7 +433,7 @@ const Faq = () => {
                         Le Code Source est disponible sur le répertoire Github,
                         vous pouvez y accéder via le lien suivant :{" "}
                         <a
-                          href="http://localhost:3000/https:/github.com/La-Societe-Nouvelle"
+                          href="http://github.com/La-Societe-Nouvelle"
                           target="_blank"
                         >
                           répertoire GitHub
@@ -426,7 +443,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="4">
+                  <Accordion.Item eventKey="qt-4">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Comment sont obtenues/calculées les valeurs par défaut ?
@@ -441,7 +458,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="5">
+                  <Accordion.Item eventKey="qt-5">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Qu'est-ce que les valeurs par défaut ?
@@ -469,7 +486,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="6">
+                  <Accordion.Item eventKey="qt-6">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         À quoi correspond l'incertitude ?
@@ -495,8 +512,8 @@ const Faq = () => {
             </Tab>
             <Tab eventKey="qc" title="Questions cabinets comptables">
               <div className="m-4">
-                <Accordion defaultActiveKey="0">
-                  <Accordion.Item eventKey="0">
+                <Accordion defaultActiveKey="qc-0">
+                  <Accordion.Item eventKey="qc-0">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi proposer la mesure à mes clients ?
@@ -520,7 +537,7 @@ const Faq = () => {
                       </ul>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="1">
+                  <Accordion.Item eventKey="qc-1">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je développer une activité commerciale autour de
@@ -550,7 +567,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="2">
+                  <Accordion.Item eventKey="qc-2">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Comment monter en compétences sur les enjeux RSE ?
@@ -569,7 +586,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="3">
+                  <Accordion.Item eventKey="qc-3">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je intégrer le calcul des indicateurs à mon outil ?
@@ -585,7 +602,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="4">
+                  <Accordion.Item eventKey="qc-4">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les livrables obtenus ?
@@ -614,7 +631,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="5">
+                  <Accordion.Item eventKey="qc-5">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je tester l'application ?
@@ -639,7 +656,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="6">
+                  <Accordion.Item eventKey="qc-6">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         À quoi correspond l'incertitude ?
