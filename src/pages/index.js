@@ -170,7 +170,6 @@ const Home = () => {
           <LatestPosts></LatestPosts>
           <p className="text-end fw-bold mb-5">
             <a href="/blog" title="Plus d'articles">
-              {" "}
               &raquo; Plus d'articles ?{" "}
             </a>
           </p>

@@ -14,9 +14,9 @@ export const KeyFigures = () => {
 
   const fetchKeyFiguresData = async () => {
     const urls = [
-      `${process.env.API_URL}/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`,
-      `${process.env.API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
-      `${process.env.API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
+      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
     ];
 
     const requests = urls.map((url) => axios.get(url));
@@ -47,7 +47,7 @@ export const KeyFigures = () => {
   };
   return (
     <section className="bg-light">
-      {console.log(process.env.HYGRAPH_URL)}
+      {console.log(process.env.NEXT_PUBLIC_HYGRAPH_URL)}
       <Container>
         <Row className="d-flex justify-content-between">
           <Col className="statistic-item" xs={12} lg={4}>
