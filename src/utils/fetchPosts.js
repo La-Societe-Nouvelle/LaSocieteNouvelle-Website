@@ -179,7 +179,7 @@ async function getTag(tag) {
     tag,
   };
   try {
-    const { data } = await client.query({ query });
+    const { data } = await client.query({ query,variables });
 
     return data;
   } catch (error) {
