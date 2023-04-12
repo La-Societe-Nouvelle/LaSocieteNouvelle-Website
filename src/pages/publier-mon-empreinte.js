@@ -213,7 +213,7 @@ const LegalForm = (props) => {
       (/^[0-9]{9}$/.test(siren) &&
         denomination.length > 0 &&
         /20[0-1][0-9]/.test(year)) ||
-      /202[0-1]/.test(year)
+      /202[0-3]/.test(year)
     ) {
       setNextStepAvailable(false);
     } else {
