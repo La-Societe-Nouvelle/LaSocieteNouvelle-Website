@@ -179,7 +179,6 @@ async function getTag(tag) {
   };
   try {
     const { data } = await client.query({ query,variables });
-    console.log(data.tag.name)
     return data.tag.name;
   } catch (error) {
     console.error(error);

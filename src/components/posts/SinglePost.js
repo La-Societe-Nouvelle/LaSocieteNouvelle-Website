@@ -8,7 +8,7 @@ export default function SinglePost({ post }) {
           <h2>{post.title}</h2>
           <div className="post-tags">
             <Badge bg="light">
-              <a href={"/" + post.tag.slug}>{post.tag.name}</a>
+              <a href={"/categorie/" + post.tag.slug}>{post.tag.name}</a>
             </Badge>
           </div>
 

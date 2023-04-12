@@ -12,7 +12,7 @@ function PostPreview({post}) {
         </div>
         <Card.Body>
           <div className="post-tags">
-            <Badge bg="light"><a href={ "/" + post.tag.slug}>{post.tag.name}</a></Badge>
+            <Badge bg="light"><a href={ "/categorie/" + post.tag.slug}>{post.tag.name}</a></Badge>
           </div>
           <Card.Title>
             <h3 className="h4 mt-3">

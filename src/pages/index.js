@@ -1,8 +1,7 @@
 // Components
 
 // Modules
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";

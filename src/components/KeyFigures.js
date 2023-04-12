@@ -47,7 +47,6 @@ export const KeyFigures = () => {
   };
   return (
     <section className="bg-light">
-      {console.log(process.env.NEXT_PUBLIC_HYGRAPH_URL)}
       <Container>
         <Row className="d-flex justify-content-between">
           <Col className="statistic-item" xs={12} lg={4}>

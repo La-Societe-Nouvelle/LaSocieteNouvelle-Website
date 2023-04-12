@@ -70,10 +70,10 @@ const About = () => {
                   développement durable.
                 </p>
                 <p>
-                Elle s'inscrit dans la volonté de faire
-                  évoluer le modèle de gestion des entreprises en intégrant aux
-                  éléments comptables une information sur leurs externalités
-                  sociales et environnementales.
+                  Elle s'inscrit dans la volonté de faire évoluer le modèle de
+                  gestion des entreprises en intégrant aux éléments comptables
+                  une information sur leurs externalités sociales et
+                  environnementales.
                 </p>
                 <p>
                   Les documents, outils et autres éléments développés par La
@@ -180,99 +180,61 @@ const About = () => {
           <Row>
             <Col>
               <div className="px-5">
+                <Image
+                  src="images/equipe/Sylvain.jpg"
+                  alt="Sylvain Humilière"
+                />
 
-              <Image
-                src="images/equipe/Sylvain.jpg"
-                alt="Sylvain Humilière"
-                
-                
-              />
-
-            
-                
-                  <h4 className="text-center mt-4">
-                    Sylvain Humilière
-                  </h4>
-                  <p>Président - Fondateur</p>
-               
+                <h4 className="text-center mt-4">Sylvain Humilière</h4>
+                <p>Président - Fondateur</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image
-                 
-                  src="images/equipe/Laura.jpg"
-                  className="rounded"
-                />
-                
-                  <h4 className="text-center mt-4">Laura Roost</h4>
-                  <p>Dévelopeur informatique</p>
-               
+                <Image src="images/equipe/Laura.jpg" className="rounded" />
+
+                <h4 className="text-center mt-4">Laura Roost</h4>
+                <p>Dévelopeur informatique</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image
-                 
-                  src="images/equipe/Joris.jpg"
-                  className="rounded"
-                />
-                
-                  <h4 className="text-center mt-4">Joris Blain</h4>
-                  <p>Economètre</p>
-               
+                <Image src="images/equipe/Joris.jpg" className="rounded" />
+
+                <h4 className="text-center mt-4">Joris Blain</h4>
+                <p>Economètre</p>
               </div>
             </Col>
           </Row>
           <Row className="mt-5">
             <Col>
               <div className="px-5">
-                <Image>
+                <Image></Image>
+                <Image src="images/equipe/Maelysse.jpg" className="rounded" />
 
-                </Image>
-                <Image
-                 
-                  src="images/equipe/Maelysse.jpg"
-                  className="rounded"
-                />
-                
-                  <h4 className="text-center mt-4">
-                    Maëlysse Lemaire
-                  </h4>
-                  <p>Chargée de communication</p>
-               
+                <h4 className="text-center mt-4">Maëlysse Lemaire</h4>
+                <p>Chargée de communication</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image
-                 
-                  src="images/equipe/Manal.jpg"
-                  className="rounded"
-                />
-                
-                  <h4 className="text-center mt-4">Manal </h4>
-                  <p>Chargée de relations partenaires</p>
-               
+                <Image src="images/equipe/Manal.jpg" className="rounded" />
+
+                <h4 className="text-center mt-4">Manal </h4>
+                <p>Chargée de relations partenaires</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image
-                 
-                  src="images/equipe/Guillaume.jpg"
-                  className="rounded"
-                />
-                
-                  <h4 className="text-center mt-4">Guillaume </h4>
-                  <p>Chargé de relations partenaires</p>
-               
+                <Image src="images/equipe/Guillaume.jpg" className="rounded" />
+
+                <h4 className="text-center mt-4">Guillaume </h4>
+                <p>Chargé de relations partenaires</p>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
-     
     </>
   );
 };

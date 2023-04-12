@@ -4,12 +4,13 @@ import { useRouter } from "next/router";
 
 import { Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import PageHeader from "../../components/PageHeader";
+import PostPreview from "../../components/posts/PostPreview";
+import PostPreviewLoading from "../../components/posts/PostPreviewLoading";
+import  { fetchPostsByTag,getTag } from "../../utils/fetchPosts";
 
-import { fetchPostsByTag, getTag } from "../utils/fetchPosts";
 
-import PageHeader from "../components/PageHeader";
-import PostPreview from "../components/posts/PostPreview";
-import PostPreviewLoading from "../components/posts/PostPreviewLoading";
+
 
 export default function TagPage() {
   const router = useRouter();
