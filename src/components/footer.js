@@ -119,12 +119,12 @@ function Footer() {
             <Col xs={12} lg={3}>
               <h6>Nos articles</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="/notes-analyse">Notes d'analyse</Nav.Link>
-                <Nav.Link href="/fiches-methodologiques">
+                <Nav.Link href="/categorie/notes-analyse">Notes d'analyse</Nav.Link>
+                <Nav.Link href="/categorie/fiches-methodologiques">
                   Fiches méthodologiques
                 </Nav.Link>
-                <Nav.Link href="/infographies">Infographies</Nav.Link>
-                <Nav.Link href="/actualites">Actualités </Nav.Link>
+                <Nav.Link href="/categorie/infographies">Infographies</Nav.Link>
+                <Nav.Link href="/categorie/actualites">Actualités </Nav.Link>
               </Nav>
             </Col>
           </Row>

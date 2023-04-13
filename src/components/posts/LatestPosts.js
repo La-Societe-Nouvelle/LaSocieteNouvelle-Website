@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Badge, Button, Card, Col, Image, Row } from "react-bootstrap";
+import { Badge, Card, Col, Row } from "react-bootstrap";
 import { fetchLatestPosts } from "../../utils/fetchPosts";
 import { cutString } from "../../utils/utils";
 
@@ -15,6 +15,7 @@ function LatestPosts() {
   const getLatestPosts = async () => {
     try {
       const data = await fetchLatestPosts();
+   
       setPosts(data.posts);
     } catch (error) {
       console.error(error);
