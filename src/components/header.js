@@ -169,7 +169,19 @@ const Header = () => {
                 <Nav.Link href="/cabinets-comptables">
                   Cabinets comptables
                 </Nav.Link>
-                <Nav.Link href="/publications">Publications</Nav.Link>
+                <NavDropdown title="Publications">
+                  <NavDropdown.Item href="/categorie/notes-analyse">
+                    Notes d'analyses
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/categorie/fiches-methodologiques">
+                    Fiches méthodologiques
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item href="/categorie/infographies">
+                    Infographies
+                  </NavDropdown.Item>
+                </NavDropdown>
+
                 <Nav.Link href="/a-propos">A propos</Nav.Link>
               </Nav>
             </Navbar.Collapse>
