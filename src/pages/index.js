@@ -36,31 +36,31 @@ const Home = () => {
             <Col lg={8}>
               <h2 className="mb-4">Empreintes sociétales des entreprises</h2>
               <p>
-                Notre mission est d’informer l’ensemble des agents économiques 
-                sur les impacts de la valeur produite des unités légales françaises, 
-                sur des dimensions sociales et environnementales clefs au regard 
+                Notre mission est d'informer l'ensemble des agents économiques 
+                sur <strong>les impacts de la valeur produite </strong>des unités légales françaises, 
+                sur des dimensions <strong>sociales et environnementales</strong> clefs au regard 
                 des enjeux de soutenabilité.
               </p>
               <p>
-                Notre base de données est ouverte : un portail et une API publique sont à votre disposition pour accéder
-                aux données publiées par les entreprises, et aux jeux de données macroéconomiques que nous produisons.
+                Notre <b>base de données est ouverte</b> : un portail et une API publique sont à votre disposition pour accéder
+                aux <b>données publiées</b> par les entreprises, et aux jeux de <strong>données macroéconomiques</strong> que nous produisons.
               </p>
               <p>
-                Un outil de mesure est librement accessible
+                Un <b>outil de mesure</b> est librement accessible
                 pour faciliter la mesure des indicateurs.
               </p>
               <p>
-                L'initiative est open data et open source afin qu'elle puisse servir à tous. 
+                L'initiative est <strong>open data </strong>et <strong>open source </strong> afin qu'elle puisse servir à tous. 
                 Toute exploitation de nos ressources, y compris dans un but commercial, est autorisée.
               </p>
               <p>
-                Si vous souhaitez contribuer ou en savoir-plus, contactez-nous.
+                Si vous souhaitez contribuer ou en savoir-plus, <a href="/contact" ><b>contactez-nous</b></a>.
               </p>
             </Col>
-            <Col className="text-end">
+            <Col className=" px-4 text-end">
               <Image
                 fluid
-                src="/illustrations/compta-extra-financiere.png"
+                src="/illustrations/compta-extra-financiere.svg"
                 alt="Illustration Comptabilité Extra-financière"
               />
             </Col>
@@ -70,47 +70,6 @@ const Home = () => {
 
       <KeyFigures></KeyFigures>
       <section className="mt-4">
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={9}>
-              <h2>Mesurez l’impact de la production de votre entreprise</h2>
-              <p>
-                Grâce à{" "}
-                <a href="https://metriz.lasocietenouvelle.org" target="_blank">
-                  l’application Web Metriz
-                </a>
-                , vous pouvez rendre compte des impacts sociaux -
-                environnementaux d’un euro de production vendu.
-              </p>
-
-              <h3>Pourquoi mesurer son empreinte?</h3>
-              <ol>
-                <li>
-                  Se positionner par rapport à sa branche et aux objectifs
-                  socio-environnementaux
-                </li>
-                <li>Comprendre l’origine de ses impacts</li>
-                <li>S’engager dans la transition écologique et sociale</li>
-              </ol>
-              <div className="mt-4">
-                <MetrizButton />
-                <Button variant="outline-primary" className="mx-2">
-                  En savoir plus
-                </Button>
-              </div>
-            </Col>
-            <Col lg={3} className="text-end">
-              <Image
-                fluid
-                src="/illustrations/diminuer-impact.png"
-                alt="Illustration Mesure de l'impact"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="mb-4">
         <Container>
           <Row className="align-items-center">
             <Col lg={4}>
@@ -125,7 +84,7 @@ const Home = () => {
                 production des entreprises
               </h2>
               <p>
-                Vous pouvez connaître gratuitement l’empreinte sociétale des
+                Vous pouvez connaître gratuitement l'empreinte sociétale des
                 entreprises. Ces données peuvent être des valeurs par défaut ou
                 provenir directement de la publication des entreprises.
               </p>
@@ -146,6 +105,49 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      <section className="mb-4">
+        <Container>
+          <Row className="align-items-center">
+            <Col lg={9}>
+              <h2>Mesurez l'impact de la production de votre entreprise</h2>
+              <p>
+                Grâce à{" "}
+                <a href="https://metriz.lasocietenouvelle.org" target="_blank">
+                  l'application Web Metriz
+                </a>
+                , vous pouvez rendre compte des impacts sociaux -
+                environnementaux d'un euro de production vendu.
+              </p>
+
+              <h3>Pourquoi mesurer son empreinte?</h3>
+              <ol>
+                <li>
+                  Se positionner par rapport à sa branche et aux objectifs
+                  socio-environnementaux
+                </li>
+                <li>Comprendre l'origine de ses impacts</li>
+                <li>S'engager dans la transition écologique et sociale</li>
+              </ol>
+              <div className="mt-4">
+                <MetrizButton />
+                <Button variant="outline-primary" className="mx-2">
+                  En savoir plus
+                </Button>
+              </div>
+            </Col>
+            <Col lg={3} className="text-end">
+              <Image
+                fluid
+                src="/illustrations/diminuer-impact.png"
+                alt="Illustration Mesure de l'impact"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+
 
       <section className="text-center bg-light-secondary">
         <Container>
