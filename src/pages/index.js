@@ -34,22 +34,27 @@ const Home = () => {
         <Container>
           <Row className="align-items-center">
             <Col lg={8}>
-              <h2 className="mb-4">Comptabilité Extra-Financière</h2>
+              <h2 className="mb-4">Empreintes sociétales des entreprises</h2>
               <p>
-                Nous proposons un outil de mesure de comptabilité
-                extra-financière axés sur la durabilité et le développement
-                durable, en prenant en compte les impacts sociaux et
-                environnementaux de chaque décision dans le processus de
-                production d’une entreprise.
+                Notre mission est d’informer l’ensemble des agents économiques 
+                sur les impacts de la valeur produite des unités légales françaises, 
+                sur des dimensions sociales et environnementales clefs au regard 
+                des enjeux de soutenabilité.
               </p>
               <p>
-                Cette initiative est open data et open source afin de déployer
-                au maximum l’information à ce sujet.
+                Notre base de données est ouverte : un portail et une API publique sont à votre disposition pour accéder
+                aux données publiées par les entreprises, et aux jeux de données macroéconomiques que nous produisons.
               </p>
               <p>
-                Notre objectif est de permettre aux entreprises de mesurer, sur
-                des dimensions clefs, les impacts de la valeur qu’elles
-                produisent.
+                Un outil de mesure est librement accessible
+                pour faciliter la mesure des indicateurs.
+              </p>
+              <p>
+                L'initiative est open data et open source afin qu'elle puisse servir à tous. 
+                Toute exploitation de nos ressources, y compris dans un but commercial, est autorisée.
+              </p>
+              <p>
+                Si vous souhaitez contribuer ou en savoir-plus, contactez-nous.
               </p>
             </Col>
             <Col className="text-end">
