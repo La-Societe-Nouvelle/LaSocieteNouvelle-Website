@@ -1,4 +1,3 @@
-
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
 
@@ -40,8 +39,8 @@ async function fetchPosts() {
 
 async function fetchLatestPosts() {
   const query = gql`
-    query getLatestPosts {
-      posts(orderBy: date_DESC, stage: PUBLISHED, last: 4) {
+    query getLatestPosts { 
+      posts(orderBy: date_DESC, stage: PUBLISHED,, first: 4) {
         id
         title
         slug
@@ -105,11 +104,14 @@ async function fetchPublications() {
   }
 }
 
-
 async function fetchPostsByTag(slug) {
   const query = gql`
     query GetPostsByTag($slug: String!) {
-      posts(where: { tag: { slug: $slug } }) {
+      posts(
+        orderBy: date_DESC
+        stage: PUBLISHED
+        where: { tag: { slug: $slug } }
+      ) {
         date
         id
         excerpt
@@ -134,7 +136,6 @@ async function fetchPostsByTag(slug) {
   try {
     const { data } = await client.query({ query, variables });
     return data;
-    
   } catch (error) {
     console.error(error);
     throw new Error(
@@ -153,7 +154,7 @@ async function fetchTags() {
   `;
 
   const { data } = await client.query({ query });
-  
+
   const tags = new Set();
 
   data.tags.forEach((tag) => {
@@ -178,7 +179,7 @@ async function getTag(tag) {
     tag,
   };
   try {
-    const { data } = await client.query({ query,variables });
+    const { data } = await client.query({ query, variables });
     return data.tag.name;
   } catch (error) {
     console.error(error);
