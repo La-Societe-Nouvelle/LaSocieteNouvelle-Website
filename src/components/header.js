@@ -207,7 +207,7 @@ const Header = () => {
                     Fiches méthodologiques
                   </NavDropdown.Item>
 
-                  <NavDropdown.Item href="/categorie/infographies">
+                  <NavDropdown.Item href="/infographies">
                     Infographies
                   </NavDropdown.Item>
                 </NavDropdown>
