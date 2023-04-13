@@ -143,6 +143,11 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item">
+                  <a className="nav-link" href="/politique-confidentialite">
+                   Politique de confidentialité
+                  </a>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link" href="/portail/company/889182770">
                     Empreinte Sociétale
                   </a>

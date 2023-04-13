@@ -11,7 +11,7 @@ const BoxNewsletter = () => {
           <h4 className="h2">Ne manquez plus aucune nouveauté ! </h4>
 
           <p>
-            En vous abonnant à notre newsletter, vous serez informé.e en
+            En vous abonnant à notre newsletter, vous serez informé en
             avant-première des dernières parutions de nos notes d'analyse, des
             nouveaux jeux de données disponibles et des mises à jour de notre
             application !

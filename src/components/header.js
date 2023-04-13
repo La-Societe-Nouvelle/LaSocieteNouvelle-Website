@@ -3,12 +3,16 @@ import {
   Button,
   Col,
   Container,
+  Dropdown,
   Image,
   Nav,
   Navbar,
   NavDropdown,
   Row,
 } from "react-bootstrap";
+
+import metaData from "../lib/metaData.json";
+
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -24,7 +28,7 @@ const Header = () => {
       <Container fluid>
         <Navbar.Brand href="/">
           <Image
-            src="/logo.svg"
+            src="/logo-La-Societe-Nouvelle.svg"
             height="80"
             className="d-inline-block align-center"
             alt="logo"
@@ -36,7 +40,12 @@ const Header = () => {
             <Nav.Link href="/portail" className="border-end border-3">
               <i className="bi bi-search"></i> Rechercher une entreprise
             </Nav.Link>
-            <Nav.Link href="/">La Société Nouvelle</Nav.Link>
+            <Nav.Link
+              href="/publier-mon-empreinte"
+              target="_blank"
+            >
+              Publier mes données
+            </Nav.Link>
             <Nav.Link
               href="https://api.lasocietenouvelle.org"
               target="_blank"
@@ -118,15 +127,15 @@ const Header = () => {
                 rel="noreferrer"
                 className=""
               >
-                Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
+                Mesurer mon empreinte <i className="bi bi-box-arrow-up-right"></i>
               </Button>
               <Button
-                href="/portail"
+                href="/publier-mon-empreinte"
                 variant="secondary"
                 size="sm"
                 className="mt-2"
               >
-                Consulter les données
+                Publier mon empreinte
               </Button>
             </div>
           </Col>
@@ -142,9 +151,30 @@ const Header = () => {
             >
               <Nav className="flex-grow-1 justify-content-between">
                 <Nav.Link href="/">Accueil</Nav.Link>
-                <Nav.Link href="/mesurer-empreinte-societale">
-                  Notre approche
-                </Nav.Link>
+
+                <NavDropdown title="Notre approche ">
+                  <NavDropdown.Item href="/mesurer-empreinte-societale">
+                    Mesure de l'empreinte sociétale
+                  </NavDropdown.Item>
+
+
+                  <NavDropdown 
+                    title="Les indicateurs"
+                    className="dropdown-item subdropdown"
+                    key="end"
+                    drop="end"
+                  >
+                    {metaData.indics.map((indic, index) => (
+                      <Dropdown.Item
+                        eventKey={index}
+                        href={"/indicateurs/" + indic}
+                        className="subdropdown-item"
+                      >
+                      {metaData[indic].libelle}
+                      </Dropdown.Item>
+                    ))}
+                  </NavDropdown>
+                </NavDropdown>
 
                 <NavDropdown title="Ressources ">
                   <NavDropdown.Item href="/ressources/application-mesure-impact">
