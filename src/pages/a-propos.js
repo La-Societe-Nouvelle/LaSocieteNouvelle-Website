@@ -1,14 +1,11 @@
 import React from "react";
 import {
-  Button,
-  ButtonGroup,
   Col,
   Container,
   Image,
   Row,
   Stack,
 } from "react-bootstrap";
-import PageHeader from "../components/PageHeader";
 
 const About = () => {
   return (
@@ -85,7 +82,7 @@ const About = () => {
             <Col>
               <div className="bg-white p-5 border rounded">
                 <h3>Nos activités</h3>
-                <h4 className="h5 text-secondary">
+                <h4 className="h5 ">
                   Administration d'une base de données ouverte
                 </h4>
                 <p>
@@ -93,14 +90,14 @@ const About = () => {
                   pour permettre à tous de les exploiter librement et
                   facilement.
                 </p>
-                <h4 className="h5 text-secondary">
+                <h4 className="h5">
                   Mise à disposition d'un outil de mesure open source
                 </h4>
                 <p>
                   Développer et maintenir une application web pour que chacun
                   puisse calculer les indicateurs et apprécier les résultats.
                 </p>
-                <h4 className="h5 text-secondary">
+                <h4 className="h5">
                   Un support et une assistance aux différents acteurs
                 </h4>
                 <p>
@@ -154,11 +151,11 @@ const About = () => {
               une méthode crédible et rigoureuse et ambitionner sa large
               diffusion.
             </p>
-            <p>
+            {/* <p>
               Nous nous efforçons de fournir la meilleure qualité de service
               pour proposer une méthode crédible et rigoureuse et ambitionner sa
               large diffusion.
-            </p>
+            </p> */}
             <h3 className="text-secondary">Notre positionnement</h3>
             <p>
               La Société Nouvelle oeuvre à la mise en place d'un service

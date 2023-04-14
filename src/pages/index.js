@@ -36,26 +36,45 @@ const Home = () => {
             <Col lg={8}>
               <h2 className="mb-4">Empreintes sociétales des entreprises</h2>
               <p>
-                Notre mission est d'informer l'ensemble des agents économiques 
-                sur <strong>les impacts de la valeur produite </strong>des unités légales françaises, 
-                sur des dimensions <strong>sociales et environnementales</strong> clefs au regard 
+                Notre mission est d'informer l'ensemble des agents économiques
+                sur <strong>les impacts de la valeur produite </strong>des
+                unités légales françaises, sur des <strong>dimensions
+                sociales et environnementales</strong> clefs au regard
                 des enjeux de soutenabilité.
               </p>
               <p>
-                Notre <b>base de données est ouverte</b> : un portail et une API publique sont à votre disposition pour accéder
-                aux <b>données publiées</b> par les entreprises, et aux jeux de <strong>données macroéconomiques</strong> que nous produisons.
+                Notre <b>base de données est ouverte</b> : un portail et une API
+                publique sont à votre disposition pour accéder aux{" "}
+                données publiées par les entreprises, et aux jeux de{" "}
+                données macroéconomiques que nous produisons.
               </p>
               <p>
-                Un <b>outil de mesure</b> est librement accessible
-                pour faciliter la mesure des indicateurs.
+                Un <b>outil de mesure</b> est librement accessible pour
+                faciliter la mesure des indicateurs.
               </p>
               <p>
-                L'initiative est <strong>open data </strong>et <strong>open source </strong> afin qu'elle puisse servir à tous. 
-                Toute exploitation de nos ressources, y compris dans un but commercial, est autorisée.
+                L'initiative est <strong>open data </strong>et{" "}
+                <strong>open source </strong> afin qu'elle puisse servir à tous.
+                Toute exploitation de nos ressources, y compris dans un but
+                commercial, est autorisée.
               </p>
               <p>
-                Si vous souhaitez contribuer ou en savoir-plus, <a href="/contact" ><b>contactez-nous</b></a>.
+                Si vous souhaitez contribuer ou en savoir-plus,{" "}
+                <a href="/contact" className="text-primary text-decoration-underline ">
+                 contactez-nous
+                </a>
+                .
               </p>
+              <div >
+                <Button
+                  variant="primary"
+                  href="/portail"
+                  target="_blank"
+                  className="mt-2"
+                >
+                 <i className="bi bi-search"></i> Recherchez les impacts d'une entreprise
+                </Button>
+              </div>
             </Col>
             <Col className=" px-4 text-end">
               <Image
@@ -147,8 +166,6 @@ const Home = () => {
         </Container>
       </section>
 
-
-
       <section className="text-center bg-light-secondary">
         <Container>
           <h2>Suivis macro-économiques</h2>
@@ -198,7 +215,7 @@ const Home = () => {
             <Col lg={6}>
               <div className="question-box p-4 rounded">
                 <p>
-                <a href="/faq#qg-1" className="text-primary">
+                  <a href="/faq#qg-1" className="text-primary">
                     Pourquoi mesurer l'empreinte sociétale de ses activités ?
                   </a>
                 </p>
@@ -209,7 +226,9 @@ const Home = () => {
             <Col lg={6}>
               <div className="question-box p-4 rounded">
                 <p>
-                  <a href="/faq#qt-0" className="text-primary">Qu'est-ce que l'open-source ?</a>
+                  <a href="/faq#qt-0" className="text-primary">
+                    Qu'est-ce que l'open-source ?
+                  </a>
                 </p>
               </div>
             </Col>
