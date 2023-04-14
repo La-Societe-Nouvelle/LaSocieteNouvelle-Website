@@ -47,7 +47,7 @@ function TrendChart({ indic, aggregate, code, branch }) {
   const getHistoricalDataTrend = async () => {
     await axios
       .get(
-        `https://api.lasocietenouvelle.org/serie/MACRO_HISTORICALDATA_TREND_${indic}_FRA_BRANCH?area=FRA&code=${code}&aggregate=${aggregate}`
+        `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_TREND_${indic}_FRA_BRANCH?area=FRA&code=${code}&aggregate=${aggregate}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {

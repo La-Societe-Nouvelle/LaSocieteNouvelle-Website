@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 
 import { Container, Row, Col, Image, Button, Card } from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
+import GraphicPost from "../components/posts/GraphicPost";
 
 export default function Infographie() {
   return (
@@ -14,121 +15,37 @@ export default function Infographie() {
       <PageHeader title="Infographies" path="infographies" />
       <Container>
         <Row>
-        <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-was.pdf" target="_blank">
-                  {" "}
-                  <Card.Img src="/LSN_infographie-was.jpg" className="border border-2"/>
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-was.pdf" target="_blank">
-                      La production de déchets
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-eco.pdf" target="_blank">
-                  {" "}
-                  <Card.Img src="/LSN_infographie-eco.jpg" className="border border-2"/>
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-eco.pdf" target="_blank">
-                      Production intérieure et Importations en France
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
+          <GraphicPost
+            title="La production de déchets"
+            file="LSN_infographie-was.pdf"
+            image="LSN_infographie-was.jpg"
+          />
+          <GraphicPost
+            title="Production intérieure et Importations en France"
+            file="LSN_infographie-eco.pdf"
+            image="LSN_infographie-eco.jpg"
+          />
+          <GraphicPost
+            title="L'artisanat"
+            file="LSN_infographie-art.pdf"
+            image="LSN_infographie-art.jpg"
+          />
+          <GraphicPost
+            title="Ressources et consommations d'énergie"
+            file="LSN_infographie-nrg.pdf"
+            image="LSN_infographie_nrg.jpg"
+          />
+          <GraphicPost
+            title="Egalité hommes femmes"
+            file="LSN_infographie-geq.pdf"
+            image="LSN_infographie-geq.jpg"
+          />
+          <GraphicPost
+            title=" Prélèvements et consommation d'eau en France"
+            file="LSN_infographie-wat.pdf"
+            image="LSN-infographie-wat.jpg"
+          />
 
-          <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-art.pdf" target="_blank">
-                  {" "}
-                  <Card.Img src="/LSN_infographie-art.jpg" className="border border-2" />
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-art.pdf" target="_blank">
-                      L'artisanat
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-nrg.pdf" target="_blank" >
-                  <Card.Img src="/LSN_infographie_nrg.jpg" className="border border-2" />
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-nrg.pdf" target="_blank">
-                    Ressources et consommations d'énergie
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-geq.pdf" target="_blank">
-                  {" "}
-                  <Card.Img src="/LSN_infographie-geq.jpg" className="border border-2"/>
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-geq.pdf" target="_blank">
-                      Egalité hommes femmes
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col lg={3}>
-            <Card className="my-3 post-preview">
-              <div className="img-container">
-                <a href="/LSN_infographie-wat.pdf" target="_blank">
-                  <Card.Img src="/LSN-infographie-wat.jpg" className="border border-2"/>
-                </a>
-              </div>
-              <Card.Body>
-                <Card.Title>
-                  <h3 className="h4 mt-3 text-center">
-                    <a href="/LSN_infographie-wat.pdf" target="_blank">
-                      Prélèvements et consommation d'eau en France
-                    </a>
-                  </h3>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
         </Row>
       </Container>
     </>
