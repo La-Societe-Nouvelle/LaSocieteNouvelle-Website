@@ -123,7 +123,7 @@ function Footer() {
                 <Nav.Link href="/categorie/fiches-methodologiques">
                   Fiches méthodologiques
                 </Nav.Link>
-                <Nav.Link href="/categorie/infographies">Infographies</Nav.Link>
+                <Nav.Link href="/infographies">Infographies</Nav.Link>
                 <Nav.Link href="/categorie/actualites">Actualités </Nav.Link>
               </Nav>
             </Col>

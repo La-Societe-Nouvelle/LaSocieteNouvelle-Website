@@ -2,9 +2,9 @@ import { Helmet } from "react-helmet";
 
 // Components
 
-import { Container, Row, Col, Image, Button, Card } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
-import GraphicPost from "../components/posts/GraphicPost";
+import InfographicPost from "../components/posts/Infographic";
 
 export default function Infographie() {
   return (
@@ -15,32 +15,32 @@ export default function Infographie() {
       <PageHeader title="Infographies" path="infographies" />
       <Container>
         <Row>
-          <GraphicPost
+          <InfographicPost
             title="La production de déchets"
             file="LSN_infographie-was.pdf"
             image="LSN_infographie-was.jpg"
           />
-          <GraphicPost
+          <InfographicPost
             title="Production intérieure et Importations en France"
             file="LSN_infographie-eco.pdf"
             image="LSN_infographie-eco.jpg"
           />
-          <GraphicPost
+          <InfographicPost
             title="L'artisanat"
             file="LSN_infographie-art.pdf"
             image="LSN_infographie-art.jpg"
           />
-          <GraphicPost
+          <InfographicPost
             title="Ressources et consommations d'énergie"
             file="LSN_infographie-nrg.pdf"
             image="LSN_infographie_nrg.jpg"
           />
-          <GraphicPost
+          <InfographicPost
             title="Egalité hommes femmes"
             file="LSN_infographie-geq.pdf"
             image="LSN_infographie-geq.jpg"
           />
-          <GraphicPost
+          <InfographicPost
             title=" Prélèvements et consommation d'eau en France"
             file="LSN_infographie-wat.pdf"
             image="LSN-infographie-wat.jpg"
