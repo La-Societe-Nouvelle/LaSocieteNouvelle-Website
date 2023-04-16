@@ -16,30 +16,21 @@ const About = () => {
             <Col lg={7} className="align-items-center">
               <h2>La Société Nouvelle</h2>
               <p>
-                C'est avec la volonté de contribuer à la construction d'une
-                société durable que La Société Nouvelle prit son premier souffle
-                : un nom choisi par l'envie de faire bouger les choses, pour
-                marquer son engagement au service de cette transition.
+                La Société Nouvelle se définit comme une société commerciale à but non lucratif. 
+              </p>
+              <p>  
+                Notre mission est de mettre en oeuvre un système d'information sur les impacts
+                de la production des entreprises françaises. L'enjeu est de pouvoir d'identifier 
+                les entreprises les plus performantes
+                sur des dimensions sociales et environnementales clefs pour un développement soutenable,
+                celles qui portent la transition et assument leur responsabilité sociétale. 
               </p>
               <p>
-                L'aventure commence en avril 2020, où Sylvain en dernière année
-                à l'Ecole Centrale de Lille, initie le projet avec comme
-                conviction que la transition écologique et sociale ne pourra se
-                faire sans une information fiable et pertinente sur et pour les
-                entreprises.
+                La structure juridique a été créée en août 2020 à Lille. Elle a pour bénéficiaire effectif
+                Sylvain HUMILIERE.
               </p>
               <p>
-                En septembre 2020, nous avons rejoint l'incubateur
-                Euratechnologies à Lille afin de poursuivre son développement.
-                L'équipe s'est agrandie avec l'arrivée 5 nouveaux membres dans
-                l'équipe depuis février 2022.
-              </p>
-              <p>
-                Depuis, nous n'avons de cesse que d'améliorer les ressources que
-                nous mettons à disposition aux entreprises et nous veillons à
-                rendre tous nos travaux publics et accessibles. Nous vous
-                invitons à vous engager dans la transition écologie en nous
-                rejoignant dans cette aventure !
+                L'équipe compte désormais 6 personnes, dont 3 sur des postes permantents.
               </p>
             </Col>
             <Col>
@@ -59,23 +50,28 @@ const About = () => {
           <Row>
             <Col>
               <div className="bg-white p-5 border rounded">
-                <h3>Nos missions</h3>
+                <h3>Notre mission</h3>
                 <p>
                   Notre mission est de fournir, de manière ouverte, les
-                  informations nécessaires pour connaître et mesurer l'empreinte
-                  de la production des entreprises sur des enjeux majeurs de
-                  développement durable.
+                  informations nécessaires pour que chaque entreprise 
+                  puisse mesurer et rendre compte de l'empreinte sociétale
+                  de sa production.
                 </p>
                 <p>
                   Elle s'inscrit dans la volonté de faire évoluer le modèle de
                   gestion des entreprises en intégrant aux éléments comptables
                   une information sur leurs externalités sociales et
-                  environnementales.
+                  environnementales ; et sur un besoin de transparence pour
+                  l'ensemble des agents économiques sur les impacts de leurs
+                  consommations.
                 </p>
                 <p>
                   Les documents, outils et autres éléments développés par La
-                  Société Nouvelle sont accessibles et utilisables librement. La
-                  base de données est, et restera toujours, ouverte.
+                  Société Nouvelle sont accessibles et utilisables librement, y
+                  compris à des fins commerciales.
+                </p>
+                <p>
+                  La base de données est, et restera toujours, ouverte.
                 </p>
               </div>
             </Col>
@@ -86,23 +82,27 @@ const About = () => {
                   Administration d'une base de données ouverte
                 </h4>
                 <p>
-                  Centraliser les données mesurées et publiées des entreprises
+                  Nous centralisons les données mesurées et publiées des entreprises
                   pour permettre à tous de les exploiter librement et
-                  facilement.
+                  facilement. Nous mettons également à disposition des jeux de données 
+                  statistiques macroéconomiques.
                 </p>
                 <h4 className="h5">
-                  Mise à disposition d'un outil de mesure open source
+                  Développement et distribution d'un outil de mesure open source
                 </h4>
                 <p>
-                  Développer et maintenir une application web pour que chacun
-                  puisse calculer les indicateurs et apprécier les résultats.
+                  Nous développons et maintenons une application web pour que chacun
+                  puisse calculer les indicateurs et apprécier les résultats. Nous proposons
+                  des contrats de support et d'assistance technique aux acteurs qui le souhaitent.
                 </p>
                 <h4 className="h5">
-                  Un support et une assistance aux différents acteurs
+                  Travaux statistiques
                 </h4>
                 <p>
-                  Accompagner les acteurs qui souhaitent porter la méthodologie
-                  pour faciliter son application.
+                  Nous menons des travaux statistiques pour estimer l'empreinte sociétale
+                  de la production des branches et divisions économiques françaises,
+                  anticiper leurs évolutions et formuler des trajectoires cibles compatibles
+                  avec les objectifs nationaux fixés.
                 </p>
               </div>
             </Col>
@@ -114,48 +114,52 @@ const About = () => {
         <Container>
           <Row>
             <h3 className="text-secondary">Notre Vision</h3>
-
             <p>
-              Dans le contexte social et écologique actuel, il est
-              incontournable pour une entreprise de connaître, a minima sur les
-              enjeux clefs, ses impacts. Au-delà de sa pérennité, il s'agit d'un
-              maillon essentiel pour identifier les entreprises les plus
-              performantes sur les dimensions sociales et environnementales
-              concernées.
+              L’économie actuelle présente l’extrême nécessité de se transformer : 
+              dérèglement climatique, inégalités sociales, destruction de la biodiversité… 
+              Nous devons assumer nos responsabilités vis-à-vis des impacts que nous 
+              générons ; et certains par l’ignorance dont ils ont été sujets, doivent 
+              faire l’objet de réponses immédiates.
+            </p>
+            <p>
+              Notre conviction est que chaque entreprise se doit de s’assurer que la 
+              valeur qu’elle produit est compatible avec une économie durable ou 
+              s’inscrit dans une trajectoire visant à l’atteindre ; et que chaque 
+              entreprise se doit de faire preuve de transparence sur l’empreinte 
+              qu’elle laisse vis-à-vis de la société et de l’environnement. 
+            </p>
+            <p>
+              La transition vers une économie soutenable ne pourra se faire efficacement 
+              et de manière juste que si les impacts des entreprises sont liés à la 
+              valeur économique qu’elles créent, et si leur performance ainsi mesurée 
+              est rendue publique.
+            </p>
+            <p>
+              Nous entreprenons donc la construction d’une base de données ouverte 
+              centralisant les impacts de la valeur produite des entreprises sur 
+              des enjeux sociaux et environnementaux clefs et la mise en œuvre 
+              des ressources nécessaires à leur mesure.
+              Notre enjeu n'est pas de développer une activité commerciale mais de 
+              faire évoluer les normes comptables pour enfin s’outiller pour la 
+              transition écologique et sociale et ainsi se donner les moyens d’agir.
+            </p>
+            <p>
+              La Société Nouvelle n’est que la structure porteuse de cette initiative : 
+              l’ensemble de nos travaux sont à l’entière disposition des acteurs économiques,
+              et notre volonté est de transférer nos activités aux pouvoirs publics.
             </p>
 
+            {/* <h3 className="text-secondary">Nos valeurs</h3>
             <p>
-              Plus globalement, il s'agit de repenser la valeur économique, en
-              associant à sa dimension quantitative (volume monétaire), une
-              approche qualitative et d'apprécier de manière plus juste et plus
-              complète la valeur créée et produite d'une entreprise. Les enjeux
-              sont conséquents et nous devons construire dès à présent un monde
-              économique ayant à coeur de mesurer ses impacts de production,
-              pour les générations futures.
+              Notre projet se construit autour des valeurs de transparence et d'engagement.
             </p>
-
-            <h3 className="text-secondary">Nos valeurs</h3>
             <p>
-              Maitre mot de notre état d'esprit, le sujet est
-              important,l'enthousiasme est donc de rigueur. Et sous les bons
-              conseils de Voltaire : “Rien ne se fait sans un peu
-              d'enthousiasme”.
-            </p>
-
-            <p>
-              Nous souhaitons mettre en oeuvre des solutions opérationnelles,
-              avec le souci de l'efficacité. Nos travaux sont rendus publics :
+              Nous souhaitons mettre en oeuvre des solutions opérationnelles. 
+              Nos travaux sont rendus publics :
               les ressources, données et méthodologies sont ainsi librement
-              acessibles, vérifiables et réutilisables par tous. Nous nous
-              efforçons de fournir la meilleure qualité de service pour proposer
-              une méthode crédible et rigoureuse et ambitionner sa large
-              diffusion.
+              acessibles et réutilisables par tous.
             </p>
-            {/* <p>
-              Nous nous efforçons de fournir la meilleure qualité de service
-              pour proposer une méthode crédible et rigoureuse et ambitionner sa
-              large diffusion.
-            </p> */}
+           
             <h3 className="text-secondary">Notre positionnement</h3>
             <p>
               La Société Nouvelle oeuvre à la mise en place d'un service
@@ -166,14 +170,14 @@ const About = () => {
               l'information extra-financière au coeur des tableaux de gestion et
               informer entreprises et particuliers des impacts de leurs
               consommations.
-            </p>
+            </p> */}
           </Row>
           <hr></hr>
         </Container>
       </section>
       <section className="text-center">
         <Container>
-          <h3> Notre équipe</h3>
+          <h3> L'équipe</h3>
           <Row>
             <Col>
               <div className="px-5">
