@@ -59,7 +59,7 @@ const Metriz = () => {
                 <div className="icon">
                   <i className="bi bi-upload"></i>
                 </div>
-                <p>Importez votre Fichier d’Ecritures Comptables (FEC)</p>
+                <p>Importez votre Fichier d'Ecritures Comptables (FEC)</p>
               </div>
             </Col>
             <Col>
@@ -106,6 +106,7 @@ const Metriz = () => {
               variant="secondary"
               href="https://docs.lasocietenouvelle.org/application-web/tutorial"
               target="_blank"
+              title="Accéder au tutoriel de l'application"
             >
               Consulter le tutoriel
             </Button>
@@ -120,13 +121,13 @@ const Metriz = () => {
             page web (les scripts sont importés lors du chargement de la page)
             de manière anonyme. Les données chargées restent dans un état
             éphémère qui se réinitialise en cas de rafraîchissement de la page
-            (F5). Cette disposition implique qu’une sauvegarde doit être
+            (F5). Cette disposition implique qu'une sauvegarde doit être
             enregistrée sur votre ordinateur et réimportée si vous souhaitez
             reprendre a posteriori une évaluation en cours.
           </p>
           <p>
-            Les flux externes se limitent aux requêtes émises à l’API La Société
-            Nouvelle pour l’obtention des données relatives aux fournisseurs.
+            Les flux externes se limitent aux requêtes émises à l'API La Société
+            Nouvelle pour l'obtention des données relatives aux fournisseurs.
             Pour une totale transparence, le code source est librement
             accessible.
           </p>
@@ -137,9 +138,9 @@ const Metriz = () => {
           <h3>Bénéficier d'une version personnalisée</h3>
           <p>
             Pour aller plus loin et faciliter la production des livrables, il
-            est possible de bénéficier d’une version propre (adaptation des
-            imports de fichiers, personnalisation des livrables) et d’un support
-            technique, n’hésitez pas à nous contacter.
+            est possible de bénéficier d'une version propre (adaptation des
+            imports de fichiers, personnalisation des livrables) et d'un support
+            technique, n'hésitez pas à nous contacter.
           </p>
           <Button variant="secondary" href="/contact">
             Contactez-nous
@@ -152,11 +153,11 @@ const Metriz = () => {
             <Col>
               <h3>Licence libre CeCILL</h3>
               <p>
-                L’application est distribuée sous la licence libre CeCILL. Elle
+                L'application est distribuée sous la licence libre CeCILL. Elle
                 comprend notamment :
               </p>
               <ul>
-                <li>Droit d’utilisation sans restriction;</li>
+                <li>Droit d'utilisation sans restriction;</li>
                 <li>
                   Droit d'adapter, d'arranger ou d'apporter toute autre
                   modification;
@@ -168,20 +169,21 @@ const Metriz = () => {
                 </li>
               </ul>
               <p>
-                La licence offre une grande liberté dans l’exploitation de
-                l’outil et du code et une préservation de cette licence pour les
+                La licence offre une grande liberté dans l'exploitation de
+                l'outil et du code et une préservation de cette licence pour les
                 modifications apportées.
               </p>
               <a
                 className="btn btn-primary"
                 href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-METRIZ-WebApp"
                 target="_blank"
+                title="Accéder au répertoire GitHub"
               >
                 <i className="bi bi-github"></i> Accéder au code source
               </a>
             </Col>
             <Col className="text-end">
-              <Image src="/illustrations/code-open-source-cecill.svg" />
+              <Image src="/illustrations/code-open-source-cecill.svg" alt="Illustration pour l'open source"/>
             </Col>
           </Row>
         </Container>

@@ -12,7 +12,6 @@ import {
 import { Helmet } from "react-helmet";
 import IndicatorsPanel from "../components/indic/IndicatorsPanel";
 import PageHeader from "../components/PageHeader";
-import { DocButton } from "../components/buttons/DocButton";
 
 const first_set_indics = ["eco", "art", "knw", "soc", "idr", "geq"];
 const second_set_indics = ["ghg", "nrg", "wat", "was", "mat", "haz"];
@@ -21,7 +20,7 @@ const Approche = () => {
   return (
     <>
       <Helmet>
-        <title>La Société Nouvelle | Notre approche : Mesurer l'empreinte sociétale des entreprises</title>
+        <title>Mesurer l'empreinte sociétale | La Société Nouvelle</title>
       </Helmet>
       <PageHeader
         title={"Notre approche"}
@@ -35,17 +34,17 @@ const Approche = () => {
               <h2>Mesurer l'Empreinte Sociétale de l'Entreprise</h2>
               <p>
                 L'Empreinte Sociétale de l'Entreprise (ESE) est un panel
-                d'indicateurs extra-financiers sociaux et environnementaux
+                d'<strong>indicateurs extra-financiers sociaux et environnementaux </strong>
                 relatif à la production vendue d'une entreprise. Elle exprime
                 sur des dimensions sociales et environnementales (émissions de
                 gaz à effet de serre, écart de rémunérations femmes/hommes,
-                consommation d'eau, etc.) les impacts d'un euro de production
-                vendue.
+                consommation d'eau, etc.) <strong>les impacts </strong> <b>d'un euro de production
+                vendue</b> .
               </p>
               <p>
                 L'Empreinte Sociétale complète ainsi une approche RSE, en
-                ciblant des enjeux communs sur lesquels chaque entreprise doit
-                rendre compte de son impact (même s'il ne s'agit pas d'un enjeu
+                ciblant des enjeux communs sur lesquels chaque entreprise doit 
+                <b> rendre compte de son impact</b> (même s'il ne s'agit pas d'un enjeu
                 majeur pour elle).
               </p>
             </Col>
@@ -63,8 +62,8 @@ const Approche = () => {
         <Container>
           <h3 className="mb-4">Les indicateurs </h3>
           <p>
-            Aujourd'hui le panel comprend 12 indicateurs : 6 indicateurs
-            socio-économiques et 6 indicateurs environnementaux. Le choix des
+            Aujourd'hui le panel comprend <b>12 indicateurs </b> : 6 indicateurs 
+            <strong> socio-économiques</strong> et 6 indicateurs <strong>environnementaux</strong>. Le choix des
             indicateurs s'appuient sur les 17 Objectifs de Développement Durable
             émis par l'ONU (Organisation des Nations Unies) en 2015, pour
             l'horizon 2030. Les indicateurs sont évolutifs - ajout, modification
@@ -105,8 +104,8 @@ const Approche = () => {
               consultez notre espace de documentation.
             </p>
             <ButtonGroup>
-              <Button>Les indicateurs</Button>
-              <Button variant="info">La Documentation</Button>
+              <Button href="/indicateurs" title="Consulter la liste des indicateurs">Les indicateurs</Button>
+              <Button variant="info" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs" target="_blank" title="Accéder à la documentation sur les indicateurs">La Documentation</Button>
             </ButtonGroup>
           </div>
         </Container>

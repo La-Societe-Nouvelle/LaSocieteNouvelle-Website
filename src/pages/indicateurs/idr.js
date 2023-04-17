@@ -9,9 +9,7 @@ const idr = () => {
   return (
     <>
       <Helmet>
-        <title>
-          La Société Nouvelle | Indice d'écart des rémunérations
-        </title>
+        <title>La Société Nouvelle | Indice d'écart des rémunérations</title>
       </Helmet>
       <PageHeader
         title="Indice d'écart des rémunérations"
@@ -27,20 +25,20 @@ const idr = () => {
               <Image src="/ESE/idr.svg" height="80" className="mb-3" />
 
               <p>
-                Rapport interdécile D9/D1. Valeur sans unité, correspondant au rapport du taux horaire entre le dernier et le premier décile.
+                Rapport interdécile D9/D1. Valeur sans unité, correspondant au
+                rapport du taux horaire entre le dernier et le premier décile.
               </p>
               <p>
-                L’indicateur vise à fournir un élément d’information sur l'écart 
-                des rémunérations au sein des entreprises ayant
-                contribué à la production de la valeur, dans le but d'encourager
-                celles qui ont un partage plus équitable de la valeur produite.
+                L’indicateur vise à fournir un élément d’information sur l'écart
+                des rémunérations au sein des entreprises ayant contribué à la
+                production de la valeur, dans le but d'encourager celles qui ont
+                un partage plus équitable de la valeur produite.
               </p>
               <p>
-                Note : Un meilleur équilibre des rémunérations au sein de
-                chaque entreprise n’implique pas nécessairement un meilleur
-                équilibre des revenus à l’échelle nationale, notamment en
-                raison des disparités existantes entre certaines branches
-                d’activités.
+                Note : Un meilleur équilibre des rémunérations au sein de chaque
+                entreprise n’implique pas nécessairement un meilleur équilibre
+                des revenus à l’échelle nationale, notamment en raison des
+                disparités existantes entre certaines branches d’activités.
               </p>
               <p>
                 <b>Code : </b> IDR
@@ -58,7 +56,13 @@ const idr = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_idr.png"
+                src="/images/odd/F-WEB-Goal-08.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-10.png"
                 alt="logo odd"
                 className="mb-3"
               />
@@ -79,7 +83,8 @@ const idr = () => {
           <div className="mt-5 pt-4 border-top">
             <h3>Impact direct mesuré</h3>
             <p>
-              <b>Grandeur mesurée : </b>Rapport interdécile D9/D1 des taux horaires bruts (interne à l'entreprise)
+              <b>Grandeur mesurée : </b>Rapport interdécile D9/D1 des taux
+              horaires bruts (interne à l'entreprise)
             </p>
 
             <p>

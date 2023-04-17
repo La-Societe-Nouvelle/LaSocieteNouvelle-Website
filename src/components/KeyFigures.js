@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
 
-
 export const KeyFigures = () => {
   const [pinKeyFigure, setPinKeyFigure] = useState("");
   const [ghgKeyFigure, setGhgKeyFigure] = useState("");
@@ -39,8 +38,6 @@ export const KeyFigures = () => {
       setPinKeyFigure(pinKeyFigure);
       setGhgKeyFigure(ghgKeyFigure);
       setGeqKeyFigure(geqKeyFigure);
-
-    
     } catch (error) {
       console.log(error);
     }
@@ -54,10 +51,14 @@ export const KeyFigures = () => {
               src="ESE/icon-ese-bleues/eco.svg"
               height="60"
               className="mx-auto d-block my-2"
-              alt="eco"
+              alt="Pictogramme de la France"
             />
+
             <p className="text-center">
-              <span className="h1">{pinKeyFigure}</span> <sup> Mds €</sup>
+              <span className="h1">
+                <data value={pinKeyFigure}>{pinKeyFigure} </data>
+              </span>
+              <sup> Mds €</sup>
             </p>
             <p className="text-center">Production intérieure nette</p>
           </Col>
@@ -66,10 +67,13 @@ export const KeyFigures = () => {
               src="ESE/icon-ese-bleues/ghg.svg"
               height="60"
               className="mx-auto d-block my-2"
-              alt="co²"
+              alt="Pictogramme pour le CO²"
             />
             <p className="text-center">
-              <span className="h1">{ghgKeyFigure}</span> <sup>gCO₂e/€</sup>
+              <span className="h1">
+                <data value={ghgKeyFigure}>{ghgKeyFigure} </data>
+              </span>
+              <sup>gCO₂e/€</sup>
             </p>
             <p className="text-center">
               Intensité d'émission de gaz à effet de serre
@@ -80,10 +84,13 @@ export const KeyFigures = () => {
               src="ESE/icon-ese-bleues/idr.svg"
               height="60"
               className="mx-auto d-block my-2"
-              alt="Egalité"
+              alt="Pictogramme d'une balance"
             />
             <p className="text-center">
-              <span className="h1">{geqKeyFigure}</span> <sup>%</sup>
+              <span className="h1">
+                <data value={geqKeyFigure}>{geqKeyFigure}</data>
+              </span>{" "}
+              <sup>%</sup>
             </p>
             <p className="text-center">Ecart de rémunération F/H</p>
           </Col>

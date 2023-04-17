@@ -4,12 +4,11 @@ const BoxNewsletter = () => {
   return (
     <Row className="bg-light rounded align-items-center">
       <Col sm={3}>
-        <Image fluid src="illustrations/newsletter.svg"></Image>
+        <Image fluid src="illustrations/newsletter.svg" alt="Illustration pour l'inscription à une newsletter"></Image>
       </Col>
       <Col>
         <div>
           <h4 className="h2">Ne manquez plus aucune nouveauté ! </h4>
-
           <p>
             En vous abonnant à notre newsletter, vous serez informé en
             avant-première des dernières parutions de nos notes d'analyse, des

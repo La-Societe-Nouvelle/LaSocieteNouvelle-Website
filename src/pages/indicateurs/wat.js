@@ -22,7 +22,7 @@ const wat = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/was.svg" height="80" className="mb-3" />
+              <Image src="/ESE/was.svg" height="80" className="mb-3" />
               <p>
                 Quantité d’eau consommée par unité de valeur produite, exprimée
                 en L/€ (litres par euro)
@@ -38,7 +38,12 @@ const wat = () => {
               <p>
                 <b>Code : </b> WAT
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-wat" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-wat"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
@@ -46,7 +51,31 @@ const wat = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_wat.png"
+                src="/images/odd/F-WEB-Goal-03.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-06.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-08.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-12.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-15.png"
                 alt="logo odd"
                 className="mb-3"
               />
@@ -92,37 +121,35 @@ const wat = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux.
               </p>
-         
             </Col>
           </Row>
           <div className="mt-5 pt-4 border-top">
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Quantité consommée d’eau (en m³)
-          </p>
-          <p>
-            Les prélèvements d’eau avec restitution dans le milieu d’origine,
-            sans traitement, ne sont pas comptabilisés.
-          </p>
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Quantité consommée d’eau (en m³)
+            </p>
+            <p>
+              Les prélèvements d’eau avec restitution dans le milieu d’origine,
+              sans traitement, ne sont pas comptabilisés.
+            </p>
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
           </div>
         </Container>
       </section>
-   
 
-             
       <TrendsChartBox indic="WAT" />
 
       <DownloadFile
-            year={"2018"}
-            file={"WAT-donnees-branches-2018"}
-            title={"Intensité de Consommation d'Eau"}
-          />
+        year={"2018"}
+        file={"WAT-donnees-branches-2018"}
+        title={"Intensité de Consommation d'Eau"}
+      />
 
       <section className="info-supp pt-2">
         <Container>
@@ -131,19 +158,28 @@ const wat = () => {
           <ul>
             <li>
               Ministère de la Transition Ecologique -{" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/eau" target="_blank">
+              <a
+                href="https://www.ecologie.gouv.fr/politiques/eau"
+                target="_blank"
+              >
                 Politiques publiques - Eau
               </a>
             </li>
             <li>
-              <a href="https://www.eaufrance.fr/" target="_blank">Eau France</a>
+              <a href="https://www.eaufrance.fr/" target="_blank">
+                Eau France
+              </a>
             </li>
             <li>
-              <a href="http://www.lesagencesdeleau.fr/" target="_blank">Agences de l’eau</a>
+              <a href="http://www.lesagencesdeleau.fr/" target="_blank">
+                Agences de l’eau
+              </a>
             </li>
             <li>
               European Environnement Agency (EEA) -{" "}
-              <a href="https://water.europa.eu/freshwater" target="_blank">WISE Freshwater</a>
+              <a href="https://water.europa.eu/freshwater" target="_blank">
+                WISE Freshwater
+              </a>
             </li>
           </ul>
         </Container>

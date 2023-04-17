@@ -234,10 +234,9 @@ section.indic {
 
 hr {
   color: $light;
+  opacity: 1;
 }
-hr:not([size]) {
-  height: 4px;
-}
+
 .col-form-label {
   font-size: 0.9rem;
 }

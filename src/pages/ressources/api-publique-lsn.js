@@ -29,7 +29,7 @@ const API = () => {
                 Nouvelle.
               </p>
               <p>
-                Elle permet d’intégrer les données publiées des entreprises au
+                Elle permet d'intégrer les données publiées des entreprises au
                 sein des outils comptables (pour assurer une traçabilité le long
                 des chaines de valeur) et facilite leur exploitation.
               </p>
@@ -38,6 +38,7 @@ const API = () => {
                   className="me-3"
                   href="https://api.lasocietenouvelle.org/"
                   target="_blank"
+                  title="Accéder à l'API  publique "
                 >
                   Lien de l'API
                 </Button>
@@ -46,7 +47,7 @@ const API = () => {
               </div>
             </Col>
             <Col className="text-end">
-              <Image fluid src="/images/API.png"  alt="Illustration API" />
+              <Image fluid src="/images/API.png"  alt="Illustration accueil API" />
             </Col>
           </Row>
         </Container>
@@ -59,36 +60,36 @@ const API = () => {
                 <div className="icon h2">
                   <i className="bi bi-building"></i>
                 </div>
-                <p className="h1">400</p>
+                <data className="h1">400</data>
                 <p>
                   Entreprises analysées depuis <br></br>le 1er mars 2022
                 </p>
               </div>
             </Col>
             <Col>
-              <div className="box  text-center">
+              <div className="box text-center">
                 <div className="icon h2">
                   <i className="bi bi-arrow-left-right"></i>
                 </div>
-                <p className="text-center">
-                  <span className="h1">84 435</span>
-                </p>
-                <p className="text-center">
-                  Requêtes reçues par l’API depuis <br />
+                <data className="h1">
+                  84 435
+                </data>
+                <p >
+                  Requêtes reçues par l'API depuis <br />
                   le 1er janvier 2022
                 </p>
               </div>
             </Col>
             <Col>
               <div className="box  text-center">
-                <p className="h2 text-center">
+                <p className="h2 ">
                   <i className="bi bi-server"></i>
                 </p>
+                <data className="h1">
+                  15 642
+                </data>
                 <p className="text-center">
-                  <span className="h1">15 642</span>
-                </p>
-                <p className="text-center">
-                  Données publiées dans <br></br>la base de données ouverte
+                  Données publiées dans <br/>la base de données ouverte
                 </p>
               </div>
             </Col>
@@ -101,15 +102,15 @@ const API = () => {
           <Row>
             <Col>
               <h4 className="my-4">Recherche unitaire par unité légale</h4>
-              <Image src="/illustrations/recherche-siren.svg" height={250} className="mb-4" />
+              <Image src="/illustrations/recherche-siren.svg" height={250} className="mb-4" alt="Illustration barre de recherche pour montrer la recherche d'une entreprise "/>
               <p>
-                Le service d’interrogation unitaire permet à partir du numéro de
+                Le service d'interrogation unitaire permet à partir du numéro de
                 siren d'obtenir l'empreinte sociétale de l'unité légale.
               </p>
             </Col>
             <Col>
             <h4 className="my-4">  Données par défaut</h4>
-              <Image src="/illustrations/donnees-par-defaut.svg" height={250} className="mb-4"/>
+              <Image src="/illustrations/donnees-par-defaut.svg" height={250} className="mb-4" alt="Illustration avec des graphiques pour les données par défaut" />
               <p>
                 Retourne les valeurs par défaut proposées à partir de la zone
                 économique et l'activité principale , et pour
@@ -118,7 +119,7 @@ const API = () => {
             </Col>
             <Col>
               <h4 className="my-4"> Séries de données</h4>
-              <Image src="/illustrations/series-data-illu.svg" height={250} className="mb-4"/>
+              <Image src="/illustrations/series-data-illu.svg" height={250} className="mb-4" alt="Illustration pour la recherche d'une série de données"/>
               <p>
                 Les séries de données correspondent aux données statistiques
                 macroéconomiques mises à disposition par La Société Nouvelle.
@@ -131,6 +132,7 @@ const API = () => {
               variant="secondary"
               href="https://docs.lasocietenouvelle.org/public-api"
               target="_blank"
+              title="Accéder à la documentation de l'API"
             >
               Consulter la Documentation
             </Button>

@@ -121,7 +121,7 @@ const Entreprises = () => {
               <h3> Principe de calcul</h3>
               <p>
                 Du fait des consommations intermédiaires et de capital fixe, la
-                valeur produite d'une entreprise fait intervenir celle d’autres
+                valeur produite d'une entreprise fait intervenir celle d'autres
                 entreprises. La mesure des indicateurs fait donc appel aux
                 empreintes sociétales des fournisseurs pour estimer les impacts
                 de ces flux sortants.
@@ -143,7 +143,7 @@ const Entreprises = () => {
               </ul>
               <p>
                 Le modèle permet ainsi de mettre en place une traçabilité le
-                long des chaines de valeurs. L’empreinte sociétale d’une
+                long des chaines de valeurs. L'empreinte sociétale d'une
                 entreprise dépend de celle de ses fournisseurs et impacte celle
                 de ses clients.
               </p>

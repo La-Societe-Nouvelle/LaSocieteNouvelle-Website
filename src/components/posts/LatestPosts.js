@@ -30,7 +30,7 @@ function LatestPosts() {
             <Card className="mb-3 post-preview">
               <div className="img-container">
                 {posts[0].coverImage && (
-                  <Card.Img src={posts[0].coverImage.url} />
+                  <Card.Img src={posts[0].coverImage.url} alt={"Image d'illustraton pour l'article " + posts[0].title} />
                 )}
               </div>
               <Card.Body>
@@ -38,14 +38,14 @@ function LatestPosts() {
                   <Badge bg="light">{posts[0].tag.name}</Badge>
                 </div>
                 <Card.Title>
-                  <h4 className="mt-3">
+                  <h5 className="mt-3">
                     <a
                       href={`/blog/${posts[0].slug}`}
                       title={posts[0].title}
                     >
                       {cutString(posts[0].title, 80)}
                     </a>
-                  </h4>
+                  </h5>
                 </Card.Title>
 
                 <Card.Text className="small">
@@ -64,6 +64,7 @@ function LatestPosts() {
                       <Card.Img
                         className=""
                         src={posts[1].coverImage.url}
+                        alt={"Image d'illustraton pour l'article " + posts[1].title} 
                       />
                     )}
                   </div>
@@ -74,11 +75,11 @@ function LatestPosts() {
                       <Badge bg="light">{posts[1].tag.name}</Badge>
                     </div>
                     <Card.Title>
-                      <h4 className="h6 mt-3">
+                      <h5 className="h6 mt-3">
                         <a href={`/blog/${posts[1].slug}`} title={posts[1].title}>
                           {cutString(posts[1].title, 80)}
                         </a>
-                      </h4>
+                      </h5>
                     </Card.Title>
                     <Card.Text className="small">
                       {cutString(posts[0].excerpt, 100)}
@@ -94,11 +95,11 @@ function LatestPosts() {
                   <Badge bg="light" className="me-2">
                     {posts[2].tag.name}
                   </Badge>
-                  <h4 className="h6 mt-3">
+                  <h5 className="h6 mt-3">
                     <a href={`/blog/${posts[2].slug}`} title={posts[2].title}>
                       {posts[2].title}
                     </a>
-                  </h4>
+                  </h5>
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -107,11 +108,11 @@ function LatestPosts() {
               <Card.Body>
                 <Card.Title>
                   <Badge bg="light">{posts[3].tag.name}</Badge>
-                  <h4 className="h6 mt-3">
+                  <h5 className="h6 mt-3">
                     <a href={`/blog/${posts[3].slug}`} title={posts[3].title}>
                       {posts[3].title}
                     </a>
-                  </h4>
+                  </h5>
                 </Card.Title>
               </Card.Body>
             </Card>

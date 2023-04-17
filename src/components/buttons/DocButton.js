@@ -9,6 +9,7 @@ export const DocButton = (props) => {
       target="_blank"
       rel="noreferrer"
       className={props.margin}
+      title="Accéder à la documentation"
     >
       Documentation
     </Button>

@@ -16,17 +16,14 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          La Société Nouvelle | Système d'Information national sur les impacts
-          des entreprises
+          La Société Nouvelle | Informations sur les impacts des entreprises
         </title>
-
         <meta
           property="og:title"
           content="Portail des empreintes sociétales des
           entreprises françaises"
         />
         <meta property="og:url" content="https://lasocietenouvelle.org/" />
-
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
 
@@ -38,15 +35,15 @@ const Home = () => {
               <p>
                 Notre mission est d'informer l'ensemble des agents économiques
                 sur <strong>les impacts de la valeur produite </strong>des
-                unités légales françaises, sur des <strong>dimensions
-                sociales et environnementales</strong> clefs au regard
-                des enjeux de soutenabilité.
+                unités légales françaises, sur des{" "}
+                <strong>dimensions sociales et environnementales</strong> clefs
+                au regard des enjeux de soutenabilité.
               </p>
               <p>
                 Notre <b>base de données est ouverte</b> : un portail et une API
-                publique sont à votre disposition pour accéder aux{" "}
-                données publiées par les entreprises, et aux jeux de{" "}
-                données macroéconomiques que nous produisons.
+                publique sont à votre disposition pour accéder aux données
+                publiées par les entreprises, et aux jeux de données
+                macroéconomiques que nous produisons.
               </p>
               <p>
                 Un <b>outil de mesure</b> est librement accessible pour
@@ -60,19 +57,23 @@ const Home = () => {
               </p>
               <p>
                 Si vous souhaitez contribuer ou en savoir-plus,{" "}
-                <a href="/contact" className="text-primary text-decoration-underline ">
-                 contactez-nous
+                <a
+                  href="/contact"
+                  className="text-primary text-decoration-underline "
+                >
+                  contactez-nous
                 </a>
                 .
               </p>
-              <div >
+              <div>
                 <Button
                   variant="primary"
                   href="/portail"
                   target="_blank"
                   className="mt-2"
                 >
-                 <i className="bi bi-search"></i> Recherchez les impacts d'une entreprise
+                  <i className="bi bi-search"></i> Recherchez les impacts d'une
+                  entreprise
                 </Button>
               </div>
             </Col>
@@ -80,13 +81,12 @@ const Home = () => {
               <Image
                 fluid
                 src="/illustrations/compta-extra-financiere.svg"
-                alt="Illustration Comptabilité Extra-financière"
+                alt="Illustration de l'empreinte sociétale par La Société Nouvelle montrant plusieurs éléments symboliques."
               />
             </Col>
           </Row>
         </Container>
       </section>
-
       <KeyFigures></KeyFigures>
       <section className="mt-4">
         <Container>
@@ -94,7 +94,7 @@ const Home = () => {
             <Col lg={4}>
               <Image
                 src="/illustrations/default-data-illu.png"
-                alt="Illustration Base de données ouverte"
+                alt="Illustration de personnes qui consultent des données"
               />
             </Col>
             <Col>
@@ -103,22 +103,34 @@ const Home = () => {
                 production des entreprises
               </h2>
               <p>
-                Vous pouvez connaître gratuitement l'empreinte sociétale des
-                entreprises. Ces données peuvent être des valeurs par défaut ou
-                provenir directement de la publication des entreprises.
+                Vous pouvez connaître <b>gratuitement</b> l'empreinte sociétale
+                des entreprises. Ces données peuvent être des valeurs par défaut
+                ou provenir directement de la publication des entreprises.
               </p>
               <h3>Pourquoi publier son empreinte?</h3>
               <ol>
                 <li>Valoriser votre performance et informer vos clients</li>
-                <li>Contribue à une économie plus transparente</li>
+                <li>Contribuer à une économie plus transparente</li>
                 <li>
                   Permettre aux acteurs de votre marché de vous identifier comme
                   acteur de la transition écologique et sociale
                 </li>
               </ol>
               <div className="mt-4">
-                <Button variant="secondary">Consulter les données</Button>
-                <Button className="mx-2">Publier les données</Button>
+                <Button
+                  variant="secondary"
+                  href="/portail"
+                  title="Consulter les données"
+                >
+                  Consulter les données
+                </Button>
+                <Button
+                  className="mx-2"
+                  href="/publier-mon-empreinte"
+                  title="Publier mes données"
+                >
+                  Publier mes données{" "}
+                </Button>
               </div>
             </Col>
           </Row>
@@ -150,7 +162,12 @@ const Home = () => {
               </ol>
               <div className="mt-4">
                 <MetrizButton />
-                <Button variant="outline-primary" className="mx-2">
+                <Button
+                  variant="outline-primary"
+                  title="En savoir plus sur Metriz"
+                  className="mx-2"
+                  href="/ressources/application-mesure-impact"
+                >
                   En savoir plus
                 </Button>
               </div>
@@ -166,10 +183,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="text-center bg-light-secondary">
+      <section className=" bg-light-secondary">
         <Container>
-          <h2>Suivis macro-économiques</h2>
-          <p>
+          <h2 className="text-center">Suivis macro-économiques</h2>
+          <p className="text-center">
             Indicateurs clefs relatifs à l'empreinte sociale et environnementale
             de l'économie française
           </p>
@@ -192,7 +209,7 @@ const Home = () => {
           <h4 className="h3">Nos actualités</h4>
           <LatestPosts></LatestPosts>
           <p className="text-end fw-bold mb-5">
-            <a href="/blog" title="Plus d'articles">
+            <a href="/blog" title="Voir tous les articles">
               &raquo; Plus d'articles ?{" "}
             </a>
           </p>
@@ -255,11 +272,11 @@ const Home = () => {
           <h3 className="text-center">Avec le soutien de</h3>
           <div className=" d-flex justify-content-between align-items-center mt-5">
             <div>
-              <a href="https://www.euratechnologies.com/" target="_blank">
+              <a href="https://www.euratechnologies.com/" target="_blank" title="Accéder au site"> 
                 <Image
                   height={80}
                   src="/partners/euratech.svg"
-                  alt="Euratech"
+                  alt="Logo Euratech"
                 ></Image>
               </a>
             </div>
@@ -267,54 +284,55 @@ const Home = () => {
               <a
                 href="https://www.bpifrance.fr/communaute-du-coq-vert"
                 target="_blank"
+                title="Accéder au site"
               >
                 <Image
                   fluid
                   src="/partners/Coq_Vert_RVB.png"
-                  alt="Coq Vert"
+                  alt="Logo Coq Vert"
                 ></Image>
               </a>
             </div>
             <div>
-              <a href="https://www.impactfrance.eco/" target="_blank">
+              <a href="https://www.impactfrance.eco/" target="_blank" title="Accéder au site">
                 <Image
                   height={80}
                   src="/partners/Logo_du_Mouvement_Impact_France.svg"
-                  alt="Impact France"
+                  alt="Logo Mouvement Impact France"
                 ></Image>
               </a>
             </div>
             <div>
-              <a href="https://www.bpifrance.fr/" target="_blank">
+              <a href="https://www.bpifrance.fr/" target="_blank" title="Accéder au site">
                 <Image
                   height={80}
                   src="/partners/bpifrance.svg"
-                  alt="BPI France"
+                  alt="Logo BPI France"
                   style={{ height: "50px" }}
                 ></Image>
               </a>
             </div>
             <div className="text-center">
-              <a href="https://www.hautsdefrance.fr/" target="_blank">
+              <a href="https://www.hautsdefrance.fr/" target="_blank" title="Accéder au site">
                 <Image
                   height={80}
                   src="/partners/logo-hdf.svg"
-                  alt="Financement Hauts-De-France"
+                  alt="Logo Financement Hauts-De-France"
                 ></Image>
               </a>
             </div>
             <div>
-              <a href="https://www.economie.gouv.fr/" target="_blank">
+              <a href="https://www.economie.gouv.fr/" target="_blank" title="Accéder au site">
                 <Image
                   height={80}
                   src="/partners/logotype-rouge-bleu.png"
-                  alt="France 2030"
+                  alt="Logo France 2030"
                 ></Image>
               </a>
-              <a href="https://www.economie.gouv.fr/" target="_blank">
+              <a href="https://www.economie.gouv.fr/" target="_blank" title="Accéder au site">
                 <Image
                   src="/partners/ministere_de_l_economie.svg"
-                  alt="Ministère de l'économie "
+                  alt="Logo Ministère de l'économie "
                   height={80}
                 ></Image>
               </a>

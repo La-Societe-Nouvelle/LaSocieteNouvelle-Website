@@ -8,7 +8,7 @@ export const MetrizButton = () => {
       variant="outline-secondary"
       target="_blank"
       rel="noreferrer"
-      className=""
+      title="Accéder à l'application"
     >
       Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
     </Button>

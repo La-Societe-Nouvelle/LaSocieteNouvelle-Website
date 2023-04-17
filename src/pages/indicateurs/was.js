@@ -24,7 +24,8 @@ const was = () => {
               <h3>Description de l'indicateur</h3>
               <Image src="/ESE/was.svg" height="80" className="mb-3" />
               <p>
-              Quantité produite de déchets par unité de valeur produite, exprimée en g/€ (grammes par euro)
+                Quantité produite de déchets par unité de valeur produite,
+                exprimée en g/€ (grammes par euro)
               </p>
               <p>
                 L’indicateur informe sur la quantité de déchets produite, avec
@@ -39,7 +40,12 @@ const was = () => {
               <p>
                 <b>Code : </b> WAS
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-was" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-was"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
@@ -47,7 +53,37 @@ const was = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_was.png"
+                src="/images/odd/F-WEB-Goal-03.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-06.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-11.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-12.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-14.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-15.png"
                 alt="logo odd"
                 className="mb-3"
               />
@@ -79,15 +115,24 @@ const was = () => {
                 d’approvisionnement, y compris les pertes après récolte.
               </p>
               <p>
-              12.5 : D’ici à 2030, réduire considérablement la production de déchets par la prévention, la réduction, le recyclage et la réutilisation.
+                12.5 : D’ici à 2030, réduire considérablement la production de
+                déchets par la prévention, la réduction, le recyclage et la
+                réutilisation.
               </p>
               <p>
-              14.1 D’ici à 2025, prévenir et réduire nettement la pollution marine de tous types, en particulier celle résultant des activités terrestres, y compris les déchets en mer et la pollution par les nutriments.
+                14.1 D’ici à 2025, prévenir et réduire nettement la pollution
+                marine de tous types, en particulier celle résultant des
+                activités terrestres, y compris les déchets en mer et la
+                pollution par les nutriments.
               </p>
               <p>
-              15.1 : D’ici à 2020, garantir la préservation, la restauration et l’exploitation durable des écosystèmes terrestres et des écosystèmes d’eau douce et des services connexes, en particulier les forêts, les zones humides, les montagnes et les zones arides, conformément aux obligations découlant des accords internationaux.
+                15.1 : D’ici à 2020, garantir la préservation, la restauration
+                et l’exploitation durable des écosystèmes terrestres et des
+                écosystèmes d’eau douce et des services connexes, en particulier
+                les forêts, les zones humides, les montagnes et les zones
+                arides, conformément aux obligations découlant des accords
+                internationaux.
               </p>
-
             </Col>
           </Row>
           <div className="mt-5 pt-4 border-top">
@@ -102,10 +147,17 @@ const was = () => {
               <li>Déchets non-dangereux non-valorisé</li>
             </ul>
             <p>
-            Les co-produits ne sont pas comptabilisés. Un co-produit correspond à un produit / résidu de production non vendu et transmis à une autre société en vue d’être transformé, sans destruction, en un produit vendu.
+              Les co-produits ne sont pas comptabilisés. Un co-produit
+              correspond à un produit / résidu de production non vendu et
+              transmis à une autre société en vue d’être transformé, sans
+              destruction, en un produit vendu.
             </p>
             <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de l'entreprise. Pour la valeur produite, la mesure est complétée par les impacts indirects liés aux consommations et aux amortissements, obtenus à partir des données des entreprises sollicitées.
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
             </p>
           </div>
         </Container>
@@ -114,25 +166,28 @@ const was = () => {
       <TrendsChartBox indic="WAS" />
 
       <DownloadFile
-            year={"2018"}
-            file={"WAS-donnees-branches-2018"}
-            title={"Intensité de Production de Déchets"}
-          />
+        year={"2018"}
+        file={"WAS-donnees-branches-2018"}
+        title={"Intensité de Production de Déchets"}
+      />
       <section className="info-supp pt-2">
         <Container>
           <hr></hr>
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              Ministère de la Transition Ecologique - {" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets" target="_blank">
-              Politiques publiques - Économie circulaire et déchets
+              Ministère de la Transition Ecologique -{" "}
+              <a
+                href="https://www.ecologie.gouv.fr/politiques/economie-circulaire-et-dechets"
+                target="_blank"
+              >
+                Politiques publiques - Économie circulaire et déchets
               </a>
             </li>
             <li>
-             Agence de la Transition écologique (ADEME) - {" "}
+              Agence de la Transition écologique (ADEME) -{" "}
               <a href="https://www.ademe.fr/expertises/dechets" target="_blank">
-               Expertises - Déchets
+                Expertises - Déchets
               </a>
             </li>
           </ul>

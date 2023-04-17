@@ -167,6 +167,7 @@ const Header = () => {
                     {metaData.indics.map((indic, index) => (
                       <Dropdown.Item
                         eventKey={index}
+                        key={index}
                         href={"/indicateurs/" + indic}
                         className="subdropdown-item"
                       >

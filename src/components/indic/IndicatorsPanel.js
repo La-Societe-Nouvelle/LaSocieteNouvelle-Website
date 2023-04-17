@@ -43,16 +43,16 @@ const IndicatorsPanel = (props) => {
                     <Image
                       key={index}
                       className={
-                        "icon-odd" +
+                        "F-WEB-Goal" +
                         (selectedIndic != "none" &&
                         metaData[selectedIndic].odds.includes(odd)
                           ? ""
                           : " not-concerned")
                       }
-                      id={"icon-odd-" + odd}
-                      src={"/images/odd/icon-odd-" + odd + ".png"}
+                      id={"F-WEB-Goal-" + odd}
+                      src={"/images/odd/F-WEB-Goal-" + odd + ".png"}
                       width="30px"
-                      alt="icon-odd"
+                      alt="F-WEB-Goal"
                     />
                   ))}
                 </div>
