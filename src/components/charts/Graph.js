@@ -38,7 +38,7 @@ function Graph({ indic }) {
   const fetchData = useCallback(() => {
     axios
       .get(
-        `https://api.lasocietenouvelle.org/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+        `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
       )
       .then((response) => {
         if (response.data.header.code == 200) {
@@ -118,11 +118,11 @@ function Graph({ indic }) {
       className="bg-white border rounded p-4 mx-2 mt-4"
       style={{ height: "475px" }}
     >
-      <p className="small text-primary text-start fw-500">{title}</p>
-      <p className="source text-primary text-start fw-bold">En {unit}</p>
+      <p className="small   ">{title}</p>
+      <p className="source  fw-bold">En {unit}</p>
       <Line height={250} data={data} options={options} />
       <div className="mt-3">
-        <p className="text-start source">
+        <p className=" source">
           Sources : {source} - Traitement : La Société Nouvelle
         </p>
       </div>

@@ -3,12 +3,16 @@ import {
   Button,
   Col,
   Container,
+  Dropdown,
   Image,
   Nav,
   Navbar,
   NavDropdown,
   Row,
 } from "react-bootstrap";
+
+import metaData from "../lib/metaData.json";
+
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -24,7 +28,7 @@ const Header = () => {
       <Container fluid>
         <Navbar.Brand href="/">
           <Image
-            src="/logo.svg"
+            src="/logo-La-Societe-Nouvelle.svg"
             height="80"
             className="d-inline-block align-center"
             alt="logo"
@@ -33,10 +37,15 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link href="/portail" className="border-end border-3">
-              <i className="bi bi-search"></i> Rechercher une entreprise 
+            <Nav.Link href="/portail" className="border-end border-3">
+              <i className="bi bi-search"></i> Rechercher une entreprise
             </Nav.Link>
-          <Nav.Link href="/">La Société Nouvelle</Nav.Link>
+            <Nav.Link
+              href="/publier-mon-empreinte"
+              target="_blank"
+            >
+              Publier mes données
+            </Nav.Link>
             <Nav.Link
               href="https://api.lasocietenouvelle.org"
               target="_blank"
@@ -50,8 +59,6 @@ const Header = () => {
             >
               Documentation
             </Nav.Link>
-
-       
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -76,11 +83,17 @@ const Header = () => {
               <i className="bi bi-linkedin"></i>
             </Nav.Link>
             <Nav.Link
-              href="https://github.com/La-Societe-Nouvelle/"
+              href="/https://github.com/La-Societe-Nouvelle/"
               target="_blank"
               rel="noreferrer"
             >
               <i className="bi bi-github"></i>
+            </Nav.Link>
+            <Nav.Link href="/blog" rel="noreferrer">
+              <span className="top-bar-link"> Blog</span>
+            </Nav.Link>
+            <Nav.Link href="faq" rel="noreferrer">
+              <span className="top-bar-link"> Aide</span>
             </Nav.Link>
           </Nav>
           <div className="text-end">
@@ -88,58 +101,48 @@ const Header = () => {
           </div>
         </div>
 
-        <Row className="middle-header d-flex justify-content-between align-items-center ">
-          <Col xs={12} lg={4} className="d-flex align-items-center py-2">
+        <Row className="py-3 align-items-center ">
+          <Col xs={12} lg={4}>
             <Navbar.Brand href="/">
               <Image
-              fluid
-                src="/logo.svg"
-                height="110"
+                src="/logo-La-Societe-Nouvelle.svg"
+                height={120}
                 className="d-inline-block align-center"
                 alt="logo"
               />
             </Navbar.Brand>
-
-            <div className="logos">
-              <Image fluid src="/partners/Coq_Vert_RVB.png" alt="Coq Vert"></Image>
-              <p>
-                Communauté <br /> Coq Vert
-              </p>
-            </div> 
-            <div className="logos">
-              <Image fluid
-                src="/partners/Logotype-rouge-bleu.png"
-                alt="France 2030"
-              ></Image>
-            </div>
           </Col>
           <Col xs={12} lg={4} className="text-center">
             <h1>
-              Système d'Information national sur <br />
-              les <strong>impacts des entreprises</strong>
+              Système d'Information national sur les impacts des entreprises
             </h1>
           </Col>
-          <Col xs={12} lg={4} className="text-end">
-            <Button
-              href="https://metriz.lasocietenouvelle.org"
-              variant="outline-secondary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
-            </Button>
-            <Button
-              href="/publication"
-              variant="outline-primary"
-              className="ms-2"
-            >
-              Publier mes données
-            </Button>
+          <Col xs={12} lg={3} className="offset-lg-1 text-end">
+            <div className="d-flex flex-column ps-5">
+              <Button
+                href="https://metriz.lasocietenouvelle.org"
+                size="sm"
+                variant="outline-secondary"
+                target="_blank"
+                rel="noreferrer"
+                className=""
+              >
+                Mesurer mon empreinte <i className="bi bi-box-arrow-up-right"></i>
+              </Button>
+              <Button
+                href="/publier-mon-empreinte"
+                variant="secondary"
+                size="sm"
+                className="mt-2"
+              >
+                Publier mon empreinte
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>
       <div className="menu">
-        <Navbar expand="lg" className="p-0">
+        <Navbar expand="lg">
           <Container>
             <Navbar.Toggle aria-controls="main-navbar-nav" />
             <Navbar.Collapse
@@ -148,19 +151,43 @@ const Header = () => {
             >
               <Nav className="flex-grow-1 justify-content-between">
                 <Nav.Link href="/">Accueil</Nav.Link>
-                <NavDropdown title="Notre approche">
-                  <NavDropdown.Item href="/notre-approche">
-                    Methodologie
+
+                <NavDropdown title="Notre approche ">
+                  <NavDropdown.Item href="/mesurer-empreinte-societale">
+                    Mesure de l'empreinte sociétale
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/indicateurs">
-                    Liste des indicateurs
-                  </NavDropdown.Item>
+
+
+                  <NavDropdown 
+                    title="Les indicateurs"
+                    className="dropdown-item subdropdown"
+                    key="end"
+                    drop="end"
+                  >
+                    {metaData.indics.map((indic, index) => (
+                      <Dropdown.Item
+                        eventKey={index}
+                        key={index}
+                        href={"/indicateurs/" + indic}
+                        className="subdropdown-item"
+                      >
+                      {metaData[indic].libelle}
+                      </Dropdown.Item>
+                    ))}
+                  </NavDropdown>
                 </NavDropdown>
+
                 <NavDropdown title="Ressources ">
-                  <NavDropdown.Item href="/metriz">
-                    Application Web - METRIZ
+                  <NavDropdown.Item href="/ressources/application-mesure-impact">
+                    Metriz - Application de mesure d'impact
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/api-lsn">API</NavDropdown.Item>
+                  <NavDropdown.Item href="/ressources/api-publique-lsn">
+                    API Publique
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item href="/ressources/consulter-impacts-entreprises">
+                    Portail d'accès aux données des entreprises
+                  </NavDropdown.Item>
                   <NavDropdown.Item
                     href="https://docs.lasocietenouvelle.org"
                     target="_blank"
@@ -173,22 +200,21 @@ const Header = () => {
                 <Nav.Link href="/cabinets-comptables">
                   Cabinets comptables
                 </Nav.Link>
-                <Nav.Link href="/blog">Actualités</Nav.Link>
-
-                <NavDropdown title="A propos">
-                  <NavDropdown.Item href="/a-propos-la-societe-nouvelle">
-                    Qui sommes-nous ?
+                <NavDropdown title="Publications">
+                  <NavDropdown.Item href="/categorie/notes-analyse">
+                    Notes d'analyses
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/nos-missions">
-                    Nos missions
+                  <NavDropdown.Item href="/categorie/fiches-methodologiques">
+                    Fiches méthodologiques
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Item href="/infographies">
+                    Infographies
                   </NavDropdown.Item>
                 </NavDropdown>
+
+                <Nav.Link href="/a-propos">A propos</Nav.Link>
               </Nav>
-              <div className="ms-5">
-                <a href="/portail" target="_blank" className="btn btn-info">
-                  <i className="bi bi-server"></i> Données
-                </a>
-              </div>
             </Navbar.Collapse>
           </Container>
         </Navbar>

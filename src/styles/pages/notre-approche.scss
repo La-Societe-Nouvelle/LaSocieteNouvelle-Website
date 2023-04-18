@@ -39,14 +39,23 @@
   }
 }
 
-img.icon-odd.not-concerned {
+img.F-WEB-Goal.not-concerned {
   opacity: .1;
 }
-.indicator-section .icons-odd img.icon-odd {
+.indicator-section .icons-odd img.F-WEB-Goal {
   margin: 0.5rem;
 }
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: $secondary;
 
+}
+.accordion-header {
+  border-bottom: 2px solid $light;
+}
+.tab-content {
+  border :1px solid $light;
+}
 .panel-indicateurs{
 
   .accordion {
@@ -67,12 +76,17 @@ img.icon-odd.not-concerned {
 .nav-link {
 
     font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 
 .odd {
   img{
-    height: 80px;
+    height: 75px;
   }
 
+}
+
+.indics {
+  height: 215px;
 }

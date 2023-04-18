@@ -25,7 +25,7 @@ const art = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image src="/ESE/art.svg" height="80" className="mb-3" />
+              <Image src="/ESE/art.svg" height="80" className="mb-3" alt="Pictogramme représentant l'indicateur" />
 
               <p>
                 Part de la valeur produite par des entreprises artisanales,
@@ -51,7 +51,14 @@ const art = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_art.png"
+                src="/images/odd/F-WEB-Goal-08.png"
+                alt="logo odd"
+                className="mb-3"
+                
+              />
+               <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-09.png"
                 alt="logo odd"
                 className="mb-3"
               />

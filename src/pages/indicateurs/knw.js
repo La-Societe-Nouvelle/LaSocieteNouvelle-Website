@@ -46,7 +46,19 @@ const knw = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_knw.png"
+                src="/images/odd/F-WEB-Goal-04.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+                 <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-08.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+                 <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-09.png"
                 alt="logo odd"
                 className="mb-3"
               />

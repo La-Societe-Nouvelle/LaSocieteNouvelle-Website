@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 // API
 import { sendContactMail } from "../pages/api/mail-api.js";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader.js";
 
 export default function Home() {
@@ -13,16 +13,24 @@ export default function Home() {
       <Helmet>
         <title>La Société Nouvelle | Nous contacter</title>
       </Helmet>
-      <PageHeader title={"Contactez-nous"} path={"contact"} /> 
+      <PageHeader title={"Contactez-nous"} path={"contact"} />
       <section>
         <Container>
           <Row>
-            <Col md={{ span: 6, offset: 3 }}>
-          <h2 className="titre-bloc">Formulaire de contact</h2>
-              <ContactForm />
-              <hr/>
-              <p className="small">
-                Nous nous engageons à n’utiliser les informations communiquées dans ce formulaire que pour les traitements nécessaires à une réponse la plus précise possible.
+            <Col md={{ span: 8, offset: 2 }}>
+              <div className="border border-2 rounded border-light p-4">
+                <h3 className="text-center my-3">Formulaire de contact</h3>
+                <ContactForm />
+              </div>
+
+              <p className="mt-4 small">
+                Pour connaitre et exercer vos droits , notamment de retrait de
+                votre consentement à l'utilisation de données collectées par ce
+                formulaire, veuillez consulter{" "}
+                <a href="/politique-confidentialite">
+                  notre politique de confidentialité
+                </a>
+                .
               </p>
             </Col>
           </Row>
@@ -38,84 +46,116 @@ class ContactForm extends React.Component {
     this.state = {
       objet: "",
       message: "",
-      coordonnees: "",
-      formButtontext: "Envoyer le message",
-      messageSend: false,
+      email: "",
+      name: "",
+      checked: false,
+      validated: false,
+      alert: "",
     };
   }
 
   render() {
-    const { objet, message, coordonnees, formButtontext, messageSend } =
+    const { objet, name, message, email, validated, alert, checked } =
       this.state;
-    const btnClass = messageSend ? "disabled" : "";
 
     return (
-      <div id="contact-form" className="section form">
-        <div className="form-section v-group">
-          <label className="titre-form-section">Objet</label>
+      <Form id="contact-form" noValidate onSubmit={this.handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Nom - Prénom</Form.Label>
+          <Form.Control
+            type="email"
+            onChange={this.onNameChange}
+            value={name}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Adresse e-mail *</Form.Label>
+          <Form.Control
+            required
+            type="email"
+            onChange={this.onEmailChange}
+            value={email}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Objet *</Form.Label>
           <input
-            id="objet-input"
+            required
             type="text"
             value={objet}
             onChange={this.onObjetChange}
             className="form-control"
           />
-        </div>
-        <div className="form-section v-group">
-          <label className="titre-form-section">Message</label>
-          <textarea
-            id="message-input"
-            type="text"
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Message *</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
             value={message}
+            style={{ height: "150px" }}
             onChange={this.onMessageChange}
-            className="form-control"
           />
-        </div>
-        <div className="form-section v-group">
-          <label className="titre-form-section">Vos coordonnées</label>
-          <textarea
-            id="coordonnees-input"
-            type="text"
-            value={coordonnees}
-            onChange={this.onCoordonneesChange}
-            className="form-control"
+        </Form.Group>
+        <Form.Group>
+          <Form.Check
+            inline
+            label="En cochant cette case, j'accepte que mes données personnelles soient utilisées pour me recontacter dans le cadre de ma demande indiquée dans ce formulaire. Aucun autre traitement ne sera effectué avec mes informations personnelles.
+            "
+            name="rgpd"
+            onChange={this.onCheck}
+            checked={checked}
+            type="checkbox"
+            className="small"
           />
+        </Form.Group>
+        <div className="text-end">
+          <Button variant="secondary" type="submit">
+            Envoyer
+          </Button>
         </div>
-        <div className="form-section v-group">
-          <button
-            className={"btn btn-secondary my-3" + btnClass}
-            onClick={this.submitContactForm}
-          >
-            {formButtontext}
-          </button>
-        </div>
-      </div>
+      </Form>
     );
   }
+
+  onNameChange = (event) => this.setState({ name: event.target.value });
 
   onObjetChange = (event) => this.setState({ objet: event.target.value });
 
   onMessageChange = (event) => this.setState({ message: event.target.value });
 
-  onCoordonneesChange = (event) =>
-    this.setState({ coordonnees: event.target.value });
+  onEmailChange = (event) => this.setState({ email: event.target.value });
 
-  submitContactForm = async (event) => {
-    event.preventDefault();
+  onCheck = (event) => {
+    this.setState({ checked: event.target.checked });
+  };
 
-    const { objet, message, coordonnees } = this.state;
-    const res = await sendContactMail(objet, message, coordonnees);
+  handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.setState({ alert: "danger" });
+    } else {
+      submitContactForm();
+    }
+    console.log(form.checkValidity());
+  };
+
+  submitContactForm = async () => {
+    const { objet, message, email } = this.state;
+    const res = await sendContactMail(objet, message, email);
 
     if (res.status < 300) {
       this.setState({
         objet: "",
         message: "",
-        coordonnees: "",
-        formButtontext: "Message envoyé",
-        messageSend: true,
+        email: "",
+        alert: "success",
+        validated: true,
       });
     } else {
-      this.setState({ formButtontext: "Merci de remplir tous les champs." });
+      this.setState({ alert: "warning" });
     }
   };
 }

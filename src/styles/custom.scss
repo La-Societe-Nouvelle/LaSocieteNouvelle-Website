@@ -6,33 +6,32 @@ $secondary : #fa595f;
 $light : #f0f0f8;
 $gray-600 : #f3f3f3;
 $info : $light;
-$light-secondary : lighten($secondary,8%);
 
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "light":      $light,
-  "light-secondary" : $light-secondary,
-);
+$light-secondary : #FEEBEC;
 
-$body-color: #3c3b49;
-$font-size-base: 0.9rem;
+$body-color: $primary;
+$font-size-base: 1rem;
 $link-color : lighten($primary, 5%);
-$font-family-sans-serif: 'Roboto', sans-serif;
+$link-decoration: none;
+
+
+$font-family-sans-serif: 'Raleway', sans-serif;
 $headings-font-family: 'Raleway', 'Roboto', sans-serif;
 $headings-color : $primary;
-$headings-font-weight : 600;
+$headings-font-weight : 700;
 
-$h2-font-size:1.6rem;
-$h3-font-size:1.4rem;
-$h4-font-size:1.2rem;
-$h5-font-size:1.1rem;
+$h2-font-size:1.4rem;
+$h3-font-size:1.3rem;
+$h4-font-size:1.1rem;
+$h5-font-size:1rem;
 $h6-font-size:1rem;
+$headings-margin-bottom: 1rem;
 
 
+$border-radius : 1rem;
 
 /* Navbar */
-
+ 
 $navbar-light-color :  #515050 ;
 $navbar-light-hover-color : $secondary;
 $nav-link-padding-y : 0.85rem;
@@ -51,6 +50,8 @@ $btn-border-radius : 1.5rem;
 $btn-border-radius-sm : 2rem;
 $badge-font-weight : 500;
 $modal-content-bg : $light;
+
+$dropdown-link-active-bg : transparent;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";

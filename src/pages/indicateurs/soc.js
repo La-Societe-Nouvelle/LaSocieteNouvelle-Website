@@ -46,7 +46,7 @@ const soc = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_soc.png"
+                src="/images/odd/F-WEB-Goal-12.png"
                 alt="logo odd"
                 className="mb-3"
               />

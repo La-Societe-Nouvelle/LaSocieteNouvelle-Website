@@ -3,29 +3,35 @@
 @import "parts/header.scss";
 @import "parts/footer.scss";
 @import "parts/forms.scss";
+
 // import pages
 @import "pages/portail.scss";
 @import "pages/notre-approche.scss";
+@import "pages/blog.scss";
 @import "components/statistics.scss";
 @import "components/posts.scss";
+@import "components/components.scss";
 
 // Font
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
 
 /* Global */
 
 html,
 body {
-  height: 100%;
   cursor: default;
 }
 
-a {
-  text-decoration: none;
-
-  :hover {
-    color: lighten($primary, 10%);
+ol {
+  margin: 2rem;
+  li {
+    margin: 1rem 0;
+  }
+  li::marker {
+    color: $secondary;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 
@@ -35,14 +41,15 @@ a {
 .btn {
   font-weight: 600;
   padding: 0.65rem 1.5rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
-
-.btn-check:focus+.btn-outline-secondary,
+.bg-light-secondary {
+  background-color: $light-secondary;
+}
+.btn-check:focus + .btn-outline-secondary,
 .btn-outline-secondary:focus {
   box-shadow: 0 0 0 0.1rem rgb(250 89 95 / 50%);
 }
-
 
 .btn-outline-secondary {
   background-color: lighten($secondary, 30%);
@@ -67,135 +74,38 @@ a {
 }
 
 .underline {
-
   position: relative;
 
   &::after {
-
     content: "";
     width: 100%;
     position: absolute;
     background-color: #fa595f;
     height: 10px;
-    bottom: .1rem;
-    left: .1em;
+    bottom: 0.1rem;
+    left: 0.1em;
     z-index: -1;
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
 section {
   padding: 4rem 0;
-
-  h2,
-  h3 {
-    margin-bottom: 2rem;
-  }
-}
-
-/* CTA */
-.cta {
-  background: $primary url("../../public/images/img-background.png") bottom left no-repeat;
-
-  h2,
-  h3,
-  p,
-  ul {
-    margin-bottom: 2rem;
-    color: #fff;
-  }
-}
-
-#cta-entreprise {
-  h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.cta-metriz {
-  background: $primary url("../../public/images/img-background.png") bottom left no-repeat;
-  margin: 2rem 0;
-
-  h2 {
-    margin-bottom: 2rem;
-    color: #fff;
-  }
-
-  img {
-    margin-bottom: 2rem;
-  }
-
-  p {
-    margin: 0;
-    color: #fff;
-  }
-
-  .btn {
-    margin-top: 1rem;
-  }
 }
 
 .box {
   background-color: #fff;
-  padding: 2.5rem;
+  padding: 2.5rem 1.5rem;
   border-radius: 1rem;
-  margin: 2rem 0;
-}
-
-/* GRAPH */
-
-.graph-section {
-  background: $light url("../../public/images/celeste.png") bottom right no-repeat;
-
-  .card-footer {
-    background-color: $gray-600;
-    text-align: right;
-    font-size: 0.7rem;
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
-/* STEPS */
-
-.steps {
-
-  .box {
-    padding: 2.5rem 1.5rem;
-
-    p {
-      color: #191558;
-      margin: 0;
-      line-height: 1;
-    }
-  }
-
-  .icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 1rem auto;
-    background: $secondary;
-    border-radius: 50%;
-    font-size: 2rem;
-    color: #fff;
-  }
-
-
 }
 
 .partenaires {
-
-   img {
-      margin-bottom: 1rem;
+  img {
+    margin-bottom: 1rem;
   }
 }
 
 .portail-view {
-
   .card {
     height: 280px;
 
@@ -210,7 +120,6 @@ section {
     padding: 0.5rem 1rem;
     background-color: transparent;
     border: none;
-
   }
 
   .card-text {
@@ -224,13 +133,11 @@ section {
   background-color: #f7f7fb;
   font-size: 0.8rem;
 
-  p, h4 {
+  p,
+  h4 {
     margin-bottom: 1rem;
   }
-
 }
-
-
 
 .societal-footprint {
   .nav {
@@ -280,13 +187,9 @@ section {
     font-size: 0.7rem;
     margin: 0;
   }
-
 }
 
-
-
 section.indic {
-
   img {
     width: 100px;
     display: block;
@@ -309,7 +212,6 @@ section.indic {
 }
 
 .info-supp {
-
   li {
     font-size: 0.8rem;
   }
@@ -319,7 +221,6 @@ section.indic {
     list-style-type: circle;
   }
 }
-
 
 .alert-warning {
   color: #664d03;
@@ -331,12 +232,40 @@ section.indic {
   font-size: 1rem;
 }
 
-
 hr {
-  color : lighten(#191558, 50%)
+  color: $light;
+  opacity: 1;
 }
-
 
 .col-form-label {
   font-size: 0.9rem;
 }
+
+
+p {
+
+
+  a {
+    color : $secondary;
+  }
+}
+.faq {
+  padding-top: 0;
+  .question-box {
+    background-color: lighten( $light, 2%);
+
+    p {
+      margin-bottom: 0;
+      font-weight: 700;
+
+      a {
+        color : $secondary;
+      }
+    }
+  }
+}
+.btn-sm {
+  padding: 0.5rem 1rem;
+}
+
+

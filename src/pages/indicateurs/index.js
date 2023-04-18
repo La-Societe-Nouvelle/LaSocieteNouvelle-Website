@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 import metaData from "../../lib/metaData";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../../components/PageHeader";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,31 +15,33 @@ export default function Home() {
       </Helmet>
       <PageHeader
         title="Panel d'indicateurs"
-        prev={"notre-approche"}
+        prev={"mesurer-empreinte-societale"}
         prevTitle={"Méthodologie"}
         path={"indicateurs/"}
       />
 
       <section className="indic">
         <Container>
-        <Row>
-
-        {metaData.indics.map((indic, index) => (
-                <Col lg={3} key={index} className="mb-3">
-                  <Card className="indics text-center" >
-                    <Link href={"/indicateurs/" + indic}>
-                      <Image roundedCircle src={"/ESE/" + indic + ".svg"} />
-                    </Link>
-                    <Link href={"/indicateurs/" + indic}>
-                    <h3 className="mb-4"> <a>
-                        {metaData[indic].libelle}
-                      </a></h3>
-                    </Link>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-
+          <Row>
+            {metaData.indics.map((indic, index) => (
+              <Col lg={3} key={index} className="mb-3">
+                <Card className="indics text-center border border-2 ">
+                  <a href={"/indicateurs/" + indic}>
+                    <Image
+                      roundedCircle
+                      src={"/ESE/" + indic + ".svg"}
+                      alt={"Pictogramme " + indic}
+                    />
+                  </a>
+                  <h3 className="mb-4">
+                    <a href={"/indicateurs/" + indic} title={metaData[indic].libelle}>
+                      {metaData[indic].libelle}
+                    </a>
+                  </h3>
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </Container>
       </section>
     </>

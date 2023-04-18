@@ -24,7 +24,7 @@ const ghg = () => {
           <Row>
             <Col>
               <h3>Description de l'indicateur</h3>
-              <Image  src="/ESE/ghg.svg"  height="80" className="mb-3" />
+              <Image src="/ESE/ghg.svg" height="80" className="mb-3" />
               <p>
                 Quantité de gaz à effet de serre émise par unité de valeur
                 produite, exprimée en gCO2e/€ (grammes de CO2 équivalent par
@@ -43,7 +43,12 @@ const ghg = () => {
               <p>
                 <b>Code : </b> GHG
               </p>
-              <Button variant="secondary" href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-ghg" target="_blank" rel="noreferrer">
+              <Button
+                variant="secondary"
+                href="https://docs.lasocietenouvelle.org/empreinte-societale/indicateurs/indicateur-ghg"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Documentation
               </Button>
             </Col>
@@ -51,7 +56,37 @@ const ghg = () => {
               <h3>Objectifs de développement durable</h3>
               <Image
                 id="logo-odd"
-                src="/images/odd/odd_ghg.png"
+                src="/images/odd/F-WEB-Goal-07.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-08.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-12.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-13.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-14.png"
+                alt="logo odd"
+                className="mb-3"
+              />
+              <Image
+                id="logo-odd"
+                src="/images/odd/F-WEB-Goal-15.png"
                 alt="logo odd"
                 className="mb-3"
               />
@@ -93,33 +128,33 @@ const ghg = () => {
                 arides, conformément aux obligations découlant des accords
                 internationaux.
               </p>
-         
             </Col>
           </Row>
           <div className="mt-5 pt-4 border-top">
-          <h3>Impact direct mesuré</h3>
-          <p>
-            <b>Grandeur mesurée : </b>Emissions directes de gaz à effet de serre
-            - SCOPE 1 (en kgCO₂e)
-          </p>
-          <p>Postes d'émissions directes :</p>
-          <ul>
-            <li> Sources fixes de combustion</li>
-            <li>Sources mobiles de combustion</li>
-            <li> Procédés hors énergie</li>
-            <li>Emissions fugitives</li>
-            <li>Biomasse</li>
-          </ul>
-          <p>
-            Note : L'impact direct est associé à la valeur ajoutée nette de
-            l'entreprise. Pour la valeur produite, la mesure est complétée par
-            les impacts indirects liés aux consommations et aux amortissements,
-            obtenus à partir des données des entreprises sollicitées.
-          </p>
-           </div>
+            <h3>Impact direct mesuré</h3>
+            <p>
+              <b>Grandeur mesurée : </b>Emissions directes de gaz à effet de
+              serre - SCOPE 1 (en kgCO₂e)
+            </p>
+            <p>Postes d'émissions directes :</p>
+            <ul>
+              <li> Sources fixes de combustion</li>
+              <li>Sources mobiles de combustion</li>
+              <li> Procédés hors énergie</li>
+              <li>Emissions fugitives</li>
+              <li>Biomasse</li>
+            </ul>
+            <p>
+              Note : L'impact direct est associé à la valeur ajoutée nette de
+              l'entreprise. Pour la valeur produite, la mesure est complétée par
+              les impacts indirects liés aux consommations et aux
+              amortissements, obtenus à partir des données des entreprises
+              sollicitées.
+            </p>
+          </div>
         </Container>
       </section>
- 
+
       <TrendsChartBox indic="GHG" />
       <DownloadFile
         year={"2018"}
@@ -132,13 +167,19 @@ const ghg = () => {
           <h4 className="mt-5">Pour aller plus loin </h4>
           <ul>
             <li>
-              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr" target="_blank">
+              <a
+                href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr"
+                target="_blank"
+              >
                 Compte d'émissions atmosphériques par activité de la NACE Rév. 2
               </a>
             </li>
             <li>
               Ministère de la Transition écologique -{" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/climat" target="_blank">
+              <a
+                href="https://www.ecologie.gouv.fr/politiques/climat"
+                target="_blank"
+              >
                 Politiques publiques - Climat
               </a>
             </li>

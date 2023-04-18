@@ -1,59 +1,14 @@
-.post-title h2{
-    margin : 0 0 0.5rem 0;
-    font-size: 1.2rem;
-}
 
-#latest-posts {
-    margin-top: 2rem;
-}
-
-.post-meta, .post .post-meta {
-    p {
-        font-size: 0.6rem !important;
-    }
-}
-
-.last {
-    .post-title h2{
-        margin : 1rem 0 0.5rem 0;
-        font-size: 1.4rem;
-    }
-}
-
-.last a, .post a {
-        font-weight: 600;
-}
 .post, .last {
     border: 1px solid #efeff7;
     padding: 1rem;
     margin-bottom: 1rem;
 }
-#latest-posts .post {
- 
-    p, a {
-        font-size: 0.8rem;
-    }
-}
-.post-footer a{
-    padding: 0.5rem;
-    font-weight: normal;
-    border-radius: 0.25rem;
-    background-color: #feeeee;
-    color: #fa595f;
-    border-color: #fa595f;
-}
 
-.article {
-    border: 1px solid #f0f0f8;
-    padding: 3rem;
-    margin: 2rem 0;
-
-    .post-image img{
-        display: block;
-        margin: 0 auto 3rem auto;
-    }
+.excerpt {
+    min-height: 84px;
+    overflow: hidden;
 }
-
 .category {
     background-color: $light;
     color : $primary;

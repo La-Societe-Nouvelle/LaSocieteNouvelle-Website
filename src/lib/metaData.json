@@ -28,7 +28,7 @@
     "unitCodeGrossImpact": "",
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Rapport interdécile D9/D1 relatif aux taux horaires bruts des effectifs",
-    "finalite": "L’indicateur vise à fournir un élément d’information sur l'écart des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite.",
+    "finalite": "L'indicateur vise à fournir un élément d'information sur l'écart des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite.",
     "odds": ["08","10"]
   },
   "eco": {
@@ -39,7 +39,7 @@
     "unitCodeGrossImpact": "€",
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Valeur nette créée sur le territoire français (en euros)",
-    "finalite": "L’indicateur vise à informer sur la localisation des activités (en France ou à l’étranger). Il permet de rendre compte de la part de la valeur produite en France et celle issue d’importations. Il s’inscrit dans une dynamique de relocalisation des activités et ouvre la voie à une information plus complète sur la diffusion des dépenses (part de la valeur produite à l'échelle locale, européenne, etc.).",
+    "finalite": "L'indicateur vise à informer sur la localisation des activités (en France ou à l'étranger). Il permet de rendre compte de la part de la valeur produite en France et celle issue d'importations. Il s'inscrit dans une dynamique de relocalisation des activités et ouvre la voie à une information plus complète sur la diffusion des dépenses (part de la valeur produite à l'échelle locale, européenne, etc.).",
     "odds": ["08","12"]
   },
   "geq": {
@@ -50,7 +50,7 @@
     "unitCodeGrossImpact": "%",
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Ecart absolu entre le taux horaire brut moyen des femmes et celui des hommes, en pourcentage du taux horaire brut moyen",
-    "finalite": "L’indicateur informe sur les écarts de salaires entre les femmes et les hommes au sein des entreprises ayant contribué à la production de la valeur. Il vise à encourager les actions en faveur de la réduction de l'écart de rémunérations entre les femmes/hommes ; en 2017 cet écart était de 16.8 % dans le secteur privé (INSEE).",
+    "finalite": "L'indicateur informe sur les écarts de salaires entre les femmes et les hommes au sein des entreprises ayant contribué à la production de la valeur. Il vise à encourager les actions en faveur de la réduction de l'écart de rémunérations entre les femmes/hommes ; en 2017 cet écart était de 16.8 % dans le secteur privé (INSEE).",
     "odds": ["05","10"]
   },
   "ghg": {
@@ -61,7 +61,7 @@
     "unitCodeGrossImpact": "kgCO2e",
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Emissions directes de gaz à effet de serre",
-    "finalite": "L’indicateur informe sur la quantité émise de gaz à effet de serre liée à la production de l'entreprise avec pour objectif d'identifier les entreprises les plus performantes. Il s'inscrit dans l'objectif de réduction des émissions de gaz à effet de serre, dans le cadre de la lutte contre le déréglèment climatique.",
+    "finalite": "L'indicateur informe sur la quantité émise de gaz à effet de serre liée à la production de l'entreprise avec pour objectif d'identifier les entreprises les plus performantes. Il s'inscrit dans l'objectif de réduction des émissions de gaz à effet de serre, dans le cadre de la lutte contre le déréglèment climatique.",
     "odds": ["12","13","14","15"]
   },
   "haz": {
@@ -72,7 +72,7 @@
     "unitCodeGrossImpact": "lg",
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité utilisée de produits dangereux",
-    "finalite": "L’indicateur vise à informer sur le degré d’utilisation de produits pouvant entraîner des conséquences néfastes sur la santé et/ou l’environnement (pesticides, etc.). Son objectif est de diminuer le recours à ces catégories de produits. L’indicateur n’informe pas sur les types de dangers liés à ces produits (toxicité, irritation, etc.), sur leur périmètre (danger temporaire lors d’une manipulation, contact avec l’environnement, présence résiduelle dans les produits, etc.) et des mesures prises pour limiter les risques.",
+    "finalite": "L'indicateur vise à informer sur le degré d'utilisation de produits pouvant entraîner des conséquences néfastes sur la santé et/ou l'environnement (pesticides, etc.). Son objectif est de diminuer le recours à ces catégories de produits. L'indicateur n'informe pas sur les types de dangers liés à ces produits (toxicité, irritation, etc.), sur leur périmètre (danger temporaire lors d'une manipulation, contact avec l'environnement, présence résiduelle dans les produits, etc.) et des mesures prises pour limiter les risques.",
     "odds": ["02","03","12","14","15"]
   },
   "knw": {
@@ -83,7 +83,7 @@
     "unitCodeGrossImpact": "€",
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Rémunérations liées à des activités de recherche ou de formation",
-    "finalite": "L’indicateur informe sur la part des revenus de l’entreprise dédiée à la formation, la recherche ou l’enseignement.",
+    "finalite": "L'indicateur informe sur la part des revenus de l'entreprise dédiée à la formation, la recherche ou l'enseignement.",
     "odds": ["08","09","12"]
   },
   "mat": {
@@ -94,7 +94,7 @@
     "unitCodeGrossImpact": "kg",
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité extraite de matières premières",
-    "finalite": "L’indicateur informe sur le recours à l’extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure. L’objectif est de réduire l’extraction de matières premières et de favoriser la réutilisation et l’économie circulaire.",
+    "finalite": "L'indicateur informe sur le recours à l'extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure. L'objectif est de réduire l'extraction de matières premières et de favoriser la réutilisation et l'économie circulaire.",
     "odds": ["12","14","15"]
   },
   "nrg": {
@@ -105,7 +105,7 @@
     "unitCodeGrossImpact": "MJ",
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité consommée d'énergie",
-    "finalite": "L’énergie est une grandeur qui caractérise la transformation d’un système. De nombreux enjeux sont ainsi directement liés à l’énergie tels que la consommation de ressources naturelles (matières fossiles, eau, minerais, etc.) ou les émissions de gaz à effet de serre. L’indicateur informe donc sur la pression exercée sur l’environnement.",
+    "finalite": "L'énergie est une grandeur qui caractérise la transformation d'un système. De nombreux enjeux sont ainsi directement liés à l'énergie tels que la consommation de ressources naturelles (matières fossiles, eau, minerais, etc.) ou les émissions de gaz à effet de serre. L'indicateur informe donc sur la pression exercée sur l'environnement.",
     "odds": ["07","12","13"]
   },
   "soc": {
@@ -116,7 +116,7 @@
     "unitCodeGrossImpact": "€",
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Valeur ajoutée si entreprise de l'ESS ou ayant une raison d'être définie dans les statuts, zéro sinon",
-    "finalite": "Face aux enjeux environnementaux et sociétaux, l’entreprise doit se positionner par sa raison d’être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.",
+    "finalite": "Face aux enjeux environnementaux et sociétaux, l'entreprise doit se positionner par sa raison d'être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.",
     "odds": ["08","12"]
   },
   "was": {
@@ -127,7 +127,7 @@
     "unitCodeGrossImpact": "kg",
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité produite de déchets",
-    "finalite": "L’indicateur informe sur la quantité de déchets produite, avec pour objectif de la réduire. Il n’informe cependant pas sur le traitement des déchets (recyclages, destruction, etc.) et leur dangerosité. Des indicateurs spécifiques pourront être mis en place pour ces catégories.",
+    "finalite": "L'indicateur informe sur la quantité de déchets produite, avec pour objectif de la réduire. Il n'informe cependant pas sur le traitement des déchets (recyclages, destruction, etc.) et leur dangerosité. Des indicateurs spécifiques pourront être mis en place pour ces catégories.",
     "odds": ["03","11","12","14","15"]
   },
   "wat": {
@@ -138,7 +138,7 @@
     "unitCodeGrossImpact": "m3",
     "defaultUncertainty": 25,
     "descriptionImpactDirect": "Quantité consommée d'eau",
-    "finalite": "L’indicateur vise à informer sur l’utilisation de la ressource eau. Il s’inscrit dans une volonté de gestion globale des ressources naturelles, et occupe une importance particulière dans un contexte de diminution des quantités d’eau disponibles, conséquence du dérèglement climatique.",
+    "finalite": "L'indicateur vise à informer sur l'utilisation de la ressource eau. Il s'inscrit dans une volonté de gestion globale des ressources naturelles, et occupe une importance particulière dans un contexte de diminution des quantités d'eau disponibles, conséquence du dérèglement climatique.",
     "odds": ["06","12","14","15"]
   }
 }

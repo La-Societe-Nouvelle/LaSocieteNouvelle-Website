@@ -1,103 +1,95 @@
-
-
-
 .top-bar {
-    border-bottom: 1px solid $gray-600;
-    .nav-link{
-        padding: 0.325rem;
-        color : $primary;
+  border-bottom: 1px solid $light;
+  .nav-link {
+    padding: 0.325rem;
+    color: $primary;
+    .top-bar-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-left: 1px solid $primary;
+      padding-left: 0.5rem;
     }
-    small {
-        font-size: 0.675em;
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
-}
-.header {
-    .logos {
-        border: none;
-        margin: 0 0.5rem;
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-        p {
-            font-size: 0.6rem;
-            text-align: center;
-            margin: 0;
-        }
-    }
-
-    .btn{
-        font-size: 0.9rem;
-    }
-}
-.header h1 {
-    font-size: 1.1rem;
-        font-weight: 900;
-    color: #000;
+  }
+  small {
+    font-size: 0.675em;
+    font-weight: 600;
     letter-spacing: 1px;
-    font-family: 'Roboto';
+  }
+}
+
+.header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .navbar-nav {
-    font-family: $headings-font-family;
-    font-weight: 600;
-    
+  font-family: $headings-font-family;
+  font-weight: 700;
 }
 
-.page-header {
-    background-color: $light;
-    text-align: center;
-    padding: 3rem 0;
-    h2{
-        font-size: 1.6rem;
-    }
-    a{
-        font-size: 0.8rem;
-        color : $body-color;
-    }
+.menu .subdropdown .nav-link {
+  padding: 0.25rem 1rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  &:hover,
+  &:visited {
+    border-bottom: none;
+  }
+  &::after {
+    content: "\f285";
+    font-size: 0.8rem;
+  }
+
+}
+.menu .subdropdown-item {
+    font-size: 0.9rem;
+  }
+
+header {
+  h2 {
+    font-size: 1.8rem;
+  }
+  a {
+    font-size: 0.8rem;
+    color: $body-color;
+  }
 }
 
 .menu {
-    border-top : 1px solid  #e9ecef;
-    border-bottom: 1px solid $light;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    
-    .dropdown-item {
-        text-transform: initial;
-    }
-    .dropdown-toggle::after {
-        border: none;
-        content: "\F282";
-        display: inline-block;
-        font-family: bootstrap-icons !important;
-        font-style: normal;
-        font-weight: normal !important;
-        font-feature-settings: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        vertical-align: -0.125em;
-        -webkit-font-smoothing: antialiased;
-      }
+  border-top: 1px solid $light;
+  border-bottom: 1px solid $light;
+  font-size: 0.85rem;
+  text-transform: uppercase;
 
-      .nav-link{
-        border-bottom: 1px solid transparent;
-      }
-      .nav-link:hover{
-        border-bottom: 1px solid $secondary;
-      }
+  .dropdown-item {
+    text-transform: initial;
+  }
+  .dropdown-toggle::after {
+    border: none;
+    content: "\F282";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+  }
 
-      .btn-info {
-        font-size: 0.85rem;
-          background-color: $primary;
-          color : #fff;
-      }
+  .nav-link {
+    border-bottom: 1px solid transparent;
+  }
+  .nav-link:hover {
+    border-bottom: 1px solid $secondary;
+  }
 
-      .navbar-expand-lg .navbar-nav .nav-link {
-        padding-left:0;
-        padding-right: 0;
-    }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

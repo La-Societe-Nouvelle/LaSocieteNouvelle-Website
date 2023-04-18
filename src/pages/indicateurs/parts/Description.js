@@ -4,7 +4,7 @@ import { Image } from "react-bootstrap";
 const Description = ({ indic }) => {
   let description = "";
 
-  console.log(indic)
+ 
   switch (indic) {
     case "ART":
       description = (
@@ -288,7 +288,6 @@ const Description = ({ indic }) => {
       );
       break;
     case "SOC":
-      {console.log("here")};
       description = (
         <div >
           <p>
@@ -352,7 +351,6 @@ const Description = ({ indic }) => {
       );
       break;
     case "WAT":
-      {console.log("wat")};
 
       description = (
         <div >
