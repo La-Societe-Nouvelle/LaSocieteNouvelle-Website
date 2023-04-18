@@ -22,7 +22,7 @@ const Metriz = () => {
               </p>
               <p>
                 L'application permet de faire le lien entre le{" "}
-                <b>fichier d'écritures comptables</b>(FEC), les données
+                <b>fichier d'écritures comptables</b> (FEC), les données
                 disponibles pour <b>les fournisseurs</b> et les impacts directs
                 de l'entreprise.
               </p>

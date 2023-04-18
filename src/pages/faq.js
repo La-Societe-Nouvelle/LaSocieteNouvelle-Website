@@ -50,8 +50,7 @@ const Faq = () => {
             nous contacter en utilisant{" "}
             <a href="/contact" title="Contact" className="text-secondary">
               le formulaire de contact
-            </a>{" "}
-            .
+            </a>.
           </p>
 
           <Tabs activeKey={activeKey || "qg"} className="mt-5 panel-indicateurs" fill>

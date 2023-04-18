@@ -31,7 +31,7 @@ const About = () => {
               </p>
               <p>
                 L'équipe compte désormais 6 personnes, dont 3 sur des postes
-                permantents.
+                permanents.
               </p>
             </Col>
             <Col>

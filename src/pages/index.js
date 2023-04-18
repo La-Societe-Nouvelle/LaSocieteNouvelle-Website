@@ -56,7 +56,7 @@ const Home = () => {
                 commercial, est autorisée.
               </p>
               <p>
-                Si vous souhaitez contribuer ou en savoir-plus,{" "}
+                Si vous souhaitez contribuer ou en savoir plus,
                 <a
                   href="/contact"
                   className="text-primary text-decoration-underline "
@@ -107,7 +107,7 @@ const Home = () => {
                 des entreprises. Ces données peuvent être des valeurs par défaut
                 ou provenir directement de la publication des entreprises.
               </p>
-              <h3>Pourquoi publier son empreinte?</h3>
+              <h3>Pourquoi publier son empreinte ?</h3>
               <ol>
                 <li>Valoriser votre performance et informer vos clients</li>
                 <li>Contribuer à une économie plus transparente</li>
@@ -151,7 +151,7 @@ const Home = () => {
                 environnementaux d'un euro de production vendu.
               </p>
 
-              <h3>Pourquoi mesurer son empreinte?</h3>
+              <h3>Pourquoi mesurer son empreinte ?</h3>
               <ol>
                 <li>
                   Se positionner par rapport à sa branche et aux objectifs

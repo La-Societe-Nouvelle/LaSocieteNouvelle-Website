@@ -31,7 +31,7 @@ const API = () => {
               <p>
                 Elle permet d'intégrer les données publiées des entreprises au
                 sein des outils comptables (pour assurer une traçabilité le long
-                des chaines de valeur) et facilite leur exploitation.
+                des chaînes de valeur) et facilite leur exploitation.
               </p>
               <div className="text-end mt-4">
                 <Button
@@ -113,7 +113,7 @@ const API = () => {
               <Image src="/illustrations/donnees-par-defaut.svg" height={250} className="mb-4" alt="Illustration avec des graphiques pour les données par défaut" />
               <p>
                 Retourne les valeurs par défaut proposées à partir de la zone
-                économique et l'activité principale , et pour
+                économique et de l'activité principale , et pour
                 l'agrégat souhaité.
               </p>
             </Col>

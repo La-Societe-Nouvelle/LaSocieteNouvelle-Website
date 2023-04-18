@@ -31,7 +31,7 @@ const Entreprises = () => {
                 leur performance faisant intervenir la vôtre.
               </p>
               <p>
-                La démarche vous permet d'êre <b>transparent</b> sur l'empreinte que
+                La démarche vous permet d'être <b>transparent</b> sur l'empreinte que
                 vous laissez sur la société et l'environnement, et de prouver
                 que vos activités s'inscrivent dans une trajectoire visant à
                 atteindre une <strong>économie soutenable</strong>.
@@ -86,7 +86,7 @@ const Entreprises = () => {
                   />
                 </div>
                 <h4 className="h6">
-                  Positionnez vous par rapport aux objectifs de développement
+                  Positionnez-vous par rapport aux objectifs de développement
                   durable
                 </h4>
               </div>
@@ -143,7 +143,7 @@ const Entreprises = () => {
               </ul>
               <p>
                 Le modèle permet ainsi de mettre en place une traçabilité le
-                long des chaines de valeurs. L'empreinte sociétale d'une
+                long des chaînes de valeurs. L'empreinte sociétale d'une
                 entreprise dépend de celle de ses fournisseurs et impacte celle
                 de ses clients.
               </p>
