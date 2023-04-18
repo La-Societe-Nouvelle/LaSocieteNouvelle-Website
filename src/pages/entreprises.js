@@ -14,34 +14,34 @@ const Entreprises = () => {
               <p>
                 Climat, inégalités sociales, raréfaction des ressources
                 naturelles... Les entreprises ont un rôle majeur dans la
-                construction d'une société durable. Il est désormais
+                construction d'une <strong>société durable</strong>. Il est désormais
                 incontournable pour une entreprise de prendre en compte ces
                 enjeux clefs si elle veut assurer sa pérennité.
               </p>
               <p>
-                Mesurer les impacts de sa valeur ajoutée et de sa valeur
-                produite permet d'évaluer sa capacité à produire de la valeur en
-                limitant ses impacts négatifs, de se positionner vis-à-vis de sa
+              <strong>Mesurer les impacts de sa valeur ajoutée et de sa valeur
+                produite</strong> permet d'évaluer sa capacité à produire de la valeur en
+                <strong> limitant ses impacts négatifs</strong>, de se positionner vis-à-vis de sa
                 branche d'activités et des objectifs de développement durable
                 fixés.
               </p>
               <p>
                 La publication des indicateurs à l'échelle de votre chiffre
-                d'affaires valorise votre performance auprès de vos clients,
+                d'affaires <b>valorise votre performance</b> auprès de vos clients,
                 leur performance faisant intervenir la vôtre.
               </p>
               <p>
-                La démarche vous permet d'êre transparent sur l'empreinte que
+                La démarche vous permet d'êre <b>transparent</b> sur l'empreinte que
                 vous laissez sur la société et l'environnement, et de prouver
                 que vos activités s'inscrivent dans une trajectoire visant à
-                atteindre une économie soutenable.
+                atteindre une <strong>économie soutenable</strong>.
               </p>
             </Col>
             <Col className="text-end">
               <Image
                 fluid
                 src="/illustrations/mesure-entreprise.svg"
-                alt="Illustration Entreprises"
+                alt="Illustration pour les entreprises avec représentation des données"
               />
             </Col>
           </Row>

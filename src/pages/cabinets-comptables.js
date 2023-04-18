@@ -78,7 +78,11 @@ const Cabinets = () => {
         <Container>
           <Row className="align-items-center">
             <Col>
-              <Image alt="Metriz" src="illustrations/version-partenaire-cabinet-comptable.svg" fluid />
+              <Image
+                alt="Illustration comparaison version simple version partenaire metriz application web"
+                src="illustrations/version-partenaire-cabinet-comptable.svg"
+                fluid
+              />
             </Col>
             <Col>
               <h3>Un outil de calcul sur mesure pour les partenaires</h3>
@@ -103,7 +107,7 @@ const Cabinets = () => {
                 <li>...</li>
               </ul>
 
-              <Button className="btn-outline-secondary me-3" href="/metriz">
+              <Button className="btn-outline-secondary me-3" href="/ressources/application-mesure-impact">
                 En savoir plus
               </Button>
               <Button className="btn-outline-primary " href="/contact">
@@ -113,7 +117,6 @@ const Cabinets = () => {
           </Row>
         </Container>
       </section>
-
     </>
   );
 };
