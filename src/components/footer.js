@@ -130,7 +130,7 @@ function Footer() {
           </Row>
         </Container>
         <div className="text-center mt-4">
-          <Image src="/celeste-blanc.svg" height={30}></Image>
+          <Image src="/celeste-blanc.svg" height={30} alt="Celeste personnage du logo de La Société Nouvelle"></Image>
         </div>
         <div className="bottom-footer">
           <Container>

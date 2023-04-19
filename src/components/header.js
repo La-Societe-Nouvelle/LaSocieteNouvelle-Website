@@ -72,6 +72,7 @@ const Header = () => {
               href="https://twitter.com/LSN_FR"
               target="_blank"
               rel="noreferrer"
+              title="Twitter"
             >
               <i className="bi bi-twitter"></i>
             </Nav.Link>
@@ -79,6 +80,7 @@ const Header = () => {
               href="https://www.linkedin.com/company/la-societe-nouvelle/"
               target="_blank"
               rel="noreferrer"
+              title="Linkedin"
             >
               <i className="bi bi-linkedin"></i>
             </Nav.Link>
@@ -86,13 +88,14 @@ const Header = () => {
               href="/https://github.com/La-Societe-Nouvelle/"
               target="_blank"
               rel="noreferrer"
+              title="GitHub"
             >
               <i className="bi bi-github"></i>
             </Nav.Link>
-            <Nav.Link href="/blog" rel="noreferrer">
+            <Nav.Link href="/blog" rel="noreferrer" title="Consulter notre blog">
               <span className="top-bar-link"> Blog</span>
             </Nav.Link>
-            <Nav.Link href="faq" rel="noreferrer">
+            <Nav.Link href="faq" rel="noreferrer" title="Accéder à la FAQ">
               <span className="top-bar-link"> Aide</span>
             </Nav.Link>
           </Nav>

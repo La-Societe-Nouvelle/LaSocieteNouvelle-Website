@@ -15,6 +15,11 @@ export default function Infographie() {
       <PageHeader title="Infographies" path="infographies" />
       <Container>
         <Row>
+        <InfographicPost
+            title="Evolution des compétences et des connaissances"
+            file="LSN_infographie-knw.pdf"
+            image="LSN_infographie-knw.jpg"
+          />
           <InfographicPost
             title="La production de déchets"
             file="LSN_infographie-was.pdf"
