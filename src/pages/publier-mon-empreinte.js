@@ -176,29 +176,25 @@ class Form extends React.Component {
 const LegalForm = (props) => {
   const [siren, setSiren] = useState(props.siren);
   const onSirenChange = (event) => setSiren(event.target.value);
-  const [error,setError] = useState(false);
+  const [error, setError] = useState(false);
   const [denomination, setDenomination] = useState(props.denomination);
   const onDenominationChange = (event) => setDenomination(event.target.value);
 
   const handleOnBlur = async () => {
-
-    if(/^[0-9]{9}$/.test(siren)) {
+    if (/^[0-9]{9}$/.test(siren)) {
       axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunit/${siren}`)
-      .then((response) => {
-        if (response.data.header.code == 200) {
-          setDenomination(response.data.legalUnits[0].denomination);
-          setError(false)
-        } else {
-          setError(true);
-        }
-      });
+        .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunit/${siren}`)
+        .then((response) => {
+          if (response.data.header.code == 200) {
+            setDenomination(response.data.legalUnits[0].denomination);
+            setError(false);
+          } else {
+            setError(true);
+          }
+        });
+    } else {
+      setError(true);
     }
-    else{
-      setError(true)
-    }
-
-
   };
 
   const [year, setYear] = useState(props.year);
@@ -224,97 +220,101 @@ const LegalForm = (props) => {
   return (
     <div className="publish-form">
       <Row>
+        <Col xs={12} lg={7}>
+          <h3>Publier ses données</h3>
+          <p>
+            Vous avez déjà mesuré votre empreinte sociétale et vous souhaitez
+            publier vos données sur notre portail ?
+          </p>
+          <p>
+            Complétez les différentes étapes du formulaire de publication des
+            données.
+          </p>
+          <hr />
 
-      <Col xs={12} lg={7}>
-      <h3>Publier ses données</h3>
-        <p>
-          Vous avez déjà mesuré votre empreinte sociétale et vous souhaitez publier vos données sur notre portail ? 
-        </p>
-        <p>
-        Complétez les différentes étapes du formulaire de publication des données.
-        </p>
-        <hr/>
-      
-        <h5>1. Informations légales</h5>
-        <div className="mb-3 row">
-          <label className="col-sm-5 col-form-label">
-            Numéro de siren (9 chiffres) :
-          </label>
-          <div className="col-sm-7">
-            <input
-              id="siren-input"
-              className="form-control"
-              maxLength="9"
-              type="text"
-              value={siren}
-              onChange={onSirenChange}
-              onBlur={handleOnBlur}
-            />
-                      {error && <p className="small text-secondary mb-0">Numéro de siren incorrect</p>}
-
+          <h5>1. Informations légales</h5>
+          <div className="mb-3 row">
+            <label className="col-sm-5 col-form-label">
+              Numéro de siren (9 chiffres) :
+            </label>
+            <div className="col-sm-7">
+              <input
+                id="siren-input"
+                className="form-control"
+                maxLength="9"
+                type="text"
+                value={siren}
+                onChange={onSirenChange}
+                onBlur={handleOnBlur}
+              />
+              {error && (
+                <p className="small text-secondary mb-0">
+                  Numéro de siren incorrect
+                </p>
+              )}
+            </div>
           </div>
-        </div>
-        <div className="mb-3 row">
-          <label className="col-sm-5 col-form-label">
-            Dénomination sociale :
-          </label>
-          <div className="col-sm-7">
-            <input
-              id="denomination-input"
-              className="form-control"
-              type="text"
-              value={denomination}
-              onChange={onDenominationChange}
-            />
+          <div className="mb-3 row">
+            <label className="col-sm-5 col-form-label">
+              Dénomination sociale :
+            </label>
+            <div className="col-sm-7">
+              <input
+                id="denomination-input"
+                className="form-control"
+                type="text"
+                value={denomination}
+                onChange={onDenominationChange}
+              />
+            </div>
           </div>
-        </div>
-        <div className="mb-3 row">
-          <label className="col-sm-5 col-form-label">
-            Année de l'exercice<sup>1</sup>
-          </label>
-          <div className="col-sm-7">
-            <input
-              className="form-control"
-              id="year-input"
-              type="text"
-              value={year}
-              onChange={onYearChange}
-            />
-            <p className="source mt-2">
-              <sup>1</sup> Année en fin d'exercice si l'exercice se déroule sur
-              deux années civiles.
-            </p>
+          <div className="mb-3 row">
+            <label className="col-sm-5 col-form-label">
+              Année de l'exercice<sup>1</sup>
+            </label>
+            <div className="col-sm-7">
+              <input
+                className="form-control"
+                id="year-input"
+                type="text"
+                value={year}
+                onChange={onYearChange}
+              />
+              <p className="source mt-2">
+                <sup>1</sup> Année en fin d'exercice si l'exercice se déroule
+                sur deux années civiles.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="text-end">
-          <Button
-            variant="secondary"
-            disabled={isNextStepAvailable}
-            onClick={onCommit}
-          >
-            Compléter les impacts
-          </Button>
-        </div>
-      </Col>
-      <Col xs={12} lg={5}>
-        <div className="card">
-          <div className="card-body">
-          <h3>Calculer l'impact de son entreprise</h3>
-        <p>
-         Vous ne connaissez pas encore votre empreinte sociétale et vous souhaitez calculer les impacts de votre entreprise ?
-        </p>
-        <p>
-          Un outil gratuit et open source vous permet de faire ce calcul grâce à votre fichier
-          d'écriture comptable.
-        </p>
-        <Button variant="secondary" href="/metriz">En savoir plus</Button>
+          <div className="text-end">
+            <Button
+              variant="secondary"
+              disabled={isNextStepAvailable}
+              onClick={onCommit}
+            >
+              Compléter les impacts
+            </Button>
           </div>
-
-        </div>
-  
-      </Col>
+        </Col>
+        <Col xs={12} lg={5}>
+          <div className="card">
+            <div className="card-body">
+              <h3>Calculer l'impact de son entreprise</h3>
+              <p>
+                Vous ne connaissez pas encore votre empreinte sociétale et vous
+                souhaitez calculer les impacts de votre entreprise ?
+              </p>
+              <p>
+                Un outil gratuit et open source vous permet de faire ce calcul
+                grâce à votre fichier d'écriture comptable.
+              </p>
+              <Button variant="secondary" href="/ressources/application-mesure-impact">
+                En savoir plus
+              </Button>
+            </div>
+          </div>
+        </Col>
       </Row>
-
     </div>
   );
 };
@@ -328,7 +328,9 @@ const SocialFootprintForm = ({
 }) => {
   const onUpdateProps = (nextProps) =>
     (socialfootprint[nextProps.indic] = nextProps);
-  const onCommit = () =>{commitSocialFootprint(socialfootprint)};
+  const onCommit = () => {
+    commitSocialFootprint(socialfootprint);
+  };
   const onGoBack = () => goBack();
 
   return (
@@ -392,14 +394,19 @@ class IndicatorForm extends React.Component {
                   href={"https://lasocietenouvelle.org/indicateurs/" + indic}
                   target="_blank"
                 >
-               Informations sur l'indicateur    <i className="bi bi-box-arrow-up-right"></i> 
+                  Informations sur l'indicateur{" "}
+                  <i className="bi bi-box-arrow-up-right"></i>
                 </a>
               </div>
             </div>
             <div className="source"></div>
             <div className="my-3 row align-items-center">
               <label className="col-sm-3 col-form-label small">
-                Valeur<span>{metaData[indic].unitCode && " ("+metaData[indic].unitCode +")"}</span>
+                Valeur
+                <span>
+                  {metaData[indic].unitCode &&
+                    " (" + metaData[indic].unitCode + ")"}
+                </span>
               </label>
               <div className="col-sm-9">
                 <input
@@ -473,13 +480,12 @@ export const DeclarantForm = (props) => {
   const changeAutorisation = (event) => setAutorisation(event.target.checked);
 
   useEffect(() => {
-
     if (price && autorisation && declarant.length > 0) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  },[price,autorisation,declarant]);
+  }, [price, autorisation, declarant]);
 
   const onCommit = () =>
     props.commitDeclarant(declarant, email, autorisation, price);
