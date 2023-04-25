@@ -383,7 +383,7 @@ class IndicatorForm extends React.Component {
           <Card.Body className="indicator-form">
             <div className="d-flex align-items-center">
               <Image
-                src={"images/icon-ese-bleues/" + indic + ".png"}
+                src={"images/indicateurs/" + indic + ".png"}
                 className="img-fluid me-3"
               />
               <div className="indic-libelle">
