@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row, Button } from "react-bootstrap";
+import { Col, Container, Image, Row, Button, Ratio } from "react-bootstrap";
 import { DocButton } from "../../components/buttons/DocButton";
 import { MetrizButton } from "../../components/buttons/MetrizButton";
 import PageHeader from "../../components/PageHeader";
@@ -7,7 +7,13 @@ import PageHeader from "../../components/PageHeader";
 const Metriz = () => {
   return (
     <>
-      <PageHeader title={"Application Web Metriz"} prev={"ressources"} prevTitle={"Ressources"} path={"ressources/application-mesure-impact"} hasBreadcrumb={true} />
+      <PageHeader
+        title={"Application Web Metriz"}
+        prev={"ressources"}
+        prevTitle={"Ressources"}
+        path={"ressources/application-mesure-impact"}
+        hasBreadcrumb={true}
+      />
       <section>
         <Container>
           <Row className="align-items-center">
@@ -50,59 +56,51 @@ const Metriz = () => {
           </Row>
         </Container>
       </section>
-      <section className="text-center steps bg-light-secondary">
+      <section className="steps bg-light-secondary">
         <Container>
-          <h3 className="mb-5">Comment fonctionne l'Application ?</h3>
+          <h3 className="mb-5 text-center ">Comment fonctionne l'Application ?</h3>
           <Row>
             <Col>
-              <div className="box shadow-sm">
-                <div className="icon">
-                  <i className="bi bi-upload"></i>
-                </div>
-                <p>Importez votre Fichier d'Ecritures Comptables (FEC)</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="box shadow-sm">
-                <div className="icon">
-                  <i className="bi bi-archive"></i>
-                </div>
-                <p>
-                  Saisissez les Etats initiaux de l'empreinte des stocks et
-                  immobilisations
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="box shadow-sm">
-                <div className="icon">
-                  <i className="bi bi-arrow-repeat"></i>
-                </div>
-                <p>Récupérez les données associées aux comptes tiers</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="box shadow-sm">
-                <div className="icon">
-                  <i className="bi bi-calculator"></i>
-                </div>
-                <p>Evaluez et Déclarez les impacts directs de l'entreprise</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="box shadow-sm">
-                <div className="icon">
-                  <i className="bi bi-download"></i>
-                </div>
-                <p>
-                  Téléchargez les livrables : Rapport par indicateur, tableaux
-                  comparatifs, ...
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <div className="text-center mt-3">
-            <Button
+              <Row>
+                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
+                    <div className="icon text-secondary me-2 text-secondary me-2">
+                      <i className="bi bi-upload"></i>
+                    </div>
+                    <p className="mb-0">Importez votre Fichier d'Ecritures Comptables (FEC)</p>
+                  </div>
+                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
+                    <div className="icon text-secondary me-2">
+                      <i className="bi bi-archive"></i>
+                    </div>
+                    <p className="mb-0">
+                      Saisissez les Etats initiaux de l'empreinte des stocks et
+                      immobilisations
+                    </p>
+                  </div>
+                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
+                    <div className="icon text-secondary me-2">
+                      <i className="bi bi-arrow-repeat"></i>
+                    </div>
+                    <p className="mb-0">Récupérez les empreintes des fournisseurs</p>
+                  </div>
+                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
+                    <div className="icon text-secondary me-2">
+                      <i className="bi bi-calculator"></i>
+                    </div>
+                    <p className="mb-0">
+                      Evaluez et Déclarez les impacts directs de l'entreprise
+                    </p>
+                  </div>
+                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
+                    <div className="icon text-secondary me-2">
+                      <i className="bi bi-download"></i>
+                    </div>
+                    <p className="mb-0">
+                      Téléchargez les livrables : Rapport par indicateur,
+                      tableaux comparatifs, ...
+                    </p>
+                  </div>
+                  <Button
               variant="secondary"
               href="https://docs.lasocietenouvelle.org/application-web/tutorial"
               target="_blank"
@@ -110,7 +108,19 @@ const Metriz = () => {
             >
               Consulter le tutoriel
             </Button>
-          </div>
+              </Row>
+            </Col>
+            <Col>
+              <div className="bordered border-light p-3 bg-white rounded">
+                <video 
+                poster="/videos/miniature-metriz.jpg"
+                controls style={{ width: "100%", height: "auto" }}>
+                  <source src="/videos/tuto-metriz.mp4" />
+                </video>
+              </div>
+            </Col>
+          </Row>
+
         </Container>
       </section>
       <section>
@@ -183,7 +193,10 @@ const Metriz = () => {
               </a>
             </Col>
             <Col className="text-end">
-              <Image src="/illustrations/code-open-source-cecill.svg" alt="Illustration pour l'open source"/>
+              <Image
+                src="/illustrations/code-open-source-cecill.svg"
+                alt="Illustration pour l'open source"
+              />
             </Col>
           </Row>
         </Container>
