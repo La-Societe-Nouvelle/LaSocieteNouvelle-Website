@@ -1,16 +1,10 @@
-import {  Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { Helmet } from "react-helmet";
 import SinglePost from "../../components/posts/SinglePost";
 import fetchPostBySlug from "../../utils/fetchSinglePost";
 
 export default function Post({ post }) {
-  const router = useRouter();
-
-  // Render a message while fetching data
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
@@ -29,19 +23,23 @@ export default function Post({ post }) {
         </Container>
       </header>
       <Container>
-          <SinglePost post={post} />
+        <SinglePost post={post} />
       </Container>
     </>
   );
 }
 
 export async function getServerSideProps({ params }) {
-  const data = await fetchPostBySlug(params.slug);
-
-  return {
-    props: {
-      post: data,
-    },
-  };
+  try {
+    const data = await fetchPostBySlug(params.slug);
+    return {
+      props: {
+        post: data,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 }
-
