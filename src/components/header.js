@@ -69,7 +69,7 @@ const Header = () => {
         <div className="top-bar d-flex justify-content-between align-items-center">
           <Nav className="socials">
             <Nav.Link
-              href="https://twitter.com/LSN_FR"
+              href="https://twitter.com/LSN_FR?s=20"
               target="_blank"
               rel="noreferrer"
               title="Twitter"
@@ -85,7 +85,7 @@ const Header = () => {
               <i className="bi bi-linkedin"></i>
             </Nav.Link>
             <Nav.Link
-              href="/https://github.com/La-Societe-Nouvelle/"
+              href="https://github.com/La-Societe-Nouvelle/"
               target="_blank"
               rel="noreferrer"
               title="GitHub"

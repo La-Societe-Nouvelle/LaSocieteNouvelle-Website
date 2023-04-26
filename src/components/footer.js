@@ -41,7 +41,7 @@ function Footer() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <a
-                    href="https://twitter.com/LSN_FR"
+                    href="https://twitter.com/LSN_FR?s=20"
                     target="_blank"
                     rel="noreferrer"
                     title="Twitter"
