@@ -392,6 +392,7 @@ const IndicatorDetails = ({
               <a
                 href={"/indicateurs/" + code.toLowerCase()}
                 target="_blank"
+                className="text-primary"
                 title="Plus d'informations sur l'indicateur"
               >
                 Informations sur l'indicateur &raquo;
@@ -442,7 +443,15 @@ const IndicatorDetails = ({
               Valeur estimée
             </Badge>
           )}
-
+          {flag == "r" && (
+            <Badge
+              pill
+              bg="light-secondary"
+              title="Valeur issue d'un reporting"
+            >
+              Valeur issue d'un reporting
+            </Badge>
+          )}
           {year && year != "NA" && (
             <Badge pill bg="year" title="Année de référence">
               {year}
