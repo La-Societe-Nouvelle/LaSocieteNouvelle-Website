@@ -19,13 +19,14 @@ const Faq = () => {
   const [eventKey, setEvenKey] = useState("qg-0");
 
   useEffect(() => {
-
     const key = router.asPath.split('#')[1]; // extrait l'activeKey de l'URL
+    
     if (key) {
       
       setActiveKey(key.slice(0,2));
       setEvenKey(key);
     }
+ 
   }, [router.query]);
 
 
@@ -53,10 +54,10 @@ const Faq = () => {
             </a>.
           </p>
 
-          <Tabs activeKey={activeKey || "qg"} className="mt-5 panel-indicateurs" fill>
+          <Tabs defaultActiveKey={activeKey || "qg"} className="mt-5 panel-indicateurs" fill>
             <Tab eventKey="qg" title="Questions générales">
               <div className="m-4">
-                <Accordion activeKey={eventKey}>
+                <Accordion defaultActiveKey={eventKey} >
                   <Accordion.Item eventKey="qg-0">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
