@@ -706,7 +706,7 @@ const AdditionnalIndicatorDetails = ({
           </div>
           <div>
             <h3 className="h6">{indicatorLabel} </h3>
-            <p className="source mt-1">
+            {/* <p className="source mt-1">
               <a
                 href={"/indicateurs/" + code.toLowerCase()}
                 target="_blank"
@@ -715,7 +715,7 @@ const AdditionnalIndicatorDetails = ({
               >
                 Informations sur l'indicateur &raquo;
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="text-end">
