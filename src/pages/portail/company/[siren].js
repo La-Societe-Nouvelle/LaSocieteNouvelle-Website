@@ -57,6 +57,7 @@ const CompanyData = () => {
       .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunitFootprint/${siren}`)
       .then((response) => {
         if (response.data.header.code == 200) {
+          console.log(response.data)
           setLegalUnit(response.data.legalUnit);
           setFootprint(response.data.footprint);
           setAdditionnalData(response.data.additionnalData);
@@ -681,43 +682,20 @@ const AdditionnalIndicatorDetails = ({
   info,
   description,
   indicatorLabel,
-  uncertainty,
   source,
   year,
   value,
   unitSymbol,
-  divisionFootprint,
+  historicalData
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
 
   const displayedValue = Math.round(10 * value) / 10;
-  //const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
-
+  console.log(historicalData)
   return (
     <Col key={code} className="my-4" lg={4}>
       <div className="p-3 border border-3 rounded-3">
-        <div className="indic-title">
-          <div className="indic-icon">
-            {/* <Image
-              height="20px"
-              src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
-              alt={code}
-            /> */}
-          </div>
-          <div>
-            <h3 className="h6">{indicatorLabel} </h3>
-            {/* <p className="source mt-1">
-              <a
-                href={"/indicateurs/" + code.toLowerCase()}
-                target="_blank"
-                className="text-primary"
-                title="Plus d'informations sur l'indicateur"
-              >
-                Informations sur l'indicateur &raquo;
-              </a>
-            </p> */}
-          </div>
-        </div>
+      <h3 className="h6 text-center">{indicatorLabel} </h3>
         <div className="text-end">
           <Badge
             pill
@@ -731,11 +709,12 @@ const AdditionnalIndicatorDetails = ({
             </button>
           </Badge>
         </div>
-        <ColumnChartAdditionnalData
+        {/* <ColumnChartAdditionnalData
           performance={displayedValue}
           unit={unitSymbol}
           flag={flag}
-        />
+        /> */}
+              {/* TO DO : New Chart Component */}
         <div className="mb-3 d-flex justify-content-evenly">
           {flag == "p" && (
             <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
