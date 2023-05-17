@@ -12,7 +12,7 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
 
   const historicalValues = sortedHistorical.map((data) => data.value);
 
-  historicalYears.push(year.toString());
+  historicalYears.push(year);
   historicalValues.push(mostCurrent);
 
   const dataset = {
