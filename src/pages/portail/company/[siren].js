@@ -23,6 +23,8 @@ import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import ErrorAlert from "../../../components/Error";
 import Description from "../../indicateurs/parts/Description";
+import AdditionalDataChart from "../../../components/charts/AdditionalDataChart";
+import FootprintDataChart from "../../../components/charts/FootprintDataChart";
 
 const CompanyData = () => {
   const router = useRouter();
@@ -57,7 +59,7 @@ const CompanyData = () => {
       .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunitFootprint/${siren}`)
       .then((response) => {
         if (response.data.header.code == 200) {
-          console.log(response.data)
+          console.log(response.data);
           setLegalUnit(response.data.legalUnit);
           setFootprint(response.data.footprint);
           setAdditionnalData(response.data.additionnalData);
@@ -261,8 +263,12 @@ const CompanyData = () => {
 };
 
 /* Body of the page : Viewing the "EmpreinteSocietale" aka "ESE" */
-function ContentSocialFootprint({ footprint, meta, divisionFootprint, additionnalData }) 
-{
+function ContentSocialFootprint({
+  footprint,
+  meta,
+  divisionFootprint,
+  additionnalData,
+}) {
   //  INDICATORS CATEGORIES
   const valueCreation = ["ECO", "ART", "SOC"];
   const socialFootprint = ["IDR", "GEQ", "KNW"];
@@ -276,10 +282,14 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint, additionna
     Object.entries(footprint).filter(([key]) => socialFootprint.includes(key))
   );
   const environmentalFootprintList = Object.fromEntries(
-    Object.entries(footprint).filter(([key]) => environmentalFootprint.includes(key))
+    Object.entries(footprint).filter(([key]) =>
+      environmentalFootprint.includes(key)
+    )
   );
   const additionnalIndicatorsList = Object.fromEntries(
-    Object.entries(additionnalData).filter(([key]) => additionnalIndicators.includes(key))
+    Object.entries(additionnalData).filter(([key]) =>
+      additionnalIndicators.includes(key)
+    )
   );
 
   const valueCreationComponents = Object.entries(valueCreationList).map(
@@ -358,14 +368,14 @@ function ContentSocialFootprint({ footprint, meta, divisionFootprint, additionna
             <Row>{environmentalFootprintComponents}</Row>
           </Accordion.Body>
         </Accordion.Item>
-        {additionnalIndicatorsComponents.length>0 && 
+        {additionnalIndicatorsComponents.length > 0 && (
           <Accordion.Item eventKey="3">
             <Accordion.Header>Autres indicateurs disponibles</Accordion.Header>
             <Accordion.Body>
               <Row>{additionnalIndicatorsComponents}</Row>
             </Accordion.Body>
           </Accordion.Item>
-        }
+        )}
       </Accordion>
     </Row>
   );
@@ -441,7 +451,8 @@ const IndicatorDetails = ({
             </button>
           </Badge>
         </div>
-        <ColumnChart
+
+        <FootprintDataChart
           performance={displayedValue}
           comparative={divisionValue}
           unit={unitSymbol}
@@ -557,122 +568,122 @@ const IndicatorDetails = ({
   );
 };
 
-function ColumnChart({ performance, unit, flag, comparative }) {
-  let bgColor;
+// function ColumnChart({ performance, unit, flag, comparative }) {
+//   let bgColor;
 
-  if (flag == "p") {
-    bgColor = "RGBA(250, 89, 95,1)";
-  } else if (flag == "e") {
-    bgColor = "rgb(251, 129, 133)";
-  } else {
-    bgColor = "RGBA(25, 21, 88,1)";
-  }
+//   if (flag == "p") {
+//     bgColor = "RGBA(250, 89, 95,1)";
+//   } else if (flag == "e") {
+//     bgColor = "rgb(251, 129, 133)";
+//   } else {
+//     bgColor = "RGBA(25, 21, 88,1)";
+//   }
 
-  const data = {
-    labels: ["Unité Légale", "Branche"],
-    datasets: [
-      {
-        label: "Empreinte",
-        barPercentage: 0.4,
-        categoryPercentage: 0.4,
-        data: [performance, comparative],
-        backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
-      },
-    ],
-  };
+//   const data = {
+//     labels: ["Unité Légale", "Branche"],
+//     datasets: [
+//       {
+//         label: "Empreinte",
+//         barPercentage: 0.4,
+//         categoryPercentage: 0.4,
+//         data: [performance, comparative],
+//         backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
+//       },
+//     ],
+//   };
 
-  let suggestedMax;
+//   let suggestedMax;
 
-  if (unit == "%") {
-    switch (true) {
-      case performance < 10:
-        suggestedMax = 10;
-        break;
-      case performance > 10 && performance < 25:
-        suggestedMax = 25;
-        break;
-      case performance > 25 && performance < 50:
-        suggestedMax = 50;
-        break;
-      default:
-        suggestedMax = 100;
-        break;
-    }
-  } else {
-    suggestedMax = null;
-  }
+//   if (unit == "%") {
+//     switch (true) {
+//       case performance < 10:
+//         suggestedMax = 10;
+//         break;
+//       case performance > 10 && performance < 25:
+//         suggestedMax = 25;
+//         break;
+//       case performance > 25 && performance < 50:
+//         suggestedMax = 50;
+//         break;
+//       default:
+//         suggestedMax = 100;
+//         break;
+//     }
+//   } else {
+//     suggestedMax = null;
+//   }
 
-  const options = {
-    responsive: true,
-    maintainAspectRatio: true,
-    devicePixelRatio: 2,
-    layout: {
-      padding: {
-        top: 30,
-        bottom: 10,
-        left: 0,
-        right: 0,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      datalabels: {
-        anchor: "end",
-        align: "top",
-        formatter: function (value, context) {
-          return value + " " + unit;
-        },
-        color: "#191558",
-        font: {
-          size: 12,
-          family: "Roboto",
-          weight: "bold",
-        },
-      },
-      tooltip: {
-        enabled: false, //
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        suggestedMax: suggestedMax,
+//   const options = {
+//     responsive: true,
+//     maintainAspectRatio: true,
+//     devicePixelRatio: 2,
+//     layout: {
+//       padding: {
+//         top: 30,
+//         bottom: 10,
+//         left: 0,
+//         right: 0,
+//       },
+//     },
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       datalabels: {
+//         anchor: "end",
+//         align: "top",
+//         formatter: function (value, context) {
+//           return value + " " + unit;
+//         },
+//         color: "#191558",
+//         font: {
+//           size: 12,
+//           family: "Roboto",
+//           weight: "bold",
+//         },
+//       },
+//       tooltip: {
+//         enabled: false, //
+//       },
+//     },
+//     scales: {
+//       y: {
+//         beginAtZero: true,
+//         suggestedMax: suggestedMax,
 
-        ticks: {
-          color: "#191558",
-          font: {
-            size: 10,
-            family: "Roboto",
-          },
-        },
-        grid: {
-          color: "#ececff",
-        },
-      },
-      x: {
-        display: true,
-        ticks: {
-          color: "#191558",
-          font: {
-            size: 12,
-            family: "Roboto",
-          },
-        },
-        grid: {
-          color: "#ececff",
-        },
-      },
-    },
-  };
+//         ticks: {
+//           color: "#191558",
+//           font: {
+//             size: 10,
+//             family: "Roboto",
+//           },
+//         },
+//         grid: {
+//           color: "#ececff",
+//         },
+//       },
+//       x: {
+//         display: true,
+//         ticks: {
+//           color: "#191558",
+//           font: {
+//             size: 12,
+//             family: "Roboto",
+//           },
+//         },
+//         grid: {
+//           color: "#ececff",
+//         },
+//       },
+//     },
+//   };
 
-  return (
-    <div className="mt-3 mb-3">
-      <Bar data={data} options={options} />
-    </div>
-  );
-}
+//   return (
+//     <div className="mt-3 mb-3">
+//       <Bar data={data} options={options} />
+//     </div>
+//   );
+// }
 
 /* Additionnal indicator view */
 const AdditionnalIndicatorDetails = ({
@@ -680,23 +691,21 @@ const AdditionnalIndicatorDetails = ({
   flag,
   lastupdate,
   info,
-  description,
   indicatorLabel,
   source,
   year,
   value,
   unitSymbol,
-  historicalData
+  historicalData,
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
 
-  const displayedValue = Math.round(10 * value) / 10;
-  console.log(historicalData)
+  const performance = Math.round(10 * value) / 10;
   return (
     <Col key={code} className="my-4" lg={4}>
       <div className="p-3 border border-3 rounded-3">
-      <h3 className="h6 text-center">{indicatorLabel} </h3>
-        <div className="text-end">
+        <h3 className="h6 text-center">{indicatorLabel} </h3>
+        <div className="text-end my-3">
           <Badge
             pill
             bg="light"
@@ -709,13 +718,14 @@ const AdditionnalIndicatorDetails = ({
             </button>
           </Badge>
         </div>
-        {/* <ColumnChartAdditionnalData
-          performance={displayedValue}
+        <AdditionalDataChart
+          historical={historicalData}
+          mostCurrent={performance}
+          year={year}
           unit={unitSymbol}
-          flag={flag}
-        /> */}
-              {/* TO DO : New Chart Component */}
-        <div className="mb-3 d-flex justify-content-evenly">
+        />
+
+        <div className="my-3 text-center">
           {flag == "p" && (
             <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
               Valeur Publiée
@@ -748,27 +758,7 @@ const AdditionnalIndicatorDetails = ({
               Valeur issue d'un reporting
             </Badge>
           )}
-          {year && year != "NA" && (
-            <Badge pill bg="year" title="Année de référence">
-              {year}
-            </Badge>
-          )}
-
-          {/* <Badge
-            pill
-            bg="light"
-            className="ms-2 text-body"
-            title="Intervalle de confiance "
-          >
-            {Math.round(uncertainty)} % d'incertitude
-          </Badge> */}
         </div>
-
-        {/* <div className="mt-2 text-end">
-          <p className="source mb-0">
-            Source : {divisionFootprint[code].source} (Valeur de la branche)
-          </p>
-        </div> */}
       </div>
 
       {modalOpen == code && (
@@ -780,7 +770,7 @@ const AdditionnalIndicatorDetails = ({
             <h4>Informations</h4>
             <ul className="list-unstyled">
               <li className="mb-1">
-                Valeur : <b>{displayedValue + unitSymbol}</b>
+                Valeur : <b>{performance + unitSymbol}</b>
               </li>
               <li className="mb-1">
                 Type de donnée : <b>{getFlagLabel(flag)}</b>
@@ -825,122 +815,122 @@ const AdditionnalIndicatorDetails = ({
   );
 };
 
-function ColumnChartAdditionnalData({ performance, unit, flag }) 
-{
-  let bgColor;
+// function ColumnChartAdditionnalData({ performance, unit, flag })
+// {
+//   let bgColor;
 
-  if (flag == "p") {
-    bgColor = "RGBA(250, 89, 95,1)";
-  } else if (flag == "e") {
-    bgColor = "rgb(251, 129, 133)";
-  } else {
-    bgColor = "RGBA(25, 21, 88,1)";
-  }
+//   if (flag == "p") {
+//     bgColor = "RGBA(250, 89, 95,1)";
+//   } else if (flag == "e") {
+//     bgColor = "rgb(251, 129, 133)";
+//   } else {
+//     bgColor = "RGBA(25, 21, 88,1)";
+//   }
 
-  const data = {
-    labels: ["Unité Légale"],
-    datasets: [
-      {
-        label: "Empreinte",
-        barPercentage: 0.4,
-        categoryPercentage: 0.4,
-        data: [performance],
-        backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
-      },
-    ],
-  };
+//   const data = {
+//     labels: ["Unité Légale"],
+//     datasets: [
+//       {
+//         label: "Empreinte",
+//         barPercentage: 0.4,
+//         categoryPercentage: 0.4,
+//         data: [performance],
+//         backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
+//       },
+//     ],
+//   };
 
-  let suggestedMax;
+//   let suggestedMax;
 
-  if (unit == "%") {
-    switch (true) {
-      case performance < 10:
-        suggestedMax = 10;
-        break;
-      case performance > 10 && performance < 25:
-        suggestedMax = 25;
-        break;
-      case performance > 25 && performance < 50:
-        suggestedMax = 50;
-        break;
-      default:
-        suggestedMax = 100;
-        break;
-    }
-  } else {
-    suggestedMax = null;
-  }
+//   if (unit == "%") {
+//     switch (true) {
+//       case performance < 10:
+//         suggestedMax = 10;
+//         break;
+//       case performance > 10 && performance < 25:
+//         suggestedMax = 25;
+//         break;
+//       case performance > 25 && performance < 50:
+//         suggestedMax = 50;
+//         break;
+//       default:
+//         suggestedMax = 100;
+//         break;
+//     }
+//   } else {
+//     suggestedMax = null;
+//   }
 
-  const options = {
-    responsive: true,
-    maintainAspectRatio: true,
-    devicePixelRatio: 2,
-    layout: {
-      padding: {
-        top: 30,
-        bottom: 10,
-        left: 0,
-        right: 0,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      datalabels: {
-        anchor: "end",
-        align: "top",
-        formatter: function (value, context) {
-          return value + " " + unit;
-        },
-        color: "#191558",
-        font: {
-          size: 12,
-          family: "Roboto",
-          weight: "bold",
-        },
-      },
-      tooltip: {
-        enabled: false, //
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        suggestedMax: suggestedMax,
+//   const options = {
+//     responsive: true,
+//     maintainAspectRatio: true,
+//     devicePixelRatio: 2,
+//     layout: {
+//       padding: {
+//         top: 30,
+//         bottom: 10,
+//         left: 0,
+//         right: 0,
+//       },
+//     },
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       datalabels: {
+//         anchor: "end",
+//         align: "top",
+//         formatter: function (value, context) {
+//           return value + " " + unit;
+//         },
+//         color: "#191558",
+//         font: {
+//           size: 12,
+//           family: "Roboto",
+//           weight: "bold",
+//         },
+//       },
+//       tooltip: {
+//         enabled: false, //
+//       },
+//     },
+//     scales: {
+//       y: {
+//         beginAtZero: true,
+//         suggestedMax: suggestedMax,
 
-        ticks: {
-          color: "#191558",
-          font: {
-            size: 10,
-            family: "Roboto",
-          },
-        },
-        grid: {
-          color: "#ececff",
-        },
-      },
-      x: {
-        display: true,
-        ticks: {
-          color: "#191558",
-          font: {
-            size: 12,
-            family: "Roboto",
-          },
-        },
-        grid: {
-          color: "#ececff",
-        },
-      },
-    },
-  };
+//         ticks: {
+//           color: "#191558",
+//           font: {
+//             size: 10,
+//             family: "Roboto",
+//           },
+//         },
+//         grid: {
+//           color: "#ececff",
+//         },
+//       },
+//       x: {
+//         display: true,
+//         ticks: {
+//           color: "#191558",
+//           font: {
+//             size: 12,
+//             family: "Roboto",
+//           },
+//         },
+//         grid: {
+//           color: "#ececff",
+//         },
+//       },
+//     },
+//   };
 
-  return (
-    <div className="mt-3 mb-3">
-      <Bar data={data} options={options} />
-    </div>
-  );
-}
+//   return (
+//     <div className="mt-3 mb-3">
+//       <Bar data={data} options={options} />
+//     </div>
+//   );
+// }
 
 export default CompanyData;
