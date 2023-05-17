@@ -7,17 +7,14 @@ Chart.register(ChartDataLabels);
 import { Line } from "react-chartjs-2";
 
 const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
-  // Créer un tableau pour les années historiques
-  const historicalYears = historical.map((data) => data.year);
+  const sortedHistorical = historical.sort((a, b) => a.year - b.year);
+  const historicalYears = sortedHistorical.map((data) => data.year);
 
-  // Créer un tableau pour les valeurs historiques
-  const historicalValues = historical.map((data) => data.value);
+  const historicalValues = sortedHistorical.map((data) => data.value);
 
-  // Ajouter la valeur la plus récente à la fin des tableaux
   historicalYears.push(year.toString());
   historicalValues.push(mostCurrent);
 
-  // Créer le dataset avec les données historiques et la valeur la plus récente
   const dataset = {
     label: "Valeur",
     data: historicalValues,
@@ -34,7 +31,6 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
     tension: 0.4,
   };
 
-  // Créer le graphique
   const data = {
     labels: historicalYears,
     datasets: [dataset],
@@ -65,10 +61,10 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
           text: unit,
           color: "#191558",
           position: "top",
-          padding : 10,
+          padding: 10,
           font: {
             size: 11,
-            weight: "bold"
+            weight: "bold",
           },
         },
         ticks: {
