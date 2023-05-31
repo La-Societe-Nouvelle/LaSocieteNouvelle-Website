@@ -452,11 +452,11 @@ const IndicatorDetails = ({
             </button>
           </Badge>
         </div>
-        
+        <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
         <FootprintDataChart
           historicalValues={historicalData}
           latestValue={legalUnitValue}
-          divisionValue={divisionValue}
+          divisionFootprint={divisionFootprint[code]}
           unit={unitSymbol}
           flag={flag}
           year={year}

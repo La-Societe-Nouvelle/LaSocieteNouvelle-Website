@@ -12,7 +12,7 @@ const FootprintDataChart = ({
   unit,
   flag,
   year,
-  divisionValue,
+  divisionFootprint,
 }) => {
   let bgColor;
 
@@ -25,43 +25,47 @@ const FootprintDataChart = ({
   }
 
   const sortedHistorical = historicalValues.sort((a, b) => a.year - b.year);
-  const footprintYears = sortedHistorical.map((data) => data.year);
+  const labels = sortedHistorical.map((data) => data.year);
 
   const legalUnitFootprints = sortedHistorical.map((data) => data.value);
 
-  footprintYears.push(year != "NA" ? year : "");
+  labels.push(year != "NA" ? year : divisionFootprint.info);
   legalUnitFootprints.push(latestValue);
 
-  console.log(year)
-  console.log(latestValue)
 
-  const legalUnitFootprint = {
-    label: "Empreinte de l'Unité Légale",
+  if (!labels.includes(divisionFootprint.info)) {
+    labels.push(divisionFootprint.info);
+  }
+
+  const divisionFootprints = labels.map((label) =>
+    label == divisionFootprint.info ? divisionFootprint.value : null
+  );
+
+  console.log(divisionFootprints);
+  const legalUnitDataset = {
+    label: "Valeur",
     data: legalUnitFootprints,
     backgroundColor: bgColor,
-    barPercentage: 0.6,
     categoryPercentage: 0.6,
+    barPercentage : 0.6,
+    skipNull: true,
   };
 
-
-  const divisionFootprint = {
-    label: "Empreinte de la branche",
-    data: [divisionValue],
+  const divisionDataset = {
+    label: "Valeur de la branche",
+    data: divisionFootprints,
     backgroundColor: "#ffb642",
     skipNull: true,
-    barPercentage: 0.6,
     categoryPercentage: 0.6,
+    barPercentage : 0.6,
   };
 
-  const datasets = [legalUnitFootprint, divisionFootprint];
+  const datasets = [legalUnitDataset, divisionDataset];
 
   const data = {
-    labels: footprintYears,
+    labels: labels,
     datasets: datasets,
   };
-
-
-
 
   let suggestedMax;
 
@@ -90,7 +94,7 @@ const FootprintDataChart = ({
     devicePixelRatio: 2,
     layout: {
       padding: {
-        top: 20,
+        top: 0,
         bottom: 10,
         left: 0,
         right: 0,
@@ -101,20 +105,7 @@ const FootprintDataChart = ({
         display: false,
       },
       datalabels: {
-        anchor: "end",
-        align: "top",
-
-        formatter: function (value, context) {
-          if (value) {
-            return value + " " + unit;
-          }
-        },
-        color: "#191558",
-        font: {
-          size: 10,
-          family: "Roboto",
-          weight: "bold",
-        },
+        display :false
       },
       tooltip: {
         enabled: true, //
@@ -124,25 +115,22 @@ const FootprintDataChart = ({
       y: {
         beginAtZero: true,
         suggestedMax: suggestedMax,
-
+        color: "#191558",
+        grid: {
+          color: "#ececff",
+        },
+        ticks: {
+          color: "#191558",
+          font: {
+            size: 9,
+          },
+        },
+      },
+      x: {
         ticks: {
           color: "#191558",
           font: {
             size: 10,
-            family: "Roboto",
-          },
-        },
-        grid: {
-          color: "#ececff",
-        },
-      },
-      x: {
-        display: true,
-        ticks: {
-          color: "#191558",
-          font: {
-            size: 12,
-            family: "Roboto",
           },
         },
         grid: {
@@ -153,7 +141,7 @@ const FootprintDataChart = ({
   };
 
   return (
-    <div className="mt-3 mb-3">
+    <div className="mb-3">
       <Bar data={data} options={options} />
     </div>
   );
