@@ -6,7 +6,14 @@ Chart.register(ChartDataLabels);
 
 import { Bar } from "react-chartjs-2";
 
-const FootprintDataChart = ({ performance, unit, flag, comparative }) => {
+const FootprintDataChart = ({
+  historical,
+  mostCurrent,
+  unit,
+  flag,
+  year,
+  comparative,
+}) => {
   let bgColor;
 
   if (flag == "p") {
@@ -17,30 +24,75 @@ const FootprintDataChart = ({ performance, unit, flag, comparative }) => {
     bgColor = "RGBA(25, 21, 88,1)";
   }
 
-  const data = {
-    labels: ["Unité Légale", "Branche"],
-    datasets: [
-      {
-        label: "Empreinte",
-        barPercentage: 0.4,
-        categoryPercentage: 0.4,
-        data: [performance, comparative],
-        backgroundColor: [bgColor, "RGBA(255, 182, 66,1)"],
-      },
-    ],
+  const sortedHistorical = historical.sort((a, b) => a.year - b.year);
+  const footprintLabels = sortedHistorical.map((data) => data.year);
+
+  const historicalValues = sortedHistorical.map((data) => data.value);
+
+  footprintLabels.push(year != "NA" ? year : "");
+  historicalValues.push(mostCurrent);
+
+  const historicalDataset = {
+    label: "Unité Légale",
+    data: historicalValues,
+    backgroundColor: "#191558",
   };
+
+  const historicalComparative = sortedHistorical.map((data) => null);
+  historicalComparative.push(comparative);
+
+  const comparativeDataset = {
+    label: "Branche",
+    data: historicalComparative,
+    backgroundColor: "#fa595F",
+    skipNull: true,
+  };
+
+  const datasets = [historicalDataset, comparativeDataset];
+
+  //   const dataset = {
+  //     label: "Valeur",
+  //     data: historicalValues,
+  //     barPercentage: 0.4,
+  //     categoryPercentage: 0.4,
+  //   };
+
+  const data = {
+    labels: footprintLabels,
+    datasets: datasets,
+  };
+
+  //   const data = {
+  //     datasets: [
+  //         dataset,
+  //       {
+  //         label: "Empreinte",
+  //         barPercentage: 0.4,
+  //         categoryPercentage: 0.4,
+  //         data: [mostCurrent],
+  //         backgroundColor: [bgColor],
+  //       },
+  //       {
+  //         label: "Empreinte de la branche",
+  //         barPercentage: 0.4,
+  //         categoryPercentage: 0.4,
+  //         data: [comparative],
+  //         backgroundColor: "RGBA(255, 182, 66,1)",
+  //       },
+  //     ],
+  //   };
 
   let suggestedMax;
 
   if (unit == "%") {
     switch (true) {
-      case performance < 10:
+      case mostCurrent < 10:
         suggestedMax = 10;
         break;
-      case performance > 10 && performance < 25:
+      case mostCurrent > 10 && mostCurrent < 25:
         suggestedMax = 25;
         break;
-      case performance > 25 && performance < 50:
+      case mostCurrent > 25 && mostCurrent < 50:
         suggestedMax = 50;
         break;
       default:
@@ -70,12 +122,15 @@ const FootprintDataChart = ({ performance, unit, flag, comparative }) => {
       datalabels: {
         anchor: "end",
         align: "top",
+
         formatter: function (value, context) {
-          return value + " " + unit;
+          if (value) {
+            return value + " " + unit;
+          }
         },
         color: "#191558",
         font: {
-          size: 12,
+          size: 10,
           family: "Roboto",
           weight: "bold",
         },
