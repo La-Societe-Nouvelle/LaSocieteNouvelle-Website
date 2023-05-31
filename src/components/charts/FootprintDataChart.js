@@ -25,62 +25,44 @@ const FootprintDataChart = ({
   }
 
   const sortedHistorical = historical.sort((a, b) => a.year - b.year);
-  const footprintLabels = sortedHistorical.map((data) => data.year);
+  const footprintYears = sortedHistorical.map((data) => data.year);
 
   const historicalValues = sortedHistorical.map((data) => data.value);
 
-  footprintLabels.push(year != "NA" ? year : "");
+  footprintYears.push(year != "NA" ? year : "");
   historicalValues.push(mostCurrent);
+  historicalValues.push(comparative);
+
+  console.log(year)
+  console.log(mostCurrent)
 
   const historicalDataset = {
-    label: "Unité Légale",
+    label: "Empreinte de l'Unité Légale",
     data: historicalValues,
-    backgroundColor: "#191558",
+    backgroundColor: bgColor,
+    barPercentage: 0.6,
+    categoryPercentage: 0.6,
   };
 
-  const historicalComparative = sortedHistorical.map((data) => null);
-  historicalComparative.push(comparative);
 
   const comparativeDataset = {
-    label: "Branche",
-    data: historicalComparative,
-    backgroundColor: "#fa595F",
+    label: "Empreinte de la branche",
+    data: [comparative],
+    backgroundColor: "#ffb642",
     skipNull: true,
+    barPercentage: 0.6,
+    categoryPercentage: 0.6,
   };
 
   const datasets = [historicalDataset, comparativeDataset];
 
-  //   const dataset = {
-  //     label: "Valeur",
-  //     data: historicalValues,
-  //     barPercentage: 0.4,
-  //     categoryPercentage: 0.4,
-  //   };
-
   const data = {
-    labels: footprintLabels,
+    labels: footprintYears,
     datasets: datasets,
   };
 
-  //   const data = {
-  //     datasets: [
-  //         dataset,
-  //       {
-  //         label: "Empreinte",
-  //         barPercentage: 0.4,
-  //         categoryPercentage: 0.4,
-  //         data: [mostCurrent],
-  //         backgroundColor: [bgColor],
-  //       },
-  //       {
-  //         label: "Empreinte de la branche",
-  //         barPercentage: 0.4,
-  //         categoryPercentage: 0.4,
-  //         data: [comparative],
-  //         backgroundColor: "RGBA(255, 182, 66,1)",
-  //       },
-  //     ],
-  //   };
+
+
 
   let suggestedMax;
 
@@ -109,7 +91,7 @@ const FootprintDataChart = ({
     devicePixelRatio: 2,
     layout: {
       padding: {
-        top: 30,
+        top: 20,
         bottom: 10,
         left: 0,
         right: 0,
@@ -136,7 +118,7 @@ const FootprintDataChart = ({
         },
       },
       tooltip: {
-        enabled: false, //
+        enabled: true, //
       },
     },
     scales: {
