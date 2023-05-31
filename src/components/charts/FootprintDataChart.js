@@ -7,12 +7,12 @@ Chart.register(ChartDataLabels);
 import { Bar } from "react-chartjs-2";
 
 const FootprintDataChart = ({
-  historical,
-  mostCurrent,
+  historicalValues,
+  latestValue,
   unit,
   flag,
   year,
-  comparative,
+  divisionValue,
 }) => {
   let bgColor;
 
@@ -24,37 +24,36 @@ const FootprintDataChart = ({
     bgColor = "RGBA(25, 21, 88,1)";
   }
 
-  const sortedHistorical = historical.sort((a, b) => a.year - b.year);
+  const sortedHistorical = historicalValues.sort((a, b) => a.year - b.year);
   const footprintYears = sortedHistorical.map((data) => data.year);
 
-  const historicalValues = sortedHistorical.map((data) => data.value);
+  const legalUnitFootprints = sortedHistorical.map((data) => data.value);
 
   footprintYears.push(year != "NA" ? year : "");
-  historicalValues.push(mostCurrent);
-  historicalValues.push(comparative);
+  legalUnitFootprints.push(latestValue);
 
   console.log(year)
-  console.log(mostCurrent)
+  console.log(latestValue)
 
-  const historicalDataset = {
+  const legalUnitFootprint = {
     label: "Empreinte de l'Unité Légale",
-    data: historicalValues,
+    data: legalUnitFootprints,
     backgroundColor: bgColor,
     barPercentage: 0.6,
     categoryPercentage: 0.6,
   };
 
 
-  const comparativeDataset = {
+  const divisionFootprint = {
     label: "Empreinte de la branche",
-    data: [comparative],
+    data: [divisionValue],
     backgroundColor: "#ffb642",
     skipNull: true,
     barPercentage: 0.6,
     categoryPercentage: 0.6,
   };
 
-  const datasets = [historicalDataset, comparativeDataset];
+  const datasets = [legalUnitFootprint, divisionFootprint];
 
   const data = {
     labels: footprintYears,
@@ -68,13 +67,13 @@ const FootprintDataChart = ({
 
   if (unit == "%") {
     switch (true) {
-      case mostCurrent < 10:
+      case latestValue < 10:
         suggestedMax = 10;
         break;
-      case mostCurrent > 10 && mostCurrent < 25:
+      case latestValue > 10 && latestValue < 25:
         suggestedMax = 25;
         break;
-      case mostCurrent > 25 && mostCurrent < 50:
+      case latestValue > 25 && latestValue < 50:
         suggestedMax = 50;
         break;
       default:

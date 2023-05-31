@@ -411,10 +411,9 @@ const IndicatorDetails = ({
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
 
-  const displayedValue = Math.round(10 * value) / 10;
+  const legalUnitValue = Math.round(10 * value) / 10;
   const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
-  console.log( divisionFootprint[code]);
-  console.log(historicalData);
+
   return (
     <Col key={code} className="my-4" lg={4}>
       <div className="p-3 border border-3 rounded-3">
@@ -455,9 +454,9 @@ const IndicatorDetails = ({
         </div>
         
         <FootprintDataChart
-          historical={historicalData}
-          mostCurrent={displayedValue}
-          comparative={divisionValue}
+          historicalValues={historicalData}
+          latestValue={legalUnitValue}
+          divisionValue={divisionValue}
           unit={unitSymbol}
           flag={flag}
           year={year}
@@ -538,7 +537,7 @@ const IndicatorDetails = ({
             <h4>Informations</h4>
             <ul className="list-unstyled">
               <li className="mb-1">
-                Valeur : <b>{displayedValue + unitSymbol}</b>
+                Valeur : <b>{legalUnitValue + unitSymbol}</b>
               </li>
               <li className="mb-1">
                 Type de donnée : <b>{getFlagLabel(flag)}</b>
