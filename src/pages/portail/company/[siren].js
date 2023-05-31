@@ -73,9 +73,10 @@ const CompanyData = () => {
       });
   }
   async function getDivisionFootprint(code) {
+
     axios
       .get(
-        `https://api.lasocietenouvelle.org/defaultfootprint/?code=${code}&aggregate=PRD&area=FRA`
+        `${process.env.NEXT_PUBLIC_API_URL}/defaultfootprint/?code=${code}&aggregate=PRD&area=FRA`
       )
       .then((response) => {
         isDataFetched(true);
@@ -412,7 +413,8 @@ const IndicatorDetails = ({
 
   const displayedValue = Math.round(10 * value) / 10;
   const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
-  console.log(divisionFootprint[code])
+  console.log( divisionFootprint[code]);
+  console.log(historicalData);
   return (
     <Col key={code} className="my-4" lg={4}>
       <div className="p-3 border border-3 rounded-3">
@@ -451,7 +453,7 @@ const IndicatorDetails = ({
             </button>
           </Badge>
         </div>
-
+        
         <FootprintDataChart
           historical={historicalData}
           mostCurrent={displayedValue}
@@ -493,25 +495,36 @@ const IndicatorDetails = ({
               Valeur issue d'un reporting
             </Badge>
           )}
-          {year && year != "NA" && (
+             <Badge
+              pill
+              bg="warning"
+              title="Valeur de la branche"
+            >
+              Valeur de la branche
+            </Badge>
+          {/* {year && year != "NA" && (
             <Badge pill bg="year" title="Année de référence">
               {year}
             </Badge>
-          )}
+          )} */}
 
-          <Badge
+          {/* <Badge
             pill
             bg="light"
             className="ms-2 text-body"
             title="Intervalle de confiance "
           >
             {Math.round(uncertainty)} % d'incertitude
-          </Badge>
+          </Badge> */}
         </div>
 
-        <div className="mt-2 text-end">
+        <div className="mt-2">
+          {/* <p className="source mb-0">
+            Incertitude ({getFlagLabel(flag)}) : 
+            <br></br> {Math.round(uncertainty)} %
+          </p> */}
           <p className="source mb-0">
-            Source : {divisionFootprint[code].source} (Valeur de la branche)
+            Source (Valeur de la branche) : {divisionFootprint[code].source} 
           </p>
         </div>
       </div>
