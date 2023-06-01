@@ -13,13 +13,6 @@ import {
 import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
-import Chart from "chart.js/auto";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-
-Chart.register(ChartDataLabels);
-
-import { Bar } from "react-chartjs-2";
-
 import axios from "axios";
 import ErrorAlert from "../../../components/Error";
 import Description from "../../indicateurs/parts/Description";
