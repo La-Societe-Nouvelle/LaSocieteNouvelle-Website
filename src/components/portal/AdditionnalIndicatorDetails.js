@@ -40,7 +40,7 @@ export const AdditionnalIndicatorDetails = ({
         <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
         <AdditionalDataChart
           historical={historicalData}
-          mostCurrent={performance}
+          latestValue={performance}
           year={year}
           flag={getFlagLabel(flag)}
           unit={unitSymbol}
