@@ -6,119 +6,115 @@ import { getFlagLabel } from "../../utils/utils";
 
 /* Basic indicator view */
 export const IndicatorDetails = ({
-    code,
-    flag,
-    lastupdate,
-    info,
-    description,
-    indicatorLabel,
-    uncertainty,
-    source,
-    year,
-    value,
-    unitSymbol,
-    divisionFootprint,
-    historicalData
-  }) => {
-    const [modalOpen, setModalOpen] = useState(null);
-  
-    const legalUnitValue = Math.round(10 * value) / 10;
-    const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
-  
-    return (
-      <Col key={code} className="my-4" lg={4}>
-        <div className="p-3 border border-3 rounded-3">
-          <div className="indic-title">
-            <div className="indic-icon">
-              <Image
-                height="20px"
-                src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
-                alt={code}
-              />
-            </div>
-            <div>
-              <h3 className="h6">{indicatorLabel} </h3>
-              <p className="source mt-1">
-                <a
-                  href={"/indicateurs/" + code.toLowerCase()}
-                  target="_blank"
-                  className="text-primary"
-                  title="Plus d'informations sur l'indicateur"
-                >
-                  Informations sur l'indicateur &raquo;
-                </a>
-              </p>
-            </div>
+  code,
+  flag,
+  lastupdate,
+  info,
+  description,
+  indicatorLabel,
+  uncertainty,
+  source,
+  year,
+  value,
+  unitSymbol,
+  divisionFootprint,
+  historicalData,
+}) => {
+  const [modalOpen, setModalOpen] = useState(null);
+
+  const legalUnitValue = Math.round(10 * value) / 10;
+  const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
+
+  return (
+    <Col key={code} className="my-4" lg={4}>
+      <div className="p-3 border border-3 rounded-3">
+        <div className="indic-title">
+          <div className="indic-icon">
+            <Image
+              height="20px"
+              src={"/ESE/icon-ese-bleues/" + code.toLowerCase() + ".svg"}
+              alt={code}
+            />
           </div>
-          <div className="text-end">
+          <div>
+            <h3 className="h6">{indicatorLabel} </h3>
+            <p className="source mt-1">
+              <a
+                href={"/indicateurs/" + code.toLowerCase()}
+                target="_blank"
+                className="text-primary"
+                title="Plus d'informations sur l'indicateur"
+              >
+                Informations sur l'indicateur &raquo;
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className="text-end">
+          <Badge
+            pill
+            bg="light"
+            className="ms-2 text-primary"
+            title="Plus de détails"
+          >
+            <i className="bi bi-plus-circle-fill"></i>{" "}
+            <button className="btn-badge" onClick={() => setModalOpen(code)}>
+              Détails &raquo;
+            </button>
+          </Badge>
+        </div>
+        <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
+        <FootprintDataChart
+          historicalValues={historicalData}
+          latestValue={legalUnitValue}
+          divisionFootprint={divisionFootprint[code]}
+          unit={unitSymbol}
+          flag={flag}
+          year={year}
+        />
+        <div className="mb-3 d-flex justify-content-evenly">
+          {flag == "p" && (
+            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
+              {getFlagLabel(flag)}
+            </Badge>
+          )}
+          {flag == "d" && (
             <Badge
               pill
-              bg="light"
-              className="ms-2 text-primary"
-              title="Plus de détails"
+              bg="primary"
+              title="Valeur proposée à partir de données statistiques"
             >
-              <i className="bi bi-plus-circle-fill"></i>{" "}
-              <button className="btn-badge" onClick={() => setModalOpen(code)}>
-                Détails &raquo;
-              </button>
+              {getFlagLabel(flag)}
             </Badge>
-          </div>
-          <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
-          <FootprintDataChart
-            historicalValues={historicalData}
-            latestValue={legalUnitValue}
-            divisionFootprint={divisionFootprint[code]}
-            unit={unitSymbol}
-            flag={flag}
-            year={year}
-          />
-          <div className="mb-3 d-flex justify-content-evenly">
-            {flag == "p" && (
-              <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-                Valeur Publiée
-              </Badge>
-            )}
-            {flag == "d" && (
-              <Badge
-                pill
-                bg="primary"
-                title="Valeur proposée à partir de données statistiques"
-              >
-                Valeur par défaut
-              </Badge>
-            )}
-            {flag == "e" && (
-              <Badge
-                pill
-                bg="light-secondary"
-                title="Valeur estimée à partir de données publiées par l'entreprise"
-              >
-                Valeur estimée
-              </Badge>
-            )}
-            {flag == "r" && (
-              <Badge
-                pill
-                bg="light-secondary"
-                title="Valeur issue d'un reporting"
-              >
-                Valeur issue d'un reporting
-              </Badge>
-            )}
-               <Badge
-                pill
-                bg="warning"
-                title="Valeur de la branche"
-              >
-                Valeur de la branche
-              </Badge>
-            {/* {year && year != "NA" && (
+          )}
+          {flag == "e" && (
+            <Badge
+              pill
+              bg="light-secondary"
+              title="Valeur estimée à partir de données publiées par l'entreprise"
+            >
+              {getFlagLabel(flag)}
+            </Badge>
+          )}
+          {flag == "r" && (
+            <Badge
+              pill
+              bg="light-secondary"
+              title="Valeur issue d'un reporting"
+            >
+              {getFlagLabel(flag)}
+            </Badge>
+          )}
+          <Badge pill bg="warning" title="Valeur de la branche">
+            Valeur de la branche
+          </Badge>
+          {/* {year && year != "NA" && (
               <Badge pill bg="year" title="Année de référence">
                 {year}
               </Badge>
             )} */}
-  
-            {/* <Badge
+
+          {/* <Badge
               pill
               bg="light"
               className="ms-2 text-body"
@@ -126,69 +122,69 @@ export const IndicatorDetails = ({
             >
               {Math.round(uncertainty)} % d'incertitude
             </Badge> */}
-          </div>
-  
-          <div className="mt-2">
-            {/* <p className="source mb-0">
+        </div>
+
+        <div className="mt-2">
+          {/* <p className="source mb-0">
               Incertitude ({getFlagLabel(flag)}) : 
               <br></br> {Math.round(uncertainty)} %
             </p> */}
-            <p className="source mb-0">
-              Source (Valeur de la branche) : {divisionFootprint[code].source} 
-            </p>
-          </div>
+          <p className="source mb-0">
+            Source (Valeur de la branche) : {divisionFootprint[code].source}
+          </p>
         </div>
-  
-        {modalOpen == code && (
-          <Modal show={true} onHide={() => setModalOpen(null)} centered size="lg">
-            <Modal.Header closeButton>
-              <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="bg-white rounded-3 mx-3">
-              <h4>Informations</h4>
-              <ul className="list-unstyled">
+      </div>
+
+      {modalOpen == code && (
+        <Modal show={true} onHide={() => setModalOpen(null)} centered size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title className="text-center">{indicatorLabel} </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bg-white rounded-3 mx-3">
+            <h4>Informations</h4>
+            <ul className="list-unstyled">
+              <li className="mb-1">
+                Valeur : <b>{legalUnitValue + unitSymbol}</b>
+              </li>
+              <li className="mb-1">
+                Type de donnée : <b>{getFlagLabel(flag)}</b>
+              </li>
+              {flag == "p" && (
                 <li className="mb-1">
-                  Valeur : <b>{legalUnitValue + unitSymbol}</b>
+                  Année de référence : <b>{year}</b>
                 </li>
-                <li className="mb-1">
-                  Type de donnée : <b>{getFlagLabel(flag)}</b>
-                </li>
-                {flag == "p" && (
-                  <li className="mb-1">
-                    Année de référence : <b>{year}</b>
-                  </li>
-                )}
-                <li className="mb-1">
-                  Incertitude : <b> {uncertainty}%</b>
-                </li>
-                <li className="mb-1">
-                  Dernière mise à jour :{" "}
-                  <b>{new Date(lastupdate).toLocaleDateString("fr-FR")}</b>
-                </li>
-              </ul>
-              <h5>Informations complémentaires</h5>
-              {/* {description && <p>{description}</p>} */}
-              {info ? (
-                <p>{info}</p>
-              ) : (
-                <p className="fst-italic">Aucune précision ajoutée.</p>
               )}
-              {source && <p>Source : {source} </p>}
-              <h5>Précisions sur l'indicateur</h5>
-  
-              <Description indic={code} />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => setModalOpen(null)}
-              >
-                Fermer
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        )}
-      </Col>
-    );
-  };
+              <li className="mb-1">
+                Incertitude : <b> {uncertainty}%</b>
+              </li>
+              <li className="mb-1">
+                Dernière mise à jour :{" "}
+                <b>{new Date(lastupdate).toLocaleDateString("fr-FR")}</b>
+              </li>
+            </ul>
+            <h5>Informations complémentaires</h5>
+            {/* {description && <p>{description}</p>} */}
+            {info ? (
+              <p>{info}</p>
+            ) : (
+              <p className="fst-italic">Aucune précision ajoutée.</p>
+            )}
+            {source && <p>Source : {source} </p>}
+            <h5>Précisions sur l'indicateur</h5>
+
+            <Description indic={code} />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setModalOpen(null)}
+            >
+              Fermer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+    </Col>
+  );
+};

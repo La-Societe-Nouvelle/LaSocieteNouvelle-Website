@@ -10,6 +10,10 @@ export const getFlagLabel = (flag) => {
       break;
     case "e":
       return "Valeur Estimée";
+    case "r":
+      return "Valeur issue d'un reporting";
+    case "d":
+      return "Valeur par défaut";
     default:
       return "Valeur par défaut";
       break;

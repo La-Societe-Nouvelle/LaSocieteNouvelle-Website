@@ -41,12 +41,13 @@ export const AdditionnalIndicatorDetails = ({
           mostCurrent={performance}
           year={year}
           unit={unitSymbol}
+          flag={getFlagLabel(flag)}
         />
 
         <div className="my-3 text-center">
           {flag == "p" && (
             <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-              Valeur Publiée
+              {getFlagLabel(flag)}
             </Badge>
           )}
           {flag == "d" && (
@@ -55,7 +56,7 @@ export const AdditionnalIndicatorDetails = ({
               bg="primary"
               title="Valeur proposée à partir de données statistiques"
             >
-              Valeur par défaut
+              {getFlagLabel(flag)}
             </Badge>
           )}
           {flag == "e" && (
@@ -64,7 +65,7 @@ export const AdditionnalIndicatorDetails = ({
               bg="light-secondary"
               title="Valeur estimée à partir de données publiées par l'entreprise"
             >
-              Valeur estimée
+              {getFlagLabel(flag)}
             </Badge>
           )}
           {flag == "r" && (

@@ -6,7 +6,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 Chart.register(ChartDataLabels);
 import { Line } from "react-chartjs-2";
 
-const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
+const AdditionalDataChart = ({ historical, mostCurrent, year, unit, flag }) => {
   const sortedHistorical = historical.sort((a, b) => a.year - b.year);
   const historicalYears = sortedHistorical.map((data) => data.year);
 
@@ -16,7 +16,7 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit }) => {
   historicalValues.push(mostCurrent);
 
   const dataset = {
-    label: "Valeur",
+    label: flag,
     data: historicalValues,
     fill: false,
     borderColor: "#f0f0f8",

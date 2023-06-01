@@ -5,6 +5,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 Chart.register(ChartDataLabels);
 
 import { Bar } from "react-chartjs-2";
+import { getFlagLabel } from "../../utils/utils";
 
 const FootprintDataChart = ({
   historicalValues,
@@ -41,9 +42,8 @@ const FootprintDataChart = ({
     label == divisionFootprint.info ? divisionFootprint.value : null
   );
 
-  console.log(divisionFootprints);
   const legalUnitDataset = {
-    label: "Valeur",
+    label: getFlagLabel(flag),
     data: legalUnitFootprints,
     backgroundColor: bgColor,
     categoryPercentage: 0.6,
@@ -67,26 +67,8 @@ const FootprintDataChart = ({
     datasets: datasets,
   };
 
-  let suggestedMax;
 
-  if (unit == "%") {
-    switch (true) {
-      case latestValue < 10:
-        suggestedMax = 10;
-        break;
-      case latestValue > 10 && latestValue < 25:
-        suggestedMax = 25;
-        break;
-      case latestValue > 25 && latestValue < 50:
-        suggestedMax = 50;
-        break;
-      default:
-        suggestedMax = 100;
-        break;
-    }
-  } else {
-    suggestedMax = null;
-  }
+  let suggestedMax = unit === "%" ? (latestValue < 10 ? 10 : latestValue < 25 ? 25 : latestValue < 50 ? 50 : 100) : null;
 
   const options = {
     responsive: true,
