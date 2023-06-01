@@ -3,19 +3,16 @@ export function cutString(str, nbChar) {
   return str.substring(0, nbChar) + "...";
 }
 
+// FLAG
+
 export const getFlagLabel = (flag) => {
-  switch (flag) {
-    case "p":
-      return "Valeur publiée";
-      break;
-    case "e":
-      return "Valeur Estimée";
-    case "r":
-      return "Valeur issue d'un reporting";
-    case "d":
-      return "Valeur par défaut";
-    default:
-      return "Valeur par défaut";
-      break;
-  }
+  const flagLabels = {
+    p: "Valeur publiée",
+    e: "Valeur estimée",
+    r: "Valeur issue d'un reporting",
+    d: "Valeur par défaut",
+  };
+
+  return flagLabels[flag] || "Valeur par défaut";
 };
+

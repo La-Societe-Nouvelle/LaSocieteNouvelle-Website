@@ -3,6 +3,7 @@ import FootprintDataChart from "../charts/FootprintDataChart";
 import Description from "../../pages/indicateurs/parts/Description";
 import { useState } from "react";
 import { getFlagLabel } from "../../utils/utils";
+import FlagBadge from "./FlagBadges";
 
 /* Basic indicator view */
 export const IndicatorDetails = ({
@@ -73,62 +74,15 @@ export const IndicatorDetails = ({
           year={year}
         />
         <div className="mb-3 d-flex justify-content-evenly">
-          {flag == "p" && (
-            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "d" && (
-            <Badge
-              pill
-              bg="primary"
-              title="Valeur proposée à partir de données statistiques"
-            >
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "e" && (
-            <Badge
-              pill
-              bg="light-secondary"
-              title="Valeur estimée à partir de données publiées par l'entreprise"
-            >
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "r" && (
-            <Badge
-              pill
-              bg="light-secondary"
-              title="Valeur issue d'un reporting"
-            >
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
+          <FlagBadge flag={flag} />
+
           <Badge pill bg="warning" title="Valeur de la branche">
             Valeur de la branche
           </Badge>
-          {/* {year && year != "NA" && (
-              <Badge pill bg="year" title="Année de référence">
-                {year}
-              </Badge>
-            )} */}
-
-          {/* <Badge
-              pill
-              bg="light"
-              className="ms-2 text-body"
-              title="Intervalle de confiance "
-            >
-              {Math.round(uncertainty)} % d'incertitude
-            </Badge> */}
         </div>
+        <div className="mb-3 d-flex justify-content-evenly"></div>
 
         <div className="mt-2">
-          {/* <p className="source mb-0">
-              Incertitude ({getFlagLabel(flag)}) : 
-              <br></br> {Math.round(uncertainty)} %
-            </p> */}
           <p className="source mb-0">
             Source (Valeur de la branche) : {divisionFootprint[code].source}
           </p>

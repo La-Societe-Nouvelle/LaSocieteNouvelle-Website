@@ -2,6 +2,7 @@ import { Badge, Button, Col, Modal } from "react-bootstrap";
 import AdditionalDataChart from "../charts/AdditionalDataChart";
 import { useState } from "react";
 import { getFlagLabel } from "../../utils/utils";
+import FlagBadge from "./FlagBadges";
 
 /* Additionnal indicator view */
 export const AdditionnalIndicatorDetails = ({
@@ -36,47 +37,16 @@ export const AdditionnalIndicatorDetails = ({
             </button>
           </Badge>
         </div>
+        <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
         <AdditionalDataChart
           historical={historicalData}
           mostCurrent={performance}
           year={year}
-          unit={unitSymbol}
           flag={getFlagLabel(flag)}
         />
 
         <div className="my-3 text-center">
-          {flag == "p" && (
-            <Badge pill bg="secondary" title="Valeur publiée par l'entreprise">
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "d" && (
-            <Badge
-              pill
-              bg="primary"
-              title="Valeur proposée à partir de données statistiques"
-            >
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "e" && (
-            <Badge
-              pill
-              bg="light-secondary"
-              title="Valeur estimée à partir de données publiées par l'entreprise"
-            >
-              {getFlagLabel(flag)}
-            </Badge>
-          )}
-          {flag == "r" && (
-            <Badge
-              pill
-              bg="light-secondary"
-              title="Valeur issue d'un reporting"
-            >
-              Valeur issue d'un reporting
-            </Badge>
-          )}
+          <FlagBadge flag={flag} />
         </div>
       </div>
 
