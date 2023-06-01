@@ -6,7 +6,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 Chart.register(ChartDataLabels);
 import { Line } from "react-chartjs-2";
 
-const AdditionalDataChart = ({ historical, mostCurrent, year, unit, flag }) => {
+const AdditionalDataChart = ({ historical, mostCurrent, year, flag,unit }) => {
   const sortedHistorical = historical.sort((a, b) => a.year - b.year);
   const historicalYears = sortedHistorical.map((data) => data.year);
 
@@ -37,6 +37,15 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit, flag }) => {
   };
 
   const options = {
+    maintainAspectRatio: true,
+    layout: {
+      padding: {
+        top: 0,
+        bottom: 10,
+        left: 0,
+        right: 0,
+      },
+    },
     plugins: {
       legend: {
         display: false,
@@ -46,6 +55,12 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit, flag }) => {
       },
       tooltip: {
         backgroundColor: "#191558",
+        callbacks: {
+          label: function (context) {
+            let label = " " + context.parsed.y + " " + unit;
+            return label;
+          },
+        },
       },
     },
 
@@ -55,17 +70,6 @@ const AdditionalDataChart = ({ historical, mostCurrent, year, unit, flag }) => {
         color: "#191558",
         grid: {
           color: "#ececff",
-        },
-        title: {
-          display: true,
-          text: unit,
-          color: "#191558",
-          position: "top",
-          padding: 10,
-          font: {
-            size: 11,
-            weight: "bold",
-          },
         },
         ticks: {
           color: "#191558",

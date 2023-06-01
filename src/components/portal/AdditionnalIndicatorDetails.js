@@ -43,6 +43,7 @@ export const AdditionnalIndicatorDetails = ({
           mostCurrent={performance}
           year={year}
           flag={getFlagLabel(flag)}
+          unit={unitSymbol}
         />
 
         <div className="my-3 text-center">

@@ -33,7 +33,6 @@ const FootprintDataChart = ({
   labels.push(year != "NA" ? year : divisionFootprint.info);
   legalUnitFootprints.push(latestValue);
 
-
   if (!labels.includes(divisionFootprint.info)) {
     labels.push(divisionFootprint.info);
   }
@@ -47,7 +46,7 @@ const FootprintDataChart = ({
     data: legalUnitFootprints,
     backgroundColor: bgColor,
     categoryPercentage: 0.6,
-    barPercentage : 0.6,
+    barPercentage: 0.6,
     skipNull: true,
   };
 
@@ -57,7 +56,7 @@ const FootprintDataChart = ({
     backgroundColor: "#ffb642",
     skipNull: true,
     categoryPercentage: 0.6,
-    barPercentage : 0.6,
+    barPercentage: 0.6,
   };
 
   const datasets = [legalUnitDataset, divisionDataset];
@@ -67,8 +66,16 @@ const FootprintDataChart = ({
     datasets: datasets,
   };
 
-
-  let suggestedMax = unit === "%" ? (latestValue < 10 ? 10 : latestValue < 25 ? 25 : latestValue < 50 ? 50 : 100) : null;
+  let suggestedMax =
+    unit === "%"
+      ? latestValue < 10
+        ? 10
+        : latestValue < 25
+        ? 25
+        : latestValue < 50
+        ? 50
+        : 100
+      : null;
 
   const options = {
     responsive: true,
@@ -87,10 +94,17 @@ const FootprintDataChart = ({
         display: false,
       },
       datalabels: {
-        display :false
+        display: false,
       },
       tooltip: {
-        enabled: true, //
+        enabled: true,
+        backgroundColor: "RGBA(25, 21, 88,0.7)",
+        callbacks: {
+          label: function (context) {
+            let label = " " + context.parsed.y + " " + unit;
+            return label;
+          },
+        },
       },
     },
     scales: {
