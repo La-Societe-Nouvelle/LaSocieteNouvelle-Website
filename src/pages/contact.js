@@ -63,7 +63,7 @@ class ContactForm extends React.Component {
         <Form.Group className="mb-3">
           <Form.Label>Nom - Prénom</Form.Label>
           <Form.Control
-            type="email"
+            type="text"
             onChange={this.onNameChange}
             value={name}
           />
@@ -132,12 +132,13 @@ class ContactForm extends React.Component {
 
   handleSubmit = (event) => {
     const form = event.currentTarget;
+    
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
       this.setState({ alert: "danger" });
     } else {
-      submitContactForm();
+      this.submitContactForm();
     }
     console.log(form.checkValidity());
   };
@@ -145,7 +146,6 @@ class ContactForm extends React.Component {
   submitContactForm = async () => {
     const { objet, message, email } = this.state;
     const res = await sendContactMail(objet, message, email);
-
     if (res.status < 300) {
       this.setState({
         objet: "",
