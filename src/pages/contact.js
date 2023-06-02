@@ -147,7 +147,7 @@ class ContactForm extends React.Component {
   
     const { objet, message, email } = this.state;
     const res = await sendContactMail(objet, message, email);
-    console.log(res)
+  
     if (res.status < 300) {
       this.setState({
         objet: "",
