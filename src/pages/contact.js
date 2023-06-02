@@ -50,7 +50,7 @@ class ContactForm extends React.Component {
       name: "",
       checked: false,
       validated: false,
-      alert: "success",
+      alert: "",
     };
   }
 
@@ -145,7 +145,7 @@ class ContactForm extends React.Component {
   submitContactForm = async () => {
     const { objet, message, email } = this.state;
     const res = await sendContactMail(objet, message, email);
-    console.log(res)
+  
     if (res.status < 300) {
       this.setState({
         objet: "",
