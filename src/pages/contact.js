@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 // API
 import { sendContactMail } from "../pages/api/mail-api.js";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader.js";
 
 export default function Home() {
@@ -55,18 +55,14 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const { objet, name, message, email, validated, alert, checked } =
+    const { objet, name, message, email, alert, checked } =
       this.state;
 
     return (
-      <Form id="contact-form" >
+      <Form id="contact-form">
         <Form.Group className="mb-3">
           <Form.Label>Nom - Prénom</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={this.onNameChange}
-            value={name}
-          />
+          <Form.Control type="text" onChange={this.onNameChange} value={name} />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Adresse e-mail *</Form.Label>
@@ -114,6 +110,10 @@ class ContactForm extends React.Component {
             Envoyer
           </Button>
         </div>
+        <div className="my-2">
+          {alert && alert == "success" && <SuccessAlert />}
+          {alert && alert == "warning" && <WarningAlert />}
+        </div>
       </Form>
     );
   }
@@ -132,7 +132,7 @@ class ContactForm extends React.Component {
 
   handleSubmit = (event) => {
     const form = event.currentTarget;
-  
+
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -140,14 +140,12 @@ class ContactForm extends React.Component {
     } else {
       this.submitContactForm();
     }
-  
   };
 
   submitContactForm = async () => {
-  
     const { objet, message, email } = this.state;
     const res = await sendContactMail(objet, message, email);
-  
+    console.log(res)
     if (res.status < 300) {
       this.setState({
         objet: "",
@@ -161,3 +159,15 @@ class ContactForm extends React.Component {
     }
   };
 }
+
+const SuccessAlert = () => {
+  return <Alert variant="success">Votre Message a bien été envoyé.</Alert>;
+};
+
+const WarningAlert = () => {
+  return (
+    <Alert variant="warning">
+      Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard.
+    </Alert>
+  );
+};
