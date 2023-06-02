@@ -50,7 +50,7 @@ class ContactForm extends React.Component {
       name: "",
       checked: false,
       validated: false,
-      alert: "",
+      alert: "success",
     };
   }
 
