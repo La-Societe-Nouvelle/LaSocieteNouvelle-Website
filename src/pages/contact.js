@@ -59,7 +59,7 @@ class ContactForm extends React.Component {
       this.state;
 
     return (
-      <Form id="contact-form" noValidate onSubmit={this.handleSubmit}>
+      <Form id="contact-form" >
         <Form.Group className="mb-3">
           <Form.Label>Nom - Prénom</Form.Label>
           <Form.Control
@@ -110,7 +110,7 @@ class ContactForm extends React.Component {
           />
         </Form.Group>
         <div className="text-end">
-          <Button variant="secondary" type="submit">
+          <Button variant="secondary" type="submit" onClick={this.handleSubmit}>
             Envoyer
           </Button>
         </div>
@@ -132,7 +132,7 @@ class ContactForm extends React.Component {
 
   handleSubmit = (event) => {
     const form = event.currentTarget;
-    
+      console.log(form)
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -144,6 +144,7 @@ class ContactForm extends React.Component {
   };
 
   submitContactForm = async () => {
+    console.log(this.state)
     const { objet, message, email } = this.state;
     const res = await sendContactMail(objet, message, email);
     if (res.status < 300) {
