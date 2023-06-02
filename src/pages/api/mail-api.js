@@ -1,8 +1,7 @@
 export const sendContactMail = async (objet,message,coordonnees) => 
 { 
-  console.log(objet);
 
-  const recipientMail= "laura.roost@lasocietenouvelle.org";
+  const recipientMail= "contact@lasocietenouvelle.org";
   const objetMail = objet;
   const messageMail = message
           + " \r\r ----------------- \r ## Coordonnées ## \r ----------------- \r "
@@ -15,13 +14,11 @@ export const sendContactMail = async (objet,message,coordonnees) =>
     headers: {'Content-Type': 'application/json'},
     method: 'POST'
   }
-  console.log(req)
 
   try 
   {
       const res = await fetch('/api/mail-sender', req);
-      console.log("res");
-      console.log(res);
+
       return res;
   } 
   catch (error) {
