@@ -19,7 +19,7 @@ const FootprintDataChart = ({
   if (flag == "p") {
     bgColor = "RGBA(250, 89, 95,1)";
   } else if (flag == "e") {
-    bgColor = "rgb(251, 129, 133)";
+    bgColor = "rgb(251, 129, 133,0.8)";
   } else {
     bgColor = "RGBA(25, 21, 88,1)";
   }
@@ -40,8 +40,8 @@ const FootprintDataChart = ({
     label: getFlagLabel(flag),
     data: [latestValue],
     backgroundColor: bgColor,
-    categoryPercentage: 0.6,
-    barPercentage: 0.6,
+    categoryPercentage: 0.5,
+    barPercentage: 0.5,
     skipNull: true,
   };
 
@@ -50,8 +50,8 @@ const FootprintDataChart = ({
     data: divisionFootprints,
     backgroundColor: "#ffb642",
     skipNull: true,
-    categoryPercentage: 0.6,
-    barPercentage: 0.6,
+    categoryPercentage: 0.5,
+    barPercentage: 0.5,
   };
 
   const datasets = [legalUnitDataset, divisionDataset];
@@ -78,7 +78,7 @@ const FootprintDataChart = ({
     devicePixelRatio: 2,
     layout: {
       padding: {
-        top: 0,
+        top: 20,
         bottom: 10,
         left: 0,
         right: 0,
@@ -89,7 +89,18 @@ const FootprintDataChart = ({
         display: false,
       },
       datalabels: {
-        display: false,
+        anchor: "end",
+        align: "top",
+
+        formatter: function (value, context) {
+          if (value) {
+            return value + " " + unit;
+          }
+        },
+        color: "#191558",
+        font: {
+          size: 9,
+        },
       },
       tooltip: {
         enabled: true,
