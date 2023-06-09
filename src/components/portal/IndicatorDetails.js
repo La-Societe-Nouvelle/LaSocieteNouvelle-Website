@@ -4,6 +4,7 @@ import Description from "../../pages/indicateurs/parts/Description";
 import { useState } from "react";
 import { getFlagLabel } from "../../utils/utils";
 import FlagBadge from "./FlagBadges";
+import HistoricalDataChart from "../charts/HistoricalDatachart";
 
 /* Basic indicator view */
 export const IndicatorDetails = ({
@@ -22,7 +23,7 @@ export const IndicatorDetails = ({
   historicalData,
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
-
+  const [showHistoricalChart, setShowHistoricalChart] = useState(false);
   const legalUnitValue = Math.round(10 * value) / 10;
   const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
 
@@ -52,6 +53,39 @@ export const IndicatorDetails = ({
           </div>
         </div>
         <div className="text-end">
+          {historicalData &&
+            historicalData.length > 0 &&
+            (showHistoricalChart ? (
+              <Badge
+                pill
+                bg="light-secondary"
+                className="ms-2 text-primary"
+                title="Plus de détails"
+              >
+                <i className="bi bi-bar-chart-line"></i>
+                <button
+                  className="btn-badge ms-2"
+                  onClick={() => setShowHistoricalChart(false)}
+                >
+                  Données actuelles
+                </button>
+              </Badge>
+            ) : (
+              <Badge
+                pill
+                bg="light-secondary"
+                className="ms-2 text-primary"
+                title="Plus de détails"
+              >
+                <i className="bi bi-bar-chart-line"></i>
+                <button
+                  className="btn-badge ms-2"
+                  onClick={() => setShowHistoricalChart(true)}
+                >
+                  Historique
+                </button>
+              </Badge>
+            ))}
           <Badge
             pill
             bg="light"
@@ -65,13 +99,25 @@ export const IndicatorDetails = ({
           </Badge>
         </div>
         <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
-        <FootprintDataChart
-          latestValue={legalUnitValue}
-          divisionFootprint={divisionFootprint[code]}
-          unit={unitSymbol}
-          flag={flag}
-          year={year}
-        />
+   
+        {showHistoricalChart ? (
+          <HistoricalDataChart
+            historical={historicalData}
+            latestValue={legalUnitValue}
+            year={year}
+            flag={getFlagLabel(flag)}
+            unit={unitSymbol}
+          />
+        ) : (
+          <FootprintDataChart
+            latestValue={legalUnitValue}
+            divisionFootprint={divisionFootprint[code]}
+            unit={unitSymbol}
+            flag={flag}
+            year={year}
+          />
+        )}
+
         <div className="mb-3 d-flex justify-content-evenly">
           <FlagBadge flag={flag} />
 
