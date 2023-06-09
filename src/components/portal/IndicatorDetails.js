@@ -21,11 +21,11 @@ export const IndicatorDetails = ({
   unitSymbol,
   divisionFootprint,
   historicalData,
+  historicalDivisionFootprint
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
   const [showHistoricalChart, setShowHistoricalChart] = useState(false);
   const legalUnitValue = Math.round(10 * value) / 10;
-  const divisionValue = Math.round(10 * divisionFootprint[code].value) / 10;
 
   return (
     <Col key={code} className="my-4" lg={4}>
@@ -52,7 +52,13 @@ export const IndicatorDetails = ({
             </p>
           </div>
         </div>
-        <div className="text-end">
+        <div
+          className={
+            historicalData && historicalData.length > 0
+              ? "d-flex justify-content-between"
+              : "text-end"
+          }
+        >
           {historicalData &&
             historicalData.length > 0 &&
             (showHistoricalChart ? (
@@ -60,7 +66,7 @@ export const IndicatorDetails = ({
                 pill
                 bg="light-secondary"
                 className="ms-2 text-primary"
-                title="Plus de détails"
+                title="Afficher les données actuelles"
               >
                 <i className="bi bi-bar-chart-line"></i>
                 <button
@@ -75,14 +81,14 @@ export const IndicatorDetails = ({
                 pill
                 bg="light-secondary"
                 className="ms-2 text-primary"
-                title="Plus de détails"
+                title="Afficher les données historiques"
               >
                 <i className="bi bi-bar-chart-line"></i>
                 <button
                   className="btn-badge ms-2"
                   onClick={() => setShowHistoricalChart(true)}
                 >
-                  Historique
+                  Données historiques
                 </button>
               </Badge>
             ))}
@@ -99,11 +105,13 @@ export const IndicatorDetails = ({
           </Badge>
         </div>
         <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
-   
+      
         {showHistoricalChart ? (
           <HistoricalDataChart
             historical={historicalData}
             latestValue={legalUnitValue}
+            divisionFootprint={divisionFootprint[code]}
+            historicalDivisionFootprint={historicalDivisionFootprint[code]}
             year={year}
             flag={getFlagLabel(flag)}
             unit={unitSymbol}
@@ -120,7 +128,16 @@ export const IndicatorDetails = ({
 
         <div className="mb-3 d-flex justify-content-evenly">
           <FlagBadge flag={flag} />
-
+          {showHistoricalChart && (
+            <Badge
+              pill
+              bg="info"
+              title="Valeur inconnue"
+              className="text-primary"
+            >
+              Valeur inconnue
+            </Badge>
+          )}
           <Badge pill bg="warning" title="Valeur de la branche">
             Valeur de la branche
           </Badge>

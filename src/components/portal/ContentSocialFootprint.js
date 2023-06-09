@@ -7,6 +7,7 @@ export const ContentSocialFootprint = ({
   footprint,
   meta,
   divisionFootprint,
+  historicalDivisionFootprint,
   additionnalData,
 }) => {
 
@@ -42,6 +43,7 @@ export const ContentSocialFootprint = ({
         indicatorLabel={meta[key].indicatorLabel}
         source={meta[key].source}
         divisionFootprint={divisionFootprint}
+        historicalDivisionFootprint={historicalDivisionFootprint}
         {...data}
       />
     )
@@ -56,6 +58,7 @@ export const ContentSocialFootprint = ({
         indicatorLabel={meta[key].indicatorLabel}
         source={meta[key].source}
         divisionFootprint={divisionFootprint}
+        historicalDivisionFootprint={historicalDivisionFootprint}
         {...data}
       />
     )
@@ -70,6 +73,7 @@ export const ContentSocialFootprint = ({
       indicatorLabel={meta[key].indicatorLabel}
       source={meta[key].source}
       divisionFootprint={divisionFootprint}
+      historicalDivisionFootprint={historicalDivisionFootprint}
       {...data}
     />
   ));

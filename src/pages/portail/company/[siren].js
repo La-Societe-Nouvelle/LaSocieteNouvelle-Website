@@ -26,6 +26,8 @@ const CompanyData = () => {
   const [footprint, setFootprint] = useState();
   const [additionnalData, setAdditionnalData] = useState();
   const [divisionFootprint, setDivisionFootpint] = useState();
+  const [historicalDivisionFootprint, setHistoricalDivisionFootprints] = useState();
+
   const [meta, setMeta] = useState();
 
   useEffect(async () => {
@@ -40,6 +42,7 @@ const CompanyData = () => {
     if (legalUnit) {
       const code = legalUnit.activitePrincipaleCode.slice(0, 2);
       await getDivisionFootprint(code);
+      await getHistoricalDivisionFootprint(code);
     }
   }, [legalUnit]);
 
@@ -80,7 +83,34 @@ const CompanyData = () => {
         return error;
       });
   }
+  async function getHistoricalDivisionFootprint(code) {
 
+    axios
+      .get(
+        `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_a88?division=${code}&aggregate=PRD&area=FRA`
+      )
+      .then((response) => {
+        isDataFetched(true);
+        if (response.data.header.code == 200) {
+          let divisionFootprints = {};
+          response.data.data.forEach(element => {
+            const indic = element.indic;
+            if (!divisionFootprints[indic]) {
+              divisionFootprints[indic] = []; 
+            }
+            
+            divisionFootprints[indic].push(element);
+          });
+          setHistoricalDivisionFootprints(divisionFootprints);
+        } else {
+          setError(response.data.header);
+        }
+      })
+      .catch((error) => {
+        setError({ code: 500 });
+        return error;
+      });
+  }
   return (
     <>
       <Helmet>
@@ -151,6 +181,7 @@ const CompanyData = () => {
                 <ContentSocialFootprint
                   footprint={footprint}
                   meta={meta}
+                  historicalDivisionFootprint={historicalDivisionFootprint}
                   divisionFootprint={divisionFootprint}
                   additionnalData={additionnalData}
                 />

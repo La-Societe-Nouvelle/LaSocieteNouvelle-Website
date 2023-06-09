@@ -12,11 +12,11 @@ const flagConfig = {
     title: "Valeur proposée à partir de données statistiques",
   },
   e: {
-    bg: "light-secondary",
+    bg: "badge-light-secondary",
     title: "Valeur estimée à partir de données publiées par l'entreprise",
   },
   r: {
-    bg: "light-secondary",
+    bg: "badge-light-secondary",
     title: "Valeur issue d'un reporting",
   },
 };
