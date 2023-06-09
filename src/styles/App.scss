@@ -43,6 +43,11 @@ ol {
   padding: 0.65rem 1.5rem;
   font-family: "Raleway", sans-serif;
 }
+.bg-badge-light-secondary {
+  background-color: $light-secondary;
+  border : 1px solid $secondary;
+  color : $secondary;
+}
 .bg-light-secondary {
   background-color: $light-secondary;
 }
