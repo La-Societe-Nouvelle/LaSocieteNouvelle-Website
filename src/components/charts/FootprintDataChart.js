@@ -8,7 +8,6 @@ import { Bar } from "react-chartjs-2";
 import { getFlagLabel } from "../../utils/utils";
 
 const FootprintDataChart = ({
-  historicalValues,
   latestValue,
   unit,
   flag,
@@ -25,13 +24,9 @@ const FootprintDataChart = ({
     bgColor = "RGBA(25, 21, 88,1)";
   }
 
-  const sortedHistorical = historicalValues.sort((a, b) => a.year - b.year);
-  const labels = sortedHistorical.map((data) => data.year);
-
-  const legalUnitFootprints = sortedHistorical.map((data) => data.value);
+  const labels = [];
 
   labels.push(year != "NA" ? year : divisionFootprint.info);
-  legalUnitFootprints.push(latestValue);
 
   if (!labels.includes(divisionFootprint.info)) {
     labels.push(divisionFootprint.info);
@@ -43,7 +38,7 @@ const FootprintDataChart = ({
 
   const legalUnitDataset = {
     label: getFlagLabel(flag),
-    data: legalUnitFootprints,
+    data: [latestValue],
     backgroundColor: bgColor,
     categoryPercentage: 0.6,
     barPercentage: 0.6,
