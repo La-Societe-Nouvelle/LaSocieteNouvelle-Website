@@ -112,32 +112,22 @@ function TrendChart({ indic, aggregate, code, branch }) {
           : { x: data.year, y: null }
       );
 
-      let suggestedMax;
-      if (unit == "%") {
-        let max = Math.max(...trends.map((o) => o.value));
-  
-        if(max < 10) {
-          suggestedMax = 10;
-        }
-       
-        switch (true) {
-          case max < 10:
-             suggestedMax = 10;
-            break;
-          case max > 10 && max < 25:
-             suggestedMax = 25;
-            break;
-          case max > 25 && max < 50:
-             suggestedMax = 50;
-            break;
-          default:
-            suggestedMax = 100;
-            break;
-        }
-      } else {
-        suggestedMax = null;
-      }
+      let suggestedMax = null;
 
+      if (unit === "%") {
+        const max = Math.max(...trends.map((o) => o.value));
+      
+        if (max < 10) {
+          suggestedMax = 10;
+        } else if (max < 25) {
+          suggestedMax = 25;
+        } else if (max < 50) {
+          suggestedMax = 50;
+        } else {
+          suggestedMax = 100;
+        }
+      }
+      
       const options = {
         pointRadius: 0,
         scales: {
