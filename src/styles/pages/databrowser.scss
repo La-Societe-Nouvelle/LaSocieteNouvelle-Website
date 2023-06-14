@@ -1,0 +1,9 @@
+.data-table {
+    font-size : 0.8rem;
+    border : 1px solid #F0F0F8;
+    thead {
+        background-color: $primary;
+        color : #FFF;
+        text-transform: uppercase;
+    }
+}
