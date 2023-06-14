@@ -8,27 +8,7 @@ const DataBrowser = () => {
     const [error,setError] = useState(false);
     const [data, setData] = useState();
 
-    const fetchData = async(endpoint) => {
-
-    
-        await axios
-          .get(`https://api.lasocietenouvelle.org/macrodata/${endpoint}`, {
-            timeout: 15000,
-          })
-          .then((response) => {
-            if (response.data.header.code == 200) {
-              setData(response.data.data);
-            } else {
-              setError(response.data.header.code);
-            }
-            setIsLoading(false);
-          })
-          .catch(() => {
-            setError(504);
-            setIsLoading(false);
-          });
-      };
-    
+ 
  
   return (
     <>

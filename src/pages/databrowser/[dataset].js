@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Container, Table, Pagination, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Table,
+  Pagination,
+  Row,
+  Col,
+  Button,
+} from "react-bootstrap";
+import * as XLSX from "xlsx";
 
 function DatasetPage() {
   const router = useRouter();
@@ -82,6 +90,15 @@ function DatasetPage() {
     });
   };
 
+  const exportToExcel = () => {
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+    const fileName = dataset + ".xlsx";
+
+    XLSX.writeFile(workbook, fileName);
+  };
+
   return (
     <section className="open-data-brower">
       <Container>
@@ -96,6 +113,11 @@ function DatasetPage() {
             </ul>
           </Col>
           <Col>
+            <div className="text-end mb-3" >
+              <Button variant="secondary" size="sm" onClick={exportToExcel}>
+              <i className="bi bi-download"></i> Télécharger
+              </Button>
+            </div>
             <Table className="data-table" responsive>
               <thead>
                 <tr>
