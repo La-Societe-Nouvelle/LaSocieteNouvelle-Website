@@ -7,6 +7,7 @@ import {
   Row,
   Col,
   Button,
+  Form,
 } from "react-bootstrap";
 import * as XLSX from "xlsx";
 
@@ -14,9 +15,10 @@ function DatasetPage() {
   const router = useRouter();
   const { dataset } = router.query;
   const [data, setData] = useState(null);
-  const [meta, setMeta] = useState();
+  const [metadata, setMetadata] = useState();
   const [columns, setColumns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedValues, setSelectedValues] = useState({});
 
   const itemsPerPage = 100;
   const maxPaginationLinks = 20; // Maximum number of pagination links to display
@@ -28,13 +30,24 @@ function DatasetPage() {
           `${process.env.NEXT_PUBLIC_API_URL}/macrodata/${dataset}`
         );
         const results = await response.json();
+
         setData(results.data);
-        setMeta(results.meta);
         setColumns(Object.keys(results.data[0]));
+      }
+    };
+    const fetchDataMeta = async () => {
+      if (dataset) {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/macrodata/metadata/${dataset}`
+        );
+        const results = await response.json();
+        console.log(results);
+        setMetadata(results.metadata);
       }
     };
 
     fetchData();
+    fetchDataMeta();
   }, [dataset]);
 
   if (!columns.length || !data) {
@@ -98,6 +111,43 @@ function DatasetPage() {
 
     XLSX.writeFile(workbook, fileName);
   };
+
+  const generateOptions = (key) => {
+    const values = metadata[key];
+    return values.map((value) => (
+      <option key={value.code} value={value.code}>
+        {value.label}
+      </option>
+    ));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Apply filtering based on selected values
+    const selectedFilters = getFilters(selectedValues);
+    console.log(selectedFilters);
+    console.log(selectedValues)
+  };
+
+  const handleSelectChange = (event) => {
+    const { name, value } = event.target;
+    setSelectedValues((prevSelectedValues) => ({
+      ...prevSelectedValues,
+      [name]: value,
+    }));
+  };
+
+  const getFilters = (filters) => {
+
+    const selectedFilters = {}; 
+    Object.keys(filters).forEach((key) => {
+      selectedFilters[key] = metadata[key].find(
+        (item) => item.code === filters[key]
+      );
+    });
+    return selectedFilters;
+  };
+
 
   return (
     <section className="open-data-brower">
@@ -194,8 +244,35 @@ function DatasetPage() {
           </Col>
           <Col>
             <div className="ps-4 py-4">
-              <h2>Données {meta.dataset}</h2>
-              <div className="text-end mb-3">
+              <h2>Données</h2>
+       
+
+              <Form className={"filter-form"} onSubmit={handleSubmit}>
+                <Row>
+                  {Object.keys(metadata).map((key) => (
+                    <Col key={key} md={4}>
+                      <Form.Group controlId={key} className="mb-2">
+                        <Form.Label>{key}</Form.Label>
+                     <Form.Control
+                  as="select"
+                  name={key}
+                  value={selectedValues[key] || ''}
+                  onChange={handleSelectChange}
+                >
+                  <option value="">Sélectionnez une valeur</option>
+                  {generateOptions(key)}
+                </Form.Control>
+                      </Form.Group>
+                    </Col>
+                  ))}
+                </Row>
+                <div className="text-end">
+                  <Button type="submit" size="sm">
+                    Filtrer les données
+                  </Button>
+                </div>
+              </Form>
+              <div className="my-3">
                 <Button variant="secondary" size="sm" onClick={exportToExcel}>
                   <i className="bi bi-download"></i> Télécharger
                 </Button>

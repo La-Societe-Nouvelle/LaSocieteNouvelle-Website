@@ -7,3 +7,16 @@
         text-transform: uppercase;
     }
 }
+
+.filter-form {
+    border: 1px solid $light;
+    padding: 2rem;
+    label {
+        font-weight: bold;
+        font-size: 0.8rem;
+        font-variant: small-caps;
+    }
+    .form-control {
+        font-size: 0.8rem;
+    }
+}
