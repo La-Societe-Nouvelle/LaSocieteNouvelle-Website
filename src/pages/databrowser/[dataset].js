@@ -15,13 +15,14 @@ function DatasetPage() {
   const router = useRouter();
   const { dataset } = router.query;
   const [data, setData] = useState(null);
+  const [filteredData, setFilteredData] = useState();
   const [metadata, setMetadata] = useState();
   const [columns, setColumns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedValues, setSelectedValues] = useState({});
 
   const itemsPerPage = 100;
-  const maxPaginationLinks = 20; // Maximum number of pagination links to display
+  const maxPaginationLinks = 20; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,8 +65,8 @@ function DatasetPage() {
   // Pagination
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
-  const currentData = data.slice(firstIndex, lastIndex);
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const currentData = filteredData && filteredData.length > 0 ? filteredData.slice(firstIndex, lastIndex) : data.slice(firstIndex, lastIndex);
+  const totalPages = filteredData && filteredData.length > 0 ? Math.ceil(filteredData.length / itemsPerPage) : Math.ceil(data.length / itemsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -116,17 +117,23 @@ function DatasetPage() {
     const values = metadata[key];
     return values.map((value) => (
       <option key={value.code} value={value.code}>
-        {value.label}
+         {value.code != value.label ? value.code + ' - ' + value.label : value.label}
       </option>
     ));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Apply filtering based on selected values
-    const selectedFilters = getFilters(selectedValues);
-    console.log(selectedFilters);
-    console.log(selectedValues)
+  
+    const filteredData = data.filter((item) => {
+      return Object.keys(selectedValues).every((key) => {
+        // Comparer les valeurs filtrées avec les valeurs de chaque élément
+        return selectedValues[key] === '' || item[key] === selectedValues[key];
+      });
+    });
+
+    setFilteredData(filteredData);
+ 
   };
 
   const handleSelectChange = (event) => {
@@ -135,17 +142,6 @@ function DatasetPage() {
       ...prevSelectedValues,
       [name]: value,
     }));
-  };
-
-  const getFilters = (filters) => {
-
-    const selectedFilters = {}; 
-    Object.keys(filters).forEach((key) => {
-      selectedFilters[key] = metadata[key].find(
-        (item) => item.code === filters[key]
-      );
-    });
-    return selectedFilters;
   };
 
 
