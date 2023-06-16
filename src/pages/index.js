@@ -74,7 +74,7 @@ const Home = () => {
               </a>
             </Col>
           </Row>
-          <div className="homepage-illu">
+          <div className="homepage-illu d-none d-lg-block">
             <Image
               src="/illustrations/compta-extra-financiere.svg"
               alt="Illustration de l'empreinte sociétale par La Société Nouvelle montrant plusieurs éléments symboliques."

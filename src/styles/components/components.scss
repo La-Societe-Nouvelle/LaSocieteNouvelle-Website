@@ -29,33 +29,57 @@
     }
   }
 }
-
+@media (max-width: 767px) {
+  .homepage-blocs {
+    .bloc {
+      height: inherit;
+      text-align: inherit !important;
+      p {
+        width: 100%;
+        margin-left: 0 !important; /* Supprime la marge à gauche pour les écrans de petite taille */
+      }
+    }
+  }
+}
 .bg-light-purple {
   background-color: rgba(238, 228, 251, 0.8);
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: rgba(238, 228, 251, 1);
   }
-
 }
 .bg-light-green {
   background-color: rgba(235, 251, 226, 0.8);
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: rgba(235, 251, 226, 1);
   }
 }
 .bg-light-orange {
   background-color: rgba(253, 242, 224, 0.8);
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: rgba(253, 242, 224, 1);
   }
 }
 .bg-light-blue {
   background-color: rgba(228, 251, 247, 0.8);
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: rgba(228, 251, 247, 1);
+  }
+}
+
+.open-data-brower {
+    padding: 1rem 0;
+}
+.datasets-list {
+  font-size: 0.8rem;
+  li {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    a:hover {
+      color: $secondary;
+    }
   }
 }
