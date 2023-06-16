@@ -40,10 +40,7 @@ const Header = () => {
             <Nav.Link href="/portail" className="border-end border-3">
               <i className="bi bi-search"></i> Rechercher une entreprise
             </Nav.Link>
-            <Nav.Link
-              href="/publier-mon-empreinte"
-              target="_blank"
-            >
+            <Nav.Link href="/publier-mon-empreinte" target="_blank">
               Publier mes données
             </Nav.Link>
             <Nav.Link
@@ -92,7 +89,11 @@ const Header = () => {
             >
               <i className="bi bi-github"></i>
             </Nav.Link>
-            <Nav.Link href="/blog" rel="noreferrer" title="Consulter notre blog">
+            <Nav.Link
+              href="/blog"
+              rel="noreferrer"
+              title="Consulter notre blog"
+            >
               <span className="top-bar-link"> Blog</span>
             </Nav.Link>
             <Nav.Link href="faq" rel="noreferrer" title="Accéder à la FAQ">
@@ -104,43 +105,33 @@ const Header = () => {
           </div>
         </div>
 
-        <Row className="py-3 align-items-center ">
-          <Col xs={12} lg={4}>
+        <Row className="py-3 align-items-center justify-content-between ">
+          <Col>
             <Navbar.Brand href="/">
               <Image
                 src="/logo-La-Societe-Nouvelle.svg"
-                height={120}
+                height={100}
                 className="d-inline-block align-center"
                 alt="logo"
               />
             </Navbar.Brand>
           </Col>
-          <Col xs={12} lg={4} className="text-center">
-            <h1>
+          <Col>
+            <h1 className="text-center">
               Système d'Information national sur les impacts des entreprises
             </h1>
           </Col>
-          <Col xs={12} lg={3} className="offset-lg-1 text-end">
-            <div className="d-flex flex-column ps-5">
-              <Button
-                href="https://metriz.lasocietenouvelle.org"
-                size="sm"
-                variant="outline-secondary"
-                target="_blank"
-                rel="noreferrer"
-                className=""
-              >
-                Mesurer mon empreinte <i className="bi bi-box-arrow-up-right"></i>
-              </Button>
-              <Button
-                href="/publier-mon-empreinte"
-                variant="secondary"
-                size="sm"
-                className="mt-2"
-              >
-                Publier mon empreinte
-              </Button>
-            </div>
+          <Col>
+            <Nav className="justify-content-end">
+              <NavDropdown title="Vous êtes ?">
+                <NavDropdown.Item href="/categorie/notes-analyse">
+                  Un expert-comptable
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/categorie/fiches-methodologiques">
+                  Une entreprise
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
           </Col>
         </Row>
       </Container>
@@ -160,8 +151,7 @@ const Header = () => {
                     Mesure de l'empreinte sociétale
                   </NavDropdown.Item>
 
-
-                  <NavDropdown 
+                  <NavDropdown
                     title="Les indicateurs"
                     className="dropdown-item subdropdown"
                     key="end"
@@ -174,7 +164,7 @@ const Header = () => {
                         href={"/indicateurs/" + indic}
                         className="subdropdown-item"
                       >
-                      {metaData[indic].libelle}
+                        {metaData[indic].libelle}
                       </Dropdown.Item>
                     ))}
                   </NavDropdown>
@@ -199,10 +189,7 @@ const Header = () => {
                     Documentation <i className="bi bi-box-arrow-up-right"></i>
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/entreprises">Entreprises</Nav.Link>
-                <Nav.Link href="/cabinets-comptables">
-                  Cabinets comptables
-                </Nav.Link>
+            
                 <NavDropdown title="Publications">
                   <NavDropdown.Item href="/categorie/notes-analyse">
                     Notes d'analyses

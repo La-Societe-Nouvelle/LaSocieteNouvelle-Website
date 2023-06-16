@@ -45,6 +45,7 @@ export const KeyFigures = () => {
   return (
     <section className="bg-light">
       <Container>
+        <h2 className="text-center mb-5">Chiffres-clés</h2>
         <Row className="d-flex justify-content-between">
           <Col className="statistic-item" xs={12} lg={4}>
             <Image
