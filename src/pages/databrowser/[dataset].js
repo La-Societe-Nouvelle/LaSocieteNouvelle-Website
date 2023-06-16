@@ -102,69 +102,152 @@ function DatasetPage() {
   return (
     <section className="open-data-brower">
       <Container>
-        <h2>Données {console.log(meta)}</h2>
         <Row>
-          <Col lg={3}>
-            <ul className="list-type-none">
-              <li>Données macroéconomiques des branches</li>
-              <li>
-                Données macroéconomiques des branches pour les objectifs 2030
-              </li>
-            </ul>
+          <Col lg={3} className="bg-light rounded">
+            <div className="px-1 py-4">
+              <h2>Jeux de données</h2>
+              <h3 className="h5">Empreintes des activités économiques</h3>
+              <ul className="list-unstyled datasets-list">
+                <li>
+                  <a href="/databrowser/macro_fpt_a38">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    branches d'activité - données historiques
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/macro_fpt_a88">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    divisions économiques - données historiques
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/macro_fpt_trd_a38">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    branches d'activité - tendances
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/macro_fpt_trd_a88">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    divisions économiques - tendances
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/macro_fpt_tgt_a38">
+                    <i className="bi bi-chevron-right"></i> Objectifs annuels
+                    par branches d'activité
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/macro_fpt_tgt_a88">
+                    <i className="bi bi-chevron-right"></i> Objectifs annuels
+                    des divisions économiques
+                  </a>
+                </li>
+              </ul>
+              <hr></hr>
+              <h4>Données des comptes nationaux</h4>
+              <ul className="list-unstyled datasets-list">
+                <li>
+                  <a href="/databrowser/na_cpeb">
+                    <i className="bi bi-chevron-right"></i> Comptes de
+                    production et d'exploitation par branche
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/na_ere">
+                    <i className="bi bi-chevron-right"></i> Tableau des entrées
+                    ressources emplois
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/na_pat_nf">
+                    <i className="bi bi-chevron-right"></i> Comptes de
+                    patrimoine non-financier
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/na_tei">
+                    <i className="bi bi-chevron-right"></i> Tableau des entrées
+                    intermédiaires
+                  </a>
+                </li>
+                <li>
+                  <a href="/databrowser/na_tess">
+                    <i className="bi bi-chevron-right"></i> Tableau des
+                    entrées-sorties symétrique
+                  </a>
+                </li>
+              </ul>
+              <hr></hr>
+
+              <h4>Données sociales</h4>
+              <ul className="list-unstyled datasets-list">
+                <li>
+                  <a href="/databrowser/bts_data">
+                    <i className="bi bi-chevron-right"></i> Indicateurs issus de
+                    la base tous salariés
+                  </a>
+                </li>
+              </ul>
+            </div>
           </Col>
           <Col>
-            <div className="text-end mb-3" >
-              <Button variant="secondary" size="sm" onClick={exportToExcel}>
-              <i className="bi bi-download"></i> Télécharger
-              </Button>
-            </div>
-            <Table className="data-table" responsive>
-              <thead>
-                <tr>
-                  {columns.map((column) => (
-                    <th key={column}>{column}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {currentData.map((entry, index) => (
-                  <tr key={index}>
+            <div className="ps-4 py-4">
+              <h2>Données {meta.dataset}</h2>
+              <div className="text-end mb-3">
+                <Button variant="secondary" size="sm" onClick={exportToExcel}>
+                  <i className="bi bi-download"></i> Télécharger
+                </Button>
+              </div>
+              <Table className="data-table" responsive>
+                <thead>
+                  <tr>
                     {columns.map((column) => (
-                      <td key={column}>
-                        {column === "lastupdate" || column === "lastupload"
-                          ? formatDate(entry[column])
-                          : entry[column]}
-                      </td>
+                      <th key={column}>{column}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </Table>
-            <Pagination className="justify-content-end">
-              <Pagination.Prev
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-              />
-              {getPageRange().map((page, index) => {
-                if (page === "...") {
-                  return <Pagination.Ellipsis key={index} disabled />;
-                } else {
-                  return (
-                    <Pagination.Item
-                      key={index}
-                      active={page === currentPage}
-                      onClick={() => handlePageChange(page)}
-                    >
-                      {page}
-                    </Pagination.Item>
-                  );
-                }
-              })}
-              <Pagination.Next
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-              />
-            </Pagination>
+                </thead>
+                <tbody>
+                  {currentData.map((entry, index) => (
+                    <tr key={index}>
+                      {columns.map((column) => (
+                        <td key={column}>
+                          {column === "lastupdate" || column === "lastupload"
+                            ? formatDate(entry[column])
+                            : entry[column]}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+              <Pagination className="justify-content-end">
+                <Pagination.Prev
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                />
+                {getPageRange().map((page, index) => {
+                  if (page === "...") {
+                    return <Pagination.Ellipsis key={index} disabled />;
+                  } else {
+                    return (
+                      <Pagination.Item
+                        key={index}
+                        active={page === currentPage}
+                        onClick={() => handlePageChange(page)}
+                      >
+                        {page}
+                      </Pagination.Item>
+                    );
+                  }
+                })}
+                <Pagination.Next
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                />
+              </Pagination>
+            </div>
           </Col>
         </Row>
       </Container>

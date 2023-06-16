@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button,
   Col,
   Container,
   Dropdown,
@@ -23,44 +22,92 @@ const Header = () => {
     setPage(router.pathname);
   });
 
-  return page.includes("portail") ? (
-    <Navbar expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="/">
-          <Image
-            src="/logo-La-Societe-Nouvelle.svg"
-            height="80"
-            className="d-inline-block align-center"
-            alt="logo"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/portail" className="border-end border-3">
-              <i className="bi bi-search"></i> Rechercher une entreprise
-            </Nav.Link>
-            <Nav.Link href="/publier-mon-empreinte" target="_blank">
-              Publier mes données
-            </Nav.Link>
-            <Nav.Link
-              href="https://api.lasocietenouvelle.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              API publique
-            </Nav.Link>
-            <Nav.Link
-              href="https://docs.lasocietenouvelle.org/public-api"
-              target="_blank"
-            >
-              Documentation
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  ) : (
+  if (page.startsWith("/portail")) {
+
+    return (
+      <Navbar expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="/">
+            <Image
+              src="/logo-La-Societe-Nouvelle.svg"
+              height="80"
+              className="d-inline-block align-center"
+              alt="logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/portail" className="border-end border-3">
+                <i className="bi bi-search"></i> Rechercher une entreprise
+              </Nav.Link>
+              <Nav.Link href="/publier-mon-empreinte" target="_blank">
+                Publier mes données
+              </Nav.Link>
+              <Nav.Link
+                href="https://api.lasocietenouvelle.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                API publique
+              </Nav.Link>
+              <Nav.Link
+                href="https://docs.lasocietenouvelle.org/public-api"
+                target="_blank"
+              >
+                Documentation
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+  console.log(page)
+  if (page.startsWith("/databrowser")) {
+    return (
+      <Navbar >
+        <Container>
+          <Navbar.Brand href="/">
+            <Image
+              src="/logo-La-Societe-Nouvelle.svg"
+              height="80"
+              className="d-inline-block align-center"
+              alt="logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+            <NavDropdown title="Data">
+                <NavDropdown.Item href="/databrowser/#">
+                  Macrodata
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/#">
+                Macrodata
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link
+                href="https://api.lasocietenouvelle.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Data
+              </Nav.Link>
+              <Nav.Link
+                href="https://docs.lasocietenouvelle.org/public-api"
+                target="_blank"
+              >
+                Documentation
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+  // Retour pour toutes les autres pages du site
+  return (
     <div className="header">
       <Container>
         <div className="top-bar d-flex justify-content-between align-items-center">
@@ -189,7 +236,7 @@ const Header = () => {
                     Documentation <i className="bi bi-box-arrow-up-right"></i>
                   </NavDropdown.Item>
                 </NavDropdown>
-            
+
                 <NavDropdown title="Publications">
                   <NavDropdown.Item href="/categorie/notes-analyse">
                     Notes d'analyses
