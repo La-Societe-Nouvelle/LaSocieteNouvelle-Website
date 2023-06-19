@@ -32,9 +32,12 @@ $border-radius : 1rem;
 
 /* Navbar */
  
-$navbar-light-color :  #515050 ;
+$navbar-light-color :  $primary ;
 $navbar-light-hover-color : $secondary;
 $nav-link-padding-y : 0.85rem;
+$nav-link-font-weight : 600;
+$nav-link-font-size : 0.85rem;
+$dropdown-min-width: 18rem;
 
 $card-cap-bg : #fbfbff;
 $card-border-width : 0;

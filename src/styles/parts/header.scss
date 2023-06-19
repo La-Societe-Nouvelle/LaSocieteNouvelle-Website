@@ -22,10 +22,6 @@
   font-weight: 700;
 }
 
-.navbar-nav {
-  font-family: $headings-font-family;
-  font-weight: 700;
-}
 
 .menu .subdropdown .nav-link {
   padding: 0.25rem 1rem;
@@ -57,15 +53,18 @@ header {
   }
 }
 
+.nav-link {
+  text-transform: uppercase;
+}
+// .dropdown-item, .dropdown-item-text {
+//   font-size: 0.85rem;
+// }
+
 .menu {
   border-top: 1px solid $light;
   border-bottom: 1px solid $light;
-  font-size: 0.85rem;
-  text-transform: uppercase;
 
-  .dropdown-item {
-    text-transform: initial;
-  }
+
   .dropdown-toggle::after {
     border: none;
     content: "\F282";

@@ -62,10 +62,10 @@ const Header = () => {
       </Navbar>
     );
   }
-  console.log(page);
+
   if (page.startsWith("/databrowser")) {
     return (
-      <Navbar>
+      <Navbar className="justify-content-end">
         <Container>
           <Navbar.Brand href="/">
             <Image
@@ -75,9 +75,9 @@ const Header = () => {
               alt="logo"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
+          <Navbar.Collapse id="databrowser-navbar-nav" className="justify-content-end">
+            <Nav >
               <NavDropdown title="Data">
                 <Dropdown.ItemText>
                   Empreintes des activités économiques
@@ -86,13 +86,6 @@ const Header = () => {
                   Macrodata
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link
-                href="https://api.lasocietenouvelle.org"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Data
-              </Nav.Link>
               <Nav.Link
                 href="https://docs.lasocietenouvelle.org/public-api"
                 target="_blank"
