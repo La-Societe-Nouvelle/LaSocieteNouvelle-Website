@@ -15,14 +15,14 @@ function DatasetPage() {
   const router = useRouter();
   const { dataset } = router.query;
   const [data, setData] = useState(null);
-  const [filteredData, setFilteredData] = useState();
+  const [filteredData, setFilteredData] = useState(null);
   const [metadata, setMetadata] = useState();
   const [columns, setColumns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedValues, setSelectedValues] = useState({});
 
   const itemsPerPage = 100;
-  const maxPaginationLinks = 20; 
+  const maxPaginationLinks = 20;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,8 +65,12 @@ function DatasetPage() {
   // Pagination
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
-  const currentData = filteredData && filteredData.length > 0 ? filteredData.slice(firstIndex, lastIndex) : data.slice(firstIndex, lastIndex);
-  const totalPages = filteredData && filteredData.length > 0 ? Math.ceil(filteredData.length / itemsPerPage) : Math.ceil(data.length / itemsPerPage);
+  const currentData = filteredData
+    ? filteredData.slice(firstIndex, lastIndex)
+    : data.slice(firstIndex, lastIndex);
+  const totalPages = filteredData
+    ? Math.ceil(filteredData.length / itemsPerPage)
+    : Math.ceil(data.length / itemsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -106,44 +110,46 @@ function DatasetPage() {
 
   const exportToExcel = () => {
     const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet(data);
+    let dataToExport;
+    filteredData ? (dataToExport = filteredData) : (dataToExport = data);
+
+    const worksheet = XLSX.utils.json_to_sheet(dataToExport);
     XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
-    const fileName = dataset + ".xlsx";
+    const fileName = "LSN-" + dataset + ".xlsx";
 
     XLSX.writeFile(workbook, fileName);
   };
 
   const generateOptions = (key) => {
     const values = metadata[key];
-    
+
     const sortedValues = values.sort((a, b) => {
-      if (typeof a.code === 'string' && typeof b.code === 'string') {
+      if (typeof a.code === "string" && typeof b.code === "string") {
         return a.code.localeCompare(b.code);
       }
-      
+
       return 0;
     });
-  
+
     return sortedValues.map((value) => (
       <option key={value.code} value={value.code}>
-        {value.code !== value.label ? `${value.code} - ${value.label}` : value.label}
+        {value.code !== value.label
+          ? `${value.code} - ${value.label}`
+          : value.label}
       </option>
     ));
   };
-  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     const filteredData = data.filter((item) => {
       return Object.keys(selectedValues).every((key) => {
-        // Comparer les valeurs filtrées avec les valeurs de chaque élément
-        return selectedValues[key] === '' || item[key] === selectedValues[key];
+        return selectedValues[key] === "" || item[key] === selectedValues[key];
       });
     });
 
     setFilteredData(filteredData);
- 
   };
 
   const handleSelectChange = (event) => {
@@ -153,8 +159,10 @@ function DatasetPage() {
       [name]: value,
     }));
   };
-
-
+  const handleCancel = () => {
+    setSelectedValues({});
+    setFilteredData(null);
+  };
   return (
     <section className="open-data-brower">
       <Container>
@@ -248,36 +256,49 @@ function DatasetPage() {
               </ul>
             </div>
           </Col>
-          <Col>
-            <div className="ps-4 py-4">
+          <Col lg={9}>
+            <div className="px-4 py-4 border rounded">
               <h2>Données</h2>
-       
 
               <Form className={"filter-form"} onSubmit={handleSubmit}>
                 <Row>
-                  {Object.keys(metadata).map((key) => (
-                    <Col key={key} md={4}>
-                      <Form.Group controlId={key} className="mb-2">
-                        <Form.Label>{key}</Form.Label>
-                     <Form.Control
-                  as="select"
-                  name={key}
-                  value={selectedValues[key] || ''}
-                  onChange={handleSelectChange}
-                >
-                  <option value="">Sélectionnez une valeur</option>
-                  {generateOptions(key)}
-                </Form.Control>
-                      </Form.Group>
-                    </Col>
-                  ))}
+                  {Object.keys(metadata).map((key) => {
+                    if (metadata[key].length > 1) {
+                      return (
+                        <Col key={key} md={4}>
+                          <Form.Group controlId={key} className="mb-2">
+                            <Form.Label>{key}</Form.Label>
+                            <Form.Control
+                              as="select"
+                              name={key}
+                              value={selectedValues[key] || ""}
+                              onChange={handleSelectChange}
+                            >
+                              <option value="">Sélectionnez une valeur</option>
+                              {generateOptions(key)}
+                            </Form.Control>
+                          </Form.Group>
+                        </Col>
+                      );
+                    }
+                    return null;
+                  })}
                 </Row>
                 <div className="text-end">
+                  <Button
+                    variant="info"
+                    className="me-2"
+                    size="sm"
+                    onClick={handleCancel}
+                  >
+                    Effacer les filtres
+                  </Button>
                   <Button type="submit" size="sm">
                     Filtrer les données
                   </Button>
                 </div>
               </Form>
+              <hr></hr>
               <div className="my-3">
                 <Button variant="secondary" size="sm" onClick={exportToExcel}>
                   <i className="bi bi-download"></i> Télécharger
@@ -292,17 +313,29 @@ function DatasetPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {currentData.map((entry, index) => (
-                    <tr key={index}>
-                      {columns.map((column) => (
-                        <td key={column}>
-                          {column === "lastupdate" || column === "lastupload"
-                            ? formatDate(entry[column])
-                            : entry[column]}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
+                  {currentData
+                    .sort((a, b) => {
+                      const firstCellValueA = a[columns[0]];
+                      const firstCellValueB = b[columns[0]];
+                      if (firstCellValueA < firstCellValueB) {
+                        return -1;
+                      }
+                      if (firstCellValueA > firstCellValueB) {
+                        return 1;
+                      }
+                      return 0;
+                    })
+                    .map((entry, index) => (
+                      <tr key={index}>
+                        {columns.map((column) => (
+                          <td key={column}>
+                            {column === "lastupdate" || column === "lastupload"
+                              ? formatDate(entry[column])
+                              : entry[column]}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
                 </tbody>
               </Table>
               <Pagination className="justify-content-end">
