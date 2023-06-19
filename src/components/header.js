@@ -23,7 +23,6 @@ const Header = () => {
   });
 
   if (page.startsWith("/portail")) {
-
     return (
       <Navbar expand="lg">
         <Container fluid>
@@ -63,10 +62,10 @@ const Header = () => {
       </Navbar>
     );
   }
-  console.log(page)
+  console.log(page);
   if (page.startsWith("/databrowser")) {
     return (
-      <Navbar >
+      <Navbar>
         <Container>
           <Navbar.Brand href="/">
             <Image
@@ -79,12 +78,12 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-            <NavDropdown title="Data">
+              <NavDropdown title="Data">
+                <Dropdown.ItemText>
+                  Empreintes des activités économiques
+                </Dropdown.ItemText>
                 <NavDropdown.Item href="/databrowser/#">
                   Macrodata
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/#">
-                Macrodata
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link

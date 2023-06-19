@@ -115,12 +115,22 @@ function DatasetPage() {
 
   const generateOptions = (key) => {
     const values = metadata[key];
-    return values.map((value) => (
+    
+    const sortedValues = values.sort((a, b) => {
+      if (typeof a.code === 'string' && typeof b.code === 'string') {
+        return a.code.localeCompare(b.code);
+      }
+      
+      return 0;
+    });
+  
+    return sortedValues.map((value) => (
       <option key={value.code} value={value.code}>
-         {value.code != value.label ? value.code + ' - ' + value.label : value.label}
+        {value.code !== value.label ? `${value.code} - ${value.label}` : value.label}
       </option>
     ));
   };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
