@@ -22,7 +22,6 @@
   font-weight: 700;
 }
 
-
 .menu .subdropdown .nav-link {
   padding: 0.25rem 1rem;
   display: flex;
@@ -37,11 +36,7 @@
     content: "\f285";
     font-size: 0.8rem;
   }
-
 }
-.menu .subdropdown-item {
-    font-size: 0.9rem;
-  }
 
 header {
   h2 {
@@ -56,14 +51,22 @@ header {
 .nav-link {
   text-transform: uppercase;
 }
-// .dropdown-item, .dropdown-item-text {
-//   font-size: 0.85rem;
-// }
+.dropdown-item .nav-link {
+  font-size: 0.85rem;
+  text-transform: inherit;
+  font-weight: normal;
+  padding: 0.5rem 0;
+  &:hover {
+    border: inherit !important;
+  }
+}
+.dropdown-item-text {
+  font-weight: 600;
+}
 
 .menu {
   border-top: 1px solid $light;
   border-bottom: 1px solid $light;
-
 
   .dropdown-toggle::after {
     border: none;
@@ -78,6 +81,12 @@ header {
     line-height: 1;
     vertical-align: -0.125em;
     -webkit-font-smoothing: antialiased;
+  }
+  .dropdown-menu {
+    .dropdown-toggle::after {
+      content: "\F285";
+      font-size: 0.9rem;
+    }
   }
 
   .nav-link {

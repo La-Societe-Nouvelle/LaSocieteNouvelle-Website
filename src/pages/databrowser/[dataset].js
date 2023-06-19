@@ -284,7 +284,7 @@ function DatasetPage() {
                     return null;
                   })}
                 </Row>
-                <div className="text-end">
+                <div className="text-end my-3">
                   <Button
                     variant="info"
                     className="me-2"
@@ -296,7 +296,7 @@ function DatasetPage() {
                   <Button type="submit" size="sm">
                     Filtrer les données
                   </Button>
-                </div>Add button to reset filters and implement table sorting
+                </div>
               </Form>
               <hr></hr>
               <div className="my-3">

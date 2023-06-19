@@ -67,23 +67,67 @@ const Header = () => {
     return (
       <Navbar className="justify-content-end">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/" className="me-4">
             <Image
               src="/logo-La-Societe-Nouvelle.svg"
               height="80"
-              className="d-inline-block align-center"
               alt="logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
-          <Navbar.Collapse id="databrowser-navbar-nav" className="justify-content-end">
-            <Nav >
-              <NavDropdown title="Data">
-                <Dropdown.ItemText>
+          <Navbar.Collapse
+            id="databrowser-navbar-nav"
+          >
+            <Nav>
+              <NavDropdown title="Data" id="data-dropdown">
+                <NavDropdown.ItemText>
                   Empreintes des activités économiques
-                </Dropdown.ItemText>
-                <NavDropdown.Item href="/databrowser/#">
-                  Macrodata
+                </NavDropdown.ItemText>
+                <NavDropdown.Item href="/databrowser/macro_fpt_a38">
+                  Empreintes des branches d'activité - données historiques
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/macro_fpt_a88">
+                  Empreintes des divisions économiques - données historiques
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/macro_fpt_trd_a38">
+                  Empreintes des branches d'activité - tendances
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/macro_fpt_trd_a88">
+                  Empreintes des divisions économiques - tendances
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/macro_fpt_tgt_a38">
+                  Objectifs annuels par branches d'activité
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/macro_fpt_tgt_a88">
+                  Objectifs annuels des divisions économiques
+                </NavDropdown.Item>
+
+                <NavDropdown.Divider />
+
+                <NavDropdown.ItemText>
+                  Données des comptes nationaux
+                </NavDropdown.ItemText>
+                <NavDropdown.Item href="/databrowser/na_cpeb">
+                  Comptes de production et d'exploitation par branche
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/na_ere">
+                  Tableau des entrées ressources emplois
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/na_pat_nf">
+                  Comptes de patrimoine non-financier
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/na_tei">
+                  Tableau des entrées intermédiaires
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/databrowser/na_tess">
+                  Tableau des entrées-sorties symétrique
+                </NavDropdown.Item>
+
+                <NavDropdown.Divider />
+
+                <NavDropdown.ItemText>Données sociales</NavDropdown.ItemText>
+                <NavDropdown.Item href="/databrowser/bts_data">
+                  Indicateurs issus de la base tous salariés
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link
@@ -98,7 +142,7 @@ const Header = () => {
       </Navbar>
     );
   }
-  // Retour pour toutes les autres pages du site
+
   return (
     <div className="header">
       <Container>
@@ -185,26 +229,25 @@ const Header = () => {
               <Nav className="flex-grow-1 justify-content-between">
                 <Nav.Link href="/">Accueil</Nav.Link>
 
-                <NavDropdown title="Notre approche ">
+                <NavDropdown title="Notre approche">
                   <NavDropdown.Item href="/mesurer-empreinte-societale">
                     Mesure de l'empreinte sociétale
                   </NavDropdown.Item>
 
                   <NavDropdown
                     title="Les indicateurs"
-                    className="dropdown-item subdropdown"
+                    className="dropdown-item"
                     key="end"
                     drop="end"
                   >
                     {metaData.indics.map((indic, index) => (
-                      <Dropdown.Item
-                        eventKey={index}
+                      <NavDropdown.Item
                         key={index}
                         href={"/indicateurs/" + indic}
                         className="subdropdown-item"
                       >
                         {metaData[indic].libelle}
-                      </Dropdown.Item>
+                      </NavDropdown.Item>
                     ))}
                   </NavDropdown>
                 </NavDropdown>
