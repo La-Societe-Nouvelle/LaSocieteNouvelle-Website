@@ -296,7 +296,7 @@ function DatasetPage() {
                   <Button type="submit" size="sm">
                     Filtrer les données
                   </Button>
-                </div>
+                </div>Add button to reset filters and implement table sorting
               </Form>
               <hr></hr>
               <div className="my-3">
