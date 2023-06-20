@@ -1,8 +1,7 @@
 .data-table {
   font-size: 0.8rem;
   border: 1px solid #f0f0f8;
-  height: 480px;
-  overflow-y: scroll;
+
   thead {
     background-color: $primary;
     color: #fff;
@@ -23,6 +22,10 @@
 
 .dataset-page {
   padding-top: 1.5rem;
+  .table-responsive {
+    max-height: 480px;
+    overflow-y: scroll; 
+  }
   .btn-sm {
     padding: 0.5rem;
     font-size: 0.875rem;
