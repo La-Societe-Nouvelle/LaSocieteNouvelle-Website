@@ -31,7 +31,7 @@ const Home = () => {
           <Row>
             <Col lg={6}>
               <a href="/portail" className="bloc  bg-light-purple">
-                <h2>Accédez au portail des impacts des entreprises </h2>
+                <h2>Accédez aux données des entreprises </h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                   eget velit euismod, varius mi sed, tristique dolor. Donec
@@ -45,7 +45,7 @@ const Home = () => {
                 target="_blank"
                 className="bloc  bg-light-orange text-end"
               >
-                <h2>Mesurez l'Impact de la production de votre entreprise</h2>
+                <h2>Mesurez l'empreinte de votre entreprise</h2>
                 <p className="ms-auto">
                   Notre Application Web Metriz vous permet de mesurer des
                   impacts sociaux - environnementaux d'un euro de production
@@ -54,12 +54,10 @@ const Home = () => {
               </a>
             </Col>
             <Col lg={6}>
-              <a href="/databrowser" className="bloc  bg-light-green">
-                <h2>Accédez aux données macroéconomiques</h2>
+              <a href="/databrowser" className="bloc bg-light-green">
+                <h2>Accédez aux données statistiques</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  eget velit euismod, varius mi sed, tristique dolor. Donec
-                  imperdiet aliquet augue, nec accumsan diam.
+                  Nous mettons à votre disposition des jeux de données statistiques. Ils visent à fournir un suivi des impacts et de la performance des branches d'activité.
                 </p>
               </a>
             </Col>
