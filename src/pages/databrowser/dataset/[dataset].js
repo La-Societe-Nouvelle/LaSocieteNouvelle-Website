@@ -160,15 +160,17 @@ function DatasetPage() {
   };
 
   const generateOptions = (key) => {
-    return metadata[key].map((value) => (
-      <option key={value.code} value={value.code}>
-        {value.code !== value.label
-          ? `${value.code} - ${value.label}`
-          : value.label}
+    const values = [...metadata[key]];
+  
+    values.sort((a, b) => a.label.localeCompare(b.label));
+  
+    return values.map(({ code, label }) => (
+      <option key={code} value={code}>
+        {code !== label ? `${code} - ${label}` : label}
       </option>
     ));
   };
-
+  
   const handleSelectChange = (event) => {
     const { name, value } = event.target;
     setSelectedValues((prevSelectedValues) => ({
@@ -181,11 +183,9 @@ function DatasetPage() {
     setSelectedValues({});
     setFilteredData(data);
 
-    // Supprimer les paramètres de l'URL
     const { pathname } = router;
     const { dataset } = router.query;
 
-    // Créer un nouvel objet query avec uniquement le paramètre dataset
     const newQuery = { dataset };
 
     router.push({
@@ -340,7 +340,7 @@ function DatasetPage() {
               <hr></hr>
               <div className="mb-3 d-flex justify-content-between align-items-center">
                 <p className="small mb-0">
-                 <b>{filteredData.length}</b> valeurs affichées
+                  <b>{filteredData.length}</b> valeurs affichées
                 </p>
                 <Button variant="secondary" size="sm" onClick={exportToExcel}>
                   <i className="bi bi-download"></i> Télécharger les données
