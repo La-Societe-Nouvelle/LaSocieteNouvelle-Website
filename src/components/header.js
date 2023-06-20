@@ -73,12 +73,17 @@ const Header = () => {
           <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
           <Navbar.Collapse id="databrowser-navbar-nav">
             <Nav>
-              <NavDropdown title="Données" id="data-dropdown">
+              <NavDropdown
+                title="Données"
+                id="data-dropdown"
+      
+              >
                 <NavDropdown
                   title="Empreintes des activités économiques"
                   className="dropdown-item"
                   key="end"
                   drop="end"
+      
                 >
                   <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a38">
                     Empreintes des branches d'activité - données historiques
@@ -106,6 +111,7 @@ const Header = () => {
                   className="dropdown-item"
                   key="end"
                   drop="end"
+                  
                 >
                   <NavDropdown.Item href="/databrowser/dataset/na_cpeb">
                     Comptes de production et d'exploitation par branche
@@ -146,11 +152,15 @@ const Header = () => {
                 href="https://cran.r-project.org/web/packages/lsnstat/index.html"
                 target="_blank"
               >
-                LSNStat
-              </Nav.Link>
-              <Nav.Link href="/databrowser/publications" >
-                Publications
-              </Nav.Link>
+                LSN-stat
+              </Nav.Link> 
+              <Nav.Link
+                href="https://github.com/La-Societe-Nouvelle/lsnr-lab"
+                target="_blank"
+              >
+                LsnR-Lab
+              </Nav.Link> 
+              <Nav.Link href="/databrowser/publications">Publications</Nav.Link>
               <Nav.Link
                 href="https://docs.lasocietenouvelle.org/series-donnees"
                 target="_blank"
