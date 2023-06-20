@@ -13,8 +13,9 @@ import * as XLSX from "xlsx";
 
 function DatasetPage() {
   const router = useRouter();
-  const { dataset } = router.query;
+  const { dataset,indic,aggregate,year } = router.query;
   const [data, setData] = useState(null);
+  const [datasetMetadata, setDatasetMetadata] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
   const [metadata, setMetadata] = useState();
   const [columns, setColumns] = useState([]);
@@ -24,15 +25,27 @@ function DatasetPage() {
   const itemsPerPage = 100;
   const maxPaginationLinks = 20;
 
+  const applyFilters = () => {
+    const filteredData = data.filter((item) => {
+      return Object.keys(selectedValues).every((key) => {
+        return selectedValues[key] === "" || item[key] === selectedValues[key];
+      });
+    });
+  
+    setFilteredData(filteredData);
+  };
+  
+
   useEffect(() => {
+  
     const fetchData = async () => {
       if (dataset) {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/macrodata/${dataset}`
         );
         const results = await response.json();
-
         setData(results.data);
+        setDatasetMetadata(results.meta);
         setColumns(Object.keys(results.data[0]));
       }
     };
@@ -42,7 +55,6 @@ function DatasetPage() {
           `${process.env.NEXT_PUBLIC_API_URL}/macrodata/metadata/${dataset}`
         );
         const results = await response.json();
-        console.log(results);
         setMetadata(results.metadata);
       }
     };
@@ -50,6 +62,31 @@ function DatasetPage() {
     fetchData();
     fetchDataMeta();
   }, [dataset]);
+
+  useEffect(() => {
+    // Apply pre-selected filters based on URL parameters
+    if (indic) {
+      setSelectedValues((prevSelectedValues) => ({
+        ...prevSelectedValues,
+        indic: indic,
+      }));
+    }
+    if (aggregate) {
+      setSelectedValues((prevSelectedValues) => ({
+        ...prevSelectedValues,
+        aggregate: aggregate,
+      }));
+    }
+  }, [indic, aggregate]);
+  // ...
+
+  useEffect(() => {
+      if (data) {
+        applyFilters();
+      }
+    }, [selectedValues, data]);
+  
+// ...
 
   if (!columns.length || !data) {
     return (
@@ -65,12 +102,10 @@ function DatasetPage() {
   // Pagination
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
-  const currentData = filteredData
-    ? filteredData.slice(firstIndex, lastIndex)
-    : data.slice(firstIndex, lastIndex);
-  const totalPages = filteredData
-    ? Math.ceil(filteredData.length / itemsPerPage)
-    : Math.ceil(data.length / itemsPerPage);
+  const currentData = filteredData.slice(firstIndex, lastIndex);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -121,36 +156,13 @@ function DatasetPage() {
   };
 
   const generateOptions = (key) => {
-    const values = metadata[key];
-
-    const sortedValues = values.sort((a, b) => {
-      if (typeof a.code === "string" && typeof b.code === "string") {
-        return a.code.localeCompare(b.code);
-      }
-
-      return 0;
-    });
-
-    return sortedValues.map((value) => (
+    return metadata[key].map((value) => (
       <option key={value.code} value={value.code}>
-        {value.code !== value.label
-          ? `${value.code} - ${value.label}`
-          : value.label}
+        {value.code !== value.label ? `${value.code} - ${value.label}` : value.label}
       </option>
     ));
   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const filteredData = data.filter((item) => {
-      return Object.keys(selectedValues).every((key) => {
-        return selectedValues[key] === "" || item[key] === selectedValues[key];
-      });
-    });
-
-    setFilteredData(filteredData);
-  };
+  
 
   const handleSelectChange = (event) => {
     const { name, value } = event.target;
@@ -159,51 +171,70 @@ function DatasetPage() {
       [name]: value,
     }));
   };
+
+
+
   const handleCancel = () => {
     setSelectedValues({});
-    setFilteredData(null);
+    setFilteredData(data);
+  
+    // Supprimer les paramètres de l'URL
+    const { pathname } = router;
+    const { dataset } = router.query;
+  
+    // Créer un nouvel objet query avec uniquement le paramètre dataset
+    const newQuery = { dataset };
+  
+    router.push({
+      pathname,
+      query: newQuery,
+    });
   };
+  
+  
+  
+
   return (
-    <section className="open-data-brower">
-      <Container>
+    <section className="dataset-page bg-light">
+      <Container fluid>
         <Row>
-          <Col lg={3} className="bg-light rounded">
-            <div className="px-1 py-4">
+          <Col lg={3}>
+            <div className="bg-white rounded p-4">
               <h2>Jeux de données</h2>
               <h3 className="h5">Empreintes des activités économiques</h3>
               <ul className="list-unstyled datasets-list">
                 <li>
-                  <a href="/databrowser/macro_fpt_a38">
+                  <a href="/databrowser/dataset/macro_fpt_a38">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     branches d'activité - données historiques
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/macro_fpt_a88">
+                  <a href="/databrowser/dataset/macro_fpt_a88">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     divisions économiques - données historiques
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/macro_fpt_trd_a38">
+                  <a href="/databrowser/dataset/macro_fpt_trd_a38">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     branches d'activité - tendances
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/macro_fpt_trd_a88">
+                  <a href="/databrowser/dataset/macro_fpt_trd_a88">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     divisions économiques - tendances
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/macro_fpt_tgt_a38">
+                  <a href="/databrowser/dataset/macro_fpt_tgt_a38">
                     <i className="bi bi-chevron-right"></i> Objectifs annuels
                     par branches d'activité
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/macro_fpt_tgt_a88">
+                  <a href="/databrowser/dataset/macro_fpt_tgt_a88">
                     <i className="bi bi-chevron-right"></i> Objectifs annuels
                     des divisions économiques
                   </a>
@@ -213,31 +244,31 @@ function DatasetPage() {
               <h4>Données des comptes nationaux</h4>
               <ul className="list-unstyled datasets-list">
                 <li>
-                  <a href="/databrowser/na_cpeb">
+                  <a href="/databrowser/dataset/na_cpeb">
                     <i className="bi bi-chevron-right"></i> Comptes de
                     production et d'exploitation par branche
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/na_ere">
+                  <a href="/databrowser/dataset/na_ere">
                     <i className="bi bi-chevron-right"></i> Tableau des entrées
                     ressources emplois
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/na_pat_nf">
+                  <a href="/databrowser/dataset/na_pat_nf">
                     <i className="bi bi-chevron-right"></i> Comptes de
                     patrimoine non-financier
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/na_tei">
+                  <a href="/databrowser/dataset/na_tei">
                     <i className="bi bi-chevron-right"></i> Tableau des entrées
                     intermédiaires
                   </a>
                 </li>
                 <li>
-                  <a href="/databrowser/na_tess">
+                  <a href="/databrowser/dataset/na_tess">
                     <i className="bi bi-chevron-right"></i> Tableau des
                     entrées-sorties symétrique
                   </a>
@@ -248,7 +279,7 @@ function DatasetPage() {
               <h4>Données sociales</h4>
               <ul className="list-unstyled datasets-list">
                 <li>
-                  <a href="/databrowser/bts_data">
+                  <a href="/databrowser/dataset/bts_data">
                     <i className="bi bi-chevron-right"></i> Indicateurs issus de
                     la base tous salariés
                   </a>
@@ -256,11 +287,30 @@ function DatasetPage() {
               </ul>
             </div>
           </Col>
-          <Col lg={9}>
-            <div className="px-4 py-4 border rounded">
-              <h2>Données</h2>
 
-              <Form className={"filter-form"} onSubmit={handleSubmit}>
+          <Col>
+            <div className="p-4 border rounded bg-white ">
+              <div className="d-flex justify-content-between align-items-center">
+                <h2>
+                  <i className="bi bi-box"></i> {datasetMetadata.label}
+                </h2>
+
+                <div className="mb-3 text-end">
+                  <a
+                    href={datasetMetadata.doc}
+                    target="_blank"
+                    className="bg-light btn btn-sm rounded  me-2"
+                  >
+                    <i className="bi bi-info-circle-fill"></i> Note explicative
+                  </a>
+                  <Button variant="secondary" size="sm" onClick={exportToExcel}>
+                    <i className="bi bi-download"></i> Télécharger
+                  </Button>
+                </div>
+              </div>
+              <hr></hr>
+
+              <Form className={"filter-form"} >
                 <Row>
                   {Object.keys(metadata).map((key) => {
                     if (metadata[key].length > 1) {
@@ -274,7 +324,7 @@ function DatasetPage() {
                               value={selectedValues[key] || ""}
                               onChange={handleSelectChange}
                             >
-                              <option value="">Sélectionnez une valeur</option>
+                              <option value="">Toutes les valeurs</option>
                               {generateOptions(key)}
                             </Form.Control>
                           </Form.Group>
@@ -284,26 +334,14 @@ function DatasetPage() {
                     return null;
                   })}
                 </Row>
-                <div className="text-end my-3">
-                  <Button
-                    variant="info"
-                    className="me-2"
-                    size="sm"
-                    onClick={handleCancel}
-                  >
+                <div className=" my-3">
+                  <Button variant="info" size="sm" onClick={handleCancel}>
                     Effacer les filtres
-                  </Button>
-                  <Button type="submit" size="sm">
-                    Filtrer les données
                   </Button>
                 </div>
               </Form>
               <hr></hr>
-              <div className="my-3">
-                <Button variant="secondary" size="sm" onClick={exportToExcel}>
-                  <i className="bi bi-download"></i> Télécharger
-                </Button>
-              </div>
+
               <Table className="data-table" responsive>
                 <thead>
                   <tr>
