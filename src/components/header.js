@@ -65,7 +65,7 @@ const Header = () => {
 
   if (page.startsWith("/databrowser")) {
     return (
-      <Navbar className="justify-content-end">
+      <Navbar className="justify-content-end border-bottom border-2">
         <Container fluid>
           <Navbar.Brand href="/databrowser" className="me-4">
             <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
@@ -148,7 +148,7 @@ const Header = () => {
               >
                 LSNStat
               </Nav.Link>
-              <Nav.Link href="/databrowser/publications" target="_blank">
+              <Nav.Link href="/databrowser/publications" >
                 Publications
               </Nav.Link>
               <Nav.Link

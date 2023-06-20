@@ -17,7 +17,6 @@ const Publications = () => {
     try {
       setIsLoading(true);
       const data = await fetchPublications();
-      console.log(data)
       setPublications(data.posts);
     } catch (error) {
       console.error(error);
@@ -28,14 +27,15 @@ const Publications = () => {
   return (
     <>
       <Helmet>
-        <title>La Société Nouvelle | Blog </title>
+        <title>La Société Nouvelle | Publications </title>
       </Helmet>
  
       <section className="databrowser">
         <Container>
+          <h2 className="text-center mb-5">Publications</h2>
           <Row>
             {isLoading && <PostPreviewLoading />}
-            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id} />)}
+            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id} path={'/databrowser/publications/'} />)}
           </Row>
 
         </Container>

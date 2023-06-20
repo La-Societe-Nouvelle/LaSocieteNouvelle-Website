@@ -2,7 +2,7 @@
   color: darken($light, 40%);
   font-weight: 600;
 }
-#latest-posts .border-2{
+#latest-posts .border-2 {
   border-width: 2px;
 }
 #latest-posts .post-preview {
@@ -70,7 +70,11 @@
 }
 
 article {
+  margin: 2rem 0 2rem 0;
+  border: 2px solid $light;
+  padding: 4rem;
+  border-radius: 1rem;
   h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }

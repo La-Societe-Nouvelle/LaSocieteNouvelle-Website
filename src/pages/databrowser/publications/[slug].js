@@ -1,30 +1,22 @@
 import { Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { Helmet } from "react-helmet";
-import SinglePost from "../../components/posts/SinglePost";
-import fetchPostBySlug from "../../utils/fetchSinglePost";
+import SinglePost from "../../../components/posts/SinglePost";
+import fetchPostBySlug from "../../../utils/fetchSinglePost";
 
 export default function Post({ post }) {
-
   return (
     <>
       <Helmet>
-        <title>
-          La Société Nouvelle | {post.title}
-          des entreprises?
-        </title>
+        <title>La Société Nouvelle | {post.title}</title>
       </Helmet>
-      <header className="bg-light pt-4 pb-2">
+      <section className="bg-light p-2">
         <Container>
-          <div className="breadcrumb">
-            <a href="/">Accueil</a> / <a href={"/blog/"}> Blog/</a>
-            <a href={"/" + post.slug}>{post.title}</a>
+          <div className="bg-white rounded">
+            <SinglePost post={post} />
           </div>
         </Container>
-      </header>
-      <Container>
-        <SinglePost post={post} />
-      </Container>
+      </section>
     </>
   );
 }
