@@ -66,72 +66,93 @@ const Header = () => {
   if (page.startsWith("/databrowser")) {
     return (
       <Navbar className="justify-content-end">
-        <Container>
-          <Navbar.Brand href="/" className="me-4">
-            <Image
-              src="/logo-La-Societe-Nouvelle.svg"
-              height="80"
-              alt="logo"
-            />
+        <Container fluid>
+          <Navbar.Brand href="/databrowser" className="me-4">
+            <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
-          <Navbar.Collapse
-            id="databrowser-navbar-nav"
-          >
+          <Navbar.Collapse id="databrowser-navbar-nav">
             <Nav>
-              <NavDropdown title="Data" id="data-dropdown">
-                <NavDropdown.ItemText>
-                  Empreintes des activités économiques
-                </NavDropdown.ItemText>
-                <NavDropdown.Item href="/databrowser/macro_fpt_a38">
-                  Empreintes des branches d'activité - données historiques
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/macro_fpt_a88">
-                  Empreintes des divisions économiques - données historiques
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/macro_fpt_trd_a38">
-                  Empreintes des branches d'activité - tendances
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/macro_fpt_trd_a88">
-                  Empreintes des divisions économiques - tendances
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/macro_fpt_tgt_a38">
-                  Objectifs annuels par branches d'activité
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/macro_fpt_tgt_a88">
-                  Objectifs annuels des divisions économiques
-                </NavDropdown.Item>
+              <NavDropdown title="Données" id="data-dropdown">
+                <NavDropdown
+                  title="Empreintes des activités économiques"
+                  className="dropdown-item"
+                  key="end"
+                  drop="end"
+                >
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a38">
+                    Empreintes des branches d'activité - données historiques
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a88">
+                    Empreintes des divisions économiques - données historiques
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a38">
+                    Empreintes des branches d'activité - tendances
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a88">
+                    Empreintes des divisions économiques - tendances
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a38">
+                    Objectifs annuels par branches d'activité
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a88">
+                    Objectifs annuels des divisions économiques
+                  </NavDropdown.Item>
+                </NavDropdown>
 
                 <NavDropdown.Divider />
-
-                <NavDropdown.ItemText>
-                  Données des comptes nationaux
-                </NavDropdown.ItemText>
-                <NavDropdown.Item href="/databrowser/na_cpeb">
-                  Comptes de production et d'exploitation par branche
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/na_ere">
-                  Tableau des entrées ressources emplois
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/na_pat_nf">
-                  Comptes de patrimoine non-financier
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/na_tei">
-                  Tableau des entrées intermédiaires
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/databrowser/na_tess">
-                  Tableau des entrées-sorties symétrique
-                </NavDropdown.Item>
+                <NavDropdown
+                  title="Données des comptes nationaux"
+                  className="dropdown-item"
+                  key="end"
+                  drop="end"
+                >
+                  <NavDropdown.Item href="/databrowser/dataset/na_cpeb">
+                    Comptes de production et d'exploitation par branche
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/na_ere">
+                    Tableau des entrées ressources emplois
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/na_pat_nf">
+                    Comptes de patrimoine non-financier
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/na_tei">
+                    Tableau des entrées intermédiaires
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/databrowser/dataset/na_tess">
+                    Tableau des entrées-sorties symétrique
+                  </NavDropdown.Item>
+                </NavDropdown>
 
                 <NavDropdown.Divider />
-
-                <NavDropdown.ItemText>Données sociales</NavDropdown.ItemText>
-                <NavDropdown.Item href="/databrowser/bts_data">
-                  Indicateurs issus de la base tous salariés
-                </NavDropdown.Item>
+                <NavDropdown
+                  title="Données sociales"
+                  className="dropdown-item"
+                  key="end"
+                  drop="end"
+                >
+                  <NavDropdown.Item href="/databrowser/dataset/bts_data">
+                    Indicateurs issus de la base tous salariés
+                  </NavDropdown.Item>
+                </NavDropdown>
               </NavDropdown>
               <Nav.Link
-                href="https://docs.lasocietenouvelle.org/public-api"
+                href="https://api.lasocietenouvelle.org"
+                target="_blank"
+              >
+                API
+              </Nav.Link>
+              <Nav.Link
+                href="https://cran.r-project.org/web/packages/lsnstat/index.html"
+                target="_blank"
+              >
+                LSNStat
+              </Nav.Link>
+              <Nav.Link href="/databrowser/publications" target="_blank">
+                Publications
+              </Nav.Link>
+              <Nav.Link
+                href="https://docs.lasocietenouvelle.org/series-donnees"
                 target="_blank"
               >
                 Documentation
