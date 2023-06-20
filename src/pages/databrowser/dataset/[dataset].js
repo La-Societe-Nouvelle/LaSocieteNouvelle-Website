@@ -13,7 +13,7 @@ import * as XLSX from "xlsx";
 
 function DatasetPage() {
   const router = useRouter();
-  const { dataset,indic,aggregate,year } = router.query;
+  const { dataset, indic, aggregate, year } = router.query;
   const [data, setData] = useState(null);
   const [datasetMetadata, setDatasetMetadata] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
@@ -31,13 +31,11 @@ function DatasetPage() {
         return selectedValues[key] === "" || item[key] === selectedValues[key];
       });
     });
-  
+
     setFilteredData(filteredData);
   };
-  
 
   useEffect(() => {
-  
     const fetchData = async () => {
       if (dataset) {
         const response = await fetch(
@@ -77,16 +75,23 @@ function DatasetPage() {
         aggregate: aggregate,
       }));
     }
-  }, [indic, aggregate]);
+
+    if (year) {
+      setSelectedValues((prevSelectedValues) => ({
+        ...prevSelectedValues,
+        year: year,
+      }));
+    }
+  }, [indic, aggregate, year]);
   // ...
 
   useEffect(() => {
-      if (data) {
-        applyFilters();
-      }
-    }, [selectedValues, data]);
-  
-// ...
+    if (data) {
+      applyFilters();
+    }
+  }, [selectedValues, data]);
+
+  // ...
 
   if (!columns.length || !data) {
     return (
@@ -105,7 +110,6 @@ function DatasetPage() {
   const currentData = filteredData.slice(firstIndex, lastIndex);
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -158,11 +162,12 @@ function DatasetPage() {
   const generateOptions = (key) => {
     return metadata[key].map((value) => (
       <option key={value.code} value={value.code}>
-        {value.code !== value.label ? `${value.code} - ${value.label}` : value.label}
+        {value.code !== value.label
+          ? `${value.code} - ${value.label}`
+          : value.label}
       </option>
     ));
   };
-  
 
   const handleSelectChange = (event) => {
     const { name, value } = event.target;
@@ -172,27 +177,22 @@ function DatasetPage() {
     }));
   };
 
-
-
   const handleCancel = () => {
     setSelectedValues({});
     setFilteredData(data);
-  
+
     // Supprimer les paramètres de l'URL
     const { pathname } = router;
     const { dataset } = router.query;
-  
+
     // Créer un nouvel objet query avec uniquement le paramètre dataset
     const newQuery = { dataset };
-  
+
     router.push({
       pathname,
       query: newQuery,
     });
   };
-  
-  
-  
 
   return (
     <section className="dataset-page bg-light">
@@ -303,14 +303,11 @@ function DatasetPage() {
                   >
                     <i className="bi bi-info-circle-fill"></i> Note explicative
                   </a>
-                  <Button variant="secondary" size="sm" onClick={exportToExcel}>
-                    <i className="bi bi-download"></i> Télécharger
-                  </Button>
                 </div>
               </div>
               <hr></hr>
 
-              <Form className={"filter-form"} >
+              <Form className={"filter-form"}>
                 <Row>
                   {Object.keys(metadata).map((key) => {
                     if (metadata[key].length > 1) {
@@ -341,6 +338,15 @@ function DatasetPage() {
                 </div>
               </Form>
               <hr></hr>
+              <div className="mb-3 d-flex justify-content-between align-items-center">
+                <p className="small mb-0">
+                 <b>{filteredData.length}</b> valeurs affichées
+                </p>
+                <Button variant="secondary" size="sm" onClick={exportToExcel}>
+                  <i className="bi bi-download"></i> Télécharger les données
+                  affichées
+                </Button>
+              </div>
 
               <Table className="data-table" responsive>
                 <thead>

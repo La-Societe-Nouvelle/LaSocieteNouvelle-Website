@@ -1,31 +1,32 @@
 .data-table {
-    font-size : 0.8rem;
-    border : 1px solid #F0F0F8;
-    thead {
-        background-color: $primary;
-        color : #FFF;
-        text-transform: uppercase;
-    }
+  font-size: 0.8rem;
+  border: 1px solid #f0f0f8;
+  height: 480px;
+  overflow-y: scroll;
+  thead {
+    background-color: $primary;
+    color: #fff;
+    text-transform: uppercase;
+  }
 }
 
 .filter-form {
-  
-    label {
-        font-weight: bold;
-        font-size: 0.8rem;
-        font-variant: small-caps;
-    }
-    .form-control {
-        font-size: 0.8rem;
-    }
+  label {
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-variant: small-caps;
+  }
+  .form-control {
+    font-size: 0.8rem;
+  }
 }
 
 .dataset-page {
-    padding-top: 1.5rem;
-    .btn-sm {
-        padding: 0.5rem;
-        font-size: 0.875rem;
-        border-radius: 1.2rem;
-        font-weight: 600;
-    }
+  padding-top: 1.5rem;
+  .btn-sm {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 1.2rem;
+    font-weight: 600;
+  }
 }

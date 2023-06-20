@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 
 const DataBrowser = () => {
@@ -14,9 +14,8 @@ const DataBrowser = () => {
         />
         <meta
           property="og:description"
-          content="Consultez les données macroéconomique produites par La Société Nouvelle."
+          content="Consultez les données statistiques produites par La Société Nouvelle."
         />
-        {/*      <meta property="og:image" content="/portail.jpg" /> */}
       </Helmet>
 
       <section className="databrowser">
@@ -30,7 +29,6 @@ const DataBrowser = () => {
                 <a
                   href="https://lasocietenouvelle.org"
                   target="_blank"
-                  className="text-primary text-decoration-underline"
                 >
                   La Société Nouvelle
                 </a>
@@ -39,9 +37,9 @@ const DataBrowser = () => {
                 entreprises.
               </p>
               <Button
-                variant="secondary"
+                variant="primary"
                 className="my-2"
-                href="/databrowser/dataset/macro_fpt_a38/?indic=GHG&aggregate=PRD"
+                href="/databrowser/dataset/macro_fpt_a38/?indic=GHG&aggregate=PRD&year=2019"
               >
                 <i className="bi bi-search"></i> Explorer les jeux de données
               </Button>
