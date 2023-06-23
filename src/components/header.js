@@ -174,6 +174,28 @@ const Header = () => {
     );
   }
 
+  if (page.startsWith("/devenir-partenaire")) {
+    return (
+      <Navbar className="justify-content-end border-bottom border-2">
+        <Container fluid>
+          <Navbar.Brand href="/devenir-partenaire" className="me-4">
+            <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
+          <Navbar.Collapse id="databrowser-navbar-nav">
+            <Nav>
+              <Nav.Link
+                href="/devenir-partenaire/expert-comptable"
+              >
+                EXPERTS COMPTABLES
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+
   return (
     <div className="header">
       <Container>
