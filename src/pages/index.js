@@ -30,12 +30,12 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg={6}>
-              <a href="/portail" className="bloc  bg-light-purple">
+              <a href="/portail" target="_blank" className="bloc  bg-light-purple">
                 <h2>Accédez aux données des entreprises </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  eget velit euismod, varius mi sed, tristique dolor. Donec
-                  imperdiet aliquet augue, nec accumsan diam.
+                  Consultez l'empreinte sociétale d'une entreprise à 
+                  partir de son numéro SIREN ou de sa dénomination. Les données
+                  sont accessibles via notre portail web et notre API publique.
                 </p>
               </a>
             </Col>
@@ -45,29 +45,33 @@ const Home = () => {
                 target="_blank"
                 className="bloc  bg-light-orange text-end"
               >
-                <h2>Mesurez l'empreinte de votre entreprise</h2>
+                <h2>Mesurez et publiez l'empreinte de votre entreprise</h2>
                 <p className="ms-auto">
-                  Notre Application Web Metriz vous permet de mesurer des
-                  impacts sociaux - environnementaux d'un euro de production
-                  vendue.
-                </p>
+                  Notre application web libre et open source Metriz vous permet 
+                  de mesurer l'empreinte de votre production sur 12 dimensions
+                  sociales et environnementales clés.
+                </p> 
               </a>
             </Col>
             <Col lg={6}>
-              <a href="/databrowser" className="bloc bg-light-green">
+              <a href="/databrowser" target="_blank" className="bloc bg-light-green">
                 <h2>Accédez aux données statistiques</h2>
                 <p>
-                  Nous mettons à votre disposition des jeux de données statistiques. Ils visent à fournir un suivi des impacts et de la performance des branches d'activité.
+                  L'ensemble des données issues de nos travaux statistiques
+                  sont librement téléchargeables. Elles comprennent un suivi des
+                  empreintes des activités économiques françaises et des 
+                  trajectoires sectorielles cibles.
                 </p>
               </a>
             </Col>
             <Col lg={6}>
-              <a href="/#" className="bloc  bg-light-blue text-end">
+              <a href="/devenir-partenaire" target="_blank" className="bloc  bg-light-blue text-end">
                 <h2>Devenez partenaire du projet</h2>
                 <p className="ms-auto">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  eget velit euismod, varius mi sed, tristique dolor. Donec
-                  imperdiet aliquet augue, nec accumsan diam.
+                  Contribuez à l'accélération de cette initiative libre
+                  en proposant le service de mesure à vos clients, 
+                  en soumettant des contributions open source
+                  ou en sponsorisant nos travaux.
                 </p>
               </a>
             </Col>

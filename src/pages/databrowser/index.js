@@ -32,9 +32,13 @@ const DataBrowser = () => {
                 >
                   La Société Nouvelle
                 </a>
-                . Ils visent à fournir un suivi des impacts et de la performance
-                des branches d'activité, et des éléments de comparaison pour les
-                entreprises.
+                . Ils comprennent un suivi de l'empreinte des activités économiques françaises, 
+                leur tendance sur les années à venir et des trajectoires cibles sectorielles.
+              </p>
+              <p>
+                Les données permettent à chaque entreprise de se situer par rapport à sa branche
+                d'activité et d'assurer la compatibilité de ses activités avec la transition
+                écologique et sociale.
               </p>
               <Button
                 variant="primary"
@@ -146,7 +150,7 @@ const DataBrowser = () => {
             <Col>
               <div className="box h-100">
                 <h4>
-                  <i className="bi bi-archive-fill"></i> Données sociales
+                  <i className="bi bi-archive-fill"></i> Autres jeux de données
                 </h4>
                 <ul className="list-unstyled datasets-list">
                   <li>
@@ -172,37 +176,37 @@ const DataBrowser = () => {
               />
             </Col>
             <Col lg={8}>
-              <h4>Package CRAN - LSNStat - Accés aux données</h4>
+              <h4>Package CRAN - lsnstat - Accés aux données</h4>
               <p> Le package R <a
                   href="https://cran.r-project.org/web/packages/lsnstat/index.html"
                   target="_blank"
                 >
-                  Lsnstat
-                </a> facilite l'accès au service 'macrodata' de l'API publique 'La Societe Nouvelle'. Il permet une consultation aisée et
-                complète de toutes les données macroéconomiques utilisées par La
-                Societe Nouvelle, ainsi que de leurs métadonnées associées.
+                  lsnstat
+                </a> facilite l'exploitation des données macroéconomiques produites 
+                et utilisées par La Société Nouvelle, ainsi que leurs métadonnées associées,
+                 dans le langage .R.
               </p>
               <p>
-                L'API correspondante est accessible via le lien suivant :{" "}
+                Il fait le lien avec l'API publique 'La Société Nouvelle'.
+              </p>
+              <p>
+                L'API est directement accessible via le lien suivant :{" "}
                 <a href="https://api.lasocietenouvelle.org/" target="_blank">
                   https://api.lasocietenouvelle.org/
                 </a>
               </p>
-              <h4>Package LsnR-Lab - Production des données</h4>
+              <h4>Package lsnR-Lab - Production des données</h4>
               <p>
-                Le package R lsnR-Lab permet de
-                calculer les empreintes sociales et environnementales de la
+                Le package R lsnR-Lab contient le script de calcul
+                des empreintes sociales et environnementales de la
                 production des activités économiques françaises.
               </p>
 
               <p>
-                Utilisez les fonctions fournies pour estimer les empreintes des
+                Les fonctions disponibles permettent d'estimer les empreintes des
                 agrégats macroéconomiques des branches (NACE 38) et des divisions (NACE 88)
-                économiques. Ces empreintes sont évaluées selon douze dimensions
+                économiques, sur les douze dimensions
                 sociales et environnementales de l'Empreinte Sociétale.
-                Ces données servent à comparer, définir des trajectoires cibles
-                et fournir des valeurs par défaut pour les unités légales
-                françaises.
               </p>
 
               <p>
