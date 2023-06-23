@@ -51,27 +51,13 @@ const BecomePartner = () => {
               <div className="text-center border p-4  illu-box ">
                 <Image
                   fluid
-                  src="/illustrations/open-source.svg"
-                  alt="Icone open source"
+                  src="/illustrations/coop.svg"
+                  alt="Icone Contribution"
                 />
-                <h3>Code source ouvert</h3>
+                <h3>Proposez la mesure des indicateurs</h3>
                 <p>
-                  Le code source est ouvert, vous pouvez y accéder
-                  via notre répertoire GitHub
-                </p>
-              </div>
-            </Col>
-            <Col>
-              <div className="text-center border  p-4  illu-box ">
-                <Image
-                  fluid
-                  src="/illustrations/loupe.svg"
-                  alt="Icone Methodo "
-                />
-                <h3>Méthodologie publique</h3>
-                <p>
-                  La méthodologie est publique et accessible en ligne pour les
-                  curieux et les experts
+                  Vous êtes expert-comptable et vous souhaitez informer
+                  vos clients sur l'empreinte sociétale de leur production ?
                 </p>
               </div>
             </Col>
@@ -82,10 +68,39 @@ const BecomePartner = () => {
                   src="/illustrations/coop.svg"
                   alt="Icone Contribution"
                 />
-                <h3>Contribution bienvenue</h3>
+                <h3>Faites évoluer l'application web Metriz</h3>
                 <p>
-                  Une idée ? Une correction ? Une remarque ? Toute
-                  contribution est la bienvenue
+                  Vous êtes développeur (JavaScript) et vous souhaitez
+                  contribuer à l'amélioration de l'application web ?
+                </p>
+              </div>
+            </Col>
+            <Col>
+              <div className="text-center border  p-4  illu-box ">
+                <Image
+                  fluid
+                  src="/illustrations/coop.svg"
+                  alt="Icone Contribution"
+                />
+                <h3>Sponsorisez nos travaux</h3>
+                <p>
+                  Vous souhaitez nous soutenir financièrement,
+                  pour accélérer le déploiement du système d'information ?
+                </p>
+              </div>
+            </Col>
+            <Col>
+              <div className="text-center border  p-4  illu-box ">
+                <Image
+                  fluid
+                  src="/illustrations/coop.svg"
+                  alt="Icone Contribution"
+                />
+                <h3>Collaborez avec nous</h3>
+                <p>
+                  Vous avez une idée, un projet de collaboration 
+                  ou vous souhaitez mettre vos ressources ou vos compétences
+                  au service du projet ?
                 </p>
               </div>
             </Col>
