@@ -37,7 +37,7 @@ const Posts = () => {
         <Container>
           <Row>
             {isLoading && <PostPreviewLoading />}
-            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id} />)}
+            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id}  path={'/blog/'} />)}
           </Row>
           <hr></hr>
           <div className="mt-4 mx-3">

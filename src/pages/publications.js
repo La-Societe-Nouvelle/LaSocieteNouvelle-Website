@@ -35,7 +35,7 @@ const Posts = () => {
         <Container>
           <Row>
             {isLoading && <PostPreviewLoading />}
-            {!isLoading && posts.map((post) => <PostPreview post={post} />)}
+            {!isLoading && posts.map((post) => <PostPreview post={post}  path={'/blog/'}  />)}
           </Row>
         </Container>
       </section>

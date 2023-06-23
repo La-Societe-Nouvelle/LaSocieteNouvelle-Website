@@ -26,67 +26,66 @@ const Home = () => {
         <meta property="og:url" content="https://lasocietenouvelle.org/" />
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
-
-      <section>
+      <section className="homepage-blocs">
         <Container>
-          <Row className="align-items-center">
-            <Col lg={8}>
-              <h2 className="mb-4">Empreintes sociétales des entreprises</h2>
-              <p>
-                Notre mission est d'informer l'ensemble des agents économiques
-                sur <strong>les impacts de la valeur produite </strong>des
-                unités légales françaises, sur des{" "}
-                <strong>dimensions sociales et environnementales</strong> clefs
-                au regard des enjeux de soutenabilité.
-              </p>
-              <p>
-                Notre <b>base de données est ouverte</b> : un portail et une API
-                publique sont à votre disposition pour accéder aux données
-                publiées par les entreprises, et aux jeux de données
-                macroéconomiques que nous produisons.
-              </p>
-              <p>
-                Un <b>outil de mesure</b> est librement accessible pour
-                faciliter la mesure des indicateurs.
-              </p>
-              <p>
-                L'initiative est <strong>open data </strong>et{" "}
-                <strong>open source </strong> afin qu'elle puisse servir à tous.
-                Toute exploitation de nos ressources, y compris dans un but
-                commercial, est autorisée.
-              </p>
-              <p>
-                Si vous souhaitez contribuer ou en savoir plus,
-                <a
-                  href="/contact"
-                  className="text-primary text-decoration-underline "
-                >
-                  contactez-nous
-                </a>
-                .
-              </p>
-              <div>
-                <Button
-                  variant="primary"
-                  href="/portail"
-                  target="_blank"
-                  className="mt-2"
-                >
-                  <i className="bi bi-search"></i> Recherchez les impacts d'une
-                  entreprise
-                </Button>
-              </div>
+          <Row>
+            <Col lg={6}>
+              <a href="/portail" target="_blank" className="bloc  bg-light-purple">
+                <h2>Accédez aux données des entreprises </h2>
+                <p>
+                  Consultez l'empreinte sociétale d'une entreprise à 
+                  partir de son numéro SIREN ou de sa dénomination. Les données
+                  sont accessibles via notre portail web et notre API publique.
+                </p>
+              </a>
             </Col>
-            <Col className=" px-4 text-end">
-              <Image
-                fluid
-                src="/illustrations/compta-extra-financiere.svg"
-                alt="Illustration de l'empreinte sociétale par La Société Nouvelle montrant plusieurs éléments symboliques."
-              />
+            <Col lg={6}>
+              <a
+                href="https://metriz.lasocietenouvelle.org"
+                target="_blank"
+                className="bloc  bg-light-orange text-end"
+              >
+                <h2>Mesurez et publiez l'empreinte de votre entreprise</h2>
+                <p className="ms-auto">
+                  Notre application web libre et open source Metriz vous permet 
+                  de mesurer l'empreinte de votre production sur 12 dimensions
+                  sociales et environnementales clés.
+                </p> 
+              </a>
+            </Col>
+            <Col lg={6}>
+              <a href="/databrowser" target="_blank" className="bloc bg-light-green">
+                <h2>Accédez aux données statistiques</h2>
+                <p>
+                  L'ensemble des données issues de nos travaux statistiques
+                  sont librement téléchargeables. Elles comprennent un suivi des
+                  empreintes des activités économiques françaises et des 
+                  trajectoires sectorielles cibles.
+                </p>
+              </a>
+            </Col>
+            <Col lg={6}>
+              <a href="/devenir-partenaire" target="_blank" className="bloc  bg-light-blue text-end">
+                <h2>Devenez partenaire du projet</h2>
+                <p className="ms-auto">
+                  Contribuez à l'accélération de cette initiative libre
+                  en proposant le service de mesure à vos clients, 
+                  en soumettant des contributions open source
+                  ou en sponsorisant nos travaux.
+                </p>
+              </a>
             </Col>
           </Row>
+          <div className="homepage-illu d-none d-lg-block">
+            <Image
+              src="/illustrations/compta-extra-financiere.svg"
+              alt="Illustration de l'empreinte sociétale par La Société Nouvelle montrant plusieurs éléments symboliques."
+              height={300}
+            />
+          </div>
         </Container>
       </section>
+   
       <KeyFigures></KeyFigures>
       <section className="mt-4">
         <Container>
@@ -272,7 +271,11 @@ const Home = () => {
           <h3 className="text-center">Avec le soutien de</h3>
           <div className=" d-flex justify-content-between align-items-center mt-5">
             <div>
-              <a href="https://www.euratechnologies.com/" target="_blank" title="Accéder au site"> 
+              <a
+                href="https://www.euratechnologies.com/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   height={80}
                   src="/partners/euratech.svg"
@@ -294,7 +297,11 @@ const Home = () => {
               </a>
             </div>
             <div>
-              <a href="https://www.impactfrance.eco/" target="_blank" title="Accéder au site">
+              <a
+                href="https://www.impactfrance.eco/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   height={80}
                   src="/partners/Logo_du_Mouvement_Impact_France.svg"
@@ -303,7 +310,11 @@ const Home = () => {
               </a>
             </div>
             <div>
-              <a href="https://www.bpifrance.fr/" target="_blank" title="Accéder au site">
+              <a
+                href="https://www.bpifrance.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   height={80}
                   src="/partners/bpifrance.svg"
@@ -313,7 +324,11 @@ const Home = () => {
               </a>
             </div>
             <div className="text-center">
-              <a href="https://www.hautsdefrance.fr/" target="_blank" title="Accéder au site">
+              <a
+                href="https://www.hautsdefrance.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   height={80}
                   src="/partners/logo-hdf.svg"
@@ -322,14 +337,22 @@ const Home = () => {
               </a>
             </div>
             <div>
-              <a href="https://www.economie.gouv.fr/" target="_blank" title="Accéder au site">
+              <a
+                href="https://www.economie.gouv.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   height={80}
                   src="/partners/logotype-rouge-bleu.png"
                   alt="Logo France 2030"
                 ></Image>
               </a>
-              <a href="https://www.economie.gouv.fr/" target="_blank" title="Accéder au site">
+              <a
+                href="https://www.economie.gouv.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
                 <Image
                   src="/partners/ministere_de_l_economie.svg"
                   alt="Logo Ministère de l'économie "

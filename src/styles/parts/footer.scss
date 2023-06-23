@@ -1,7 +1,9 @@
 /* ----- footer ----- */
 footer {
     font-size: 0.8rem;
-  
+    .nav-link {
+      text-transform: inherit;
+    }
     h6 {
       margin: 1rem 0;
     }

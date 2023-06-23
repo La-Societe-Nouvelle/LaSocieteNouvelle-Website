@@ -16,9 +16,9 @@ function TagPage({ tagName, posts }) {
 
       <section id="Posts">
         <Container>
-          <Row>
+          <Row> 
             {posts.map((post) => (
-              <PostPreview post={post} key={post.id} />
+              <PostPreview post={post} key={post.id}  path={'/blog/'}  />
             ))}
           </Row>
         </Container>

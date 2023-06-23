@@ -2,7 +2,7 @@ import React from "react";
 import { Badge, Button, Card, Col } from "react-bootstrap";
 import { cutString } from "../../utils/utils";
 
-function PostPreview({post}) {
+function PostPreview({post,path}) {
 
   return (
     <Col key={post.id} lg={3}>
@@ -12,11 +12,11 @@ function PostPreview({post}) {
         </div>
         <Card.Body>
           <div className="post-tags">
-            <Badge bg="light"><a href={ "/categorie/" + post.tag.slug}>{post.tag.name}</a></Badge>
+            <Badge bg="light"><a href={ path + post.tag.slug}>{post.tag.name}</a></Badge>
           </div>
           <Card.Title>
             <h3 className="h4 mt-3">
-              <a href={`/blog/${post.slug}`} title={post.title}>
+              <a href={ path + post.slug} title={post.title}>
                 {cutString(post.title, 70)}
               </a>
             </h3>
@@ -26,7 +26,7 @@ function PostPreview({post}) {
             {cutString(post.excerpt, 140)}
           </Card.Text>
           <div className="text-end">
-            <Button size="sm" variant="primary" href={`/blog/${post.slug}`}>
+            <Button size="sm" variant="primary" href={ path + post.slug}>
               Lire la suite
             </Button>
           </div>
