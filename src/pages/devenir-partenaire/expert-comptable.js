@@ -6,7 +6,7 @@ const DevenirPartenaire_ExpertComptable = () => {
   return (
     <>
       <Helmet>
-        <title>La Société Nouvelle | Données statistiques</title>
+        <title>La Société Nouvelle | Expert comptable</title>
 
         <meta
           property="og:url"
@@ -22,6 +22,7 @@ const DevenirPartenaire_ExpertComptable = () => {
         <Container>
           <Row className="align-items-center">
             <Col lg={8}>
+              <h2 className="h1">Expert comptable</h2>
               <h3>Vous êtes un acteur de la comptabilité ?</h3>
               <p>
                 Face à l'urgence sociale et environnementale, il est désormais

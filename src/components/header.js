@@ -132,7 +132,7 @@ const Header = () => {
 
                 <NavDropdown.Divider />
                 <NavDropdown
-                  title="Données sociales"
+                  title="Autres jeux de données"
                   className="dropdown-item"
                   key="end"
                   drop="end"
