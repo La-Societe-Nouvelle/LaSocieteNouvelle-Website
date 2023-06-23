@@ -238,10 +238,10 @@ const Header = () => {
           <Col>
             <Nav className="justify-content-end">
               <NavDropdown title="Vous êtes ?">
-                <NavDropdown.Item href="/categorie/notes-analyse">
+                <NavDropdown.Item href="/cabinets-comptables">
                   Un expert-comptable
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/categorie/fiches-methodologiques">
+                <NavDropdown.Item href="/entreprises">
                   Une entreprise
                 </NavDropdown.Item>
               </NavDropdown>
