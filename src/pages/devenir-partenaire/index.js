@@ -84,7 +84,7 @@ const BecomePartner = () => {
                 </p>
                 <Button
                   size="sm"
-                  href="/devenir-partenaire/expert-comptable"
+                  href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-METRIZ-WebApp"
                   target="_blank"
                 >
                   Répertoire GitHub
