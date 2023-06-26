@@ -16,19 +16,19 @@ function Footer() {
       <div className="top-footer">
         <Container>
           <Row>
-            <Col xs={12} lg={4}>
+            <Col xs={12} lg={4} className="text-center text-lg-start">
               <h6>Abonnez-vous !</h6>
-              <div className="d-flex align-items-center icon-link">
+              <div className="d-flex justify-content-center justify-content-lg-start align-items-center icon-link">
                 <i className="bi bi-envelope-paper" role="img"></i>
                 <a href="/newsletter" title="Inscription à la newsletter">
                   Newsletter
                 </a>
               </div>
             </Col>
-            <Col xs={12} lg={4}>
+            <Col xs={12} lg={4} className="text-center text-lg-start mt-3 mt-lg-0">
               <h6>Suivez-nous </h6>
 
-              <ListGroup horizontal>
+              <ListGroup horizontal className="justify-content-center justify-content-lg-start">
                 <ListGroup.Item>
                   <a
                     href="https://github.com/La-Societe-Nouvelle/"
@@ -36,7 +36,7 @@ function Footer() {
                     rel="noreferrer"
                     title="GitHub"
                   >
-                    <i className="bi bi-github" role="img"></i>
+                    <i className="bi bi-github mx-2 mx-lg-0 me-lg-3" role="img"></i>
                   </a>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -46,7 +46,7 @@ function Footer() {
                     rel="noreferrer"
                     title="Twitter"
                   >
-                    <i className="bi bi-twitter" role="img"></i>
+                    <i className="bi bi-twitter mx-2 mx-lg-0 me-lg-3" role="img"></i>
                   </a>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -56,14 +56,14 @@ function Footer() {
                     rel="noreferrer"
                     title="LinkedIn"
                   >
-                    <i className="bi bi-linkedin" role="img"></i>
+                    <i className="bi bi-linkedin mx-2 mx-lg-0 me-lg-3" role="img"></i>
                   </a>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col xs={12} lg={4}>
+            <Col xs={12} lg={4}  className="text-center text-lg-start mt-3 mt-lg-0">
               <h6> Contactez-nous</h6>
-              <div className="d-flex align-items-center icon-link">
+              <div className="d-flex justify-content-center justify-content-lg-start align-items-center icon-link">
                 <i className="bi bi-envelope-fill" role="img"></i>
                 <a href="/contact" title="Contactez nous">
                   Formulaire de contact

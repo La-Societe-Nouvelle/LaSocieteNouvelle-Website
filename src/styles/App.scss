@@ -109,6 +109,10 @@ section {
   img {
     margin-bottom: 1rem;
   }
+
+  > div > div {
+    overflow: auto;
+  }
 }
 
 .portail-view {

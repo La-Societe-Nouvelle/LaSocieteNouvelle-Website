@@ -90,11 +90,12 @@ const Home = () => {
       <section className="mt-4">
         <Container>
           <Row className="align-items-center">
-            <Col lg={4}>
-              <Image
-                src="/illustrations/default-data-illu.png"
-                alt="Illustration de personnes qui consultent des données"
-              />
+            <Col lg={4} className="text-center">
+                <Image
+                  className="mb-4 mb-lg-0"
+                  src="/illustrations/default-data-illu.png"
+                  alt="Illustration de personnes qui consultent des données"
+                />
             </Col>
             <Col>
               <h2>
@@ -115,7 +116,7 @@ const Home = () => {
                   acteur de la transition écologique et sociale
                 </li>
               </ol>
-              <div className="mt-4">
+              <div className="mt-4 d-flex justify-content-sm-start justify-content-center">
                 <Button
                   variant="secondary"
                   href="/portail"
@@ -159,7 +160,7 @@ const Home = () => {
                 <li>Comprendre l'origine de ses impacts</li>
                 <li>S'engager dans la transition écologique et sociale</li>
               </ol>
-              <div className="mt-4">
+              <div className="mt-4 d-flex justify-content-sm-start justify-content-center mb-4 mb-sm-0">
                 <MetrizButton />
                 <Button
                   variant="outline-primary"
@@ -269,7 +270,7 @@ const Home = () => {
       <div className="partenaires mb-5 pt-3">
         <Container>
           <h3 className="text-center">Avec le soutien de</h3>
-          <div className=" d-flex justify-content-between align-items-center mt-5">
+          <div className="d-flex justify-content-between align-items-center mt-5">
             <div>
               <a
                 href="https://www.euratechnologies.com/"

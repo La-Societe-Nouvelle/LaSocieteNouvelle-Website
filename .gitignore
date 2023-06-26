@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.package-lock.json 
+.package-lock.json
 
 # testing
 /coverage
@@ -39,3 +39,4 @@ yarn-error.log*
 /nbproject/
 .projectile
 .vscode/settings.json
+.idea/

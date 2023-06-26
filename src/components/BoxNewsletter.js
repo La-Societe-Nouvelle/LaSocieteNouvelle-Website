@@ -1,4 +1,4 @@
-import { Button, Col, Image, Row } from "react-bootstrap";
+import { Button, Col, Image, Row } from 'react-bootstrap'
 
 const BoxNewsletter = () => {
   return (
@@ -16,17 +16,19 @@ const BoxNewsletter = () => {
             application !
           </p>
 
-          <Button
-            href="https://a2dec458.sibforms.com/serve/MUIEAE87cWMEBduAwTKh6kNCKZRFF4iVG4F1d0WT5TuD4LYdWSn_LdL8FHgC0SuDGKSKe7PVrx-vcOQn8KwHR6JmimxBzdH7seeIYDD_5K31DYP3Y-qGV8gcbVSHehd2qWU8j90PIYaydyKOEGO6S_ijEsBCiialfd2BEvM6AB8_FZXMOJgtsFu6sOOtOd7zLqnu4tEIEE8HEHTc"
-            target="blank"
-            title="S'inscrire à la newsletter"
-          >
-            Je m'inscris
-          </Button>
+          <div className="d-flex justify-content-sm-start justify-content-center">
+            <Button
+              href="https://a2dec458.sibforms.com/serve/MUIEAE87cWMEBduAwTKh6kNCKZRFF4iVG4F1d0WT5TuD4LYdWSn_LdL8FHgC0SuDGKSKe7PVrx-vcOQn8KwHR6JmimxBzdH7seeIYDD_5K31DYP3Y-qGV8gcbVSHehd2qWU8j90PIYaydyKOEGO6S_ijEsBCiialfd2BEvM6AB8_FZXMOJgtsFu6sOOtOd7zLqnu4tEIEE8HEHTc"
+              target="blank"
+              title="S'inscrire à la newsletter"
+            >
+              Je m'inscris
+            </Button>
+          </div>
         </div>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default BoxNewsletter;
+export default BoxNewsletter
