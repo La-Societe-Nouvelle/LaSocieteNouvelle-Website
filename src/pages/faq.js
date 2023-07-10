@@ -13,23 +13,20 @@ import PageHeader from "../components/PageHeader";
 import { useRouter } from "next/router";
 
 const Faq = () => {
-
   const router = useRouter();
-  const [activeKey, setActiveKey] = useState("qg"); 
-  const [eventKey, setEvenKey] = useState("qg-0");
+  const [activeKey, setActiveKey] = useState("qg");
+  const [eventKey, setEventKey] = useState("qg-0");
 
   useEffect(() => {
-    const key = router.asPath.split('#')[1]; // extrait l'activeKey de l'URL
-    
+    const key = router.asPath.split("#")[1];
+
     if (key) {
-      
-      setActiveKey(key.slice(0,2));
-      setEvenKey(key);
+      setActiveKey(key.split("-")[0]);
+      setEventKey(key);
     }
- 
-  }, [router.query]);
-
-
+    console.log(activeKey);
+    console.log(eventKey);
+  }, [router.asPath]);
 
   return (
     <>
@@ -51,13 +48,18 @@ const Faq = () => {
             nous contacter en utilisant{" "}
             <a href="/contact" title="Contact" className="text-secondary">
               le formulaire de contact
-            </a>.
+            </a>
+            .
           </p>
 
-          <Tabs defaultActiveKey={activeKey || "qg"} className="mt-5 panel-indicateurs" fill>
+          <Tabs
+            activeKey={activeKey || "qg"}
+            className="mt-5 panel-indicateurs"
+            fill
+          >
             <Tab eventKey="qg" title="Questions générales">
               <div className="m-4">
-                <Accordion defaultActiveKey={eventKey} >
+                <Accordion activeKey={eventKey}>
                   <Accordion.Item eventKey="qg-0">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
@@ -71,7 +73,7 @@ const Faq = () => {
                       environnementales.
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qg-1" >
+                  <Accordion.Item eventKey="qg-1">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi mesurer l'empreinte sociétale de ses activités
@@ -356,7 +358,7 @@ const Faq = () => {
             </Tab>
             <Tab eventKey="qt" title="Questions techniques">
               <div className="m-4">
-                <Accordion defaultActiveKey="qt-0">
+                <Accordion activeKey={eventKey}>
                   <Accordion.Item eventKey="qt-0" id="open-source">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
@@ -512,7 +514,7 @@ const Faq = () => {
             </Tab>
             <Tab eventKey="qc" title="Questions cabinets comptables">
               <div className="m-4">
-                <Accordion defaultActiveKey="qc-0">
+                <Accordion activeKey={eventKey}>
                   <Accordion.Item eventKey="qc-0">
                     <Accordion.Header as="h4">
                       <span className="fw-bold">

@@ -16,6 +16,12 @@ export default function Infographie() {
       <Container>
         <Row>
         <InfographicPost
+            title="Emissions de Gaz à
+            effet de Serre"
+            file="LSN_infographie-ges.pdf"
+            image="LSN_infographie-ges.png"
+          />
+        <InfographicPost
             title="Evolution des compétences et des connaissances"
             file="LSN_infographie-knw.pdf"
             image="LSN_infographie-knw.jpg"

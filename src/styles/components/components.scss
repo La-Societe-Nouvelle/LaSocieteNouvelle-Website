@@ -36,11 +36,23 @@
       text-align: inherit !important;
       p {
         width: 100%;
-        margin-left: 0 !important; /* Supprime la marge à gauche pour les écrans de petite taille */
+        margin-left: 0 !important; 
       }
     }
   }
 }
+
+@media (max-width: 1280px) {
+  .homepage-blocs {
+    .bloc {
+      p {
+        width: 70%;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
 .bg-light-purple {
   background-color: rgba(238, 228, 251, 0.8);
   &:hover {

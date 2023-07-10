@@ -9,7 +9,7 @@ export default function FourOhFour() {
         <section className="text-center">
            <h3>404 - Page non trouvée</h3>
 
-           <Button variant="secondary">
+           <Button variant="secondary" href="/">
                 Retour à l'accueil
            </Button>
         </section>
