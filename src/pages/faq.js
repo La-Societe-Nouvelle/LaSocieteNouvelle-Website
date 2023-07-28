@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Accordion,
-  Col,
   Container,
-  Image,
-  Row,
   Tab,
   Tabs,
 } from "react-bootstrap";
@@ -19,14 +16,19 @@ const Faq = () => {
 
   useEffect(() => {
     const key = router.asPath.split("#")[1];
-
     if (key) {
       setActiveKey(key.split("-")[0]);
       setEventKey(key);
+    } else {
+      setActiveKey("qg");
+      setEventKey("qg-0");
     }
-    console.log(activeKey);
-    console.log(eventKey);
   }, [router.asPath]);
+  
+
+  const handleTabSelect = (key) => {
+    setActiveKey(key);
+  };
 
   return (
     <>
@@ -51,17 +53,17 @@ const Faq = () => {
             </a>
             .
           </p>
-
           <Tabs
             activeKey={activeKey || "qg"}
             className="mt-5 panel-indicateurs"
             fill
+            onSelect={handleTabSelect}
           >
-            <Tab eventKey="qg" title="Questions générales">
+            <Tab eventKey="qg" title="Questions générales"   >
               <div className="m-4">
                 <Accordion activeKey={eventKey}>
                   <Accordion.Item eventKey="qg-0">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qg-0")}>
                       <span className="fw-bold">
                         Qu'est-ce que l'empreinte sociétale ?
                       </span>
@@ -73,7 +75,7 @@ const Faq = () => {
                       environnementales.
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qg-1">
+                  <Accordion.Item eventKey="qg-1"  onClick={() => setEventKey("qg-1")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi mesurer l'empreinte sociétale de ses activités
@@ -93,7 +95,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qg-2">
+                  <Accordion.Item eventKey="qg-2"  onClick={() => setEventKey("qg-2")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi publier votre empreinte sociale ?
@@ -114,7 +116,7 @@ const Faq = () => {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="qg-3">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qg-3")}>
                       <span className="fw-bold">
                         Quels sont les indicateurs utilisés au sein de
                         l'empreinte sociétale ?
@@ -139,7 +141,7 @@ const Faq = () => {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="qg-4">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qg-4")}>
                       <span className="fw-bold">
                         Quelle est la particularité de la méthodologie de mesure
                         des indicateurs ?
@@ -173,7 +175,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qg-5">
+                  <Accordion.Item eventKey="qg-5"  onClick={() => setEventKey("qg-5")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les tarifs lorsque l'on mesure notre
@@ -191,7 +193,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qg-6">
+                  <Accordion.Item eventKey="qg-6"  onClick={() => setEventKey("qg-6")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les tarifs lorsque l'on publie notre
@@ -229,7 +231,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qg-7" id="qg-7">
+                  <Accordion.Item eventKey="qg-7" id="qg-7"  onClick={() => setEventKey("qg-7")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quel est notre business model ?
@@ -257,7 +259,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qg-8">
+                  <Accordion.Item eventKey="qg-8"  onClick={() => setEventKey("qg-8")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je modifier les informations une fois publiées ?
@@ -285,7 +287,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qg-9">
+                  <Accordion.Item eventKey="qg-9"  onClick={() => setEventKey("qg-9")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quand mesurer mon empreinte et à quelle fréquence ?
@@ -304,7 +306,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qg-10">
+                  <Accordion.Item eventKey="qg-10"  onClick={() => setEventKey("qg-10")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Me situer par rapport à ma branche est-il suffisant ?
@@ -328,7 +330,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qg-11">
+                  <Accordion.Item eventKey="qg-11"  onClick={() => setEventKey("qg-11")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         J'ai réalisé un bilan carbone, puis-je utiliser les
@@ -356,11 +358,11 @@ const Faq = () => {
                 </Accordion>
               </div>
             </Tab>
-            <Tab eventKey="qt" title="Questions techniques">
+            <Tab eventKey="qt" title="Questions techniques" >
               <div className="m-4">
                 <Accordion activeKey={eventKey}>
                   <Accordion.Item eventKey="qt-0" id="open-source">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qt-0")}>
                       <span className="fw-bold">
                         Qu'est-ce que l'Open Source ?
                       </span>
@@ -376,7 +378,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="qt-1">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qt-1")}>
                       <span className="fw-bold">
                         Qu'est-ce que l'Open Data ?
                       </span>
@@ -397,7 +399,7 @@ const Faq = () => {
                   </Accordion.Item>
 
                   <Accordion.Item eventKey="qt-2">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qt-2")}>
                       <span className="fw-bold">
                         Comment l'utilisation de Metriz est-elle sécurisée ?
                       </span>
@@ -423,7 +425,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qt-3">
+                  <Accordion.Item eventKey="qt-3"  onClick={() => setEventKey("qt-3")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Où le code source de l'Application Web est-il disponible
@@ -445,7 +447,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qt-4">
+                  <Accordion.Item eventKey="qt-4"  onClick={() => setEventKey("qt-4")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Comment sont obtenues/calculées les valeurs par défaut ?
@@ -460,7 +462,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qt-5">
+                  <Accordion.Item eventKey="qt-5"  onClick={() => setEventKey("qt-5")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Qu'est-ce que les valeurs par défaut ?
@@ -488,7 +490,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qt-6">
+                  <Accordion.Item eventKey="qt-6"  onClick={() => setEventKey("qt-6")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         À quoi correspond l'incertitude ?
@@ -515,7 +517,7 @@ const Faq = () => {
             <Tab eventKey="qc" title="Questions cabinets comptables">
               <div className="m-4">
                 <Accordion activeKey={eventKey}>
-                  <Accordion.Item eventKey="qc-0">
+                  <Accordion.Item eventKey="qc-0"  onClick={() => setEventKey("qc-0")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Pourquoi proposer la mesure à mes clients ?
@@ -540,7 +542,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="qc-1">
-                    <Accordion.Header as="h4">
+                    <Accordion.Header as="h4"  onClick={() => setEventKey("qc-1")}>
                       <span className="fw-bold">
                         Puis-je développer une activité commerciale autour de
                         l'application ?
@@ -569,7 +571,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qc-2">
+                  <Accordion.Item eventKey="qc-2"  onClick={() => setEventKey("qc-2")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Comment monter en compétences sur les enjeux RSE ?
@@ -588,7 +590,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qc-3">
+                  <Accordion.Item eventKey="qc-3"  onClick={() => setEventKey("qc-3")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je intégrer le calcul des indicateurs à mon outil ?
@@ -604,7 +606,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qc-4">
+                  <Accordion.Item eventKey="qc-4"  onClick={() => setEventKey("qc-4")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Quels sont les livrables obtenus ?
@@ -633,7 +635,7 @@ const Faq = () => {
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="qc-5">
+                  <Accordion.Item eventKey="qc-5"  onClick={() => setEventKey("qc-5")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         Puis-je tester l'application ?
@@ -658,7 +660,7 @@ const Faq = () => {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="qc-6">
+                  <Accordion.Item eventKey="qc-6"  onClick={() => setEventKey("qc-6")}>
                     <Accordion.Header as="h4">
                       <span className="fw-bold">
                         À quoi correspond l'incertitude ?
