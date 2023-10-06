@@ -104,11 +104,12 @@ const Home = () => {
                 production des entreprises
               </h2>
               <p>
-                Vous pouvez connaître <b>gratuitement</b> l'empreinte sociétale
-                des entreprises. Ces données peuvent être des valeurs par défaut
-                ou provenir directement de la publication des entreprises.
+                Accédez <b>librement</b> aux empreintes sociétales
+                des entreprises. En l'absence de données publiées par l'entreprise 
+                ou de données estimées à partir de déclarations publiques, des données par défaut
+                (issues de nos travaux statistiques) apparaîtront.
               </p>
-              <h3>Pourquoi publier son empreinte ?</h3>
+              <h3>Vous êtes une entreprise, pourquoi publier votre empreinte ?</h3>
               <ol>
                 <li>Valoriser votre performance et informer vos clients</li>
                 <li>Contribuer à une économie plus transparente</li>
@@ -142,14 +143,20 @@ const Home = () => {
         <Container>
           <Row className="align-items-center">
             <Col lg={9}>
-              <h2>Mesurez l'impact de la production de votre entreprise</h2>
+              <h2>Comment sont mesurés les impacts de la production d'une entreprise ?</h2>
               <p>
-                Grâce à{" "}
+                La mesure prend en compte les 
+                impacts directs des opérations et les impacts indirects
+                liés aux consommations intermédiaires (achats, prestations services, etc.)
+                et aux consommations de capital fixe (amortissements des immobilisations).
+              </p>
+              <p>
+                Une {" "}
                 <a href="https://metriz.lasocietenouvelle.org" target="_blank">
-                  l'application Web Metriz
-                </a>
-                , vous pouvez rendre compte des impacts sociaux -
-                environnementaux d'un euro de production vendu.
+                  application Web Metriz
+                </a> est mise à disposition pour faciliter la mesure. Elle permet de faire 
+                le lien entre les données comptables, les empreintes de la production des
+                fournisseurs et les impacts directs des opérations.
               </p>
 
               <h3>Pourquoi mesurer son empreinte ?</h3>
@@ -193,13 +200,13 @@ const Home = () => {
           </p>
           <Row>
             <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"GHG"} />
+              <Graph indic={"ghg"} />
             </Col>
             <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"WAT"} />
+              <Graph indic={"wat"} />
             </Col>
             <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"NRG"} />
+              <Graph indic={"nrg"} />
             </Col>
           </Row>
         </Container>

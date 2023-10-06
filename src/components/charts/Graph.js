@@ -28,7 +28,22 @@ ChartJS.register(
   Legend
 );
 
-function Graph({ indic }) {
+const metaGraphs = {
+  ghg: {
+    title: "Empreinte carbone de la production intérieure française",
+    unit: "gCO2e/€"
+  },
+  wat: {
+    title: "Empreinte eau de la production intérieure française",
+    unit: "L/€"
+  },
+  nrg: {
+    title: "Empreinte énergétique de la production intérieure française",
+    unit: "kJ/€"
+  }
+}
+
+const Graph = ({ indic }) => {
   let [title, setTitle] = useState("");
   let [serie, setSerie] = useState("");
   let [source, setSource] = useState();
@@ -38,13 +53,13 @@ function Graph({ indic }) {
   const fetchData = useCallback(() => {
     axios
       .get(
-        `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_${indic}_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`
+        `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_a38?branch=TOTAL&aggregate=NVA&indic=${indic.toUpperCase()}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {
-          setTitle(response.data.meta.label);
-          setSource(response.data.meta.source);
-          setUnit(response.data.meta.unitSymbol);
+          setTitle(metaGraphs[indic].title);
+          setSource(response.data.meta.doc);
+          setUnit(metaGraphs[indic].unit);
           setSerie(response.data.data);
         } else {
           setError(response.data.header);
@@ -123,7 +138,7 @@ function Graph({ indic }) {
       <Line height={250} data={data} options={options} />
       <div className="mt-3">
         <p className=" source">
-          Sources : {source} - Traitement : La Société Nouvelle
+          <a href={source} target="_blank">Documentation relative aux données</a>
         </p>
       </div>
     </div>
