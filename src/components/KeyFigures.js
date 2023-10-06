@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
 
-export const KeyFigures = () => {
+const refYear = "2022";
+
+export const KeyFigures = () => 
+{
   const [pinKeyFigure, setPinKeyFigure] = useState("");
   const [ghgKeyFigure, setGhgKeyFigure] = useState("");
   const [geqKeyFigure, setGeqKeyFigure] = useState("");
@@ -11,11 +14,12 @@ export const KeyFigures = () => {
     fetchKeyFiguresData();
   }, []);
 
-  const fetchKeyFiguresData = async () => {
+  const fetchKeyFiguresData = async () => 
+  {
     const urls = [
-      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_FINANCIALDATA___FRA_CPMEUR/?area=FRA&aggregate=PIN`,
-      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GHG_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
-      `${process.env.NEXT_PUBLIC_API_URL}/serie/MACRO_HISTORICALDATA_DISCOUNTED_GEQ_FRA_BRANCH?area=FRA&code=TOTAL&aggregate=NVA`,
+      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/na_cpeb?classification=NNTOTAL&aggregate=B1N&unit=CPMEUR&year=`+refYear,
+      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd_a38?branch=TOTAL&aggregate=NVA&indic=GHG&year=`+refYear,
+      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd_a38?branch=TOTAL&aggregate=NVA&indic=GEQ&year=`+refYear,
     ];
 
     const requests = urls.map((url) => axios.get(url));
@@ -45,7 +49,7 @@ export const KeyFigures = () => {
   return (
     <section className="bg-light">
       <Container>
-        <h2 className="text-center mb-5">Chiffres-clés</h2>
+        <h2 className="text-center mb-5">Chiffres-clés - {refYear}</h2>
         <Row className="d-flex justify-content-between">
           <Col className="statistic-item" xs={12} lg={4}>
             <Image
@@ -96,7 +100,7 @@ export const KeyFigures = () => {
             <p className="text-center">Ecart de rémunération F/H</p>
           </Col>
           <p className="source text-end mt-3">
-            Données estimées par La Société Nouvelle pour l'année 2021 | Sources
+            Données estimées par La Société Nouvelle pour l'année {refYear} | Sources
             : Insee, Eurostat et Banque mondiale
           </p>
         </Row>

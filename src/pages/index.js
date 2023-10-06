@@ -86,7 +86,8 @@ const Home = () => {
         </Container>
       </section>
    
-      <KeyFigures></KeyFigures>
+      <KeyFigures />
+
       <section className="mt-4">
         <Container>
           <Row className="align-items-center">
