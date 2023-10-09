@@ -17,7 +17,7 @@ import {
 
 import metaData from "../lib/metaData.json";
 
-import { exportStatementPDF, getBinaryPDF } from "../outputs/statementWriter";
+import { exportStatementPDF, getBinaryPDF } from "../utils/statementWriter.js";
 
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader.js";
@@ -382,7 +382,7 @@ class IndicatorForm extends React.Component {
     return (
       <Col lg={6}>
         <Card className="mb-3">
-          <Card.Body className="indicator-form">
+          <Card.Body className="statement-form">
             <div className="d-flex align-items-center">
               <Image
                 src={"images/indicateurs/" + indic + ".png"}

@@ -22,7 +22,7 @@ $headings-font-weight : 700;
 
 $h2-font-size:1.4rem;
 $h3-font-size:1.3rem;
-$h4-font-size:1.1rem;
+$h4-font-size:1.2rem;
 $h5-font-size:1rem;
 $h6-font-size:1rem;
 $headings-margin-bottom: 1rem;
@@ -60,6 +60,7 @@ $dropdown-border-color : $light;
 $dropdown-border-width : 2px;
 $dropdown-link-hover-bg: $light;
 $pagination-font-size : 0.8rem;
+
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";

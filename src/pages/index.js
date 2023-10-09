@@ -41,7 +41,7 @@ const Home = () => {
             </Col>
             <Col lg={6}>
               <a
-                href="https://metriz.lasocietenouvelle.org"
+                href="/mesurer-publier-empreinte"
                 target="_blank"
                 className="bloc  bg-light-orange text-end"
               >

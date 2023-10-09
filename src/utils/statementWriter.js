@@ -8,6 +8,7 @@ import metaData from '../lib/metaData.json';
 
 export function exportStatementPDF(data) 
 {
+
   const doc = writeStatementPDF(data);
 
   // Export

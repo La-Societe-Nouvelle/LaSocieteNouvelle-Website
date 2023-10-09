@@ -1,16 +1,60 @@
-.indicator-form {
-    img {
-        height: 50px;
+.statement-form {
+    border-bottom: 2px solid $light;
+
+    &:last-child {
+        border: none;
     }
 
-    .indic-libelle{
+    padding: 1rem;
+
+    .picto {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        padding: 0.5rem;
+        background-color: $light-secondary;
+        text-align: center;
+        margin-right: 1rem;
+    }
+
+    img {
+        height: 30px;
+    }
+
+    .indic-libelle {
         font-weight: 600;
-    font-size: 0.8rem;
-    color: $secondary;
+        font-size: 0.8rem;
+        color: $secondary;
+    }
+
+    .form-label, .form-check-label {
+        font-size: 0.8rem;
+    }
+    .form-check-label {
+        font-weight: 600;
+    }
+    .input-group-text{
+        background-color: $light;
+        font-size: 0.8rem;
     }
 }
 
-.publish-form{
-    padding: 2rem;
-    border: 1px solid $light;
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+
+    background-color: $light-secondary;
+    border: $light-secondary;
+    color: $secondary;
+    opacity: 1;
+
+
+}
+
+
+.summary {
+
+    p{
+        font-size: 0.9rem
+    }
 }

@@ -195,6 +195,18 @@ const Header = () => {
       </Navbar>
     );
   }
+  if (page.startsWith("/publier-empreinte")) {
+    return (
+      <Navbar className="bg-light">
+        <Container fluid>
+          <Navbar.Brand href="/" className="m-auto">
+            <Image src="/logo-La-Societe-Nouvelle.svg" height="75" alt="logo" />
+          </Navbar.Brand>
+   
+        </Container>
+      </Navbar>
+    );
+  }
 
   return (
     <div className="header">

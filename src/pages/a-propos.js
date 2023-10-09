@@ -14,7 +14,7 @@ const About = () => {
                 but non lucratif.
               </p>
               <p>
-                Notre mission est de mettre en oeuvre un{" "}
+                Notre mission est de mettre en oeuvre un {" "}
                 <strong>
                   système d'information sur les impacts de la production des
                   entreprises françaises
@@ -29,10 +29,7 @@ const About = () => {
                 La structure juridique a été créée en août 2020 à Lille. Elle a
                 pour bénéficiaire effectif Sylvain HUMILIERE.
               </p>
-              <p>
-                L'équipe compte désormais 6 personnes, dont 3 sur des postes
-                permanents.
-              </p>
+
             </Col>
             <Col>
               <Image
@@ -209,32 +206,7 @@ const About = () => {
               </div>
             </Col>
           </Row>
-          <Row className="mt-5">
-            <Col>
-              <div className="px-5">
-                <Image src="images/equipe/Maelysse.jpg" className="rounded" />
 
-                <h4 className="text-center mt-4">Maëlysse Lemaire</h4>
-                <p>Chargée de communication</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="px-5">
-                <Image src="images/equipe/Guillaume.jpg" className="rounded" />
-
-                <h4 className="text-center mt-4">Guillaume </h4>
-                <p>Chargé de relations partenaires</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="px-5">
-                <Image src="images/equipe/Manal.jpg" className="rounded" />
-
-                <h4 className="text-center mt-4">Manal </h4>
-                <p>Chargée de relations partenaires</p>
-              </div>
-            </Col>
-          </Row>
         </Container>
       </section>
     </>
