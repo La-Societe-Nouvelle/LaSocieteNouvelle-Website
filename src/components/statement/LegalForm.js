@@ -46,7 +46,7 @@ export const LegalForm = (props) => {
   const onDenominationChange = (event) => setDenomination(event.target.value);
   const onYearChange = (event) => setYear(event.target.value);
 
-  const onCommit = () => props.commitLegal(siren, denomination, year);
+  const onSubmit = () => props.commitLegal(siren, denomination, year);
 
   return (
     <Row>
@@ -56,13 +56,8 @@ export const LegalForm = (props) => {
 
           <p>
             Vous avez déjà évalué l'empreinte de votre entreprise et vous
-            souhaitez
-            <b> publier vos résultats</b> sur{" "}
-            <a href="/portail" target="blank" rel="noopener noreferrer">
-              notre portail{" "}
-            </a>
-            ? Complétez le formulaire et envoyez votre demande grâce à notre
-            formulaire de publication.
+            souhaitez <b> publier vos résultats </b> ?<br></br>
+          Complétez le formulaire et envoyez votre demande de publication.
           </p>
 
           <h4>Informations légales</h4>
@@ -116,7 +111,7 @@ export const LegalForm = (props) => {
             <Button
               variant="secondary"
               disabled={isNextStepAvailable}
-              onClick={onCommit}
+              onClick={onSubmit}
             >
               Formulaire de publication
             </Button>

@@ -41,8 +41,7 @@ const Home = () => {
             </Col>
             <Col lg={6}>
               <a
-                href="/mesurer-publier-empreinte"
-                target="_blank"
+                href="/publier-empreinte"
                 className="bloc  bg-light-orange text-end"
               >
                 <h2>Mesurez et publiez l'empreinte de votre entreprise</h2>
@@ -128,7 +127,7 @@ const Home = () => {
                 </Button>
                 <Button
                   className="mx-2"
-                  href="/publier-mon-empreinte"
+                  href="/publier-empreinte"
                   title="Publier mes données"
                 >
                   Publier mes données{" "}

@@ -255,23 +255,14 @@ const CompanyData = () => {
                   <Button
                     variant="secondary"
                     size="sm"
-                    href="/publication"
+                    href="/publier-empreinte"
                     target="_blank"
                     title="Publier directement vos résultats"
                     className="me-2"
                   >
                     Publier mon empreinte
                   </Button>
-                  <Button
-                    variant="outline-secondary"
-                    size="sm"
-                    href="https://metriz.lasocietenouvelle.org"
-                    target="_blank"
-                    title="Mesurer l'empreinte sociétale de votre entreprise"
-                  >
-                    Mesurer mon empreinte{" "}
-                    <i className="bi bi-box-arrow-up-right"></i>
-                  </Button>
+           
                 </div>
               </div>
             </Col>

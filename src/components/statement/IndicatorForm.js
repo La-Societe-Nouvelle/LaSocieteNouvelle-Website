@@ -1,25 +1,30 @@
 import React, { useState } from "react";
-import metaData from "../../lib/metaData.json";
 import { Image, Form, Col, Row, Button, InputGroup } from "react-bootstrap";
+
+import metaData from "../../lib/metaData.json";
+
 const IndicatorForm = (props) => {
-  const {
-    indic,
-    value: propValue,
-    uncertainty: propUncertainty,
-    info: propInfo,
-  } = props;
 
-  const [value, setValue] = useState(propValue || "");
-  const [uncertainty, setUncertainty] = useState(propUncertainty || "");
-  const [info, setInfo] = useState(propInfo || "");
+  const {indic, updateProps, socialfootprint} = props;
+  const [formData, setFormData] = useState({
+    value: socialfootprint?.value || "",
+    uncertainty: socialfootprint?.uncertainty || "",
+    info: socialfootprint?.info || ""
+  });
 
-  const onValueChange = (event) => setValue(event.target.value);
-  const onUncertaintyChange = (event) => setUncertainty(event.target.value);
-  const onInfoChange = (event) => setInfo(event.target.value);
-  const onBlur = () => props.updateProps({ indic, value, uncertainty, info });
+
+  const handleChange = (event, field) => {
+    const newValue = event.target.value;
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: newValue
+    }));
+    updateProps({ indic, ...formData, [field]: newValue });
+  };
+
 
   return (
-    <div className="mb-2 statement-form">
+    <div className="mb-2 indicator-form">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div className="d-flex align-items-center">
           <div className="picto">
@@ -48,12 +53,7 @@ const IndicatorForm = (props) => {
         <Form.Label column>Valeur</Form.Label>
         <Col>
           <InputGroup size="sm">
-            <Form.Control
-              type="text"
-              value={value}
-              onChange={onValueChange}
-              onBlur={onBlur}
-            />
+            <Form.Control type="text" value={formData.value} onChange={(e) => handleChange(e, "value")} />
             {metaData[indic].unitCode && (
               <InputGroup.Text>{metaData[indic].unitCode}</InputGroup.Text>
             )}
@@ -66,9 +66,8 @@ const IndicatorForm = (props) => {
           <InputGroup size="sm">
             <Form.Control
               type="text"
-              value={uncertainty}
-              onChange={onUncertaintyChange}
-              onBlur={onBlur}
+              value={formData.uncertainty}
+              onChange={(e) => handleChange(e, "uncertainty")}
             />
             <InputGroup.Text>%</InputGroup.Text>
           </InputGroup>
@@ -80,9 +79,8 @@ const IndicatorForm = (props) => {
           <Form.Control
             as="textarea"
             size="sm"
-            value={info}
-            onChange={onInfoChange}
-            onBlur={onBlur}
+            value={formData.info}            
+            onChange={(e) => handleChange(e, "info")}
           />
         </Col>
       </Row>

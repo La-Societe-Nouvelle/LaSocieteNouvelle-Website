@@ -40,7 +40,7 @@ const Header = () => {
               <Nav.Link href="/portail" className="border-end border-3">
                 <i className="bi bi-search"></i> Rechercher une entreprise
               </Nav.Link>
-              <Nav.Link href="/publier-mon-empreinte" target="_blank">
+              <Nav.Link href="/publier-empreinte" target="_blank">
                 Publier mes données
               </Nav.Link>
               <Nav.Link

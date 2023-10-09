@@ -83,7 +83,7 @@
   margin-bottom: 2rem;
 
   .form-control:focus {
-    border-color: $primary;
+    border-color: $light;
     box-shadow: none;
   }
 
@@ -98,7 +98,6 @@
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    border-width: 3px;
   }
 
   ::placeholder {

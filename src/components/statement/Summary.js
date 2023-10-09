@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { exportStatementPDF } from "../../utils/statementWriter";
+
 import metaData from "../../lib/metaData.json";
 
 const Summary = ({
@@ -9,7 +11,6 @@ const Summary = ({
   year,
   declarant,
   price,
-  exportStatement,
   submitStatement,
   goBack,
 }) => {
@@ -17,6 +18,10 @@ const Summary = ({
   let date = newDate.getDate();
   let month = newDate.getMonth() + 1;
   let currentYear = newDate.getFullYear();
+
+  const formData = {siren,denomination,socialfootprint,year,declarant,price};
+
+  const exportStatement = () => exportStatementPDF(formData);
 
   return (
     <div className="box">

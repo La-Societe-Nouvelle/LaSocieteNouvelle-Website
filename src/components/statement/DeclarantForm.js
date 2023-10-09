@@ -23,7 +23,7 @@ export const DeclarantForm = (props) => {
     }
   }, [price, autorisation, declarant]);
 
-  const onCommit = () => props.commitDeclarant(declarant, email, autorisation, price);
+  const onSubmit = () => props.commitDeclarant(declarant, email, autorisation, price);
 
   return (
     <div className="box">
@@ -132,7 +132,7 @@ export const DeclarantForm = (props) => {
           size="sm"
           variant="primary"
           disabled={isDisabled}
-          onClick={onCommit}
+          onClick={onSubmit}
         >
           Valider
         </Button>
