@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 export const DocButton = (props) => {
   return (
     <Button
-      href="https:doc.lasocietenouvelle.org"
+      href="https://lasocietenouvelle.readme.io/"
       variant="outline-primary"
       target="_blank"
       rel="noreferrer"

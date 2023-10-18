@@ -130,7 +130,7 @@ const API = () => {
           <div className="text-center mt-3">
             <Button
               variant="secondary"
-              href="https://docs.lasocietenouvelle.org/public-api"
+              href="https://lasocietenouvelle.readme.io/"
               target="_blank"
               title="Accéder à la documentation de l'API"
             >
