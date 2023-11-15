@@ -1,7 +1,10 @@
-import axios from "axios";
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+
+import axios from "axios";
+
 import ErrorAlert from "../../components/Error";
 import PaginatedLegalunit from "../../components/PaginatedLegalunit";
 
@@ -10,6 +13,7 @@ const portail = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [legalUnits, setLegalUnits] = useState([]);
   const [error, setError] = useState();
+  const router = useRouter();
 
   const inputChange = (e) => {
     setSearch(e.target.value);
@@ -39,12 +43,19 @@ const portail = () => {
       .toUpperCase();
 
     await axios
-      .get(`https://api.lasocietenouvelle.org/legalunit/${string}`, {
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/legalunit/${string}`, {
         timeout: 15000,
       })
       .then((response) => {
         if (response.data.header.code == 200) {
-          setLegalUnits(response.data.legalUnits);
+          const legalUnits = response.data.legalUnits;
+          if (legalUnits.length === 1) {
+            const siren = legalUnits[0].siren;
+          // Redirect to the specific company page 
+            router.push(`/portail/company/${siren}`);
+          } else {
+            setLegalUnits(legalUnits);
+          }
         } else {
           setError(response.data.header.code);
         }

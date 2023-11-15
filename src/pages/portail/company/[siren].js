@@ -141,10 +141,27 @@ const CompanyData = () => {
                     Empreinte Sociétale de l'entreprise
                   </h1>
                   <Col lg={4}>
-                    <h2 className="text-wrap mb-2">{legalUnit.denomination}</h2>
-                    {legalUnit.denominationUsuelle && (
-                      <h3>( {legalUnit.denominationUsuelle} )</h3>
+                    <h2 className="text-wrap mb-2">
+                      {legalUnit.statutdiffusion
+                        ? legalUnit.denomination
+                        : legalUnit.siren}
+                    </h2>
+                    {!legalUnit.statutdiffusion && (
+                      <p
+                        className="small"
+                        title="Informations partiellement rendues publiques par l'entreprise"
+                      >
+                        <i className="bi bi-exclamation-triangle-fill">
+                          {" "}
+                          Diffusion partielle
+                        </i>
+                      </p>
                     )}
+                    {legalUnit.statutdiffusion &&
+                      legalUnit.denominationUsuelle && (
+                        <h3>({legalUnit.denominationUsuelle})</h3>
+                      )}
+
                     {legalUnit.societeMission && (
                       <Badge pill bg="secondary" className="me-2">
                         Société à mission
@@ -171,8 +188,10 @@ const CompanyData = () => {
                       {legalUnit.activitePrincipaleCode})
                     </p>
                     <p>
-                      <b>Siège</b> :{" "}
-                      {legalUnit.codePostalSiege + " " + legalUnit.communeSiege}
+                      <b>Siège</b>:{" "}
+                      {legalUnit.statutdiffusion
+                        ? `${legalUnit.codePostalSiege} ${legalUnit.communeSiege}`
+                        : legalUnit.communeSiege}
                     </p>
                   </Col>
                 </Row>
@@ -262,7 +281,6 @@ const CompanyData = () => {
                   >
                     Publier mon empreinte
                   </Button>
-           
                 </div>
               </div>
             </Col>
