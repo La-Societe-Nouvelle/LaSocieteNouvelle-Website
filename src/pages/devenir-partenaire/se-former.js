@@ -84,9 +84,9 @@ const DevenirPartenaire_ExpertComptable = () => {
       </section>
       <section>
         <Container>
-          <h2 className="h1">Formations disponibles</h2>
+          <h2 className="h1">Formations existantes</h2>
           <Row className="align-items-center">
-            <Col className="text-center">
+            <Col className="text-center" lg={4}>
               <h3>Formation ENOES</h3>
               <p>
                 Cycle de formation « Intégrer la RSE dans la stratégie de l’entreprise ».
@@ -103,7 +103,7 @@ const DevenirPartenaire_ExpertComptable = () => {
                 En savoir plus
               </Button>
             </Col>
-            <Col className="text-center">
+            <Col className="text-center" lg={4}>
               <h3>Odyssée du Colibri</h3>
               <p>
                 Odyssée du Colibri facilite l'intégration de la Responsabilité Sociétale chez les professionnels du chiffre.
@@ -121,7 +121,7 @@ const DevenirPartenaire_ExpertComptable = () => {
                 En savoir plus
               </Button>
             </Col>
-            <Col className="text-center">
+            <Col className="text-center" lg={4}>
               <h3>Formation WAOU</h3>
               <p>
                 Stratégie RSE et Durabilité
@@ -137,6 +137,29 @@ const DevenirPartenaire_ExpertComptable = () => {
               <Button className="btn-outline-primary " 
                 target="_blank"
                 href="https://waou.expert/waou-pour-qui/waou-pour-expert-comptable/">
+                En savoir plus
+              </Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-center" lg={4}>
+              <h3>Atout RSE @Experts-Comptables</h3>
+              <p>
+              Une solution d’accompagnement RSE pragmatique et financée pour les cabinets d’experts-comptables
+              </p>
+              <p>
+                Programme :
+              </p>
+              <ul>
+                <li>Une masterclass et une séance de travail collective dédiée à l’initiation des participants aux enjeux des cabinets d’expertise comptable</li>
+                <li>Un diagnostic de l’existant RSE et des axes prioritaires à travailler</li>
+                <li>La structuration de la démarche RSE et d’un plan d’action opérationnel</li>
+                <li>Un accompagnement sur le positionnement RSE des cabinets et le développement de nouvelles offres de conseil</li>
+                <li>Des conseils pour bien communiquer sur sa démarche</li>
+              </ul>
+              <Button className="btn-outline-primary " 
+                target="_blank"
+                href="https://croissancebleue.com/">
                 En savoir plus
               </Button>
             </Col>
