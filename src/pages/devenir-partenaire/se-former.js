@@ -166,6 +166,59 @@ const DevenirPartenaire_ExpertComptable = () => {
           </Row>
         </Container>
       </section>
+      <section className="bg-light-secondary">
+        <Container>
+            <Row className="align-items-center">
+              <Col lg={6}>
+                <h2 className="h2">Documentation - Empreinte Sociétale</h2>
+                <p>
+                  Un espace de documentation sur les indicateurs est à votre disposition.
+                </p>
+                <p>
+                  Il regroupe l'ensemble des documentations et informations utiles relatives 
+                  à l'Empreinte Sociétale de l'Entreprise et au système d'information et de 
+                  comptabilité associé.
+                </p>
+                <p>
+                  Il concerne :
+                </p>
+                <ul>
+                  <li>Les indicateurs de l'Empreinte Sociétale</li>
+                  <li>Les valeurs statistiques proposées par défaut à une unité légale</li>
+                  <li>L'application web que nous mettons librement à disposition</li>
+                  <li>Les données macroéconomiques issues de nos travaux statistiques</li>
+                  <li>Les services disponibles de notre API publique</li>
+                </ul>
+                <Button className="btn-outline-secondary me-3" target="_blank" href="https://docs.lasocietenouvelle.org/">
+                  Accéder aux documentations
+                </Button>
+              </Col>
+              <Col lg={6}>
+                <h2 className="h2">Guide de mission</h2>
+                <p>
+                  Un guide de mission est en cours de rédaction.
+                  Il sera téléchargeable ici.
+                </p>
+                <p>
+                  Il vise à constituer un outil de travail à destination des professionnels 
+                  de l’expertise comptable qui souhaitent mettre en oeuvre ce type de mission
+                  (mesure de l'Empreinte Sociétale d'une entreprise).
+                </p>
+                <p>
+                  Contenu :
+                </p>
+                <ul>
+                  <li>Description de la mission</li>
+                  <li>Cadre et Enjeux</li>
+                  <li>Prérequis</li>
+                  <li>Préparation de la mission</li>
+                  <li>Réalisation de la mission</li>
+                  <li>Fin de la mission</li>
+                </ul>
+              </Col>
+            </Row>
+          </Container>
+      </section>
     </>
   );
 };
