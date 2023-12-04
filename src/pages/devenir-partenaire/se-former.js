@@ -85,83 +85,93 @@ const DevenirPartenaire_ExpertComptable = () => {
       <section>
         <Container>
           <h2 className="h1">Formations existantes</h2>
-          <Row className="align-items-center">
-            <Col className="text-center" lg={4}>
-              <h3>Formation ENOES</h3>
-              <p>
-                Cycle de formation « Intégrer la RSE dans la stratégie de l’entreprise ».
-              </p>
-              <p>
-                Cette formation vous aide à repérer les enjeux majeurs de la Responsabilité Sociétale de l’Entreprise et vous donne les clés de mise en œuvre.
-              </p>
-              <p>
-                Le contenu du programme vous permettra de réaliser des missions d’accompagnement ou d’audit de la RSE pour vos clients.
-              </p>
-              <Button className="btn-outline-primary " 
-                target="_blank"
-                href="https://enoes.com/entreprise-et-alternance/formation-continue/cycle-de-formation-bonnes-pratiques-rse-en-conduite-du-changement/">
-                En savoir plus
-              </Button>
+          <Row className="mb-3">
+            <Col className="text-center d-flex align-items-stretch" lg={4}>
+              <div className="border p-3 m-1 d-flex flex-column justify-content-between">
+                <h3>Formation ENOES</h3>
+                <div>
+                  <p>
+                    Cycle de formation « Intégrer la RSE dans la stratégie de l’entreprise ».
+                  </p>
+                  <p>
+                    Cette formation vous aide à repérer les enjeux majeurs de la Responsabilité Sociétale de l’Entreprise et vous donne les clés de mise en œuvre.
+                  </p>
+                  <p>
+                    Le contenu du programme vous permettra de réaliser des missions d’accompagnement ou d’audit de la RSE pour vos clients.
+                  </p>
+                </div>
+                <Button className="btn-outline-primary mx-auto" 
+                  target="_blank"
+                  href="https://enoes.com/entreprise-et-alternance/formation-continue/cycle-de-formation-bonnes-pratiques-rse-en-conduite-du-changement/">
+                  En savoir plus
+                </Button>
+              </div>
             </Col>
-            <Col className="text-center" lg={4}>
-              <h3>Odyssée du Colibri</h3>
-              <p>
-                Odyssée du Colibri facilite l'intégration de la Responsabilité Sociétale chez les professionnels du chiffre.
-              </p>
-              <p>
-                Nous les accompagnons dans la transformation de leur métier.
-                Nous les aidons à faire le lien entre le financier et l'extra-financier.
-              </p>
-              <p>
-                Offre de services : Conseil en stratégie / Accompagnement / Formation / Ateliers / Etudes & Prospectives.
-              </p>
-              <Button className="btn-outline-primary " 
-                target="_blank"
-                href="https://www.linkedin.com/company/odyssee-du-colibri">
-                En savoir plus
-              </Button>
+            <Col className="text-center d-flex align-items-stretch" lg={4}>
+              <div className="border p-3 m-1 d-flex flex-column justify-content-between">
+                <h3>Odyssée du Colibri</h3>
+                <p>
+                  Odyssée du Colibri facilite l'intégration de la Responsabilité Sociétale chez les professionnels du chiffre.
+                </p>
+                <p>
+                  Nous les accompagnons dans la transformation de leur métier.
+                  Nous les aidons à faire le lien entre le financier et l'extra-financier.
+                </p>
+                <p>
+                  Offre de services : Conseil en stratégie / Accompagnement / Formation / Ateliers / Etudes & Prospectives.
+                </p>
+                <Button className="btn-outline-primary mx-auto" 
+                  target="_blank"
+                  href="https://www.linkedin.com/company/odyssee-du-colibri">
+                  En savoir plus
+                </Button>
+              </div>
             </Col>
-            <Col className="text-center" lg={4}>
-              <h3>Formation WAOU</h3>
-              <p>
-                Stratégie RSE et Durabilité
-              </p>
-              <p>
-                Parcours en 3 étapes afin de vous permettre d’intégrer la RSE dans vos pratiques professionnelles pour améliorer la performance globale de vos clients et la pérennité de leurs activités :
-              </p>
-              <ul>
-                <li>Etape 1 – Sensibiliser et former les équipes des cabinets</li>
-                <li>Etape 2 – Produire un rapport intégré en alliant financier et extra financier</li>
-                <li>Etape 3 – Développer l’offre marketing et vous accompagner à son déploiement.</li>
-              </ul>
-              <Button className="btn-outline-primary " 
-                target="_blank"
-                href="https://waou.expert/waou-pour-qui/waou-pour-expert-comptable/">
-                En savoir plus
-              </Button>
+            <Col className="text-center justify-content-between d-flex align-self-stretch" lg={4}>
+              <div className="border p-3 m-1 d-flex flex-column justify-content-between">
+                <h3>Formation WAOU</h3>
+                <p>
+                  Stratégie RSE et Durabilité
+                </p>
+                <p>
+                  Parcours en 3 étapes afin de vous permettre d’intégrer la RSE dans vos pratiques professionnelles pour améliorer la performance globale de vos clients et la pérennité de leurs activités :
+                </p>
+                <ul>
+                  <li>Etape 1 – Sensibiliser et former les équipes des cabinets</li>
+                  <li>Etape 2 – Produire un rapport intégré en alliant financier et extra financier</li>
+                  <li>Etape 3 – Développer l’offre marketing et vous accompagner à son déploiement.</li>
+                </ul>
+                <Button className="btn-outline-primary mx-auto" 
+                  target="_blank"
+                  href="https://waou.expert/waou-pour-qui/waou-pour-expert-comptable/">
+                  En savoir plus
+                </Button>
+              </div>
             </Col>
           </Row>
           <Row>
-            <Col className="text-center" lg={4}>
-              <h3>Atout RSE @Experts-Comptables</h3>
-              <p>
-              Une solution d’accompagnement RSE pragmatique et financée pour les cabinets d’experts-comptables
-              </p>
-              <p>
-                Programme :
-              </p>
-              <ul>
-                <li>Une masterclass et une séance de travail collective dédiée à l’initiation des participants aux enjeux des cabinets d’expertise comptable</li>
-                <li>Un diagnostic de l’existant RSE et des axes prioritaires à travailler</li>
-                <li>La structuration de la démarche RSE et d’un plan d’action opérationnel</li>
-                <li>Un accompagnement sur le positionnement RSE des cabinets et le développement de nouvelles offres de conseil</li>
-                <li>Des conseils pour bien communiquer sur sa démarche</li>
-              </ul>
-              <Button className="btn-outline-primary " 
-                target="_blank"
-                href="https://croissancebleue.com/">
-                En savoir plus
-              </Button>
+            <Col className="text-center d-flex align-items-stretch" lg={4}>
+              <div className="border p-3 m-1 d-flex flex-column justify-content-between">
+                <h3>Atout RSE @Experts-Comptables</h3>
+                <p>
+                Une solution d’accompagnement RSE pragmatique et financée pour les cabinets d’experts-comptables
+                </p>
+                <p>
+                  Programme :
+                </p>
+                <ul>
+                  <li>Une masterclass et une séance de travail collective dédiée à l’initiation des participants aux enjeux des cabinets d’expertise comptable</li>
+                  <li>Un diagnostic de l’existant RSE et des axes prioritaires à travailler</li>
+                  <li>La structuration de la démarche RSE et d’un plan d’action opérationnel</li>
+                  <li>Un accompagnement sur le positionnement RSE des cabinets et le développement de nouvelles offres de conseil</li>
+                  <li>Des conseils pour bien communiquer sur sa démarche</li>
+                </ul>
+                <Button className="btn-outline-primary mx-auto" 
+                  target="_blank"
+                  href="https://croissancebleue.com/">
+                  En savoir plus
+                </Button>
+              </div>
             </Col>
           </Row>
         </Container>
