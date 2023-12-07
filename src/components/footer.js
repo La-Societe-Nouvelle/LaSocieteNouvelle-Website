@@ -153,8 +153,8 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/newsletter">
-                    Newsletter
+                  <a className="nav-link" href="/numerique-responsable">
+                    Numérique Responsable
                   </a>
                 </li>
                 <li className="nav-item">
