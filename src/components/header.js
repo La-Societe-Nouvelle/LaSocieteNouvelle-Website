@@ -190,6 +190,13 @@ const Header = () => {
                 EXPERTS COMPTABLES
               </Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link
+                href="/devenir-partenaire/se-former"
+              >
+                SE FORMER
+              </Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
