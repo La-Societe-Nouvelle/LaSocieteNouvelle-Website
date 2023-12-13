@@ -161,13 +161,21 @@ function DatasetPage() {
 
   const generateOptions = (key) => {
     const values = [...metadata[key]];
-  
-    values.sort((a, b) => {
-      if (a.label === null || b.label === null) {
-        return 0; // Ignore the sorting if label is null
-      }
-      return a.label.localeCompare(b.label);
-    });  
+
+    if(key == "branch" || key == "indic" || key == "division") {
+      values.sort((a, b) => {
+        return a.code.localeCompare(b.code);
+      }); 
+    }
+    else {
+      values.sort((a, b) => {
+        if (a.label === null || b.label === null) {
+          return 0; // Ignore the sorting if label is null
+        }
+        return a.label.localeCompare(b.label);
+      }); 
+    }
+   
     return values.map(({ code, label }) => (
       <option key={code} value={code}>
         {code !== label ? `${code} - ${label}` : label}
