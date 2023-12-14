@@ -15,17 +15,12 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://lasocietenouvelle.org/devenir-partenaire</loc>
+    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://lasocietenouvelle.org/publier-empreinte</loc>
-    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lasocietenouvelle.org/entreprises</loc>
-    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lasocietenouvelle.org/cabinets-comptables</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
@@ -34,13 +29,11 @@
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://lasocietenouvelle.org/ressources/application-mesure-impact</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://lasocietenouvelle.org/mesurer-empreinte-societale</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
@@ -62,22 +55,20 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://lasocietenouvelle.org/categorie/notes-analyse</loc>
-    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lasocietenouvelle.org/categorie/fiches-methodologiques</loc>
-    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lasocietenouvelle.org/faq</loc>
+    <loc>https://lasocietenouvelle.org/devenir-partenaire/expert-comptable</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
     <priority>0.74</priority>
   </url>
-
+  <url>
+    <loc>https://lasocietenouvelle.org/devenir-partenaire/se-former</loc>
+    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://lasocietenouvelle.org/faq</loc>
+    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
   <url>
     <loc>https://lasocietenouvelle.org/ressources</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
@@ -154,6 +145,16 @@
     <priority>0.60</priority>
   </url>
   <url>
+    <loc>https://lasocietenouvelle.org/categorie/notes-analyse</loc>
+    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://lasocietenouvelle.org/categorie/fiches-methodologiques</loc>
+    <lastmod>2023-04-26T08:05:00+00:00</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
     <loc>https://lasocietenouvelle.org/newsletter</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
     <priority>0.50</priority>
@@ -171,17 +172,17 @@
   <url>
     <loc>https://lasocietenouvelle.org/mentions-legales</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.50</priority>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://lasocietenouvelle.org/politique-confidentialite</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.50</priority>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://lasocietenouvelle.org/portail/company/889182770</loc>
     <lastmod>2023-04-26T08:05:00+00:00</lastmod>
-    <priority>0.50</priority>
+    <priority>0.40</priority>
   </url>
 
 </urlset>

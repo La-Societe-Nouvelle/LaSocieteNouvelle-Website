@@ -112,13 +112,19 @@ const idr = () => {
           <ul>
             <li>
               Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
-              <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement">
+              <a
+                href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/le-salaire-fixation-et-paiement"
+                target="_blank"
+              >
                 Le salaire : fixation et paiement
               </a>
             </li>
             <li>
               Ministère de l’Economie, des Finances et de la Relance -{" "}
-              <a href="https://www.economie.gouv.fr/entreprises/remuneration-salaries">
+              <a
+                href="https://www.economie.gouv.fr/entreprises/remuneration-salaries"
+                target="_blank"
+              >
                 Rémunération de vos salariés
               </a>
             </li>

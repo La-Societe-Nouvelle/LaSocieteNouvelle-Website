@@ -140,13 +140,17 @@ const geq = () => {
           <ul>
             <li>
               Ministère de la Transition Ecologique -{" "}
-              <a href="https://www.ecologie.gouv.fr/politiques/energies">
+              <a href="https://www.ecologie.gouv.fr/politiques/energies"
+              target="_blank"
+              >
                 Politiques publiques - Energies
               </a>
             </li>
             <li>
               Données INSEE -{" "}
-              <a href="https://www.insee.fr/fr/statistiques/4494213">
+              <a href="https://www.insee.fr/fr/statistiques/4494213"
+              target="_blank"
+              >
                 Tableaux de synthèse : TES et TEE en 2019
               </a>
             </li>

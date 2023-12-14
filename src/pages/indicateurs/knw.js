@@ -131,7 +131,7 @@ const knw = () => {
           <ul>
             <li>
               Données EUROSTAT : -{" "}
-              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=trng_cvt_16n2&lang=fr" target="_blank">
+              <a href="https://ec.europa.eu/eurostat/databrowser/product/view/trng_cvt_16n2" target="_blank">
               Coûts des cours FPC par type et activité de la NACE Rév. 2
               </a>
             </li>

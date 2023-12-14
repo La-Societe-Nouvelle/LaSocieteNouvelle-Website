@@ -154,7 +154,7 @@ const mat = () => {
             <li>
               Données EUROSTAT -{" "}
               <a
-                href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_mfa&lang=fr"
+                href="https://ec.europa.eu/eurostat/databrowser/view/env_ac_mfa/default/table?lang=fr"
                 target="_blank"
               >
                 Comptes de flux de matières
@@ -163,7 +163,7 @@ const mat = () => {
             <li>
               Données EUROSTAT -{" "}
               <a
-                href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_rmefd&lang=fr"
+                href="https://ec.europa.eu/eurostat/databrowser/view/env_ac_rmefd/default/table?lang=fr"
                 target="_blank"
               >
                 Comptes de flux de matières en équivalent matières premières par

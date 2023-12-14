@@ -10,7 +10,7 @@ const Page = () => {
         title={"Portail de données"}
         prev={"ressources"}
         prevTitle={"Ressources"}
-        path={"ressources/consulter-impacts-entreprise"}
+        path={"ressources/consulter-impacts-entreprises"}
         hasBreadcrumb={true}
       />
 

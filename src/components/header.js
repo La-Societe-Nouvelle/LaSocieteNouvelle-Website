@@ -245,13 +245,21 @@ const Header = () => {
               <i className="bi bi-github"></i>
             </Nav.Link>
             <Nav.Link
+              href="https://discord.gg/bzsTQJSa"
+              target="_blank"
+              rel="noreferrer"
+              title="Discord"
+            >
+              <i className="bi bi-discord"></i>
+            </Nav.Link>
+            <Nav.Link
               href="/blog"
               rel="noreferrer"
               title="Consulter notre blog"
             >
               <span className="top-bar-link"> Blog</span>
             </Nav.Link>
-            <Nav.Link href="faq" rel="noreferrer" title="Accéder à la FAQ">
+            <Nav.Link href="/faq" rel="noreferrer" title="Accéder à la FAQ">
               <span className="top-bar-link"> Aide</span>
             </Nav.Link>
           </Nav>
@@ -279,10 +287,10 @@ const Header = () => {
           <Col>
             <Nav className="justify-content-end">
               <NavDropdown title="Vous êtes ?">
-                <NavDropdown.Item href="/cabinets-comptables">
+                <NavDropdown.Item href="/devenir-partenaire/expert-comptable">
                   Un expert-comptable
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/entreprises">
+                <NavDropdown.Item href="/devenir-partenaire/entreprises">
                   Une entreprise
                 </NavDropdown.Item>
               </NavDropdown>

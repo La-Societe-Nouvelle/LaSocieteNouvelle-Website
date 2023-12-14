@@ -135,17 +135,21 @@ const soc = () => {
           <ul>
             <li>
               Ministère de l’Economie, des Finances et de la Relance -
-              <a href="https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises">
+              <a href="https://www.economie.gouv.fr/loi-pacte-redefinir-raison-etre-entreprises"
+              target="_blank"
+              >
                 Redéfinir la raison d'être des entreprises
               </a>
             </li>
             <li>
-              <a href="https://ess-france.org/fr">
+              <a href="https://ess-france.org/" target="_blank">
                 ESS France (Chambre française de l’ESS)
               </a>
             </li>
             <li>
-              <a href="http://www.esspace.fr/index.html">
+              <a href="http://www.esspace.fr/index.html"
+              target="_blank"
+              >
                 Conseil National des Chambres Régionales de l’ESS
               </a>
             </li>

@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Container, Image, Row, Button } from "react-bootstrap";
-import PageHeader from "../components/PageHeader";
-import {MetrizButton} from "../components/buttons/MetrizButton"
+import PageHeader from "../../components/PageHeader";
+import {MetrizButton} from "../../components/buttons/MetrizButton";
+
 const Entreprises = () => {
   return (
     <>

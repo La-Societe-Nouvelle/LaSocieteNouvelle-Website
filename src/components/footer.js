@@ -25,10 +25,17 @@ function Footer() {
                 </a>
               </div>
             </Col>
-            <Col xs={12} lg={4} className="text-center text-lg-start mt-3 mt-lg-0">
+            <Col
+              xs={12}
+              lg={4}
+              className="text-center text-lg-start mt-3 mt-lg-0"
+            >
               <h6>Suivez-nous </h6>
 
-              <ListGroup horizontal className="justify-content-center justify-content-lg-start">
+              <ListGroup
+                horizontal
+                className="justify-content-center justify-content-lg-start"
+              >
                 <ListGroup.Item>
                   <a
                     href="https://github.com/La-Societe-Nouvelle/"
@@ -36,7 +43,10 @@ function Footer() {
                     rel="noreferrer"
                     title="GitHub"
                   >
-                    <i className="bi bi-github mx-2 mx-lg-0 me-lg-3" role="img"></i>
+                    <i
+                      className="bi bi-github mx-2 mx-lg-0 me-lg-3"
+                      role="img"
+                    ></i>
                   </a>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -46,7 +56,10 @@ function Footer() {
                     rel="noreferrer"
                     title="Twitter"
                   >
-                    <i className="bi bi-twitter mx-2 mx-lg-0 me-lg-3" role="img"></i>
+                    <i
+                      className="bi bi-twitter mx-2 mx-lg-0 me-lg-3"
+                      role="img"
+                    ></i>
                   </a>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -56,12 +69,32 @@ function Footer() {
                     rel="noreferrer"
                     title="LinkedIn"
                   >
-                    <i className="bi bi-linkedin mx-2 mx-lg-0 me-lg-3" role="img"></i>
+                    <i
+                      className="bi bi-linkedin mx-2 mx-lg-0 me-lg-3"
+                      role="img"
+                    ></i>
+                  </a>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <a
+                    href="https://discord.gg/bzsTQJSa"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Discord"
+                  >
+                    <i
+                      className="bi bi-discord mx-2 mx-lg-0 me-lg-3"
+                      role="img"
+                    ></i>
                   </a>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col xs={12} lg={4}  className="text-center text-lg-start mt-3 mt-lg-0">
+            <Col
+              xs={12}
+              lg={4}
+              className="text-center text-lg-start mt-3 mt-lg-0"
+            >
               <h6> Contactez-nous</h6>
               <div className="d-flex justify-content-center justify-content-lg-start align-items-center icon-link">
                 <i className="bi bi-envelope-fill" role="img"></i>
@@ -87,7 +120,7 @@ function Footer() {
               </Nav>
             </Col>
             <Col xs={12} lg={3}>
-              <h6>Nos ressources</h6>
+              <h6>Ressources</h6>
               <Nav defaultActiveKey="/" className="flex-column">
                 <Nav.Link href="/ressources/application-mesure-impact">
                   Metriz - Application Web de mesure d'impact
@@ -108,18 +141,28 @@ function Footer() {
               </Nav>
             </Col>
             <Col xs={12} lg={3}>
-              <h6>Nos services</h6>
+              <h6>Services</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="/cabinets-comptables">
-                  Cabinets comptables
+                <Nav.Link href="/devenir-partenaire">
+                  Devenir partenaire
                 </Nav.Link>
-                <Nav.Link href="/entreprises">Entreprises</Nav.Link>
+                <Nav.Link href="/devenir-partenaire/expert-comptable">
+                  Experts comptables
+                </Nav.Link>
+                <Nav.Link href="/devenir-partenaire/entreprises">
+                  Entreprises
+                </Nav.Link>
+                <Nav.Link href="/devenir-partenaire/se-former">
+                  Se former
+                </Nav.Link>
               </Nav>
             </Col>
             <Col xs={12} lg={3}>
-              <h6>Nos articles</h6>
+              <h6>Articles</h6>
               <Nav defaultActiveKey="/" className="flex-column">
-                <Nav.Link href="/categorie/notes-analyse">Notes d'analyse</Nav.Link>
+                <Nav.Link href="/categorie/notes-analyse">
+                  Notes d'analyse
+                </Nav.Link>
                 <Nav.Link href="/categorie/fiches-methodologiques">
                   Fiches méthodologiques
                 </Nav.Link>
@@ -130,7 +173,11 @@ function Footer() {
           </Row>
         </Container>
         <div className="text-center mt-4">
-          <Image src="/celeste-blanc.svg" height={30} alt="Celeste personnage du logo de La Société Nouvelle"></Image>
+          <Image
+            src="/celeste-blanc.svg"
+            height={30}
+            alt="Celeste personnage du logo de La Société Nouvelle"
+          ></Image>
         </div>
         <div className="bottom-footer">
           <Container>
@@ -144,7 +191,7 @@ function Footer() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/politique-confidentialite">
-                   Politique de confidentialité
+                    Politique de confidentialité
                   </a>
                 </li>
                 <li className="nav-item">

@@ -134,13 +134,14 @@ const geq = () => {
           <ul>
             <li>
               Données EUROSTAT -{" "}
-              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=earn_ses_hourly&lang=fr">
+              <a href="https://ec.europa.eu/eurostat/databrowser/view/earn_ses_hourly/default/table?lang=fr" 
+              target="_blank">
                 Enquête sur la structure des salaires : salaires horaires
               </a>
             </li>
             <li>
               Ministère du Travail, de l’Emploi et de l’Insertion -{" "}
-              <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533">
+              <a href="https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/l-egalite-de-remuneration-entre-les-femmes-et-les-hommes-et-les-obligations-des-374533" target="_blank">
                 L’égalité de rémunération entre les femmes et les hommes et les
                 obligations des employeurs
               </a>

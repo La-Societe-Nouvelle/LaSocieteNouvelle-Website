@@ -18,7 +18,7 @@ export default function Post({ post }) {
         <Container>
           <div className="breadcrumb">
             <a href="/">Accueil</a> / <a href={"/blog/"}> Blog/</a>
-            <a href={"/" + post.slug}>{post.title}</a>
+            <a href={"/blog/" + post.slug}>{post.title}</a>
           </div>
         </Container>
       </header>

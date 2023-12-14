@@ -119,23 +119,31 @@ const art = () => {
           <ul>
             <li>
               Direction Générale des Entreprises -
-              <a href="https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat">
+              <a href="https://www.entreprises.gouv.fr/fr/etudes-et-statistiques/chiffres-cles/chiffres-cles-de-l-artisanat"
+              target="_blank"
+              >
                 Rapport de la DGE
               </a>
             </li>
             <li>
               Ministère de l’Economie, des Finances et de la Relance -
-              <a href="https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire">
+              <a href="https://www.economie.gouv.fr/entreprises/labels-et-reconnaissance-de-savoir-faire"
+              target="_blank"
+              >
                 Labels et reconnaissance de savoir-faire
               </a>
             </li>
             <li>
-              <a href="https://www.institut-metiersdart.org">
+              <a href="https://www.institut-metiersdart.org"
+              target="_blank"
+              >
                 Institut National des Métiers d'Art (INMA)
               </a>
             </li>
             <li>
-              <a href="https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291">
+              <a href="https://www.insee.fr/fr/statistiques/4277845?sommaire=4318291"
+              target="_blank"
+              >
                 INSEE : Tableaux de l'économie française (2020) - Artisanat
               </a>
             </li>

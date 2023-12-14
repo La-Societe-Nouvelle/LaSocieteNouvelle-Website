@@ -168,7 +168,7 @@ const ghg = () => {
           <ul>
             <li>
               <a
-                href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_ac_ainah_r2&lang=fr"
+                href="https://data.europa.eu/data/datasets/obh0po4fhddaeqre52wpha?locale=fr"
                 target="_blank"
               >
                 Compte d'émissions atmosphériques par activité de la NACE Rév. 2
