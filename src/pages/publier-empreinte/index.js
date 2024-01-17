@@ -22,6 +22,7 @@ import {
 } from "../../components/statement/statementUtils";
 import { getBinaryPDF } from "../../utils/statementWriter";
 import { useEffect } from "react";
+import { sendPublications } from "../../services/PublicationService";
 
 const initialFormData = {
   siren: "",
@@ -101,6 +102,15 @@ export default function PublishStatement() {
   const submitStatement = async (event) => {
     event.preventDefault();
 
+    const publishableFootprint = buildPublication(formData.socialfootprint);
+    const publications = {
+      siren: formData.siren,
+      footprint: publishableFootprint,
+      year: formData.year,
+    };
+
+    const response = await sendPublications(publications);
+
     const statementFile = getBinaryPDF(formData);
 
     const messageToAdmin = mailToAdminWriter(formData);
@@ -115,11 +125,18 @@ export default function PublishStatement() {
       statementFile
     );
 
-    if (resAdmin.status < 300 && resDeclarant.status < 300) {
-      setStatementError(false);
-    } else {
+    if (
+      response.status == 200 &&
+      resAdmin.status == 200 &&
+      resDeclarant.status == 200
+    ) {
       setStatementError(true);
+
+    } else {
+      setStatementError(false);
+
     }
+
 
     setStep(5);
   };
@@ -181,3 +198,17 @@ const StatementSendMessage = ({ goBack, hasError }) => {
     );
   }
 };
+
+const buildPublication = (legalUnitFootprint) => {
+  console.log(legalUnitFootprint)
+  return Object.entries(legalUnitFootprint)
+    .reduce((acc, [indicator, footprint]) => {
+      acc[indicator] = {
+        value: footprint.value,
+        uncertainty: footprint.uncertainty,
+        comment: footprint.info || null,
+        source : "Publication directe via https://lasocietenouvelle.org"
+      };
+      return acc;
+    }, {});
+}
