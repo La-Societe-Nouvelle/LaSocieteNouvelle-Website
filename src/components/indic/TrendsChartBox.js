@@ -1,15 +1,14 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 import Select from "react-select";
 
 import TrendChart from "../charts/TrendChart";
-import branchList from "../../lib/branches";
-import { Col, Container, Row } from "react-bootstrap";
+import activitiesList from "../../lib/activities";
 
 const TrendsChartBox = (props) => {
-  const [branchs, setBranchs] = useState([]);
+  const [activities, setActivities] = useState([]);
   const [aggregates, setAggregates] = useState([]);
 
   /* ---------- Display trend graph by branch and aggregate ---------- */
@@ -32,15 +31,14 @@ const TrendsChartBox = (props) => {
   };
 
   useEffect(() => {
-    let branchsOptions = [];
-    //Divisions select options
-    Object.entries(branchList)
+    let activitiesOptions = [];
+    Object.entries(activitiesList)
       .sort((a, b) => parseInt(a) - parseInt(b))
       .map(([value, label]) => {
-        branchsOptions.push({ value: value, label: label });
+        activitiesOptions.push({ value: value, label: label });
       });
 
-    setBranchs(branchsOptions);
+    setActivities(activitiesOptions);
 
     const aggregatesOptions = [
       { value: "PRD", label: "Production" },
@@ -63,14 +61,14 @@ const TrendsChartBox = (props) => {
           <Col>
               <Select
                 className="mb-3 small-text"
-                id="branchs-select"
-                instanceId="branchs-select"
+                id="activities-select"
+                instanceId="activities-select"
                 placeholder={"Choisissez une branche d'activité"}
                 defaultValue={{
                   value: selectedBranch.value,
                   label: selectedBranch.label,
                 }}
-                options={branchs}
+                options={activities}
                 onChange={changeBranch}
               />
             </Col>
