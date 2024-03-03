@@ -1,6 +1,5 @@
 export const sendContactMail = async (objet,message,coordonnees) => 
 { 
-
   const recipientMail= "contact@lasocietenouvelle.org";
   const objetMail = objet;
   const messageMail = message
@@ -17,9 +16,8 @@ export const sendContactMail = async (objet,message,coordonnees) =>
 
   try 
   {
-      const res = await fetch('/api/mail-sender', req);
-
-      return res;
+    const res = await fetch('/api/mail-sender', req);
+    return res;
   } 
   catch (error) {
       return error;

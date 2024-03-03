@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import PageHeader from "../components/PageHeader";
+import { sendContactMail } from "./api/mail-api";
 
 export default function Contact() {
   const [name, setName] = useState("");
