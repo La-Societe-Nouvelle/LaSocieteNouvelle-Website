@@ -118,7 +118,7 @@ Dotations aux amortissements | 60 € | 117 gCO2e/€<sup>3</sup> | 7 kgCO2e
 
 **La valeur relative à la production totale est ensuite affectée à la production vendue (chiffre d'affaires).**
 
-Lorsqu'une mesure a été réalisée sur l'exerice précédent il convient d'ajuste la valeur relative à la production vendue en prenant en compte la production déstockée (et produite sur l'exercice précédent).
+Lorsqu'une mesure a été réalisée sur l'exercice précédent il convient d'ajuste la valeur relative à la production vendue en prenant en compte la production déstockée (et produite sur l'exercice précédent).
 
 ## ETAPE 6 - PUBLICATION DES DONNEES
 
