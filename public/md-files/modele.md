@@ -24,7 +24,7 @@ Les indicateurs de l’Empreinte Sociétale sont relatifs à la production d’u
 Solde comptable | Valeurs des indicateurs
 --------------- | -----------------------
 Production vendue (Chiffre d'affaires) [1] | Déduites de 2 et 3
-\+/- Production stockée/déstockée [2] | Identiques à 3 / Empreinte Sociétale de l'exerice précédent
+\+/- Production stockée/déstockée [2] | Identiques à 3 / Empreinte Sociétale de l'exercice précédent
 \+ Production immobilisée | Identiques à 3
 = Production [3] | Déduites de 4 et 5
 \- Charges externes [4] | Empreinte Sociétale des entreprises sollicitées
