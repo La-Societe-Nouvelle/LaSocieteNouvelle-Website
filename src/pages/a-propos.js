@@ -194,7 +194,7 @@ const About = () => {
                 <Image src="images/equipe/Laura.jpg" className="rounded" />
 
                 <h4 className="text-center mt-4">Laura Roost</h4>
-                <p>Dévelopeur informatique</p>
+                <p>Développeur informatique</p>
               </div>
             </Col>
             <Col>
