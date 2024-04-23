@@ -248,7 +248,7 @@ const Faq = () => {
                       <p>
                         L'accès libre à nos outils et à nos travaux est un
                         engagement inflexible : la base de données est et
-                        restera ouverte, l'outil est restera libre et open
+                        restera ouverte, l'outil est et restera libre et open
                         source. La pérennité de la structure vise à être assurer
                         par la mise en place des frais de publication. La
                         Société Nouvelle bénéficie actuellement de revenus issus
