@@ -67,7 +67,7 @@ const DevenirPartenaire_ExpertComptable = () => {
                   Espace de référence sur la Durabilité, créé par l'Ordre des experts-comptables.
                 </p>
                 <p>
-                  Qautre niveaux
+                  Quatre niveaux
                 </p>
                 <ul>
                   <li>Je me sensibilise et je m'informe sur les enjeux sociétaux et environnementaux</li>
