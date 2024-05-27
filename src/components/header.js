@@ -85,24 +85,33 @@ const Header = () => {
                   drop="end"
       
                 >
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a38">
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt">
+                    Empreintes des activités économiques - données historiques
+                  </NavDropdown.Item>
+                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a38">
                     Empreintes des branches d'activité - données historiques
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a88">
                     Empreintes des divisions économiques - données historiques
+                  </NavDropdown.Item> */}
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd">
+                    Empreintes des activités économiques - tendances
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a38">
+                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a38">
                     Empreintes des branches d'activité - tendances
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a88">
                     Empreintes des divisions économiques - tendances
+                  </NavDropdown.Item> */}
+                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt">
+                    Objectifs annuels par activité économique
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a38">
+                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a38">
                     Objectifs annuels par branches d'activité
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a88">
                     Objectifs annuels des divisions économiques
-                  </NavDropdown.Item>
+                  </NavDropdown.Item> */}
                 </NavDropdown>
 
                 <NavDropdown.Divider />

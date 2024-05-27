@@ -43,7 +43,7 @@ const DataBrowser = () => {
               <Button
                 variant="primary"
                 className="my-2"
-                href="/databrowser/dataset/macro_fpt_a38/?indic=GHG&aggregate=PRD&year=2019"
+                href="/databrowser/dataset/macro_fpt?country=FR&indic=GHG&aggregate=PRD&year=2019"
               >
                 <i className="bi bi-search"></i> Explorer les jeux de données
               </Button>
@@ -69,41 +69,59 @@ const DataBrowser = () => {
                 </h4>
                 <ul className="list-unstyled datasets-list">
                   <li>
+                    <a href="/databrowser/dataset/macro_fpt">
+                      <i className="bi bi-folder2-open"></i> Empreintes des
+                      activités économiques - données historiques
+                    </a>
+                  </li>
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_a38">
                       <i className="bi bi-folder2-open"></i> Empreintes des
                       branches d'activité - données historiques
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_a88">
                       <i className="bi bi-folder2-open"></i> Empreintes des
                       divisions économiques - données historiques
                     </a>
-                  </li>
+                  </li> */}
                   <li>
+                    <a href="/databrowser/dataset/macro_fpt_trd">
+                      <i className="bi bi-folder2-open"></i> Empreintes des
+                      activités économiques - tendances
+                    </a>
+                  </li>
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_trd_a38">
                       <i className="bi bi-folder2-open"></i> Empreintes des
                       branches d'activité - tendances
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_trd_a88">
                       <i className="bi bi-folder2-open"></i> Empreintes des
                       divisions économiques - tendances
                     </a>
-                  </li>
+                  </li> */}
                   <li>
+                    <a href="/databrowser/dataset/macro_fpt_tgt">
+                      <i className="bi bi-folder2-open"></i> Objectifs annuels
+                      par activité économique
+                    </a>
+                  </li>
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_tgt_a38">
                       <i className="bi bi-folder2-open"></i> Objectifs annuels
                       par branches d'activité
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a href="/databrowser/dataset/macro_fpt_tgt_a88">
                       <i className="bi bi-folder2-open"></i> Objectifs annuels
                       des divisions économiques
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </Col>

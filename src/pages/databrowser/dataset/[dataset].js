@@ -11,9 +11,10 @@ import {
 } from "react-bootstrap";
 import * as XLSX from "xlsx";
 
-function DatasetPage() {
+function DatasetPage() 
+{
   const router = useRouter();
-  const { dataset, indic, aggregate, year } = router.query;
+  const { dataset, indic, aggregate, year, country } = router.query;
   const [data, setData] = useState(null);
   const [datasetMetadata, setDatasetMetadata] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
@@ -69,20 +70,25 @@ function DatasetPage() {
         indic: indic,
       }));
     }
-    if (aggregate) {
+    if (country) {
       setSelectedValues((prevSelectedValues) => ({
         ...prevSelectedValues,
-        aggregate: aggregate,
+        country: country,
       }));
     }
-
     if (year) {
       setSelectedValues((prevSelectedValues) => ({
         ...prevSelectedValues,
         year: year,
       }));
     }
-  }, [indic, aggregate, year]);
+    if (aggregate) {
+      setSelectedValues((prevSelectedValues) => ({
+        ...prevSelectedValues,
+        aggregate: aggregate,
+      }));
+    }
+  }, [indic, aggregate, year, country]);
   // ...
 
   useEffect(() => {
@@ -215,7 +221,13 @@ function DatasetPage() {
               <h2>Jeux de données</h2>
               <h3 className="h5">Empreintes des activités économiques</h3>
               <ul className="list-unstyled datasets-list">
-                <li>
+              <li>
+                  <a href="/databrowser/dataset/macro_fpt">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    activités économiques - données historiques
+                  </a>
+                </li>
+                {/* <li>
                   <a href="/databrowser/dataset/macro_fpt_a38">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     branches d'activité - données historiques
@@ -226,8 +238,14 @@ function DatasetPage() {
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     divisions économiques - données historiques
                   </a>
-                </li>
+                </li> */}
                 <li>
+                  <a href="/databrowser/dataset/macro_fpt_trd">
+                    <i className="bi bi-chevron-right"></i> Empreintes des
+                    activités économiques - tendances
+                  </a>
+                </li>
+                {/* <li>
                   <a href="/databrowser/dataset/macro_fpt_trd_a38">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     branches d'activité - tendances
@@ -238,8 +256,14 @@ function DatasetPage() {
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     divisions économiques - tendances
                   </a>
-                </li>
+                </li> */}
                 <li>
+                  <a href="/databrowser/dataset/macro_fpt_tgt">
+                    <i className="bi bi-chevron-right"></i> Objectifs annuels
+                    par activité économique
+                  </a>
+                </li>
+                {/* <li>
                   <a href="/databrowser/dataset/macro_fpt_tgt_a38">
                     <i className="bi bi-chevron-right"></i> Objectifs annuels
                     par branches d'activité
@@ -250,7 +274,7 @@ function DatasetPage() {
                     <i className="bi bi-chevron-right"></i> Objectifs annuels
                     des divisions économiques
                   </a>
-                </li>
+                </li> */}
               </ul>
               <hr></hr>
               <h4>Données des comptes nationaux</h4>
