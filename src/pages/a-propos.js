@@ -19,7 +19,7 @@ const About = () => {
                   système d'information sur les impacts de la production des
                   entreprises françaises
                 </strong>
-                . L'enjeu est de pouvoir d'identifier les entreprises les plus
+                . L'enjeu est de pouvoir identifier les entreprises les plus
                 performantes sur des dimensions <strong>sociales</strong> et{" "}
                 <strong>environnementales</strong> clefs pour un développement
                 soutenable, celles qui portent la transition et assument leur
