@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Col, Row, Button } from "react-bootstrap";
 
 import axios from "axios";
+import { MetrizButton } from "../buttons/MetrizButton";
 
 export const LegalForm = (props) => {
 
@@ -129,12 +130,7 @@ export const LegalForm = (props) => {
             Un outil gratuit et open source vous permet de faire ce calcul grâce
             à votre fichier d'écriture comptable.
           </p>
-          <Button
-            variant="secondary"
-            href="/ressources/application-mesure-impact"
-          >
-            Accéder à l'application
-          </Button>
+          <MetrizButton />
         </div>
       </Col>
     </Row>
