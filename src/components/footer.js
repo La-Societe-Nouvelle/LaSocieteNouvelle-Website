@@ -117,6 +117,7 @@ function Footer() {
                   Notre approche
                 </Nav.Link>
                 <Nav.Link href="/indicateurs">Liste des indicateurs</Nav.Link>
+                <Nav.Link href="/recrutement">Recrutement</Nav.Link>
               </Nav>
             </Col>
             <Col xs={12} lg={3}>
