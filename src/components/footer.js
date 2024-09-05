@@ -77,7 +77,7 @@ function Footer() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <a
-                    href="https://discord.gg/bzsTQJSa"
+                    href="https://discord.gg/ANFwWZc3eu"
                     target="_blank"
                     rel="noreferrer"
                     title="Discord"

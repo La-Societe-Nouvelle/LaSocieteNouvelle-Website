@@ -254,7 +254,7 @@ const Header = () => {
               <i className="bi bi-github"></i>
             </Nav.Link>
             <Nav.Link
-              href="https://discord.gg/bzsTQJSa"
+              href="https://discord.gg/ANFwWZc3eu"
               target="_blank"
               rel="noreferrer"
               title="Discord"
