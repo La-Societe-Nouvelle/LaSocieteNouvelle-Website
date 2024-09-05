@@ -26,7 +26,25 @@ const Home = () => {
         <meta property="og:url" content="https://lasocietenouvelle.org/" />
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
-      <section className="homepage-blocs">
+      <section className="pt-4 pb-0 m-0">
+        <Container>
+          <div className="alert alert-danger d-flex justify-content-between p-4">
+            <p className="ps-2 pe-2 m-0">
+              <i className="bi bi-exclamation-circle"></i> Une consultation publique est en cours pour <strong>réviser 
+                les indicateurs de l'Empreinte Sociétale</strong> pour l'année 2025. <br/>Vous pouvez donner votre avis sur
+                les propositions en répondant au questionnaire (lien à droite) jusqu'au 03/10/2024.
+            </p>
+            <a
+              href="https://forms.office.com/e/rhDS4NL6De"
+              target="_blank"
+              className="btn btn-secondary w-25 p-auto"
+            >
+              <i className="bi bi-check2-square"></i> Donner mon avis
+            </a>
+          </div>
+        </Container>
+      </section>
+      <section className="homepage-blocs pt-0">
         <Container>
           <Row>
             <Col lg={6}>
