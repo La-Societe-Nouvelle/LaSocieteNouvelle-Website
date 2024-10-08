@@ -26,7 +26,7 @@ const Home = () => {
         <meta property="og:url" content="https://lasocietenouvelle.org/" />
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
-      <section className="pt-4 pb-0 m-0">
+      {/* <section className="pt-4 pb-0 m-0">
         <Container>
           <div className="alert alert-danger d-flex justify-content-between p-4">
             <p className="ps-2 pe-2 m-0">
@@ -43,7 +43,7 @@ const Home = () => {
             </a>
           </div>
         </Container>
-      </section>
+      </section> */}
       <section className="homepage-blocs pt-0">
         <Container>
           <Row>
