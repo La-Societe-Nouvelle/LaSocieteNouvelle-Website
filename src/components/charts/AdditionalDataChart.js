@@ -95,7 +95,7 @@ const AdditionalDataChart = ({ historical, latestValue, year, flag, unit }) => {
   return (
     <>
       <p className="source mt-3 mb-0 fw-bold">{unit}</p>
-      <Line height={250} data={data} options={options} /> ;
+      <Line height={250} data={data} options={options} />
     </>
   )
 
