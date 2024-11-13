@@ -15,7 +15,7 @@ export const ContentSocialFootprint = ({
   const valueCreation = ["ECO", "ART", "SOC"];
   const socialFootprint = ["IDR", "GEQ", "KNW"];
   const environmentalFootprint = ["GHG", "NRG", "WAT", "MAT", "WAS", "HAZ"];
-  const additionnalIndicators = ["IEP"];
+  const additionnalIndicators = ["IEP","MIF"];
 
   const valueCreationList = Object.fromEntries(
     Object.entries(footprint).filter(([key]) => valueCreation.includes(key))

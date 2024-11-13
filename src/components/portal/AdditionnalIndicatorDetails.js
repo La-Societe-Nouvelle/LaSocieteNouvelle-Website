@@ -3,6 +3,7 @@ import AdditionalDataChart from "../charts/AdditionalDataChart";
 import { useState } from "react";
 import { getFlagLabel } from "../../utils/utils";
 import FlagBadge from "./FlagBadges";
+import { MIFDatachart } from "../charts/MIFDataChart";
 
 /* Additionnal indicator view */
 export const AdditionnalIndicatorDetails = ({
@@ -18,10 +19,11 @@ export const AdditionnalIndicatorDetails = ({
   historicalData,
 }) => {
   const [modalOpen, setModalOpen] = useState(null);
-
   const performance = Math.round(10 * value) / 10;
+  const ChartComponent = code === "MIF" ? MIFDatachart : AdditionalDataChart;
+
   return (
-    <Col key={code} className="my-4" lg={4}>
+    <Col key={code} className="my-4" lg={code === 'MIF' ? 3 : 4}>
       <div className="p-3 border border-3 rounded-3">
         <h3 className="h6 text-center">{indicatorLabel} </h3>
         <div className="text-end my-3">
@@ -37,8 +39,7 @@ export const AdditionnalIndicatorDetails = ({
             </button>
           </Badge>
         </div>
-        <p className="source mt-3 mb-0 fw-bold">{unitSymbol}</p>
-        <AdditionalDataChart
+        <ChartComponent
           historical={historicalData}
           latestValue={performance}
           year={year}
