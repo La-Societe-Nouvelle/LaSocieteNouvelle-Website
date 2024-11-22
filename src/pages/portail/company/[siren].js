@@ -111,6 +111,9 @@ const CompanyData = () => {
         return error;
       });
   }
+
+  let printMessage = dataFetched && ["ECO", "ART", "SOC", "IDR", "GEQ", "KNW","GHG", "NRG", "WAT", "MAT", "WAS", "HAZ"].some(indic => footprint[indic].flag == "d");
+
   return (
     <>
       <Helmet>
@@ -196,6 +199,19 @@ const CompanyData = () => {
                   </Col>
                 </Row>
               </div>
+              {printMessage &&
+                <div className="alert alert-warning d-flex justify-content-between p-4">
+                  <p className="p-0 m-0">
+                    <i className="bi bi-exclamation-circle me-1"></i> Certaines données affichées correspondent à <strong>des valeurs par défaut affectées à l'unité légale</strong>. Elles permettent une estimation des impacts indirects d'une dépense auprès de cette entreprise, en s'appuyant sur ses caractéristiques (activité principale, tranche d'effectifs, etc.).
+                  </p>
+                  <a
+                    href="/publier-empreinte"
+                    target="_blank"
+                    className="btn btn-primary w-50 p-auto m-auto ms-4"
+                  >
+                    <i className="bi bi-check2-square"></i> Actualiser mon empreinte
+                  </a>
+                </div>}
               <div className="footprint">
                 <ContentSocialFootprint
                   footprint={footprint}
