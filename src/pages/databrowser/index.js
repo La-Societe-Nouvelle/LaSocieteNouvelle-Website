@@ -43,7 +43,7 @@ const DataBrowser = () => {
               <Button
                 variant="primary"
                 className="my-2"
-                href="/databrowser/dataset/macro_fpt?country=FR&indic=GHG&aggregate=PRD&year=2019"
+                href="/databrowser/dataset/macro_fpt?country=FRA&indic=GHG&aggregate=PRD&year=2019"
               >
                 <i className="bi bi-search"></i> Explorer les jeux de données
               </Button>

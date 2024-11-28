@@ -119,15 +119,105 @@ const DevenirPartenaire_ExpertComptable = () => {
                 </li>
               </ul>
 
-              <Button className="btn-outline-secondary me-3" href="/ressources/application-mesure-impact">
-                En savoir plus
+              <Button className="btn-outline-secondary me-3" href="https://partners.metriz.lasocietenouvelle.org/register" target="_blank">
+                Demander un accès
               </Button>
-              <Button className="btn-outline-primary " href="/contact">
-                Contactez-nous
+              <Button className="btn-outline-primary " href="https://partners.metriz.lasocietenouvelle.org" target="_blank">
+                Accéder à la version partenaire
               </Button>
             </Col>
           </Row>
         </Container>
+      </section>
+      <section className="bg-light-secondary">
+        <Container>
+            <Row className="align-items-center">
+              <Col className="justify-content-between d-flex flex-column align-self-stretch" lg={6}>
+                <h2 className="h2">Documentation - Empreinte Sociétale</h2>
+                <div className="text-start d-flex flex-column flex-grow-1 mb-2">
+                  <p>
+                    Un espace de documentation sur les indicateurs est à votre disposition.
+                  </p>
+                  <p>
+                    Il regroupe l'ensemble des documentations et informations utiles relatives 
+                    à l'Empreinte Sociétale de l'Entreprise et au système d'information et de 
+                    comptabilité associé.
+                  </p>
+                  <p>
+                    Il concerne :
+                    <ul className="mt-1">
+                      <li>Les indicateurs de l'Empreinte Sociétale</li>
+                      <li>Les valeurs statistiques proposées par défaut à une unité légale</li>
+                      <li>L'application web que nous mettons librement à disposition</li>
+                      <li>Les données macroéconomiques issues de nos travaux statistiques</li>
+                      <li>Les services disponibles de notre API publique</li>
+                    </ul>
+                  </p>
+                </div>
+                <Button className="btn-outline-secondary mx-auto" target="_blank" href="https://docs.lasocietenouvelle.org/">
+                  Accéder à l'espace de documentation
+                </Button>
+              </Col>
+              <Col className="justify-content-between d-flex flex-column align-self-stretch" lg={6}>
+                <h2 className="h2">Guide de mission</h2>
+                <div className="text-start d-flex flex-column flex-grow-1 mb-2">
+                  <p>
+                    Un guide de mission est mis à votre disposition.
+                  </p>
+                  <p>
+                    Il vise à constituer un outil de travail à destination des professionnels 
+                    de l’expertise comptable qui souhaitent mettre en oeuvre ce type de mission
+                    (mesure de l'Empreinte Sociétale d'une entreprise).
+                  </p>
+                  <p>
+                    Contenu :
+                    <ul className="mt-1">
+                      <li>Description de la mission</li>
+                      <li>Cadre et Enjeux</li>
+                      <li>Prérequis</li>
+                      <li>Préparation de la mission</li>
+                      <li>Réalisation de la mission</li>
+                      <li>Fin de la mission</li>
+                    </ul>
+                  </p>
+                </div>
+                <Button className="btn-secondary mx-auto" target="_blank" href="https://lasocietenouvelle.org/Kit-de-mission_Empreinte-Societale.zip">
+                  Télécharger le kit de mission
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section className="bg-light">
+        <Container>
+            <Row className="align-items-center">
+              <Col className="text-end">
+                <Image
+                  src="/illustrations/capdurabilite-illu.png"
+                  alt="Illustration espace cap'durabilité"
+                  fluid
+                />
+              </Col>
+              <Col lg={6}>
+                <h2 className="h1">Vous êtes Expert-Comptable : Cap'Durabilité</h2>
+                <p>
+                  Espace de référence sur la Durabilité, créé par l'Ordre des experts-comptables.
+                </p>
+                <p>
+                  Quatre niveaux
+                </p>
+                <ul>
+                  <li>Je me sensibilise et je m'informe sur les enjeux sociétaux et environnementaux</li>
+                  <li>J'accompagne dans leur démarche RSE et je développe de nouvelles missions</li>
+                  <li>Je reporte et monte en compétences sur les informations extra-financières</li>
+                  <li>J'innove dans ma manière de compter avec la comptabilité verte</li>
+                </ul>
+                <Button className="btn-outline-secondary me-3" target="_blank" href="https://capdurabilite.fr">
+                  Accéder à l'espace Cap'durablité
+                </Button>
+              </Col>
+            </Row>
+          </Container>
       </section>
     </>
   );
