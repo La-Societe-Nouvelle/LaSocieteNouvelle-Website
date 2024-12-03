@@ -50,10 +50,11 @@ const Graph = ({ indic }) => {
   let [unit, setUnit] = useState();
   let [error, setError] = useState(false);
 
-  const fetchData = useCallback(() => {
+  const fetchData = useCallback(() => 
+  {
     axios
       .get(
-        `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_a38?branch=TOTAL&aggregate=NVA&indic=${indic.toUpperCase()}`
+        `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt?industry=TOTAL&country=FRA&aggregate=NVA&indic=${indic.toUpperCase()}`
       )
       .then((response) => {
         if (response.data.header.code == 200) {
@@ -111,10 +112,8 @@ const Graph = ({ indic }) => {
   const dataset = [];
 
   for (let i = 0; i < serie.length; i++) {
-    if (serie[i].year != "2021") {
-      labels.push(serie[i].year);
-      dataset.push(serie[i].value.toFixed(2));
-    }
+    labels.push(serie[i].year);
+    dataset.push(serie[i].value.toFixed(2));
   }
 
   const data = {

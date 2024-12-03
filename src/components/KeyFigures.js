@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import axios from "axios";
 
-const refYear = "2022";
+const refYear = "2023";
 
 export const KeyFigures = () => 
 {
-  const [pinKeyFigure, setPinKeyFigure] = useState("");
-  const [ghgKeyFigure, setGhgKeyFigure] = useState("");
-  const [geqKeyFigure, setGeqKeyFigure] = useState("");
+  const [pinKeyFigure, setFigure_PIN] = useState("");
+  const [ghgKeyFigure, setFigure_GHG] = useState("");
+  const [geqKeyFigure, setFigure_GEQ] = useState("");
 
   useEffect(() => {
     fetchKeyFiguresData();
@@ -18,30 +18,22 @@ export const KeyFigures = () =>
   {
     const urls = [
       `${process.env.NEXT_PUBLIC_API_URL}/macrodata/na_cpeb?classification=NNTOTAL&aggregate=B1N&unit=CPMEUR&year=`+refYear,
-      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd_a38?branch=TOTAL&aggregate=NVA&indic=GHG&year=`+refYear,
-      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd_a38?branch=TOTAL&aggregate=NVA&indic=GEQ&year=`+refYear,
+      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GHG&year=`+refYear,
+      `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GEQ&year=`+refYear,
     ];
 
     const requests = urls.map((url) => axios.get(url));
 
     try {
       const responses = await axios.all(requests);
-      const pinKeyFigure =
-        responses[0].data.header.code === 200
-          ? (responses[0].data.data[0].value / 1000).toFixed(2)
-          : "";
-      const ghgKeyFigure =
-        responses[1].data.header.code === 200
-          ? responses[1].data.data[0].value.toFixed(0)
-          : "";
-      const geqKeyFigure =
-        responses[2].data.header.code === 200
-          ? responses[2].data.data[0].value.toFixed(1)
-          : "";
+      
+      const figure_pin = responses[0].data.header.code === 200 ? (responses[0].data.data[0].value / 1000).toFixed(2) : "";
+      const figure_ghg = responses[1].data.header.code === 200 ? responses[1].data.data[0].value.toFixed(0) : "";
+      const figure_geq = responses[2].data.header.code === 200 ? responses[2].data.data[0].value.toFixed(1) : "";
 
-      setPinKeyFigure(pinKeyFigure);
-      setGhgKeyFigure(ghgKeyFigure);
-      setGeqKeyFigure(geqKeyFigure);
+      setFigure_PIN(figure_pin);
+      setFigure_GHG(figure_ghg);
+      setFigure_GEQ(figure_geq);
     } catch (error) {
       console.log(error);
     }

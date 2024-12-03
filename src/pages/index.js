@@ -166,10 +166,7 @@ const Home = () => {
                 et aux consommations de capital fixe (amortissements des immobilisations).
               </p>
               <p>
-                Une {" "}
-                <a href="https://metriz.lasocietenouvelle.org" target="_blank">
-                  application Web Metriz
-                </a> est mise à disposition pour faciliter la mesure. Elle permet de faire 
+                Une solution web open source &#xAB; Metriz &#xBB; est mise à disposition pour faciliter la mesure. Elle permet de faire 
                 le lien entre les données comptables, les empreintes de la production des
                 fournisseurs et les impacts directs des opérations.
               </p>
