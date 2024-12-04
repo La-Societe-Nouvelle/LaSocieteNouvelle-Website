@@ -135,11 +135,11 @@ const Graph = ({ indic }) => {
       <p className="small   ">{title}</p>
       <p className="source  fw-bold">En {unit}</p>
       <Line height={250} data={data} options={options} />
-      <div className="mt-3">
+      {/* <div className="mt-3">
         <p className=" source">
           <a href={source} target="_blank">Documentation relative aux données</a>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }
