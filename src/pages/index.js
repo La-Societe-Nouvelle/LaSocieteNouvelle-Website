@@ -30,14 +30,14 @@ const Home = () => {
         <Container>
           <div className="alert alert-success d-flex justify-content-between p-4">
             <p className="ps-2 pe-2 m-0">
-              <i className="bi bi-exclamation-circle"></i> Un webinaire de présentation est organisé ce jeudi 5/12 de 12h à 12h30.
+              <i className="bi bi-exclamation-circle"></i> Suite à la sortie de la version 4 de METRIZ, une démonstration publique est organisée mercredi 11/12 de 12h à 12h30.
             </p>
             <a
-              href="https://events.teams.microsoft.com/event/e1993b90-1340-4d98-b324-47bcbad8170b@1ac77b19-dcec-46fe-89f5-65e40c9d3d01"
+              href="https://events.teams.microsoft.com/event/a68ddffa-5f8c-4caa-b95a-e9186ed26036@1ac77b19-dcec-46fe-89f5-65e40c9d3d01"
               target="_blank"
               className="btn btn-primary w-25 p-auto"
             >
-              <i className="bi bi-check2-square"></i> M'inscrire au webinaire
+              <i className="bi bi-check2-square"></i> M'inscrire à la démonstration
             </a>
           </div>
         </Container>
