@@ -30,14 +30,15 @@ const Home = () => {
         <Container>
           <div className="alert alert-success d-flex justify-content-between p-4">
             <p className="ps-2 pe-2 m-0">
-              <i className="bi bi-exclamation-circle"></i> Suite à la sortie de la version 4 de METRIZ, une démonstration publique est organisée mercredi 11/12 de 12h à 12h30.
+              <i className="bi bi-exclamation-circle"></i> La nouvelle version Partenaire de METRIZ est disponible ! 
+              <br /> Créez votre compte gratuitement en cliquant sur le lien à droite.
             </p>
             <a
-              href="https://events.teams.microsoft.com/event/a68ddffa-5f8c-4caa-b95a-e9186ed26036@1ac77b19-dcec-46fe-89f5-65e40c9d3d01"
+              href="https://partners.metriz.lasocietenouvelle.org/register"
               target="_blank"
               className="btn btn-primary w-25 p-auto"
             >
-              <i className="bi bi-check2-square"></i> M'inscrire à la démonstration
+              <i className="bi bi-check2-square"></i> Créer mon compte
             </a>
           </div>
         </Container>
