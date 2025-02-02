@@ -276,3 +276,20 @@ p {
 }
 
 
+.main-titles {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.main-titles::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  right: -5px;
+  bottom: 0;
+  background-color: #cdd5fe;
+  z-index: -1;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}

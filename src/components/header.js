@@ -76,14 +76,12 @@ const Header = () => {
               <NavDropdown
                 title="Données"
                 id="data-dropdown"
-      
               >
                 <NavDropdown
                   title="Empreintes des activités économiques"
                   className="dropdown-item"
                   key="end"
                   drop="end"
-      
                 >
                   <NavDropdown.Item href="/databrowser/dataset/macro_fpt">
                     Empreintes des activités économiques - données historiques
@@ -194,16 +192,38 @@ const Header = () => {
           <Navbar.Collapse id="databrowser-navbar-nav">
             <Nav>
               <Nav.Link
-                href="/devenir-partenaire/expert-comptable"
+                href="/devenir-partenaire"
               >
-                EXPERTS COMPTABLES
+                Accueil Partenaire
               </Nav.Link>
             </Nav>
-            <Nav>
+            {/* <Nav>
               <Nav.Link
                 href="/devenir-partenaire/se-former"
               >
                 SE FORMER
+              </Nav.Link>
+            </Nav> */}
+            <Nav>
+              <Nav.Link
+                href="/devenir-partenaire/sponsors"
+              >
+                Nous soutenir
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link
+                href="/devenir-partenaire/expert-comptable"
+              >
+                Experts-comptables
+              </Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link
+                href="https://discord.gg/ANFwWZc3eu"
+                target="_blank"
+              >
+                Rejoindre notre serveur Discord
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
