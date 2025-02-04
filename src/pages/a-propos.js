@@ -26,14 +26,13 @@ const About = () => {
                 responsabilité sociétale.
               </p>
               <p>
-                La structure juridique a été créée en août 2020 à Lille. Elle a
-                pour bénéficiaire effectif Sylvain HUMILIERE.
+                La structure juridique a été créée en août 2020 à Lille.
               </p>
 
             </Col>
             <Col>
               <Image
-                src="images/equipe/notre-equipe.jpg"
+                src="images/equipe/photo-equipe.png"
                 alt="Photo d'équipe"
                 fluid
                 rounded
@@ -176,33 +175,80 @@ const About = () => {
       </section>
       <section className="text-center">
         <Container>
-          <h3> L'équipe</h3>
+          <h3 className="mb-5">L'équipe</h3>
           <Row>
             <Col>
               <div className="px-5">
                 <Image
-                  src="images/equipe/Sylvain.jpg"
+                  fluid
+                  src="images/equipe/portrait-sylvain.png"
                   alt="Sylvain Humilière"
+                  className="rounded" 
                 />
-
                 <h4 className="text-center mt-4">Sylvain Humilière</h4>
                 <p>Président - Fondateur</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image src="images/equipe/Laura.jpg" className="rounded" />
-
+                <Image 
+                  fluid
+                  src="images/equipe/portrait-laura.png" 
+                  alt="Laura Roost"
+                  className="rounded" 
+                />
                 <h4 className="text-center mt-4">Laura Roost</h4>
                 <p>Développeur informatique</p>
               </div>
             </Col>
             <Col>
               <div className="px-5">
-                <Image src="images/equipe/Joris.jpg" className="rounded" />
-
+                <Image 
+                  fluid
+                  src="images/equipe/portrait-joris.png"
+                  alt="Joris Blain"
+                  className="rounded" 
+                />
                 <h4 className="text-center mt-4">Joris Blain</h4>
                 <p>Economètre</p>
+              </div>
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            <Col>
+              <div className="px-5">
+                <Image
+                  fluid
+                  src="images/equipe/portrait-elodie.png"
+                  alt="Elodie Butez"
+                  className="rounded" 
+                />
+                <h4 className="text-center mt-4">Elodie Butez</h4>
+                <p>Economètre</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="px-5">
+                <Image
+                  fluid
+                  src="images/equipe/portrait-lucie.png"
+                  alt="Lucie Valet"
+                  className="rounded" 
+                />
+                <h4 className="text-center mt-4">Lucie Valet</h4>
+                <p>Communication</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="px-5">
+                <Image 
+                  fluid
+                  src="images/equipe/portrait-mathys.png" 
+                  alt="Mathys Dezitter"
+                  className="rounded" 
+                />
+                <h4 className="text-center mt-4">Mathys Dezitter</h4>
+                <p>Développeur informatique</p>
               </div>
             </Col>
           </Row>
