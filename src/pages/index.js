@@ -229,14 +229,14 @@ const Home = () => {
                 >
                   Nous découvrir
                 </Button>
-                <Button
+                {/* <Button
                   variant="primary"
                   title="En savoir plus sur Metriz"
                   className="mx-2 rounded-0"
                   href="/services"
                 >
                   Nos services
-                </Button>
+                </Button> */}
               </div>
             </Col>
             <Col lg={5} className="text-end">

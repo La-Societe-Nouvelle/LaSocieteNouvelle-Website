@@ -161,23 +161,23 @@ const About = () => {
               ils ont été sujets, doivent faire l’objet de réponses immédiates.
             </p>
             <p>
-              Notre conviction est que chaque entreprise se doit de s’assurer
+              Notre conviction est <b>que chaque entreprise se doit de s’assurer
               que la valeur qu’elle produit est compatible avec une économie
-              durable ou s’inscrit dans une trajectoire visant à l’atteindre ;
+              durable</b> ou s’inscrit dans une trajectoire visant à l’atteindre ;
               et que chaque entreprise se doit de faire preuve de transparence
               sur l’empreinte qu’elle laisse vis-à-vis de la société et de
               l’environnement.
             </p>
             <p>
               La transition vers une économie soutenable ne pourra se faire
-              efficacement et de manière juste que si les impacts des
-              entreprises sont liés à la valeur économique qu’elles créent, et
+              efficacement et de manière juste que si les <b>impacts des
+              entreprises sont liés à la valeur économique qu’elles créent</b>, et
               si leur performance ainsi mesurée est rendue publique.
             </p>
             <p>
-              Nous entreprenons donc la construction d’une base de données
+              <b>Nous entreprenons donc la construction d’une base de données
               ouverte centralisant les impacts de la valeur produite des
-              entreprises sur des enjeux sociaux et environnementaux clefs et la
+              entreprises sur des enjeux sociaux et environnementaux clefs</b> et la
               mise en œuvre des ressources nécessaires à leur mesure. Notre
               enjeu n'est pas de développer une activité commerciale mais de
               faire évoluer les normes comptables pour enfin s’outiller pour la
