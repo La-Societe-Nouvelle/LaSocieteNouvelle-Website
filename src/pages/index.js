@@ -437,7 +437,7 @@ const Home = () => {
       <section className="mb-4 bg-light">
         <Container>
           <h2 className="text-center mb-5">Nos services commerciaux</h2>
-          <Row className="align-items-center">
+          <Row className="align-items-start">
             <Col lg={4} className="text-center px-5">
               <h3>Analyse extra-financière</h3>
               <div>
