@@ -241,11 +241,16 @@ const Home = () => {
             </Col>
             <Col lg={5} className="text-end">
               <div className="bordered border-light p-0 bg-white rounded">
-                <video 
-                  poster="/videos/miniature-video-presentation.png"
-                  controls style={{ width: "100%", height: "auto" }}>
-                  <source src="/videos/video-lsn.mp4" />
-                </video>
+                <iframe 
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/B5XB4iEPRLU?si=hYQY-1z-N-fD7_pn" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
               </div>
             </Col>
           </Row>
