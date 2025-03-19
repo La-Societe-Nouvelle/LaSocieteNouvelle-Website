@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import PageHeader from "../components/PageHeader";
 import { Container } from "react-bootstrap";
 
 const page = () => {
@@ -9,15 +8,9 @@ const page = () => {
       <Helmet>
         <title>La Société Nouvelle | Politique de confidentialité</title>
       </Helmet>
-
-      <PageHeader
-        title={"Politique de confidentialité"}
-        path={"confidentialite-des-donnees"}
-      />
-
       <section>
         <Container>
-          <h2>Politique de confidentialité de La Société Nouvelle</h2>
+          <h1>Politique de confidentialité</h1>
           <h3>Préambule</h3>
           <p>
             Cette politique de confidentialité s'applique au site{" "}
@@ -42,44 +35,14 @@ const page = () => {
             <li>Le sujet de votre demande</li>
             <li>Le contenu de votre message</li>
           </ul>
-          <p>
-            Lorsque vous souhaitez publier votre empreinte sociétale, les
-            données personnelles suivantes peuvent être collectées :
-          </p>
-          <ul>
-            <li>Votre nom et prénom</li>
-            <li>Votre adresse e-mail</li>
-            <li>Le numéro de SIREN</li>
-          </ul>
           <h3>Utilisation des données personnelles</h3>
           <p>
             Les données personnelles collectées via le formulaire de contact
             sont utilisées uniquement pour répondre à votre demande.
           </p>
           <p>
-            Les données relatives à la publication de l'empreinte sociétale de
-            l'entreprise (nom, prénom, adresse mail) restent confidentielles.
-            Elles sont nécessaires pour assurer le suivi des demandes et des
-            interlocuteurs réalisant les demandes.
-          </p>
-          <p>
             Nous ne divulguons aucunes données personnelles à des tiers sans
             votre consentement.
-          </p>
-          <p>
-            Les données rendues publiques se limitent au numéro siren et aux
-            informations relatives aux indicateurs publiés (valeur, incertitude
-            et informations complémentaires saisies).
-          </p>
-          <p>
-            Ces données sont publiées sous licence ouverte. A ce titre, La
-            Société Nouvelle ne pourra être tenu responsable d'un préjudice
-            financier, commercial ou d'une autre nature - tels que perte de
-            notoriété, revenus, activités, clientèle - causé directement ou
-            indirectement, par l'exploitation des résultats publiés par
-            l'Utilisateur sein de la base de données SINESE (Base de données
-            ouverte regroupant les empreintes sociétales des entreprises
-            françaises).
           </p>
           <h3>Durée de conservation des données personnelles</h3>
           <p>
@@ -87,11 +50,6 @@ const page = () => {
             nécessaire pour répondre à votre demande ou pour fournir le service
             demandé, et nous les supprimons en toute sécurité lorsque nous
             n'avons plus besoin de les conserver.
-          </p>
-          <p>
-            Les données concernant la publication de l'empreinte sociétale de
-            l'entreprise peuvent être conservées indéfiniment sauf si vous nous
-            demandez de les supprimer.
           </p>
           <h3>Sécurité des données personnelles</h3>
           <p>

@@ -30,7 +30,7 @@ ol {
     margin: 1rem 0;
   }
   li::marker {
-    color: $secondary;
+    color: $primary;
     font-size: 1.2rem;
     font-weight: bold;
   }
@@ -70,6 +70,18 @@ ol {
   background-color: lighten($primary, 75%);
 }
 
+.btn-outline {
+  background-color: #fff;
+  border: 1px solid $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+  }
+}
+
 .btn-secondary {
   color: #fff;
 
@@ -96,13 +108,13 @@ ol {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .box {
   background-color: #fff;
   padding: 2.5rem 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0;
 }
 
 .partenaires {
@@ -143,8 +155,7 @@ section {
   background-color: #f7f7fb;
   font-size: 0.8rem;
 
-  p,
-  h4 {
+  p, h4 {
     margin-bottom: 1rem;
   }
 }
@@ -153,12 +164,12 @@ section {
   .nav {
     background-color: $light;
     margin: 1rem 0 2rem 0;
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .nav-item {
     padding: 0.5rem 0;
-    border-radius: 5px;
+    border-radius: 0;
 
     a {
       color: $primary;
@@ -247,34 +258,43 @@ hr {
   opacity: 1;
 }
 
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
+h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
 
 p {
-
-
   a {
-    color : $secondary;
+    color : $primary;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $light;
+      border-radius: 3px;
+    }
   }
 }
-.faq {
-  padding-top: 0;
-  .question-box {
-    background-color: lighten( $light, 2%);
 
+.faq {
+  .question-box {
+    margin-bottom: 1rem;
     p {
       margin-bottom: 0;
-      font-weight: 700;
-
       a {
-        color : $secondary;
+        color : $primary;
       }
     }
   }
 }
+
 .btn-sm {
   padding: 0.5rem 1rem;
 }
-
 
 .main-titles {
   position: relative;
@@ -292,4 +312,15 @@ p {
   background-color: #cdd5fe;
   z-index: -1;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.odds-targets-table {
+  font-size: 0.8rem;
+  border: 1px solid #f0f0f8;
+  thead {
+    background-color: $light;
+  }
+  tbody {
+
+  }
 }

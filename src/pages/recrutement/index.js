@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import PageHeader from "../../components/PageHeader";
 
 const Recrutement = () => {
   return (
     <>
       <Helmet>
         <title>La Société Nouvelle | Formations</title>
-
         <meta
           property="og:url"
           content="https://lasocietenouvelle.org/devenir-partenaire/expert-comptable"
@@ -17,12 +17,17 @@ const Recrutement = () => {
           content="Devenir partenaire - Expert Comptable"
         />
       </Helmet>
-      <section className="bg-light">
+      <PageHeader
+				title={"Recrutement"}
+				path={"recrutement"}
+				hasBreadcrumbs={false}
+			/>
+      <section className="">
         <Container>
             <Row className="align-items-top">
               <Col className="text-end">
                 <Image
-                  src="/images/photo-team-lsn-202406.png"
+                  src="images/equipe/photo-equipe.png"
                   alt="Photo de l'équipe - Juin 2024"
                   fluid
                 />
@@ -50,7 +55,10 @@ const Recrutement = () => {
       <section>
         <Container>
           <h2 className="h1 mb-4">Offres actuelles</h2>
-          <Row className="mb-3">
+          <Row>
+            <p>Aucune offre actuellement</p>
+          </Row>
+          {/* <Row className="mb-3">
             <Col className="text-center d-flex align-items-stretch" lg={6}>
               <div className="border p-3 m-1 d-flex flex-column justify-content-between">
                 <div>
@@ -141,7 +149,7 @@ const Recrutement = () => {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
           <div className="mt-4">
             <i>Vous souhaitez nous soumettre une candidature spontanée : n'hésitez pas à nous contacter !</i>
           </div>

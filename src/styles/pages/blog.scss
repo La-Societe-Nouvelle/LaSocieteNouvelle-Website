@@ -28,7 +28,7 @@
   .card-body {
     border: 3px solid $light;
     border-top: 0;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0;
   }
   background-color: #fff;
   .img-container {
@@ -63,7 +63,7 @@
   }
 
   .card-button {
-    border-radius: 2rem;
+    border-radius: 0;
     height: 43px;
     width: 125px;
   }
@@ -73,7 +73,7 @@ article {
   margin: 2rem 0 2rem 0;
   border: 2px solid $light;
   padding: 4rem;
-  border-radius: 1rem;
+  border-radius: 0;
   h2 {
     font-size: 2rem;
   }

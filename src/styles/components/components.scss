@@ -12,13 +12,13 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 2rem;
-    border-radius: 50%;
+    border-radius: 0;
   }
   .bloc {
     display: block;
     padding: 3rem;
     margin: 1rem 0;
-    border-radius: 2rem;
+    border-radius: 0;
     height: 200px;
     h2 {
       font-size: 1rem;
@@ -53,6 +53,9 @@
   }
 }
 
+.bg-light {
+  background-color: rgba(240, 240, 248, 1.0);
+}
 .bg-light-purple {
   background-color: rgba(238, 228, 251, 0.8);
   &:hover {
@@ -75,10 +78,31 @@
   }
 }
 .bg-light-blue {
-  background-color: rgba(228, 251, 247, 0.8);
+  background-color: rgba(217, 231, 252, 1.0);
+  border: 0px;
+}
+.bg-blue-bis {
+  background-color: rgba(93, 167, 244, 0.8);
+  border: 0px;
+}
+.bg-blue {
+  background-color: rgba(30, 164, 141, 0.8);
+  border: 0px;
   &:hover {
     cursor: pointer;
-    background-color: rgba(228, 251, 247, 1);
+    background-color: rgba(30, 164, 141, 1);
+  }
+}
+.bg-yellow {
+  background-color: rgba(255, 239, 92, 0.8);
+  border: 0px;
+}
+.bg-purple {
+  background-color: rgba(89, 30, 164, 0.8);
+  border: 0px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(89, 30, 164, 1);
   }
 }
 
@@ -94,4 +118,37 @@
       color: $secondary;
     }
   }
+}
+
+.statistic-item {
+  border: solid 1px $primary;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  &:hover {
+    background-color: $light;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.button-carousel {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+  &:hover {
+    background-color: $light;
+  }
+
+  i {
+    font-size: 30px;
+  }
+}
+
+.screen-metriz {
+  border: solid 3px $light;
 }

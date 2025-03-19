@@ -188,7 +188,7 @@ const DevenirPartenaire_ExpertComptable = () => {
             </Row>
           </Container>
         </section>
-        <section className="bg-light">
+        <section className="">
         <Container>
             <Row className="align-items-center">
               <Col className="text-end">

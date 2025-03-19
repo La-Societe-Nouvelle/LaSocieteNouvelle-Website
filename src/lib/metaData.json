@@ -1,6 +1,7 @@
 {
   "indics": ["eco","art","soc","knw","idr","geq","ghg","mat","was","nrg","wat","haz"],
   "odds": ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17"],
+  "odds_ese": ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"],
   "indics-es": {
     "libelle": "Indicateurs socio-économiques",
     "indics": ["eco","art","knw","soc","idr","geq"]
@@ -18,7 +19,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Valeur ajoutée correspondante à des activites artisanales",
     "finalite": "L'indicateur vise à informer sur la part artisanale de la valeur produite dans un objectif de valorisation des savoir-faire et des métiers de l'artisanat auprès des consommateurs finaux.",
-    "odds": ["08","09","12"]
+    "odds": ["08","09","12"],
+    "odds_targets": ["8.3","9.2"],
+    "primaryColor": "#FA6804",
+    "esrs": null,
+    "hasTarget": false,
+    "section": "Création de la valeur"
   },
   "idr": {
     "libelle": "Indice d'Ecart des Rémunérations",
@@ -29,7 +35,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Rapport interdécile D9/D1 relatif aux taux horaires bruts des effectifs",
     "finalite": "L'indicateur vise à fournir un élément d'information sur l'écart des rémunérations au sein des entreprises ayant contribué à la production de la valeur, dans le but d'encourager celles qui ont un partage plus équitable de la valeur produite.",
-    "odds": ["08","10"]
+    "odds": ["08","10"],
+    "odds_targets": ["8.5","10.1"], 
+    "primaryColor": "#F03C72",
+    "esrs": "ESRS S1",
+    "hasTarget": false,
+    "section": "Empreinte sociale"
   },
   "eco": {
     "libelle": "Contribution à l'Economie Nationale",
@@ -40,7 +51,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Valeur nette créée sur le territoire français (en euros)",
     "finalite": "L'indicateur vise à informer sur la localisation des activités (en France ou à l'étranger). Il permet de rendre compte de la part de la valeur produite en France et celle issue d'importations. Il s'inscrit dans une dynamique de relocalisation des activités et ouvre la voie à une information plus complète sur la diffusion des dépenses (part de la valeur produite à l'échelle locale, européenne, etc.).",
-    "odds": ["08","12"]
+    "odds": ["08","12"],
+    "odds_targets": ["8.3","8.5","9.2","12.b"],
+    "primaryColor": "#1b2c84",
+    "esrs": null,
+    "hasTarget": false,
+    "section": "Création de la valeur"
   },
   "geq": {
     "libelle": "Indice d'Ecart des Rémunérations Femmes/Hommes",
@@ -51,7 +67,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Ecart absolu entre le taux horaire brut moyen des femmes et celui des hommes, en pourcentage du taux horaire brut moyen",
     "finalite": "L'indicateur informe sur les écarts de salaires entre les femmes et les hommes au sein des entreprises ayant contribué à la production de la valeur. Il vise à encourager les actions en faveur de la réduction de l'écart de rémunérations entre les femmes/hommes ; en 2017 cet écart était de 16.8 % dans le secteur privé (INSEE).",
-    "odds": ["05","10"]
+    "odds": ["05","10"],
+    "odds_targets": ["5.1","5.5","8.5","10.2"],
+    "primaryColor": "#97257F",
+    "esrs": "ESRS S1",
+    "hasTarget": true,
+    "section": "Empreinte sociale"
   },
   "ghg": {
     "libelle": "Intensité d'Emission de Gaz à Effet de Serre",
@@ -62,7 +83,12 @@
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Emissions directes de gaz à effet de serre",
     "finalite": "L'indicateur informe sur la quantité émise de gaz à effet de serre liée à la production de l'entreprise avec pour objectif d'identifier les entreprises les plus performantes. Il s'inscrit dans l'objectif de réduction des émissions de gaz à effet de serre, dans le cadre de la lutte contre le déréglèment climatique.",
-    "odds": ["12","13","14","15"]
+    "odds": ["12","13","14","15"],
+    "odds_targets": ["7.2","8.4","12.1","13.1","13.2","14.3","15.1"],
+    "primaryColor": "#3F7E44",
+    "esrs": "ESRS E1",
+    "hasTarget": true,
+    "section": "Empreinte environnementale"
   },
   "haz": {
     "libelle": "Intensité d'Utilisation de produits dangereux",
@@ -73,7 +99,12 @@
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité utilisée de produits dangereux",
     "finalite": "L'indicateur vise à informer sur le degré d'utilisation de produits pouvant entraîner des conséquences néfastes sur la santé et/ou l'environnement (pesticides, etc.). Son objectif est de diminuer le recours à ces catégories de produits. L'indicateur n'informe pas sur les types de dangers liés à ces produits (toxicité, irritation, etc.), sur leur périmètre (danger temporaire lors d'une manipulation, contact avec l'environnement, présence résiduelle dans les produits, etc.) et des mesures prises pour limiter les risques.",
-    "odds": ["02","03","12","14","15"]
+    "odds": ["02","03","12","14","15"],
+    "odds_targets": ["3.9","8.4","12.4","14.1","15.1"],
+    "primaryColor": "#EA0600",
+    "esrs": "ESRS E2",
+    "hasTarget": false,
+    "section": "Empreinte environnementale"
   },
   "knw": {
     "libelle": "Contribution à l'Evolution des Compétences et des Connaissances",
@@ -84,7 +115,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Rémunérations liées à des activités de recherche ou de formation",
     "finalite": "L'indicateur informe sur la part des revenus de l'entreprise dédiée à la formation, la recherche ou l'enseignement.",
-    "odds": ["08","09","12"]
+    "odds": ["08","09","12"],
+    "odds_targets": ["4.3","4.4","8.6","9.5"],
+    "primaryColor": "#9D0D22",
+    "esrs": "ESRS S1",
+    "hasTarget": true,
+    "section": "Empreinte sociale"
   },
   "mat": {
     "libelle": "Intensité d'Extraction de Matières Premières",
@@ -95,7 +131,12 @@
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité extraite de matières premières",
     "finalite": "L'indicateur informe sur le recours à l'extraction (nouvelle) de ressources naturelles. La réutilisation de matières premières est donc exclue de la mesure. L'objectif est de réduire l'extraction de matières premières et de favoriser la réutilisation et l'économie circulaire.",
-    "odds": ["12","14","15"]
+    "odds": ["08","12","15"],
+    "odds_targets": ["8.4","12.2","15.1","15.2"],
+    "primaryColor": "#814D0D",
+    "esrs": "ESRS E5",
+    "hasTarget": true,
+    "section": "Empreinte environnementale"
   },
   "nrg": {
     "libelle": "Intensité de Consommation d'Energie",
@@ -106,7 +147,12 @@
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité consommée d'énergie",
     "finalite": "L'énergie est une grandeur qui caractérise la transformation d'un système. De nombreux enjeux sont ainsi directement liés à l'énergie tels que la consommation de ressources naturelles (matières fossiles, eau, minerais, etc.) ou les émissions de gaz à effet de serre. L'indicateur informe donc sur la pression exercée sur l'environnement.",
-    "odds": ["07","12","13"]
+    "odds": ["07","08","12","13"],
+    "odds_targets": ["7.3","8.4","12.2","13.1"],
+    "primaryColor": "#FCC301",
+    "esrs": "ESRS E1",
+    "hasTarget": true,
+    "section": "Empreinte environnementale"
   },
   "soc": {
     "libelle": "Contribution aux Acteurs d'Intérêt social",
@@ -117,7 +163,12 @@
     "defaultUncertainty": 0,
     "descriptionImpactDirect": "Valeur ajoutée si entreprise de l'ESS ou ayant une raison d'être définie dans les statuts, zéro sinon",
     "finalite": "Face aux enjeux environnementaux et sociétaux, l'entreprise doit se positionner par sa raison d'être apportant sens à ses employés et ne devrait plus se qualifier uniquement par la recherche de profit.",
-    "odds": ["08","12"]
+    "odds": ["08","12"],
+    "odds_targets": ["12.1","12.6"],
+    "primaryColor": "#53B7A9",
+    "esrs": null,
+    "hasTarget": true,
+    "section": "Création de la valeur"
   },
   "was": {
     "libelle": "Intensité de Production de Déchets",
@@ -128,7 +179,12 @@
     "defaultUncertainty": 50,
     "descriptionImpactDirect": "Quantité produite de déchets",
     "finalite": "L'indicateur informe sur la quantité de déchets produite, avec pour objectif de la réduire. Il n'informe cependant pas sur le traitement des déchets (recyclages, destruction, etc.) et leur dangerosité. Des indicateurs spécifiques pourront être mis en place pour ces catégories.",
-    "odds": ["03","11","12","14","15"]
+    "odds": ["03","06","11","12","14","15"],
+    "odds_targets": ["3.9","6.3","11.6","12.3","12.5","14.1","15.1"],
+    "primaryColor": "#BCBE5A",
+    "esrs": "ESRS E5",
+    "hasTarget": true,
+    "section": "Empreinte environnementale"
   },
   "wat": {
     "libelle": "Intensité de Consommation d'Eau",
@@ -139,6 +195,11 @@
     "defaultUncertainty": 25,
     "descriptionImpactDirect": "Quantité consommée d'eau",
     "finalite": "L'indicateur vise à informer sur l'utilisation de la ressource eau. Il s'inscrit dans une volonté de gestion globale des ressources naturelles, et occupe une importance particulière dans un contexte de diminution des quantités d'eau disponibles, conséquence du dérèglement climatique.",
-    "odds": ["06","12","14","15"]
+    "odds": ["06","12","14","15"],
+    "odds_targets": ["3.9","6.1","6.4","6.5","8.4","12.2","15.1"],
+    "primaryColor": "#3B9FB8",
+    "esrs": "ESRS E3",
+    "hasTarget": true,
+    "section": "Empreinte environnementale"
   }
 }

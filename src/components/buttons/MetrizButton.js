@@ -4,13 +4,14 @@ import { Button } from "react-bootstrap";
 export const MetrizButton = () => {
   return (
     <Button
-      href="https://metriz.lasocietenouvelle.org"
-      variant="outline-secondary"
+      href="https://partners.metriz.lasocietenouvelle.org"
+      variant="secondary"
       target="_blank"
       rel="noreferrer"
       title="Accéder à l'application"
+      className="rounded-0"
     >
-      Mesurer mon impact <i className="bi bi-box-arrow-up-right"></i>
+      Accéder à METRIZ <i className="bi bi-box-arrow-up-right ms-1"/>
     </Button>
   );
 };

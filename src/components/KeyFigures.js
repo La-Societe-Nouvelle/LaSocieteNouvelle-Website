@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image, Button, Carousel } from "react-bootstrap";
 import axios from "axios";
 
-const refYear = "2023";
+const refYear = "2024";
 
 export const KeyFigures = () => 
 {
-  const [pinKeyFigure, setFigure_PIN] = useState("");
-  const [ghgKeyFigure, setFigure_GHG] = useState("");
-  const [geqKeyFigure, setFigure_GEQ] = useState("");
+  const [index, setIndex] = useState(0);
+  const [keyFigures, setKeyFigures] = useState([]);
 
   useEffect(() => {
     fetchKeyFiguresData();
   }, []);
+
+  useEffect(() => {
+    setIndex(0);
+  }, [keyFigures])
 
   const fetchKeyFiguresData = async () => 
   {
@@ -27,74 +30,89 @@ export const KeyFigures = () =>
     try {
       const responses = await axios.all(requests);
       
-      const figure_pin = responses[0].data.header.code === 200 ? (responses[0].data.data[0].value / 1000).toFixed(2) : "";
-      const figure_ghg = responses[1].data.header.code === 200 ? responses[1].data.data[0].value.toFixed(0) : "";
-      const figure_geq = responses[2].data.header.code === 200 ? responses[2].data.data[0].value.toFixed(1) : "";
+      const data_pin = responses[0].data.header.code === 200 ? (responses[0].data.data[0].value / 1000).toFixed(2) : "";
+      const data_ghg = responses[1].data.header.code === 200 ? responses[1].data.data[0].value.toFixed(0) : "";
+      const data_geq = responses[2].data.header.code === 200 ? responses[2].data.data[0].value.toFixed(1) : "";
 
-      setFigure_PIN(figure_pin);
-      setFigure_GHG(figure_ghg);
-      setFigure_GEQ(figure_geq);
+      setKeyFigures([{
+        period: '2024',
+        value: data_pin,
+        unit: 'Mds €',
+        title: 'Production intérieure nette',
+        illustration: 'ESE/icon-ese-bleues/eco.svg'
+      },{
+        period: '2024',
+        value: data_ghg,
+        unit: 'gCO₂e/€',
+        title: 'Intensité d\'émission de gaz à effet de serre',
+        illustration: 'ESE/icon-ese-bleues/ghg.svg'
+      },{
+        period: '2025-01',
+        value: 35.7,
+        unit: 'MtCO₂e',
+        title: 'Emission intérieures de gaz à effet de serre',
+        illustration: 'ESE/icon-ese-bleues/ghg.svg'
+      },{
+        period: '2024',
+        value: data_geq,
+        unit: '%',
+        title: 'Ecart de rémunération F/H',
+        illustration: 'ESE/icon-ese-bleues/geq.svg'
+      }])
+
     } catch (error) {
       console.log(error);
     }
   };
-  return (
-    <section className="bg-light">
-      <Container>
-        <h2 className="text-center mb-5">Chiffres-clés - {refYear}</h2>
-        <Row className="d-flex justify-content-between">
-          <Col className="statistic-item" xs={12} lg={4}>
-            <Image
-              src="ESE/icon-ese-bleues/eco.svg"
-              height="60"
-              className="mx-auto d-block my-2"
-              alt="Pictogramme de la France"
-            />
 
-            <p className="text-center">
-              <span className="h1">
-                <data value={pinKeyFigure}>{pinKeyFigure} </data>
-              </span>
-              <sup> Mds €</sup>
-            </p>
-            <p className="text-center">Production intérieure nette</p>
+  const index_start = (index>0 ? index : keyFigures.length-index) % keyFigures.length;
+  const keyFiguresShowed = [...keyFigures, ...keyFigures].slice(index_start, index_start+4);
+
+  return (
+    <section className="">
+      <Container className="">
+        <h2 className="mb-5">Nos dernières données sur l'empreinte de la production intérieure française</h2>
+        <Row className="slide">
+          {/* <Col lg={1} className="button-carousel" onClick={() => setIndex(index-1)}>
+            <i className="bi bi-chevron-compact-left"/>
+          </Col> */}
+          {keyFiguresShowed.map((keyFigureData) => 
+            <Col className="statistic-item mx-4 p-0 shadow-sm">
+              <Row className="w-100 py-4 mx-auto bg-light-blue" style={{height: "200px", position: "relative"}}>
+                <p>{keyFigureData.period}</p>
+                <Image
+                  src={keyFigureData.illustration}
+                  height="125px"
+                  className=""
+                  alt=""
+                  style={{position: "absolute", top:  "25%", left: "0%", opacity: "10%"}}
+                />
+                <p className="text-center my-4">
+                  <span className="h1">
+                    <data value={keyFigureData.value}>{keyFigureData.value} </data>
+                  </span>
+                  <sup> {keyFigureData.unit}</sup>
+                </p>
+              </Row>
+              <Row className="w-100 m-auto">
+                <p className="text-center my-3 text-primary">{keyFigureData.title}</p>
+              </Row>
+            </Col> 
+          )}
+          {/* <Col lg={1} className="button-carousel" onClick={() => setIndex(index+1)}>
+            <i className="bi bi-chevron-compact-right"/>
+          </Col> */}
+        </Row>
+        <Row className="align-items-end mt-2">
+          <Col className="text-end">
+            <Button
+              title="En savoir plus sur Metriz"
+              className=" mx-2 mt-4 rounded-0"
+              href="https://sinese.fr/macro"
+            >
+              Panorama de l'empreinte sociétale des activités économiques <i className="bi bi-chevron-double-right ms-2"/>
+            </Button>
           </Col>
-          <Col className="statistic-item" xs={12} lg={4}>
-            <Image
-              src="ESE/icon-ese-bleues/ghg.svg"
-              height="60"
-              className="mx-auto d-block my-2"
-              alt="Pictogramme pour le CO²"
-            />
-            <p className="text-center">
-              <span className="h1">
-                <data value={ghgKeyFigure}>{ghgKeyFigure} </data>
-              </span>
-              <sup>gCO₂e/€</sup>
-            </p>
-            <p className="text-center">
-              Intensité d'émission de gaz à effet de serre
-            </p>
-          </Col>
-          <Col className="statistic-item" xs={12} lg={4}>
-            <Image
-              src="ESE/icon-ese-bleues/idr.svg"
-              height="60"
-              className="mx-auto d-block my-2"
-              alt="Pictogramme d'une balance"
-            />
-            <p className="text-center">
-              <span className="h1">
-                <data value={geqKeyFigure}>{geqKeyFigure}</data>
-              </span>{" "}
-              <sup>%</sup>
-            </p>
-            <p className="text-center">Ecart de rémunération F/H</p>
-          </Col>
-          <p className="source text-end mt-3">
-            Données estimées par La Société Nouvelle pour l'année {refYear} | Sources
-            : Insee, Eurostat et Banque mondiale
-          </p>
         </Row>
       </Container>
     </section>

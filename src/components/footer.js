@@ -38,32 +38,6 @@ function Footer() {
               >
                 <ListGroup.Item>
                   <a
-                    href="https://github.com/La-Societe-Nouvelle/"
-                    target="_blank"
-                    rel="noreferrer"
-                    title="GitHub"
-                  >
-                    <i
-                      className="bi bi-github mx-2 mx-lg-0 me-lg-3"
-                      role="img"
-                    ></i>
-                  </a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <a
-                    href="https://twitter.com/LSN_FR?s=20"
-                    target="_blank"
-                    rel="noreferrer"
-                    title="Twitter"
-                  >
-                    <i
-                      className="bi bi-twitter mx-2 mx-lg-0 me-lg-3"
-                      role="img"
-                    ></i>
-                  </a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <a
                     href="https://www.linkedin.com/company/la-societe-nouvelle/"
                     target="_blank"
                     rel="noreferrer"
@@ -71,6 +45,19 @@ function Footer() {
                   >
                     <i
                       className="bi bi-linkedin mx-2 mx-lg-0 me-lg-3"
+                      role="img"
+                    ></i>
+                  </a>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <a
+                    href="https://github.com/La-Societe-Nouvelle/"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="GitHub"
+                  >
+                    <i
+                      className="bi bi-github mx-2 mx-lg-0 me-lg-3"
                       role="img"
                     ></i>
                   </a>
@@ -113,7 +100,7 @@ function Footer() {
               <h6>La société nouvelle</h6>
               <Nav defaultActiveKey="/" className="flex-column">
                 <Nav.Link href="/a-propos">Qui sommes-nous ?</Nav.Link>
-                <Nav.Link href="/mesurer-empreinte-societale">
+                <Nav.Link href="/projet-sinese">
                   Notre approche
                 </Nav.Link>
                 <Nav.Link href="/indicateurs">Liste des indicateurs</Nav.Link>
@@ -196,7 +183,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/portail/company/889182770">
+                  <a className="nav-link" target="_blank" href="https://sinese.fr/company/889182770">
                     Empreinte Sociétale
                   </a>
                 </li>

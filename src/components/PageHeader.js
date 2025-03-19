@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-function PageHeader({ title, path, prev, prevTitle, hasBreadcrumb }) {
+function PageHeader({ title, path, prev, prevTitle, hasBreadcrumb }) 
+{
   return (
     <header className="bg-light pt-4 pb-5">
       <Container>
@@ -12,7 +13,6 @@ function PageHeader({ title, path, prev, prevTitle, hasBreadcrumb }) {
             <a href={"/" + path}>{title}</a>
           </div>
         )}
-
         <h2 className="text-center mt-4">{title}</h2>
       </Container>
     </header>

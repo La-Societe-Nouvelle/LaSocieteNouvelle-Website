@@ -12,16 +12,16 @@ export default function Infographie() {
       <Helmet>
         <title>La Société Nouvelle | Infographies</title>
       </Helmet>
-      <PageHeader title="Infographies" path="infographies" />
+      <PageHeader title="Nos infographies" path="infographies" />
       <Container>
-        <Row>
-        <InfographicPost
+        <Row className="my-5">
+          <InfographicPost
             title="Emissions de Gaz à
             effet de Serre"
             file="LSN_infographie-ges.pdf"
             image="LSN_infographie-ges.png"
           />
-        <InfographicPost
+          <InfographicPost
             title="Evolution des compétences et des connaissances"
             file="LSN_infographie-knw.pdf"
             image="LSN_infographie-knw.jpg"

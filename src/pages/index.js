@@ -11,6 +11,8 @@ import { KeyFigures } from "../components/KeyFigures";
 import LatestPosts from "../components/posts/LatestPosts";
 import BoxNewsletter from "../components/BoxNewsletter";
 
+import metadataIndics from "../lib/metaData.json";
+
 const Home = () => {
   return (
     <>
@@ -26,128 +28,170 @@ const Home = () => {
         <meta property="og:url" content="https://lasocietenouvelle.org/" />
         <meta property="og:image" content="/website-screen.jpg" />
       </Helmet>
-      <section className="pt-4 pb-0 m-0">
-        <Container>
-          <div className="alert alert-success d-flex justify-content-between p-4">
-            <p className="ps-2 pe-2 m-0">
-              <i className="bi bi-exclamation-circle"></i> La nouvelle version Partenaire de METRIZ est disponible ! 
-              <br /> Créez votre compte gratuitement en cliquant sur le lien à droite.
-            </p>
-            <a
-              href="https://partners.metriz.lasocietenouvelle.org/register"
-              target="_blank"
-              className="btn btn-primary w-25 p-auto"
-            >
-              <i className="bi bi-check2-square"></i> Créer mon compte
-            </a>
-          </div>
-        </Container>
+      <section className="p-0 m-0">
+        <div className="alert alert-success d-flex justify-content-between m-0 px-5 py-2 rounded-0">
+          <p className="m-0 pt-1">
+            <i className="bi bi-exclamation-circle"></i> La nouvelle version Partenaire de METRIZ est disponible : créez votre compte gratuitement !
+          </p>
+          <a
+            href="https://partners.metriz.lasocietenouvelle.org/"
+            target="_blank"
+            className="btn btn-success py-1 px-5 rounded-0"
+          >
+            <i className="bi bi-check2-square"></i> Créer mon compte
+          </a>
+        </div>
       </section>
-      <section className="homepage-blocs pt-0">
-        <Container>
-          <Row>
-            <Col lg={6}>
-              <a href="/portail" target="_blank" className="bloc  bg-light-purple">
-                <h2>Accédez aux données des entreprises </h2>
-                <p>
-                  Consultez l'empreinte sociétale d'une entreprise à 
-                  partir de son numéro SIREN ou de sa dénomination. Les données
-                  sont accessibles via notre portail web et notre API publique.
-                </p>
-              </a>
-            </Col>
-            <Col lg={6}>
-              <a
-                href="/publier-empreinte"
-                className="bloc  bg-light-orange text-end"
+      <section className="mw-100 ms-5 px-4 pt-5 pb-0 text-center">
+        <Container className="mw-100">
+          <Row className="ps-5 align-items-end">
+            <Col lg={3} className="mb-5 ps-5 pb-5 text-start">
+              <h1>Répertoire SINESE</h1>
+              <p>Base de données ouverte sur l'empreinte sociétale des entreprises françaises.</p>
+              <p>+ de 5 millions d'entreprises modélisées</p>
+              <Button
+                className="rounded-0 w-75 my-3"
+                target="_blank"
+                href="https://sinese.fr"
+                title="Portail SINESE"
               >
-                <h2>Mesurez et publiez l'empreinte de votre entreprise</h2>
-                <p className="ms-auto">
-                  Notre application web libre et open source Metriz vous permet 
-                  de mesurer l'empreinte de votre production sur 12 dimensions
-                  sociales et environnementales clés.
-                </p> 
-              </a>
+                Accéder au portail{" "}
+                <i className="bi bi-box-arrow-up-right ms-2"/>
+              </Button>
             </Col>
-            <Col lg={6}>
-              <a href="/databrowser" target="_blank" className="bloc bg-light-green">
-                <h2>Accédez aux données statistiques</h2>
-                <p>
-                  L'ensemble des données issues de nos travaux statistiques
-                  sont librement téléchargeables. Elles comprennent un suivi des
-                  empreintes des activités économiques françaises et des 
-                  trajectoires sectorielles cibles.
-                </p>
-              </a>
-            </Col>
-            <Col lg={6}>
-              <a href="/devenir-partenaire" target="_blank" className="bloc  bg-light-blue text-end">
-                <h2>Devenez partenaire du projet</h2>
-                <p className="ms-auto">
-                  Contribuez à l'accélération de cette initiative libre
-                  en proposant le service de mesure à vos clients, 
-                  en soumettant des contributions open source
-                  ou en sponsorisant nos travaux.
-                </p>
-              </a>
+            <Col lg={9} className="ps-5">
+              <Image
+                className="w-100 opacity-75"
+                src="/illustrations/illustration-home-page-5.png"
+                alt="Illustration page d'accueil"
+              />
             </Col>
           </Row>
-          <div className="homepage-illu d-none d-lg-block">
-            <Image
-              src="/illustrations/compta-extra-financiere.svg"
-              alt="Illustration de l'empreinte sociétale par La Société Nouvelle montrant plusieurs éléments symboliques."
-              height={300}
-            />
-          </div>
+        </Container>
+      </section>
+
+      <section className="bg-light">
+        <Container fluid className="mt-1 px-5">
+          <Row>
+            <Col className="d-flex align-self-stretch">
+              <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
+                <h3>Documentation</h3>
+                <p>
+                  La méthodologie est publique et libre d'exploitation. Toutes nos documentations sont accessibles
+                  librement en ligne.
+                </p>
+                <Image
+                  fluid
+                  src="/illustrations/illustration-documentation.png"
+                  alt="Illustration Documentation"
+                  style={{ height: "auto", width: "250px", margin: "auto" }}
+                />
+                <Button 
+                  size="sm" 
+                  href="https://docs.lasocietenouvelle.org"
+                  target="_blank"
+                  className="rounded-0"
+                  variant="outline"
+                >
+                  Consulter la documentation
+                </Button>
+              </div>
+            </Col>
+            <Col className="d-flex align-self-stretch">
+              <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
+                <h3>Notre Solution METRIZ</h3>
+                <p>
+                  Mesurer l'empreinte sociétale de votre entreprise ou proposer le service pour vos clients.
+                </p>
+                <Image
+                  fluid
+                  src="/illustrations/illustration-webapp.png"
+                  alt="Illustration WebApp"
+                  style={{ height: "auto", width: "250px", margin: "auto" }}
+                />
+                <Button 
+                  size="sm" 
+                  target="_blank"
+                  href="https://partners.metriz.lasocietenouvelle.org"
+                  className="rounded-0"
+                  variant="outline"
+                >
+                  Découvrir l'application
+                </Button>
+              </div>
+            </Col>
+            <Col className="d-flex align-self-stretch">
+              <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
+                <h3>Espace partenaire</h3>
+                <p>
+                  Vous êtes expert-comptable ? Utilisez nos ressources pour informer vos clients sur leur
+                  performance extra-financière.
+                </p>
+                <Image
+                  fluid
+                  src="/illustrations/illustration-partners.png"
+                  alt="Illustration Partenaires"
+                  style={{ height: "auto", width: "250px", margin: "auto" }}
+                />
+                <Button
+                  size="sm"
+                  href="/devenir-partenaire"
+                  className="bg-blue-bis rounded-0"
+                  variant="outline"
+                >
+                  Devenir partenaire
+                </Button>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </section>
    
       <KeyFigures />
 
-      <section className="mt-4">
+      <section className="bg-light">
         <Container>
+          <h2 className="text-center mb-5">Qu'est-ce que l'Empreinte Sociétale ?</h2>
           <Row className="align-items-center">
-            <Col lg={4} className="text-center">
-                <Image
-                  className="mb-4 mb-lg-0"
-                  src="/illustrations/default-data-illu.png"
-                  alt="Illustration de personnes qui consultent des données"
-                />
-            </Col>
-            <Col>
-              <h2>
-                Consultez la base de données ouverte sur les impacts de la
-                production des entreprises
-              </h2>
+            <Col lg={12} className="text-center">
               <p>
-                Accédez <b>librement</b> aux empreintes sociétales
-                des entreprises. En l'absence de données publiées par l'entreprise 
-                ou de données estimées à partir de déclarations publiques, des données par défaut
-                (issues de nos travaux statistiques) apparaîtront.
+                L'Empreinte Sociétale est un <strong>panel d'indicateurs sociaux et environnementaux</strong> relatif à
+                la production vendue d'une unité légale.
               </p>
-              <h3>Vous êtes une entreprise, pourquoi publier votre empreinte ?</h3>
-              <ol>
-                <li>Valoriser votre performance et informer vos clients</li>
-                <li>Contribuer à une économie plus transparente</li>
-                <li>
-                  Permettre aux acteurs de votre marché de vous identifier comme
-                  acteur de la transition écologique et sociale
-                </li>
-              </ol>
-              <div className="mt-4 d-flex justify-content-sm-start justify-content-center">
+              <p>
+                Les indicateurs expriment les externalités associées à un euro
+                de chiffre d'affaires sur des dimensions clés liés aux Objectifs de Développement Durable.
+              </p>
+              <p>
+                Un comité de gouvernance a été constitué pour une révision annuelle des indicateur.
+              </p>
+              {metadataIndics.odds_ese.map((odd, index) => (
+                <Image
+                  key={index}
+                  className="F-WEB-Goal mx-1 mt-4 mb-5"
+                  id={"F-WEB-Goal-" + odd}
+                  src={"/images/odd/F-WEB-Goal-" + odd + ".png"}
+                  width="50px"
+                  alt="F-WEB-Goal"
+                />
+              ))}
+              <div className="pt-2">
                 <Button
-                  variant="secondary"
-                  href="/portail"
-                  title="Consulter les données"
+                  variant="primary"
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  href="/indicateurs"
                 >
-                  Consulter les données
+                  Découvrir les indicateurs
                 </Button>
                 <Button
-                  className="mx-2"
-                  href="/publier-empreinte"
-                  title="Publier mes données"
+                  style={{backgroundColor: "#1798d5", border: "0px"}}
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  href="https://www.agenda-2030.fr/"
+                  target="_blank"
                 >
-                  Publier mes données{" "}
+                  Site de l'Agenda 2030<i className="bi bi-box-arrow-up-right ms-2"/>
                 </Button>
               </div>
             </Col>
@@ -157,69 +201,284 @@ const Home = () => {
 
       <section className="mb-4">
         <Container>
+          <h2>Qui sommes-nous ?</h2>
           <Row className="align-items-center">
-            <Col lg={9}>
-              <h2>Comment sont mesurés les impacts de la production d'une entreprise ?</h2>
+            <Col lg={7}>
               <p>
-                La mesure prend en compte les 
-                impacts directs des opérations et les impacts indirects
-                liés aux consommations intermédiaires (achats, prestations services, etc.)
-                et aux consommations de capital fixe (amortissements des immobilisations).
+                La Société Nouvelle est la structure porteuse d'un <strong>Système d'information 
+                nationale sur les impacts des entreprises (SINESE)</strong>. Il s'agit d'une initiative 
+                Open Data et Open Source, menée en collaboration avec des cabinets comptables.
               </p>
               <p>
-                Une solution web open source &#xAB; Metriz &#xBB; est mise à disposition pour faciliter la mesure. Elle permet de faire 
-                le lien entre les données comptables, les empreintes de la production des
-                fournisseurs et les impacts directs des opérations.
+                Notre volonté est d'apporter une transparence sur la 
+                performance extra-financière des entreprises, pour identifier celles dont les 
+                activités sont alignées avec les objectifs et plans nationaux, sur les enjeux clés 
+                de durabilité.
               </p>
-
-              <h3>Pourquoi mesurer son empreinte ?</h3>
-              <ol>
-                <li>
-                  Se positionner par rapport à sa branche et aux objectifs
-                  socio-environnementaux
-                </li>
-                <li>Comprendre l'origine de ses impacts</li>
-                <li>S'engager dans la transition écologique et sociale</li>
-              </ol>
-              <div className="mt-4 d-flex justify-content-sm-start justify-content-center mb-4 mb-sm-0">
-                <MetrizButton />
+              <p>
+                La Société Nouvelle réalise des travaux statistiques pour suivre 
+                l'empreinte des activités économiques à l'échelle macroéconomique et formuler des 
+                trajectoires cibles sectorielles, alignées avec les objectifs et plans nationaux.
+              </p>
+              <div className="pt-2">
                 <Button
                   variant="outline-primary"
                   title="En savoir plus sur Metriz"
-                  className="mx-2"
-                  href="/ressources/application-mesure-impact"
+                  className="mx-2 rounded-0"
+                  href="/a-propos"
                 >
-                  En savoir plus
+                  Nous découvrir
+                </Button>
+                <Button
+                  variant="primary"
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  href="/services"
+                >
+                  Nos services
                 </Button>
               </div>
             </Col>
-            <Col lg={3} className="text-end">
-              <Image
-                fluid
-                src="/illustrations/diminuer-impact.png"
-                alt="Illustration Mesure de l'impact"
-              />
+            <Col lg={5} className="text-end">
+              <div className="bordered border-light p-0 bg-white rounded">
+                <video 
+                  poster="/videos/miniature-video-presentation.png"
+                  controls style={{ width: "100%", height: "auto" }}>
+                  <source src="/videos/video-lsn.mp4" />
+                </video>
+              </div>
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className=" bg-light-secondary">
+      {/* Partenaires */}
+      <div className="partenaires mb-5 pt-3">
+        <Container className="">
+          <h2 className="mb-5">Nos partenaires & sponsors</h2>
+          <div className="d-flex flex-row justify-content-between align-items-center">
+            <div>
+              <a
+                href="https://www.quovive.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-quovive.jpg"
+                  alt="Logo Quovive"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.acora.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-acora.jpg"
+                  alt="Logo ACORA"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.ace4rse.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-ace4rse.jpg"
+                  alt="Logo ACE4RSE"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div className="text-center">
+              <a
+                href="https://lita-ec.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-lita.jpg"
+                  alt="Logo Lita"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.harmonium-experts.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-harmonium.jpg"
+                  alt="Logo Harmonium"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div className="text-center">
+              <a
+                href="https://www.audimis.com/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-audimis.jpg"
+                  alt="Logo Lita"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://fullvalue.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/logo-full-value.jpg"
+                  alt="Logo Full Value"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+          </div>
+        </Container>
+        <Container className="mt-5">
+          <h2 className="mb-5">Notre écosystème</h2>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <a
+                href="https://www.bpifrance.fr/communaute-du-coq-vert"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  fluid
+                  src="/partners/Coq_Vert_RVB.png"
+                  alt="Logo Coq Vert"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.impactfrance.eco/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  height={80}
+                  src="/partners/Logo_du_Mouvement_Impact_France.svg"
+                  alt="Logo Mouvement Impact France"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.bpifrance.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  height={80}
+                  src="/partners/bpifrance.svg"
+                  alt="Logo BPI France"
+                  style={{ height: "50px" }}
+                />
+              </a>
+            </div>
+            <div className="text-center">
+              <a
+                href="https://www.hautsdefrance.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  height={80}
+                  src="/partners/logo-hdf.svg"
+                  alt="Logo Financement Hauts-De-France"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.economie.gouv.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  height={80}
+                  src="/partners/logotype-rouge-bleu.png"
+                  alt="Logo France 2030"
+                />
+              </a>
+              <a
+                href="https://www.economie.gouv.fr/"
+                target="_blank"
+                title="Accéder au site"
+              >
+                <Image
+                  src="/partners/ministere_de_l_economie.svg"
+                  alt="Logo Ministère de l'économie "
+                  height={80}
+                />
+              </a>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      <section className="mb-4 bg-light">
         <Container>
-          <h2 className="text-center">Suivis macro-économiques</h2>
-          <p className="text-center">
-            Indicateurs clefs relatifs à l'empreinte sociale et environnementale
-            de l'économie française
-          </p>
-          <Row>
-            <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"ghg"} />
+          <h2 className="text-center mb-5">Nos services commerciaux</h2>
+          <Row className="align-items-center">
+            <Col lg={4} className="text-center px-5">
+              <h3>Analyse extra-financière</h3>
+              <div>
+                <p>
+                  à destination des TPE/PME
+                </p>
+                <p>
+                  Vous souhaitez obtenir l'empreinte sociétale de votre entreprise ?
+                  Nous vous accompagnons dans la production des indicateurs, et nous 
+                  vous proposons une analyse de vos résultats.
+                </p>
+              </div>
             </Col>
-            <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"wat"} />
+            <Col lg={4} className="text-center px-5">
+              <h3>Etude prospective</h3>
+              <div>
+                <p>
+                  à destination des syndicats professionnels
+                </p>
+                <p>
+                  Vous souhaitez connaître les enjeux sociaux et environnementaux
+                  liés à votre activité économique ? Nous adaptons nos travaux de 
+                  modélisation statistique pour anticiper les évolutions et dessiner
+                  des trajectoires cibles.
+                </p>
+              </div>
             </Col>
-            <Col lg={4} xs={12} className="mb-2">
-              <Graph indic={"nrg"} />
+            <Col lg={4} className="text-center px-5">
+              <h3>Développement informatique</h3>
+              <div>
+                <p>
+                  à destination des structures d'accompagnement
+                </p>
+                <p>
+                  Vous souhaitez développer des outils autour de
+                  la production d'indicateurs extra-financiers ?
+                  Nous mettons à votre disposition notre expertise
+                  autour de traitement des données financières et
+                  sociales, et de la production de tableau de bord.
+                </p>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -234,157 +493,15 @@ const Home = () => {
               &raquo; Plus d'articles ?{" "}
             </a>
           </p>
+        </Container>
+      </section>
+
+      <section className="m-0 p-0 bg-light">
+        <Container>
           <BoxNewsletter></BoxNewsletter>
         </Container>
       </section>
-      <section className="faq">
-        <Container>
-          <h4 className="h3">FAQ</h4>
-          <Row>
-            <Col lg={6}>
-              <div className="question-box p-4 rounded">
-                <p>
-                  <a href="/faq#qg-0" className="text-primary">
-                    Qu'est-ce que l'empreinte sociétale ?
-                  </a>
-                </p>
-              </div>
-            </Col>
-            <Col lg={6}>
-              <div className="question-box p-4 rounded">
-                <p>
-                  <a href="/faq#qg-1" className="text-primary">
-                    Pourquoi mesurer l'empreinte sociétale de ses activités ?
-                  </a>
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <Row className="mt-4">
-            <Col lg={6}>
-              <div className="question-box p-4 rounded">
-                <p>
-                  <a href="/faq#qt-0" className="text-primary">
-                    Qu'est-ce que l'open-source ?
-                  </a>
-                </p>
-              </div>
-            </Col>
-            <Col lg={6}>
-              <div className="question-box p-4 rounded">
-                <p>
-                  <a href="/faq#qg-7" className="text-primary">
-                    Quel est notre business model ?
-                  </a>
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <p className="text-end fw-bold mt-5">
-            <a href="/faq">&raquo; D'autres questions ?</a>
-          </p>
-        </Container>
-      </section>
-      <hr className="container"></hr>
-
-      {/* Partenaires */}
-      <div className="partenaires mb-5 pt-3">
-        <Container>
-          <h3 className="text-center">Avec le soutien de</h3>
-          <div className="d-flex justify-content-between align-items-center mt-5">
-            <div>
-              <a
-                href="https://www.euratechnologies.com/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  height={80}
-                  src="/partners/euratech.svg"
-                  alt="Logo Euratech"
-                ></Image>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.bpifrance.fr/communaute-du-coq-vert"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  fluid
-                  src="/partners/Coq_Vert_RVB.png"
-                  alt="Logo Coq Vert"
-                ></Image>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.impactfrance.eco/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  height={80}
-                  src="/partners/Logo_du_Mouvement_Impact_France.svg"
-                  alt="Logo Mouvement Impact France"
-                ></Image>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.bpifrance.fr/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  height={80}
-                  src="/partners/bpifrance.svg"
-                  alt="Logo BPI France"
-                  style={{ height: "50px" }}
-                ></Image>
-              </a>
-            </div>
-            <div className="text-center">
-              <a
-                href="https://www.hautsdefrance.fr/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  height={80}
-                  src="/partners/logo-hdf.svg"
-                  alt="Logo Financement Hauts-De-France"
-                ></Image>
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.economie.gouv.fr/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  height={80}
-                  src="/partners/logotype-rouge-bleu.png"
-                  alt="Logo France 2030"
-                ></Image>
-              </a>
-              <a
-                href="https://www.economie.gouv.fr/"
-                target="_blank"
-                title="Accéder au site"
-              >
-                <Image
-                  src="/partners/ministere_de_l_economie.svg"
-                  alt="Logo Ministère de l'économie "
-                  height={80}
-                ></Image>
-              </a>
-            </div>
-          </div>
-        </Container>
-      </div>
+      
     </>
   );
 };

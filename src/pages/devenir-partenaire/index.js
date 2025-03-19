@@ -61,8 +61,8 @@ const BecomePartner = () => {
           </Row>
         </Container> */}
         <Container fluid className="mt-5 px-5">
-          <Row>
-            <Col>
+          <Row className="">
+            <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2 p-4 ">
                 <h3>Sponsoring</h3>
                 <p>
@@ -79,7 +79,7 @@ const BecomePartner = () => {
                 </Button>
               </div>
             </Col>
-            <Col>
+            <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2 p-4">
                 <h3>Expertise-Comptable</h3>
                 <p>
@@ -97,7 +97,7 @@ const BecomePartner = () => {
                 </Button>
               </div>
             </Col>
-            <Col>
+            <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2  p-4">
                 <h3>Développement Web</h3>
                 <p>
@@ -119,7 +119,7 @@ const BecomePartner = () => {
                 </Button>
               </div>
             </Col>
-            <Col>
+            <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2  p-4">
                 <h3>Accompagnement RSE</h3>
                 <p>

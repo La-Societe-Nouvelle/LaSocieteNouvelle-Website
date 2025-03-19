@@ -6,6 +6,7 @@ $secondary : #fa595f;
 $light : #f0f0f8;
 $gray-600 : #f3f3f3;
 $info : $light;
+$secondary-blue: #c3d9f6;
 
 $light-secondary : #FEEBEC;
 
@@ -13,7 +14,6 @@ $body-color: $primary;
 $font-size-base: 0.9rem;
 $link-color : lighten($primary, 5%);
 $link-decoration: none;
-
 
 $font-family-sans-serif: 'Raleway', sans-serif;
 $headings-font-family: 'Raleway', 'Roboto', sans-serif;
@@ -27,8 +27,7 @@ $h5-font-size:1rem;
 $h6-font-size:1rem;
 $headings-margin-bottom: 1rem;
 
-
-$border-radius : 1rem;
+$border-radius : 0;
 
 /* Navbar */
  
@@ -49,8 +48,8 @@ $accordion-button-active-bg : #fff;
 $accordion-border-radius : 1rem;
 $accordion-border-width : 0;
 $accordion-border-color : $light;
-$btn-border-radius : 1.5rem;
-$btn-border-radius-sm : 2rem;
+$btn-border-radius : 0;
+$btn-border-radius-sm : 0;
 $badge-font-weight : 500;
 $modal-content-bg : $light;
 

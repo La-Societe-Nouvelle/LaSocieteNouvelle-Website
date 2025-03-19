@@ -31,10 +31,10 @@ module.exports = {
         has: [
           {
             type: "host",
-            value: "portail.lasocietenouvelle.org",
+            value: "sinese.fr",
           },
         ],
-        destination: "https://lasocietenouvelle.org/portail",
+        destination: "https://sinese.fr",
         permanent: true,
       },
     ];

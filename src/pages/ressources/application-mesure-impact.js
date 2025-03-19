@@ -4,11 +4,12 @@ import { DocButton } from "../../components/buttons/DocButton";
 import { MetrizButton } from "../../components/buttons/MetrizButton";
 import PageHeader from "../../components/PageHeader";
 
-const Metriz = () => {
+const Metriz = () => 
+{
   return (
     <>
       <PageHeader
-        title={"Application Web Metriz"}
+        title={"Application METRIZ"}
         prev={"ressources"}
         prevTitle={"Ressources"}
         path={"ressources/application-mesure-impact"}
@@ -16,37 +17,41 @@ const Metriz = () => {
       />
       <section>
         <Container>
-          <Row className="align-items-center">
-            <Col>
-              <h3>
-                Un outil libre et gratuit pour mesurer l'impact des entreprises
-              </h3>
-              <p>
-                L'application web METRIZ est un outil <b>libre et gratuit</b>{" "}
-                développé par La Société Nouvelle pour permettre la mesure des
-                indicateurs de <strong>l'Empreinte Sociétale</strong>.
-              </p>
-              <p>
-                L'application permet de faire le lien entre le{" "}
-                <b>fichier d'écritures comptables</b> (FEC), les données
-                disponibles pour <b>les fournisseurs</b> et les impacts directs
-                de l'entreprise.
-              </p>
-              <p>
-                Le calcul se fait "en local" au sein du navigateur web pour
-                garantir la <strong>sécurité des données</strong>. Le code
-                source de l'application est public pour une complète
-                transparence.
-              </p>
-              <p>
-                L'application est distribuée sous <b>licence libre </b>CeCILL.
-              </p>
-              <div className="mt-4 text-end">
+          <Row className="align-items-center py-5">
+            <Col className="d-flex flex-column align-self-stretch">
+              <h1>
+                Une solution libre et gratuite
+              </h1>
+              <div className="flex-grow-1">
+                <p>
+                  L'application web METRIZ est une solution <b>libre et gratuite</b>{" "}
+                  développée par La Société Nouvelle pour permettre la mesure des
+                  indicateurs de <strong>l'Empreinte Sociétale</strong>.
+                </p>
+                <p>
+                  L'application permet de faire le lien entre le{" "}
+                  <b>fichier d'écritures comptables</b> (FEC), l'empreinte sociétale
+                  <b> des fournisseurs</b> et les impacts directs
+                  de l'entreprise.
+                </p>
+                {/* <p>
+                  L'application est distribuée sous <b>licence libre </b>CeCILL.
+                </p> */}
+              </div>
+              <div className="mt-4 text-center">
                 <MetrizButton />
-                <DocButton margin={"ms-2"} />
+                <Button
+                  variant="outline"
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  href="https://calendly.com/sylvain-humiliere/demonstration-application-web?"
+                  target="_blank"
+                >
+                  Demander une démonstration
+                </Button>
               </div>
             </Col>
-            <Col className="text-end">
+            <Col lg={6} className="text-end px-5">
               <Image
                 fluid
                 src="/images/application-mesure-impact.png"
@@ -56,151 +61,221 @@ const Metriz = () => {
           </Row>
         </Container>
       </section>
-      <section className="steps bg-light-secondary">
+      {/* <section className="bg-light">
         <Container>
-          <h3 className="mb-5 text-center ">Comment fonctionne l'Application ?</h3>
-          <Row>
+          <Row className="align-items-center">
             <Col>
-              <Row>
-                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
-                    <div className="icon text-secondary me-2 text-secondary me-2">
-                      <i className="bi bi-upload"></i>
-                    </div>
-                    <p className="mb-0">Importez votre Fichier d'Ecritures Comptables (FEC)</p>
-                  </div>
-                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
-                    <div className="icon text-secondary me-2">
-                      <i className="bi bi-archive"></i>
-                    </div>
-                    <p className="mb-0">
-                      Saisissez les Etats initiaux de l'empreinte des stocks et
-                      immobilisations
-                    </p>
-                  </div>
-                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
-                    <div className="icon text-secondary me-2">
-                      <i className="bi bi-arrow-repeat"></i>
-                    </div>
-                    <p className="mb-0">Récupérez les empreintes des fournisseurs</p>
-                  </div>
-                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
-                    <div className="icon text-secondary me-2">
-                      <i className="bi bi-calculator"></i>
-                    </div>
-                    <p className="mb-0">
-                      Evaluez et Déclarez les impacts directs de l'entreprise
-                    </p>
-                  </div>
-                  <div className=" d-flex bg-white rounded align-items-center p-3 shadow-sm mb-3">
-                    <div className="icon text-secondary me-2">
-                      <i className="bi bi-download"></i>
-                    </div>
-                    <p className="mb-0">
-                      Téléchargez les livrables : Rapport par indicateur,
-                      tableaux comparatifs, ...
-                    </p>
-                  </div>
-                  <Button
-              variant="secondary"
-              href="https://docs.lasocietenouvelle.org/application-web/tutorial"
-              target="_blank"
-              title="Accéder au tutoriel de l'application"
-            >
-              Consulter le tutoriel
-            </Button>
-              </Row>
-            </Col>
-            <Col>
-              <div className="bordered border-light p-3 bg-white rounded">
-                <video 
-                poster="/videos/miniature-metriz.jpg"
-                controls style={{ width: "100%", height: "auto" }}>
-                  <source src="/videos/tuto-metriz.mp4" />
-                </video>
-              </div>
+              <h2>Version Partenaire</h2>
+              <p>
+                Vous souhaitez intégrer la mesure de l'Empreinte Sociétale au sein de vos services ?
+              </p>
+              <p>
+                La solution est utilisable à des fins commerciales : il est ainsi possible d'accompagner
+                des entreprises sur la production des indicateurs et l'inteprétation de leurs résultats.
+                En devenant partenaire du projet, vous pouvez bénéficier d'une configuration personnalisée
+                et produire vos livrables en marque blanche.
+              </p>
+              <p>
+                Un kit de mission est également disponible pour vous aider à développer ce service.
+              </p>
             </Col>
           </Row>
-
         </Container>
-      </section>
-      <section>
+      </section> */}
+      <section className="pt-0">
         <Container>
-          <h3>Confidentialité des données</h3>
-          <p>
-            Le traitement des données se fait en « côté client » au sein de la
-            page web (les scripts sont importés lors du chargement de la page)
-            de manière anonyme. Les données chargées restent dans un état
-            éphémère qui se réinitialise en cas de rafraîchissement de la page
-            (F5). Cette disposition implique qu'une sauvegarde doit être
-            enregistrée sur votre ordinateur et réimportée si vous souhaitez
-            reprendre a posteriori une évaluation en cours.
-          </p>
-          <p>
-            Les flux externes se limitent aux requêtes émises à l'API La Société
-            Nouvelle pour l'obtention des données relatives aux fournisseurs.
-            Pour une totale transparence, le code source est librement
-            accessible.
-          </p>
+          <hr style={{borderWidth: "2px"}}/>
+          <Row className="py-5">
+            <Col>
+              <h2>Obtenez facilement votre empreinte sociétale</h2>
+              <p>
+                <ol>
+                  <li><b>Téléversez vos données comptables</b> via votre FEC (Fichier d'Ecritures Comptables) ou grâce aux connecteurs disponibles</li>
+                  <li><b>Catégorisez automatiquement vos dépenses et investissements</b> à l'aide d'une IA Générative (ChatGPT)</li>
+                  <li><b>Identifiez vos principaux fournisseurs</b> pour récupérer leur empreinte sociétale</li>
+                  <li><b>Déclarez vos impacts directs</b></li>
+                </ol>
+              </p>
+              <p></p>
+            </Col>
+            <Col lg={6} className="text-end">
+              <Image
+                fluid
+                src="/images/metriz/screen-metriz-v4-2.png"
+                alt="Screen Metriz v4"
+                className="screen-metriz shadow"
+              />
+            </Col>
+          </Row>
+          <Row className="py-5">
+            <Col lg={6} className="text-end">
+              <Image
+                fluid
+                src="/images/metriz/screen-metriz-v4-3.png"
+                alt="Screen Metriz v4"
+                className="screen-metriz shadow"
+              />
+            </Col>
+            <Col>
+              <h2>Identifiez vos principaux aux enjeux</h2>
+                <p>
+                  Au-delà de disposer des indicateurs, les résultats permettent les analyses suivantes :
+                </p>
+                <ul>
+                  <li>Liste des dimensions sur lesquelles l'entreprise affiche une performance insuffisante au regard du niveau attendu d'ici 2030 à l'échelle de sa branche et l'effort à fournir</li>
+                  <li>Liste des dimensions sur lesquelles l'entreprise affiche une meilleure performance que la moyenne de sa branche, et qu'elle peut valoriser ; et,</li>
+                  <li>Liste des dimensions sur lesquelles l'entreprise affiche une performance moindre que la moyenne de sa branche</li>
+                </ul>
+                <p>
+                  Chaque entreprise peut ainsi identifier ses enjeux clés, au regard de ceux à l'échelle de sa branche, et comparaisons sectorielles.
+                </p>
+            </Col>
+          </Row>
+          <Row className="py-5">
+            <Col>
+              <h2>Analysez votre empreinte au regard de moyennes sectorielles</h2>
+              <p>
+                Les comparaisons sectorielles (moyenne actuelle de la branche et objectif 2030) permettent 
+                de situer la performance extra-financière de l'entreprise pour aligner la trajectoire avec 
+                les attentes de secteur.
+              </p>
+              <p>
+                Les données statistiques comparatives utilisées proviennent de nos travaux de modélisation
+                éco-environnementale.
+              </p>
+            </Col>
+            <Col lg={5} className="text-end">
+              <Image
+                fluid
+                src="/images/metriz/screen-metriz-v4-7.png"
+                alt="Screen Metriz v4"
+                className="screen-metriz shadow"
+              />
+            </Col>
+            {/* <Col lg={3} className="text-end">
+              <Image
+                fluid
+                src="/images/metriz/screen-metriz-v4-4.png"
+                alt="Screen Metriz v4"
+                className="screen-metriz shadow"
+              />
+            </Col> */}
+          </Row>
         </Container>
       </section>
       <section className="bg-light text-center">
         <Container>
-          <h3>Bénéficier d'une version personnalisée</h3>
+          <h2>Intégrations</h2>
           <p>
-            Pour aller plus loin et faciliter la production des livrables, il
-            est possible de bénéficier d'une version propre (adaptation des
-            imports de fichiers, personnalisation des livrables) et d'un support
-            technique, n'hésitez pas à nous contacter.
+            Des connecteurs sont disponibles pour lier vos outils comptables à Metriz.
           </p>
-          <Button variant="secondary" href="/contact">
-            Contactez-nous
-          </Button>
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <Row className="align-items-center">
-            <Col>
-              <h3>Licence libre CeCILL</h3>
-              <p>
-                L'application est distribuée sous la licence libre CeCILL. Elle
-                comprend notamment :
-              </p>
-              <ul>
-                <li>Droit d'utilisation sans restriction;</li>
-                <li>
-                  Droit d'adapter, d'arranger ou d'apporter toute autre
-                  modification;
-                </li>
-                <li>
-                  Droit de diffuser, de transmettre et de communiquer
-                  l'application web au public, ainsi que le droit de mettre sur
-                  le marché à titre onéreux ou gratuit, un ou des exemplaires;
-                </li>
-              </ul>
-              <p>
-                La licence offre une grande liberté dans l'exploitation de
-                l'outil et du code et une préservation de cette licence pour les
-                modifications apportées.
-              </p>
-              <a
-                className="btn btn-primary"
-                href="https://github.com/La-Societe-Nouvelle/LaSocieteNouvelle-METRIZ-WebApp"
-                target="_blank"
-                title="Accéder au répertoire GitHub"
-              >
-                <i className="bi bi-github"></i> Accéder au code source
-              </a>
+          <Row style={{height: "100px"}}>
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/logos/acd.png"
+                  alt="Logo ACD"
+                  className=""
+                  style={{ height: "auto", maxHeight: "50px", maxWidth: "250px", margin: "auto" }}
+                />
+              </div>
             </Col>
-            <Col className="text-end">
-              <Image
-                src="/illustrations/code-open-source-cecill.svg"
-                alt="Illustration pour l'open source"
-              />
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/logos/pennylane.png"
+                  alt="Logo Pennylane"
+                  className=""
+                  style={{ height: "auto", maxHeight: "50px", maxWidth: "250px", margin: "auto" }}
+                />
+              </div>
+            </Col>
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/logos/tiime.png"
+                  alt="Logo Tiime"
+                  className=""
+                  style={{ height: "auto", maxHeight: "50px", maxWidth: "250px", margin: "auto" }}
+                />
+              </div>
+            </Col>
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/logos/myunisoft.png"
+                  alt="Logo MyUnisoft"
+                  className=""
+                  style={{ height: "auto", maxHeight: "50px", maxWidth: "250px", margin: "auto" }}
+                />
+              </div>
             </Col>
           </Row>
         </Container>
       </section>
+      <section className="py-5">
+        <Container>
+          <Row className="align-items-top my-5">
+            <Col lg={4} className="text-end px-5">
+              <Image
+                fluid
+                src="/illustrations/version-partenaire-cabinet-comptable.svg"
+                alt="Illustration version partenaire"
+                className=""
+              />
+            </Col>
+            <Col className="d-flex flex-column align-self-stretch">
+              <h2>Version Partenaire</h2>
+              <div className="flex-grow-1">
+                <p>
+                  Vous souhaitez intégrer la mesure de l'Empreinte Sociétale au sein de vos services ?
+                </p>
+                <p>
+                  La solution est utilisable à des fins commerciales : il est ainsi possible d'accompagner
+                  des entreprises sur la production des indicateurs et l'inteprétation de leurs résultats.
+                  En devenant partenaire du projet, <b>vous pouvez bénéficier d'une configuration personnalisée
+                  et produire vos livrables en marque blanche</b>.
+                </p>
+                <p>
+                  Un kit de mission est également disponible pour vous aider à développer ce service.
+                </p>
+              </div>
+              <div className="mt-4 text-center">
+                <Button
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  href="/devenir-partenaire"
+                >
+                  Devenir partenaire du projet
+                </Button>
+                <Button
+                  variant="outline"
+                  title="En savoir plus sur Metriz"
+                  className="mx-2 rounded-0"
+                  target="_blank" 
+                  href="https://lasocietenouvelle.org/Kit-de-mission_Empreinte-Societale.zip"
+                >
+                  Télécharger le kit de mission
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* <section>
+        <Container>
+          <Row className="align-items-center">
+            <Col>
+              <h2>Protection des données</h2>
+              <p>
+                La protection des données est une priorité pour La Société Nouvelle, qui met en œuvre des mesures 
+                rigoureuses pour garantir leur confidentialité, intégrité et sécurité. Toutes les données sont 
+                traitées dans le respect du RGPD, avec un hébergement sécurisé en France via OVHCloud.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section> */}
     </>
   );
 };

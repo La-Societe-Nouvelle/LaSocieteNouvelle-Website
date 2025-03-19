@@ -1,34 +1,40 @@
 import React from "react";
-import { Col, Container, Image, Row, Stack } from "react-bootstrap";
+import { Badge, Col, Container, Image, Row, Stack } from "react-bootstrap";
+import PageHeader from "../components/PageHeader";
 
 const About = () => {
   return (
     <>
+      <PageHeader
+        title="A-Propos"
+        path={""}
+        hasBreadcrumb={false}
+      />
       <section>
         <Container>
-          <Row className=" align-items-center">
-            <Col lg={7} className="align-items-center">
-              <h2>La Société Nouvelle</h2>
+          <h1 className="h1 main-titles mb-5">
+            Notre mission
+          </h1>
+          <Row className=" align-items-start">
+            <Col lg={7} className="align-items-start">
               <p>
-                La Société Nouvelle se définit comme une société commerciale à
-                but non lucratif.
+                Notre mission est de <b>fournir, de manière ouverte, les informations nécessaires 
+                pour que chaque entreprise puisse mesurer et rendre compte de l'empreinte sociétale 
+                de sa production</b>.
               </p>
               <p>
-                Notre mission est de mettre en oeuvre un {" "}
-                <strong>
-                  système d'information sur les impacts de la production des
-                  entreprises françaises
-                </strong>
-                . L'enjeu est de pouvoir identifier les entreprises les plus
-                performantes sur des dimensions <strong>sociales</strong> et{" "}
-                <strong>environnementales</strong> clefs pour un développement
-                soutenable, celles qui portent la transition et assument leur
-                responsabilité sociétale.
+                Elle s'inscrit dans la volonté de faire évoluer le modèle de gestion des entreprises 
+                en intégrant aux éléments comptables une information sur leurs externalités sociales 
+                et environnementales ; et sur un besoin de transparence pour l'ensemble des agents 
+                économiques sur les impacts de leurs consommations.
               </p>
               <p>
-                La structure juridique a été créée en août 2020 à Lille.
+                Les documents, outils et autres éléments développés par La Société Nouvelle sont accessibles 
+                et utilisables librement, y compris à des fins commerciales.
               </p>
-
+              <p>
+                La base de données est, et restera toujours, ouverte.
+              </p>
             </Col>
             <Col>
               <Image
@@ -41,57 +47,94 @@ const About = () => {
           </Row>
         </Container>
       </section>
-
+      <section>
+        <Container>
+          <h2 className="main-titles">Quelques chiffres clés</h2>
+          <Row className="mb-4">
+            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/icons/icone-entreprises.png"
+                  alt="Icone Entreprises"
+                  className=""
+                  style={{ height: "auto", width: "100px", margin: "auto" }}
+                />
+              </div>
+              <div className="mb-2">
+                <span className="h1">
+                  <data value="v1">+ 5 millions</data>
+                </span>
+              </div>
+              <p>d'entreprises référencées et modélisées</p>
+            </Col>
+            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/icons/icone-db.png"
+                  alt="Icone Database"
+                  className=""
+                  style={{ height: "auto", width: "100px", margin: "auto" }}
+                />
+              </div>
+              <div className="mb-2">
+                <span className="h1">
+                  <data value="v1">84 150</data>
+                </span>
+              </div>
+              <p>données extra-financières déjà disponibles</p>             
+            </Col>
+            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/icons/icone-loading.png"
+                  alt="Icone Chargement"
+                  className=""
+                  style={{ height: "auto", width: "100px", margin: "auto" }}
+                />
+              </div>
+              <div className="mb-2">
+                <span className="h1">
+                  <data value="v1">+ 500 000</data>
+                </span>
+              </div>
+              <p>requêtes reçues en 2024 via notre API Publique</p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <section className="bg-light">
         <Container>
+          <h2>Nos principales activités</h2>
           <Row>
-            <Col>
+            <Col lg={4} className="d-flex align-self-stretch">
               <div className="bg-white p-5 border rounded">
-                <h3>Notre mission</h3>
-                <p>
-                  Notre mission est de fournir, de manière ouverte, les
-                  informations nécessaires pour que chaque entreprise puisse
-                  mesurer et rendre compte de l'empreinte sociétale de sa
-                  production.
-                </p>
-                <p>
-                  Elle s'inscrit dans la volonté de faire évoluer le modèle de
-                  gestion des entreprises en intégrant aux éléments comptables
-                  une information sur leurs externalités sociales et
-                  environnementales ; et sur un besoin de transparence pour
-                  l'ensemble des agents économiques sur les impacts de leurs
-                  consommations.
-                </p>
-                <p>
-                  Les documents, outils et autres éléments développés par La
-                  Société Nouvelle sont accessibles et utilisables librement, y
-                  compris à des fins commerciales.
-                </p>
-                <p>La base de données est, et restera toujours, ouverte.</p>
-              </div>
-            </Col>
-            <Col>
-              <div className="bg-white p-5 border rounded">
-                <h3>Nos activités</h3>
-                <h4 className="h5 ">
-                  Administration d'une base de données ouverte
-                </h4>
+                <h3>Administration d'une base de données ouverte</h3>
                 <p>
                   Nous centralisons les données mesurées et publiées des
                   entreprises pour permettre à tous de les exploiter librement
                   et facilement. Nous mettons également à disposition des jeux
                   de données statistiques macroéconomiques.
                 </p>
-                <h4 className="h5">
+              </div>
+            </Col>
+            <Col lg={4} className="d-flex align-self-stretch">
+              <div className="bg-white p-5 border rounded">
+                <h3>
                   Développement et distribution d'un outil de mesure open source
-                </h4>
+                </h3>
                 <p>
                   Nous développons et maintenons une application web pour que
                   chacun puisse calculer les indicateurs et apprécier les
                   résultats. Nous proposons des contrats de support et
                   d'assistance technique aux acteurs qui le souhaitent.
                 </p>
-                <h4 className="h5">Travaux statistiques</h4>
+              </div>
+            </Col>
+            <Col lg={4} className="d-flex align-self-stretch">
+              <div className="bg-white p-5 border rounded">
+                <h3>
+                  Travaux statistiques
+                </h3>
                 <p>
                   Nous menons des travaux statistiques pour estimer l'empreinte
                   sociétale de la production des branches et divisions
@@ -104,11 +147,12 @@ const About = () => {
           </Row>
         </Container>
       </section>
-
       <section>
         <Container>
+          <h2 className="main-titles">
+            Notre Vision
+          </h2>
           <Row>
-            <h3 className="text-secondary">Notre Vision</h3>
             <p>
               L’économie actuelle présente l’extrême nécessité de se transformer
               : dérèglement climatique, inégalités sociales, destruction de la
@@ -174,8 +218,8 @@ const About = () => {
         </Container>
       </section>
       <section className="text-center">
-        <Container>
-          <h3 className="mb-5">L'équipe</h3>
+        <Container className="mb-5">
+          <h1 className="mb-5">L'équipe #engagée</h1>
           <Row>
             <Col>
               <div className="px-5">
@@ -186,7 +230,12 @@ const About = () => {
                   className="rounded" 
                 />
                 <h4 className="text-center mt-4">Sylvain Humilière</h4>
-                <p>Président - Fondateur</p>
+                <p>Partenariats</p>
+                {/* <div>
+                  <Badge className="bg-primary rounded-1 tags me-1">
+                    Permanent
+                  </Badge>
+                </div> */}
               </div>
             </Col>
             <Col>
@@ -198,7 +247,12 @@ const About = () => {
                   className="rounded" 
                 />
                 <h4 className="text-center mt-4">Laura Roost</h4>
-                <p>Développeur informatique</p>
+                <p>Développement informatique</p>
+                {/* <div>
+                  <Badge className="bg-primary rounded-1 tags me-1">
+                    Permanent
+                  </Badge>
+                </div> */}
               </div>
             </Col>
             <Col>
@@ -210,7 +264,12 @@ const About = () => {
                   className="rounded" 
                 />
                 <h4 className="text-center mt-4">Joris Blain</h4>
-                <p>Economètre</p>
+                <p>Econométrie</p>
+                {/* <div>
+                  <Badge className="bg-primary rounded-1 tags me-1">
+                    Permanent
+                  </Badge>
+                </div> */}
               </div>
             </Col>
           </Row>
@@ -224,7 +283,7 @@ const About = () => {
                   className="rounded" 
                 />
                 <h4 className="text-center mt-4">Elodie Butez</h4>
-                <p>Economètre</p>
+                <p>Econométrie</p>
               </div>
             </Col>
             <Col>
@@ -248,7 +307,7 @@ const About = () => {
                   className="rounded" 
                 />
                 <h4 className="text-center mt-4">Mathys Dezitter</h4>
-                <p>Développeur informatique</p>
+                <p>Développement informatique</p>
               </div>
             </Col>
           </Row>
