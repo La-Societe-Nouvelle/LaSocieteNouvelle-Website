@@ -246,9 +246,9 @@ const Home = () => {
                   height="315" 
                   src="https://www.youtube.com/embed/B5XB4iEPRLU?si=hYQY-1z-N-fD7_pn" 
                   title="YouTube video player" 
-                  frameborder="0" 
+                  frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerpolicy="strict-origin-when-cross-origin" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen
                 />
               </div>
