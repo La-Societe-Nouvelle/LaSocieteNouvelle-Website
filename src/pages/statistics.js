@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Col,
 	Container,
@@ -173,6 +173,50 @@ const WebsiteNbVisitsChart = () =>
 	);
 };
 
+const PackageLsnStatChart = () => 
+{
+	// --------------------------------------------------
+	// Data
+
+	const chartData = {
+		labels: ['2024-01','2024-02','2024-03','2024-04','2024-05','2024-06','2024-07','2024-08','2024-09','2024-10','2024-11','2024-12','2025-01','2025-02'],
+		datasets: [
+			{
+				label: 'Nombre de téléchargements',
+				data: [330,110,163,178,165,116,190,157,259,175,161,137,220,182],
+				backgroundColor: '#191558'
+			}
+		]
+	};
+
+	// --------------------------------------------------
+	// Options
+
+	const chartOptions = {
+		responsive: true,
+		plugins: {
+			title: {
+				display: true,
+				text: 'Nombre de téléchargements mensuels',
+	},
+			legend: {
+				display: false
+			}
+	}
+	};
+
+	// --------------------------------------------------
+
+	return (
+		<Bar
+			id={"apî-usage"}
+			data={chartData}
+			options={chartOptions}
+			className="mh-100 mw-100"
+		/>
+	);
+};
+
 const Statistics = () => 
 {
 	return (
@@ -204,6 +248,16 @@ const Statistics = () =>
 					<Row style={{height: "300px"}}>
 						<Col lg={12}>
 							<WebsiteNbVisitsChart />
+						</Col>
+					</Row>
+				</Container>
+			</section>
+			<section>
+				<Container>
+					<h2>Téléchargement de notre package CRAN (Données statistiques)</h2>
+					<Row style={{height: "300px"}}>
+						<Col lg={6}>
+							<PackageLsnStatChart />
 						</Col>
 					</Row>
 				</Container>
