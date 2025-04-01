@@ -47,7 +47,7 @@ const Page = () => {
                   className="mx-2 rounded-0"
                   href="/contact"
                 >
-                  Nous contactez
+                  Nous contacter
                 </Button>
               </div>
             </Col>
@@ -84,7 +84,7 @@ const Page = () => {
                   className="mx-2 rounded-0"
                   href="/contact"
                 >
-                  Nous contactez
+                  Nous contacter
                 </Button>
               </div>
             </Col>
@@ -120,7 +120,7 @@ const Page = () => {
                   className="mx-2 rounded-0"
                   href="/contact"
                 >
-                  Nous contactez
+                  Nous contacter
                 </Button>
               </div>
             </Col>
