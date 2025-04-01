@@ -322,24 +322,31 @@ const Header = () =>
       </Container>
       <div className="menu">
         <Navbar expand="lg py-0">
-          <Container className="px-5 m-0">
+          <Container className="px-5 m-0 mw-100">
             <Navbar.Toggle aria-controls="main-navbar-nav" />
             <Navbar.Collapse
               id="main-navbar-nav"
               className="justify-content-between"
             >
               <Nav className="flex-grow-1 ps-4">
-                {/* <Nav.Link href="/">Accueil</Nav.Link> */}
-                <Nav.Link href="/"><i className="bi bi-house-fill"/></Nav.Link>
-                <Nav.Link 
-                  href="/a-propos" 
-                  className={["/a-propos","/recrutement"].includes(rootPage) ? "hover" : ""}
-                >
+                <Nav.Link href="/">
+                  <i className="bi bi-house-fill"/>
+                </Nav.Link>
+                <Nav.Link href="/a-propos" className={["/a-propos","/recrutement"].includes(rootPage) ? "hover" : ""}>
                   La Société Nouvelle
                 </Nav.Link>
-                <Nav.Link href="/indicateurs" className={rootPage == "/indicateurs" ? "hover" : ""}>Les 12 indicateurs de l'Empreinte Sociétale</Nav.Link>
-                <Nav.Link href="/projet-sinese" className={rootPage == "/projet-sinese" ? "hover" : ""}>Projet SINESE</Nav.Link>
-                <Nav.Link href="/statistics" className={rootPage == "/statistics" ? "hover" : ""}>Statistiques d'usage</Nav.Link>
+                <Nav.Link href="/indicateurs" className={rootPage == "/indicateurs" ? "hover" : ""}>
+                  Les 12 indicateurs de l'Empreinte Sociétale
+                </Nav.Link>
+                <Nav.Link href="/projet-sinese" className={rootPage == "/projet-sinese" ? "hover" : ""}>
+                  Projet SINESE
+                </Nav.Link>
+                <Nav.Link href="/statistics" className={rootPage == "/statistics" ? "hover" : ""}>
+                  Statistiques d'usage
+                </Nav.Link>
+                <Nav.Link href="/nos-services" className={rootPage == "/nos-services" ? "hover" : ""}>
+                  Nos services
+                </Nav.Link>
                 <NavDropdown title="Ressources" className={rootPage == "/ressources" ? "hover" : ""}>
                   <NavDropdown.Item href="/ressources/application-mesure-impact">
                     Metriz - Application de mesure d'impact

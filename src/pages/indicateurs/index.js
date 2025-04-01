@@ -1,10 +1,12 @@
+// La Société Nouvelle
+
 import React from "react";
 import { Helmet } from "react-helmet";
 
 // Components
 
 import metaData from "../../lib/metaData";
-import { Badge, Button, Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../../components/PageHeader";
 
 const lightenColor = (colorHex, lumFactor) => 
