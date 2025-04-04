@@ -178,7 +178,7 @@ const DataBrowser = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/databrowser/dataset/env_impact_factors">
+                    <a href="/databrowser/env_impact_factors">
                       <i className="bi bi-folder2-open me-1"/>Facteurs d'impact monétaire
                     </a>
                   </li>
