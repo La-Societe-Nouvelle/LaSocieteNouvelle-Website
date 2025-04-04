@@ -173,8 +173,13 @@ const DataBrowser = () => {
                 <ul className="list-unstyled datasets-list">
                   <li>
                     <a href="/databrowser/dataset/bts_data">
-                      <i className="bi bi-folder2-open"></i> Indicateurs issus
+                      <i className="bi bi-folder2-open me-1"/>Indicateurs issus
                       de la base tous salariés
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/databrowser/dataset/env_impact_factors">
+                      <i className="bi bi-folder2-open me-1"/>Facteurs d'impact monétaire
                     </a>
                   </li>
                 </ul>

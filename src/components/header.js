@@ -166,7 +166,6 @@ const Header = () =>
               >
                 LsnR-Lab
               </Nav.Link> 
-              <Nav.Link href="/databrowser/publications">Publications</Nav.Link>
               <Nav.Link
                 href="https://docs.lasocietenouvelle.org/series-donnees"
                 target="_blank"

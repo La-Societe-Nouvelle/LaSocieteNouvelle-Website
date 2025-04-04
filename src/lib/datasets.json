@@ -1,0 +1,17 @@
+{
+    "macro_fpt": {
+        "endpoint": "/macrodata/macro_fpt",
+        "parameters": [{
+            "code": "indic",
+            "label": "",
+            "mandatory": true
+        },{
+            "code": "aggregate",
+            "label": "",
+            "mandatory": true
+        }]
+    },
+    "env_impact_factors": {
+        "endpoint": "/env_impact_factors"
+    }
+}

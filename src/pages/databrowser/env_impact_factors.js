@@ -1,3 +1,5 @@
+// La Société Nouvelle
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
@@ -9,19 +11,37 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
+
 import * as XLSX from "xlsx";
+
+const metadata = {
+  env_impact: {
+    libelle: "Impact environnemental",
+    values: [{
+      code: "GHG",
+      label: "Emission de GES"
+    }],
+    mandatory: true
+  },
+  area: {
+    libelle: "Espace économique",
+    values: [{
+      code: "FRA",
+      label: "France"
+    }],
+    mandatory: true
+  }
+}
 
 function DatasetPage() 
 {
   const router = useRouter();
-  const { dataset, indic, aggregate, year, country } = router.query;
+  const { dataset } = router.query;
   const [data, setData] = useState(null);
-  const [datasetMetadata, setDatasetMetadata] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
-  const [metadata, setMetadata] = useState();
   const [columns, setColumns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedValues, setSelectedValues] = useState({});
+  const [selectedValues, setSelectedValues] = useState({year: "2024"});
 
   const itemsPerPage = 100;
   const maxPaginationLinks = 20;
@@ -36,60 +56,28 @@ function DatasetPage()
     setFilteredData(filteredData);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (dataset) {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/macrodata/${dataset}`
-        );
-        const results = await response.json();
-        setData(results.data);
-        setDatasetMetadata(results.meta);
-        setColumns(Object.keys(results.data[0]));
-      }
-    };
-    const fetchDataMeta = async () => {
-      if (dataset) {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/macrodata/metadata/${dataset}`
-        );
-        const results = await response.json();
-        setMetadata(results.metadata);
-      }
-    };
+  const fetchData = async () => 
+  {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/env_impact_factors?env_impact=GHG&area=FRA`
+    );
+    const results = await response.json();
+    setData(results.data);
+    setColumns(Object.keys(results.data[0]));
+  };
 
+  useEffect(() => {
     fetchData();
-    fetchDataMeta();
   }, [dataset]);
 
-  useEffect(() => {
+  useEffect(() => 
+  {
     // Apply pre-selected filters based on URL parameters
-    if (indic) {
-      setSelectedValues((prevSelectedValues) => ({
-        ...prevSelectedValues,
-        indic: indic,
-      }));
-    }
-    if (country) {
-      setSelectedValues((prevSelectedValues) => ({
-        ...prevSelectedValues,
-        country: country,
-      }));
-    }
-    if (year) {
-      setSelectedValues((prevSelectedValues) => ({
-        ...prevSelectedValues,
-        year: year,
-      }));
-    }
-    if (aggregate) {
-      setSelectedValues((prevSelectedValues) => ({
-        ...prevSelectedValues,
-        aggregate: aggregate,
-      }));
-    }
-  }, [indic, aggregate, year, country]);
-  // ...
+    setSelectedValues((prevSelectedValues) => ({
+      ...prevSelectedValues,
+      env_impact: "GHG",
+    }));
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -165,31 +153,30 @@ function DatasetPage()
     XLSX.writeFile(workbook, fileName);
   };
 
-  const generateOptions = (key) => {
-    const values = [...metadata[key]];
+  const generateOptions = (key) => 
+  {
+    const values = [...metadata[key].values];
 
-    if(key == "branch" || key == "indic" || key == "division") {
-      values.sort((a, b) => {
-        return a.code.localeCompare(b.code);
-      }); 
+    if(key == "activity" || key == "area") {
+      values.sort((a, b) => a.code.localeCompare(b.code)); 
     }
     else {
       values.sort((a, b) => {
         if (a.label === null || b.label === null) {
           return 0; // Ignore the sorting if label is null
+        } else {
+          return a.label.localeCompare(b.label);
         }
-        return a.label.localeCompare(b.label);
       }); 
     }
    
     return values.map(({ code, label }) => (
-      <option key={code} value={code}>
-        {code !== label ? `${code} - ${label}` : label}
-      </option>
+      <option key={code} value={code}>{label}</option>
     ));
   };
   
-  const handleSelectChange = (event) => {
+  const handleSelectChange = (event) => 
+    {
     const { name, value } = event.target;
     setSelectedValues((prevSelectedValues) => ({
       ...prevSelectedValues,
@@ -200,16 +187,6 @@ function DatasetPage()
   const handleCancel = () => {
     setSelectedValues({});
     setFilteredData(data);
-
-    const { pathname } = router;
-    const { dataset } = router.query;
-
-    const newQuery = { dataset };
-
-    router.push({
-      pathname,
-      query: newQuery,
-    });
   };
 
   return (
@@ -227,54 +204,18 @@ function DatasetPage()
                     activités économiques - données historiques
                   </a>
                 </li>
-                {/* <li>
-                  <a href="/databrowser/dataset/macro_fpt_a38">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    branches d'activité - données historiques
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/macro_fpt_a88">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    divisions économiques - données historiques
-                  </a>
-                </li> */}
                 <li>
                   <a href="/databrowser/dataset/macro_fpt_trd">
                     <i className="bi bi-chevron-right"></i> Empreintes des
                     activités économiques - tendances
                   </a>
                 </li>
-                {/* <li>
-                  <a href="/databrowser/dataset/macro_fpt_trd_a38">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    branches d'activité - tendances
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/macro_fpt_trd_a88">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    divisions économiques - tendances
-                  </a>
-                </li> */}
                 <li>
                   <a href="/databrowser/dataset/macro_fpt_tgt">
                     <i className="bi bi-chevron-right"></i> Objectifs annuels
                     par activité économique
                   </a>
                 </li>
-                {/* <li>
-                  <a href="/databrowser/dataset/macro_fpt_tgt_a38">
-                    <i className="bi bi-chevron-right"></i> Objectifs annuels
-                    par branches d'activité
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/macro_fpt_tgt_a88">
-                    <i className="bi bi-chevron-right"></i> Objectifs annuels
-                    des divisions économiques
-                  </a>
-                </li> */}
               </ul>
               <hr></hr>
               <h4>Données des comptes nationaux</h4>
@@ -332,12 +273,11 @@ function DatasetPage()
             <div className="p-4 border rounded bg-white ">
               <div className="d-flex justify-content-between align-items-center">
                 <h2>
-                  <i className="bi bi-box"></i> {datasetMetadata.label}
+                  <i className="bi bi-box me-3"/>Facteurs d'impacts monétaires
                 </h2>
-
                 <div className="mb-3 text-end">
                   <a
-                    href={datasetMetadata.doc}
+                    href="empty"
                     target="_blank"
                     className="bg-light btn btn-sm rounded  me-2"
                   >
@@ -349,27 +289,23 @@ function DatasetPage()
 
               <Form className={"filter-form"}>
                 <Row>
-                  {Object.keys(metadata).map((key) => {
-                    if (metadata[key].length > 1) {
-                      return (
-                        <Col key={key} md={4}>
-                          <Form.Group controlId={key} className="mb-2">
-                            <Form.Label>{key}</Form.Label>
-                            <Form.Control
-                              as="select"
-                              name={key}
-                              value={selectedValues[key] || ""}
-                              onChange={handleSelectChange}
-                            >
-                              <option value="">Toutes les valeurs</option>
-                              {generateOptions(key)}
-                            </Form.Control>
-                          </Form.Group>
-                        </Col>
-                      );
-                    }
-                    return null;
-                  })}
+                  {Object.keys(metadata).map((key) => 
+                      <Col key={key} md={4}>
+                        <Form.Group controlId={key} className="mb-2">
+                          <Form.Label>{metadata[key].libelle}</Form.Label>
+                          <Form.Control
+                            as="select"
+                            name={key}
+                            value={selectedValues[key] || ""}
+                            onChange={handleSelectChange}
+                          >
+                            {!metadata[key].mandatory &&
+                              <option value="">Toutes les valeurs</option>}
+                            {generateOptions(key)}
+                          </Form.Control>
+                        </Form.Group>
+                      </Col>
+                    )}
                 </Row>
                 <div className=" my-3">
                   <Button variant="info" size="sm" onClick={handleCancel}>
@@ -391,9 +327,12 @@ function DatasetPage()
               <Table className="data-table" responsive>
                 <thead>
                   <tr>
-                    {columns.map((column) => (
-                      <th key={column}>{column}</th>
-                    ))}
+                    <th>Description</th>
+                    <th>Facteur</th>
+                    <th>Unité</th>
+                    <th>Incertitude</th>
+                    <th>Source</th>
+                    <th>Dernière mise à jour</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -411,13 +350,12 @@ function DatasetPage()
                     })
                     .map((entry, index) => (
                       <tr key={index}>
-                        {columns.map((column) => (
-                          <td key={column}>
-                            {column === "lastupdate" || column === "lastupload"
-                              ? formatDate(entry[column])
-                              : entry[column]}
-                          </td>
-                        ))}
+                        <td>{entry.description}</td>
+                        <td className="text-end">{entry.value}</td>
+                        <td className="text-end">{"gCO2e/€"}</td>
+                        <td className="text-end">{entry.uncertainty+' %'}</td>
+                        <td>{entry.source}</td>
+                        <td className="text-center">{formatDate(entry.lastupdate)}</td>
                       </tr>
                     ))}
                 </tbody>
