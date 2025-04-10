@@ -263,6 +263,15 @@ const Home = () => {
           <h2 className="mb-5">Nos partenaires & sponsors</h2>
           <div className="d-flex flex-row justify-content-between align-items-center">
             <div>
+              <a href="https://www.expert-comptable.io/" target="_blank" title="Accéder au site">
+                <Image
+                  src="/partners/logo-rodier.png"
+                  alt="Logo Rpdier"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
               <a
                 href="https://www.quovive.fr/"
                 target="_blank"
