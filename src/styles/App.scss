@@ -12,7 +12,6 @@
 @import "components/statistics.scss";
 @import "components/posts.scss";
 @import "components/components.scss";
-
 // Font
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
@@ -323,8 +322,5 @@ p {
   border: 1px solid #f0f0f8;
   thead {
     background-color: $light;
-  }
-  tbody {
-
   }
 }

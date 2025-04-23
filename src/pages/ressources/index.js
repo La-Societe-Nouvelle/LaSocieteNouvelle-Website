@@ -1,7 +1,6 @@
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import PageHeader from "../../components/PageHeader";
-import { MetrizButton } from "../../components/buttons/MetrizButton";
 import { DocButton } from "../../components/buttons/DocButton";
 const ressources = () => {
   return (
