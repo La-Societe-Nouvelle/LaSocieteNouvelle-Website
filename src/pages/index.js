@@ -261,7 +261,7 @@ const Home = () => {
       <div className="partenaires mb-5 pt-3">
         <Container className="">
           <h2 className="mb-5">Nos partenaires & sponsors</h2>
-          <div className="d-flex flex-row justify-content-between align-items-center">
+          <div className="d-flex flex-row justify-content-around align-items-center">
             <div>
               <a href="https://www.compagnie-fiduciaire.com/" target="_blank" title="Accéder au site">
                 <Image
@@ -319,6 +319,8 @@ const Home = () => {
                 />
               </a>
             </div>
+          </div>
+          <div className="d-flex flex-row justify-content-around align-items-center mt-3">
             <div className="text-center">
               <a
                 href="https://lita-ec.fr/"
@@ -328,6 +330,15 @@ const Home = () => {
                 <Image
                   src="/partners/logo-lita.jpg"
                   alt="Logo Lita"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://cabinet-easi.fr/" target="_blank" title="Accéder au site">
+                <Image
+                  src="/partners/logo-easi.jpg"
+                  alt="Logo Rpdier"
                   style={{ height: "100px"}}
                 />
               </a>

@@ -118,10 +118,9 @@ const DevenirPartenaire_ExpertComptable = () => {
                   vos fichiers internes
                 </li>
               </ul>
-
-              <Button className="btn-outline-secondary me-3" href="https://partners.metriz.lasocietenouvelle.org/register" target="_blank">
+              {/* <Button className="btn-outline-secondary me-3" href="https://partners.metriz.lasocietenouvelle.org/register" target="_blank">
                 Demander un accès
-              </Button>
+              </Button> */}
               <Button className="btn-outline-primary " href="https://partners.metriz.lasocietenouvelle.org" target="_blank">
                 Accéder à la version partenaire
               </Button>
@@ -217,6 +216,131 @@ const DevenirPartenaire_ExpertComptable = () => {
                 </Button>
               </Col>
             </Row>
+          </Container>
+          <Container className="mt-5 mb-5">
+            <h2 className="mb-5">Les cabinets engagés</h2>
+            <div className="d-flex flex-row justify-content-around align-items-center">
+              <div>
+                <a href="https://www.compagnie-fiduciaire.com/" target="_blank" title="Accéder au site">
+                  <Image
+                    src="/partners/logo_compagnie-fiduciaire.png"
+                    alt="Logo Rpdier"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.expert-comptable.io/" target="_blank" title="Accéder au site">
+                  <Image
+                    src="/partners/logo-rodier.png"
+                    alt="Logo Rpdier"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.quovive.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-quovive.jpg"
+                    alt="Logo Quovive"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.acora.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-acora.jpg"
+                    alt="Logo ACORA"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.ace4rse.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-ace4rse.jpg"
+                    alt="Logo ACE4RSE"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+            </div>
+            <div className="d-flex flex-row justify-content-around align-items-center mt-3">
+              <div className="text-center">
+                <a
+                  href="https://lita-ec.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-lita.jpg"
+                    alt="Logo Lita"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="https://cabinet-easi.fr/" target="_blank" title="Accéder au site">
+                  <Image
+                    src="/partners/logo-easi.jpg"
+                    alt="Logo Rpdier"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.harmonium-experts.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-harmonium.jpg"
+                    alt="Logo Harmonium"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div className="text-center">
+                <a
+                  href="https://www.audimis.com/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-audimis.jpg"
+                    alt="Logo Lita"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://fullvalue.fr/"
+                  target="_blank"
+                  title="Accéder au site"
+                >
+                  <Image
+                    src="/partners/logo-full-value.jpg"
+                    alt="Logo Full Value"
+                    style={{ height: "100px"}}
+                  />
+                </a>
+              </div>
+            </div>
           </Container>
       </section>
     </>
