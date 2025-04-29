@@ -12,8 +12,7 @@ import {
 
 import { useRouter } from "next/router";
 
-const Header = () => 
-{
+const Header = () => {
   const router = useRouter();
   const [page, setPage] = useState(router.pathname);
 
@@ -117,7 +116,7 @@ const Header = () =>
                   className="dropdown-item"
                   key="end"
                   drop="end"
-                  
+
                 >
                   <NavDropdown.Item href="/databrowser/dataset/na_cpeb">
                     Comptes de production et d'exploitation par branche
@@ -159,13 +158,13 @@ const Header = () =>
                 target="_blank"
               >
                 LSN-stat
-              </Nav.Link> 
+              </Nav.Link>
               <Nav.Link
                 href="https://github.com/La-Societe-Nouvelle/lsnr-lab"
                 target="_blank"
               >
                 LsnR-Lab
-              </Nav.Link> 
+              </Nav.Link>
               <Nav.Link
                 href="https://docs.lasocietenouvelle.org/series-donnees"
                 target="_blank"
@@ -236,7 +235,7 @@ const Header = () =>
           <Navbar.Brand href="/" className="m-auto">
             <Image src="/logo-La-Societe-Nouvelle.svg" height="75" alt="logo" />
           </Navbar.Brand>
-   
+
         </Container>
       </Navbar>
     );
@@ -329,9 +328,9 @@ const Header = () =>
             >
               <Nav className="flex-grow-1 ps-4">
                 <Nav.Link href="/">
-                  <i className="bi bi-house-fill"/>
+                  <i className="bi bi-house-fill" />
                 </Nav.Link>
-                <Nav.Link href="/a-propos" className={["/a-propos","/recrutement"].includes(rootPage) ? "hover" : ""}>
+                <Nav.Link href="/a-propos" className={["/a-propos", "/recrutement"].includes(rootPage) ? "hover" : ""}>
                   La Société Nouvelle
                 </Nav.Link>
                 <Nav.Link href="/indicateurs" className={rootPage == "/indicateurs" ? "hover" : ""}>
@@ -350,17 +349,17 @@ const Header = () =>
                   <NavDropdown.Item href="/ressources/application-mesure-impact">
                     Metriz - Application de mesure d'impact
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     href="https://sinese.fr/"
                     target="_blank"
                   >
-                    Portail d'accès aux données des entreprises <i className="bi bi-box-arrow-up-right"/>
+                    Portail d'accès aux données des entreprises <i className="bi bi-box-arrow-up-right" />
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     href="https://api.lasocietenouvelle.org/"
                     target="_blank"
                   >
-                    API Publique <i className="bi bi-box-arrow-up-right"/>
+                    API Publique <i className="bi bi-box-arrow-up-right" />
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="https://docs.lasocietenouvelle.org"
@@ -370,7 +369,7 @@ const Header = () =>
                     Documentation <i className="bi bi-box-arrow-up-right"></i>
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Publications" className={["/categorie","/infographies","/blog"].includes(rootPage) ? "hover" : ""}>
+                <NavDropdown title="Publications" className={["/categorie", "/infographies", "/blog"].includes(rootPage) ? "hover" : ""}>
                   <NavDropdown.Item href="/categorie/notes-analyse">
                     Notes d'analyses
                   </NavDropdown.Item>
@@ -379,6 +378,9 @@ const Header = () =>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/infographies">
                     Infographies
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/podcast">
+                    Podcast
                   </NavDropdown.Item>
                 </NavDropdown>
                 {/* <Nav.Link href="/a-propos">A propos</Nav.Link>
