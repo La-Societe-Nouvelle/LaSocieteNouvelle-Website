@@ -77,16 +77,16 @@ export const KeyFigures = () =>
             <i className="bi bi-chevron-compact-left"/>
           </Col> */}
           {keyFiguresShowed.map((keyFigureData) => 
-            <Col className="statistic-item mx-4 p-0 shadow-sm">
-              <Row className="w-100 py-4 mx-auto bg-light-blue" style={{height: "200px", position: "relative"}}>
+            <Col className="statistic-item mx-4 p-0">
+              <Row className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
                 <p>{keyFigureData.period}</p>
-                <Image
+                {/* <Image
                   src={keyFigureData.illustration}
                   height="125px"
                   className=""
                   alt=""
                   style={{position: "absolute", top:  "25%", left: "0%", opacity: "10%"}}
-                />
+                /> */}
                 <p className="text-center my-4">
                   <span className="h1">
                     <data value={keyFigureData.value}>{keyFigureData.value} </data>

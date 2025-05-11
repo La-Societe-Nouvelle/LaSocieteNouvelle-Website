@@ -222,6 +222,74 @@ const PackageLsnStatChart = () =>
 	);
 };
 
+const AvailableFootprintDataKeyFigure = () => 
+{
+	return (
+		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
+			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
+				<p>Au 11/05/2025</p>
+				<p className="text-center my-4">
+					<span className="h1">
+						<data>13 598</data>
+					</span>
+				</p>
+				<p className="text-center my-3 text-primary">Empreintes disponibles</p>
+			</div>
+		</Col>
+	);
+};
+
+const AvailableDataKeyFigure = () => 
+{
+	return (
+		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
+			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
+				<p>Au 11/05/2025</p>
+				<p className="text-center my-4">
+					<span className="h1">
+						<data>36 535</data>
+					</span>
+				</p>
+				<p className="text-center my-3 text-primary">Données extra-financières disponibles</p>
+			</div>
+		</Col>
+	);
+};
+
+const DefaultFootprintKeyFigure = () => 
+{
+	return (
+		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
+			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
+				<p>Au 11/05/2025</p>
+				<p className="text-center my-4">
+					<span className="h1">
+						<data>33 718</data>
+					</span>
+				</p>
+				<p className="text-center my-3 text-primary">Empreintes par défaut</p>
+			</div>
+		</Col>
+	);
+};
+
+const LegalUnitKeyFigure = () => 
+{
+	return (
+		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
+			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
+				<p>Au 11/05/2025</p>
+				<p className="text-center my-4">
+					<span className="h1">
+						<data>4 796</data>
+					</span>
+				</p>
+				<p className="text-center my-3 text-primary">Unités légales concernées</p>
+			</div>
+		</Col>
+	);
+};
+
 const Statistics = () => 
 {
 	return (
@@ -234,6 +302,25 @@ const Statistics = () =>
 				path={"statistics"}
 				hasBreadcrumbs={false}
 			/>
+			<section>
+				<Container>
+					<h2>Données disponibles</h2>
+					<Row style={{height: "200px"}}>
+						<Col lg={3}>
+							<LegalUnitKeyFigure />
+						</Col>
+						<Col lg={3}>
+							<AvailableFootprintDataKeyFigure />
+						</Col>
+						<Col lg={3}>
+							<AvailableDataKeyFigure />
+						</Col>
+						<Col lg={3}>
+							<DefaultFootprintKeyFigure />
+						</Col>
+					</Row>
+				</Container>
+			</section>
 			<section>
 				<Container>
 					<h2>Utilisation de notre API Publique</h2>

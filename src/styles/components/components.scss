@@ -122,9 +122,11 @@
 
 .statistic-item {
   border: solid 1px $primary;
+  border-radius: 0px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  box-shadow: 5px 5px 5px $light;
   &:hover {
     background-color: $light;
   }
