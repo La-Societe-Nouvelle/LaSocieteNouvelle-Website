@@ -5,8 +5,6 @@ import React from "react";
 
 import { Helmet } from "react-helmet";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import Graph from "../components/charts/Graph";
-import { MetrizButton } from "../components/buttons/MetrizButton";
 import { KeyFigures } from "../components/KeyFigures";
 import LatestPosts from "../components/posts/LatestPosts";
 import BoxNewsletter from "../components/BoxNewsletter";

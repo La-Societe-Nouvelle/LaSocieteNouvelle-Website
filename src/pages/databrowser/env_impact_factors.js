@@ -191,203 +191,119 @@ function DatasetPage()
 
   return (
     <section className="dataset-page bg-light">
-      <Container fluid>
-        <Row>
-          <Col lg={3}>
-            <div className="bg-white rounded p-4">
-              <h2>Jeux de données</h2>
-              <h3 className="h5">Empreintes des activités économiques</h3>
-              <ul className="list-unstyled datasets-list">
-              <li>
-                  <a href="/databrowser/dataset/macro_fpt">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    activités économiques - données historiques
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/macro_fpt_trd">
-                    <i className="bi bi-chevron-right"></i> Empreintes des
-                    activités économiques - tendances
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/macro_fpt_tgt">
-                    <i className="bi bi-chevron-right"></i> Objectifs annuels
-                    par activité économique
-                  </a>
-                </li>
-              </ul>
-              <hr></hr>
-              <h4>Données des comptes nationaux</h4>
-              <ul className="list-unstyled datasets-list">
-                <li>
-                  <a href="/databrowser/dataset/na_cpeb">
-                    <i className="bi bi-chevron-right"></i> Comptes de
-                    production et d'exploitation par branche
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/na_ere">
-                    <i className="bi bi-chevron-right"></i> Tableau des entrées
-                    ressources emplois
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/na_pat_nf">
-                    <i className="bi bi-chevron-right"></i> Comptes de
-                    patrimoine non-financier
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/na_tei">
-                    <i className="bi bi-chevron-right"></i> Tableau des entrées
-                    intermédiaires
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/dataset/na_tess">
-                    <i className="bi bi-chevron-right"></i> Tableau des
-                    entrées-sorties symétrique
-                  </a>
-                </li>
-              </ul>
-              <hr></hr>
-
-              <h4>Données sociales</h4>
-              <ul className="list-unstyled datasets-list">
-                <li>
-                  <a href="/databrowser/dataset/bts_data">
-                    <i className="bi bi-chevron-right me-1"/>Indicateurs issus de la base tous salariés
-                  </a>
-                </li>
-                <li>
-                  <a href="/databrowser/env_impact_factors">
-                    <i className="bi bi-chevron-right me-1"/>Facteurs d'impact monétaires
-                  </a>
-                </li>
-              </ul>
+      <Container fluid className="px-5 py-3">
+        <div className="p-4 border rounded bg-white ">
+          <div className="d-flex justify-content-between align-items-center">
+            <h2>
+              <i className="bi bi-box me-3"/>Facteurs d'impacts monétaires
+            </h2>
+            <div className="mb-3 text-end">
+              <a
+                href="empty"
+                target="_blank"
+                className="bg-light btn btn-sm rounded  me-2"
+              >
+                <i className="bi bi-info-circle-fill"></i> Note explicative
+              </a>
             </div>
-          </Col>
+          </div>
+          <hr></hr>
 
-          <Col>
-            <div className="p-4 border rounded bg-white ">
-              <div className="d-flex justify-content-between align-items-center">
-                <h2>
-                  <i className="bi bi-box me-3"/>Facteurs d'impacts monétaires
-                </h2>
-                <div className="mb-3 text-end">
-                  <a
-                    href="empty"
-                    target="_blank"
-                    className="bg-light btn btn-sm rounded  me-2"
-                  >
-                    <i className="bi bi-info-circle-fill"></i> Note explicative
-                  </a>
-                </div>
-              </div>
-              <hr></hr>
-
-              <Form className={"filter-form"}>
-                <Row>
-                  {Object.keys(metadata).map((key) => 
-                      <Col key={key} md={4}>
-                        <Form.Group controlId={key} className="mb-2">
-                          <Form.Label>{metadata[key].libelle}</Form.Label>
-                          <Form.Control
-                            as="select"
-                            name={key}
-                            value={selectedValues[key] || ""}
-                            onChange={handleSelectChange}
-                          >
-                            {!metadata[key].mandatory &&
-                              <option value="">Toutes les valeurs</option>}
-                            {generateOptions(key)}
-                          </Form.Control>
-                        </Form.Group>
-                      </Col>
-                    )}
-                </Row>
-                <div className=" my-3">
-                  <Button variant="info" size="sm" onClick={handleCancel}>
-                    Effacer les filtres
-                  </Button>
-                </div>
-              </Form>
-              <hr></hr>
-              <div className="mb-3 d-flex justify-content-between align-items-center">
-                <p className="small mb-0">
-                  <b>{filteredData.length}</b> valeurs affichées
-                </p>
-                <Button variant="secondary" size="sm" onClick={exportToExcel}>
-                  <i className="bi bi-download"></i> Télécharger les données
-                  affichées
-                </Button>
-              </div>
-
-              <Table className="data-table" responsive>
-                <thead>
-                  <tr>
-                    <th>Description</th>
-                    <th>Facteur</th>
-                    <th>Unité</th>
-                    <th>Incertitude</th>
-                    <th>Source</th>
-                    <th>Dernière mise à jour</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {currentData
-                    .sort((a, b) => {
-                      const firstCellValueA = a[columns[0]];
-                      const firstCellValueB = b[columns[0]];
-                      if (firstCellValueA < firstCellValueB) {
-                        return -1;
-                      }
-                      if (firstCellValueA > firstCellValueB) {
-                        return 1;
-                      }
-                      return 0;
-                    })
-                    .map((entry, index) => (
-                      <tr key={index}>
-                        <td>{entry.description}</td>
-                        <td className="text-end">{entry.value}</td>
-                        <td className="text-end">{"gCO2e/€"}</td>
-                        <td className="text-end">{entry.uncertainty+' %'}</td>
-                        <td>{entry.source}</td>
-                        <td className="text-center">{formatDate(entry.lastupdate)}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              </Table>
-              <Pagination className="justify-content-end">
-                <Pagination.Prev
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                />
-                {getPageRange().map((page, index) => {
-                  if (page === "...") {
-                    return <Pagination.Ellipsis key={index} disabled />;
-                  } else {
-                    return (
-                      <Pagination.Item
-                        key={index}
-                        active={page === currentPage}
-                        onClick={() => handlePageChange(page)}
+          <Form className={"filter-form"}>
+            <Row>
+              {Object.keys(metadata).map((key) => 
+                  <Col key={key} md={4}>
+                    <Form.Group controlId={key} className="mb-2">
+                      <Form.Label>{metadata[key].libelle}</Form.Label>
+                      <Form.Control
+                        as="select"
+                        name={key}
+                        value={selectedValues[key] || ""}
+                        onChange={handleSelectChange}
                       >
-                        {page}
-                      </Pagination.Item>
-                    );
-                  }
-                })}
-                <Pagination.Next
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                />
-              </Pagination>
+                        {!metadata[key].mandatory &&
+                          <option value="">Toutes les valeurs</option>}
+                        {generateOptions(key)}
+                      </Form.Control>
+                    </Form.Group>
+                  </Col>
+                )}
+            </Row>
+            <div className=" my-3">
+              <Button variant="info" size="sm" onClick={handleCancel}>
+                Effacer les filtres
+              </Button>
             </div>
-          </Col>
-        </Row>
+          </Form>
+          <hr></hr>
+          <div className="mb-3 d-flex justify-content-between align-items-center">
+            <p className="small mb-0">
+              <b>{filteredData.length}</b> valeurs affichées
+            </p>
+            <Button variant="outline" size="sm" onClick={exportToExcel}>
+              <i className="bi bi-download"></i> Télécharger les données
+              affichées
+            </Button>
+          </div>
+
+          {currentData
+            .sort((a, b) => {
+              const firstCellValueA = a[columns[0]];
+              const firstCellValueB = b[columns[0]];
+              if (firstCellValueA < firstCellValueB) {
+                return -1;
+              }
+              if (firstCellValueA > firstCellValueB) {
+                return 1;
+              }
+              return 0;
+            })
+            .map((entry, index) => (
+              <div className="border border-primary px-3 py-3 mb-2" key={index}>
+                <Row>
+                  <Col>
+                    <h3>{entry.description}</h3>
+                    <p>Incertitude : {entry.uncertainty} %</p>
+                    <p>Dernière mise à jour : {formatDate(entry.lastupdate)}</p>
+                  </Col>
+                  <Col lg={2}>
+                    <p className="text-center my-4">
+                      <span className="h1">
+                        <data value={entry.value}>{entry.value} </data>
+                      </span>
+                      <sup> {"gCO2e/€"}</sup>
+                    </p>
+                  </Col>
+                </Row>
+              </div>
+            ))}
+
+          <Pagination className="justify-content-end">
+            <Pagination.Prev
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            />
+            {getPageRange().map((page, index) => {
+              if (page === "...") {
+                return <Pagination.Ellipsis key={index} disabled />;
+              } else {
+                return (
+                  <Pagination.Item
+                    key={index}
+                    active={page === currentPage}
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </Pagination.Item>
+                );
+              }
+            })}
+            <Pagination.Next
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            />
+          </Pagination>
+        </div>
       </Container>
     </section>
   );

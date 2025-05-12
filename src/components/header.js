@@ -1,4 +1,9 @@
+// La Société Nouvelle
+
+//-- React
 import React, { useEffect, useState } from "react";
+
+//-- Bootstrap
 import {
   Col,
   Container,
@@ -12,7 +17,8 @@ import {
 
 import { useRouter } from "next/router";
 
-const Header = () => {
+const Header = () => 
+{
   const router = useRouter();
   const [page, setPage] = useState(router.pathname);
 
@@ -22,229 +28,49 @@ const Header = () => {
 
   if (page.startsWith("/portail")) {
     return (
-      <Navbar expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="/">
-            <Image
-              src="/logo-La-Societe-Nouvelle.svg"
-              height="80"
-              className="d-inline-block align-center"
-              alt="logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/portail" className="border-end border-3">
-                <i className="bi bi-search"></i> Rechercher une entreprise
-              </Nav.Link>
-              <Nav.Link href="/publier-empreinte" target="_blank">
-                Publier mes données
-              </Nav.Link>
-              <Nav.Link
-                href="https://api.lasocietenouvelle.org"
-                target="_blank"
-                rel="noreferrer"
-              >
-                API publique
-              </Nav.Link>
-              <Nav.Link
-                href="https://docs.lasocietenouvelle.org/public-api"
-                target="_blank"
-              >
-                Documentation
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderPortail />
     );
   }
 
-  if (page.startsWith("/databrowser")) {
+  else if (page.startsWith("/databrowser")) {
     return (
-      <Navbar className="justify-content-end border-bottom border-2">
-        <Container fluid>
-          <Navbar.Brand href="/databrowser" className="me-4">
-            <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
-          <Navbar.Collapse id="databrowser-navbar-nav">
-            <Nav>
-              <NavDropdown
-                title="Données"
-                id="data-dropdown"
-              >
-                <NavDropdown
-                  title="Empreintes des activités économiques"
-                  className="dropdown-item"
-                  key="end"
-                  drop="end"
-                >
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt">
-                    Empreintes des activités économiques - données historiques
-                  </NavDropdown.Item>
-                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a38">
-                    Empreintes des branches d'activité - données historiques
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_a88">
-                    Empreintes des divisions économiques - données historiques
-                  </NavDropdown.Item> */}
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd">
-                    Empreintes des activités économiques - tendances
-                  </NavDropdown.Item>
-                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a38">
-                    Empreintes des branches d'activité - tendances
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_trd_a88">
-                    Empreintes des divisions économiques - tendances
-                  </NavDropdown.Item> */}
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt">
-                    Objectifs annuels par activité économique
-                  </NavDropdown.Item>
-                  {/* <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a38">
-                    Objectifs annuels par branches d'activité
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/macro_fpt_tgt_a88">
-                    Objectifs annuels des divisions économiques
-                  </NavDropdown.Item> */}
-                </NavDropdown>
-
-                <NavDropdown.Divider />
-                <NavDropdown
-                  title="Données des comptes nationaux"
-                  className="dropdown-item"
-                  key="end"
-                  drop="end"
-
-                >
-                  <NavDropdown.Item href="/databrowser/dataset/na_cpeb">
-                    Comptes de production et d'exploitation par branche
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/na_ere">
-                    Tableau des entrées ressources emplois
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/na_pat_nf">
-                    Comptes de patrimoine non-financier
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/na_tei">
-                    Tableau des entrées intermédiaires
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="/databrowser/dataset/na_tess">
-                    Tableau des entrées-sorties symétrique
-                  </NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown.Divider />
-                <NavDropdown
-                  title="Autres jeux de données"
-                  className="dropdown-item"
-                  key="end"
-                  drop="end"
-                >
-                  <NavDropdown.Item href="/databrowser/dataset/bts_data">
-                    Indicateurs issus de la base tous salariés
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </NavDropdown>
-              <Nav.Link
-                href="https://api.lasocietenouvelle.org"
-                target="_blank"
-              >
-                API
-              </Nav.Link>
-              <Nav.Link
-                href="https://cran.r-project.org/web/packages/lsnstat/index.html"
-                target="_blank"
-              >
-                LSN-stat
-              </Nav.Link>
-              <Nav.Link
-                href="https://github.com/La-Societe-Nouvelle/lsnr-lab"
-                target="_blank"
-              >
-                LsnR-Lab
-              </Nav.Link>
-              <Nav.Link
-                href="https://docs.lasocietenouvelle.org/series-donnees"
-                target="_blank"
-              >
-                Documentation
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderDatabrowser page={page}/>
     );
   }
 
-  if (page.startsWith("/devenir-partenaire")) {
+  else if (page.startsWith("/devenir-partenaire")) {
     return (
-      <Navbar className="justify-content-end border-bottom border-2">
-        <Container fluid>
-          <Navbar.Brand href="/" className="me-4">
-            <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
-          <Navbar.Collapse id="databrowser-navbar-nav">
-            <Nav>
-              <Nav.Link
-                href="/devenir-partenaire"
-              >
-                Accueil Partenaire
-              </Nav.Link>
-            </Nav>
-            {/* <Nav>
-              <Nav.Link
-                href="/devenir-partenaire/se-former"
-              >
-                SE FORMER
-              </Nav.Link>
-            </Nav> */}
-            <Nav>
-              <Nav.Link
-                href="/devenir-partenaire/sponsors"
-              >
-                Nous soutenir
-              </Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link
-                href="/devenir-partenaire/expert-comptable"
-              >
-                Experts-comptables
-              </Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link
-                href="https://discord.gg/ANFwWZc3eu"
-                target="_blank"
-              >
-                Rejoindre notre serveur Discord
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderPartner />
     );
   }
-  if (page.startsWith("/publier-empreinte")) {
+
+  else if (page.startsWith("/publier-empreinte")) {
     return (
       <Navbar className="bg-light">
         <Container fluid>
           <Navbar.Brand href="/" className="m-auto">
             <Image src="/logo-La-Societe-Nouvelle.svg" height="75" alt="logo" />
           </Navbar.Brand>
-
         </Container>
       </Navbar>
     );
   }
 
+  else {
+    return (
+      <DefaultHeader page={page} />
+    );
+  }
+};
+
+// ---------------------------------------------------------------------------------------------------- //
+
+const DefaultHeader = ({ page }) => 
+{
   // root
   const rootPage = /^\/(.[^\/]*)/.exec(page)?.[0] || "none";
 
-  return (
+  return(
     <div className="header">
       <div className="top-bar d-flex justify-content-between align-items-center px-2">
         <Nav className="socials">
@@ -391,7 +217,165 @@ const Header = () => {
         </Navbar>
       </div>
     </div>
+  )
+}
+
+const HeaderPortail = () =>
+{
+  return(
+    <Navbar expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="/">
+          <Image
+            src="/logo-La-Societe-Nouvelle.svg"
+            height="80"
+            className="d-inline-block align-center"
+            alt="logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/portail" className="border-end border-3">
+              <i className="bi bi-search"></i> Rechercher une entreprise
+            </Nav.Link>
+            <Nav.Link href="/publier-empreinte" target="_blank">
+              Publier mes données
+            </Nav.Link>
+            <Nav.Link
+              href="https://api.lasocietenouvelle.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              API publique
+            </Nav.Link>
+            <Nav.Link
+              href="https://docs.lasocietenouvelle.org/public-api"
+              target="_blank"
+            >
+              Documentation
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
+
+const HeaderDatabrowser = ({ page }) =>
+{
+  // root
+  const rootPage = /^\/(.[^\/]*)/.exec(page)?.[1] || "none";
+
+  return(
+    <div className="header">
+      <Container className="m-0 px-1 mw-100 bg-light">
+        <Row className="py-3 px-3 w-100 align-items-center justify-content-between">
+          <Col lg={1}>
+            <Navbar.Brand href="/">
+              <Image
+                src="/logo-La-Societe-Nouvelle.svg"
+                height={80}
+                className="d-inline-block align-center"
+                alt="logo"
+              />
+            </Navbar.Brand>
+          </Col>
+          <Col>
+            <h1 className="text-center my-3">
+              Portail Open Data - Données statistiques extra-financières
+            </h1>
+          </Col>
+        </Row>
+      </Container>
+      <div className="menu-databrowser">
+        <Navbar expand="lg py-0">
+          <Container className="px-5 m-0 mw-100">
+            <Navbar.Toggle aria-controls="main-navbar-nav" />
+            <Navbar.Collapse
+              id="main-navbar-nav"
+              className="justify-content-between"
+            >
+              <Nav className="flex-grow-1 ps-4">
+                <Nav.Link href="/databrowser">
+                  <i className="bi bi-house-fill" />
+                </Nav.Link>
+                <Nav.Link href="/databrowser/datasets" className={["/datasets", "/dataset"].includes(rootPage) ? "hover" : ""}>
+                  Empreintes macroéconomiques
+                </Nav.Link>
+                <Nav.Link href="/databrowser/env_impact_factors" className={rootPage == "/env_impact_factors" ? "hover" : ""}>
+                  Facteurs d'impacts monétaires
+                </Nav.Link>
+                <Nav.Link href="/databrowser" className={rootPage == "/projet-sinese" ? "hover" : ""}>
+                  Baromètre des émissions de GES
+                </Nav.Link>
+                <Nav.Link href="https://api.lasocietenouvelle.org" target="_blank" className={rootPage == "/statistics" ? "hover" : ""}>
+                  API Publique<i className="bi bi-box-arrow-up-right ms-2" />
+                </Nav.Link>
+                <Nav.Link href="https://github.com/La-Societe-Nouvelle" target="_blank" className={rootPage == "/nos-services" ? "hover" : ""}>
+                  Répertoire GitHub<i className="bi bi-box-arrow-up-right ms-2" />
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
+    </div>
+  )
+}
+
+const HeaderPartner = () => 
+{
+  return(
+    <Navbar className="justify-content-end border-bottom border-2">
+      <Container fluid>
+        <Navbar.Brand href="/" className="me-4">
+          <Image src="/logo-La-Societe-Nouvelle.svg" height="80" alt="logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="databrowser-navbar-nav" />
+        <Navbar.Collapse id="databrowser-navbar-nav">
+          <Nav>
+            <Nav.Link
+              href="/devenir-partenaire"
+            >
+              Accueil Partenaire
+            </Nav.Link>
+          </Nav>
+          {/* <Nav>
+            <Nav.Link
+              href="/devenir-partenaire/se-former"
+            >
+              SE FORMER
+            </Nav.Link>
+          </Nav> */}
+          <Nav>
+            <Nav.Link
+              href="/devenir-partenaire/sponsors"
+            >
+              Nous soutenir
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link
+              href="/devenir-partenaire/expert-comptable"
+            >
+              Experts-comptables
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link
+              href="https://discord.gg/ANFwWZc3eu"
+              target="_blank"
+            >
+              Rejoindre notre serveur Discord
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
+}
+
+// ---------------------------------------------------------------------------------------------------- //
 
 export default Header;
