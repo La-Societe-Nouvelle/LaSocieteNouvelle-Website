@@ -117,7 +117,7 @@ const Metriz = () =>
               />
             </Col>
             <Col>
-              <h2>Identifiez vos principaux aux enjeux</h2>
+              <h2>Identifiez vos principaux enjeux</h2>
                 <p>
                   Au-delà de disposer des indicateurs, les résultats permettent les analyses suivantes :
                 </p>
