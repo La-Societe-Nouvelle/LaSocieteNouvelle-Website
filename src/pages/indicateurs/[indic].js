@@ -1,13 +1,22 @@
+// La Société Nouvelle
+
+//-- React
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+
+//-- Next
 import { useRouter } from "next/router";
 
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { Helmet } from "react-helmet";
+//-- Bootstrap
+import { Col, Container, Image, Row } from "react-bootstrap";
 import PageHeader from "../../components/PageHeader";
 
-import metaData from "../../lib/metaData";
+//-- Lib
+import metaIndics from "../../lib/metaData";
 import odds_targets from "../../lib/odds_targets";
-import TrendChart from "../../components/charts/TrendChart";
+
+//-- Components
+import { ContextWAT } from "../../components/indic/ContextWAT";
 
 const lightenColor = (colorHex, lumFactor) => 
 {
@@ -33,7 +42,7 @@ const IndicPresentation = () =>
     setIndic(router.query.indic);
   }, [router, indic]);
 
-  const indicData = metaData[indic];
+  const indicData = metaIndics[indic];
 
   if (!indicData) {
     return(
@@ -65,18 +74,20 @@ const IndicPresentation = () =>
           path={"indicateurs/"+indic}
         />
         <section>
-          <Container>
+          <Container className="w-75">
             <Row>
               <Col>
-                {metaData.odds_ese.map((odd, index) => (
-                  <Image
-                    key={index}
-                    className="F-WEB-Goal"
-                    src={"/images/odd/F-WEB-Goal-" + odd + ".png"}
-                    style={{width: "75px", margin: "0 4px", opacity: indicData?.odds.includes(odd) ? "100%" : "25%"}}
-                    alt="F-WEB-Goal"
-                  />
-                ))}
+                <div className="d-flex justify-content-center">
+                  {metaIndics.odds_ese.map((odd, index) => (
+                    <Image
+                      key={index}
+                      className="F-WEB-Goal"
+                      src={"/images/odd/F-WEB-Goal-" + odd + ".png"}
+                      style={{width: "50px", margin: "0 4px", opacity: indicData?.odds.includes(odd) ? "100%" : "25%"}}
+                      alt="F-WEB-Goal"
+                    />
+                  ))}
+                </div>
                 <div className="d-flex mt-5">
                   <Image src={"/ESE/gen2/illustration-g2-"+indic+".png"} height="40" className="mb-3 me-4" />
                   <h1>{indicData?.libelle}</h1>
@@ -146,7 +157,7 @@ const IndicPresentation = () =>
                     sollicitées.
                   </p>
                 </div>
-                <h2>Suivi macroéconomique</h2>
+                {/* <h2>Suivi macroéconomique</h2>
                 <div className="mb-3 pb-4">
                   {indicData &&
                     <Row className="h-100">
@@ -160,7 +171,10 @@ const IndicPresentation = () =>
                         />
                       </Col>
                     </Row>}
-                </div>
+                </div> */}
+                
+                {/* Elements de contexte */}
+                <InformationContext indic={indic} />
               </Col>
             </Row>
           </Container>
@@ -177,5 +191,13 @@ const IndicPresentation = () =>
     );
   }
 };
+
+const InformationContext = ({indic}) => 
+{
+  switch(indic) {
+    case "wat": return <ContextWAT />
+    default:    return <></>
+  }
+}
 
 export default IndicPresentation;
