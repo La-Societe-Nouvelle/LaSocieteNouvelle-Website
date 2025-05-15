@@ -26,6 +26,36 @@ const DataBrowser = () =>
         />
       </Helmet>
 
+      <section className="bg-light-blue">
+        <Container fluid className="mt-1 px-5">
+          <Row>
+            <Col lg={1}/>
+            <Col lg={6}>
+              <h2 className="text-blue">Bienvenue sur notre portail Open Data,</h2>
+              <p>
+                Accédez aux jeux de données statistiques macroéconomiques produits
+                par La Société Nouvelle. Ils comprennent un suivi de l'empreinte des
+                activités économiques françaises, leur tendance sur les années à
+                venir et des trajectoires cibles sectorielles.
+              </p>
+              <p>
+                Les données permettent à chaque entreprise de se situer par rapport
+                à sa branche d'activité et d'assurer la compatibilité de ses
+                activités avec la transition écologique et sociale.
+              </p>
+            </Col>
+            {/* <Col lg={1}/>
+            <Col lg={4}>
+              <Image
+                className="w-50 opacity-75"
+                src="/illustrations/donnees-par-defaut.svg"
+                alt="Illustration-Databrowser"
+              />
+            </Col> */}
+          </Row>
+        </Container>
+      </section>
+
       <KeyFigures />
 
       <section className="bg-light">
@@ -35,23 +65,26 @@ const DataBrowser = () =>
               <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
                 <h3>Empreintes macroéconomiques</h3>
                 <p>
-                  Séries statistiques sur les externalités des activités économiques: suivis historiques, tendances
-                  et trajectoires cibles.
+                  Séries statistiques sur les externalités des activités
+                  économiques: suivis historiques, tendances et trajectoires
+                  cibles.
                 </p>
-                <Image
+                <div className="">
+                  <i className="bi bi-database-fill" style={{ fontSize: "150px" }}/>
+                </div>
+                {/* <Image
                   fluid
                   src="/illustrations/illustration-documentation.png"
                   alt="Illustration Documentation"
                   style={{ height: "auto", width: "250px", margin: "auto" }}
-                />
-                <Button 
-                  size="sm" 
-                  href="https://docs.lasocietenouvelle.org"
-                  target="_blank"
+                /> */}
+                <Button
+                  size="sm"
+                  href="/databrowser/datasets"
                   className="rounded-0"
                   variant="outline"
                 >
-                  Consulter la documentation
+                  Explorer les jeux de données
                 </Button>
               </div>
             </Col>
@@ -59,45 +92,37 @@ const DataBrowser = () =>
               <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
                 <h3>Facteurs d'impacts monétaires</h3>
                 <p>
-                  Mesurer l'empreinte sociétale de votre entreprise ou proposer le service pour vos clients.
+                  Coefficients pour l'estimation des impacts sociaux et environnementaux par activité économique.
                 </p>
-                <Image
-                  fluid
-                  src="/illustrations/illustration-webapp.png"
-                  alt="Illustration WebApp"
-                  style={{ height: "auto", width: "250px", margin: "auto" }}
-                />
-                <Button 
-                  size="sm" 
-                  target="_blank"
-                  href="https://partners.metriz.lasocietenouvelle.org"
+                <div className="">
+                  <i className="bi bi-calculator-fill" style={{ fontSize: "150px" }}/>
+                </div>
+                <Button
+                  size="sm"
+                  href="/databrowser/env_impact_factors"
                   className="rounded-0"
                   variant="outline"
                 >
-                  Découvrir l'application
+                  Accéder aux données
                 </Button>
               </div>
             </Col>
             <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
-                <h3>Espace partenaire</h3>
+                <h3>Baromètre des émissions de GES</h3>
                 <p>
-                  Vous êtes expert-comptable ? Utilisez nos ressources pour informer vos clients sur leur
-                  performance extra-financière.
+                  Estimation des émissions territoriales d'émission de gaz à effet de serre.
                 </p>
-                <Image
-                  fluid
-                  src="/illustrations/illustration-partners.png"
-                  alt="Illustration Partenaires"
-                  style={{ height: "auto", width: "250px", margin: "auto" }}
-                />
+                <div className="">
+                  <i className="bi bi-bar-chart-fill" style={{ fontSize: "150px" }}/>
+                </div>
                 <Button
                   size="sm"
-                  href="/devenir-partenaire"
+                  href="/databrowser"
                   className="bg-blue-bis rounded-0"
                   variant="outline"
                 >
-                  Devenir partenaire
+                  Consulter les dernières estimations
                 </Button>
               </div>
             </Col>
@@ -106,8 +131,8 @@ const DataBrowser = () =>
       </section>
 
       <section>
-        <Container>
-          <h3 className="mb-3">Packages R</h3>
+        <Container className="my-5">
+          <h2 className="">Nos engagements</h2>
           <Row>
             <Col>
               <Image
@@ -117,18 +142,20 @@ const DataBrowser = () =>
             </Col>
             <Col lg={8}>
               <h4>Package CRAN - lsnstat - Accés aux données</h4>
-              <p> Le package R <a
+              <p>
+                {" "}
+                Le package R{" "}
+                <a
                   href="https://cran.r-project.org/web/packages/lsnstat/index.html"
                   target="_blank"
                 >
                   lsnstat
-                </a> facilite l'exploitation des données macroéconomiques produites 
-                et utilisées par La Société Nouvelle, ainsi que leurs métadonnées associées,
-                 dans le langage .R.
+                </a>{" "}
+                facilite l'exploitation des données macroéconomiques produites
+                et utilisées par La Société Nouvelle, ainsi que leurs
+                métadonnées associées, dans le langage .R.
               </p>
-              <p>
-                Il fait le lien avec l'API publique 'La Société Nouvelle'.
-              </p>
+              <p>Il fait le lien avec l'API publique 'La Société Nouvelle'.</p>
               <p>
                 L'API est directement accessible via le lien suivant :{" "}
                 <a href="https://api.lasocietenouvelle.org/" target="_blank">
@@ -137,20 +164,27 @@ const DataBrowser = () =>
               </p>
               <h4>Package lsnR-Lab - Production des données</h4>
               <p>
-                Le package R lsnR-Lab contient le script de calcul
-                des empreintes sociales et environnementales de la
-                production des activités économiques françaises.
+                Le package R lsnR-Lab contient le script de calcul des
+                empreintes sociales et environnementales de la production des
+                activités économiques françaises.
               </p>
 
               <p>
-                Les fonctions disponibles permettent d'estimer les empreintes des
-                agrégats macroéconomiques des branches (NACE 38) et des divisions (NACE 88)
-                économiques, sur les douze dimensions
+                Les fonctions disponibles permettent d'estimer les empreintes
+                des agrégats macroéconomiques des branches (NACE 38) et des
+                divisions (NACE 88) économiques, sur les douze dimensions
                 sociales et environnementales de l'Empreinte Sociétale.
               </p>
 
               <p>
-                Découvrez les fonctionnalités du package lsnR-Lab en consultant <a href="https://github.com/La-Societe-Nouvelle/lsnr-lab" target="_blank">notre dépôt GitHub</a> .
+                Découvrez les fonctionnalités du package lsnR-Lab en consultant{" "}
+                <a
+                  href="https://github.com/La-Societe-Nouvelle/lsnr-lab"
+                  target="_blank"
+                >
+                  notre dépôt GitHub
+                </a>{" "}
+                .
               </p>
             </Col>
           </Row>

@@ -1,17 +1,248 @@
 {
-    "macro_fpt": {
-        "endpoint": "/macrodata/macro_fpt",
-        "parameters": [{
-            "code": "indic",
-            "label": "",
-            "mandatory": true
-        },{
-            "code": "aggregate",
-            "label": "",
-            "mandatory": true
-        }]
-    },
-    "env_impact_factors": {
-        "endpoint": "/env_impact_factors"
-    }
+  "macro_fpt": {
+		"label": "Empreintes macroéconomiques par industries (A*64)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt",
+		"columnsParameter": "year",
+		"rowsParameter": "industry",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "country",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_a38": {
+		"label": "Empreintes macroéconomiques par branches (A*38)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_a38",
+		"columnsParameter": "year",
+		"rowsParameter": "branch",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_a88": {
+		"label": "Empreintes macroéconomiques par divisions (A*88)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_a88",
+		"columnsParameter": "year",
+		"rowsParameter": "division",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_trd": {
+		"label": "Tendances des empreintes macroéconomiques par industries (A*64)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_trd",
+		"columnsParameter": "year",
+		"rowsParameter": "industry",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "country",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_trd_a38": {
+		"label": "Tendances des empreintes macroéconomiques par branches (A*38)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_trd_a38",
+		"columnsParameter": "year",
+		"rowsParameter": "branch",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_trd_a88": {
+		"label": "Tendances des empreintes macroéconomiques par divisions (A*88)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_trd_a88",
+		"columnsParameter": "year",
+		"rowsParameter": "division",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_tgt": {
+		"label": "Trajectoires cibles des empreintes macroéconomiques par industries (A*64)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_tgt",
+		"columnsParameter": "year",
+		"rowsParameter": "industry",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "country",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_tgt_a38": {
+		"label": "Tendances des empreintes macroéconomiques par branches (A*38)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_tgt_a38",
+		"columnsParameter": "year",
+		"rowsParameter": "branch",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+	"macro_fpt_tgt_a88": {
+		"label": "Tendances des empreintes macroéconomiques par divisions (A*88)",
+		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+    "endpoint": "/macrodata/macro_fpt_tgt_a88",
+		"columnsParameter": "year",
+		"rowsParameter": "division",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
+  "env_impact_factors": {
+    "endpoint": "/env_impact_factors"
+  }
 }
