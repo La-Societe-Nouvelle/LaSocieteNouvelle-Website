@@ -312,9 +312,9 @@ const HeaderDatabrowser = ({ page }) =>
                 <Nav.Link href="https://api.lasocietenouvelle.org" target="_blank" className={rootPage == "/statistics" ? "hover" : ""}>
                   API Publique<i className="bi bi-box-arrow-up-right ms-2" />
                 </Nav.Link>
-                <Nav.Link href="https://github.com/La-Societe-Nouvelle" target="_blank" className={rootPage == "/nos-services" ? "hover" : ""}>
+                {/* <Nav.Link href="https://github.com/La-Societe-Nouvelle" target="_blank" className={rootPage == "/nos-services" ? "hover" : ""}>
                   Répertoire GitHub<i className="bi bi-box-arrow-up-right ms-2" />
-                </Nav.Link>
+                </Nav.Link> */}
               </Nav>
             </Navbar.Collapse>
           </Container>

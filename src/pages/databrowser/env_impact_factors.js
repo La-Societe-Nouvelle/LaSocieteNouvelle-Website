@@ -199,7 +199,7 @@ function DatasetPage()
             </h2>
             <div className="mb-3 text-end">
               <a
-                href="empty"
+                href="https://docs.lasocietenouvelle.org/"
                 target="_blank"
                 className="bg-light btn btn-sm rounded  me-2"
               >

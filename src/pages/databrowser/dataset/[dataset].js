@@ -254,7 +254,7 @@ function DatasetPage()
             </Row>
             <div className=" my-3">
               <Button variant="info" size="sm" onClick={handleResetFilters}>
-                Effacer les filtres
+                Réinitialiser les filtres
               </Button>
             </div>
           </Form>
