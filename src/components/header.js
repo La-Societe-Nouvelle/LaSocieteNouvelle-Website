@@ -306,7 +306,7 @@ const HeaderDatabrowser = ({ page }) =>
                 <Nav.Link href="/databrowser/env_impact_factors" className={rootPage == "/env_impact_factors" ? "hover" : ""}>
                   Facteurs d'impacts monétaires
                 </Nav.Link>
-                <Nav.Link href="/databrowser" className={rootPage == "/projet-sinese" ? "hover" : ""}>
+                <Nav.Link href="/databrowser/barometre-ges" className={rootPage == "/projet-sinese" ? "hover" : ""}>
                   Baromètre des émissions de GES
                 </Nav.Link>
                 <Nav.Link href="https://api.lasocietenouvelle.org" target="_blank" className={rootPage == "/statistics" ? "hover" : ""}>

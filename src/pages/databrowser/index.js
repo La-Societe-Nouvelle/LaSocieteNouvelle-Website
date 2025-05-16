@@ -118,7 +118,7 @@ const DataBrowser = () =>
                 </div>
                 <Button
                   size="sm"
-                  href="/databrowser"
+                  href="/databrowser/barometre-ges"
                   className="bg-blue-bis rounded-0"
                   variant="outline"
                 >
