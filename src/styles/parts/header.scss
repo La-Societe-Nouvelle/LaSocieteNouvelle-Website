@@ -102,3 +102,43 @@ header {
     padding-right: 1.5rem;
   }
 }
+
+.menu-databrowser {
+  background-color: $primary;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+
+  .dropdown-toggle::after {
+    border: none;
+    content: "\F282";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+  }
+  .dropdown-menu {
+    .dropdown-toggle::after {
+      content: "\F285";
+      font-size: 0.9rem;
+    }
+  }
+
+  .nav-link, .nav-link:visited {
+    border-bottom: 1px solid transparent;
+    color: #FFF;
+  }
+  .nav-link:hover, .nav-link.hover, .dropdown.hover {
+    background-color: $light;
+    color:  $primary;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

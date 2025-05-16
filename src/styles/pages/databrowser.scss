@@ -5,7 +5,36 @@
   thead {
     background-color: $primary;
     color: #fff;
-    text-transform: uppercase;
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 1;
+  }
+
+  tbody {
+    color: black;
+    tr:hover {
+      background-color: $light;
+    }
+  }
+
+  .first-column {
+    font-size: 0.7rem;
+    max-width: 20vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: $light;
+    padding: 3px;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+  }
+
+  .data-cell {
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    padding: 3px 0.5rem !important;
   }
 }
 

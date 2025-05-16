@@ -25,6 +25,7 @@
     "graphql-request": "^5.2.0",
     "html-loader": "^2.1.2",
     "jspdf": "^2.4.0",
+    "lodash": "^4.17.21",
     "markdown-loader": "^8.0.0",
     "marked": "^4.0.12",
     "next": "^12.3.0",

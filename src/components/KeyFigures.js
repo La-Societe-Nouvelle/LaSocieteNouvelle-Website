@@ -50,7 +50,7 @@ export const KeyFigures = () =>
         period: '2025-01',
         value: 35.7,
         unit: 'MtCO₂e',
-        title: 'Emission intérieures de gaz à effet de serre',
+        title: 'Emissions intérieures de gaz à effet de serre',
         illustration: 'ESE/icon-ese-bleues/ghg.svg'
       },{
         period: '2024',
