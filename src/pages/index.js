@@ -73,6 +73,29 @@ const Home = () => {
           <Row>
             <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
+                <h3>Données statistiques</h3>
+                <p>
+                  Suivez l'empreinte sociale et environnementale des
+                  activités économiques.
+                </p>
+                <Image
+                  fluid
+                  src="/illustrations/illustration-statistics.png"
+                  alt="Illustration Données statistiques"
+                  style={{ height: "auto", width: "250px", margin: "auto" }}
+                />
+                <Button 
+                  size="sm" 
+                  href="/databrowser"
+                  className="rounded-0"
+                  variant="outline"
+                >
+                  Accéder aux données
+                </Button>
+              </div>
+            </Col>
+            {/* <Col className="d-flex align-self-stretch">
+              <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
                 <h3>Documentation</h3>
                 <p>
                   La méthodologie est publique et libre d'exploitation. Toutes nos documentations sont accessibles
@@ -94,12 +117,12 @@ const Home = () => {
                   Consulter la documentation
                 </Button>
               </div>
-            </Col>
+            </Col> */}
             <Col className="d-flex align-self-stretch">
               <div className="text-center border border-2 p-4 d-flex flex-column justify-content-between bg-white">
                 <h3>Notre Solution METRIZ</h3>
                 <p>
-                  Mesurer l'empreinte sociétale de votre entreprise ou proposer le service pour vos clients.
+                  Mesurez l'empreinte sociétale de votre entreprise ou proposer le service pour vos clients.
                 </p>
                 <Image
                   fluid
@@ -109,8 +132,7 @@ const Home = () => {
                 />
                 <Button 
                   size="sm" 
-                  target="_blank"
-                  href="https://partners.metriz.lasocietenouvelle.org"
+                  href="/ressources/application-mesure-impact"
                   className="rounded-0"
                   variant="outline"
                 >
