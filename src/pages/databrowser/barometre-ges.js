@@ -4,8 +4,9 @@
 import { Helmet } from "react-helmet";
 
 //-- Bootstrap
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row, Table } from "react-bootstrap";
 import { DefaultLineChart } from "../../components/charts/DefaultLineChart";
+import { DefaultBarChart } from "../../components/charts/DefaultBarChart";
 
 const BarometreGES = () => 
 {
@@ -107,7 +108,7 @@ const BarometreGES = () =>
           <h2>Suivi mensuel des émissions territoriales</h2>
           <Row className="slide">
             <p>en MtCO2e</p>
-            <DefaultLineChart
+            <DefaultBarChart
               labels={[
                 "2024-01",
                 "2024-02",
@@ -124,22 +125,24 @@ const BarometreGES = () =>
                 "2025-01",
                 "2025-02",
                 "2025-03",
+                "2025-04",
+                "2025-05"
               ]}
               datasets={[
                 {
-                  label: "Prévisions-LSN",
-                  data: [, , , , , , , , , , , 33.4, 35.2, 33.5, 33.8],
-                  backgroundColor: "#191558",
-                  borderColor: "#191558",
-                  borderDash: [6, 6],
+                  label: 'Prévisions-LSN',
+                  data: [, , , , , , , , , , , , 35.2, 33.5, 33.8],
+                  backgroundColor: '#191558',
+                  stack: '1'
                 },
                 {
-                  label: "Baromètre-CITEPA",
+                  label: 'Baromètre-CITEPA',
                   data: [
                     35.6, 32.3, 33.7, 31.8, 28.3, 27.1, 29.0, 27.2, 27.4, 29.4,
                     31.1, 33.4,
                   ],
-                  borderColor: "#191558",
+                  backgroundColor: '#0b478b',
+                  stack: '1'
                 },
               ]}
               options={{
@@ -156,6 +159,50 @@ const BarometreGES = () =>
               </ul>
             </p>
           </Row>
+          {/* <Row>
+            <div className="table-responsive">
+              <Table className="data-table">
+                <thead>
+                  <tr>
+                    <th className="">2024-01</th>
+                    <th className="">2024-02</th>
+                    <th className="">2024-03</th>
+                    <th className="">2024-04</th>
+                    <th className="">2024-05</th>
+                    <th className="">2024-06</th>
+                    <th className="">2024-07</th>
+                    <th className="">2024-08</th>
+                    <th className="">2024-09</th>
+                    <th className="">2024-10</th>
+                    <th className="">2024-11</th>
+                    <th className="">2024-12</th>
+                    <th className="">2025-01</th>
+                    <th className="">2025-02</th>
+                    <th className="">2025-03</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="">35.6</td>
+                    <td className="">32.3</td>
+                    <td className="">33.7</td>
+                    <td className="">31.8</td>
+                    <td className="">28.3</td>
+                    <td className="">27.1</td>
+                    <td className="">29.0</td>
+                    <td className="">27.2</td>
+                    <td className="">27.4</td>
+                    <td className="">29.4</td>
+                    <td className="">31.3</td>
+                    <td className="">33.4</td>
+                    <td className="">35.2</td>
+                    <td className="">33.5</td>
+                    <td className="">33.8</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </Row> */}
         </Container>
       </section>
 
