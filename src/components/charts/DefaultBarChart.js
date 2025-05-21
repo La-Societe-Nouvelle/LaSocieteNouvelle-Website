@@ -43,6 +43,12 @@ export const DefaultBarChart = ({
     plugins: {
       legend: {
         display: custumOptions.legendDisplay ? custumOptions.legendDisplay : false,
+      },
+      tooltip: {
+        callbacks: {
+          title: (ctx) => ctx[0]?.dataset?.tooltipHeaders?.[ctx[0]?.dataIndex] ?? labels[ctx[0]?.dataIndex],
+          label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}`+(ctx.dataset.unit ? ` `+ctx.dataset.unit : ``),
+        }
       }
     }
   }

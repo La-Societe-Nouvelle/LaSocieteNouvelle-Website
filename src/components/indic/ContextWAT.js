@@ -2,10 +2,48 @@ import { DefaultBarChart } from "../charts/DefaultBarChart";
 
 import metaData from "../../lib/metaData";
 import { DefaultDoughnutChart } from "../charts/DefaultDoughnutChart";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const sections_a10 = [
+  "A",
+  "BE",
+  "F",
+  "GI",
+  "J",
+  "K",
+  "L",
+  "MN",
+  "OQ",
+  "RU"
+]
 
 export const ContextWAT = () => 
 {
   const indicData = metaData.wat;
+
+  const [macroFpt, setMacroFpt] = useState([]);
+  const [metaIndustries, setMetaIndustries] = useState([]);
+
+  const fetchMacroFpt = async () => {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?indic=WAT&country=FRA&aggregate=PRD&year=2024`)
+    if (res.data.header.code == 200) {
+      setMacroFpt(res.data.data);
+    }
+  }
+
+  const fetchMetadataIndustries = async () => {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/metadata/industries`)
+    if (res.data.header.code == 200) {
+      console.log(res.data);
+      setMetaIndustries(res.data.meta);
+    }
+  }
+
+  useEffect(() => {
+    fetchMacroFpt();
+    fetchMetadataIndustries();
+  }, [])
 
   return (
     <>
@@ -21,12 +59,14 @@ export const ContextWAT = () =>
         la moyenne en 2019, et 37% supérieur en 2020.
       </p>
       <div className="my-4 w-75 mx-auto">
+        <p>en millions de m3</p>
         <DefaultBarChart
           labels={['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021']}
           datasets={[{
             label: 'Ressource en eau renouvelable annuelle',
             data: [198.6,164.4,161.6,288.3,288.3,182.2,215.3,130.3,257.0,141.6,289.5,241.4],
-            backgroundColor: indicData.primaryColor
+            backgroundColor: indicData.primaryColor,
+            unit: 'millions de m3'
           }]}
           options={{
             aspectRatio: 2.5
@@ -94,6 +134,29 @@ export const ContextWAT = () =>
       <p>
         Répartition de la consommation directe d'eau par secteur d'activités (A*10)
       </p>
+      <div className="my-4 w-75 mx-auto">
+        <p>en L/€</p>
+        <DefaultBarChart
+          labels={macroFpt
+            .filter((data) => sections_a10.includes(data.industry))
+            .map((data) => data.industry)}
+          datasets={[{
+            label: 'Empreinte eau de la production',
+            data: macroFpt
+              .filter((data) => sections_a10.includes(data.industry))
+              .map((data) => data.value),
+            tooltipHeaders: macroFpt
+              .filter((data) => sections_a10.includes(data.industry))
+              .map((data) => metaIndustries.find((meta) => meta.code == data.industry))
+              .map((meta) => meta.code+' - '+meta.label),
+            backgroundColor: indicData.primaryColor,
+            unit: 'L/€'
+          }]}
+          options={{
+            aspectRatio: 2.5
+          }}
+        />
+      </div>
       <h2>Engagements nationaux</h2>
       <p>
         Face à l'aggravation des tensions sur la ressource en eau, la France a

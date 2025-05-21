@@ -23,7 +23,6 @@ import { Doughnut } from "react-chartjs-2";
 
 const lightenColor = (colorHex, lumFactor) => 
 {
-  console.log(colorHex);
   let r = parseInt(colorHex.substr(1,2), 16);
   let g = parseInt(colorHex.substr(3,2), 16);
   let b = parseInt(colorHex.substr(5,2), 16);
@@ -67,6 +66,11 @@ export const DefaultDoughnutChart = ({
       legend: {
         display: custumOptions.legendDisplay ? custumOptions.legendDisplay : false,
         position: custumOptions.legendPosition ? custumOptions.legendPosition : 'bottom',
+      },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}`+(ctx.dataset.unit ? ` `+ctx.dataset.unit : ` %`),
+        }
       }
     }
   }
