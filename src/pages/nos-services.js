@@ -39,7 +39,7 @@ const Page = () => {
                   </p>
                 </div>
                 <p>
-                  <b>Tarif : 500 €</b>
+                  <b>Tarif : 500 €</b> (hors période fiscale)
                 </p>
                 <Button
                   variant="outline"
