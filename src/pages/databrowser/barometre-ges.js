@@ -88,14 +88,18 @@ const BarometreGES = () =>
                 <p>Avril 2025</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>-</data>
+                    <data>28.8</data>
                   </span>
                   <sup> MtCO2e</sup>
+                </p>
+                <p className="h3">
+                  <i className="bi bi-arrow-down-right me-2" />
+                  9.3 % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Parution le 30/05
+                  (Provisoire)
                 </p>
               </Row>
             </Col>
@@ -131,7 +135,7 @@ const BarometreGES = () =>
               datasets={[
                 {
                   label: 'Prévisions-LSN',
-                  data: [, , , , , , , , , , , , 35.2, 33.5, 33.8],
+                  data: [, , , , , , , , , , , , 35.2, 33.5, 33.8, 28.8],
                   backgroundColor: '#191558',
                   stack: '1'
                 },
@@ -155,7 +159,7 @@ const BarometreGES = () =>
               <b>Sources :</b>
               <ul>
                 <li>Pour les données de janvier 2024 à décembre 2024 : CITEPA (Baromètre mensuel)</li>
-                <li>Pour les données de janvier 2025 à mars 2025 : La Société Nouvelle</li>
+                <li>Pour les données de janvier 2025 à avril 2025 : La Société Nouvelle</li>
               </ul>
             </p>
           </Row>
