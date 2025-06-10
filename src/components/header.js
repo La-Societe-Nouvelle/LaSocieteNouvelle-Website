@@ -168,7 +168,7 @@ const DefaultHeader = ({ page }) =>
                 <Nav.Link href="/statistics" className={rootPage == "/statistics" ? "hover" : ""}>
                   Statistiques d'usage
                 </Nav.Link>
-                <Nav.Link href="/nos-services" className={rootPage == "/nos-services" ? "hover" : ""}>
+                <Nav.Link href="/nos-services" className={rootPage == "/nos-services" || rootPage == "/services" ? "hover" : ""}>
                   Nos services
                 </Nav.Link>
                 <NavDropdown title="Ressources" className={rootPage == "/ressources" ? "hover" : ""}>
