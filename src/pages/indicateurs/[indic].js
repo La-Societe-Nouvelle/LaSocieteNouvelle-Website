@@ -1,13 +1,23 @@
+// La Société Nouvelle
+
+//-- Recat
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useRouter } from "next/router";
 
+//-- Bootstrap
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { Helmet } from "react-helmet";
-import PageHeader from "../../components/PageHeader";
 
+//-- Components
+import PageHeader from "../../components/PageHeader";
+import TrendChart from "../../components/charts/TrendChart";
+
+//-- Metadata
 import metaData from "../../lib/metaData";
 import odds_targets from "../../lib/odds_targets";
-import TrendChart from "../../components/charts/TrendChart";
+
+//-- Parts
+import Description from "./parts/Description";
 
 const lightenColor = (colorHex, lumFactor) => 
 {
@@ -87,15 +97,9 @@ const IndicPresentation = () =>
                   </p>
                 </div>
                 <h2>Présentation</h2>
-                <div className="mb-3 mb-5">
-                  <p>
-                    L'indicateur vise à informer sur l'utilisation de la ressource
-                    eau. Il s'inscrit dans une volonté de gestion globale des
-                    ressources naturelles, et occupe une importance particulière
-                    dans un contexte de diminution des quantités d'eau disponibles,
-                    conséquence du dérèglement climatique.
-                  </p>
-                </div>
+                <Description
+                  indic={indic.toUpperCase()} 
+                />
                 <h2>Objectifs de Développement Durable</h2>
                 <div className="mb-3 pb-4">
                   <h3>Liste des objectifs associés à l'indicateur</h3>
@@ -132,11 +136,7 @@ const IndicPresentation = () =>
                 <h2>Impact direct mesuré</h2>
                 <div className="mb-3 pb-4">
                   <p>
-                    <b>Grandeur mesurée : </b>Quantité consommée d’eau (en m³)
-                  </p>
-                  <p>
-                    Les prélèvements d’eau avec restitution dans le milieu d’origine,
-                    sans traitement, ne sont pas comptabilisés.
+                    <b>Grandeur mesurée : </b>{indicData?.descriptionImpactDirect}
                   </p>
                   <p>
                     Note : L'impact direct est associé à la valeur ajoutée nette de
