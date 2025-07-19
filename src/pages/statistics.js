@@ -1,13 +1,24 @@
+// La Société Nouvelle
+
+//-- React & hooks
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+
+//-- Bootstrap
 import {
 	Col,
 	Container,
 	Row,
 } from "react-bootstrap";
-import { Helmet } from "react-helmet";
-import PageHeader from "../components/PageHeader";
+
+//-- Charts
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+
+//-- Components
+import PageHeader from "../components/PageHeader";
+import dayjs from "dayjs";
+import _ from "lodash";
 
 const lightenColor = (colorHex, lumFactor) => 
 {
@@ -22,6 +33,14 @@ const lightenColor = (colorHex, lumFactor) =>
 
 	const ligtenColor = "#"+lighten_r.toString(16)+lighten_g.toString(16)+lighten_b.toString(16);
 	return ligtenColor;
+}
+
+const printDate = (date) => {
+	if (/[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(date)) {
+		return dayjs(date).format("DD/MM/YYYY");
+	} else {
+		return ''
+	}
 }
 
 /** Statistiques d'usage
@@ -39,22 +58,24 @@ const lightenColor = (colorHex, lumFactor) =>
  * 	
  */
 
-const ApiNbQueriesChart = () => 
+const ApiNbQueriesChart = ({analytics}) => 
 {
   // --------------------------------------------------
   // Data
+
+	const months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
 
   const chartData = {
 		labels: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Décembre'],
 		datasets: [
 			{
 				label: '2024',
-				data: [8228,10401,14496,14130,223616,115899,11453,8928,43561,24165,43014,39175],
+				data: months.map((month) => analytics?.nombre_requetes_par_mois?.find((item) => item.month == '2024-'+month)?.nombre_requetes ?? 0),
 				backgroundColor: lightenColor('#191558', 0.8)
 			},
 			{
 				label: '2025',
-				data: [35269,30483,26768,53793],
+				data: months.map((month) => analytics?.nombre_requetes_par_mois?.find((item) => item.month == '2025-'+month)?.nombre_requetes ?? 0),
 				backgroundColor: '#191558'
 			}
 		]
@@ -88,17 +109,35 @@ const ApiNbQueriesChart = () =>
   );
 };
 
-const ApiEndpointUsageChart = () => 
+const ApiEndpointUsageChart = ({analytics}) => 
 {
 	// --------------------------------------------------
 	// Data
+
+	const endpoints = [
+		'legalunitfootprint',
+		'defaultfootprint',
+		'macrodata'
+	]
+
+	let total_requetes = _.sumBy(analytics?.nombre_requetes_par_endpoint || {}, 'nombre_requetes');
+	let nombre_requetes_legalunit_footprint = analytics?.nombre_requetes_par_endpoint?.find((item) => item.endpoint == 'legalunitfootprint')?.nombre_requetes || 0;
+	let nombre_requetes_default_footprint = analytics?.nombre_requetes_par_endpoint?.find((item) => item.endpoint == 'defaultfootprint')?.nombre_requetes || 0;
+	let nombre_requetes_macrodata = analytics?.nombre_requetes_par_endpoint?.find((item) => item.endpoint == 'macrodata')?.nombre_requetes || 0;
+
+	const data = [
+		nombre_requetes_legalunit_footprint,
+		nombre_requetes_default_footprint,
+		nombre_requetes_macrodata,
+		total_requetes - (nombre_requetes_legalunit_footprint+nombre_requetes_default_footprint+nombre_requetes_macrodata)
+	]
 
 	const chartData = {
 		labels: ['Empreinte d\'une unité légale','Empreinte par défaut','Données statistiques','Autres'],
 		datasets: [
 			{
 				label: 'Nombre de requêtes',
-				data: [442772,90663,125314,68270],
+				data: data,
 				backgroundColor: ['#191558',lightenColor('#191558',0.25),lightenColor('#191558',0.50),lightenColor('#191558',0.75)]
 			}
 		]
@@ -137,12 +176,15 @@ const WebsiteNbVisitsChart = () =>
 	// --------------------------------------------------
 	// Data
 
+	// '2024-05','2024-06'
+	// 255,249
+
 	const chartData = {
-		labels: ['2024-05','2024-06','2024-07','2024-08','2024-09','2024-10','2024-11','2024-12','2025-01','2025-02','2025-03','2025-04'],
+		labels: ['2024-07','2024-08','2024-09','2024-10','2024-11','2024-12','2025-01','2025-02','2025-03','2025-04','2025-05','2025-06'],
 		datasets: [
 			{
 				label: 'Nombre de visites',
-				data: [255,249,359,236,374,466,427,330,342,382,341,477],
+				data: [359,236,374,466,427,330,342,382,341,477,356,325],
 				backgroundColor: '#191558',
 				borderColor: '#191558'
 			}
@@ -222,15 +264,15 @@ const PackageLsnStatChart = () =>
 	);
 };
 
-const AvailableFootprintDataKeyFigure = () => 
+const AvailableFootprintDataKeyFigure = ({analytics}) => 
 {
 	return (
 		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
 			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
-				<p>Au 11/05/2025</p>
+				<p>Au {analytics.date ? printDate(analytics.date) : '-'}</p>
 				<p className="text-center my-4">
 					<span className="h1">
-						<data>13 598</data>
+						<data>{analytics?.nombre_empreintes?.toLocaleString('fr-FR')}</data>
 					</span>
 				</p>
 				<p className="text-center my-3 text-primary">Empreintes disponibles</p>
@@ -239,15 +281,15 @@ const AvailableFootprintDataKeyFigure = () =>
 	);
 };
 
-const AvailableDataKeyFigure = () => 
+const AvailableDataKeyFigure = ({analytics}) => 
 {
 	return (
 		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
 			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
-				<p>Au 11/05/2025</p>
+				<p>Au {analytics.date ? printDate(analytics.date) : '-'}</p>
 				<p className="text-center my-4">
 					<span className="h1">
-						<data>36 535</data>
+						<data>{analytics?.nombre_donnees?.toLocaleString('fr-FR')}</data>
 					</span>
 				</p>
 				<p className="text-center my-3 text-primary">Données extra-financières disponibles</p>
@@ -256,15 +298,15 @@ const AvailableDataKeyFigure = () =>
 	);
 };
 
-const DefaultFootprintKeyFigure = () => 
+const DefaultFootprintKeyFigure = ({analytics}) => 
 {
 	return (
 		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
 			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
-				<p>Au 11/05/2025</p>
+				<p>Au {analytics.date ? printDate(analytics.date) : '-'}</p>
 				<p className="text-center my-4">
 					<span className="h1">
-						<data>33 718</data>
+						<data>{analytics?.nombre_donnees_defaut?.toLocaleString('fr-FR')}</data>
 					</span>
 				</p>
 				<p className="text-center my-3 text-primary">Empreintes par défaut</p>
@@ -273,15 +315,15 @@ const DefaultFootprintKeyFigure = () =>
 	);
 };
 
-const LegalUnitKeyFigure = () => 
+const LegalUnitKeyFigure = ({analytics}) => 
 {
 	return (
 		<Col className="statistic-item mx-0 p-0 border-light shadow-sm">
 			<div className="w-100 py-4 mx-auto" style={{height: "200px", position: "relative"}}>
-				<p>Au 11/05/2025</p>
+				<p>Au {analytics.date ? printDate(analytics.date) : '-'}</p>
 				<p className="text-center my-4">
 					<span className="h1">
-						<data>4 796</data>
+						<data>{analytics?.nombre_unites_legales?.toLocaleString('fr-FR') ?? '-'}</data>
 					</span>
 				</p>
 				<p className="text-center my-3 text-primary">Unités légales concernées</p>
@@ -292,6 +334,45 @@ const LegalUnitKeyFigure = () =>
 
 const Statistics = () => 
 {
+	// --------------------------------------------------
+	// States
+
+	const [analytics, setAnalytics] = useState({})
+
+	// --------------------------------------------------
+	// Effects
+
+	useEffect(() => {
+		fetchAnalytics();
+	}, [])
+
+	const fetchAnalytics = async () => 
+	{
+		// Url
+		const url = `http://localhost:8080/analytics`;	
+
+		try {
+			// fetch data
+			const res = await fetch(url);
+
+			if (res.ok) {
+				const results = await res.json();
+				if (results.header?.code == 200) {
+					setAnalytics(results.body);
+				} else {
+					setAnalytics(null)
+				}
+			} else {
+				setAnalytics(null);
+			}
+		} catch (error) {
+			console.log(error);
+			setAnalytics(null)
+		}
+	};
+
+	// --------------------------------------------------
+
 	return (
 		<>
 			<Helmet>
@@ -307,16 +388,16 @@ const Statistics = () =>
 					<h2>Données disponibles</h2>
 					<Row style={{height: "200px"}}>
 						<Col lg={3}>
-							<LegalUnitKeyFigure />
+							<LegalUnitKeyFigure analytics={analytics} />
 						</Col>
 						<Col lg={3}>
-							<AvailableFootprintDataKeyFigure />
+							<AvailableFootprintDataKeyFigure analytics={analytics} />
 						</Col>
 						<Col lg={3}>
-							<AvailableDataKeyFigure />
+							<AvailableDataKeyFigure analytics={analytics} />
 						</Col>
 						<Col lg={3}>
-							<DefaultFootprintKeyFigure />
+							<DefaultFootprintKeyFigure analytics={analytics} />
 						</Col>
 					</Row>
 				</Container>
@@ -326,10 +407,10 @@ const Statistics = () =>
 					<h2>Utilisation de notre API Publique</h2>
 					<Row style={{height: "300px"}}>
 						<Col lg={8}>
-							<ApiNbQueriesChart />
+							<ApiNbQueriesChart analytics={analytics} />
 						</Col>
 						<Col lg={4}>
-							<ApiEndpointUsageChart />
+							<ApiEndpointUsageChart analytics={analytics} />
 						</Col>
 					</Row>
 				</Container>

@@ -17,6 +17,7 @@
     "bootstrap-icons": "^1.8.1",
     "chart.js": "^3.7.1",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.0.3",
     "embla-carousel": "^4.5.3",
     "express": "^4.17.1",
