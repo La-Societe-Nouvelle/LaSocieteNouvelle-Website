@@ -39,67 +39,67 @@ const BarometreGES = () =>
                 className="w-100 py-4 mx-auto"
                 style={{ height: "200px", position: "relative" }}
               >
-                <p>Février 2025</p>
-                <p className="text-center my-4">
-                  <span className="h1">
-                    <data>33.5</data>
-                  </span>
-                  <sup> MtCO2e</sup>
-                </p>
-                <p className="h3">
-                  <i className="bi bi-arrow-up-right me-2" />
-                  3.7 % (2024)
-                </p>
-              </Row>
-              <Row className="w-100 m-auto">
-                <p className="text-center my-3 text-primary">
-                  Consolidée le 14/03/2025
-                </p>
-              </Row>
-            </Col>
-            <Col lg={3} className="statistic-item mx-4 p-0">
-              <Row
-                className="w-100 py-4 mx-auto"
-                style={{ height: "200px", position: "relative" }}
-              >
-                <p>Mars 2025</p>
-                <p className="text-center my-4">
-                  <span className="h1">
-                    <data>33.8</data>
-                  </span>
-                  <sup> MtCO2e</sup>
-                </p>
-                <p className="h3">
-                  <i className="bi bi-arrow-up-right me-2" />
-                  0.3 % (2024)
-                </p>
-              </Row>
-              <Row className="w-100 m-auto">
-                <p className="text-center my-3 text-primary">
-                  Consolidée le 15/04/2025
-                </p>
-              </Row>
-            </Col>
-            <Col lg={3} className="statistic-item mx-4 p-0">
-              <Row
-                className="w-100 py-4 mx-auto"
-                style={{ height: "200px", position: "relative" }}
-              >
                 <p>Avril 2025</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>28.8</data>
+                    <data>30.5</data>
                   </span>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
                   <i className="bi bi-arrow-down-right me-2" />
-                  9.3 % (2024)
+                  4.1 % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  (Provisoire)
+                  Consolidée le 15/07/2025
+                </p>
+              </Row>
+            </Col>
+            <Col lg={3} className="statistic-item mx-4 p-0">
+              <Row
+                className="w-100 py-4 mx-auto"
+                style={{ height: "200px", position: "relative" }}
+              >
+                <p>Mai 2025</p>
+                <p className="text-center my-4">
+                  <span className="h1">
+                    <data>27.4</data>
+                  </span>
+                  <sup> MtCO2e</sup>
+                </p>
+                <p className="h3">
+                  <i className="bi bi-arrow-down-right me-2" />
+                  3.2 % (2024)
+                </p>
+              </Row>
+              <Row className="w-100 m-auto">
+                <p className="text-center my-3 text-primary">
+                  Consolidée le 15/07/2025
+                </p>
+              </Row>
+            </Col>
+            <Col lg={3} className="statistic-item mx-4 p-0">
+              <Row
+                className="w-100 py-4 mx-auto"
+                style={{ height: "200px", position: "relative" }}
+              >
+                <p>Juin 2025</p>
+                <p className="text-center my-4">
+                  <span className="h1">
+                    <data>-</data>
+                  </span>
+                  <sup></sup>
+                </p>
+                <p className="h3">
+                  {/* <i className="bi bi-arrow-down-right me-2" /> */}
+                  - % (2024)
+                </p>
+              </Row>
+              <Row className="w-100 m-auto">
+                <p className="text-center my-3 text-primary">
+                  Publication le 31/07/2025
                 </p>
               </Row>
             </Col>
@@ -135,7 +135,7 @@ const BarometreGES = () =>
               datasets={[
                 {
                   label: 'Prévisions-LSN',
-                  data: [, , , , , , , , , , , , 35.2, 33.5, 33.8, 28.8],
+                  data: [, , , , , , , , , , , , 35.3, 34.3, 34.7, 30.5, 27.4],
                   backgroundColor: '#191558',
                   stack: '1'
                 },
