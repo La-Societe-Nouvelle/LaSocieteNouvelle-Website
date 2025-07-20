@@ -47,8 +47,8 @@ export const KeyFigures = () =>
         title: 'Intensité d\'émission de gaz à effet de serre',
         illustration: 'ESE/icon-ese-bleues/ghg.svg'
       },{
-        period: '2025-04',
-        value: 28.8,
+        period: '2025-05',
+        value: 27.4,
         unit: 'MtCO₂e',
         title: 'Emissions intérieures de gaz à effet de serre',
         illustration: 'ESE/icon-ese-bleues/ghg.svg'
