@@ -4,9 +4,13 @@ import PageHeader from '../../components/PageHeader'
 
 const episodes = [
   {
+    spotifyEmbed: "https://open.spotify.com/embed/episode/1vRTQxAo8sa7dfW6BrMOO2?utm_source=generator",
+  },
+  {
     spotifyEmbed: "https://open.spotify.com/embed/episode/6oZoTFfPTjuMkR1bE9iHHZ?utm_source=generator",
     youtubeUrl: "https://youtu.be/2MUlFtfOxHI?si=Q9gnaNrbrV0ahO1g",
-  }
+  },
+
 ]
 
 export default function Podcast() {
@@ -44,11 +48,10 @@ export default function Podcast() {
         </section>
 
         {/* Liste des épisodes */}
-        <section className=' mb-4 '>
+        <section >
           <h4>Episodes</h4>
           {episodes.map((ep, idx) => (
             <div className=" podcast-episode" key={idx}>
-
               <iframe
                 src={ep.spotifyEmbed}
                 width="100%"
@@ -57,19 +60,23 @@ export default function Podcast() {
                 loading="lazy"
                 className="podcast-player"
               ></iframe>
-
-              <a
-                href={ep.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary mt-3"
-              >
-                Voir sur YouTube
-              </a>
             </div>
           ))}
-        </section>
 
+
+        </section>
+        {/* Bouton général YouTube */}
+        <div className="mb-4 text-center">
+          <a
+            href="https://www.youtube.com/@lasocietenouvelle6096"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-danger"
+          >
+            <i className="bi bi-youtube me-2" ></i>
+            Écouter sur YouTube
+          </a>
+        </div>
       </Container>
     </>
   )
