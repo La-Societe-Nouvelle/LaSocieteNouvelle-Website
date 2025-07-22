@@ -349,7 +349,7 @@ const Statistics = () =>
 	const fetchAnalytics = async () => 
 	{
 		// Url
-		const url = `http://localhost:8080/analytics`;	
+		const url = `https://api.lasocietenouvelle.org/analytics`;	
 
 		try {
 			// fetch data
