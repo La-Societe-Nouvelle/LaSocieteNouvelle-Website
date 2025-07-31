@@ -42,18 +42,18 @@ const BarometreGES = () =>
                 <p>Avril 2025</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>30.5</data>
+                    <data>30.7</data>
                   </span>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
                   <i className="bi bi-arrow-down-right me-2" />
-                  4.1 % (2024)
+                  3.5 % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Consolidée le 15/07/2025
+                  Consolidée le 31/07/2025
                 </p>
               </Row>
             </Col>
@@ -65,13 +65,13 @@ const BarometreGES = () =>
                 <p>Mai 2025</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>27.4</data>
+                    <data>27.6</data>
                   </span>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
                   <i className="bi bi-arrow-down-right me-2" />
-                  3.2 % (2024)
+                  2.5 % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
@@ -88,18 +88,18 @@ const BarometreGES = () =>
                 <p>Juin 2025</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>-</data>
+                    <data>27.8</data>
                   </span>
                   <sup></sup>
                 </p>
                 <p className="h3">
-                  {/* <i className="bi bi-arrow-down-right me-2" /> */}
-                  - % (2024)
+                  <i className="bi bi-arrow-up-right me-2" />
+                  2.5 % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Publication le 31/07/2025
+                  Estimée le 31/07/2025
                 </p>
               </Row>
             </Col>
@@ -130,20 +130,21 @@ const BarometreGES = () =>
                 "2025-02",
                 "2025-03",
                 "2025-04",
-                "2025-05"
+                "2025-05",
+                "2025-06"
               ]}
               datasets={[
                 {
                   label: 'Prévisions-LSN',
-                  data: [, , , , , , , , , , , , 35.3, 34.3, 34.7, 30.5, 27.4],
+                  data: [, , , , , , , , , , , , , , , 30.7, 27.6, 27.8],
                   backgroundColor: '#191558',
                   stack: '1'
                 },
                 {
                   label: 'Baromètre-CITEPA',
                   data: [
-                    35.6, 32.3, 33.7, 31.8, 28.3, 27.1, 29.0, 27.2, 27.4, 29.4,
-                    31.1, 33.4,
+                    35.6, 32.3, 33.7, 31.8, 28.3, 27.1, 29.0, 27.2, 27.4, 29.4, 31.1, 33.4,
+                    35.3, 34.3, 34.7
                   ],
                   backgroundColor: '#0b478b',
                   stack: '1'
@@ -158,8 +159,8 @@ const BarometreGES = () =>
             <p>
               <b>Sources :</b>
               <ul>
-                <li>Pour les données de janvier 2024 à décembre 2024 : CITEPA (Baromètre mensuel)</li>
-                <li>Pour les données de janvier 2025 à avril 2025 : La Société Nouvelle</li>
+                <li>Pour les données de janvier 2024 à mars 2025 : CITEPA (Baromètre mensuel)</li>
+                <li>Pour les données d'avril 2025 à juin 2025 : La Société Nouvelle</li>
               </ul>
             </p>
           </Row>
