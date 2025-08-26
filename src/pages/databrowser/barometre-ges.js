@@ -1,6 +1,7 @@
 // La Société Nouvelle
 
 //-- React
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 //-- Bootstrap
@@ -8,8 +9,85 @@ import { Button, Col, Container, Image, Row, Table } from "react-bootstrap";
 import { DefaultLineChart } from "../../components/charts/DefaultLineChart";
 import { DefaultBarChart } from "../../components/charts/DefaultBarChart";
 
+//-- dayjs
+import dayjs from "dayjs";
+import "dayjs/locale/fr.js";
+dayjs.locale("fr");
+
+//-- lodash
+import _ from "lodash";
+
 const BarometreGES = () => 
 {
+  // --------------------------------------------------
+  // States
+
+  const [data, setData] = useState(null)
+
+  // --------------------------------------------------
+  // Effects
+  
+  useEffect(() => {
+    fetchData();
+  }, [])
+  
+  const fetchData = async () => 
+  {
+    // Url
+    const url = `https://api.stats.lasocietenouvelle.org/barometre-ges/derniere-publication`;	
+
+    try {
+      // fetch data
+      const res = await fetch(url);
+
+      if (res.ok) {
+        const results = await res.json();
+        if (results.header?.code == 200) {
+          setData(results.data);
+        } else {
+          setData(null)
+        }
+      } else {
+        setData(null);
+      }
+    } catch (error) {
+      console.log(error);
+      setData(null)
+    }
+  };
+
+  // --------------------------------------------------
+
+  const printMonth = (date) =>
+  {
+    const label = dayjs(date, "YYYY-MM").format("MMMM YYYY");
+    const labelCapitalized = label.charAt(0).toUpperCase() + label.slice(1);
+    return labelCapitalized;
+  }
+
+  const printDate = (date) =>
+  {
+    const label = dayjs(date).format("DD/MM/YYYY");
+    return label;
+  }
+
+  const getEvolution = (month) =>
+  {
+    if (!data) {
+      return null;
+    } else {
+      let valeur2025 = data.find((item) => item.mois == month);
+      let valeur2024 = data.find((item) => item.mois == month.replace('2025','2024'));
+      let evolution = _.round( (valeur2025.valeur - valeur2024.valeur) / valeur2024.valeur *100, 1);
+      return evolution;
+    }
+
+  }
+
+  let last_data_1 = data?.[data.length-3];
+  let last_data_2 = data?.[data.length-2];
+  let last_data_3 = data?.[data.length-1];
+
   return (
     <>
       <Helmet>
@@ -39,21 +117,22 @@ const BarometreGES = () =>
                 className="w-100 py-4 mx-auto"
                 style={{ height: "200px", position: "relative" }}
               >
-                <p>Avril 2025</p>
+                <p>{last_data_1 ? printMonth(last_data_1.mois) : '-'}</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>30.7</data>
+                    <data>{last_data_1 ? _.round(last_data_1.valeur, 1) : '-'}</data>
                   </span>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
-                  <i className="bi bi-arrow-down-right me-2" />
-                  3.5 % (2024)
+                  {getEvolution(last_data_1.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_1.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_1.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Consolidée le 31/07/2025
+                  Publiée le {last_data_1 ? printDate(last_data_1.date_publication) : '-'}
                 </p>
               </Row>
             </Col>
@@ -62,21 +141,22 @@ const BarometreGES = () =>
                 className="w-100 py-4 mx-auto"
                 style={{ height: "200px", position: "relative" }}
               >
-                <p>Mai 2025</p>
+                <p>{last_data_2 ? printMonth(last_data_2.mois) : '-'}</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>27.6</data>
+                    <data>{last_data_2 ? _.round(last_data_2.valeur, 1) : '-'}</data>
                   </span>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
-                  <i className="bi bi-arrow-down-right me-2" />
-                  2.5 % (2024)
+                  {getEvolution(last_data_2.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_2.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_2.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Consolidée le 15/07/2025
+                  Publiée le {last_data_2 ? printDate(last_data_2.date_publication) : '-'}
                 </p>
               </Row>
             </Col>
@@ -85,21 +165,22 @@ const BarometreGES = () =>
                 className="w-100 py-4 mx-auto"
                 style={{ height: "200px", position: "relative" }}
               >
-                <p>Juin 2025</p>
+                <p>{last_data_3 ? printMonth(last_data_3.mois) : '-'}</p>
                 <p className="text-center my-4">
                   <span className="h1">
-                    <data>27.8</data>
+                    <data>{last_data_3 ? _.round(last_data_3.valeur, 1) : '-'}</data>
                   </span>
                   <sup></sup>
                 </p>
                 <p className="h3">
-                  <i className="bi bi-arrow-up-right me-2" />
-                  2.5 % (2024)
+                  {getEvolution(last_data_3.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_3.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_3.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
                 <p className="text-center my-3 text-primary">
-                  Estimée le 31/07/2025
+                  Publiée le {last_data_3 ? printDate(last_data_3.date_publication) : '-'}
                 </p>
               </Row>
             </Col>
@@ -113,39 +194,17 @@ const BarometreGES = () =>
           <Row className="slide">
             <p>en MtCO2e</p>
             <DefaultBarChart
-              labels={[
-                "2024-01",
-                "2024-02",
-                "2024-03",
-                "2024-04",
-                "2024-05",
-                "2024-06",
-                "2024-07",
-                "2024-08",
-                "2024-09",
-                "2024-10",
-                "2024-11",
-                "2024-12",
-                "2025-01",
-                "2025-02",
-                "2025-03",
-                "2025-04",
-                "2025-05",
-                "2025-06"
-              ]}
+              labels={data ? data.filter((item) => item.mois >= '2024-01').map((item) => item.mois) : []}
               datasets={[
                 {
                   label: 'Prévisions-LSN',
-                  data: [, , , , , , , , , , , , , , , 30.7, 27.6, 27.8],
+                  data: data ? data.filter((item) => item.mois >= '2024-01').map((item) => item.source == 'La Société Nouvelle' ? item.valeur : null) : [],
                   backgroundColor: '#191558',
                   stack: '1'
                 },
                 {
                   label: 'Baromètre-CITEPA',
-                  data: [
-                    35.6, 32.3, 33.7, 31.8, 28.3, 27.1, 29.0, 27.2, 27.4, 29.4, 31.1, 33.4,
-                    35.3, 34.3, 34.7
-                  ],
+                  data: data ? data.filter((item) => item.mois >= '2024-01').map((item) => item.source == 'CITEPA' ? item.valeur : null) : [],
                   backgroundColor: '#0b478b',
                   stack: '1'
                 },
