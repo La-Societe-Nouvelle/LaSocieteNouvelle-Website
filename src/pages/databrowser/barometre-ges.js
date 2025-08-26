@@ -73,7 +73,7 @@ const BarometreGES = () =>
 
   const getEvolution = (month) =>
   {
-    if (!data) {
+    if (!data || !month) {
       return null;
     } else {
       let valeur2025 = data.find((item) => item.mois == month);
@@ -125,9 +125,9 @@ const BarometreGES = () =>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
-                  {getEvolution(last_data_1.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
-                  {getEvolution(last_data_1.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
-                  {getEvolution(last_data_1.mois)} % (2024)
+                  {getEvolution(last_data_1?.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_1?.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_1?.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
@@ -149,9 +149,9 @@ const BarometreGES = () =>
                   <sup> MtCO2e</sup>
                 </p>
                 <p className="h3">
-                  {getEvolution(last_data_2.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
-                  {getEvolution(last_data_2.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
-                  {getEvolution(last_data_2.mois)} % (2024)
+                  {getEvolution(last_data_2?.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_2?.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_2?.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
@@ -173,9 +173,9 @@ const BarometreGES = () =>
                   <sup></sup>
                 </p>
                 <p className="h3">
-                  {getEvolution(last_data_3.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
-                  {getEvolution(last_data_3.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
-                  {getEvolution(last_data_3.mois)} % (2024)
+                  {getEvolution(last_data_3?.mois)>0 && <i className="bi bi-arrow-up-right me-2" />}
+                  {getEvolution(last_data_3?.mois)<=0 && <i className="bi bi-arrow-down-right me-2" />}
+                  {getEvolution(last_data_3?.mois)} % (2024)
                 </p>
               </Row>
               <Row className="w-100 m-auto">
