@@ -8,6 +8,15 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => (
+    <>
+      <Header />
+      <Analytics />
+      {page}
+      <Footer />
+    </>
+  ));
+
   return (
     <SSRProvider>
       <Head>
@@ -19,10 +28,7 @@ function MyApp({ Component, pageProps }) {
         ></meta>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <Header />
-      <Analytics />
-      <Component {...pageProps} />
-      <Footer />
+      {getLayout(<Component {...pageProps} />)}
     </SSRProvider>
   );
 }
