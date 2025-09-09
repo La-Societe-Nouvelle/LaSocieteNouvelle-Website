@@ -55,6 +55,7 @@ const CongresCEC2025 = () => {
       <div style={{
         background: 'linear-gradient(135deg, #191558 0%, #2a1f7a 50%, #191558 100%)',
         minHeight: '100vh',
+        minHeight: '100dvh', // Dynamic viewport height pour mobile
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -278,31 +279,38 @@ const CongresCEC2025 = () => {
                   }}>
                     Restons en contact
                   </h4>
-                  <div className="d-flex flex-wrap justify-content-center gap-3">
+                  <div className="d-flex flex-column align-items-center gap-3">
                     <Button 
                       href="https://calendly.com/lasocietenouvelle/30min" 
                       target="_blank" 
                       style={{
-                        borderRadius: '16px',
-                        padding: '12px 24px',
+                        borderRadius: '14px',
+                        padding: '14px 24px',
                         fontSize: '16px',
                         fontWeight: '600',
                         background: '#fa595f',
                         border: 'none',
                         color: 'white',
                         textDecoration: 'none',
-                        boxShadow: 'none'
+                        boxShadow: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '10px',
+                        width: '100%',
+                        maxWidth: '280px'
                       }}>
-                      <i className="bi bi-calendar me-2"></i> Prendre rendez-vous
+                      <i className="bi bi-calendar" style={{ fontSize: '20px' }}></i>
+                      <span>Prendre rendez-vous</span>
                     </Button>
 
                     <Button 
                       href="https://www.linkedin.com/company/la-societe-nouvelle" 
                       target="_blank" 
                       style={{
-                        borderRadius: '12px',
-                        padding: '10px 20px',
-                        fontSize: '14px',
+                        borderRadius: '14px',
+                        padding: '14px 24px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         background: '#0077b5',
                         border: 'none',
@@ -310,9 +318,12 @@ const CongresCEC2025 = () => {
                         textDecoration: 'none',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '8px'
+                        justifyContent: 'center',
+                        gap: '10px',
+                        width: '100%',
+                        maxWidth: '280px'
                       }}>
-                      <i className="bi bi-linkedin" style={{ fontSize: '18px' }}></i>
+                      <i className="bi bi-linkedin" style={{ fontSize: '20px' }}></i>
                       <span>LinkedIn</span>
                     </Button>
 
@@ -320,9 +331,9 @@ const CongresCEC2025 = () => {
                       href="https://discord.gg/ANFwWZc3eu" 
                       target="_blank" 
                       style={{
-                        borderRadius: '12px',
-                        padding: '10px 20px',
-                        fontSize: '14px',
+                        borderRadius: '14px',
+                        padding: '14px 24px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         background: '#5865f2',
                         border: 'none',
@@ -330,9 +341,12 @@ const CongresCEC2025 = () => {
                         textDecoration: 'none',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '8px'
+                        justifyContent: 'center',
+                        gap: '10px',
+                        width: '100%',
+                        maxWidth: '280px'
                       }}>
-                      <i className="bi bi-discord" style={{ fontSize: '18px' }}></i>
+                      <i className="bi bi-discord" style={{ fontSize: '20px' }}></i>
                       <span>Discord</span>
                     </Button>
 
@@ -340,9 +354,9 @@ const CongresCEC2025 = () => {
                       href="https://github.com/La-Societe-Nouvelle/" 
                       target="_blank" 
                       style={{
-                        borderRadius: '12px',
-                        padding: '10px 20px',
-                        fontSize: '14px',
+                        borderRadius: '14px',
+                        padding: '14px 24px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         background: '#24292f',
                         border: 'none',
@@ -350,9 +364,12 @@ const CongresCEC2025 = () => {
                         textDecoration: 'none',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '8px'
+                        justifyContent: 'center',
+                        gap: '10px',
+                        width: '100%',
+                        maxWidth: '280px'
                       }}>
-                      <i className="bi bi-github" style={{ fontSize: '18px' }}></i>
+                      <i className="bi bi-github" style={{ fontSize: '20px' }}></i>
                       <span>GitHub</span>
                     </Button>
 
