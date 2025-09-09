@@ -71,7 +71,7 @@ const CongresCEC2025 = () => {
           opacity: 0.7
         }} />
 
-        {/* Logo watermark */}
+        {/* Logo watermark - Desktop: haut à droite */}
         <div style={{
           position: 'absolute',
           top: '10px',
@@ -79,12 +79,34 @@ const CongresCEC2025 = () => {
           zIndex: 1,
           opacity: 0.3,
           pointerEvents: 'none'
-        }}>
+        }}
+        className="d-none d-md-block">
           <img 
             src="/logos/congres-cnoec-2025.png" 
             alt="" 
             style={{
               width: '400px',
+              height: 'auto',
+              filter: 'brightness(2)'
+            }}
+          />
+        </div>
+
+        {/* Logo watermark - Mobile: bas à droite et plus petit */}
+        <div style={{
+          position: 'absolute',
+          top: '0px',
+          right: '10px',
+          zIndex: 1,
+          opacity: 0.2,
+          pointerEvents: 'none'
+        }}
+        className="d-block d-md-none">
+          <img 
+            src="/logos/congres-cnoec-2025.png" 
+            alt="" 
+            style={{
+              width: '100px',
               height: 'auto',
               filter: 'brightness(2)'
             }}
