@@ -14,10 +14,10 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { email, prenom } = req.body;
+    const { email } = req.body;
 
-    if (!email || !prenom) {
-        return res.status(400).json({ error: 'Email et prénom requis' });
+    if (!email) {
+        return res.status(400).json({ error: 'Email requis' });
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
                     </div>
                     
                     <div style="padding: 30px 20px;">
-                        <h2 style="color: #333;">Bonjour ${prenom},</h2>
+                        <h2 style="color: #333;">Bonjour,</h2>
                         
                         <p>Merci pour votre visite sur notre stand au Congrès de l'Ordre des Experts Comptables 2025 !</p>
                         

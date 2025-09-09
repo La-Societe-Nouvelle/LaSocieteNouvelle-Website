@@ -92,41 +92,43 @@ const CongresCEC2025 = () => {
           />
         </div>
 
-        {/* Logo watermark - Mobile: bas à droite et plus petit */}
+        {/* Logo watermark - Mobile: diagonale en haut à droite */}
         <div style={{
           position: 'absolute',
           top: '0px',
-          right: '10px',
+          right: '0px',
           zIndex: 1,
-          opacity: 0.2,
-          pointerEvents: 'none'
+          opacity: 0.5,
+          pointerEvents: 'none',
         }}
         className="d-block d-md-none">
           <img 
             src="/logos/congres-cnoec-2025.png" 
             alt="" 
             style={{
-              width: '100px',
+              width: '140px',
               height: 'auto',
-              filter: 'brightness(2)'
+              filter: 'brightness(0.7) contrast(1.3)'
             }}
           />
         </div>
 
-        <Container className="py-5" style={{ position: 'relative', zIndex: 2, paddingTop: '3rem', paddingBottom: '3rem' }}>
+        <Container style={{ position: 'relative', zIndex: 2, marginTop: '160px' }} className="py-3 py-md-5 mt-5 mt-md-4">
           <Row className="justify-content-center">
-            <Col lg={8} md={10}>
+            <Col lg={8} md={10} xs={11}>
               {/* Card principale unifiée */}
               <div style={{
                 background: 'white',
                 borderRadius: '24px',
-                padding: '50px',
+                padding: '30px',
+                paddingTop: '40px',
                 marginBottom: '40px',
                 boxShadow: '0 25px 80px rgba(25, 21, 88, 0.15)',
                 border: '1px solid rgba(250, 89, 95, 0.1)',
                 position: 'relative',
                 textAlign: 'center'
-              }}>
+              }}
+              className="p-3 p-md-5 mt-4 mt-md-3">
                 {/* Logos en haut */}
                 <div className="d-flex align-items-center justify-content-center mb-4 gap-4">
                   <Image
@@ -167,7 +169,7 @@ const CongresCEC2025 = () => {
                   Recevez la plaquette du projet
                 </h3>
                 <p className="mb-4 small" style={{ color: '#666'}}>
-                  Laissez-nous vos coordonnées et recevez directement notre plaquette dans votre boîte mail.
+                  Saisissez votre email et recevez directement notre plaquette.
                 </p>
 
                 {message.text && (
@@ -202,39 +204,8 @@ const CongresCEC2025 = () => {
                 )}
 
                 <Form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col md={6} className="mb-4">
-                      <Form.Group>
-                        <Form.Label style={{ color: '#191558', fontWeight: '600' }}>
-                          <i className="bi bi-person me-2"></i> Prénom *
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="prenom"
-                          value={formData.prenom}
-                          onChange={handleChange}
-                          required
-                          disabled={loading}
-                          style={{
-                            borderRadius: '12px',
-                            border: '2px solid #e9ecef',
-                            padding: '12px 16px',
-                            fontSize: '15px',
-                            transition: 'all 0.2s ease',
-                            backgroundColor: loading ? '#f8f9fa' : 'white'
-                          }}
-                          onFocus={(e) => {
-                            e.target.style.borderColor = '#fa595f';
-                            e.target.style.boxShadow = '0 0 0 0.2rem rgba(250, 89, 95, 0.15)';
-                          }}
-                          onBlur={(e) => {
-                            e.target.style.borderColor = '#e9ecef';
-                            e.target.style.boxShadow = 'none';
-                          }}
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col md={6} className="mb-4">
+                  <Row className="justify-content-center">
+                    <Col md={8} className="mb-4">
                       <Form.Group>
                         <Form.Label style={{ color: '#191558', fontWeight: '600' }}>
                           <i className="bi bi-envelope me-2"></i> Email *
@@ -321,76 +292,77 @@ const CongresCEC2025 = () => {
                         color: 'white',
                         textDecoration: 'none',
                         boxShadow: 'none'
-                      }}
-     >
+                      }}>
                       <i className="bi bi-calendar me-2"></i> Prendre rendez-vous
                     </Button>
 
                     <Button 
-                      href="https://lasocietenouvelle.org" 
+                      href="https://www.linkedin.com/company/la-societe-nouvelle" 
                       target="_blank" 
-                      variant="outline-info"
                       style={{
                         borderRadius: '12px',
                         padding: '10px 20px',
-                        borderWidth: '2px',
-                        fontWeight: '500'
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        background: '#0077b5',
+                        border: 'none',
+                        color: 'white',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px'
                       }}>
-                      <i className="bi bi-globe me-2"></i> Site internet
+                      <i className="bi bi-linkedin" style={{ fontSize: '18px' }}></i>
+                      <span>LinkedIn</span>
+                    </Button>
+
+                    <Button 
+                      href="https://discord.gg/ANFwWZc3eu" 
+                      target="_blank" 
+                      style={{
+                        borderRadius: '12px',
+                        padding: '10px 20px',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        background: '#5865f2',
+                        border: 'none',
+                        color: 'white',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px'
+                      }}>
+                      <i className="bi bi-discord" style={{ fontSize: '18px' }}></i>
+                      <span>Discord</span>
+                    </Button>
+
+                    <Button 
+                      href="https://github.com/La-Societe-Nouvelle/" 
+                      target="_blank" 
+                      style={{
+                        borderRadius: '12px',
+                        padding: '10px 20px',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        background: '#24292f',
+                        border: 'none',
+                        color: 'white',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px'
+                      }}>
+                      <i className="bi bi-github" style={{ fontSize: '18px' }}></i>
+                      <span>GitHub</span>
                     </Button>
 
                   </div>
                   
-                  {/* Liens sociaux supplémentaires */}
-                  <div className="d-flex justify-content-center gap-3 mt-4">
-                    <a 
-                      href="https://www.linkedin.com/company/la-societe-nouvelle" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{
-                        color: 'white',
-                        fontSize: '24px',
-                        textDecoration: 'none',
-                        opacity: 0.8
-                      }}
-                      onMouseEnter={(e) => e.target.style.opacity = 1}
-                      onMouseLeave={(e) => e.target.style.opacity = 0.8}>
-                      <i className="bi bi-linkedin"></i>
-                    </a>
-                    <a 
-                      href="https://discord.gg/ANFwWZc3eu" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{
-                        color: 'white',
-                        fontSize: '24px',
-                        textDecoration: 'none',
-                        opacity: 0.8
-                      }}
-                      onMouseEnter={(e) => e.target.style.opacity = 1}
-                      onMouseLeave={(e) => e.target.style.opacity = 0.8}>
-                      <i className="bi bi-discord"></i>
-                    </a>
-                    <a 
-                      href="https://github.com/La-Societe-Nouvelle/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{
-                        color: 'white',
-                        fontSize: '24px',
-                        textDecoration: 'none',
-                        opacity: 0.8
-                      }}
-                      onMouseEnter={(e) => e.target.style.opacity = 1}
-                      onMouseLeave={(e) => e.target.style.opacity = 0.8}>
-                      <i className="bi bi-github"></i>
-                    </a>
-                  </div>
                 </Col>
               </Row>
 
-              <Row className="mt-2 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                <Col className="text-center" style={{ color: 'rgba(255,255,255,0.8)' }}>
+              <Row className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                <Col className="text-center text-white" >
                   <p className="mb-3" style={{ fontSize: '14px', lineHeight: '1.6', fontStyle: 'italic' }}>
                     La Société Nouvelle porte le projet de l'Empreinte Sociétale : un modèle public, open data et open source pour mesurer les impacts sociaux et environnementaux des entreprises. Notre mission : permettre à tous de participer à la construction d'une économie durable.
                   </p>
