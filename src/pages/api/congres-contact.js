@@ -46,7 +46,7 @@ export default async function handler(req, res) {
               
                         
                         <div style="text-align: center; margin: 30px 0;">
-                            <a href="https://calendly.com/lasocietenouvelle/30min" 
+                            <a href="https://calendly.com/sylvain-humiliere/" 
                                style="background-color: #fa595f; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px;">
                                Planifier un rendez-vous
                             </a>

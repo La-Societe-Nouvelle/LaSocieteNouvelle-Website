@@ -281,7 +281,7 @@ const CongresCEC2025 = () => {
                   </h4>
                   <div className="d-flex flex-column align-items-center gap-3">
                     <Button 
-                      href="https://calendly.com/lasocietenouvelle/30min" 
+                      href="https://calendly.com/sylvain-humiliere/" 
                       target="_blank" 
                       style={{
                         borderRadius: '14px',
