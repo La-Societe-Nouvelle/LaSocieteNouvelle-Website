@@ -1,4 +1,6 @@
 import nodemailer from 'nodemailer'
+import fs from 'fs'
+import path from 'path'
 
 const transporter = nodemailer.createTransport({
     host: process.env.FORM_SERVER_SMTP,
@@ -82,6 +84,17 @@ export default async function handler(req, res) {
         };
 
         await transporter.sendMail(mailOptions);
+
+        // Sauvegarder l'email dans un fichier texte
+        const emailLogPath = path.join(process.cwd(), 'congres-emails.txt');
+        const timestamp = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
+        const logEntry = `${timestamp} - ${email}\n`;
+        
+        try {
+            fs.appendFileSync(emailLogPath, logEntry, 'utf8');
+        } catch (writeError) {
+            console.error('Erreur lors de la sauvegarde de l\'email:', writeError);
+        }
         
         res.status(200).json({ 
             success: true, 
