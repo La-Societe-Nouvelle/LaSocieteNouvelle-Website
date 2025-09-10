@@ -76,8 +76,8 @@ export default async function handler(req, res) {
             `,
             attachments: [
                 {
-                    filename: 'Plaquette_LaSocieteNouvelle_CEC2025.pdf',
-                    path: './public/docs/Rapport-Livrable-demo.pdf',
+                    filename: 'Plaquette_LaSocieteNouvelle_2025.pdf',
+                    path: './public/docs/plaquette-lsn.pdf',
                     contentType: 'application/pdf'
                 }
             ]
