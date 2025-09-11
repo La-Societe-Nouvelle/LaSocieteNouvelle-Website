@@ -77,7 +77,7 @@ export default async function handler(req, res) {
             attachments: [
                 {
                     filename: 'Plaquette_LaSocieteNouvelle_2025.pdf',
-                    path: './public/docs/plaquette-lsn.pdf',
+                    path: path.join(process.cwd(), 'public', 'docs', 'plaquette-lsn.pdf'),
                     contentType: 'application/pdf'
                 }
             ]

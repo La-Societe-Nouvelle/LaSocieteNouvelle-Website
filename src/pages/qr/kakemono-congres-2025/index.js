@@ -3,7 +3,7 @@ import { Button, Col, Container, Image, Row, Form, Alert, Spinner } from "react-
 import { Helmet } from "react-helmet";
 
 const CongresCEC2025 = () => {
-  const [formData, setFormData] = useState({ email: "", prenom: "" });
+  const [formData, setFormData] = useState({ email: "" });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
 
@@ -23,7 +23,7 @@ const CongresCEC2025 = () => {
 
       if (response.ok) {
         setMessage({ type: "success", text: "Merci ! Vous allez recevoir votre plaquette par email sous peu." });
-        setFormData({ email: "", prenom: "" });
+        setFormData({ email: "" });
       } else {
         setMessage({ type: "danger", text: data.error || "Une erreur s'est produite." });
       }
