@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
     try {
         const mailOptions = {
-            from: "La Société Nouvelle <sender@lasocietenouvelle.org>",
+            from: "La Société Nouvelle <no-reply@lasocietenouvelle.org>",
             to: email,
             subject: "Votre plaquette La Société Nouvelle - Congrès de l'Ordre des Experts-Comptables 2025",
             html: `
