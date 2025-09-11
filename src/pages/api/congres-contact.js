@@ -85,9 +85,23 @@ export default async function handler(req, res) {
 
         await transporter.sendMail(mailOptions);
 
-        // Log de l'email envoyé (les logs sont disponibles en production)
-        const timestamp = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
-        console.log(`${timestamp} - Email envoyé à: ${email}`);
+        // Sauvegarder l'email dans Google Sheets
+        const timestamp = new Date().toISOString();
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbyTpYb5cC_yL3SzY6UxMsb1YaDxR8Qfzr2mFa3ibV4iQIHNSvhPSG0usLV4q4THfVs6/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    timestamp: timestamp
+                })
+            });
+            console.log(`${timestamp} - Email sauvegardé dans Google Sheets: ${email}`);
+        } catch (saveError) {
+            console.error('Erreur lors de la sauvegarde dans Google Sheets:', saveError);
+        }
         
         res.status(200).json({ 
             success: true, 
