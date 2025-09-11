@@ -92,8 +92,11 @@ export default async function handler(req, res) {
         
         try {
             fs.appendFileSync(emailLogPath, logEntry, 'utf8');
+            console.log(`Email sauvegardé: ${email} dans ${emailLogPath}`);
         } catch (writeError) {
             console.error('Erreur lors de la sauvegarde de l\'email:', writeError);
+            console.error('Chemin du fichier:', emailLogPath);
+            console.error('Répertoire de travail:', process.cwd());
         }
         
         res.status(200).json({ 
