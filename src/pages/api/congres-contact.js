@@ -85,19 +85,9 @@ export default async function handler(req, res) {
 
         await transporter.sendMail(mailOptions);
 
-        // Sauvegarder l'email dans un fichier texte
-        const emailLogPath = path.join(process.cwd(), 'congres-emails.txt');
+        // Log de l'email envoyé (les logs sont disponibles en production)
         const timestamp = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
-        const logEntry = `${timestamp} - ${email}\n`;
-        
-        try {
-            fs.appendFileSync(emailLogPath, logEntry, 'utf8');
-            console.log(`Email sauvegardé: ${email} dans ${emailLogPath}`);
-        } catch (writeError) {
-            console.error('Erreur lors de la sauvegarde de l\'email:', writeError);
-            console.error('Chemin du fichier:', emailLogPath);
-            console.error('Répertoire de travail:', process.cwd());
-        }
+        console.log(`${timestamp} - Email envoyé à: ${email}`);
         
         res.status(200).json({ 
             success: true, 
