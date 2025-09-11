@@ -6,10 +6,13 @@ import "../styles/App.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import CongresBanner from "../components/CongresBanner";
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => (
     <>
+      <CongresBanner />
+
       <Header />
       <Analytics />
       {page}
