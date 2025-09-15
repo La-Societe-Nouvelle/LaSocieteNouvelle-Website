@@ -81,10 +81,10 @@ const CongresCEC2025 = () => {
           opacity: 0.3,
           pointerEvents: 'none'
         }}
-        className="d-none d-md-block">
-          <img 
-            src="/logos/congres-cnoec-2025.png" 
-            alt="" 
+          className="d-none d-md-block">
+          <img
+            src="/logos/congres-cnoec-2025.png"
+            alt=""
             style={{
               width: '400px',
               height: 'auto',
@@ -102,10 +102,10 @@ const CongresCEC2025 = () => {
           opacity: 0.5,
           pointerEvents: 'none',
         }}
-        className="d-block d-md-none">
-          <img 
-            src="/logos/congres-cnoec-2025.png" 
-            alt="" 
+          className="d-block d-md-none">
+          <img
+            src="/logos/congres-cnoec-2025.png"
+            alt=""
             style={{
               width: '140px',
               height: 'auto',
@@ -129,7 +129,7 @@ const CongresCEC2025 = () => {
                 position: 'relative',
                 textAlign: 'center'
               }}
-              className="p-3 p-md-5 mt-4 mt-md-3">
+                className="p-3 p-md-5 mt-4 mt-md-3">
                 {/* Logos en haut */}
                 <div className="d-flex align-items-center justify-content-center mb-4 gap-4">
                   <Image
@@ -141,17 +141,17 @@ const CongresCEC2025 = () => {
                 </div>
 
                 {/* Titre de remerciement */}
-                <h2 className="mb-3" style={{ 
-                  color: '#191558', 
+                <h2 className="mb-3" style={{
+                  color: '#191558',
                   fontWeight: '700',
                   fontSize: '1.8rem',
                   lineHeight: '1.3'
                 }}>
-                  Merci de votre visite sur notre stand !
+                  Bonjour 👋
                 </h2>
-                
+
                 <p className="mb-4" style={{ color: '#666', fontSize: '16px' }}>
-                  Explorez nos ressources et construisons ensemble une économie durable.
+                  Vous souhaitez en savoir plus sur nos ressources ?
                 </p>
 
                 {/* Séparateur décoratif */}
@@ -165,11 +165,7 @@ const CongresCEC2025 = () => {
                     opacity: '0.8'
                   }} />
                 </div>
-
-                <h3 className="mb-2" >
-                  Recevez la plaquette du projet
-                </h3>
-                <p className="mb-4 small" style={{ color: '#666'}}>
+                <p className="mb-4 small fw-bold" style={{ color: '#191558' }}>
                   Saisissez votre email et recevez directement notre plaquette.
                 </p>
 
@@ -196,8 +192,8 @@ const CongresCEC2025 = () => {
                     }}
                   >
                     <div className="d-flex align-items-center">
-                      <i className={`bi ${message.type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-3`} 
-                         style={{ fontSize: '24px', color: message.type === 'success' ? '#28a745' : '#dc3545' }}>
+                      <i className={`bi ${message.type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-3`}
+                        style={{ fontSize: '24px', color: message.type === 'success' ? '#28a745' : '#dc3545' }}>
                       </i>
                       <span>{message.text}</span>
                     </div>
@@ -208,9 +204,6 @@ const CongresCEC2025 = () => {
                   <Row className="justify-content-center">
                     <Col md={8} className="mb-4">
                       <Form.Group>
-                        <Form.Label style={{ color: '#191558', fontWeight: '600' }}>
-                          <i className="bi bi-envelope me-2"></i> Email *
-                        </Form.Label>
                         <Form.Control
                           type="email"
                           name="email"
@@ -239,10 +232,10 @@ const CongresCEC2025 = () => {
                     </Col>
                   </Row>
                   <div className="text-center">
-                    <Button 
-                      type="submit" 
-                      variant="secondary" 
-                      className="border-rounded" 
+                    <Button
+                      type="submit"
+                      variant="secondary"
+                      className="border-rounded"
                       disabled={loading}
                       style={{
                         borderRadius: '16px',
@@ -273,40 +266,18 @@ const CongresCEC2025 = () => {
               {/* Footer contact */}
               <Row className="text-center">
                 <Col>
-                  <h4 className="mb-4" style={{ 
-                    color: '#ffffff', 
+                  <h4 className="mb-4" style={{
+                    color: '#ffffff',
                     fontWeight: '700',
                   }}>
-                    Restons en contact
+                    Pour nous suivre
                   </h4>
                   <div className="d-flex flex-column align-items-center gap-3">
-                    <Button 
-                      href="https://calendly.com/sylvain-humiliere/" 
-                      target="_blank" 
-                      style={{
-                        borderRadius: '14px',
-                        padding: '14px 24px',
-                        fontSize: '16px',
-                        fontWeight: '600',
-                        background: '#fa595f',
-                        border: 'none',
-                        color: 'white',
-                        textDecoration: 'none',
-                        boxShadow: 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '10px',
-                        width: '100%',
-                        maxWidth: '280px'
-                      }}>
-                      <i className="bi bi-calendar" style={{ fontSize: '20px' }}></i>
-                      <span>Prendre rendez-vous</span>
-                    </Button>
 
-                    <Button 
-                      href="https://www.linkedin.com/company/la-societe-nouvelle" 
-                      target="_blank" 
+
+                    <Button
+                      href="https://www.linkedin.com/company/la-societe-nouvelle"
+                      target="_blank"
                       style={{
                         borderRadius: '14px',
                         padding: '14px 24px',
@@ -327,9 +298,9 @@ const CongresCEC2025 = () => {
                       <span>LinkedIn</span>
                     </Button>
 
-                    <Button 
-                      href="https://discord.gg/ANFwWZc3eu" 
-                      target="_blank" 
+                    <Button
+                      href="https://discord.gg/ANFwWZc3eu"
+                      target="_blank"
                       style={{
                         borderRadius: '14px',
                         padding: '14px 24px',
@@ -349,7 +320,7 @@ const CongresCEC2025 = () => {
                       <i className="bi bi-discord" style={{ fontSize: '20px' }}></i>
                       <span>Discord</span>
                     </Button>
-
+                    {/* 
                     <Button 
                       href="https://github.com/La-Societe-Nouvelle/" 
                       target="_blank" 
@@ -371,10 +342,40 @@ const CongresCEC2025 = () => {
                       }}>
                       <i className="bi bi-github" style={{ fontSize: '20px' }}></i>
                       <span>GitHub</span>
-                    </Button>
+                    </Button> */}
 
+                    <h4 className="my-3" style={{
+                      color: '#ffffff',
+                      fontWeight: '700',
+                    }}>
+                      Pour rester en contact
+                    </h4>
+
+                    <Button
+                      href="https://calendly.com/sylvain-humiliere/"
+                      target="_blank"
+                      style={{
+                        borderRadius: '14px',
+                        padding: '14px 24px',
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        background: '#fa595f',
+                        border: 'none',
+                        color: 'white',
+                        textDecoration: 'none',
+                        boxShadow: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '10px',
+                        width: '100%',
+                        maxWidth: '280px'
+                      }}>
+                      <i className="bi bi-calendar" style={{ fontSize: '20px' }}></i>
+                      <span>Prendre rendez-vous</span>
+                    </Button>
                   </div>
-                  
+
                 </Col>
               </Row>
 
