@@ -208,6 +208,15 @@ const BecomePartner = () => {
               </a>
             </div>
             <div>
+              <a href="https://www.iodaconsulting.fr/" target="_blank" title="Accéder au site">
+                <Image
+                  src="/partners/logo-ioda.png"
+                  alt="Logo IODA"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
               <a
                 href="https://www.acora.fr/"
                 target="_blank"

@@ -295,7 +295,7 @@ const Home = () => {
               <a href="https://www.expert-comptable.io/" target="_blank" title="Accéder au site">
                 <Image
                   src="/partners/logo-rodier.png"
-                  alt="Logo Rpdier"
+                  alt="Logo Rodier"
                   style={{ height: "100px"}}
                 />
               </a>
@@ -309,6 +309,15 @@ const Home = () => {
                 <Image
                   src="/partners/logo-quovive.jpg"
                   alt="Logo Quovive"
+                  style={{ height: "100px"}}
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://www.iodaconsulting.fr/" target="_blank" title="Accéder au site">
+                <Image
+                  src="/partners/logo-ioda.png"
+                  alt="Logo IODA"
                   style={{ height: "100px"}}
                 />
               </a>
