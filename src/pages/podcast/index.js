@@ -4,6 +4,9 @@ import PageHeader from '../../components/PageHeader'
 
 const episodes = [
   {
+    spotifyEmbed: "https://open.spotify.com/embed/episode/7cqHbIYoGTjnG3NbMEPcBl?utm_source=generator",
+  },
+  {
     spotifyEmbed: "https://open.spotify.com/embed/episode/1vRTQxAo8sa7dfW6BrMOO2?utm_source=generator",
   },
   {
