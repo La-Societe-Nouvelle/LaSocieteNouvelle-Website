@@ -219,7 +219,7 @@ const BarometreGES = () =>
               <b>Sources :</b>
               <ul>
                 <li>Pour les données de janvier 2024 à mars 2025 : CITEPA (Baromètre mensuel)</li>
-                <li>Pour les données d'avril 2025 à juin 2025 : La Société Nouvelle</li>
+                <li>Pour les données à partir d'avril 2025 : La Société Nouvelle</li>
               </ul>
             </p>
           </Row>
