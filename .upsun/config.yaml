@@ -59,9 +59,6 @@ applications:
       env:
         NODE_ENV: "production"
 
-    # Taille du disque
-    disk: 2048
-
 # Configuration des routes
 routes:
   "https://{default}/":
