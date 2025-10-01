@@ -1,0 +1,76 @@
+applications:
+  app:
+    source:
+      root: "/"
+
+    # Version de Node.js
+    type: "nodejs:20"
+
+    build:
+      flavor: none
+
+    # Hooks de build
+    hooks:
+      build: |
+        set -e
+        echo "Installing dependencies..."
+        npm ci --prefer-offline --no-audit
+        echo "Building Next.js application..."
+        npm run build
+
+      deploy: |
+        echo "Application deployed successfully"
+
+    # Configuration du serveur web
+    web:
+      commands:
+        start: "npm start -- -p $PORT"
+
+      locations:
+        "/":
+          passthru: true
+          allow: false
+
+        # Cache pour les assets statiques Next.js
+        "/_next/static":
+          allow: true
+          expires: 1y
+          rules:
+            \.(css|js|gif|jpe?g|png|svg|ico|woff2?)$:
+              allow: true
+
+        # Fichiers publics
+        "/public":
+          allow: true
+          root: "public"
+          expires: 1h
+          rules:
+            \.(css|js|gif|jpe?g|png|svg|ico|pdf|woff2?)$:
+              allow: true
+
+    # Montage pour le cache Next.js (persistant entre les déploiements)
+    mounts:
+      "/.next/cache":
+        source: storage
+        source_path: next_cache
+
+    # Variables d'environnement
+    variables:
+      env:
+        NODE_ENV: "production"
+
+    # Taille du disque
+    disk: 2048
+
+# Configuration des routes
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+      enabled: true
+      cookies: ['*']
+
+  "https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"
