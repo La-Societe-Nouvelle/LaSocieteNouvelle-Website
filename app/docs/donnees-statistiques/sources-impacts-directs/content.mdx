@@ -1,0 +1,252 @@
+## Sources de données
+
+Les données d'impacts utilisées varient selon les indicateurs.
+
+### Contribution à l'Economie nationale
+
+» [Documentation de l'indicateur à l'échelle de l'entreprise](/docs/empreinte-societale/indicateurs/eco)
+
+**Description**
+
+Le vecteur d'impacts repose sur les données de la base FIGARO d'Eurostat. Il mesure le taux de contribution directe des secteurs à l'économie nationale en calculant le rapport entre la valeur ajoutée et la production totale pour la France.
+
+La période d'analyse couvre les années 2010 à 2022. Seules les entités localisées en France sont prises en compte dans le calcul de l'indicateur ; les entités non françaises (non-FR) ont une contribution nulle (0).
+
+**Sources de données utilisées**
+
+» [Données FIGARO - Eurostat](https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database)
+
+### Contribution aux Métiers d'Art et aux Savoir-Faire
+
+» [Documentation de l'indicateur à l'échelle de l'entreprise](/docs/empreinte-societale/indicateurs/art)
+
+**Description**
+
+Le vecteur d'impacts est construit à partir des données issues de la base SIRENE des établissements (INSEE - StockEtablissement), en s'appuyant sur les codes APE et la Nomenclature d'Activités Française de l'Artisanat (NAFA). La contribution directe artisanale est estimée en calculant la part de la valeur ajoutée attribuable aux établissements relevant des codes APE rattachés à la NAFA, rapportée à l'ensemble de la valeur produite de la branche.
+
+La période d'observation couvre les années 2010 à 2023. L'indicateur est calculé uniquement pour les entités situées en France ; les entités non françaises (non-FR) sont donc considérées avec une contribution nulle (0).
+
+**Sources de données utilisées**
+
+- [Données SIRENE - Insee](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/)
+- [NAFA-Artisanat](https://data.artisanat.fr/nafa/)
+
+---
+
+### Contribution aux Acteurs d'intérêt social
+
+» [Documentation de l'indicateur à l'échelle de l'entreprise](/docs/empreinte-societale/indicateurs/soc)
+
+**Description**
+
+L'indicateur mesure la contribution des acteurs de l'économie sociale et solidaire (ESS), exprimée en pourcentage de la valeur produite. Il repose sur la part d'emplois relevant de l'ESS dans chaque secteur.
+
+Les données de référence proviennent de l'Urssaf (Nombre d'établissements employeurs, effectifs salariés et masse salariale du secteur privé, France entière x familles ESS x NA88 et par an). Cette base permet d'obtenir une répartition sectorielle précise de l'ESS à l'échelle française.
+
+À l'échelle internationale, les données de l'OIT sur le travail volontaire (Forms of Work : total voluntary, FOW_TVOL_SEX_VOL_NB_A, OIT) servent de base complémentaire (moins granulaire). La correspondance sectorielle entre les données OIT internationales et françaises sont établies à partir des ratios de valeur ajoutée (VA) par branche d'activité. Ces coefficients sont ensuite appliqués aux données de l'URSSAF afin d'estimer la participation de l'ESS pour chaque pays et secteur.
+
+Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+L'indicateur est disponible jusqu'en 2022.
+
+**Sources de données utilisées**
+
+- [Famille ESS - URSSAF](https://open.urssaf.fr/explore/dataset/nombre-etab-effectifs-salaries-et-masse-salariale-ess-france-x-na88/table/)
+- [FOW - OIT](https://db.nomics.world/ILO/FOW_TVOL_SEX_VOL_NB?tab=list)
+
+---
+
+### Contribution à l'Evolution des compétences et des connaissances
+
+[» Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/knw)
+
+**Description**
+
+L'indicateur évalue la contribution des secteurs à l'évolution des compétences et des connaissances, exprimée en pourcentage de la valeur produite. Il est construit à partir de l'agrégation de 2 composantes principales :
+
+- Les dépenses de R&D
+- Les dépenses liées à la formation professionnelle
+
+Recherche & Développement (R&D) : données issues de la base ANBERD de l'OECD (DF_ANBERDi4), converties en euros (DF_DP_LIVE, OECD), par secteur (passage de la nomenclature A88 à A64). Ces données reflètent les dépenses en R&D analytique réalisées par les entreprises.
+
+Formation professionnelle continue : les dépenses de formation sont estimées à partir des données sur les formations professionnelle continue en entreprise (trng_cvt_16n2, Eurostat) couplées aux salaires issus de la base de données d'analyse structurelle de la performance industrielle (STAN-OCDE). Cette approche permet d'obtenir une estimation monétaire des investissements en formation.
+
+Ces 2 composantes voient leurs valeurs manquantes imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+L'agrégation de ces 2 sources, par addition, permettent de mesurer une valeur monétaire des formations professionnelles.
+
+L'indicateur couvre la période 2015 à 2020.
+
+**Sources de données utilisées**
+
+- [Exchange rate - OECD](https://www.oecd.org/en/data/indicators/exchange-rates.html)
+- [DF_ANBERDi4 - OECD](https://www.oecd.org/en/data/datasets/analytical-business-enterprise-research-and-development.html)
+- [TRNG_CVT - Eurostat](https://ec.europa.eu/eurostat/cache/metadata/EN/trng_cvt_sims_fr.htm#shortdata_descrDisseminated)
+- [STAN - OECD](https://www.oecd.org/en/data/datasets/structural-analysis-database.html)
+
+---
+
+### Indice de répartition des rémunérations
+
+[» Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/idr)
+
+**Description**
+
+Le vecteur d'impacts est basé sur la base « Tous Salariés » de l'INSEE, qui fournit des données sur les salaires horaires (ou en équivalent temps plein) par secteur sur la période 2016-2022. Il mesure le rapport interdécile des rémunérations (D9/D1), soit le ratio entre les 10 % des salaires les plus élevés (Q90) et les 10 % les plus faibles (Q10), exprimé sur une échelle de 1 à 100.
+
+Ces données servent de calibration pour celles de l'Organisation Internationale du Travail (OIT), qui proposent des niveaux d'agrégation plus globaux (Labour income distribution LAP_2LID_QTL_RT - ILO modeled estimates, nov. 2022).
+
+Les coefficients de répartition sectorielle sont ajustés à l'aide des parts de valeur ajoutée issues de la base FIGARO.
+
+La période d'analyse couvre les années 2016 à 2022.
+
+**Sources de données utilisées**
+
+- [Base Tous Salariés - Insee](https://www.insee.fr/fr/information/2407785)
+- [Labour income distribution - OIT](https://db.nomics.world/ILO/LAP_2LID_QTL_RT?tab=list)
+
+---
+
+### Indice d'écart de rémunérations Femmes/Hommes
+
+[» Lien vers la documentation de l'indicateur à l'échelle de l'entreprise](/docs/empreinte-societale/indicateurs/geq)
+
+**Description**
+
+Le vecteur d'impacts est établi à partir de la base « Tous Salariés » de l'Insee, qui fournit les salaires horaires (ou en équivalent temps plein) ventilés par secteur et par sexe sur la période 2016-2022. Ces données servent de calibration pour celles de l'Organisation Internationale du Travail (Average hourly earnings of employees EAR_4HRL_SEX_ECO_CUR_NB_A - OIT), qui proposent des niveaux d'agrégation plus globaux (revenu moyen nominal des salariés par sexe et activité économique).
+
+Les coefficients de répartition sectorielle sont ajustés à l'aide des parts de valeur ajoutée issues de la base FIGARO. Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+La période d'analyse couvre les années 2016 à 2022.
+
+**Sources de données utilisées**
+
+- [Base Tous Salariés - Insee](https://www.insee.fr/fr/information/2407785)
+- [EAR - OIT](https://db.nomics.world/ILO/EAR_4HRL_SEX_OCU_CUR_NB?tab=list)
+
+---
+
+### Emission de Gaz à effet de serre
+
+[» Lien vers la documentation de l'indicateur à l'échelle de l'entreprise](/docs/empreinte-societale/indicateurs/ghg)
+
+**Description**
+
+Le vecteur d'impacts est directement dérivé de la base « Empreinte des émissions de gaz à effet de serre » (en équivalent CO₂) issue de l'application FIGARO (env_ac_ghgfp) disponible sur Eurostat. Il exprime l'intensité des émissions de GES rapportée à la valeur économique produite, en grammes de CO₂ équivalent par euro (gCO₂e/€).
+
+Les données sont disponibles jusqu'en 2022 et couvrent l'ensemble des branches d'activité à l'échelle internationale.
+
+**Sources de données utilisées**
+
+- [FIGARO - Eurostat](https://ec.europa.eu/eurostat/cache/metadata/en/env_ac_ghgfp_esms.htm)
+
+---
+
+### Extraction de matières premières
+
+[» Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/mat)
+
+**Description**
+
+L'indicateur mesure l'intensité d'extraction de matières premières, exprimée en grammes par euro (g/€), et concerne exclusivement les secteurs d'activités A (agriculture, sylviculture, pêche) et B (industries extractives).
+
+Il est calculé à partir des données d'extraction domestique provenant de la base Material Flows Database du Programme des Nations Unies pour l'Environnement - International Resource Panel (UNEP-IRP), croisées avec les données de production (X) issues de la base FIGARO.
+
+Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+L'indicateur est disponible jusqu'en 2022.
+
+**Sources de données utilisées**
+
+- [Global Material Flows Database - UNEP IRP](https://www.unep.org/explore-topics/resource-efficiency/what-we-do/international-resource-panel)
+
+---
+
+### Production de déchets
+
+[» Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/indicateur-was)
+
+**Description**
+
+'indicateur WAS mesure l'intensité de production de déchets par secteur, exprimée en grammes par euro (g/€). Il est calculé à partir des données de l'OECD (base Waste by Economic Sector Dataset - DF_WSECTOR, OECD), disponibles jusqu'en 2020, avec une fréquence d'une année sur deux. Avec une mesure d'intensité selon les valeurs ajoutée FIGARO.
+
+L'obtention de la valeur se fait à partir du code APE (activité principale de l'unité légale), présent au sein du répertoire SIRENE.
+
+**Sources de données utilisées**
+
+- [DF_WSECTOR - OECD](https://data-explorer.oecd.org/vis?df[ds]=DisseminateFinalDMZ&df[id]=DSD_WSECTOR%40DF_WSECTOR&df[ag]=OECD.ENV.EPI&lc=fr&dq=.A.TOTAL.KG_PS._T&lom=LASTNPERIODS&lo=5&to[TIME_PERIOD]=false)
+
+---
+
+### Consommation d'énergie
+
+[Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/nrg)
+
+**Description**
+
+L'indicateur NRG évalue l'intensité de consommation d'énergie par secteur, exprimée en kilojoules par euro (kJ/€). Les données principales proviennent de la base EUROSTAT (Approvisionnement et utilisation de l'énergie selon la NACE Rev.2, env_ac_pefasu, édition 2023), qui fournit la production d'énergie primaire par secteur pour les pays européens. Ces données sont réparties selon les niveaux de production (X).
+
+Pour les secteurs ou pays non couverts par EUROSTAT, un comblement est effectué à l'aide des données du Joint Research Centre (id-00403, JRC), via la base NEU FIGARO-E3 (2015), qui fournit la consommation nette d'énergie par secteur en térajoules (NEU) très granulaire et précis.
+
+Des coefficients de répartition NEU/X sont mesurés pour chaque pays et servent de calibration sur celles d'EUROSTAT. Ainsi, nous obtenons l'intensité de consommation énergétique pour tous les pays disponibles depuis le JRC.
+
+Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+L'indicateur couvre la période 2014 à 2022.
+
+**Sources de données utilisées**
+
+- [env_ac_pefasu - Eurostat](https://ec.europa.eu/eurostat/databrowser/product/page/ENV_AC_PEFASU)
+- [NEU-JRC](https://data.jrc.ec.europa.eu/collection/id-00403)
+
+---
+
+### Consommation d'eau
+
+[Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateurs/wat)
+
+**Description**
+
+L'indicateur WAT mesure l'intensité de consommation d'eau par secteur, exprimée en litres par euro (L/€), pour les secteurs allant de A à F. Contrairement aux prélèvements, il s'agit ici de la part effectivement consommée (non restituée au milieu naturel).
+
+La méthodologie repose sur trois étapes :
+
+1. Récupération des données de prélèvements d'eau sectoriels à partir des comptes de l'OCDE (Water accounts - supply and use, DF_WATER_PSUT).
+2. Les volumes sont répartis selon la part de valeur ajoutée sur production (VA/X).
+3. Application de coefficients de consommation (sur l'eau prélevée) : les taux de consommation par secteur sont issus de la notice méthodologique du SDES — Modalités d'estimation des consommations d'eau douce associées aux prélèvements par usage (mars 2023, MTECT) :
+   - Agriculture (A) : 100 %
+   - Industrie (B-C-F) : 7 %
+   - Énergie (D35) : 22 %
+   - Construction (F) : incluse, activité consommatrice
+   - Autres secteurs (principalement services) : 20 %
+
+Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+Les données couvrent la période jusqu'en 2020.
+
+**Sources de données utilisées**
+
+- [OECD](https://www.oecd.org/en/data.html#profile-Water)
+- [MTECT](https:)
+
+---
+
+### Utilisation de produits dangereux
+
+[Lien vers la documentation de l'indicateur à l'échelle d'une entreprise](/docs/empreinte-societale/indicateur-haz)
+
+**Description**
+
+L'indicateur HAZ mesure l'intensité d'utilisation de produits chimiques dangereux, exprimée en grammes par euro (g/€). Il repose sur l'hypothèse que seuls les intrants issus du secteur C20 (industrie chimique, selon la nomenclature NACE) sont considérés comme des produits chimiques. La distinction entre produits chimiques dangereux et non dangereux s'appuie sur les classifications de référence en la matière.
+
+L'obtention de la valeur se fait à partir du code APE (activité principale de l'unité légale), présent au sein du répertoire SIRENE.
+
+Les données mobilisées sont issues de la base « Sold production, exports and imports » d'Eurostat (ds-056120), à un niveau désagrégé par produit. Seuls les produits listés comme dangereux sont conservés. L'intensité est calculée en rapportant la masse totale de produits dangereux consommés ventilées par branche d'activité (i.e. consommations intermédiaires (CI) provenant du secteur C20) à la valeur de la production (X) du secteur considéré.
+
+Les valeurs manquantes sont imputées par similarité à l'aide d'une méthode de substitution basée sur la proximité sectorielle : un pays est considéré comme similaire s'il présente une répartition comparable de la VA par branche d'activité.
+
+Les données sont disponibles jusqu'en 2023.
+
+**Sources de données utilisées**
+
+- [Sold production, exports and imports - Eurostat](https://ec.europa.eu/eurostat/api/comext/dissemination/sdmx/2.1/data/ds-056120)

@@ -1,0 +1,195 @@
+
+.podcast-page {
+  // Hero Section
+  .podcast-hero {
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
+
+    .podcast-cover {
+      .podcast-image {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .podcast-intro {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 1.25rem;
+      }
+
+      .podcast-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: $body-color;
+        margin-bottom: 1rem;
+      }
+
+      .podcast-tagline {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $body-color;
+        margin: 0;
+
+      }
+    }
+  }
+
+  // Episodes Section
+  .episodes-section {
+    padding: 60px 0;
+    background: #fff;
+
+    .episodes-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 2.5rem;
+    }
+
+    .episodes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .episode-card {
+      background: #fff;
+      border: 1px solid rgba($primary, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .spotify-player {
+        border-radius: 8px;
+        border: none;
+      }
+    }
+  }
+
+  // CTA Section
+  .podcast-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba($secondary, 0.02) 0%, rgba($primary, 0.03) 100%);
+
+    .cta-content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+
+      h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: $body-color;
+        margin-bottom: 2.5rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .platform-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.875rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1.5rem;
+        }
+
+        &.youtube {
+          background: #FF0000;
+          color: #fff;
+
+          &:hover {
+            background: darken(#FF0000, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(#FF0000, 0.3);
+          }
+        }
+
+        &.spotify {
+          background: #1DB954;
+          color: #fff;
+
+          &:hover {
+            background: darken(#1DB954, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(#1DB954, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991px) {
+  .podcast-page {
+    .podcast-hero {
+      padding: 40px 0;
+
+      .podcast-cover {
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .podcast-intro {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .podcast-description {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .episodes-section,
+    .podcast-cta {
+      padding: 40px 0;
+    }
+
+    .podcast-cta {
+      .cta-content {
+        h3 {
+          font-size: 1.75rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+
+          .platform-btn {
+            width: 100%;
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

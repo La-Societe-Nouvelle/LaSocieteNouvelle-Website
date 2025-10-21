@@ -1,0 +1,322 @@
+// Page Indicateurs
+
+.indicateurs-page {
+  padding: 3rem 0 4rem;
+  background: #fff;
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 2.25rem;
+      }
+    }
+
+    .update-info {
+      font-size: 0.95rem;
+      color: lighten($primary, 35%);
+      margin: 0;
+    }
+  }
+}
+
+// Page de détail d'un indicateur
+.page-header-section {
+  background: linear-gradient(135deg, rgba($primary, 0.03) 0%, rgba($accent, 0.08) 100%);
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid rgba($primary, 0.08);
+
+  .page-header-content {
+    text-align: center;
+  }
+
+  .page-header-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    img {
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  .page-header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: $primary;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background: rgba($primary, 0.05);
+      border-color: rgba($primary, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary, 0.15);
+    }
+
+    &.bg-badge-light-secondary {
+      background: $light-secondary;
+      color: $secondary;
+      border-color: rgba($secondary, 0.25);
+
+      &:hover {
+        background: rgba($secondary, 0.1);
+        border-color: rgba($secondary, 0.35);
+        box-shadow: 0 4px 12px rgba($secondary, 0.15);
+      }
+    }
+  }
+}
+
+.indic-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba($primary, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba($primary, 0.2);
+
+    .indic-visual {
+      transform: scale(1.05);
+    }
+
+    .indic-btn {
+      gap: 0.75rem;
+      background: $primary;
+      color: #fff;
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .indic-visual-wrapper {
+    position: relative;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    overflow: hidden;
+
+    // Dégradé de fond avec la couleur de l'indicateur
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.85;
+      transition: opacity 0.4s ease;
+    }
+
+    .indic-section-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: #fff;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .indic-visual {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .indic-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .indic-odds {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+
+    img {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+
+  .indic-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    .badge {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 6px;
+
+      &.badge-valid {
+        background: #36C575;
+        color: #fff;
+      }
+
+      &.badge-esrs {
+        background: #202B3D;
+        color: #fff;
+      }
+
+      &.badge-target {
+        background: $secondary;
+        color: #fff;
+      }
+    }
+  }
+
+  .indic-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  .indic-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: lighten($primary, 25%);
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .indic-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid rgba($primary, 0.08);
+  }
+
+  .indic-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    background: #fff;
+    color: $primary;
+    border: 2px solid $primary;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 0.85rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991.98px) {
+  .indicateurs-page {
+    padding: 2rem 0 3rem;
+
+    .page-header {
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  .indic-card {
+    margin-bottom: 1.5rem;
+
+    .indic-visual-wrapper {
+      min-height: 160px;
+      padding: 2rem 1.5rem;
+    }
+
+    .indic-visual {
+      max-height: 70px;
+    }
+
+    .indic-body {
+      padding: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .indic-card {
+    .indic-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

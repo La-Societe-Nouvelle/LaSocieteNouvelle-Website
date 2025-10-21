@@ -1,0 +1,65 @@
+## Application aux flux comptables
+
+Les indicateurs concernent essentiellement les flux de charges externes, les comptes de stocks et les comptes d'immobilisations. Les impacts directs étant associés à la valeur ajoutée nette, les composantes de cette dernière (salaires et traitements, impôts, provisions, résultats, etc.) n'interviennent pas dans la mesure.
+
+### Traitement des écritures comptables
+
+Les règles appliquées au niveau des écritures comptables, pour l'obtention des empreintes des soldes intermédiaires sont les suivantes :
+
+#### Consommations intermédiaires
+
+##### Empreintes des comptes de charges externes (comptes #60, #61 et #62)
+
+L'empreinte d'un compte de charge est la moyenne des empreintes des charges associées au compte pondérée par leur volume monétaire.
+
+##### Empreintes des charges externes (débits/crédits des comptes #60 hors #603, #61 et #62)
+
+L'empreinte d'une charge externe est celle du compte fournisseur auxiliaire associé.
+
+Pour les charges non-associées à un compte fournisseur auxiliaire (absence de compte auxiliaire, contrepartie bancaire, etc.), un traitement par défaut doit être mis en place. A minima, des valeurs par défaut sont appliquées. Au sein de l'application web mise à disposition, les charges non-associées à un compte fournisseur auxiliaire sont regroupées par compte de charge afin d'adapter les valeurs par défaut au type d'achats effectué.
+
+#### Consommations de capital fixe
+
+##### Empreintes des comptes de dotations aux amortissements sur immobilisations (comptes #6811 et #6871)
+
+Moyenne des empreintes des dotations aux amortissements sur immobilisations (Cf. ci-dessous) pondérée par leur volume monétaire.
+
+##### Empreintes des dotations aux amortissements sur immobilisations (débits/crédits des comptes #6811 et #6871)
+
+L'empreinte d'une dotation aux amortissements sur immobilisations est celle du reste à amortir du compte d'immobilisations correspondant. Elle est obtenue à partir de l'empreinte finale du compte d'immobilisation (#20 ou #21) et de l'empreinte initial du compte d'amortissement (#280 ou #281).
+
+Lorsque la dotation concerne plusieurs comptes d'amortissements, l'empreinte correspond à une moyenne des empreintes des dotations par compte d'amortissement pondérées par leur volume monétaire.
+
+> **Note :** L'écart entre l'empreinte du compte d'immobilisation et du compte d'amortissement est dû aux cessions/acquisitions, qui affectent l'empreinte du compte d'immobilisation.
+
+##### Empreintes des comptes d'immobilisations (comptes #20 et #21)
+
+L'empreinte finale d'un compte d'immobilisation est obtenue à partir de l'empreinte initiale (en début d'exercice) et des acquisitions réalisées sur l'exercice. En l'absence de données historisées, des valeurs par défaut sont appliquées ; elles peuvent être obtenues à partir des acquisitions sur l'exercice courant.
+
+La production immobilisée ne peut être prise en compte que pour l'exercice suivant : elle est obtenue à partir de l'empreinte de la production courante et ne peut donc être utilisée en amont.
+
+> **Note :** Les cessions n'ont pas d'influence sur l'empreinte du compte d'immobilisation, l'empreinte associée à la cession étant celle du compte d'immobilisation.
+
+##### Empreintes des comptes d'amortissements (comptes #280 et #281)
+
+L'empreinte finale d'un compte d'amortissements est obtenue à partir de l'empreinte initiale (en début d'exercice) et des dotations aux amortissements sur immobilisations réalisées sur l'exercice. Pour l'empreinte initiale, en l'absence de données historisées, des valeurs par défaut sont appliquées ; elles peuvent être obtenues à partir des empreintes initiales des immobilisations.
+
+##### Empreintes des acquisitions (débits/crédits des comptes #20 et #21 - liés à un compte #404)
+
+De même que pour les charges externes, l'empreinte d'une acquisition d'une immobilisation est celle du compte fournisseur auxiliaire associé.
+
+Pour les acquisitions non-associées à un compte fournisseur auxiliaire, un traitement par défaut doit être mis en place. A minima, des valeurs par défaut sont appliqués ; elles peuvent être ventilées par compte d'immobilisations.
+
+#### Variations de stocks
+
+##### Empreintes des comptes de variations de stocks d'achats et de marchandises (débits/crédits des comptes #603)
+
+L'empreinte d'un compte de variation d'un stock est obtenue à partir de l'empreinte initiale (en début d'exercice) et de l'empreinte finale (en fin d'exercice) du compte de stock. La valeur initialement stockée au sein d'un compte de stock est considérée comme entièrement sortie au cours de l'exercice ; et la valeur stockée en fin d'exercice comme entièrement issue des consommations de l'exercice courant.
+
+L'empreinte finale est déterminée à partir des comptes de charges rattachées au compte de stock ; et l'empreinte initiale est reprise de l'exercice précédent. En l'absence de données historisées, des valeurs par défaut sont appliquées ; elles peuvent être obtenues à partir des consommations sur l'exercice courant.
+
+##### Empreintes des comptes de variations de stocks de produits (débits/crédits des comptes #71)
+
+L'empreinte d'un compte de stocks de production est obtenue à partir de l'empreinte initiale (en début d'exercice) et de l'empreinte finale (en fin d'exercice) du compte de stock. La valeur initialement stockée au sein d'un compte de stock est considérée comme entièrement sortie - vendue - au cours de l'exercice ; et la valeur stockée en fin d'exercice comme entièrement issue de la production sur l'exercice courant.
+
+L'empreinte finale est donc celle de la production de l'exercice ; et l'empreinte initiale est reprise de l'exercice précédent. En l'absence de données historisées, des valeurs par défaut sont appliquées ; elles peuvent être obtenues à partir de la production sur l'exercice courant.

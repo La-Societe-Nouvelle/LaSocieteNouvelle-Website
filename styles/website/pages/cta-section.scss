@@ -1,0 +1,166 @@
+.cta-section {
+  padding: $section-padding-sm;
+
+  .cta-header {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+
+
+
+}
+
+.cta-card-link {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+.cta-card {
+  background: #fff;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  border: 2px solid #f0f0f8; // border léger comme hero-card
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+
+    .cta-card-icon {
+      transform: scale(1.05);
+    }
+
+    .cta-card-action i {
+      transform: translateX(4px);
+    }
+  }
+
+  // Variantes couleurs par type, plus soft
+  &.cta-card-primary {
+    border-color: rgba($accent, 0.15);
+
+    .cta-card-icon {
+      background: rgba($accent, 0.08);
+
+      i {
+        color: $accent;
+      }
+    }
+
+    .cta-card-action {
+      color: $accent;
+    }
+  }
+
+  &.cta-card-secondary {
+    border-color: rgba($secondary, 0.15);
+
+    .cta-card-icon {
+      background: rgba($secondary, 0.08);
+
+      i {
+        color: $secondary;
+      }
+    }
+
+    .cta-card-action {
+      color: $secondary;
+    }
+  }
+
+  &.cta-card-dark {
+    border-color: rgba($primary, 0.10);
+
+    .cta-card-icon {
+      background: rgba($primary, 0.05);
+
+      i {
+        color: $primary;
+      }
+    }
+
+    .cta-card-action {
+      color: $primary;
+    }
+  }
+
+  .cta-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: $card-border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem; // un peu moins que avant
+    transition: transform 0.3s ease;
+
+    i {
+      font-size: 2.5rem;
+    }
+  }
+
+  .cta-card-title {
+    font-size: 1.25rem;
+    color: $primary;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .cta-card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.75);
+    margin-bottom: 1rem;
+  }
+
+  .cta-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .cta-section {
+    padding: $section-padding-sm;
+
+    .cta-header {
+      margin-bottom: 2rem;
+    }
+
+    .cta-footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+  }
+
+  .cta-card {
+    padding: 2.5rem 2rem;
+    margin-bottom: 1rem;
+  }
+}

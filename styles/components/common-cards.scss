@@ -1,0 +1,830 @@
+// ===================================================
+// COMPOSANTS COMMUNS - CARDS & BOXES
+// Fichier centralisé pour les composants réutilisables
+// ===================================================
+
+// ===================================
+// 1. VISUAL BOXES - Boîtes d'introduction
+// ===================================
+
+// Mixin pour les visual boxes (DRY)
+@mixin visual-box-base($icon-color, $badge-color, $border-color) {
+  background: linear-gradient(135deg, rgba($icon-color, 0.08) 0%, rgba($secondary, 0.05) 100%);
+  border: 2px solid rgba($border-color, 0.15);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+
+  i {
+    font-size: 4rem;
+    color: $icon-color;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 2.5rem 1.5rem;
+
+    i {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 2rem 1.25rem;
+
+    i {
+      font-size: 3rem;
+    }
+  }
+}
+
+@mixin visual-box-text() {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $primary;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 767.98px) {
+    font-size: 1rem;
+  }
+}
+
+@mixin visual-box-badges() {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 991.98px) {
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@mixin visual-badge($badge-color) {
+  background: #fff;
+  color: $badge-color;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 2px solid rgba($badge-color, 0.2);
+  white-space: nowrap;
+
+  @media (max-width: 991.98px) {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  @media (max-width: 767.98px) {
+    width: 100%;
+  }
+}
+
+// Visual Box - Style API (accent bleu)
+.api-visual-box {
+  @include visual-box-base($accent, $accent, $accent);
+
+  .api-visual-text {
+    @include visual-box-text();
+  }
+
+  .api-visual-badges {
+    @include visual-box-badges();
+
+    .api-badge {
+      @include visual-badge($accent);
+    }
+  }
+}
+
+// Visual Box - Style Stats (primary violet)
+.stats-visual-box {
+  @include visual-box-base($primary, $primary, $primary);
+
+  .stats-visual-text {
+    @include visual-box-text();
+  }
+
+  .stats-visual-badges {
+    @include visual-box-badges();
+
+    .stat-badge {
+      @include visual-badge($primary);
+    }
+  }
+}
+
+// ===================================
+// 2. BENEFIT CARDS - Cartes avec icône circulaire
+// ===================================
+
+@mixin benefit-card-base($icon-color) {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  border: 2px solid rgba($icon-color, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($icon-color, 0.25);
+
+    .benefit-icon {
+      background: rgba($icon-color, 0.15);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 1.5rem 1.25rem;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 1rem;
+  }
+
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($icon-color, 0.1);
+    color: $icon-color;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+
+    @media (max-width: 991.98px) {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 991.98px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .benefit-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.8);
+    margin: 0;
+  }
+}
+
+// API Benefit (accent)
+.api-benefit {
+  @include benefit-card-base($accent);
+
+  .api-benefit-icon {
+    @extend .benefit-icon;
+  }
+
+  .api-benefit-title {
+    @extend .benefit-title;
+  }
+
+  .api-benefit-text {
+    @extend .benefit-text;
+  }
+}
+
+// ===================================
+// 3. METHODOLOGY STEPS - Étapes numérotées
+// ===================================
+
+.methodology-step {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  border: 2px solid rgba($secondary, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($secondary, 0.2);
+
+    .methodology-step-number {
+      background: rgba($secondary, 0.15);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 1.5rem 1.25rem;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 1rem;
+  }
+
+  .methodology-step-number {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($secondary, 0.1);
+    color: $secondary;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+
+    @media (max-width: 991.98px) {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .methodology-step-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 991.98px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .methodology-step-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.8);
+    margin: 0;
+  }
+}
+
+// ===================================
+// 4. USE CASE CARDS - Cas d'usage
+// ===================================
+
+.use-case {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 2px solid rgba($primary, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($primary, 0.2);
+
+    .use-case-icon {
+      background: rgba($primary, 0.12);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 1rem;
+  }
+
+  .use-case-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($primary, 0.08);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 2rem;
+      color: $primary;
+    }
+
+    @media (max-width: 991.98px) {
+      width: 60px;
+      height: 60px;
+
+      i {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  .use-case-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 991.98px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .use-case-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.8);
+    margin: 0;
+  }
+}
+
+// ===================================
+// 5. RESOURCE CARDS - Cartes ressources avec bouton
+// ===================================
+
+@mixin resource-card-base() {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 2px solid rgba($accent, 0.12);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($accent, 0.25);
+
+    .resource-icon {
+      background: rgba($accent, 0.15);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 2rem 1.5rem;
+  }
+
+  .resource-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($accent, 0.1);
+    border-radius: 20px;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 2.5rem;
+      color: $accent;
+    }
+
+    @media (max-width: 991.98px) {
+      width: 70px;
+      height: 70px;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .resource-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+
+    @media (max-width: 991.98px) {
+      font-size: 1.375rem;
+    }
+  }
+
+  .resource-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.8);
+    margin-bottom: 1.5rem;
+    flex: 1;
+
+    code {
+      background: rgba($primary, 0.05);
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: $accent;
+    }
+  }
+
+  .btn {
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba($primary, 0.15);
+    }
+  }
+}
+
+.api-resource {
+  @include resource-card-base();
+
+  .api-resource-icon {
+    @extend .resource-icon;
+  }
+
+  .api-resource-title {
+    @extend .resource-title;
+  }
+
+  .api-resource-description {
+    @extend .resource-description;
+  }
+}
+
+.access-method {
+  @include resource-card-base();
+
+  .access-method-icon {
+    @extend .resource-icon;
+  }
+
+  .access-method-title {
+    @extend .resource-title;
+  }
+
+  .access-method-description {
+    @extend .resource-description;
+  }
+}
+
+// ===================================
+// 6. INDICATOR CATEGORY CARDS
+// ===================================
+
+.indicator-category {
+  background: #fff;
+  border-radius: 20px;
+  padding: 0;
+  border: 2px solid rgba($primary, 0.1);
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($primary, 0.15);
+  }
+
+  .indicator-category-header {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid rgba($primary, 0.1);
+
+    &.social {
+      background: linear-gradient(135deg, rgba($secondary, 0.1) 0%, rgba($secondary, 0.05) 100%);
+
+      i {
+        color: $secondary;
+      }
+    }
+
+    &.environmental {
+      background: linear-gradient(135deg, rgba(#28a745, 0.1) 0%, rgba(#28a745, 0.05) 100%);
+
+      i {
+        color: #28a745;
+      }
+    }
+
+    &.economic {
+      background: linear-gradient(135deg, rgba($accent, 0.1) 0%, rgba($accent, 0.05) 100%);
+
+      i {
+        color: $accent;
+      }
+    }
+
+    i {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: $primary;
+      margin: 0;
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 1.75rem 1.25rem;
+
+      i {
+        font-size: 2rem;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .indicator-category-list {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 0;
+
+    li {
+      font-size: 0.9rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba($primary, 0.08);
+      position: relative;
+      padding-left: 1.5rem;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $accent;
+        font-weight: bold;
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      a {
+        color: rgba($primary, 0.85);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: block;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 1.25rem;
+    }
+  }
+}
+
+// ===================================
+// 7. RESEARCH OUTPUT CARDS
+// ===================================
+
+.research-output {
+  background: #fff;
+  border-radius: 20px;
+  padding: 0;
+  border: 1px solid rgba($accent, 0.45);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba($primary, 0.2);
+  }
+
+  .research-output-header {
+    background: rgba($accent, 0.45);
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+
+    i {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: 0;
+
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 1.75rem 1.25rem 1.25rem;
+
+      i {
+        font-size: 2.5rem;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .research-output-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba($primary, 0.85);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .research-output-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 0.875rem;
+        color: rgba($primary, 0.8);
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba($primary, 0.08);
+        position: relative;
+        padding-left: 1.5rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &::before {
+          content: "→";
+          position: absolute;
+          left: 0;
+          color: $accent;
+          font-weight: bold;
+        }
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 1.25rem;
+    }
+  }
+
+  .research-output-footer {
+    padding: 0 1.5rem 1.5rem;
+
+    .btn {
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba($primary, 0.15);
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 0 1.25rem 1.25rem;
+    }
+  }
+}
+
+// ===================================
+// 8. VISUAL ICON GROUPS - Décoratifs
+// ===================================
+
+// Mission Visual - Icônes mission
+.mission-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  .mission-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba($accent, 0.1) 0%, rgba($accent, 0.05) 100%);
+    border-radius: 20px;
+    border: 2px solid rgba($accent, 0.15);
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 3rem;
+      color: $accent;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border-color: rgba($accent, 0.25);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(20px);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    gap: 1.5rem;
+
+    .mission-icon {
+      width: 100px;
+      height: 100px;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    gap: 1rem;
+
+    .mission-icon {
+      width: 80px;
+      height: 80px;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// Publications Visual - Icônes publications
+.publications-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  .pub-icon {
+    width: 120px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba($light, 0.95) 0%, rgba($light, 0.05) 100%);
+    border-radius: 12px;
+    border: 2px solid $light;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 3rem;
+      color: $primary;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(20px);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    gap: 1.5rem;
+
+    .pub-icon {
+      width: 100px;
+      height: 120px;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    gap: 1rem;
+
+    .pub-icon {
+      width: 80px;
+      height: 100px;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+}

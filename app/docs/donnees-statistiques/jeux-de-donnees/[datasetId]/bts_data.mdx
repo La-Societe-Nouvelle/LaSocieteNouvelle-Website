@@ -1,0 +1,100 @@
+## Indicateurs - Base Tous Salariés (bts_data)
+
+### Présentation
+
+Le jeu de données **bts_data** regroupe des indicateurs issus du fichier détail "salariés" de la Base Tous Salariés (BTS) de l'Insee.
+
+---
+
+### Description des données
+
+Liste des indices présents au sein du jeu de données :
+
+- **PCT_FEMMES** : Proportion de femmes au sein des branches économiques en fonction de la taille des unités légales employeuses.  
+- **PCT_CADRES** : Proportion de cadres au sein des branches économiques en fonction de la taille des unités légales employeuses.
+
+#### Construction des données
+
+Le traitement effectué est descriptif : fréquence des indicatrices (femmes, cadres, etc.) en fonction de la branche et de la taille de l'entreprise.
+
+#### Nomenclature des activités
+
+Utilisation de la **Nomenclature NACE Rev.2**.
+
+Par convenance, les données sont disponibles à l'échelle des divisions économiques (88). Néanmoins, ces dernières proviennent directement des résultats obtenus à l'échelle des branches (38).
+
+#### Unités
+
+Les données sont exprimées en **pourcentage**.
+
+#### Espaces économiques disponibles
+
+Les données sont uniquement disponibles pour :
+- **France (FRA)**
+
+---
+
+### Paramètres de requête
+
+**Liste des paramètres :**
+
+<table>
+  <thead>
+    <tr>
+      <th>Paramètre</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>activity</code></td>
+      <td>Code de la branche</td>
+    </tr>
+    <tr>
+      <td><code>workforcebracket</code></td>
+      <td>Code de la tranche d'effectifs</td>
+    </tr>
+    <tr>
+      <td><code>index</code></td>
+      <td>Code de l'indice</td>
+    </tr>
+    <tr>
+      <td><code>year</code></td>
+      <td>Année</td>
+    </tr>
+    <tr>
+      <td><code>unit</code></td>
+      <td>Code de l'unité</td>
+    </tr>
+  </tbody>
+</table>
+
+**Endpoint de l’API :**  
+[`https://api.lasocietenouvelle.org/macrodata/bts_data`](https://api.lasocietenouvelle.org/macrodata/bts_data)
+
+---
+
+### Commentaires
+
+Aucun commentaire additionnel.
+
+---
+
+### Licence
+
+Les données sont diffusées sous **licence ouverte Etalab**.
+
+---
+
+### Contact
+
+**Producteur des données :** La Société Nouvelle  
+
+Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)  
+📧 **contact@lasocietenouvelle.org**
+
+---
+
+### Mise à jour
+
+Dernière mise à jour des métadonnées : **15/07/2025**

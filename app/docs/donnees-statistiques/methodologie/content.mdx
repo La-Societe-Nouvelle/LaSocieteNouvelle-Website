@@ -1,0 +1,110 @@
+import { BlockMath, InlineMath } from 'react-katex'
+import 'katex/dist/katex.min.css'
+
+## Modélisation macroéconomique des empreintes par activité
+
+La Société Nouvelle produit, à des fins de comparaison, d'estimation et de prospective, des jeux de données relatives aux empreintes sociales et environnementales des activités économiques.
+
+Ces jeux de données sont organisées en trois grandes séries :
+
+- Empreintes historiques (observées)
+- Tendances
+- Trajectoires cibles
+
+Les données sont ventilées selon la NACE Révision 2.
+
+Les empreintes sont établies selon une approche macroéconomique, fondée sur les tableaux entrées-sorties inter-régionaux (TIES).
+
+## Objectif de la modélisation
+
+L'objectif est de produire, pour chaque branche d'activité au niveau NACE A64, une estimation des empreintes associées des principaux agrégats économiques, notamment :
+
+- la production,
+- la valeur ajoutée brute et nette,
+- les consommations intermédiaires, et,
+- les consommations de capital fixe.
+
+Pour chaque agrégat, l'empreinte correspond à l'ensemble des externalités induites, directement et/ou indirectement par les opérations considérées. Ainsi, si l'empreinte de la valeur ajoutée nette se limite aux externalités directes de la branche d'activité, l'empreinte de la production inclut également celles des chaines de valeur amont, associées aux consommations intermédiaires et aux capitaux fixes mobilisés.
+
+## Cadre méthodologique
+
+La modélisation repose sur une analyse entrées-sorties environnementalement augmentée, conformément au cadre proposé par W. Leontief (1970), et régulièrement mobilisé en comptabilité environnementale nationale et dans les inventaires d'empreintes matières ou carbone.
+
+Cette méthode permet, à partir d'un tableau technique des échanges intersectoriels, de remonter l'impact global induit par un euro de production finale, en intégrant :
+
+- les effets directs (liés aux opérations de la branche),
+- les effets indirects (effets induits en amont)
+
+## Données sources et périmètre
+
+Les travaux s'appuient principalement sur les tableaux FIGARO d'Eurostat, qui offrent une base cohérente d'analyse macroéconomique multisectorielle à l'échelle européenne.
+
+La modélisation FIGARO présente :
+
+- une désagrégation en 64 "industries" (NACE A64),
+- une couverture interpays (46 pays/régions du monde, dont les 27 états membres de l'UE),
+- une représentation complète des agrégats pour l'ensemble des couples pays/industrie.
+
+Elle se compose trois principales tables de données :
+
+- Les comptes de production
+- Les entrées intermédiaires
+- La demande finale
+
+## Vecteurs d'impacts
+
+Pour « augmenter » le modèle économique, on associe à chaque branche un vecteur d'impact environnemental et social.
+
+L'exercice est réalisée sur les 12 dimensions présentes au sein de l'Empreinte Sociétale (Emissions de GES, Ecart de rémunération femmes/hommes, etc.). Il peut être facilement à d'autres dimensions sociales et environnementales.
+
+## Construction des données d'empreintes
+
+La méthodologie repose sur une application standardisée de l'analyse entrées-sorties augmentée, dont les étapes successives sont décrites ci-dessous.
+
+### 1- Calcul de la matrice des coefficients techniques
+
+La matrice des coefficients techniques, notée A, décrit les intrants nécessaires à chaque secteur pour produire une unité de production dans un autre secteur.
+
+<BlockMath math={'A = \\frac{IC}{\\operatorname{diag}(PRD)}'} />
+
+### 2- Calcul de la matrice inverse de Leontief
+
+La matrice inverse de Leontief, notée L est donnée par la formule :
+
+<BlockMath math={'L = (I - A)^{-1}'} />
+
+Elle représente le niveau total de production requis dans chaque secteur (direct + indirect) pour répondre à une unité de demande finale. Elle capture la structure d'interdépendance des branches d'activité à travers la chaîne de valeur.
+
+Afin d'éviter les effets de double comptage dus aux boucles intersectorielles, une normalisation de la matrice L est appliquée par sa diagonale :
+
+<BlockMath math={'L_\\mu = \\frac{L}{\\operatorname{diag}(L)}'} />
+
+### 3- Construction du vecteur d'intensité d'impact direct
+
+Pour chaque dimension suivie, on construit un vecteur d'intensité d'impact direct C, exprimé par euro de production dans chaque secteur (format NACE A64).
+
+### 4- Calcul des empreintes brutes
+
+Les empreintes brutes sont calculées selon une approche centrée sur la production totale, contrairement à la méthodologie classique de Léontief, qui mesure l'empreinte à partir de la demande finale. Cette orientation permet une meilleure application à l'échelle de l'entreprise, où la production constitue la grandeur de référence.
+
+La formule de calcul des impacts brutes est la suivante :
+
+<BlockMath math={'E = \\operatorname{diag}(C) \\cdot L^\\mu \\cdot \\operatorname{diag}(PRD)'} />
+
+Chaque élément de la matrice obtenue représente l'ensemble des externalités induites par la production d'une branche, en incluant les effets indirects à travers les chaînes d'approvisionnement.
+
+### 5- Calcul des d'empreinte des agrégats en intensité
+
+À partir du vecteur d'empreinte totale E, on dérive plusieurs intensités d'empreinte sectorielles, exprimées en impact par unité monétaire.
+
+**Empreintes de la production**
+
+<BlockMath math={'E_{\\text{PRD}} = \\frac{E_{\\text{PRD}}}{1}'} />
+
+**Empreinte de la valeur ajoutée brute (EGVA)**
+
+<BlockMath math={'E_{\\text{GVA}} = \\frac{C_{\\text{GVA}}}{1}'} />
+
+**Empreinte des consommations intermédiaires (EIC)**
+
+<BlockMath math={'E_{\\text{IC}} = \\frac{E}{C_{\\text{IC}}}'} />

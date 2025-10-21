@@ -1,0 +1,151 @@
+// ============================================
+// Section Block Component
+// Nomenclature BEM: Block Element Modifier
+// ============================================
+
+.section {
+  padding: $section-padding;
+  position: relative;
+  overflow: hidden;
+
+  // Modificateurs pour l'alternance de couleurs
+  &--primary {
+    background: #fff;
+  }
+
+  &--secondary {
+    background: $light;
+  }
+
+  &--alternate {
+    &:nth-child(odd) {
+      background: #fff;
+    }
+
+    &:nth-child(even) {
+      background: $light;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 767.98px) {
+    padding: 3.5rem 0;
+  }
+
+
+
+  // Titre de section
+  &__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: $primary;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 767.98px) {
+      font-size: 1.875rem;
+    }
+
+    // Accent décoratif
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.9rem;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: rgba($accent, 0.85);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    // Variante centrée
+    &--center {
+      text-align: center;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+
+  // Bloc de texte
+  &__content {
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba($primary, 0.85);
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+    }
+  }
+
+  // Bloc illustration
+  &__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    // Effet de halo subtil autour des illustrations
+    &::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba($accent, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  // Wrapper pour les logos
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: $card-padding-lg;
+    border-radius: $card-border-radius-lg;
+    box-shadow: 0 4px 20px rgba($primary, 0.08);
+    @include card-hover-effect;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  // Actions/Boutons
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+    }
+  }
+}

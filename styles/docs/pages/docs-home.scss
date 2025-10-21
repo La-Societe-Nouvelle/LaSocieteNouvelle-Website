@@ -1,0 +1,69 @@
+// ===================================
+// Documentation Home Page
+// ===================================
+
+.docs-theme {
+  .docs-home {
+    padding: 3rem 0;
+
+    h1 {
+      color: $primary;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: $docs-accent;
+        border-radius: 2px;
+      }
+    }
+
+    .lead {
+      color: rgba($primary, 0.8);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    // Styles pour vos futurs composants de documentation
+    .docs-card {
+      background: white;
+      border: 1px solid rgba($docs-accent, 0.15);
+      border-radius: $card-border-radius;
+      padding: $card-padding;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $docs-accent;
+        box-shadow: 0 8px 24px rgba($docs-accent, 0.15);
+        transform: translateY(-2px);
+      }
+
+      h2, h3 {
+        color: $docs-accent;
+      }
+    }
+
+    .docs-section {
+      margin-bottom: 3rem;
+
+      &__title {
+        color: $primary;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba($docs-accent, 0.2);
+      }
+    }
+  }
+}

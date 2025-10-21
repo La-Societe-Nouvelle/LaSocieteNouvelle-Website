@@ -1,0 +1,55 @@
+.legal-page {
+
+  // Hero Section
+  .legal-hero {
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
+    text-align: center;
+
+    .legal-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $primary;
+      margin: 0;
+    }
+  }
+
+  .legal-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid rgba($primary, 0.08);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+  }
+
+}
+
+// Responsive
+@media (max-width: 991px) {
+  .legal-page {
+    .legal-hero {
+      padding: 40px 0;
+
+      .legal-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    .legal-content {
+      padding: 40px 0 60px 0;
+
+      .legal-card {
+        padding: 2rem 1.5rem;
+
+        .legal-section {
+          h2 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

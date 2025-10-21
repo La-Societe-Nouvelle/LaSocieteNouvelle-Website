@@ -1,0 +1,203 @@
+// Key Figures Card Component - Style générique réutilisable
+// Inspiré du style databrowser, adaptable à tous les contextes
+
+.key-figure-card {
+  background: #fff;
+  border: 1px solid rgba($accent, 0.15);
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  @include animated-color-bar($accent);
+
+  // Effets au survol
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba($accent, 0.2);
+    border-color: rgba($accent, 0.3);
+
+    .key-figure-icon {
+      background: $accent;
+      color: #fff;
+    }
+
+    .value-number {
+      color: darken($accent, 10%);
+    }
+  }
+
+  // Variantes de couleur
+  &.variant-secondary {
+    border-color: rgba($secondary, 0.15);
+    @include animated-color-bar($secondary);
+
+    .key-figure-icon {
+      background: rgba($secondary, 0.1);
+      color: $secondary;
+    }
+
+    &:hover {
+      box-shadow: 0 12px 32px rgba($secondary, 0.2);
+      border-color: rgba($secondary, 0.3);
+
+      .key-figure-icon {
+        background: $secondary;
+        color: #fff;
+      }
+
+
+    }
+  }
+
+  &.variant-primary {
+    border-color: rgba($primary, 0.15);
+    @include animated-color-bar($primary);
+
+    .key-figure-icon {
+      background: rgba($primary, 0.1);
+      color: $primary;
+    }
+
+    &:hover {
+      box-shadow: 0 12px 32px rgba($primary, 0.2);
+      border-color: rgba($primary, 0.3);
+
+      .key-figure-icon {
+        background: $primary;
+      }
+
+      .value-number {
+        color: darken($primary, 10%);
+      }
+    }
+  }
+
+  // En-tête de la card (optionnel)
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  // Icône
+  .key-figure-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba($accent, 0.1);
+    color: $accent;
+    border-radius: $card-border-radius-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 1.75rem;
+    }
+  }
+
+  // Badge/période (optionnel)
+  .key-figure-period {
+    background: rgba($accent, 0.1);
+    color: $accent;
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba($accent, 0.2);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  // Valeur principale
+  .key-figure-value {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+
+    .value-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: $primary;
+      line-height: 1;
+      transition: color 0.3s ease;
+
+      @media (max-width: 576px) {
+        font-size: 2rem;
+      }
+    }
+
+    .value-unit {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba($primary, 0.6);
+    }
+  }
+
+  // Titre/description
+  .key-figure-title {
+    font-size: 0.95rem;
+    color: rgba($primary, 0.8);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  // Version compacte (sans icône en haut)
+  &.compact {
+    padding: $card-padding-sm;
+
+    .key-figure-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+
+    .key-figure-value .value-number {
+      font-size: 2rem;
+
+      @media (max-width: 576px) {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
+
+// Section conteneur pour les key figures
+.key-figures-section {
+  padding: $section-padding;
+  background: #fff;
+
+  &.bg-light {
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
+  }
+
+  @media (max-width: 767.98px) {
+    padding: $section-padding-sm;
+  }
+
+  .section__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .key-figures-grid {
+    margin-bottom: 2rem;
+  }
+}

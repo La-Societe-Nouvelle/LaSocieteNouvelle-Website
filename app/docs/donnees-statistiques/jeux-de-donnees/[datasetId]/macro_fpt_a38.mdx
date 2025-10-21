@@ -1,0 +1,134 @@
+## Empreintes des branches d'activité (macro_fpt_a38)
+
+### Présentation
+
+Le jeu de données **macro_fpt_a38** regroupe les empreintes des agrégats des branches d'activité (x38).
+
+Les données permettent de suivre l'évolution des impacts des activités économiques sur un panel de dimensions sociales et environnementales clés pour un développement durable.
+
+---
+
+### Description des données
+
+Le jeu de données contient les empreintes des principaux agrégats des branches d'activités (x38) en France, sur les années pour lesquelles des données sociales ou environnementales sont disponibles.
+
+#### Construction des données
+
+Les données sont construites à partir des données d'impacts disponibles et des données de la comptabilité nationale (publiées, projetées ou rétropolées).
+
+Le script de production des données est accessible librement via le répertoire GitHub ci-après :  
+👉 [Package lsnR-Lab](https://github.com/La-Societe-Nouvelle/lsnr-lab)
+
+#### Sources de données utilisées pour chaque indicateur
+
+Sources des données sociales et environnementales utilisées pour estimer l'empreinte de la valeur ajoutée des branches :
+
+- **ART** : DGE - Chiffres-clés de l'Artisanat  
+- **ECO** : Production intérieure par définition  
+- **GEQ** : Insee - Base tous salariés (bts, fichier détail "salariés")  
+- **GHG** : Eurostat - Comptes d'émissions atmosphériques par activité de la NACE Rev.2 (`env_ac_ainah_r2`)  
+- **HAZ** : Eurostat - Production de produits manufacturés (`prodcom`)  
+- **IDR** : Insee - Base tous salariés (bts, fichier détail "salariés")  
+- **KNW** : Eurostat - Coûts des cours FPC (Formation Professionnelle Continue) par type et activité de la NACE Rev.2 (`trng_cvt_16n2`)  
+- **MAT** : Eurostat - Comptes de flux de matières (`env_ac_mfa`)  
+- **NRG** : Eurostat - Ressources et emploi d'énergie par activité de la NACE Rev.2 (`env_ac_pefasu`)  
+- **SOC** : Répertoire Sirene  
+- **WAS** : Eurostat - Déchets générés par catégorie de déchets, dangerosité, et activité de la NACE Rev.2 (`env_wasgen`)  
+- **WAT** : Eurostat - Prélèvements annuels d'eau douce par source et par secteur (`env_wat_abs`)
+
+#### Nomenclature des activités
+
+Utilisation de la **Nomenclature NACE Rev.2**
+
+#### Unités
+
+Les valeurs sont exprimées selon **l'unité par défaut de l'indicateur**.
+
+#### Bases monétaires exprimées
+
+La base monétaire correspond à la devise et à l'année de référence utilisées pour les indicateurs de type intensité (ex. *kg/€*), afin de distinguer les intensités en euro courant et en euro constant.  
+Pour les autres indicateurs, cette base est non applicable, les résultats n’étant pas exprimés sur une base monétaire.
+
+Les données sont actuellement produites en **euros courants (CP)** et **euros constants (2022)**.  
+Le changement de base monétaire s’effectue à partir des **indices des prix à la consommation** (source : Insee).
+
+Coefficients de transformation de l’euro utilisés :  
+👉 [Série "Coefficient de transformation de l’euro" - Insee](https://www.insee.fr/fr/statistiques/serie/010605954)
+
+#### Espaces économiques disponibles
+
+Les données sont actuellement produites pour :
+- **France (FRA)**
+- **Union Européenne (EUU)**
+- **Monde (WLD)**
+
+---
+
+### Paramètres de requête
+
+**Liste des paramètres :**
+
+<table>
+  <thead>
+    <tr>
+      <th>Paramètre</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>branch</code></td>
+      <td>Code de la branche</td>
+    </tr>
+    <tr>
+      <td><code>aggregate</code></td>
+      <td>Code de l’agrégat</td>
+    </tr>
+    <tr>
+      <td><code>area</code></td>
+      <td>Code de l’espace économique</td>
+    </tr>
+    <tr>
+      <td><code>year</code></td>
+      <td>Année</td>
+    </tr>
+    <tr>
+      <td><code>currency</code></td>
+      <td>Base monétaire</td>
+    </tr>
+    <tr>
+      <td><code>indic</code></td>
+      <td>Indicateur</td>
+    </tr>
+  </tbody>
+</table>
+
+**Endpoint de l’API :**  
+[`https://api.lasocietenouvelle.org/macrodata/macro_fpt_a38`](https://api.lasocietenouvelle.org/macrodata/macro_fpt_a38)
+
+---
+
+### Commentaires
+
+Aucun commentaire additionnel.
+
+---
+
+### Licence
+
+Les données sont diffusées sous **licence ouverte Etalab**.
+
+---
+
+### Contact
+
+**Producteur des données :** La Société Nouvelle  
+
+Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)  
+Adresse mail : **contact@lasocietenouvelle.org**
+
+---
+
+### Mise à jour
+
+Dernière mise à jour des métadonnées : **15/07/2025**

@@ -1,0 +1,160 @@
+## Lecture des Déclarations Sociales Nominatives (DSN)
+
+### Introduction
+
+Lors de l'import, seules les données nécessaires à la production des indicateurs sociaux sont extraites du fichier.  
+
+Les données restent dans la page web (au sein du navigateur) et ne font aucunement l'objet d'une collecte.
+
+---
+
+### Données extraites
+
+#### Éléments relatifs à la déclaration (`S20.G00.05`)
+
+Ces données permettent de vérifier que l'ensemble des déclarations ont bien été déposées, sans doublon.  
+
+**Éléments lus :**  
+- `S20.G00.05.001` — Nature  
+- `S20.G00.05.002` — Type  
+- `S20.G00.05.003` — Fraction  
+- `S20.G00.05.004` — Ordre  
+- `S20.G00.05.005` — Mois  
+- `S20.G00.05.007` — Date  
+- `S20.G00.05.008` — Champ  
+- `S20.G00.05.010` — Devise  
+
+#### Éléments relatifs à l’entreprise (`S21.G00.06`)
+
+**Éléments lus :**  
+- `S21.G00.06.001` — Siren  
+- `S21.G00.06.002` — Nic  
+
+#### Éléments relatifs à l’établissement (`S21.G00.11`)
+
+**Éléments lus :**  
+- `S21.G00.11.001` — Nic  
+
+#### Éléments relatifs aux individus (`S21.G00.30`)
+
+**Éléments lus :**  
+- `S21.G00.30.001` — Identifiant  
+- `S21.G00.30.002` — Nom de famille  
+- `S21.G00.30.003` — Nom d’usage  
+- `S21.G00.30.004` — Prénoms  
+- `S21.G00.30.005` — Sexe  
+- `S21.G00.30.020` — Identifiant technique  
+
+À ces éléments s’ajoutent les éléments relatifs aux **contrats** et aux **versements**.
+
+---
+
+### Éléments relatifs aux contrats (`S21.G00.40`)
+
+**Éléments lus :**  
+- `S21.G00.40.001` — Date de début  
+- `S21.G00.40.002` — Statut conventionnel  
+- `S21.G00.40.004` — PCS ESE  
+- `S21.G00.40.005` — Complément PCS ESE  
+- `S21.G00.40.007` — Nature  
+- `S21.G00.40.009` — Numéro  
+- `S21.G00.40.011` — Unité de mesure  
+- `S21.G00.40.012` — Catégorie de quotité  
+- `S21.G00.40.013` — Quotité  
+- `S21.G00.40.014` — Modalité de temps  
+
+---
+
+### Éléments relatifs aux versements (`S21.G00.50`)
+
+**Éléments lus :**  
+- `S21.G00.50.001` — Date  
+
+Pour chaque versement sont associés :  
+- les **rémunérations** (`S21.G00.51`),  
+- les **primes** (`S21.G00.52`),  
+- et les **autres revenus** (`S21.G00.54`).
+
+---
+
+### Éléments relatifs aux rémunérations (`S21.G00.51`)
+
+**Éléments lus :**  
+- `S21.G00.51.001` — Date de début  
+- `S21.G00.51.002` — Date de fin  
+- `S21.G00.51.010` — Numéro de contrat  
+- `S21.G00.51.011` — Type  
+- `S21.G00.51.012` — Nombre d’heures  
+- `S21.G00.51.013` — Montant  
+
+Pour chaque rémunération sont associées les **activités** (`S21.G00.53`) concernées.
+
+---
+
+### Éléments relatifs aux primes (`S21.G00.52`)
+
+**Éléments lus :**  
+- `S21.G00.52.001` — Type  
+- `S21.G00.52.002` — Montant  
+
+---
+
+### Éléments relatifs aux activités (`S21.G00.53`)
+
+**Éléments lus :**  
+- `S21.G00.53.001` — Type  
+- `S21.G00.53.002` — Mesure  
+- `S21.G00.53.003` — Unité  
+
+---
+
+### Éléments relatifs aux autres revenus (`S21.G00.54`)
+
+**Éléments lus :**  
+- `S21.G00.54.001` — Type  
+- `S21.G00.54.002` — Montant  
+
+---
+
+## Calcul de l’écart D9/D1
+
+Le calcul de l’écart D9/D1 se fait à partir du **nombre d’heures de travail** et du **taux horaire** de chaque personne.
+
+### Rémunérations prises en compte 
+- Rémunérations brutes non plafonnées (`type 001`)  
+- Heures d’équivalence (`type 012`)  
+- Heures d’habillage, déshabillage, pause (`type 013`)  
+- Heures supplémentaires ou complémentaires aléatoires (`type 017`)  
+- Heures supplémentaires structurelles (`type 018`)  
+
+### Primes prises en compte 
+- Primes exceptionnelles liées à l’activité avec période de rattachement spécifique (`type 026`)  
+- Primes liées à l’activité avec période de rattachement spécifique (`type 027`)  
+- Primes non liées à l’activité (`type 028`)  
+- Primes liées au rachat de jours RTT (`type 029`)  
+- Primes rachat CET (`type 030`)  
+
+### Autres revenus pris en compte
+- Avantages en nature (`types 02, 03, 04, 05, 06`)  
+- Participations (`type 11`)  
+- Intéressements (`type 12`)  
+- Abonnements aux plans d’épargne (`types 14, 15, 16`)  
+- Participations patronales (`types 17, 18, 19`)  
+- Droits d’auteur (`type 25`)  
+- Droits de doublage (`type 26`)  
+- Droits de rediffusion (`type 27`)  
+- Avantages de préretraite versés par l’employeur (`type 31`)  
+- Sommes provenant d’un CET réaffectées à un PERCO ou à un régime de retraite supplémentaire (`type 33`)  
+- Participation de l’employeur aux chèques vacances (`type 91`)  
+- Cotisations frais de santé (`type 92`)  
+- Cotisations prévoyance et retraite supplémentaire (`type 93`)  
+
+> Le rapport interdécile est obtenu en ordonnant les taux horaires par ordre croissant, puis en calculant le **rapport du taux horaire maximal du premier décile sur le taux horaire minimal du dernier décile**.
+
+---
+
+## Calcul de l’écart de rémunération femmes/hommes
+
+La valeur correspond à **l’écart entre le taux horaire moyen des femmes et celui des hommes**, rapporté au taux horaire moyen global.  
+
+Chaque taux horaire est **pondéré par le nombre d’heures travaillées**.

@@ -1,0 +1,221 @@
+// ===============================
+// HIGHLIGHT SECTION
+// ===============================
+.highlight-section {
+  position: relative;
+  margin : 4cap 0;
+  &__content {
+    background: $light;
+    border-radius: $card-border-radius-xl;
+    padding: 4rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $primary;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 991.98px) {
+      justify-content: center;
+    }
+  }
+
+  &__illustration {
+    position: relative;
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: $card-border-radius;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08));
+    }
+  }
+
+  &__footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+
+    @media (max-width: 767.98px) {
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
+// ===============================
+// SERVICE CARD
+// ===============================
+.service-card {
+  background: #fff;
+  border: 1px solid rgba($primary, 0.08);
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include card-hover-effect;
+
+  // Badge pour catégoriser les services
+  &__badge {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+
+    &--entreprise {
+      background: $accent;
+    }
+
+    &--syndicat {
+      background: $secondary;
+    }
+
+    &--collectivite {
+      background: #EDEDF2;
+      color: $primary;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $primary;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__intro {
+    text-align: center;
+    font-size: 0.95rem;
+    color: $primary;
+    margin-bottom: 1rem;
+
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    color: $body-color;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+
+    li {
+      font-size: 0.9rem;
+      color: $body-color;
+      line-height: 1.8;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      i.bi-check-circle {
+        color: $accent;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  &__feature-optional {
+    font-style: italic;
+    color: rgba($primary, 0.6);
+    padding-left: 1.5rem;
+  }
+
+  &__price {
+    font-size: 1.1rem;
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid $primary;
+    border-radius: 50px;
+    color: $primary;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+
+// ===============================
+// UTILS
+// ===============================
+.link-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 991.98px) {
+    justify-content: center;
+  }
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}

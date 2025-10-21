@@ -1,0 +1,61 @@
+## Etapes de calcul
+
+L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effectue en 4 étapes :
+
+1. Import des écritures comptables  
+2. Catégorisation des comptes de charges et d'immobilisations  
+3. Identification des fournisseurs  
+4. Déclaration des impacts directs  
+
+---
+
+### Import des écritures comptables
+
+L'importation des écritures comptables s'effectue via un Fichier d'Ecritures Comptables (FEC).  
+
+Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage ISO 8859-15, etc.).  
+
+**Ressources externes :**
+- Normes concernant le fichier d'écritures comptables  
+- Outil de test mis à disposition par la DGFiP  
+
+Lors de l'import, une étape intermédiaire permet d'identifier le journal des A-Nouveaux. Dans le cas d'un premier exercice, sans A-Nouveaux, il suffit de valider la sélection sans cocher de case.  
+
+Une fois l'importation effectuée, 5 vues sont mises à disposition pour vérifier la lecture des écritures comptables :  
+- Compte de Résultat  
+- Soldes Intermédiaires de Gestion  
+- Tableau des immobilisations  
+- Tableau des stocks  
+- Liste des montants par compte de charges  
+
+Les chiffres clefs à vérifier sont ceux présents au sein des Soldes Intermédiaires de Gestion (deuxième onglet).  
+
+La lecture des écritures peut entraîner des exceptions (problèmes de lecture) dans le cas où certains flux ne peuvent être tracés. Ces exceptions interviennent notamment lorsque plusieurs opérations sont regroupées au sein d'une même écriture comptable.  
+
+### Catégorisation des comptes de charges et d'immobilisations
+
+La catégorisation des comptes de charges et d'immobilisations permet d'estimer les impacts indirects associés aux dépenses et aux investissements.  
+
+- Pour les immobilisations, une association est faite par défaut à partir des numéros des comptes.  
+- Pour les charges, il est possible d'effectuer une association via l'utilisation d'une IA générative, à partir des libellés et des numéros des comptes.  
+
+### Identification des fournisseurs
+
+L'identification des fournisseurs s'effectue via le numéro de siren.  
+
+La correspondance entre le numéro de compte auxiliaire présent au sein des écritures comptables et le numéro de siren peut se faire via l'import d'un fichier (.csv ou .xlsx). Le modèle prérempli est disponible au téléchargement.  
+
+### Evaluation et Déclaration des impacts directs
+
+La déclaration des impacts directs se fait pour chaque indicateur.  
+
+Une fois la déclaration validée, les résultats sont directement accessibles, au sein du tableau de bord.  
+
+Des outils d'évaluation sont mis à disposition pour la mesure des impacts suivants :  
+- Emissions directes de gaz à effet de serre  
+- Consommation directe d'énergie  
+- Contribution directe à l'évolution des compétences et des connaissances  
+- Indice de répartition des rémunérations  
+- Ecart de rémunérations femmes/hommes  
+
+Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/empreinte-societale/declarations)

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Analyse extra-financière",
+    "audience": "à destination des TPE/PME",
+    "description": "Vous souhaitez obtenir l'empreinte sociétale de votre entreprise ? Nous vous accompagnons dans la production des indicateurs, et nous vous proposons une analyse de vos résultats.",
+    "image": "/illustrations/analyse-data.svg"
+  },
+  {
+    "title": "Étude prospective",
+    "audience": "à destination des syndicats professionnels",
+    "description": "Vous souhaitez connaître les enjeux sociaux et environnementaux liés à votre activité économique ? Nous adaptons nos travaux de modélisation statistique pour anticiper les évolutions et dessiner des trajectoires cibles.",
+    "image": "/illustrations/economy-benchmark.svg" 
+  },
+  {
+    "title": "Développement informatique",
+    "audience": "à destination des structures d'accompagnement",
+    "description": "Vous souhaitez développer des outils autour de la production d'indicateurs extra-financiers ? Nous mettons à votre disposition notre expertise autour du traitement des données financières et sociales, et de la production de tableau de bord.",
+    "image": "/illustrations/code-thinking.svg"
+  }
+]

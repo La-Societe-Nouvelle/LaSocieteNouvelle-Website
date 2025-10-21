@@ -1,0 +1,53 @@
+// ===================================
+// Documentation - Notes de bas de page
+// ===================================
+
+.docs-theme {
+  .docs-content {
+    // Référence dans le texte
+    sup {
+      a {
+        text-decoration: none;
+        color: $docs-accent;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Section footnotes
+    .footnotes {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid rgba($docs-accent, 0.2);
+      font-size: 0.9rem;
+      color: rgba($primary, 0.75);
+
+      ol {
+        padding-left: 1.5rem;
+
+        li {
+          margin-bottom: 1rem;
+          line-height: 1.7;
+
+          p {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      // Lien retour
+      .data-footnote-backref {
+        text-decoration: none;
+        margin-left: 0.5rem;
+        color: $docs-accent;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

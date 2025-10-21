@@ -1,0 +1,138 @@
+// ===================================
+// Documentation Footer - Thème Gris-bleu ardoise
+// ===================================
+
+.docs-theme {
+  .docs-footer {
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, $docs-accent-light 100%);
+    border-top: 2px solid rgba($docs-accent, 0.15);
+
+    .footer-main {
+      padding: 3rem 0 2rem;
+
+      .footer-brand {
+        .footer-description {
+          color: rgba($primary, 0.8);
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin: 1.5rem 0;
+        }
+
+        .footer-socials {
+          display: flex;
+          gap: 0.75rem;
+
+          .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba($docs-accent, 0.1);
+            color: $docs-accent;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            i {
+              font-size: 1.2rem;
+            }
+
+            &:hover {
+              background: $docs-accent;
+              color: white;
+              transform: translateY(-3px);
+              box-shadow: 0 6px 20px rgba($docs-accent, 0.3);
+            }
+          }
+        }
+      }
+
+      .footer-section {
+        .footer-title {
+          color: $primary;
+          font-size: 0.95rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 0.75rem;
+
+            a {
+              color: rgba($primary, 0.75);
+              text-decoration: none;
+              font-size: 0.9rem;
+              transition: all 0.2s ease;
+              display: inline-block;
+
+              &:hover {
+                color: $docs-accent;
+                transform: translateX(4px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba($docs-accent, 0.1);
+      padding: 1.5rem 0;
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .footer-copyright {
+          color: rgba($primary, 0.7);
+          font-size: 0.85rem;
+          margin: 0;
+        }
+
+        .footer-badges {
+          display: flex;
+          gap: 1rem;
+
+          .badge-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba($docs-accent, 0.1);
+            color: $docs-accent;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    // Responsive
+    @media (max-width: 767.98px) {
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+
+        .footer-badges {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

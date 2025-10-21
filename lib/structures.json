@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Citepa",
+    "href": "https://www.citepa.org/",
+    "img": "/partners/citepa.svg",
+    "height": 100
+  },
+  {
+    "name": "APESA",
+    "href": "https://valorisation.apesa.fr",
+    "img": "/partners/apesa.svg",
+    "height": 100
+  },
+  {
+    "name": "Université de Bordeaux",
+    "href": "https://www.u-bordeaux.fr",
+    "img": "/partners/u-bordeaux.png",
+    "height": 100
+  },
+  {
+    "name": "Université Paris Nanterre",
+    "href": "https://www.parisnanterre.fr/",
+    "img": "/partners/u-paris-nanterre.png",
+    "height": 100
+  }
+]

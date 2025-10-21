@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Coq Vert",
+    "href": "https://www.bpifrance.fr/communaute-du-coq-vert",
+    "img": "/partners/Coq_Vert_RVB.png",
+    "height": 80
+  },
+  {
+    "name": "Mouvement Impact France",
+    "href": "https://www.impactfrance.eco/",
+    "img": "/partners/Logo_du_Mouvement_Impact_France.svg",
+    "height": 80
+  },
+  {
+    "name": "BPI France",
+    "href": "https://www.bpifrance.fr/",
+    "img": "/partners/bpifrance.svg",
+    "height": 50
+  },
+  {
+    "name": "Région Hauts-de-France",
+    "href": "https://www.hautsdefrance.fr/",
+    "img": "/partners/logo-hdf.svg",
+    "height": 80
+  },
+  {
+    "name": "Ministère de l'économie",
+    "href": "https://www.economie.gouv.fr/",
+    "img": "/partners/ministere_de_l_economie.svg",
+    "height": 80
+  }
+]

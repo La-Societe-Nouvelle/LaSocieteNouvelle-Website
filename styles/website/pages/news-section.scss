@@ -1,0 +1,233 @@
+.news-section {
+  padding: 5rem 0;
+
+  .news-cta {
+    text-align: center;
+    margin-top: 3rem;
+
+    .news-cta-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $primary;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border-radius: 12px;
+      background: $light;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+
+      i {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background: #fff;
+        border-color: $primary;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+        i {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}
+
+.latest-posts {
+  .secondary-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+  }
+
+  .post-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba($primary, 0.1);
+    @include card-hover-effect;
+
+    &:hover {
+      border-color: rgba($accent, 0.2);
+
+      .post-image {
+        transform: scale(1.05);
+      }
+
+      .post-title,
+      .post-title-small {
+        color: $accent;
+      }
+    }
+  }
+
+  .post-card-featured {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .post-image-wrapper {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: $light;
+      position: relative;
+
+      @media (max-width: 768px) {
+        height: 200px;
+      }
+    }
+
+    .post-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .post-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $accent;
+      background: rgba($accent, 0.1);
+      padding: 0.375rem 0.875rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      transition: color 0.3s ease;
+
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    .post-excerpt {
+      font-size: 1rem;
+      color: rgba($primary, 0.7);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .post-card-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem;
+
+    .post-image-wrapper-small {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: $light;
+
+      @media (max-width: 768px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .post-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .post-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $secondary;
+      background: rgba($secondary, 0.1);
+      padding: 0.25rem 0.625rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      width: fit-content;
+    }
+
+    .post-title-small {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .post-excerpt-small {
+      font-size: 0.875rem;
+      color: rgba($primary, 0.6);
+      line-height: 1.5;
+      margin: 0;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .post-card-compact {
+    padding: 1.5rem;
+
+    .post-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $primary;
+      background: rgba($primary, 0.1);
+      padding: 0.25rem 0.625rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      width: fit-content;
+    }
+
+    .post-title-small {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $primary;
+      margin: 0;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+
+      @media (max-width: 768px) {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

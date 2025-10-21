@@ -1,0 +1,51 @@
+// ===================================
+// Documentation Navigation (liens entre pages)
+// ===================================
+
+.docs-theme {
+  .docs-navigation {
+    margin-top: 1rem;
+  
+
+    .docs-navigation-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $primary;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba($docs-accent, 0.15);
+    }
+
+  
+  }
+
+     .docs-navigation-link {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        margin-bottom: 0.25rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+
+        &:hover {
+          color: $docs-accent;
+          background: rgba($docs-accent, 0.05);
+          border-left-color: rgba($docs-accent, 0.3);
+          padding-left: 1rem;
+        }
+
+        &.sidebar-title {
+          color: $docs-accent;
+          font-weight: 600;
+          background: rgba($docs-accent, 0.1);
+          border-left-color: $docs-accent;
+        }
+      }
+      
+}

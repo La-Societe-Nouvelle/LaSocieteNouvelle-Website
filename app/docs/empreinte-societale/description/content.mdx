@@ -1,0 +1,90 @@
+## Description de l'Empreinte Sociétale
+
+L'Empreinte Sociétale de l'Entreprise mesure les impacts sociaux, environnementaux et économiques associés à la valeur économique produite. Elle repose sur un ensemble d'indicateurs permettant d'évaluer et de piloter la performance extra-financière.
+
+### Types d'indicateurs
+
+L'Empreinte Sociétale de l'Entreprise regroupe 3 types d'indicateurs :
+
+#### Taux de contribution (en % de la valeur)
+
+Part de la valeur fléchée vers des entreprises, des postes de dépenses ou des activités spécifiques, grandeur monétaire par unité de valeur.
+
+*Ex : contribution à l'économie nationale, contribution à l'évolution des compétences, etc.*
+
+#### Intensité (en g/€, m²/€, etc.)
+
+Grandeur physique par unité de valeur
+
+*Ex : intensité énergétique (kJ/€), intensité carbone (gCO2e/€), etc.*
+
+#### Indice
+
+Grandeur sans dimension (i.e. non exprimée par unité de valeur)
+
+*Ex : Ecart de rémunérations F/H, Indice de répartition des rémunérations (Indice de GINI), etc.*
+
+Ces trois formats sont désignés comme des **Indicateurs de Qualité de la Valeur Economique (IQVE)** ; ils sont indépendants du volume monétaire auquel ils sont associés. Ils apportent une information sur les externalités liées à la production de la valeur économique en question (impacts générés, conditions de production, etc.).
+
+### Propriétés des indicateurs
+
+#### Impact brut
+
+Les indicateurs de type taux de contribution et intensité peuvent être considérés comme des facteurs d'impacts monétaires. Il est possible d'obtenir à partir du volume monétaire (montant), l'impact brut de la valeur à laquelle ils sont associés (en euros pour les contributions et selon la grandeur physique utilisée pour les intensités).
+
+<div className="formula-block">
+  <div className="formula">
+    IV<sub>E</sub> = XV<sub>E</sub> × V<sub>e</sub>
+  </div>
+
+  **Où :**
+
+  - **IV<sub>E</sub>** : Impact lié à la valeur économique (dépense, chiffre d'affaires, etc.)
+  - **XV<sub>E</sub>** : Qualité de la valeur économique (IQVE hors indices)
+  - **V<sub>e</sub>** : Valeur économique considérée (volume monétaire : montant de la dépense, du chiffre d'affaires, etc.)
+</div>
+
+#### Incertitude
+
+Pour chaque valeur (hors valeurs macroéconomiques) est associée une incertitude, exprimée en pourcentage de la valeur.
+
+L'utilisation de données par défaut (Cf. Base de données ouverte) issues de statistiques macroéconomiques ne permet pas de définir une incertitude stricto sensu, c'est-à-dire, un intervalle dans lequel la valeur se situe obligatoirement. Il est cependant déterminé un intervalle dans lequel la valeur a de forte probabilité de se situer. Il est important de noter qu'il existe donc une probabilité non nulle pour que la valeur réelle se situe hors de cette « incertitude ».
+
+En l'absence de statistiques suffisantes à l'échelle des entreprises, ces intervalles sont déterminés en fonction des valeurs minimales et maximales qui peuvent être raisonnablement atteintes et de l'amplitude des valeurs disponibles au niveau des branches d'activités. Les choix des intervalles de confiance sont détaillés le plus possible au sein des fiches de chaque indicateur. Pour certains indicateurs, l'incertitude associée peut être fortement élevée.
+
+Ex. Pour certains indicateurs, il existe un facteur supérieur à 10 entre la valeur moyenne à l'échelle de la production intérieure française, et la valeur maximale pouvant être atteinte, soit une incertitude associée supérieure à 1000%.
+
+La complétion de la base de données permettra au fur-et-à-mesure d'ajuster les intervalles de confiance grâce aux données disponibles. En parallèle des travaux statistiques ont vocation à consolider les données par défaut proposées et l'estimation des intervalles de confiance qui leur sont associés.
+
+#### Origine de la valeur
+
+Pour chaque valeur, est fournie une indication sur son origine et son mode d'obtention.
+
+Cette information est symbolisée par un code (« flag ») avec les significations suivantes :
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Libellé</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>p</td>
+      <td>Valeur publiée</td>
+      <td>Valeur publiée par l'entreprise</td>
+    </tr>
+    <tr>
+      <td>e</td>
+      <td>Valeur estimée</td>
+      <td>Valeur estimée à partir des données publiques</td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>Valeur par défaut</td>
+      <td>Valeur proposée à partir de données statistiques</td>
+    </tr>
+  </tbody>
+</table>

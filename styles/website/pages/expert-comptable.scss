@@ -1,0 +1,414 @@
+// Page Expert-Comptable
+
+.expert-comptable-page {
+
+
+
+  .intro-quote {
+    font-style: italic;
+    color: #555;
+    background-color: $light;
+    margin: 2rem 0; 
+    border-left: 4px solid $databrowser-accent; // ta couleur bleue tech
+    padding: 2rem;
+  }
+
+  .quote-section {
+    padding: 4rem 0;
+    background: $light;
+    text-align: center;
+
+    blockquote {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: $primary;
+      line-height: 1.8;
+
+      footer {
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+        font-style: normal;
+        color: lighten($primary, 25%);
+      }
+    }
+  }
+
+  .features-section {
+    padding: 4rem 0;
+    background: #fff;
+
+    .features-card {
+      background: linear-gradient(135deg, rgba($accent, 0.03) 0%, rgba($accent, 0.08) 100%);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      border: 2px solid rgba($accent, 0.15);
+      @include card-hover-effect-strong;
+
+      &:hover {
+        border-color: rgba($accent, 0.25);
+      }
+    }
+
+    .features-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+
+      li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: rgba($primary, 0.85);
+        padding-left: 2.5rem;
+        position: relative;
+        margin-bottom: 1rem;
+
+        i {
+          position: absolute;
+          left: 0;
+          color: $accent;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .features-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: $primary;
+      color: #fff;
+      border: 2px solid $primary;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($primary, 5%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary, 0.3);
+        color: #fff;
+      }
+    }
+  }
+
+  .docs-section {
+    padding: 4rem 0;
+    background: $light-secondary;
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .docs-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 2px solid rgba($secondary, 0.15);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      @include card-hover-effect-strong;
+
+      &:hover {
+        border-color: rgba($secondary, 0.25);
+      }
+    }
+
+    .docs-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1.5rem;
+    }
+
+    .docs-content {
+      flex: 1;
+      margin-bottom: 2rem;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: rgba($primary, 0.85);
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 1.5rem;
+
+        li {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: rgba($primary, 0.75);
+          margin-bottom: 0.5rem;
+          position: relative;
+
+          &::before {
+            content: '•';
+            position: absolute;
+            left: -1.5rem;
+            color: $secondary;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .docs-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: #fff;
+      color: $secondary;
+      border: 2px solid $secondary;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      align-self: center;
+
+      &:hover {
+        background: $secondary;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($secondary, 0.3);
+      }
+
+      &.docs-btn-filled {
+        background: $secondary;
+        color: #fff;
+
+        &:hover {
+          background: darken($secondary, 5%);
+        }
+      }
+    }
+  }
+
+  .cap-durabilite-section {
+    padding: 4rem 0;
+    background: #fff;
+
+    .cap-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  // Section Nos travaux
+  .work-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 2px solid rgba($secondary, 0.12);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-color: rgba($secondary, 0.25);
+    }
+
+    .work-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, rgba($secondary, 0.08) 0%, rgba($secondary, 0.05) 100%);
+      border: 1px solid rgba($secondary, 0.2);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $secondary;
+      width: fit-content;
+      margin-bottom: 1.5rem;
+
+      i {
+        font-size: 1rem;
+      }
+    }
+
+    .work-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .work-card-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba($primary, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .work-card-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 2rem 0;
+      flex: 1;
+
+      li {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba($primary, 0.75);
+        padding-left: 1.75rem;
+        position: relative;
+        margin-bottom: 0.75rem;
+
+        &::before {
+          content: '\F285'; // Bootstrap icon chevron-right
+          font-family: bootstrap-icons !important;
+          position: absolute;
+          left: 0;
+          color: $secondary;
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .work-card-footer {
+      margin-top: auto;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  // Section Formation
+  .training-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 2px solid rgba($accent, 0.12);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-color: rgba($accent, 0.25);
+    }
+
+    .training-card-header {
+      background: linear-gradient(135deg, rgba($accent, 0.05) 0%, rgba($secondary, 0.03) 100%);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid rgba($accent, 0.1);
+
+      .training-card-logo {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
+
+        img {
+          max-height: 100%;
+          width: auto;
+          transition: transform 0.3s ease;
+        }
+      }
+
+      .training-card-title {
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 0.5rem;
+      }
+
+      .training-card-provider {
+        font-size: 0.875rem;
+        color: rgba($primary, 0.6);
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+
+    &:hover .training-card-logo img {
+      transform: scale(1.05);
+    }
+
+    .training-card-body {
+      padding: 2rem;
+      flex: 1;
+
+      .training-card-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba($primary, 0.8);
+        margin-bottom: 1.5rem;
+      }
+
+      .training-card-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+          font-size: 0.9rem;
+          line-height: 1.6;
+          color: rgba($primary, 0.75);
+          padding-left: 1.75rem;
+          position: relative;
+          margin-bottom: 0.75rem;
+
+          &::before {
+            content: '\F26A'; // Bootstrap icon check-circle
+            font-family: bootstrap-icons !important;
+            position: absolute;
+            left: 0;
+            color: $accent;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .training-card-footer {
+      padding: 0 2rem 2rem;
+    }
+  }
+
+}
+
+@media (max-width: 991.98px) {
+  .expert-comptable-page {
+ 
+
+    .features-section,
+    .docs-section,
+    .cap-durabilite-section,
+    .partners-section {
+      padding: 3rem 0;
+    }
+
+    .partners-section .embla__slide {
+      width: 180px;
+    }
+  }
+}

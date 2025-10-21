@@ -1,0 +1,127 @@
+// ===================================
+// Documentation Sidebar
+// ===================================
+
+.docs-theme {
+
+  .sidebar-sticky {
+    // position: -webkit-sticky; // Pour Safari
+    // position: sticky;
+    // max-height: calc(100vh - 40px);
+    // overflow-y: auto;
+
+    z-index: 10;
+
+    // Scrollbar custom
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($docs-accent, 0.3);
+      border-radius: 3px;
+
+      &:hover {
+        background: rgba($docs-accent, 0.5);
+      }
+    }
+  }
+
+  .docs-sidebar {
+    position: relative;
+    height: 100%;
+
+
+    .sidebar-summary,
+    .docs-navigation {
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid rgba($docs-accent, 0.15);
+      border-radius: $card-border-radius;
+    }
+
+    .sidebar-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $primary;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba($docs-accent, 0.15);
+
+      // Style spécial pour "VOIR AUSSI"
+      &.sidebar-title-navigation {
+        color: $docs-accent;
+        position: relative;
+        padding-left: 1.5rem;
+        background: linear-gradient(135deg, rgba($docs-accent, 0.08) 0%, rgba($docs-accent, 0.03) 100%);
+        padding: 0.75rem 0.75rem 0.75rem 2.25rem;
+        margin: 1.5rem -0.5rem 1rem -0.5rem;
+        border-radius: 8px;
+        border-bottom: none;
+        border-left: 3px solid $docs-accent;
+
+        &::before {
+          content: '\f470'; // bi-link-45deg
+          font-family: 'bootstrap-icons';
+          position: absolute;
+          left: 0.75rem;
+          font-size: 1.1rem;
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+
+    .docs-sidebar-nav {
+      .docs-sidebar-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        color: rgba($primary, 0.75);
+        border-left: 2px solid transparent;
+        margin-bottom: 0.25rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border-radius: 0 6px 6px 0;
+
+        &:hover {
+          color: $docs-accent;
+          background: rgba($docs-accent, 0.05);
+          border-left-color: rgba($docs-accent, 0.3);
+          padding-left: 1rem;
+        }
+
+        &.active {
+          color: $docs-accent;
+          font-weight: 600;
+          background: rgba($docs-accent, 0.1);
+          border-left-color: $docs-accent;
+        }
+
+        // Niveaux de hiérarchie
+        &.level-2 {
+          padding-left: 1.5rem;
+          font-size: 0.85rem;
+        }
+
+        &.level-3 {
+          padding-left: 2.25rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  // Responsive - sidebar mobile (optionnel pour plus tard)
+  @media (max-width: 991.98px) {
+    .docs-sidebar {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+// Mixins et classes réutilisables pour les effets hover
+
+// Effet de carte avec élévation au hover
+@mixin card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+// Effet de carte avec élévation importante
+@mixin card-hover-effect-strong {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: translateY(-4px);
+  }
+}
+
+// Effet hover subtil (pour hero cards)
+@mixin subtle-hover-effect {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Zoom d'image au hover
+@mixin image-zoom-effect {
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+// Effet de bordure au hover (optionnel, si besoin)
+@mixin border-hover-effect($color: $accent) {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba($color, 0.3);
+  }
+}
+
+// Barre de couleur animée en haut de carte
+@mixin animated-color-bar($color: $accent, $height: 4px, $position: top) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    #{$position}: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background: linear-gradient(90deg, $color 0%, darken($color, 10%) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 20px;
+    background-color: rgba($accent, 0.25);
+    z-index: -1;
+  }
+
+  // Variantes de couleur
+  &.highlight-secondary::after {
+    background-color: rgba($secondary, 0.3);
+  }
+
+  &.highlight-primary::after {
+    background-color: rgba($primary, 0.15);
+  }
+
+  // Variante plus petite pour les sous-titres
+  &.highlight-sm::after {
+    height: 18px;
+    bottom: 2px;
+  }
+
+  // Variante plus grande pour les grands titres
+  &.highlight-lg::after {
+    height: 32px;
+    bottom: 6px;
+  }
+}

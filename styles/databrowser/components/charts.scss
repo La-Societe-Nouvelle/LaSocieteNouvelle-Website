@@ -1,0 +1,42 @@
+// ============================================
+// MODERN BAR CHART
+// ============================================
+
+.modern-bar-chart {
+  width: 100%;
+  position: relative;
+
+  canvas {
+    max-height: 500px !important;
+  }
+}
+
+// ============================================
+// EMPTY STATE
+// ============================================
+
+.chart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 3rem;
+  background: rgba($primary, 0.02);
+  border: 2px dashed rgba($primary, 0.15);
+  border-radius: 12px;
+  text-align: center;
+
+  i {
+    font-size: 3rem;
+    color: rgba($primary, 0.3);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba($primary, 0.6);
+    margin: 0;
+    font-weight: 500;
+  }
+}

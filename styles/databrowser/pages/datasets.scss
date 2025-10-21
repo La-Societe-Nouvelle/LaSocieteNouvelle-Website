@@ -1,0 +1,329 @@
+.datasets-page {
+  // Hero Section
+  .datasets-hero {
+    background: linear-gradient(135deg, rgba($primary, 0.03) 0%, $databrowser-accent-light 100%);
+    padding: 60px 0 40px;
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+
+      a {
+        color: $databrowser-accent;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $databrowser-accent-hover;
+          text-decoration: underline;
+        }
+      }
+
+      .separator {
+        color: rgba($primary, 0.4);
+      }
+
+      span:last-child {
+        color: rgba($primary, 0.7);
+      }
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .page-description {
+      font-size: 1.1rem;
+      color: rgba($primary, 0.8);
+      line-height: 1.7;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Content Section
+  .datasets-content {
+    padding: 60px 0;
+
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
+  }
+
+  .dataset-category {
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid rgba($databrowser-accent, 0.15);
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .category-icon {
+        width: 70px;
+        height: 70px;
+        background: $databrowser-accent-light;
+        color: $databrowser-accent;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      .category-info {
+        flex: 1;
+
+        .category-title {
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: $primary;
+          margin-bottom: 0.5rem;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        .category-description {
+          font-size: 1rem;
+          color: rgba($primary, 0.7);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .datasets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .dataset-card {
+    background: #fff;
+    border: 1px solid rgba($primary, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    @include animated-color-bar($databrowser-accent);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba($databrowser-accent, 0.2);
+      border-color: rgba($databrowser-accent, 0.3);
+
+      .dataset-icon {
+        background: $databrowser-accent;
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      .view-link {
+        color: $databrowser-accent-hover;
+
+        i {
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      .dataset-icon {
+        width: 50px;
+        height: 50px;
+        background: $databrowser-accent-light;
+        color: $databrowser-accent;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1.5rem;
+        }
+      }
+
+      .dataset-code {
+        background: rgba($databrowser-accent, 0.1);
+        color: $databrowser-accent;
+        padding: 0.375rem 0.875rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        font-family: 'Courier New', monospace;
+        border: 1px solid rgba($databrowser-accent, 0.2);
+      }
+    }
+
+    .dataset-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 0.5rem;
+    }
+
+    .dataset-subtitle {
+      font-size: 0.9rem;
+      color: $databrowser-accent;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .dataset-description {
+      font-size: 0.95rem;
+      color: rgba($primary, 0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .dataset-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      .metric-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        background: rgba($primary, 0.05);
+        color: rgba($primary, 0.8);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 1px solid rgba($primary, 0.1);
+      }
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba($primary, 0.08);
+
+      .view-link {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 600;
+        color: $databrowser-accent;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+
+        i {
+          transition: transform 0.2s ease;
+        }
+      }
+    }
+  }
+
+  // Info Section
+  .datasets-info {
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, $databrowser-accent-light 100%);
+
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
+
+    .info-card {
+      background: #fff;
+      border: 1px solid rgba($databrowser-accent, 0.15);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      gap: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+
+      .info-icon {
+        width: 70px;
+        height: 70px;
+        background: $databrowser-accent-light;
+        color: $databrowser-accent;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      .info-content {
+        flex: 1;
+
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: $primary;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: rgba($primary, 0.8);
+          line-height: 1.7;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

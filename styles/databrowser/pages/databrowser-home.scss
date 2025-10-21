@@ -1,0 +1,424 @@
+.databrowser-home {
+  // Hero Section
+  .databrowser-hero {
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: rgba($databrowser-accent, 0.12);
+      color: $databrowser-accent;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba($databrowser-accent, 0.2);
+
+      i {
+        font-size: 1rem;
+      }
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: rgba($primary, 0.8);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      @media (max-width: 576px) {
+        flex-direction: column;
+      }
+    }
+
+    .btn-databrowser {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+
+      &.primary {
+        background: $databrowser-accent;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba($databrowser-accent, 0.25);
+
+        &:hover {
+          background: $databrowser-accent-hover;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba($databrowser-accent, 0.35);
+        }
+      }
+
+      &.secondary {
+        background: #fff;
+        color: $databrowser-accent;
+        border: 2px solid $databrowser-accent;
+
+        &:hover {
+          background: $databrowser-accent-light;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .hero-illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+      }
+    }
+  }
+
+  // Datasets Section
+  .databrowser-datasets {
+    padding: 80px 0;
+    background: #fff;
+
+    @media (max-width: 768px) {
+      padding: 60px 0;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .section__title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 0.75rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.75rem;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: rgba($primary, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .dataset-card {
+    display: block;
+    background: #fff;
+    border: 1px solid rgba($primary, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    @include card-hover-effect-strong;
+    @include animated-color-bar($databrowser-accent);
+
+    &:hover {
+      border-color: rgba($databrowser-accent, 0.3);
+
+      .card-icon {
+        background: $databrowser-accent;
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      .card-link {
+        color: $databrowser-accent-hover;
+
+        i {
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      background: $databrowser-accent-light;
+      color: $databrowser-accent;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1rem;
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: rgba($primary, 0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .card-footer {
+      margin-top: auto;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      color: $databrowser-accent;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+
+      i {
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+
+  // Tools Section
+  .databrowser-tools {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, $databrowser-accent-light 100%);
+
+    @media (max-width: 768px) {
+      padding: 60px 0;
+    }
+  }
+
+  .tool-card {
+    background: #fff;
+    border: 1px solid rgba($primary, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    height: 100%;
+    @include card-hover-effect;
+
+    &:hover {
+      .tool-icon {
+        background: $databrowser-accent;
+        color: #fff;
+      }
+    }
+
+    .tool-icon {
+      width: 70px;
+      height: 70px;
+      background: $databrowser-accent-light;
+      color: $databrowser-accent;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+
+    .tool-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 1rem;
+    }
+
+    .tool-description {
+      font-size: 0.95rem;
+      color: rgba($primary, 0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+
+      a {
+        color: $databrowser-accent;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .tool-features {
+      margin-bottom: 1.5rem;
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+
+        i {
+          color: $databrowser-accent;
+          font-size: 1.1rem;
+          flex-shrink: 0;
+        }
+
+        span {
+          font-size: 0.9rem;
+          color: rgba($primary, 0.8);
+        }
+      }
+    }
+
+    .tool-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.625rem 1.25rem;
+      background: $databrowser-accent-light;
+      color: $databrowser-accent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid rgba($databrowser-accent, 0.2);
+
+      &:hover {
+        background: rgba($databrowser-accent, 0.15);
+        transform: translateX(2px);
+      }
+    }
+  }
+
+  .api-banner {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, $databrowser-accent 0%, $databrowser-accent-hover 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba($databrowser-accent, 0.25);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .api-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .api-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(#fff, 0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      i {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+
+    .api-text {
+      color: #fff;
+
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+
+    .api-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.875rem 1.75rem;
+      background: #fff;
+      color: $databrowser-accent;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(#fff, 0.3);
+      }
+    }
+  }
+}

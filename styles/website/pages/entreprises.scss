@@ -1,0 +1,15 @@
+
+@media (max-width: 991.98px) {
+  .entreprises-page {
+  
+    .metriz-section,
+    .principe-section {
+      padding: 3rem 0;
+    }
+
+    .metriz-section .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}

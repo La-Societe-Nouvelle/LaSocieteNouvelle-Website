@@ -1,0 +1,506 @@
+.barometre-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+
+  // Loading & Error States
+  .loading-state,
+  .error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+
+    i {
+      font-size: 3rem;
+      color: $databrowser-accent;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: $primary;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: rgba($primary, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .back-link {
+      color: $databrowser-accent;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Hero Section
+  .barometre-hero {
+    background: linear-gradient(135deg, rgba($primary, 0.03) 0%, $databrowser-accent-light 100%);
+    padding: 30px 0;
+    border-bottom: 1px solid rgba($primary, 0.08);
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+
+      a {
+        color: $databrowser-accent;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      i {
+        color: rgba($primary, 0.4);
+        font-size: 0.7rem;
+      }
+
+      span:last-child {
+        color: rgba($primary, 0.7);
+      }
+    }
+
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+    }
+
+    .hero-title-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex: 1;
+
+      .barometre-icon {
+        width: 60px;
+        height: 60px;
+        background: $databrowser-accent-light;
+        color: $databrowser-accent;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        i {
+          font-size: 1.75rem;
+        }
+      }
+
+      .hero-badges {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+
+        .badge-live,
+        .badge-france,
+        .badge-update {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.4rem 0.875rem;
+          border-radius: 8px;
+          font-size: 0.85rem;
+          font-weight: 600;
+        }
+
+        .badge-live {
+          background: #10b981;
+          color: #fff;
+          animation: pulse 2s infinite;
+
+          i {
+            font-size: 0.9rem;
+          }
+        }
+
+        .badge-france {
+          background: rgba($databrowser-accent, 0.1);
+          color: $databrowser-accent;
+          border: 1px solid rgba($databrowser-accent, 0.3);
+        }
+
+        .badge-update {
+          background: rgba($primary, 0.05);
+          color: $primary;
+          border: 1px solid rgba($primary, 0.15);
+        }
+      }
+
+      .page-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .page-subtitle {
+        font-size: 0.95rem;
+        color: rgba($primary, 0.7);
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+
+    .hero-actions {
+      .doc-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.25rem;
+        background: #fff;
+        color: $databrowser-accent;
+        border: 2px solid $databrowser-accent;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $databrowser-accent;
+          color: #fff;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba($databrowser-accent, 0.3);
+        }
+      }
+    }
+  }
+
+  // Latest Data Section
+  .barometre-latest {
+    padding: 3rem 0;
+    background: #fff;
+
+    .section-header {
+      margin-bottom: 2rem;
+
+      .section__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        i {
+          color: $databrowser-accent;
+        }
+      }
+    }
+
+    .data-card {
+      background: #fff;
+      border: 1px solid rgba($primary, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      @include card-hover-effect;
+
+      &:hover {
+        border-color: rgba($databrowser-accent, 0.3);
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, rgba($primary, 0.03) 0%, $databrowser-accent-light 100%);
+        padding: 1.25rem;
+        border-bottom: 2px solid rgba($databrowser-accent, 0.2);
+
+        .month-label {
+          font-size: 1rem;
+          font-weight: 700;
+          color: $primary;
+          text-transform: capitalize;
+        }
+      }
+
+      .card-body {
+        padding: 2rem 1.25rem;
+        text-align: center;
+
+        .value-display {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          .value-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: $databrowser-accent;
+            line-height: 1;
+            font-family: 'Courier New', monospace;
+          }
+
+          .value-unit {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba($primary, 0.7);
+            margin-top: 0.5rem;
+          }
+        }
+
+        .evolution-badge {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 0.9rem;
+
+          &.increase {
+            background: rgba(#ef4444, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(#ef4444, 0.3);
+          }
+
+          &.decrease {
+            background: rgba(#10b981, 0.1);
+            color: #059669;
+            border: 1px solid rgba(#10b981, 0.3);
+          }
+
+          i {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .card-footer {
+        background: rgba($primary, 0.02);
+        padding: 1rem 1.25rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba($primary, 0.7);
+        border-top: 1px solid rgba($primary, 0.06);
+
+        i {
+          color: $databrowser-accent;
+        }
+      }
+    }
+  }
+
+  // Chart Section
+  .barometre-chart {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba($primary, 0.01) 0%, $databrowser-accent-light 100%);
+
+    .section-header {
+      margin-bottom: 2rem;
+
+      .section__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        i {
+          color: $databrowser-accent;
+        }
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+        color: rgba($primary, 0.6);
+        margin: 0;
+      }
+    }
+
+    .chart-wrapper {
+      background: #fff;
+      border: 1px solid rgba($primary, 0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2rem;
+    }
+
+    .sources-info {
+      background: #fff;
+      border: 1px solid rgba($primary, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid $databrowser-accent;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+
+        i {
+          color: $databrowser-accent;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.5rem 0;
+          font-size: 0.9rem;
+          color: rgba($primary, 0.8);
+
+          strong {
+            color: $primary;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  // Methodology Section
+  .barometre-methodology {
+    padding: 3rem 0 4rem;
+    background: #fff;
+
+    .methodology-card {
+      background: linear-gradient(135deg, rgba($primary, 0.02) 0%, $databrowser-accent-light 100%);
+      border: 1px solid rgba($databrowser-accent, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+
+      .methodology-header {
+        background: $databrowser-accent;
+        color: #fff;
+        padding: 1.75rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        i {
+          font-size: 2rem;
+          opacity: 0.9;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+
+      .methodology-content {
+        padding: 2rem;
+
+        p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: rgba($primary, 0.8);
+          margin-bottom: 1rem;
+
+          strong {
+            color: $databrowser-accent;
+            font-weight: 600;
+          }
+        }
+
+        .methodology-footer {
+          margin-top: 1.5rem;
+          padding: 1rem;
+          background: rgba($databrowser-accent, 0.08);
+          border-left: 3px solid $databrowser-accent;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          color: $primary;
+          display: flex;
+          align-items: center;
+
+          i {
+            color: $databrowser-accent;
+          }
+        }
+      }
+    }
+  }
+
+  // Spinner
+  .dot-pulse {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: $databrowser-accent;
+    color: $databrowser-accent;
+    animation: dotPulse 1.5s infinite linear;
+    margin: 0 auto;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: $databrowser-accent;
+      color: $databrowser-accent;
+    }
+
+    &::before {
+      animation: dotPulseBefore 1.5s infinite linear;
+      left: -15px;
+    }
+
+    &::after {
+      animation: dotPulseAfter 1.5s infinite linear;
+      right: -15px;
+    }
+  }
+
+  @keyframes dotPulse {
+    0%, 60%, 100% { opacity: 1; }
+    30% { opacity: 0.2; }
+  }
+
+  @keyframes dotPulseBefore {
+    0%, 60%, 100% { opacity: 0.2; }
+    30% { opacity: 1; }
+  }
+
+  @keyframes dotPulseAfter {
+    0%, 30%, 100% { opacity: 0.2; }
+    60% { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}

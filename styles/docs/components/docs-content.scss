@@ -1,0 +1,245 @@
+// ===================================
+// Documentation Content Area
+// ===================================
+
+.docs-theme {
+  .docs-page-layout {
+    min-height: 60vh;
+    overflow: visible;
+
+    .docs-page-header {
+      background: linear-gradient(135deg, rgba($docs-accent, 0.02) 0%, $docs-accent-light 100%);
+      padding: 2.5rem;
+
+      .docs-page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $primary;
+      }
+    }
+
+    .docs-content {
+      background: white;
+      padding: 2rem;
+      border: 1px solid rgba($docs-accent, 0.1);
+      border-radius: $card-border-radius;
+
+      // Styles pour le contenu markdown/texte
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $primary;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba($docs-accent, 0.15);
+        scroll-margin-top: 100px; // Pour le scroll avec ancres
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        scroll-margin-top: 100px;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        scroll-margin-top: 100px;
+      }
+
+      p {
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        color: rgba($primary, 0.85);
+      }
+
+      ul,
+      ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+
+        li {
+          margin-bottom: 0.5rem;
+          line-height: 1.7;
+          color: rgba($primary, 0.85);
+        }
+      }
+
+      code {
+        background: rgba($docs-accent, 0.08);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: $docs-accent-hover;
+        font-family: 'Courier New', monospace;
+      }
+
+      pre {
+        background: rgba($primary, 0.03);
+        border: 1px solid rgba($docs-accent, 0.15);
+        border-radius: 8px;
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+
+        code {
+          background: transparent;
+          padding: 0;
+          color: $primary;
+        }
+      }
+
+      blockquote {
+        border-left: 4px solid rgba($docs-accent, 0.3);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        color: $primary;
+        font-style: italic;
+        background: rgba($docs-accent, 0.03);
+        padding: 1rem 1.5rem;
+        border-radius: 0 8px 8px 0;
+
+        h4 {
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      em {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-collapse: collapse;
+
+        th,
+        td {
+          padding: 0.75rem;
+          text-align: left;
+          border-bottom: 1px solid rgba($docs-accent, 0.15);
+        }
+
+        th {
+          background: rgba($docs-accent, 0.08);
+          font-weight: 600;
+          color: $primary;
+        }
+
+        tr:hover {
+          background: rgba($docs-accent, 0.03);
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: $docs-accent-hover;
+          text-decoration: underline;
+        }
+      }
+
+      .alert {
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+
+        &.alert-info {
+          background: rgba($docs-accent, 0.1);
+          border: 1px solid rgba($docs-accent, 0.3);
+          color: $docs-accent-hover;
+        }
+      }
+
+      // Notes de bas de page simples
+      .note {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: rgba($primary, 0.7);
+        line-height: 1.6;
+        margin-top: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.4rem;
+          width: 3px;
+          height: calc(100% - 0.8rem);
+          background: rgba($docs-accent, 0.3);
+          border-radius: 2px;
+        }
+      }
+
+      sup {
+        font-weight: 600;
+        color: $docs-accent;
+      }
+    }
+  }
+
+  .formula-block {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #0066cc;
+    border-radius: 4px;
+  }
+
+  .formula {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 4px;
+  }
+
+  // Responsive
+  @media (max-width: 991.98px) {
+    .docs-page-layout {
+      .docs-page-header {
+        .docs-page-title {
+          font-size: 2rem;
+        }
+      }
+
+      .docs-content {
+        padding: 1.5rem;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}

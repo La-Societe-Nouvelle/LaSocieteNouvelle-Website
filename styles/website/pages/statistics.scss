@@ -1,0 +1,149 @@
+.statistics-page {
+
+  .section {
+    padding: 2rem 0;
+  }
+  // Loading State
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    min-height: 400px;
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba($primary, 0.1);
+      border-top-color: $primary;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1.5rem;
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      color: rgba($primary, 0.7);
+      font-weight: 500;
+    }
+  }
+
+  // Error State
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    min-height: 400px;
+    text-align: center;
+
+    .error-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba($danger, 0.1);
+      color: $danger;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 0.75rem;
+    }
+
+    .error-message {
+      font-size: 1rem;
+      color: rgba($primary, 0.7);
+      max-width: 500px;
+    }
+  }
+
+  // Section Styles
+  .statistics-section {
+    padding: 60px 0;
+
+    @media (max-width: 768px) {
+      padding: 40px 0;
+    }
+
+    &:nth-child(even) {
+      background: linear-gradient(135deg, rgba($primary, 0.01) 0%, rgba($primary, 0.02) 100%);
+    }
+
+  }
+
+
+
+  // Charts Grid
+  .charts-grid {
+    display: grid;
+    gap: 2rem;
+
+    &.two-columns {
+      grid-template-columns: 2fr 1fr;
+
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &.single-column {
+      grid-template-columns: 1fr;
+    }
+
+    &.half-width {
+      grid-template-columns: 1fr 1fr;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .chart-wrapper {
+    background: #fff;
+    border: 1px solid rgba($primary, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    @include card-hover-effect;
+    @include animated-color-bar($primary);
+
+    &:hover {
+      border-color: rgba($primary, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    .chart-container {
+      height: 300px;
+      position: relative;
+
+      @media (max-width: 576px) {
+        height: 250px;
+      }
+    }
+  }
+}
+ 
+
+// Animations
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

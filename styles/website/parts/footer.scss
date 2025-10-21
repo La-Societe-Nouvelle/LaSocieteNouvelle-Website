@@ -1,0 +1,213 @@
+.site-footer {
+  background: $primary;
+  color: #fff;
+}
+.footer-top {
+  background: linear-gradient(135deg, lighten($primary, 5%) 0%, $primary 100%);
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .footer-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+
+  .footer-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+  }
+
+  .footer-cta-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    @include subtle-hover-effect;
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      @include card-hover-effect;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-4px) scale(1.1);
+      }
+    }
+  }
+}
+
+.footer-main {
+  padding: 3rem 0 2rem;
+
+  .footer-section__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer-nav {
+    .nav-link {
+      padding: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: all 0.2s ease;
+      position: relative;
+      padding-left: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 2px;
+        background: $secondary;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: #fff;
+        padding-left: 1rem;
+
+        &::before {
+          width: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .footer-logo {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    img {
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background: darken($primary, 5%);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .copyright-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+  }
+
+  .footer-legal-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+
+    .nav-link {
+      padding: 0.25rem 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer-top {
+    padding: 2rem 0;
+
+    .footer-heading {
+      font-size: 1.1rem;
+    }
+
+    .footer-cta-link {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+    }
+  }
+
+  .footer-main {
+    padding: 2rem 0;
+
+    .footer-section__title {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .footer-logo {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+
+    .copyright-text {
+      margin-bottom: 1rem;
+    }
+
+    .footer-legal-nav {
+      justify-content: center;
+    }
+  }
+}
+  

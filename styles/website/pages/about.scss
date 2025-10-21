@@ -1,0 +1,51 @@
+
+.about-page {
+
+
+  .team-member {
+      padding: 1rem;
+      text-align: center;
+
+      .member-image {
+        border-radius: 12px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        @include card-hover-effect;
+      }
+
+      .member-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 0.25rem;
+      }
+
+      .member-role {
+        font-size: 0.9rem;
+        color: $body-color;
+        margin: 0;
+      }
+    }
+}
+
+// Responsive
+@media (max-width: 991px) {
+  .about-page {
+
+
+    .stats-section,
+    .activities-section,
+    .vision-section,
+    .team-section {
+      padding: 40px 0;
+    }
+
+    .team-section {
+      .team-member {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

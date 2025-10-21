@@ -1,0 +1,130 @@
+// ===================================
+// Open Section - Split layout (visual left / content right)
+// ===================================
+
+
+.section-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 40% 1fr;
+    gap: 4rem;
+  }
+}
+
+
+
+// ===================================
+// Content Right Side
+// ===================================
+
+.section-split__content {
+  .open-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+
+    @media (max-width: 767.98px) {
+      font-size: 1.5rem;
+    }
+  }
+
+
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-list-item {
+  padding-left: 1.5rem;
+  border-left: 3px solid rgba($accent, 0.2);
+  transition: all 0.3s ease;
+
+
+  .feature-list-item-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .feature-list-item-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($primary, 0.75);
+    margin-bottom: 1rem;
+  }
+
+  .feature-list-item-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $primary;
+      text-decoration: none;
+      background: rgba($accent, 0.06);
+      border: 1px solid rgba($accent, 0.15);
+      transition: all 0.2s ease;
+
+      i {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991.98px) {
+  .open-section {
+    padding: $section-padding-sm;
+  }
+
+  .section-split {
+    gap: 2rem;
+  }
+
+  .section-split__content {
+    order: 1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .feature-list {
+    gap: 1.5rem;
+  }
+
+  .feature-list-item {
+    padding-left: 1rem;
+
+
+    .feature-list-item-title {
+      font-size: 1rem;
+    }
+
+    .feature-list-item-text {
+      font-size: 0.9rem;
+    }
+  }
+}

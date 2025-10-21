@@ -61,6 +61,7 @@ applications:
 
 # Configuration des routes
 routes:
+  # Route principale pour lasocietenouvelle.org
   "https://{default}/":
     type: upstream
     upstream: "app:http"
@@ -68,6 +69,16 @@ routes:
       enabled: true
       cookies: ['*']
 
+  # Redirection www vers le domaine principal
   "https://www.{default}/":
     type: redirect
     to: "https://{default}/"
+
+  # Route pour databrowser.lasocietenouvelle.org
+  "https://databrowser.{default}/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+      enabled: true
+      cookies: ['*']
+    # Next.js gère automatiquement /databrowser via son routing

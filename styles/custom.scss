@@ -1,0 +1,119 @@
+
+/* make the customizations */
+
+// ===================================
+// PALETTE PRINCIPALE - LA SOCIÉTÉ NOUVELLE
+// ===================================
+$primary : #191558;
+$secondary : #F76C6C;
+$accent : #6C8EEF;
+$light : #f0f0f8;
+$gray-600 : #f3f3f3;
+$info : $light;
+$secondary-blue: #c3d9f6;
+
+$light-secondary : #FFF0F0;
+
+// ===================================
+// ACCENTS PAR PROJET
+// ===================================
+
+// Data Browser - Bleu tech/statistique
+$databrowser-accent: #3B82F6;
+$databrowser-accent-light: rgba(59, 130, 246, 0.1);
+$databrowser-accent-hover: #2563EB;
+
+// // SINESE - Orange dynamique/outil pro
+// $sinese-accent: #FF6B35;
+// $sinese-accent-light: rgba(255, 107, 53, 0.1);
+// $sinese-accent-hover: #E85A2A;
+
+// // Metriz - Vert mesure/croissance
+// $metriz-accent: #36C575;
+// $metriz-accent-light: rgba(54, 197, 117, 0.1);
+// $metriz-accent-hover: #2DA863;
+
+// Documentation 
+$docs-accent: #D46A6A;
+$docs-accent-light: rgba(212, 106, 106, 0.1);
+$docs-accent-hover: #C55555;
+
+$body-color: $primary;
+$font-size-base: 0.9rem;
+$link-color : lighten($primary, 5%);
+$link-decoration: none;
+
+$font-family-sans-serif: 'Raleway', sans-serif;
+$headings-font-family: 'Raleway', 'Roboto', sans-serif;
+$headings-color : $primary;
+$headings-font-weight : 700;
+
+$h2-font-size:1.4rem;
+$h3-font-size:1.3rem;
+$h4-font-size:1.2rem;
+$h5-font-size:1rem;
+$h6-font-size:1rem;
+$headings-margin-bottom: 1rem;
+
+$border-radius : 0;
+
+// ===================================
+// VARIABLES DE DESIGN STANDARDISÉES
+// ===================================
+
+// Border-radius pour les cartes et composants
+$card-border-radius-sm: 12px;
+$card-border-radius: 16px;
+$card-border-radius-lg: 20px;
+$card-border-radius-xl: 24px;
+
+// Paddings de sections
+$section-padding-sm: 3rem 0;
+$section-padding: 4rem 0;
+$section-padding-lg: 5rem 0;
+
+// Paddings de boutons
+$btn-padding-sm: 0.65rem 1.25rem;
+$btn-padding: 0.875rem 1.75rem;
+$btn-padding-lg: 1rem 2rem;
+
+// Paddings de cartes
+$card-padding-sm: 1.5rem;
+$card-padding: 2rem;
+$card-padding-lg: 2.5rem;
+$card-padding-xl: 3rem;
+
+/* Navbar */
+ 
+$navbar-light-color :  $primary ;
+$navbar-light-hover-color : $secondary;
+$nav-link-padding-y : 0.85rem;
+$nav-link-font-weight : 600;
+$nav-link-font-size : 0.85rem;
+$dropdown-min-width: 18rem;
+
+$card-cap-bg : #fbfbff;
+$card-border-width : 0;
+$card-cap-padding-y : 1rem;
+
+$border-radius-lg : 1rem;
+$border-color : $light;
+$accordion-button-active-bg : #fff;
+$accordion-border-radius : 1rem;
+$accordion-border-width : 0;
+$accordion-border-color : $light;
+$btn-border-radius : 0;
+$btn-border-radius-sm : 0;
+$badge-font-weight : 500;
+$modal-content-bg : $light;
+
+$dropdown-link-active-bg : transparent;
+$dropdown-font-size : 0.85rem;
+$dropdown-border-color : $light;
+$dropdown-border-width : 2px;
+$dropdown-link-hover-bg: $light;
+$pagination-font-size : 0.8rem;
+
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";

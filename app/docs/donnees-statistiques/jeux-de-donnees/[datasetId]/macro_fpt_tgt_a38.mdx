@@ -1,0 +1,134 @@
+## Trajectoires cibles (objectifs) des empreintes des branches d'activité (macro_fpt_tgt_a38)
+
+### Présentation
+
+Le jeu de données **macro_fpt_tgt_a38** regroupe les objectifs annuels des empreintes des agrégats des branches d'activité (x38) de la dernière année disponible jusqu'à 2030.
+
+Les données permettent de fournir des trajectoires cibles macroéconomiques au regard d'objectifs fixés tels que les budgets carbone de la SNBC (Stratégie Nationale Bas Carbone), sur un panel de dimensions sociales et environnementales clés pour un développement durable.
+
+---
+
+### Description des données
+
+Le jeu de données contient les seuils (empreintes) à atteindre pour les principaux agrégats des branches d'activités (x38) en France, de la dernière année pour laquelle des données sociales ou environnementales sont disponibles, à 2030.
+
+#### Construction des données
+
+Les données sont construites à partir des objectifs fixés pour 2030 et des prévisions économiques sur les prochaines années.  
+Le modèle prend également en compte l'évolution de la structure de l'économie française (poids des branches dans la production intérieure, évolution des consommations intermédiaires, etc.).
+
+Les données sont actualisées chaque année.
+
+#### Données utilisées pour définir l'objectif à atteindre pour chaque indicateur
+
+Définitions et origines de l'objectif 2030 à atteindre à l'échelle macroéconomique :
+
+- **GEQ** : Objectif d'écart de 0% en 2050¹  
+- **GHG** : Budgets carbone sectoriels de la Stratégie Nationale Bas-Carbone (SNBC)  
+- **KNW** : Augmentation de 0.8 pt (pourcentage du PIB) d'ici 2030 par rapport à 2020¹  
+- **MAT** : Quantité extraite de matières premières stable¹  
+- **NRG** : Planification Pluriannuelle de l'Energie (PPE)  
+- **SOC** : Objectif de 100% en 2050¹  
+- **WAS** : Plan national de prévention des déchets (PNPD)  
+- **WAT** : Consommation d'eau stable¹  
+
+¹ Objectif défini par La Société Nouvelle.
+
+#### Nomenclature des activités
+
+Utilisation de la **Nomenclature NACE Rev.2**.
+
+#### Unités
+
+Les valeurs sont exprimées selon **l'unité par défaut de l'indicateur**.
+
+#### Bases monétaires
+
+Pour les indicateurs d'intensité monétaire, les données sont actuellement produites en **euros courants (CP)**.
+
+#### Espaces économiques disponibles
+
+Les données sont produites uniquement pour :
+- **France (FRA)**
+
+#### Trajectoire
+
+Les objectifs annuels (si non spécifiés) sont définis selon deux modèles :
+
+- **LIN** – Trajectoire linéaire : taux de réduction constant par rapport à l'année de base  
+- **GEO** – Trajectoire géométrique : taux de réduction constant d'une année à l'autre
+
+---
+
+### Paramètres de requête
+
+**Liste des paramètres :**
+
+<table>
+  <thead>
+    <tr>
+      <th>Paramètre</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>branch</code></td>
+      <td>Code de la branche d'activité</td>
+    </tr>
+    <tr>
+      <td><code>aggregate</code></td>
+      <td>Code de l’agrégat</td>
+    </tr>
+    <tr>
+      <td><code>area</code></td>
+      <td>Code de l’espace économique</td>
+    </tr>
+    <tr>
+      <td><code>year</code></td>
+      <td>Année</td>
+    </tr>
+    <tr>
+      <td><code>indic</code></td>
+      <td>Indicateur</td>
+    </tr>
+    <tr>
+      <td><code>target</code></td>
+      <td>Objectif et source</td>
+    </tr>
+    <tr>
+      <td><code>path</code></td>
+      <td>Trajectoire</td>
+    </tr>
+  </tbody>
+</table>
+
+**Endpoint de l’API :**  
+[`https://api.lasocietenouvelle.org/macrodata/macro_fpt_tgt_a38`](https://api.lasocietenouvelle.org/macrodata/macro_fpt_tgt_a38)
+
+---
+
+### Commentaires
+
+Aucun commentaire additionnel.
+
+---
+
+### Licence
+
+Les données sont diffusées sous **licence ouverte Etalab**.
+
+---
+
+### Contact
+
+**Producteur des données :** La Société Nouvelle  
+
+Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)  
+📧 **contact@lasocietenouvelle.org**
+
+---
+
+### Mise à jour
+
+Dernière mise à jour des métadonnées : **15/07/2025**

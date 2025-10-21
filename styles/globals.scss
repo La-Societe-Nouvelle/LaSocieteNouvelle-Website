@@ -1,0 +1,283 @@
+@import "custom";
+@import "mixins";
+
+@import "responsive.scss";
+
+// ===================================
+// Website - Components
+// ===================================
+@import "components/page-header.scss";
+@import "components/key-figures.scss";
+@import "components/sections.scss";
+@import "components/common-cards.scss";
+
+// ===================================
+// Website - Parts
+// ===================================
+@import "website/parts/header.scss";
+@import "website/parts/footer.scss";
+@import "website/parts/forms.scss";
+
+
+// ===================================
+// Website - Pages
+// ===================================
+@import "website/pages/hero.scss";
+@import "website/pages/indics-section.scss";
+@import "website/pages/indicateurs.scss";
+@import "website/pages/cta-section.scss";
+@import "website/pages/open-section.scss";
+@import "website/pages/services-section.scss";
+@import "website/pages/news-section.scss";
+@import "website/pages/partners-section.scss";
+@import "website/pages/sinese.scss";
+@import "website/pages/api-publique.scss";
+@import "website/pages/expert-comptable.scss";
+@import "website/pages/entreprises.scss";
+@import "website/pages/sponsors.scss";
+@import "website/pages/about.scss";
+@import "website/pages/podcast.scss";
+@import "website/pages/contact.scss";
+@import "website/pages/legal.scss";
+@import "website/pages/services.scss";
+@import "website/pages/newsletter.scss";
+@import "website/pages/notre-approche.scss";
+@import "website/pages/blog.scss";
+@import "website/pages/statistics.scss";
+
+// ===================================
+// Website - Components
+// ===================================
+@import "website/components/statistics.scss";
+@import "website/components/posts.scss";
+@import "website/components/components.scss";
+@import "website/components/section.scss";
+
+// ===================================
+// Databrowser - Parts
+// ===================================
+@import "databrowser/parts/databrowser-header.scss";
+@import "databrowser/parts/databrowser-footer.scss";
+
+// ===================================
+// Databrowser - Pages
+// ===================================
+@import "databrowser/pages/databrowser.scss";
+@import "databrowser/pages/databrowser-home.scss";
+@import "databrowser/pages/datasets.scss";
+@import "databrowser/pages/dataset-view.scss";
+@import "databrowser/pages/barometre-ges.scss";
+
+// ===================================
+// Databrowser - Components
+// ===================================
+@import "databrowser/components/key-figures-databrowser.scss";
+@import "databrowser/components/charts.scss";
+
+// ===================================
+// Documentation - Parts
+// ===================================
+@import "docs/parts/docs-header.scss";
+@import "docs/parts/docs-footer.scss";
+
+// ===================================
+// Documentation - Pages
+// ===================================
+@import "docs/pages/docs-home.scss";
+
+// ===================================
+// Documentation - Components
+// ===================================
+@import "docs/components/docs-sidebar.scss";
+@import "docs/components/docs-navigation.scss";
+@import "docs/components/docs-breadcrumb.scss";
+@import "docs/components/docs-content.scss";
+@import "docs/components/docs-footnotes.scss";
+
+// ===================================
+// Fonts
+// ===================================
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
+
+/* Global */
+
+html,
+body {
+  cursor: default;
+}
+
+ol {
+  margin: 2rem;
+
+  li {
+    margin: 1rem 0;
+  }
+
+  li::marker {
+    color: $primary;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.border-light {
+  border-color: #f0f0f8 !important;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+.bg-badge-light-secondary {
+  background-color: $light-secondary;
+  border: 1px solid $secondary;
+  color: $secondary;
+}
+
+.bg-light-secondary {
+  background-color: $light-secondary;
+}
+
+.btn-check:focus+.btn-outline-secondary,
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.1rem rgb(250 89 95 / 50%);
+}
+
+.btn-outline-secondary {
+  background-color: lighten($secondary, 30%);
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
+.btn-outline-primary {
+  background-color: lighten($primary, 75%);
+}
+
+.btn-outline {
+  background-color: #fff;
+  border: 1px solid $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+  }
+}
+
+.btn-secondary {
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    background-color: #fa595f;
+    height: 10px;
+    bottom: 0.1rem;
+    left: 0.1em;
+    z-index: -1;
+    opacity: 0.7;
+  }
+}
+
+.alert-info {
+  border: 1px solid $light;
+  background-color: #f7f7fb;
+  font-size: 0.8rem;
+
+  p,
+  h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+.info-supp {
+  li {
+    font-size: 0.8rem;
+  }
+
+  ul {
+    padding-left: 1rem;
+    list-style-type: circle;
+  }
+}
+
+.alert-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+
+.symbol {
+  font-size: 1rem;
+}
+
+hr {
+  color: $light;
+  opacity: 1;
+}
+
+
+p {
+  a {
+    color: $primary;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $light;
+      border-radius: 3px;
+    }
+  }
+}
+
+
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+}
+
+.main-titles {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.main-titles::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  right: -5px;
+  bottom: 0;
+  background-color: #cdd5fe;
+  z-index: -1;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+

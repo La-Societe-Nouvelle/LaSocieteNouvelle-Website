@@ -1,0 +1,116 @@
+// Page Header Component - Style datasets-hero avec tons website
+
+.page-header-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba($primary, 0.03) 0%, rgba($accent, 0.08) 100%);
+  padding: 3rem 0 2.5rem;
+  overflow: hidden;
+
+  @media (max-width: 767.98px) {
+    padding: 3rem 0 2rem;
+  }
+}
+
+.page-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.page-header-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba($accent, 0.12);
+  color: $accent;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background: $accent;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 767.98px) {
+    width: 60px;
+    height: 60px;
+
+    i {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.page-header-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: $primary;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+
+  @media (max-width: 767.98px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 2.5rem;
+  }
+}
+
+.page-header-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba($primary, 0.8);
+  margin: 0;
+
+  @media (max-width: 767.98px) {
+    font-size: 0.875rem;
+  }
+}
+
+
+// Variante minimale (épurée, sans décorations)
+.page-header-minimal {
+  padding: 2.5rem 0 2rem;
+  background: #fff;
+  border-bottom: 1px solid rgba($primary, 0.08);
+
+  @media (max-width: 767.98px) {
+    padding: 2rem 0 1.75rem;
+  }
+
+  .page-header-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  .page-header-title {
+    font-size: 2rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .page-header-subtitle {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+  }
+
+}

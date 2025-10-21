@@ -1,0 +1,154 @@
+
+
+.services-page {
+  // Hero Section
+  .services-hero {
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
+    text-align: center;
+
+    .services-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 0.75rem;
+    }
+
+    .services-subtitle {
+      font-size: 1.1rem;
+      color: $body-color;
+      margin: 0;
+    }
+  }
+
+  // Services Section
+  .services-section {
+    padding: 60px 0;
+    background: #fff;
+
+    // service-card est maintenant défini dans components/section.scss
+    // On garde juste les ajustements spécifiques si besoin
+  }
+
+  // CTA Section
+  .services-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba($secondary, 0.02) 0%, rgba($primary, 0.03) 100%);
+
+    .cta-card {
+      background: #fff;
+      border: 1px solid rgba($primary, 0.08);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      .cta-icon {
+        flex-shrink: 0;
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, rgba($accent, 0.1) 0%, rgba($primary, 0.1) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          font-size: 3.5rem;
+          color: $accent;
+        }
+      }
+
+      .cta-content {
+        flex: 1;
+
+        h2 {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: $primary;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.7;
+          color: $body-color;
+          margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.875rem 2.5rem;
+          background: $accent;
+          color: #fff;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: darken($accent, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba($accent, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 991px) {
+  .services-page {
+    .services-hero {
+      padding: 40px 0;
+
+      .services-title {
+        font-size: 1.75rem;
+      }
+
+      .services-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .services-section {
+      padding: 40px 0;
+
+      .service-card {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .services-cta {
+      padding: 60px 0;
+
+      .cta-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
+
+        .cta-icon {
+          width: 100px;
+          height: 100px;
+
+          i {
+            font-size: 3rem;
+          }
+        }
+
+        .cta-content {
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
