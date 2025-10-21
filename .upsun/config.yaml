@@ -61,16 +61,32 @@ applications:
 
 # Configuration des routes
 routes:
-  # Route principale pour lasocietenouvelle.org
+  # Route principale pour www.lasocietenouvelle.org
+  "https://www.lasocietenouvelle.org/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+      enabled: true
+      cookies: ['*']
+  
+  # Redirection HTTP vers HTTPS pour www
+  "http://www.lasocietenouvelle.org/":
+    type: redirect
+    to: "https://www.lasocietenouvelle.org/"
+  
+  # Redirection du domaine racine vers www
+  "https://lasocietenouvelle.org/":
+    type: redirect
+    to: "https://www.lasocietenouvelle.org/"
+  
+  "http://lasocietenouvelle.org/":
+    type: redirect
+    to: "https://www.lasocietenouvelle.org/"
+  
+  # Routes avec {default} si nécessaire
   "https://{default}/":
     type: upstream
     upstream: "app:http"
     cache:
       enabled: true
       cookies: ['*']
-
-  # Redirection www vers le domaine principal
-  "https://www.{default}/":
-    type: redirect
-    to: "https://{default}/"
-
