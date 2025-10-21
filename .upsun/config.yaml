@@ -74,11 +74,3 @@ routes:
     type: redirect
     to: "https://{default}/"
 
-  # Route pour databrowser.lasocietenouvelle.org
-  "https://databrowser.{default}/":
-    type: upstream
-    upstream: "app:http"
-    cache:
-      enabled: true
-      cookies: ['*']
-    # Next.js gère automatiquement /databrowser via son routing
