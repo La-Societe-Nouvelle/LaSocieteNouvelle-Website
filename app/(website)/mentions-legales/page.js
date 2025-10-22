@@ -28,14 +28,13 @@ export default function MentionsLegales() {
             </ul>
 
             <h3>Hébergement</h3>
-            <p className="hosting-name">VERCEL</p>
+            <p className="hosting-name">UPSUN</p>
             <address className="hosting-address">
-              Vercel Inc.<br />
-              340 S Lemon Ave #4133<br />
-              Walnut, CA 91789
+              Upsun (Platform.sh)<br />
+              Hébergé sur OVH France<br />
             </address>
             <p>
-              <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">https://vercel.com</a>
+              <a href="https://upsun.com" target="_blank" rel="noopener noreferrer">https://upsun.com</a>
             </p>
           </div>
         </Container>

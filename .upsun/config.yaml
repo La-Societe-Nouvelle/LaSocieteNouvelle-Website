@@ -88,6 +88,12 @@ routes:
     type: redirect
     to: "https://www.lasocietenouvelle.org/databrowser"
 
+  # Redirection du sous-domaine docs vers la page /docs
+  "https://docs.lasocietenouvelle.org/":
+    type: redirect
+    to: "https://www.lasocietenouvelle.org/docs"
+
+
   # Routes avec {default} si nécessaire
   "https://{default}/":
     type: upstream

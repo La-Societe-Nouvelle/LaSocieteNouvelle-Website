@@ -1,5 +1,4 @@
 import WebsiteLayout from '../components/WebsiteLayout';
-import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'katex/dist/katex.min.css'
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body>
-        <Analytics />
         <WebsiteLayout>
           {children}
         </WebsiteLayout>
