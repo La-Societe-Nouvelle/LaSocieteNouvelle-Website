@@ -56,7 +56,15 @@ export default function ServicesSection() {
                       </Link>
                     </div>
                     <div className="service-slide-visual">
-                      <Image src={service.image} alt={service.title} className="img-fluid"  width={600} height={300} />
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        className="img-fluid"
+                        width={600}
+                        height={300}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 600px"
+                      />
                     </div>
                   </div>
                   <div className="service-slide-background">

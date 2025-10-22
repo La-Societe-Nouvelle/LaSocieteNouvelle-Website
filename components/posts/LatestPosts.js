@@ -1,32 +1,27 @@
-"use client"
-import React, { useState } from "react";
-import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import { fetchLatestPosts } from "../../lib/utils/fetchPosts";
 import { cutString } from "../../lib/utils/utils";
 
-function LatestPosts() {
-  const [posts, setPosts] = useState([]);
+export default async function LatestPosts() {
+  let posts = [];
 
-  useEffect(() => {
-    getLatestPosts();
-  }, []);
+  try {
+    const data = await fetchLatestPosts();
+    posts = data.posts;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 
-  const getLatestPosts = async () => {
-    try {
-      const data = await fetchLatestPosts();
-      setPosts(data.posts);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  if (!posts.length) {
+    return null;
+  }
 
   return (
     <div className="latest-posts">
-      {posts.length > 0 && (
-        <Row className="g-4">
+      <Row className="g-4">
           {/* Article principal */}
           <Col lg={6}>
             <Link href={`/blog/${posts[0].slug}`} className="post-card post-card-featured">
@@ -53,6 +48,7 @@ function LatestPosts() {
           <Col lg={6}>
             <div className="secondary-posts">
               {/* Article avec image */}
+              {posts[1] && (
               <Link href={`/blog/${posts[1].slug}`} className="post-card post-card-horizontal">
                 <div className="post-image-wrapper-small">
                   {posts[1].coverImage && (
@@ -71,7 +67,7 @@ function LatestPosts() {
                   <p className="post-excerpt-small">{cutString(posts[1].excerpt, 100)}</p>
                 </div>
               </Link>
-
+              )}
               {/* Articles compacts */}
               <Link href={`/blog/${posts[2].slug}`} className="post-card post-card-compact">
                 <span className="post-tag">{posts[2].tag.name}</span>
@@ -85,9 +81,8 @@ function LatestPosts() {
             </div>
           </Col>
         </Row>
-      )}
+    
     </div>
   );
 }
 
-export default LatestPosts;
