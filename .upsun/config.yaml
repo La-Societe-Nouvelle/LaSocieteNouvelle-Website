@@ -87,7 +87,6 @@ routes:
   "https://data.lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/databrowser"
-    status: 301
 
   # Routes avec {default} si nécessaire
   "https://{default}/":
