@@ -67,26 +67,32 @@ routes:
     upstream: "app:http"
     cache:
       enabled: true
-      cookies: ['*']
-  
+      cookies: ["*"]
+
   # Redirection HTTP vers HTTPS pour www
   "http://www.lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
-  
+
   # Redirection du domaine racine vers www
   "https://lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
-  
+
   "http://lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
-  
+
+  # Redirection du sous-domaine data vers la page /databrowser
+  "https://data.lasocietenouvelle.org/":
+    type: redirect
+    to: "https://www.lasocietenouvelle.org/databrowser"
+    status: 301
+
   # Routes avec {default} si nécessaire
   "https://{default}/":
     type: upstream
     upstream: "app:http"
     cache:
       enabled: true
-      cookies: ['*']
+      cookies: ["*"]
