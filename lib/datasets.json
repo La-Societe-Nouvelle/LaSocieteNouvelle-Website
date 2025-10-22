@@ -1,7 +1,7 @@
 {
   "macro_fpt": {
 		"label": "Empreintes macroéconomiques par industries (A*64)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques/",
     "endpoint": "/macrodata/macro_fpt",
 		"columnsParameter": "year",
 		"rowsParameter": "industry",
@@ -28,7 +28,7 @@
   },
 	"macro_fpt_a38": {
 		"label": "Empreintes macroéconomiques par branches (A*38)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques/jeux-de-donnees/macro_fpt_a38",
     "endpoint": "/macrodata/macro_fpt_a38",
 		"columnsParameter": "year",
 		"rowsParameter": "branch",
@@ -55,7 +55,7 @@
   },
 	"macro_fpt_a88": {
 		"label": "Empreintes macroéconomiques par divisions (A*88)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques/jeux-de-donnees/macro_fpt_a88",
     "endpoint": "/macrodata/macro_fpt_a88",
 		"columnsParameter": "year",
 		"rowsParameter": "division",
@@ -82,7 +82,7 @@
   },
 	"macro_fpt_trd": {
 		"label": "Tendances des empreintes macroéconomiques par industries (A*64)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_trd",
 		"columnsParameter": "year",
 		"rowsParameter": "industry",
@@ -109,7 +109,7 @@
   },
 	"macro_fpt_trd_a38": {
 		"label": "Tendances des empreintes macroéconomiques par branches (A*38)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_trd_a38",
 		"columnsParameter": "year",
 		"rowsParameter": "branch",
@@ -136,7 +136,7 @@
   },
 	"macro_fpt_trd_a88": {
 		"label": "Tendances des empreintes macroéconomiques par divisions (A*88)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_trd_a88",
 		"columnsParameter": "year",
 		"rowsParameter": "division",
@@ -163,7 +163,7 @@
   },
 	"macro_fpt_tgt": {
 		"label": "Trajectoires cibles des empreintes macroéconomiques par industries (A*64)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_tgt",
 		"columnsParameter": "year",
 		"rowsParameter": "industry",
@@ -190,7 +190,7 @@
   },
 	"macro_fpt_tgt_a38": {
 		"label": "Tendances des empreintes macroéconomiques par branches (A*38)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_tgt_a38",
 		"columnsParameter": "year",
 		"rowsParameter": "branch",
@@ -217,7 +217,7 @@
   },
 	"macro_fpt_tgt_a88": {
 		"label": "Tendances des empreintes macroéconomiques par divisions (A*88)",
-		"docs": "https://docs.lasocietenouvelle.org/series-donnees",
+		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_tgt_a88",
 		"columnsParameter": "year",
 		"rowsParameter": "division",
