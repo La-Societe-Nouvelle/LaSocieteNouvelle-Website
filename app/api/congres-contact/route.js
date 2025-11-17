@@ -33,7 +33,7 @@ export async function POST(request) {
         const mailOptions = {
             from: "La Société Nouvelle <no-reply@lasocietenouvelle.org>",
             to: email,
-            subject: "Votre plaquette La Société Nouvelle - Congrès de l'Ordre des Experts-Comptables 2025",
+            subject: "Votre plaquette La Société Nouvelle - Campus 2025",
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                     <div style="background-color: #191558; padding: 20px; text-align: center;">
@@ -43,7 +43,7 @@ export async function POST(request) {
                     <div style="padding: 30px 20px;">
                         <h2 style="color: #333;">Bonjour,</h2>
 
-                        <p>Merci pour votre visite sur notre stand au Congrès de l'Ordre des Experts Comptables 2025 !</p>
+                        <p>Merci pour votre visite sur notre stand !</p>
 
                         <p>Comme promis, vous trouverez en pièce jointe notre plaquette détaillant le projet de La Société Nouvelle.</p>
 

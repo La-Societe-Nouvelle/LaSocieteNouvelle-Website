@@ -1,0 +1,323 @@
+/* Background principal avec gradient */
+.container {
+  background: linear-gradient(135deg, #191558 0%, #2a1f7a 50%, #191558 100%);
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height pour mobile */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pattern de fond subtil */
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  opacity: 0.7;
+}
+
+/* Watermark du logo - Desktop */
+.logoWatermarkDesktop {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.logoWatermarkDesktop img {
+  width: 400px;
+  height: auto;
+  filter: brightness(2);
+}
+
+/* Watermark du logo - Mobile */
+.logoWatermarkMobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.logoWatermarkMobile img {
+  width: 140px;
+  height: auto;
+  filter: brightness(0.7) contrast(1.3);
+}
+
+/* Container avec position relative pour z-index */
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  margin-top: 160px;
+}
+
+/* Card principale */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  padding-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 25px 80px rgba(25, 21, 88, 0.15);
+  border: 1px solid rgba(250, 89, 95, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+/* Section logos */
+.logosSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.logosSection img {
+  max-width: 180px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+}
+
+/* Titre de remerciement */
+.title {
+  color: #191558;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* Texte descriptif */
+.description {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}
+
+/* Séparateur décoratif */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, #fa595f, #ff7b81);
+  border-radius: 2px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.dividerWrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Texte avant le formulaire */
+.formLabel {
+  color: #191558;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* Alert / Message */
+.alert {
+  border: none;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.alertSuccess {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  box-shadow: 0 12px 30px rgba(40, 167, 69, 0.15);
+  border: 2px solid rgba(40, 167, 69, 0.1);
+}
+
+.alertError {
+  background: linear-gradient(135deg, #f8d7da 0%, #f1c0c5 100%);
+  color: #721c24;
+  box-shadow: 0 12px 30px rgba(220, 53, 69, 0.15);
+  border: 2px solid rgba(220, 53, 69, 0.1);
+}
+
+.alertIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.alertIconSuccess {
+  color: #28a745;
+}
+
+.alertIconError {
+  color: #dc3545;
+}
+
+/* Formulaire */
+.formControl {
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  padding: 12px 16px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.formControl:disabled {
+  background-color: #f8f9fa;
+}
+
+.formControl:focus {
+  border-color: #fa595f;
+  box-shadow: 0 0 0 0.2rem rgba(250, 89, 95, 0.15);
+  outline: none;
+}
+
+/* Bouton de soumission */
+.submitButton {
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 6px 20px rgba(250, 89, 95, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButtonActive {
+  background: linear-gradient(45deg, #fa595f, #fc6d72ff);
+  color: white;
+}
+
+.submitButtonLoading {
+  background: #6c757d;
+  color: white;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(250, 89, 95, 0.4);
+}
+
+/* Section des boutons de contact */
+.contactSection {
+  text-align: center;
+}
+
+.contactTitle {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.contactButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Boutons LinkedIn, Discord, Calendly */
+.socialButton {
+  border-radius: 14px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.socialButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.linkedinButton {
+  background: #0077b5;
+}
+
+.linkedinButton:hover {
+  background: #005885;
+}
+
+.discordButton {
+  background: #5865f2;
+}
+
+.discordButton:hover {
+  background: #4752c4;
+}
+
+.calendlyButton {
+  background: #fa595f;
+}
+
+.calendlyButton:hover {
+  background: #e83c43;
+}
+
+.socialIcon {
+  font-size: 20px;
+}
+
+/* Footer texte */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.footerText {
+  font-size: 14px;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contentWrapper {
+    margin-top: 120px;
+  }
+
+  .card {
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .socialButton {
+    max-width: 100%;
+  }
+}
