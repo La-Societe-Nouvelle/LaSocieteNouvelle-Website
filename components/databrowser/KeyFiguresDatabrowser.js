@@ -9,6 +9,7 @@ async function fetchKeyFiguresData() {
     `${process.env.NEXT_PUBLIC_API_URL}/macrodata/na_cpeb?classification=NNTOTAL&aggregate=B1N&unit=CPMEUR&year=${refYear}`,
     `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GHG&year=${refYear}`,
     `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GEQ&year=${refYear}`,
+    'https://api.stats.lasocietenouvelle.org/barometre-ges/derniere-publication',
   ];
 
   try {
@@ -30,6 +31,14 @@ async function fetchKeyFiguresData() {
       ? responses[2].data[0].value.toFixed(1)
       : "";
 
+    let data_emissions = "";
+    let emissions_period = "";
+    if (responses[3].header.code === 200 && responses[3].data.length > 0) {
+      const lastDataPoint = responses[3].data[responses[3].data.length - 1];
+      data_emissions = lastDataPoint.valeur.toFixed(1);
+      emissions_period = lastDataPoint.mois; // Keep full "YYYY-MM" format
+    }
+
     return [
       {
         id: 'pin',
@@ -49,8 +58,8 @@ async function fetchKeyFiguresData() {
       },
       {
         id: 'emissions',
-        period: '2025-06',
-        value: 27.8,
+        period: emissions_period,
+        value: data_emissions,
         unit: 'MtCO₂e',
         title: 'Emissions intérieures de gaz à effet de serre',
         icon: 'cloud-haze'
