@@ -10,6 +10,10 @@ const allNavigation = [
     title: 'Présentation',
   },
   {
+    href: '/docs/metriz-webapp/tutoriel',
+    title: 'Guide d\'Utilisation',
+  },
+  {
     href: '/docs/metriz-webapp/informations-necessaires',
     title: 'Informations nécessaires',
   },
@@ -21,11 +25,11 @@ const allNavigation = [
     href: '/docs/metriz-webapp/declarations',
     title: 'Déclarations',
   },
-   {
+  {
     href: '/docs/metriz-webapp/lecture-fec',
     title: 'Lecture du FEC',
   },
-     {
+  {
     href: '/docs/metriz-webapp/lecture-dsn',
     title: 'Lecture des DSN',
   },

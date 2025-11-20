@@ -1,0 +1,235 @@
+## Guide d'utilisation
+
+Guide pas à pas pour utiliser l'application METRIZ destinée aux partenaires.
+
+### Accès à l'application partenaires
+
+Pour commencer, rendez-vous sur [https://partners.metriz.lasocietenouvelle.org](https://partners.metriz.lasocietenouvelle.org)
+
+---
+
+### Connexion et inscription
+
+![Page de connexion - Application METRIZ](/screens-webapp-v4/screen-metriz-v4-connexion.png)
+
+#### Créer votre compte
+
+Pour créer votre compte :
+
+1. Cliquez sur **Inscrivez-vous**
+2. Remplissez le formulaire d'inscription
+3. Validez votre demande
+
+**Traitement de la demande :**
+- Un administrateur examine votre demande d'inscription
+- Vous recevrez un email de confirmation sous 24 heures (généralement)
+
+---
+
+### Étape 1 : Création de l'unité légale
+
+![Page d'ajout d'unité légale - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_nouvelle-unite-legale.png)
+
+#### Initialiser une nouvelle analyse
+
+Pour initier une analyse :
+
+1. Cliquez sur **Ajouter une unité légale**
+2. Saisissez le **numéro SIREN** de l'unité légale (numéro à 9 chiffres)
+3. L'unité légale apparaît dans la liste des dossiers
+
+**Troubleshooting :**
+- Si le numéro SIREN n'est pas reconnu, veuillez prendre contact avec le support
+
+#### Lancer la nouvelle analyse
+
+Une fois l'unité légale créée :
+1. Cliquez sur **Nouvelle analyse**
+2. L'analyse démarre et vous accédez à l'import du FEC
+
+---
+
+### Étape 2 : Import du FEC
+
+![Page d'import du FEC - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_import-fec.png)
+
+#### Première étape : Import des données comptables
+
+La première étape consiste à **importer les données comptables via le FEC** (Fichier d'Écritures Comptables).
+
+1. Déposez le fichier FEC de votre exercice
+2. L'application valide le fichier et affiche les données
+
+#### Étapes intermédiaires de configuration
+
+Lors de l'import du FEC, plusieurs étapes de configuration s'affichent :
+
+- **Table d'identification du journal des A-Nouveaux**
+  - Permet de sélectionner le journal regroupant les comptes de bilan en début d'exercice
+
+- **Table d'association des immobilisations**
+  - Associe les comptes d'amortissements aux comptes d'immobilisations
+
+- **Table d'association des stocks**
+  - Associe les comptes de stocks aux comptes de charges
+
+- **Choix du système de gestion des fournisseurs**
+  - Sélectionnez si la gestion se fait par compte ou compte auxiliaire
+
+#### Visualisation des données importées
+
+![Page de visualisation des données comptables - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_vue-donnees-comptables.png)
+
+Une fois l'import finalisé, les données comptables s'affichent :
+- Compte de résultats
+- Soldes Intermédiaires de Gestion (SIG)
+- Tableau des immobilisations
+- Tableau des stocks
+- Liste des charges
+
+**À vérifier :** Comparez les agrégats affichés avec votre comptabilité de référence.
+
+---
+
+### Étape 3 : Empreintes des immobilisations
+
+![Vue catégorisation des immobilisations - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations.png)
+
+#### Catégorisation des immobilisations
+
+Pour estimer les impacts liés à l'amortissement des immobilisations :
+
+1. **Catégorisez les comptes** par :
+   - **Branche d'activité**
+   - **Espace économique**
+
+2. Une **association par défaut** est proposée
+   - Basée sur les numéros de compte du Plan Comptable Général (PCG)
+   - À vérifier et corriger si nécessaire
+
+3. **Synchronisez les données**
+   - Récupère les empreintes associées aux activités et espaces économiques sélectionnés
+
+#### Identification des fournisseurs d'immobilisations
+
+![Vue identification des fournisseurs d'immobilisations - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations.png)
+
+Pour affiner l'empreinte des immobilisations :
+
+1. **Identifiez les fournisseurs d'immobilisations**
+   - Via le numéro SIREN
+   - Pour les investissements réalisés pendant l'exercice
+
+2. Cela permet une estimation plus précise de l'empreinte associée aux investissements
+
+---
+
+### Étape 4 : Empreintes des achats
+
+![Page de catégorisation des achats - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_categorisation-achats-initial.png)
+
+#### Catégorisation des achats
+
+Pour estimer les impacts liés aux achats :
+
+1. **Catégorisez les comptes de charges**
+   - Par **division d'activité**
+   - Par **espace économique**
+
+#### Association automatique avec l'IA
+
+L'application propose une association automatique :
+
+1. Cliquez sur **Associer automatiquement**
+2. L'IA générative traite les libellés des comptes de charges
+3. Une proposition d'association s'affiche
+
+**Important :**
+- Vérifiez attentivement les associations proposées par l'IA
+- Corrigez manuellement si nécessaire
+- Accordez une attention particulière aux comptes significatifs
+
+#### Synchronisation des données
+
+Une fois les associations faites :
+1. **Synchronisez les données**
+2. L'application récupère les empreintes correspondant aux activités et espaces sélectionnés
+
+#### Identification des fournisseurs d'achats
+
+![Vue identification des fournisseurs d'achats - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats.png)
+
+Pour affiner l'empreinte des achats :
+
+1. **Identifiez les fournisseurs d'achats**
+   - Via le numéro SIREN
+   - L'application améliore l'estimation de l'empreinte en utilisant les données réelles des fournisseurs
+
+---
+
+### Étape 5 : Déclarations des impacts directs
+
+Les déclarations des impacts directs sont organisées en **3 sections principales** :
+
+1. **Profil de l'entreprise**
+2. **Données sociales**
+3. **Impact environnemental**
+
+#### Section 1 : Profil de l'entreprise
+
+![Page de déclaration - Profil de l'entreprise - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_declaration-profil-entreprise.png)
+
+**Indicateurs à déclarer :**
+- Contribution à l'économie nationale
+- Contribution aux métiers d'art et aux savoir-faire
+- Contribution aux acteurs d'intérêt social
+
+#### Section 2 : Données sociales
+
+![Page de déclaration - Données sociales - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_declaration-donnees-sociales.png)
+
+**Indicateurs à déclarer :**
+- Indice d'écart de rémunérations femmes/hommes
+- Indice d'écart des rémunérations
+- Contribution à l'évolution des compétences et des connaissances
+
+**Fichiers à fournir :**
+- Il est possible de téléverser les **DSN** (Données Sociales Nominatives)
+- Cela permet un calcul automatique et plus précis des indices sociaux
+
+#### Section 3 : Impact environnemental
+
+![Page de déclaration - Impact environnemental - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_declaration-impact-environnemental.png)
+
+**Indicateurs à déclarer :**
+- Intensité d'émission de gaz à effet de serre
+- Intensité de consommation d'énergie
+- Intensité de consommation d'eau
+- Intensité d'utilisation de produits dangereux
+- Intensité d'extraction de matières premières
+- Intensité de production de déchets
+
+**Outils fournis :**
+- Pour les **émissions directes** et **consommation d'énergie**, des outils sont disponibles
+- Ils permettent de traiter les consommations de produits énergétiques
+- Les calculs deviennent ainsi plus précis et documentés
+
+---
+
+### Consultation des résultats
+
+![Vue des résultats - Tableau de bord - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_tableau-de-bord.png)
+
+Une fois toutes les déclarations complétées :
+
+1. Accédez à la vue **Tableau de bord**
+2. Consultez les résultats complets de votre analyse
+3. Les indicateurs s'affichent avec :
+   - Vos valeurs mesurées
+   - Les comparaisons avec les données statistiques de votre secteur
+   - Les explications et clés de lecture
+
+**Prochaines étapes :**
+- Télécharger votre rapport d'analyse
+- Publier votre empreinte sociétale (si souhaité)
+- Partager les résultats avec vos parties prenantes
