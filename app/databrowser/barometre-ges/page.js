@@ -42,7 +42,6 @@ const BarometreGES = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
   // ============================================
   // DATA FETCHING
   // ============================================
@@ -61,7 +60,9 @@ const BarometreGES = () => {
       const results = await res.json();
 
       if (results.header?.code === 200) {
-        setData(results.data);
+        // Trier les données par mois (ordre croissant)
+        const sortedData = [...results.data].sort((a, b) => a.mois.localeCompare(b.mois));
+        setData(sortedData);
       } else {
         throw new Error("Code de réponse invalide");
       }

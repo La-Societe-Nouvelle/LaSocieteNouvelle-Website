@@ -2,6 +2,8 @@
 // Inspiré du style databrowser, adaptable à tous les contextes
 
 .key-figure-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 1px solid rgba($accent, 0.15);
   border-radius: $card-border-radius;
@@ -11,6 +13,16 @@
   position: relative;
   overflow: hidden;
   @include animated-color-bar($accent);
+
+  &--link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 
   // Effets au survol
   &:hover {
@@ -111,6 +123,7 @@
     letter-spacing: 0.5px;
     border: 1px solid rgba($accent, 0.2);
     display: inline-block;
+    width: fit-content;
     margin-bottom: 1rem;
   }
 

@@ -33,7 +33,9 @@ async function fetchKeyFiguresData() {
     let data_emissions = "";
     let emissions_period = "";
     if (responses[3].header.code === 200 && responses[3].data.length > 0) {
-      const lastDataPoint = responses[3].data[responses[3].data.length - 1];
+      // Trier les données par mois et récupérer la dernière (la plus récente)
+      const sortedData = [...responses[3].data].sort((a, b) => a.mois.localeCompare(b.mois));
+      const lastDataPoint = sortedData[sortedData.length - 1];
       data_emissions = lastDataPoint.valeur.toFixed(1);
 
       const [year, month] = lastDataPoint.mois.split('-');
@@ -65,7 +67,9 @@ async function fetchKeyFiguresData() {
         value: data_emissions,
         unit: 'MtCO₂e',
         title: 'Emissions intérieures de gaz à effet de serre',
-        icon: 'cloud-haze'
+        icon: 'cloud-haze',
+        href: '/databrowser/barometre-ges',
+        tooltip: 'Consulter le baromètre des émissions territoriales de GES'
       },
       {
         id: 'geq',

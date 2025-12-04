@@ -61,6 +61,8 @@
 }
 
 .key-figure-card-databrowser {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 1px solid rgba($databrowser-accent, 0.15);
   border-radius: 16px;
@@ -70,6 +72,16 @@
   position: relative;
   overflow: hidden;
   @include animated-color-bar($databrowser-accent);
+
+  &--link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 
   &:hover {
     transform: translateY(-6px);
@@ -119,6 +131,7 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     border: 1px solid rgba($databrowser-accent, 0.2);
+    width: fit-content;
   }
 
   .key-figure-value {
