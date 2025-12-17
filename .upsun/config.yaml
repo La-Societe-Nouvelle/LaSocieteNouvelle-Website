@@ -58,10 +58,20 @@ applications:
     variables:
       env:
         NODE_ENV: "production"
+         # Augmente la heap size Node.js à 1.5GB pour éviter les crashes mémoire
+        NODE_OPTIONS: "--max-old-space-size=1536"
 
 # Configuration des routes
 routes:
-  # Route principale pour www.lasocietenouvelle.org
+  # Route par défaut pour tous les environnements (staging, preview, etc.)
+  "https://{default}/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+      enabled: true
+      cookies: ["*"]
+
+  # Route principale pour www.lasocietenouvelle.org (production uniquement)
   "https://www.lasocietenouvelle.org/":
     type: upstream
     upstream: "app:http"
@@ -69,12 +79,12 @@ routes:
       enabled: true
       cookies: ["*"]
 
-  # Redirection HTTP vers HTTPS pour www
+  # Redirection HTTP vers HTTPS pour www (production)
   "http://www.lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
 
-  # Redirection du domaine racine vers www
+  # Redirection du domaine racine vers www (production)
   "https://lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
@@ -83,21 +93,12 @@ routes:
     type: redirect
     to: "https://www.lasocietenouvelle.org/"
 
-  # Redirection du sous-domaine data vers la page /databrowser
+  # Redirection du sous-domaine data vers la page /databrowser (production)
   "https://data.lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/databrowser"
 
-  # Redirection du sous-domaine docs vers la page /docs
+  # Redirection du sous-domaine docs vers la page /docs (production)
   "https://docs.lasocietenouvelle.org/":
     type: redirect
     to: "https://www.lasocietenouvelle.org/docs"
-
-
-  # Routes avec {default} si nécessaire
-  "https://{default}/":
-    type: upstream
-    upstream: "app:http"
-    cache:
-      enabled: true
-      cookies: ["*"]
