@@ -513,9 +513,7 @@ export default function AppelPartenariat() {
                   <i className="bi bi-file-earmark-text"></i>
                 </div>
                 <h4 className="contact-card__title">Formulaire</h4>
-                <p className="contact-card__text">
-                  Remplissez le formulaire et nous vous contacterons sous 48h
-                </p>
+
                 <Button
                   variant="primary"
                   className="contact-card__button"
@@ -533,9 +531,7 @@ export default function AppelPartenariat() {
                   <i className="bi bi-envelope"></i>
                 </div>
                 <h4 className="contact-card__title">Email</h4>
-                <p className="contact-card__text">
-                  Écrivez-nous directement pour toute question
-                </p>
+  
                 <a
                   href="mailto:contact@lasocietenouvelle.org"
                   className="contact-card__link"
@@ -552,9 +548,7 @@ export default function AppelPartenariat() {
                   <i className="bi bi-discord"></i>
                 </div>
                 <h4 className="contact-card__title">Discord</h4>
-                <p className="contact-card__text">
-                  Rejoignez notre communauté sur Discord
-                </p>
+            
                 <a
                   href="https://discord.gg/lasocietenouvelle"
                   target="_blank"
