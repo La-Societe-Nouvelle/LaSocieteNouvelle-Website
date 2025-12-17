@@ -664,7 +664,7 @@ export default function AppelPartenariat() {
                 Soutenir autrement le projet
               </h3>
               <p className="section__subtitle">
-                Votre contribution peut prendre différentes formes selon votre profil et vos capacités
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac erat at massa convallis aliquam.
               </p>
             </Col>
           </Row>
