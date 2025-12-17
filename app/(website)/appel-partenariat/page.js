@@ -775,9 +775,7 @@ export default function AppelPartenariat() {
             <h3 className="section__title section__title--center">
               Questions fréquentes
             </h3>
-            <p className="section-subtitle">
-              Tout ce que vous devez savoir sur le partenariat
-            </p>
+
           </div>
           <Row className="justify-content-center">
             <Col lg={10}>
