@@ -41,11 +41,13 @@ export default function AppelPartenariat() {
                 <p className="partnership-hero-subtitle">
                   <b>En soutenant nos travaux,</b> vous contribuez à la
                   production et à la diffusion de ressources libres et gratuites
-                  essentielle pour la transition écologique et sociale. 
-                <br />
-                  Votre soutien contribue à enrichir les systèmes comptables pour outiller l'ensemble des entreprises, 
-                  et notamment les TPE/PME, dans le suivi des externalités de leurs 
-                  activités ; et pour apporter de la transparence sur celles qui construisent une économie durable.
+                  essentielle pour la transition écologique et sociale.
+                  <br />
+                  Votre soutien contribue à enrichir les systèmes comptables
+                  pour outiller l'ensemble des entreprises, et notamment les
+                  TPE/PME, dans le suivi des externalités de leurs activités ;
+                  et pour apporter de la transparence sur celles qui
+                  construisent une économie durable.
                 </p>
 
                 {/* CTA Buttons */}
@@ -271,10 +273,10 @@ export default function AppelPartenariat() {
                   Recherche en statistiques publiques
                 </h4>
                 <p className="activity-card__text">
-                  Votre contribution permet d'engager des travaux
-                  de recherche pour améliorer les méthodes de calcul d'empreintes
-                  macroéconomiques, telles que pour la prise en compte du capital fixe ou
-                  la régionalisation.
+                  Votre contribution permet d'engager des travaux de recherche
+                  pour améliorer les méthodes de calcul d'empreintes
+                  macroéconomiques, telles que pour la prise en compte du
+                  capital fixe ou la régionalisation.
                 </p>
               </div>
             </Col>
@@ -289,9 +291,10 @@ export default function AppelPartenariat() {
                   Production de <br></br> données statistiques
                 </h4>
                 <p className="activity-card__text">
-                  Votre contribution permet l'amélioration des données statistiques 
-                  que nous produisons et mettons librement à disposition (moyennes sectorielles, facteurs d'impacts monétaires, etc.),
-                  notamment au niveau de la granularité.
+                  Votre contribution permet l'amélioration des données
+                  statistiques que nous produisons et mettons librement à
+                  disposition (moyennes sectorielles, facteurs d'impacts
+                  monétaires, etc.), notamment au niveau de la granularité.
                 </p>
               </div>
             </Col>
@@ -306,9 +309,10 @@ export default function AppelPartenariat() {
                   Développement d'outils open source
                 </h4>
                 <p className="activity-card__text">
-                  Votre contribution permet le développement et la maintenance de scripts open source permettant
-                  estimer et d'analyser les impacts des entreprises à partir
-                  des données comptables et sociales.
+                  Votre contribution permet le développement et la maintenance
+                  de scripts open source permettant estimer et d'analyser les
+                  impacts des entreprises à partir des données comptables et
+                  sociales.
                 </p>
               </div>
             </Col>
@@ -336,13 +340,15 @@ export default function AppelPartenariat() {
             <Col lg={10}>
               <div className="impact-text-block">
                 <p>
-                  Vous ! Nos ressources sont aujourd'hui largement mobilisées par une
-                  diversité d'acteurs&nbsp;: cabinets comptables, éditeurs de
-                  solutions, initiatives autour de la comptabilité carbone,
-                  chercheurs, universités et organismes institutionnels.
+                  Vous ! Nos ressources sont aujourd'hui largement mobilisées
+                  par une diversité d'acteurs&nbsp;: cabinets comptables,
+                  éditeurs de solutions, initiatives autour de la comptabilité
+                  carbone, chercheurs, universités et organismes
+                  institutionnels.
                 </p>
                 <p>
-                  Nos ressources interviennent au sein de la plateforme Impact durabilité ou du baromètre Image PME.
+                  Nos ressources interviennent au sein de la plateforme Impact
+                  durabilité ou du baromètre Image PME.
                 </p>
                 {/* <p>
                   <strong>
@@ -500,20 +506,25 @@ export default function AppelPartenariat() {
                   La structuration de l'information extra-financière à l'échelle
                   de chaque entreprise suppose une participation de l'ensemble
                   des acteurs de la comptabilité (cabinets, éditeurs, etc.).
-                  Cette participation n'est possible que sur la base de ressources
-                  et de méthodes communes, accessibles à tous et non propriétaires, pour éviter
-                  tout blocage lié à la dépendance à un acteur privé concurrent ou 
-                  ayant un but lucratif.
+                  Cette participation n'est possible que sur la base de
+                  ressources et de méthodes communes, accessibles à tous et non
+                  propriétaires, pour éviter tout blocage lié à la dépendance à
+                  un acteur privé concurrent ou ayant un but lucratif.
                 </p>
                 <p>
-                  L'open data et l'open source constituent ainsi la condition nécessaire à
-                  une approche collaborative, durable et acceptable par tous.
+                  L'open data et l'open source constituent ainsi la condition
+                  nécessaire à une approche collaborative, durable et acceptable
+                  par tous.
                 </p>
                 <p>
-                  Ce choix implique cependant une approche différente dans le financement du développement et de la maintenance des ressources
-                  communes. Nous cherchons à auto-financer au maximum nos activités via des prestations commerciales
-                  (études statistiques, développements informatiques, production de données, etc.) mais pour aller
-                  plus loin et plus vite nous faisons également appel à des sponsors, engagés et souvent directement bénéficiaires de nos travaux.
+                  Ce choix implique cependant une approche différente dans le
+                  financement du développement et de la maintenance des
+                  ressources communes. Nous cherchons à auto-financer au maximum
+                  nos activités via des prestations commerciales (études
+                  statistiques, développements informatiques, production de
+                  données, etc.) mais pour aller plus loin et plus vite nous
+                  faisons également appel à des sponsors, engagés et souvent
+                  directement bénéficiaires de nos travaux.
                 </p>
               </div>
             </Col>
@@ -765,9 +776,11 @@ export default function AppelPartenariat() {
             <Col lg={8}>
               <h3 className="section__title">Nous soutenir autrement</h3>
               <p className="section__subtitle">
-                Contribuer financièrement n'est pas la seule manière de soutenir nos travaux !
-                < br/>
-                Vous pouvez nous aider et devenir partenaire de bien des manières.
+                Contribuer financièrement n'est pas la seule manière de soutenir
+                nos travaux !
+                <br />
+                Vous pouvez nous aider et devenir partenaire de bien des
+                manières.
               </p>
             </Col>
           </Row>
@@ -899,15 +912,17 @@ export default function AppelPartenariat() {
                     Que signifie concrètement devenir partenaire ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Devenir partenaire signifie apporter un soutien, qu'il soit
-                    financier ou d'une autre nature, aux travaux portés par La
-                    Société Nouvelle. Ce soutien vise à contribuer à la
-                    production, à la maintenance et à l'amélioration de
-                    ressources ouvertes (données, outils, référentiels)
-                    utilisées par de nombreux acteurs mais également à la mesure
-                    de l'Empreinte Sociétale auprès d'entreprises. Il s'agit
-                    d'un engagement en faveur d'un cadre commun d'intérêt
-                    général autour des enjeux de durabilité.
+                    Nous appelons partenaires les structures qui contribuent, de
+                    manière directe ou indirecte, à la mise en oeuvre du système
+                    d'information national sur les impacts des entreprises, que
+                    nous portons. Cette contribution peut être financière ou
+                    opérationnelle (mise en place du service auprès de ses
+                    clients, appui statistique, intégration des données, etc.).
+                    <br />
+                    Plus particulièrement, les partenaires "sponsors" nous
+                    permettent de financer des travaux de R&D et d'améliorer les
+                    ressources ouvertes que nous mettons à disposition (données,
+                    outils, référentiels).
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -915,101 +930,68 @@ export default function AppelPartenariat() {
                   <Accordion.Header>S'agit-il d'un don ?</Accordion.Header>
                   <Accordion.Body>
                     <p>
-                      La contribution prend la forme d'un{" "}
-                      <strong>soutien financier</strong> assimilable à un
-                      sponsoring, et non à un don philanthropique au sens
-                      strict. Elle s'inscrit dans une logique de{" "}
-                      <strong>financement collectif d'un commun</strong>,
-                      utilisé ou susceptible d'être utilisé par les partenaires
-                      eux-mêmes.
+                      La contribution correspond à un soutien financier de type
+                      partenariat / sponsoring, et non à un don ouvrant droit à
+                      des avantages fiscaux. Elle s'inscrit dans une logique de
+                      financement collectif d'un projet d'intérêt général, dont
+                      les ressources sont ouvertes et accessibles à tous.
                     </p>
                     <p className="mb-0">
-                      La Société Nouvelle n'étant pas une association, la
-                      contribution ne donne pas droit à une déduction d'impôt.
+                      La Société Nouvelle n'étant pas reconnue comme organisme
+                      d'intérêt général au sens fiscal, la contribution n'est
+                      pas éligible à une déduction d'impôt.
                     </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>
-                    Le partenariat donne-t-il accès à des services
+                    Être partenaire donne-t-il accès à des services
                     supplémentaires ?
                   </Accordion.Header>
                   <Accordion.Body>
                     <p>
-                      Non. Le partenariat ne conditionne pas l'accès aux
-                      ressources, qui restent ouvertes et accessibles à tous. Il
-                      peut en revanche permettre de participer plus directement
-                      aux échanges autour des travaux, de leurs orientations et
-                      de leur amélioration continue.
+                      Non, le partenariat ne conditionne aucunement l'accès aux
+                      ressources, qui restent ouvertes et accessibles à tous.
                     </p>
                     <p className="mb-0">
                       L'équipe de La Société Nouvelle reste cependant davantage
-                      disponible auprès des structures partenaires et offre
-                      parfois un appui lors de la période fiscale par exemple,
-                      pour le traitement de dossiers.
+                      disponible auprès des structures partenaires, et offre un
+                      appui prioritairement à celles-ci, par exemple pour le
+                      traitement de dossier lors de la période fiscale par
+                      exemple.
                     </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
                 <Accordion.Item eventKey="3">
                   <Accordion.Header>
-                    En quoi mon soutien est-il réellement utile ? À quoi sert
-                    concrètement la contribution financière ?
+                    À quoi sert concrètement la contribution financière ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    La contribution financière permet de maintenir et de
-                    renforcer une infrastructure ouverte : production et mise à
-                    jour des données, maintenance des outils open source,
-                    amélioration des référentiels, travaux de recherche et
-                    documentation. Sans ce soutien, la capacité à faire évoluer
-                    et à fiabiliser ces ressources serait fortement limitée.
-                  </Accordion.Body>
-                </Accordion.Item>
-
-                <Accordion.Item eventKey="4">
-                  <Accordion.Header>
-                    Est-ce que ces travaux sont déjà utilisés aujourd'hui ?
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Oui. Les données, outils et référentiels produits sont déjà
-                    utilisés par des{" "}
-                    <strong>
-                      cabinets comptables, éditeurs, chercheurs, universités et
-                      acteurs institutionnels
-                    </strong>
-                    . Il est très probable que vous en bénéficiez déjà,
-                    directement ou indirectement, via des données, outils, ou
-                    des publications.
-                  </Accordion.Body>
-                </Accordion.Item>
-
-                <Accordion.Item eventKey="5">
-                  <Accordion.Header>
-                    Quel est l'impact pour les TPE/PME ?
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Les travaux visent en priorité à fournir une information{" "}
-                    <strong>accessible, exploitable et adaptée</strong> aux
-                    réalités des TPE et PME. Les outils et données produits leur
-                    permettent de mieux comprendre leurs impacts, de se situer
-                    et d'identifier des leviers d'action, sans recourir à des
-                    dispositifs coûteux ou propriétaires.
+                    La contribution financière nous permet d'améliorer les
+                    données que nous mettons à disposition, de développer et
+                    maintenir les ressources informatiques associées (Portail,
+                    API, Metriz, Site web, etc.), d'engager des travaux de
+                    recherche, et de mettre à disposition des ressources
+                    complémentaires (documentation, kit de mission, etc.). Tous
+                    nos travaux sont rendus publics et libres d'exploitation.
                   </Accordion.Body>
                 </Accordion.Item>
 
                 <Accordion.Item eventKey="6">
                   <Accordion.Header>
-                    Pourquoi soutenir un projet dont les ressources restent
-                    accessibles à tous ?
+                    Pourquoi soutenir financièrement un projet dont les
+                    ressources sont accessibles à tous ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Parce que l'ouverture constitue précisément la condition de
-                    la collaboration et de la diffusion à grande échelle.
-                    Soutenir le projet permet d'assurer l'existence et la
-                    qualité d'un cadre commun, dont chacun bénéficie. Sans
-                    soutien collectif, un commun ouvert ne peut ni se maintenir
-                    ni progresser durablement.
+                    L'accessibilité (gratuité) des ressources ne signifie pas
+                    l'absence de coût. Les données, les outils et les
+                    référentiels ouverts nécessitent un travail continu de
+                    production, de maintenance, d'amélioration et de diffusion.
+                    La contribution permet de garantir un cadre commun fiable,
+                    dont chacun bénéficie aujourd'hui ou pourra bénéficier
+                    demain, sans dépendance à un acteur privé.
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -1020,12 +1002,11 @@ export default function AppelPartenariat() {
                   </Accordion.Header>
                   <Accordion.Body>
                     Oui. L'accès aux ressources n'est pas conditionné à une
-                    contribution financière. Le partenariat repose sur un{" "}
-                    <strong>choix volontaire</strong>, pas sur une obligation.
+                    contribution financière ou autre. Le partenariat est un choix volontaire, pas une obligation.
                   </Accordion.Body>
                 </Accordion.Item>
 
-                <Accordion.Item eventKey="8">
+                {/* <Accordion.Item eventKey="8">
                   <Accordion.Header>
                     Pourquoi ne pas réserver certaines ressources aux
                     partenaires ?
@@ -1050,85 +1031,40 @@ export default function AppelPartenariat() {
                       </em>
                     </p>
                   </Accordion.Body>
-                </Accordion.Item>
+                </Accordion.Item> */}
 
                 <Accordion.Item eventKey="9">
                   <Accordion.Header>
-                    Comment est déterminé le montant de la contribution ? Est-il
-                    possible de proposer un montant différent ?
+                    Quel est le montant de la contribution ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Le montant de la contribution est proposé selon une logique
-                    d'adaptation à la structure du partenaire. Il est tout à
-                    fait possible de proposer un montant différent ou d'échanger
+                    Le montant de la contribution est déterminé selon votre chiffre d'affaires. 
+                    La grille est disponible au sein de la fiche partenaire ou du formulaire.
+                    Il reste tout à fait possible de proposer un montant différent ou d'échanger
                     sur les modalités, en fonction de votre situation et de vos
                     capacités.
                   </Accordion.Body>
-                </Accordion.Item>
-
-                <Accordion.Item eventKey="10">
-                  <Accordion.Header>
-                    Les partenaires influencent-ils les orientations des travaux
-                    ?
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    <p>
-                      Les partenaires peuvent participer aux échanges et aux
-                      réflexions collectives, mais{" "}
-                      <strong>
-                        aucun partenaire ne dispose d'un pouvoir de décision
-                        exclusif
-                      </strong>
-                      . Les orientations restent guidées par l'intérêt général,
-                      la cohérence méthodologique et la transparence.
-                    </p>
-                    <p className="mb-0">
-                      Les partenaires, et structures non partenaires, peuvent
-                      rejoindre le comité de gouvernance autour de l'Empreinte
-                      Sociétale.
-                    </p>
-                  </Accordion.Body>
-                </Accordion.Item>
+                </Accordion.Item>                
 
                 <Accordion.Item eventKey="11">
                   <Accordion.Header>
-                    Les données produites restent-elles publiques et ouvertes ?
+                    Les ressources développées resteront-elles publiques et ouvertes ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Oui. Les données et ressources produites dans le cadre du
-                    projet sont et resteront{" "}
-                    <strong>publiques, ouvertes et accessibles</strong>,
-                    conformément aux principes fondateurs de La Société
-                    Nouvelle.
+                    Oui, l'ensemble des ressources que nous produisons sont et resteront
+                    publiques, ouvertes et accessibles à tous, conformément aux principes 
+                    fondateurs de La Société Nouvelle.
                   </Accordion.Body>
                 </Accordion.Item>
-
                 <Accordion.Item eventKey="12">
                   <Accordion.Header>
                     Quelle est la démarche pour devenir partenaire ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Il suffit de prendre connaissance de la{" "}
-                    <strong>fiche partenariat</strong> et de nous contacter via
-                    les coordonnées indiquées. Nous échangeons ensuite
-                    directement pour formaliser le partenariat.
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="15">
-                  <Accordion.Header>
-                    Les partenaires sont-ils mentionnés publiquement ?
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    <p>
-                      Les partenaires peuvent être mentionnés publiquement{" "}
-                      <strong>s'ils le souhaitent</strong>. Cette reconnaissance
-                      reste sobre et institutionnelle.
-                    </p>
-                    <p className="mb-0">
-                      Nous essayons de mettre en valeur nos partenaires, même si
-                      La Société Nouvelle n'a pas vocation à être un canal de
-                      communication.
-                    </p>
+                    Pour devenir partenaire, il vous suiffit de compléter le formulaire
+                    à votre disposition, ou simplement de prendre contact avec nous. Nous revenons ensuite vers vous
+                    pour formaliser le partenariat et commencer à travailler
+                    ensemble.
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
