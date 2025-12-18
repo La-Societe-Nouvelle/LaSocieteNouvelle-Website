@@ -9,7 +9,7 @@ export default function WebsiteLayout({ children }) {
 
   // Si on est sur databrowser, ne pas afficher le Header/Footer classiques
   // Le databrowser a son propre layout
-  if (pathname?.startsWith('/databrowser') || pathname?.startsWith('/docs') || pathname?.startsWith('/qr') ) {
+  if (pathname?.startsWith('/databrowser') || pathname?.startsWith('/docs') || pathname?.startsWith('/qr') || pathname?.startsWith('/formulaire-partenariat') ) {
     return <>{children}</>;
   }
 
