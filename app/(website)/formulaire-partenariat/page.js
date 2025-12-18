@@ -476,9 +476,9 @@ export default function FormulairePartenariat() {
         size="lg"
         className="formulaire-partenariat-page__success-modal"
       >
-        <Modal.Header closeButton className="border-0 pb-0">
+        <Modal.Header closeButton className="border-0 pb-0 ">
         </Modal.Header>
-        <Modal.Body className="text-center px-4 pb-5">
+        <Modal.Body className="text-center px-4 pb-5 ">
           <div className="mb-4">
             <div className="formulaire-partenariat-page__success-icon mx-auto mb-3">
               <i className="bi bi-check-circle-fill"></i>
@@ -487,54 +487,37 @@ export default function FormulairePartenariat() {
               Merci pour votre engagement !
             </h3>
             <p className="text-muted mb-4">
-              Votre demande de partenariat a bien été envoyée. Nous reviendrons vers vous sous 48h pour échanger sur les modalités de collaboration.
+              Votre demande de partenariat a bien été envoyée. Nous reviendrons vers vous rapidement pour échanger sur les modalités de collaboration.
             </p>
           </div>
 
           <div className="formulaire-partenariat-page__success-divider mx-auto mb-4"></div>
 
           <div className="mb-4">
-            <h5 className="fw-bold mb-3" style={{ color: '#191558' }}>
-              Aidez-nous à grandir !
+            <h5 className="fw-bold mb-3" >
+              Lorem ipsum dolor sit amet
             </h5>
-            <p className="text-muted mb-3" style={{ fontSize: '15px' }}>
-              Plus nous sommes nombreux, plus notre impact sera fort. Partagez notre appel à partenariat avec votre réseau pour encourager d'autres entreprises et organisations à nous rejoindre dans cette démarche de transparence extra-financière.
+            <p className="text-muted mb-3" >
+              Nunc commodo, magna nec aliquam tincidunt, nunc urna euismod nunc, euismod aliquam nunc nunc euismod nunc.
             </p>
           </div>
 
           <div className="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <Button
-              variant="outline-primary"
+              variant="primary"
+              size="sm"
               className="formulaire-partenariat-page__share-button"
               onClick={() => {
-                const url = window.location.origin + '/appel-partenariat';
-                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+                // TO DO : Ajouter lien de partage
               }}
             >
               <i className="bi bi-linkedin me-2"></i>
               Partager sur LinkedIn
             </Button>
-            <Button
-              variant="outline-secondary"
-              className="formulaire-partenariat-page__share-button"
-              onClick={() => {
-                const url = window.location.origin + '/appel-partenariat';
-                const text = "Je soutiens La Société Nouvelle dans sa mission de transparence des entreprises. Rejoignez-nous !";
-                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
-              }}
-            >
-              <i className="bi bi-twitter-x me-2"></i>
-              Partager sur X
-            </Button>
+
           </div>
 
-          <Button
-            variant="primary"
-            className="formulaire-partenariat-page__close-button"
-            onClick={() => setShowSuccessModal(false)}
-          >
-            Fermer
-          </Button>
+
         </Modal.Body>
       </Modal>
     </div>

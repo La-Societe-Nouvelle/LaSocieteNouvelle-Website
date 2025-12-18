@@ -118,7 +118,7 @@ export async function POST(request) {
         // Email de notification interne
         const notificationMailOptions = {
             from: "La Société Nouvelle <no-reply@lasocietenouvelle.org>",
-            to: "laura.roost@lasocietenouvelle.org",
+            to: "contact@lasocietenouvelle.org",
             subject: `Nouvelle demande de partenariat 2026 - ${organisme}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
