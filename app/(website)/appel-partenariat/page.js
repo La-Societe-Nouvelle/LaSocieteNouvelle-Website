@@ -29,7 +29,7 @@ export default function AppelPartenariat() {
                   <br />
                   Votre soutien contribue à <strong>enrichir les systèmes comptables</strong> pour outiller l'ensemble des entreprises, et notamment les
                   <strong> TPE/PME</strong>, dans le suivi des externalités de leurs activités ;
-                  et pour apporter de la <strong>transparence</strong> sur celles qui
+                  et à <strong>apporter de la transparence</strong> sur celles qui
                   construisent une <strong>économie durable</strong>.
                 </p>
 
@@ -142,25 +142,29 @@ export default function AppelPartenariat() {
                 <div className="presentation-lsn-text">
                   <h4 className="presentation-lsn-text__title">La structure</h4>
                   <p>
-                    La Société Nouvelle est une structure créée spécifiquement
-                    pour mettre en œuvre un{" "}
+                    La Société Nouvelle est une structure créée en 2020, spécifiquement
+                    dans le but de porter la mise en œuvre d'un{" "}
                     <strong>
                       système d'information national sur les impacts des
                       entreprises (SINESE)
                     </strong>
-                    . Nous développons et administrons des ressources <strong>open data
-                    et open source</strong> visant à mesurer et analyser <strong>l'empreinte
-                    sociale et environnementale</strong> des activités économiques à
-                    partir des données comptables.
+                    .
                   </p>
                   <p>
+                    Nous développons et administrons des ressources <strong>open data
+                    et open source</strong> visant à intégrer dans les systèmes comptables
+                    la mesure et l'analyse de <strong>l'empreinte
+                    sociale et environnementale de la production des entreprises</strong>,
+                    avec une approche collaborative pour les externalités indirectes.
+                  </p>
+                  {/* <p>
                     Portée par une <strong>logique d'intérêt général</strong>, La Société
                     Nouvelle conçoit des référentiels, des données statistiques
                     et des outils <strong>accessibles à tous</strong>, afin d'éclairer les
                     décisions économiques et publiques et de contribuer à la
                     structuration d'une information robuste au service de la
                     transition écologique et sociale.
-                  </p>
+                  </p> */}
 
                   {/* <p className="presentation-lsn-text--incomplete">
                     <em>
@@ -253,8 +257,7 @@ export default function AppelPartenariat() {
               Ce que permet votre contribution
             </h3>
             <p className="section-subtitle">
-              Produire des données statistiques, développer des outils open
-              source et collaborer avec les institutions.
+              Votre contribution permet d'améliorer l'ensemble des ressources open data et open source.
             </p>
           </div>
 
@@ -358,9 +361,9 @@ export default function AppelPartenariat() {
           </Row>
 
           {/* ===== EXEMPLES D'USAGE ===== */}
-          <Row className="justify-content-center mb-5">
+          <Row className="justify-content-center mb-5 mt-5">
             <Col lg={10}>
-              <h4 className="usage-examples-title">Applications concrètes</h4>
+              <h4 className="usage-examples-title">Initiatives et Applications faisant appel à nos ressources</h4>
               <Row className="g-3 usage-examples-grid">
                 <Col xs={6} md={3}>
                   <div className="usage-card">
@@ -374,7 +377,6 @@ export default function AppelPartenariat() {
                         title="Impact Durabilité"
                       />
                     </div>
-                    <p>Lorem Ipsum dolor site amet</p>
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
@@ -389,7 +391,6 @@ export default function AppelPartenariat() {
                         title="Baromètre Image PME"
                       />
                     </div>
-                    <p>Lorem Ipsum dolor sit amet</p>
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
@@ -404,7 +405,6 @@ export default function AppelPartenariat() {
                         title="Enso RSE"
                       />
                     </div>
-                    <p>Lorem Ipsum dolor sit amet</p>
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
@@ -413,7 +413,6 @@ export default function AppelPartenariat() {
                       <i className="bi bi-c-circle"></i>
                     </div>
                     <div className="usage-card__title">Comptabilité Carbone Collaborative</div>
-                    <p>Lorem Ipsum dolor sit amet</p>
                   </div>
                 </Col>
               </Row>
