@@ -914,7 +914,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
+    padding: 8px 12px;
     margin-bottom: 0.5rem;
     border: 1px solid #f3f3f3;
     border-radius: $card-border-radius-sm;
@@ -938,7 +938,7 @@
 
   &__radio-amount {
     font-weight: 700;
-    color: #fa595f;
+    color: #191558;
     margin-left: 10px;
   }
 

@@ -105,14 +105,19 @@ export default function FormulairePartenariat() {
               </div>
 
               <p className="text-center text-muted mb-4">
-                En devenant partenaire de La Société Nouvelle, vous soutenez nos projets dédiés à la transparence des entreprises et la recherche statistique extra-financière. Vous disposez également d'un accès privilégié à nos ressources et à nos services.
+                En devenant partenaire de La Société Nouvelle, vous soutenez nos
+                projets dédiés à la transparence des entreprises et la recherche
+                statistique extra-financière.
               </p>
               <hr></hr>
-              {message.text && message.type === 'danger' && (
-                <div className={`formulaire-partenariat-page__alert formulaire-partenariat-page__alert--${message.type} mb-4`}>
+              {message.text && message.type === "danger" && (
+                <div
+                  className={`formulaire-partenariat-page__alert formulaire-partenariat-page__alert--${message.type} mb-4`}
+                >
                   <div className="d-flex align-items-center">
-                    <i className={`bi bi-exclamation-triangle-fill formulaire-partenariat-page__alert-icon formulaire-partenariat-page__alert-icon--${message.type}`}>
-                    </i>
+                    <i
+                      className={`bi bi-exclamation-triangle-fill formulaire-partenariat-page__alert-icon formulaire-partenariat-page__alert-icon--${message.type}`}
+                    ></i>
                     <span>{message.text}</span>
                   </div>
                 </div>
@@ -121,13 +126,15 @@ export default function FormulairePartenariat() {
               <Form onSubmit={handleSubmit}>
                 {/* Section: Informations sur la structure */}
                 <h4 className="formulaire-partenariat-page__section-title">
-                  Informations sur la structure
+                  Votre structure
                 </h4>
 
                 <Row>
                   <Col md={8} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Organisme *</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Dénomination *
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="organisme"
@@ -142,7 +149,9 @@ export default function FormulairePartenariat() {
                   </Col>
                   <Col md={4} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Numéro SIREN</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Numéro SIREN
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="siren"
@@ -158,7 +167,9 @@ export default function FormulairePartenariat() {
                 </Row>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="formulaire-partenariat-page__form-label">Adresse</Form.Label>
+                  <Form.Label className="formulaire-partenariat-page__form-label">
+                    Adresse
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     name="adresse"
@@ -173,7 +184,9 @@ export default function FormulairePartenariat() {
                 <Row>
                   <Col md={4} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Code postal</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Code postal
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="codePostal"
@@ -188,7 +201,9 @@ export default function FormulairePartenariat() {
                   </Col>
                   <Col md={8} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Ville</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Ville
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="ville"
@@ -203,7 +218,9 @@ export default function FormulairePartenariat() {
                 </Row>
 
                 <Form.Group className="mb-3">
-                  <Form.Label className="formulaire-partenariat-page__form-label">Site internet</Form.Label>
+                  <Form.Label className="formulaire-partenariat-page__form-label">
+                    Site internet
+                  </Form.Label>
                   <Form.Control
                     type="url"
                     name="siteInternet"
@@ -216,7 +233,9 @@ export default function FormulairePartenariat() {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                  <Form.Label className="formulaire-partenariat-page__form-label">Activités principales</Form.Label>
+                  <Form.Label className="formulaire-partenariat-page__form-label">
+                    Vos activités
+                  </Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={2}
@@ -229,10 +248,15 @@ export default function FormulairePartenariat() {
                   />
                 </Form.Group>
 
+                <h4 className="formulaire-partenariat-page__section-title">
+                  Contact
+                </h4>
                 <Row>
                   <Col md={6} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Nom du contact *</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Nom - Prénom *
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="nomContact"
@@ -247,7 +271,9 @@ export default function FormulairePartenariat() {
                   </Col>
                   <Col md={6} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Fonction</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Fonction
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="fonction"
@@ -264,7 +290,9 @@ export default function FormulairePartenariat() {
                 <Row>
                   <Col md={6} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">Tél.</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        Tél.
+                      </Form.Label>
                       <Form.Control
                         type="tel"
                         name="tel"
@@ -278,7 +306,9 @@ export default function FormulairePartenariat() {
                   </Col>
                   <Col md={6} className="mb-3">
                     <Form.Group>
-                      <Form.Label className="formulaire-partenariat-page__form-label">E-Mail *</Form.Label>
+                      <Form.Label className="formulaire-partenariat-page__form-label">
+                        E-Mail *
+                      </Form.Label>
                       <Form.Control
                         type="email"
                         name="email"
@@ -295,7 +325,7 @@ export default function FormulairePartenariat() {
 
                 {/* Section: Contribution */}
                 <h4 className="formulaire-partenariat-page__section-title">
-                  Votre contribution au projet
+                  Contribution
                 </h4>
 
                 {/* Checkbox: Contribution financière annuelle */}
@@ -307,39 +337,74 @@ export default function FormulairePartenariat() {
                     onChange={(e) => {
                       setShowContributionFinanciere(e.target.checked);
                       if (!e.target.checked) {
-                        setFormData({ ...formData, contributionFinanciere: '' });
+                        setFormData({
+                          ...formData,
+                          contributionFinanciere: "",
+                        });
                       }
                     }}
                     disabled={loading}
-                    label="Contribution financière annuelle"
+                    label="Je souhaite soutenir financièrement les travaux de La Société Nouvelle"
                     className="formulaire-partenariat-page__checkbox-label"
                   />
                 </Form.Group>
 
                 {/* Radio buttons pour contribution financière */}
-                {showContributionFinanciere && (
+                {(showContributionFinanciere || true) && (
                   <Form.Group className="mb-4 ms-4">
                     <div>
                       {[
-                        { value: 'ca_500', label: 'CA < 500 k€', montant: '500 €' },
-                        { value: 'ca_500_1M', label: 'CA compris entre 500 k€ et 1 M€', montant: '1 000 €' },
-                        { value: 'ca_1M_10M', label: 'CA compris entre 1 M€ et 10 M€', montant: '2 500 €' },
-                        { value: 'ca_10M_50M', label: 'CA compris entre 10 M€ et 50 M€', montant: '5 000 €' },
-                        { value: 'ca_50M', label: 'CA > 50 M€', montant: '7 500 €' }
+                        {
+                          value: "ca_500",
+                          label: "CA < 500 k€",
+                          montant: "500 €",
+                        },
+                        {
+                          value: "ca_500_1M",
+                          label: "CA compris entre 500 k€ et 1 M€",
+                          montant: "1 000 €",
+                        },
+                        {
+                          value: "ca_1M_10M",
+                          label: "CA compris entre 1 M€ et 10 M€",
+                          montant: "2 500 €",
+                        },
+                        {
+                          value: "ca_10M_50M",
+                          label: "CA compris entre 10 M€ et 50 M€",
+                          montant: "5 000 €",
+                        },
+                        {
+                          value: "ca_50M",
+                          label: "CA > 50 M€",
+                          montant: "7 500 €",
+                        },
                       ].map((option) => (
                         <div
                           key={option.value}
-                          className={`formulaire-partenariat-page__radio-option ${formData.contributionFinanciere === option.value ? 'formulaire-partenariat-page__radio-option--selected' : ''}`}
-                          onClick={() => !loading && setFormData({ ...formData, contributionFinanciere: option.value })}
+                          className={`formulaire-partenariat-page__radio-option ${
+                            formData.contributionFinanciere === option.value
+                              ? "formulaire-partenariat-page__radio-option--selected"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            !loading &&
+                            setFormData({
+                              ...formData,
+                              contributionFinanciere: option.value,
+                            })
+                          }
                         >
                           <Form.Check
                             type="radio"
                             id={option.value}
                             name="contributionFinanciere"
                             value={option.value}
-                            checked={formData.contributionFinanciere === option.value}
+                            checked={
+                              formData.contributionFinanciere === option.value
+                            }
                             onChange={handleChange}
-                            disabled={loading}
+                            disabled={loading || !showContributionFinanciere}
                             label={option.label}
                           />
                           <span className="formulaire-partenariat-page__radio-amount">
@@ -360,11 +425,11 @@ export default function FormulairePartenariat() {
                     onChange={(e) => {
                       setShowContribuerAutrement(e.target.checked);
                       if (!e.target.checked) {
-                        setFormData({ ...formData, contribuerAutrement: '' });
+                        setFormData({ ...formData, contribuerAutrement: "" });
                       }
                     }}
                     disabled={loading}
-                    label="Contribuer autrement"
+                    label="Je souhaite soutenir le projet autrement"
                     className="formulaire-partenariat-page__checkbox-label"
                   />
                 </Form.Group>
@@ -394,12 +459,18 @@ export default function FormulairePartenariat() {
                   >
                     {loading ? (
                       <>
-                        <Spinner as="span" animation="border" size="sm" role="status" className="me-2" />
+                        <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          className="me-2"
+                        />
                         Envoi en cours...
                       </>
                     ) : (
                       <>
-                        <i className="bi bi-send me-2"></i> Envoyer ma demande
+                        <i className="bi bi-send me-2"></i> Valider mon soutien
                       </>
                     )}
                   </Button>
@@ -460,7 +531,9 @@ export default function FormulairePartenariat() {
             <Row>
               <Col className="text-center">
                 <p className="formulaire-partenariat-page__footer-description mb-3">
-                  La Société Nouvelle porte le projet de l'Empreinte Sociétale : un modèle public, open data et open source pour mesurer les impacts sociaux et environnementaux des entreprises.
+                  La Société Nouvelle porte le projet de l'Empreinte Sociétale :
+                  un modèle public, open data et open source pour mesurer les
+                  impacts sociaux et environnementaux des entreprises.
                 </p>
               </Col>
             </Row>
@@ -476,29 +549,29 @@ export default function FormulairePartenariat() {
         size="lg"
         className="formulaire-partenariat-page__success-modal"
       >
-        <Modal.Header closeButton className="border-0 pb-0 ">
-        </Modal.Header>
+        <Modal.Header closeButton className="border-0 pb-0 "></Modal.Header>
         <Modal.Body className="text-center px-4 pb-5 ">
           <div className="mb-4">
             <div className="formulaire-partenariat-page__success-icon mx-auto mb-3">
               <i className="bi bi-check-circle-fill"></i>
             </div>
             <h3 className="formulaire-partenariat-page__success-title mb-3">
-              Merci pour votre engagement !
+              Merci pour votre soutien !
             </h3>
             <p className="text-muted mb-4">
-              Votre demande de partenariat a bien été envoyée. Nous reviendrons vers vous rapidement pour échanger sur les modalités de collaboration.
+              Le formulaire a bien été envoyé. 
+              <br/>Nous reviendrons
+              vers vous rapidement pour échanger ensemble.
             </p>
           </div>
 
           <div className="formulaire-partenariat-page__success-divider mx-auto mb-4"></div>
 
           <div className="mb-4">
-            <h5 className="fw-bold mb-3" >
-              Lorem ipsum dolor sit amet
-            </h5>
-            <p className="text-muted mb-3" >
-              Nunc commodo, magna nec aliquam tincidunt, nunc urna euismod nunc, euismod aliquam nunc nunc euismod nunc.
+            <h5 className="fw-bold mb-3">Partager l'appel à partenaire</h5>
+            <p className="text-muted mb-3">
+              Pour nous aider à trouver de nouveaux partenaires, 
+              <br/>n'hésitez pas à republier notre appel au sein de votre réseau.
             </p>
           </div>
 
@@ -512,12 +585,9 @@ export default function FormulairePartenariat() {
               }}
             >
               <i className="bi bi-linkedin me-2"></i>
-              Partager sur LinkedIn
+              Accéder au post LinkedIn
             </Button>
-
           </div>
-
-
         </Modal.Body>
       </Modal>
     </div>
