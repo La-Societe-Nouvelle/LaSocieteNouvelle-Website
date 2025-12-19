@@ -1,3 +1,4 @@
+import PartnershipBanner from "../components/home/PartnershipBanner";
 import HeroSection from "../components/home/HeroSection";
 import IndicsSection from "../components/home/IndicsSection";
 
@@ -21,6 +22,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <PartnershipBanner />
       <HeroSection />
       <KeyFigures />
       <IndicsSection />
