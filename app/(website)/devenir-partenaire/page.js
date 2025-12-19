@@ -44,7 +44,7 @@ export default function BecomePartner() {
               <Button
                 className="m-3"
                 variant="primary"
-                href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2025.pdf"
+                href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2026.pdf"
                 target="_blank"
                 title="Télécharger la fiche partenaire 2025"
               >

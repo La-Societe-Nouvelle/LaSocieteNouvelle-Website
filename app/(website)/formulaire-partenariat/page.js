@@ -650,8 +650,23 @@ export default function FormulairePartenariat() {
               vers vous rapidement pour échanger ensemble.
             </p>
           </div>
-
           <div className="formulaire-partenariat-page__success-divider mx-auto mb-4"></div>
+
+          <div className="d-flex flex-wrap justify-content-center gap-3 mb-4">
+            <Button
+              variant="primary"
+              size="sm"
+              className="formulaire-partenariat-page__share-button"
+              href="https://www.linkedin.com/company/la-societe-nouvelle/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-linkedin me-2"></i>
+              Suivez-nous sur LinkedIn
+            </Button>
+          </div>
+
+          {/* 
 
           <div className="mb-4">
             <h5 className="fw-bold mb-3">Partager l'appel à partenaire</h5>
@@ -666,14 +681,14 @@ export default function FormulairePartenariat() {
               variant="primary"
               size="sm"
               className="formulaire-partenariat-page__share-button"
-              onClick={() => {
-                // TO DO : Ajouter lien de partage
-              }}
+              href=""
+               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-linkedin me-2"></i>
               Accéder au post LinkedIn
             </Button>
-          </div>
+          </div> */}
         </Modal.Body>
       </Modal>
     </div>

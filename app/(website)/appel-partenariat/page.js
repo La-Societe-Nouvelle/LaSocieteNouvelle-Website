@@ -38,7 +38,7 @@ export default function AppelPartenariat() {
                   <Button
                     variant="outline-primary"
                     size="lg"
-                    href="/docs/Fiche-Partenaire-2025.pdf"
+                    href="/docs/Fiche-Partenaire-2026.pdf"
                     target="_blank"
                   >
                     Télécharger la fiche partenaire
@@ -172,7 +172,7 @@ export default function AppelPartenariat() {
                       but non lucratif...
                     </em>
                   </p> */}
-                 <h4 className="presentation-lsn-text__title mt-5">Nos activités</h4>
+                  <h4 className="presentation-lsn-text__title mt-5">Nos activités</h4>
                   <ul className="fs-6">
                     <li>Administration d'une base de données ouverte</li>
                     <li>Développement d'un outils de mesure open source</li>
@@ -273,7 +273,7 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet d'<strong>engager des travaux de recherche</strong> pour améliorer les méthodes de calcul d'empreintes
-                    macroéconomiques, telles que pour la prise en compte du
+                  macroéconomiques, telles que pour la prise en compte du
                   capital fixe ou la régionalisation.
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function AppelPartenariat() {
                 <p className="activity-card__text">
                   Votre contribution permet <strong>l'amélioration des données
                     statistiques</strong> que nous produisons et mettons librement à
-                      disposition (moyennes sectorielles, facteurs d'impacts
+                  disposition (moyennes sectorielles, facteurs d'impacts
                   monétaires, etc.), notamment au niveau de la granularité.
                 </p>
               </div>
@@ -308,9 +308,9 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet le <strong>développement et la maintenance
-                    de scripts open source</strong> permettant estimer et d'analyser les
+                    de scripts open source</strong> permettant d'estimer et d'analyser les
                   impacts des entreprises à partir des données comptables et
-                    sociales.
+                  sociales.
                 </p>
               </div>
             </Col>
@@ -452,7 +452,7 @@ export default function AppelPartenariat() {
                 <Col xs={6} md={3}>
                   <div className="usage-card">
                     <Image
-                      src="/logos/Logo_Hosmony.png"
+                      src="/logos/Logo_hosmony.png"
                       alt="Logo Hosmony"
                       width={200}
                       height={60}
@@ -599,7 +599,7 @@ export default function AppelPartenariat() {
                     nos activités via des prestations commerciales (études
                     statistiques, développements informatiques, production de
                     données, etc.) mais <strong>pour aller plus loin et plus vite nous
-                    faisons également appel à des sponsors</strong>, ayant souvent un
+                      faisons également appel à des sponsors</strong>, ayant souvent un
                     intérêt direct vis-à-vis de nos travaux et du système d'information
                     mis en oeuvre.
                   </p>
@@ -900,17 +900,19 @@ export default function AppelPartenariat() {
                     Que signifie concrètement devenir partenaire ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Nous appelons <strong>partenaires</strong> les structures qui contribuent, de
-                    manière directe ou indirecte, à la mise en oeuvre du système
-                    d'information national sur les impacts des entreprises, que
-                    nous portons. Cette contribution peut être <strong>financière ou
-                      opérationnelle</strong> (mise en place du service auprès de ses
-                    clients, appui statistique, intégration des données, etc.).
-                    <br />
-                    Plus particulièrement, les partenaires <strong>"sponsors"</strong> nous
-                    permettent de financer des <strong>travaux de R&D</strong> et d'améliorer les
-                    ressources ouvertes que nous mettons à disposition (données,
-                    outils, référentiels).
+                    <p>
+                      Nous appelons <strong>partenaires</strong> les structures qui contribuent, de
+                      manière directe ou indirecte, à la mise en oeuvre du système
+                      d'information national sur les impacts des entreprises, que
+                      nous portons. Cette contribution peut être <strong>financière ou
+                        opérationnelle</strong> (mise en place du service auprès de ses
+                      clients, appui statistique, intégration des données, etc.).
+                      <br />
+                      Plus particulièrement, les partenaires <strong>"sponsors"</strong> nous
+                      permettent de financer des <strong>travaux de R&D</strong> et d'améliorer les
+                      ressources ouvertes que nous mettons à disposition (données,
+                      outils, référentiels).
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -957,13 +959,15 @@ export default function AppelPartenariat() {
                     À quoi sert concrètement la contribution financière ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    La contribution financière nous permet d'<strong>améliorer les
-                      données</strong> que nous mettons à disposition, de <strong>développer et
-                        maintenir les ressources informatiques</strong> associées (Portail,
-                    API, Metriz, Site web, etc.), d'<strong>engager des travaux de
-                      recherche</strong>, et de mettre à disposition des ressources
-                    complémentaires (documentation, kit de mission, etc.). <strong>Tous
-                      nos travaux sont rendus publics et libres d'exploitation</strong>.
+                    <p>
+                      La contribution financière nous permet d'<strong>améliorer les
+                        données</strong> que nous mettons à disposition, de <strong>développer et
+                          maintenir les ressources informatiques</strong> associées (Portail,
+                      API, Metriz, Site web, etc.), d'<strong>engager des travaux de
+                        recherche</strong>, et de mettre à disposition des ressources
+                      complémentaires (documentation, kit de mission, etc.). <strong>Tous
+                        nos travaux sont rendus publics et libres d'exploitation</strong>.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -973,13 +977,15 @@ export default function AppelPartenariat() {
                     ressources sont accessibles à tous ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    L'accessibilité (gratuité) des ressources ne signifie pas
-                    l'absence de coût. Les données, les outils et les
-                    référentiels ouverts nécessitent un <strong>travail continu de
-                      production, de maintenance, d'amélioration et de diffusion</strong>.
-                    La contribution permet de garantir un <strong>cadre commun fiable</strong>,
-                    dont chacun bénéficie aujourd'hui ou pourra bénéficier
-                    demain, <strong>sans dépendance à un acteur privé</strong>.
+                    <p>
+                      L'accessibilité (gratuité) des ressources ne signifie pas
+                      l'absence de coût. Les données, les outils et les
+                      référentiels ouverts nécessitent un <strong>travail continu de
+                        production, de maintenance, d'amélioration et de diffusion</strong>.
+                      La contribution permet de garantir un <strong>cadre commun fiable</strong>,
+                      dont chacun bénéficie aujourd'hui ou pourra bénéficier
+                      demain, <strong>sans dépendance à un acteur privé</strong>.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -989,8 +995,10 @@ export default function AppelPartenariat() {
                     ressources ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Oui. <strong>L'accès aux ressources n'est pas conditionné</strong> à une
-                    contribution financière ou autre. Le partenariat est un <strong>choix volontaire, pas une obligation</strong>.
+                    <p>
+                      Oui. <strong>L'accès aux ressources n'est pas conditionné</strong> à une
+                      contribution financière ou autre. Le partenariat est un <strong>choix volontaire, pas une obligation</strong>.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -1026,11 +1034,13 @@ export default function AppelPartenariat() {
                     Quel est le montant de la contribution ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Le montant de la contribution est déterminé selon votre chiffre d'affaires.
-                    La grille est disponible au sein de la fiche partenaire ou du formulaire.
-                    Il reste tout à fait possible de proposer un montant différent ou d'échanger
-                    sur les modalités, en fonction de votre situation et de vos
-                    capacités.
+                    <p>
+                      Le montant de la contribution est déterminé selon votre chiffre d'affaires.
+                      La grille est disponible au sein de la fiche partenaire ou du formulaire.
+                      Il reste tout à fait possible de proposer un montant différent ou d'échanger
+                      sur les modalités, en fonction de votre situation et de vos
+                      capacités.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -1039,9 +1049,11 @@ export default function AppelPartenariat() {
                     Les ressources développées resteront-elles publiques et ouvertes ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Oui, <strong>l'ensemble des ressources</strong> que nous produisons sont et <strong>resteront
-                      publiques, ouvertes et accessibles à tous</strong>, conformément aux principes
-                    fondateurs de La Société Nouvelle.
+                    <p>
+                      Oui, <strong>l'ensemble des ressources</strong> que nous produisons sont et <strong>resteront
+                        publiques, ouvertes et accessibles à tous</strong>, conformément aux principes
+                      fondateurs de La Société Nouvelle.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="12">
@@ -1049,10 +1061,12 @@ export default function AppelPartenariat() {
                     Quelle est la démarche pour devenir partenaire ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Pour devenir partenaire, il vous suiffit de compléter le formulaire
-                    à votre disposition, ou simplement de prendre contact avec nous. Nous revenons ensuite vers vous
-                    pour formaliser le partenariat et commencer à travailler
-                    ensemble.
+                    <p>
+                      Pour devenir partenaire, il vous suiffit de compléter le formulaire
+                      à votre disposition, ou simplement de prendre contact avec nous. Nous revenons ensuite vers vous
+                      pour formaliser le partenariat et commencer à travailler
+                      ensemble.
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>

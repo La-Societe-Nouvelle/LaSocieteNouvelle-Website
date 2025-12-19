@@ -44,7 +44,7 @@ export default function DevenirSponsor() {
                   diffusion de la méthode de l'Empreinte Sociétale.
                 </p>
                 <Link
-                  href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2025.pdf"
+                  href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2026.pdf"
                   className="btn btn-primary mt-3"
                   target="_blank"
                   title="Télécharger la fiche partenaire 2025"
@@ -170,7 +170,7 @@ export default function DevenirSponsor() {
             </p>
             <div className="highlight-section__links">
               <Link
-                href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2025.pdf"
+                href="https://lasocietenouvelle.org/docs/Fiche-Partenaire-2026.pdf"
                 className="btn btn-primary"
                 target="_blank"
               >
