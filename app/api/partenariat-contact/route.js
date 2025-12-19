@@ -79,11 +79,11 @@ export async function POST(request) {
                     <div style="padding: 30px 20px;">
                         <h4 style="color: #333;">${nomContact},</h4>
 
-                        <p>Merci pour votre intérêt pour devenir partenaire de La Société Nouvelle pour l'année 2026 !</p>
+                        <p>Merci de l'intérêt que vous portez à un partenariat avec La Société Nouvelle pour l’année 2026.</p>
 
-                        <p>Nous avons bien reçu votre demande et nous vous recontacterons prochainement pour échanger sur les modalités de partenariat.</p>
+                        <p>Nous avons bien reçu votre demande et reviendrons vers vous prochainement afin d’échanger sur les modalités de ce partenariat.</p>
 
-                        <p>En attendant, n'hésitez pas à nous contacter si vous avez des questions.</p>
+                        <p>D'ici là, n'hésitez pas à nous contacter si vous avez la moindre question.</p>
 
                         <p style="margin-top: 30px;">
                             Cordialement,
