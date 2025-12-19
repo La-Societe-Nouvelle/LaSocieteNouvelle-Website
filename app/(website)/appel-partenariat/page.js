@@ -152,9 +152,9 @@ export default function AppelPartenariat() {
                   </p>
                   <p>
                     Nous développons et administrons des ressources <strong>open data
-                    et open source</strong> visant à intégrer dans les systèmes comptables
+                      et open source</strong> visant à intégrer dans les systèmes comptables
                     la mesure et l'analyse de <strong>l'empreinte
-                    sociale et environnementale de la production des entreprises</strong>,
+                      sociale et environnementale de la production des entreprises</strong>,
                     avec une approche collaborative pour les externalités indirectes.
                   </p>
                   {/* <p>
@@ -172,7 +172,7 @@ export default function AppelPartenariat() {
                       but non lucratif...
                     </em>
                   </p> */}
-                  <h4 className="presentation-lsn-text__title">Nos activités</h4>
+                  <h5 className="fw-bold">Nos activités</h5>
                   <ul>
                     <li>Administration d'une base de données ouverte</li>
                     <li>Développement d'un outils de mesure open source</li>
@@ -273,7 +273,7 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet d'engager des <strong>travaux de recherche</strong> pour améliorer les <strong>méthodes de calcul d'empreintes
-                  macroéconomiques</strong>, telles que pour la prise en compte du
+                    macroéconomiques</strong>, telles que pour la prise en compte du
                   capital fixe ou la régionalisation.
                 </p>
               </div>
@@ -290,8 +290,8 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet l'amélioration des <strong>données
-                  statistiques</strong> que nous produisons et mettons <strong>librement à
-                  disposition</strong> (moyennes sectorielles, facteurs d'impacts
+                    statistiques</strong> que nous produisons et mettons <strong>librement à
+                      disposition</strong> (moyennes sectorielles, facteurs d'impacts
                   monétaires, etc.), notamment au niveau de la granularité.
                 </p>
               </div>
@@ -308,9 +308,9 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet le <strong>développement et la maintenance
-                  de scripts open source</strong> permettant estimer et d'analyser les
+                    de scripts open source</strong> permettant estimer et d'analyser les
                   impacts des entreprises à partir des <strong>données comptables et
-                  sociales</strong>.
+                    sociales</strong>.
                 </p>
               </div>
             </Col>
@@ -367,51 +367,51 @@ export default function AppelPartenariat() {
               <Row className="g-3 usage-examples-grid">
                 <Col xs={6} md={3}>
                   <div className="usage-card">
-                    <div className="usage-card__icon">
-                      <Image
-                        src="/logos/impact-durabilite-cnoec.png"
-                        alt="Logo Impact durabilité"
-                        width={200}
-                        height={60}
-                        style={{ objectFit: 'contain' }}
-                        title="Impact Durabilité"
-                      />
-                    </div>
+                    <Image
+                      src="/logos/impact-durabilite-cnoec.png"
+                      alt="Logo Impact durabilité"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Impact Durabilité"
+                    />
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
                   <div className="usage-card">
-                    <div className="usage-card__icon">
-                      <Image
-                        src="/logos/image-pme.png"
-                        alt="Logo Baromètre Image PME"
-                        width={200}
-                        height={60}
-                        style={{ objectFit: 'contain' }}
-                        title="Baromètre Image PME"
-                      />
-                    </div>
+                    <Image
+                      src="/logos/image-pme.png"
+                      alt="Logo Baromètre Image PME"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Baromètre Image PME"
+                    />
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
                   <div className="usage-card">
-                    <div className="usage-card__icon">
-                      <Image
-                        src="/logos/enso-rse-logo.png"
-                        alt="Logo Enso RSE"
-                        width={200}
-                        height={60}
-                        style={{ objectFit: 'contain' }}
-                        title="Enso RSE"
-                      />
-                    </div>
+                    <Image
+                      src="/logos/enso-rse-logo.png"
+                      alt="Logo Enso RSE"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Enso RSE"
+                    />
                   </div>
                 </Col>
                 <Col xs={6} md={3}>
                   <div className="usage-card">
-                    <div className="usage-card__icon">
-                      <i className="bi bi-c-circle"></i>
-                    </div>
+                    {/* <Image
+                      src="/logos/enso-rse-logo.png"
+                      alt="Logo Enso RSE"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Enso RSE"
+                    /> */}
+                    <i className="bi bi-c-circle"></i>
                     <div className="usage-card__title">Comptabilité Carbone Collaborative</div>
                   </div>
                 </Col>
@@ -539,16 +539,16 @@ export default function AppelPartenariat() {
                   <p>
                     La structuration de l'information extra-financière à l'échelle
                     de chaque entreprise suppose une <strong>participation de l'ensemble
-                    des acteurs de la comptabilité</strong> (cabinets, éditeurs, etc.).
+                      des acteurs de la comptabilité</strong> (cabinets, éditeurs, etc.).
                     Cette participation n'est possible que sur la base de
                     <strong> ressources et de méthodes communes, accessibles à tous et non
-                    propriétaires</strong>, pour éviter tout blocage lié à la dépendance à
+                      propriétaires</strong>, pour éviter tout blocage lié à la dépendance à
                     un acteur privé concurrent ou ayant un but lucratif.
                   </p>
                   <p>
                     <strong>L'open data et l'open source</strong> constituent ainsi la condition
                     nécessaire à une <strong>approche collaborative, durable et acceptable
-                    par tous</strong>.
+                      par tous</strong>.
                   </p>
                   <p>
                     Ce choix implique cependant une approche différente dans le
@@ -876,7 +876,7 @@ export default function AppelPartenariat() {
                     manière directe ou indirecte, à la mise en oeuvre du système
                     d'information national sur les impacts des entreprises, que
                     nous portons. Cette contribution peut être <strong>financière ou
-                    opérationnelle</strong> (mise en place du service auprès de ses
+                      opérationnelle</strong> (mise en place du service auprès de ses
                     clients, appui statistique, intégration des données, etc.).
                     <br />
                     Plus particulièrement, les partenaires <strong>"sponsors"</strong> nous
@@ -891,7 +891,7 @@ export default function AppelPartenariat() {
                   <Accordion.Body>
                     <p>
                       La contribution correspond à un <strong>soutien financier de type
-                      partenariat / sponsoring</strong>, et non à un don ouvrant droit à
+                        partenariat / sponsoring</strong>, et non à un don ouvrant droit à
                       des avantages fiscaux. Elle s'inscrit dans une logique de
                       <strong> financement collectif d'un projet d'intérêt général</strong>, dont
                       les ressources sont <strong>ouvertes et accessibles à tous</strong>.
@@ -912,7 +912,7 @@ export default function AppelPartenariat() {
                   <Accordion.Body>
                     <p>
                       Non, le partenariat <strong>ne conditionne aucunement l'accès aux
-                      ressources</strong>, qui restent <strong>ouvertes et accessibles à tous</strong>.
+                        ressources</strong>, qui restent <strong>ouvertes et accessibles à tous</strong>.
                     </p>
                     <p className="mb-0">
                       L'équipe de La Société Nouvelle reste cependant davantage
@@ -930,12 +930,12 @@ export default function AppelPartenariat() {
                   </Accordion.Header>
                   <Accordion.Body>
                     La contribution financière nous permet d'<strong>améliorer les
-                    données</strong> que nous mettons à disposition, de <strong>développer et
-                    maintenir les ressources informatiques</strong> associées (Portail,
+                      données</strong> que nous mettons à disposition, de <strong>développer et
+                        maintenir les ressources informatiques</strong> associées (Portail,
                     API, Metriz, Site web, etc.), d'<strong>engager des travaux de
-                    recherche</strong>, et de mettre à disposition des ressources
+                      recherche</strong>, et de mettre à disposition des ressources
                     complémentaires (documentation, kit de mission, etc.). <strong>Tous
-                    nos travaux sont rendus publics et libres d'exploitation</strong>.
+                      nos travaux sont rendus publics et libres d'exploitation</strong>.
                   </Accordion.Body>
                 </Accordion.Item>
 
@@ -948,7 +948,7 @@ export default function AppelPartenariat() {
                     L'accessibilité (gratuité) des ressources ne signifie pas
                     l'absence de coût. Les données, les outils et les
                     référentiels ouverts nécessitent un <strong>travail continu de
-                    production, de maintenance, d'amélioration et de diffusion</strong>.
+                      production, de maintenance, d'amélioration et de diffusion</strong>.
                     La contribution permet de garantir un <strong>cadre commun fiable</strong>,
                     dont chacun bénéficie aujourd'hui ou pourra bénéficier
                     demain, <strong>sans dépendance à un acteur privé</strong>.
@@ -998,13 +998,13 @@ export default function AppelPartenariat() {
                     Quel est le montant de la contribution ?
                   </Accordion.Header>
                   <Accordion.Body>
-                    Le montant de la contribution est déterminé selon votre chiffre d'affaires. 
+                    Le montant de la contribution est déterminé selon votre chiffre d'affaires.
                     La grille est disponible au sein de la fiche partenaire ou du formulaire.
                     Il reste tout à fait possible de proposer un montant différent ou d'échanger
                     sur les modalités, en fonction de votre situation et de vos
                     capacités.
                   </Accordion.Body>
-                </Accordion.Item>                
+                </Accordion.Item>
 
                 <Accordion.Item eventKey="11">
                   <Accordion.Header>
@@ -1012,7 +1012,7 @@ export default function AppelPartenariat() {
                   </Accordion.Header>
                   <Accordion.Body>
                     Oui, <strong>l'ensemble des ressources</strong> que nous produisons sont et <strong>resteront
-                    publiques, ouvertes et accessibles à tous</strong>, conformément aux principes
+                      publiques, ouvertes et accessibles à tous</strong>, conformément aux principes
                     fondateurs de La Société Nouvelle.
                   </Accordion.Body>
                 </Accordion.Item>

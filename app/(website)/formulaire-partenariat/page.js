@@ -31,6 +31,20 @@ export default function FormulairePartenariat() {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: "", text: "" });
+
+    // Validation 
+    const hasFinancialContribution = showContributionFinanciere && formData.contributionFinanciere;
+    const hasOtherContribution = showContribuerAutrement && formData.contribuerAutrement;
+
+    if (!hasFinancialContribution && !hasOtherContribution) {
+      setMessage({
+        type: "danger",
+        text: "Veuillez sélectionner au moins une forme de contribution (financière ou autre)."
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/partenariat-contact", {
         method: "POST",
@@ -39,7 +53,7 @@ export default function FormulairePartenariat() {
       });
 
       const data = await response.json();
-      
+
       if (response.ok) {
         setShowSuccessModal(true);
         setFormData({
@@ -109,18 +123,7 @@ export default function FormulairePartenariat() {
                 statistique extra-financière.
               </p>
               <hr></hr>
-              {message.text && message.type === "danger" && (
-                <div
-                  className={`formulaire-partenariat-page__alert formulaire-partenariat-page__alert--${message.type} mb-4`}
-                >
-                  <div className="d-flex align-items-center">
-                    <i
-                      className={`bi bi-exclamation-triangle-fill formulaire-partenariat-page__alert-icon formulaire-partenariat-page__alert-icon--${message.type}`}
-                    ></i>
-                    <span>{message.text}</span>
-                  </div>
-                </div>
-              )}
+
 
               <Form onSubmit={handleSubmit}>
                 {/* Section: Informations sur la structure */}
@@ -349,93 +352,91 @@ export default function FormulairePartenariat() {
                 </Form.Group>
 
                 {/* Radio buttons pour contribution financière */}
-                {showContributionFinanciere && (
-                  <Form.Group className="mb-4 ms-4">
-                    <div>
-                      {[
-                        {
-                          value: "ca_500",
-                          label: "CA < 500 k€",
-                          montant: "500 €",
-                        },
-                        {
-                          value: "ca_500_1M",
-                          label: "CA compris entre 500 k€ et 1 M€",
-                          montant: "1 000 €",
-                        },
-                        {
-                          value: "ca_1M_10M",
-                          label: "CA compris entre 1 M€ et 10 M€",
-                          montant: "2 500 €",
-                        },
-                        {
-                          value: "ca_10M_50M",
-                          label: "CA compris entre 10 M€ et 50 M€",
-                          montant: "5 000 €",
-                        },
-                        {
-                          value: "ca_50M",
-                          label: "CA > 50 M€",
-                          montant: "7 500 €",
-                        },
-                        {
-                          value: "autre",
-                          label: "Autre",
-                          montant: "",
-                        },
-                      ].map((option) => (
-                        <div key={option.value}>
-                          <div
-                            className={`formulaire-partenariat-page__radio-option ${formData.contributionFinanciere === option.value
-                                ? "formulaire-partenariat-page__radio-option--selected"
-                                : ""
-                              }`}
-                            onClick={() =>
-                              !loading &&
-                              setFormData({
-                                ...formData,
-                                contributionFinanciere: option.value,
-                              })
+                <Form.Group className="mb-4 ms-4">
+                  <div>
+                    {[
+                      {
+                        value: "ca_500",
+                        label: "CA < 500 k€",
+                        montant: "500 €",
+                      },
+                      {
+                        value: "ca_500_1M",
+                        label: "CA compris entre 500 k€ et 1 M€",
+                        montant: "1 000 €",
+                      },
+                      {
+                        value: "ca_1M_10M",
+                        label: "CA compris entre 1 M€ et 10 M€",
+                        montant: "2 500 €",
+                      },
+                      {
+                        value: "ca_10M_50M",
+                        label: "CA compris entre 10 M€ et 50 M€",
+                        montant: "5 000 €",
+                      },
+                      {
+                        value: "ca_50M",
+                        label: "CA > 50 M€",
+                        montant: "7 500 €",
+                      },
+                      {
+                        value: "autre",
+                        label: "Autre",
+                        montant: "",
+                      },
+                    ].map((option) => (
+                      <div key={option.value}>
+                        <div
+                          className={`formulaire-partenariat-page__radio-option ${formData.contributionFinanciere === option.value
+                            ? "formulaire-partenariat-page__radio-option--selected"
+                            : ""
+                            }`}
+                          onClick={() =>
+                            !loading && showContributionFinanciere &&
+                            setFormData({
+                              ...formData,
+                              contributionFinanciere: option.value,
+                            })
+                          }
+                        >
+                          <Form.Check
+                            type="radio"
+                            id={option.value}
+                            name="contributionFinanciere"
+                            value={option.value}
+                            checked={
+                              formData.contributionFinanciere === option.value
                             }
-                          >
-                            <Form.Check
-                              type="radio"
-                              id={option.value}
-                              name="contributionFinanciere"
-                              value={option.value}
-                              checked={
-                                formData.contributionFinanciere === option.value
-                              }
-                              onChange={handleChange}
-                              disabled={loading || !showContributionFinanciere}
-                              label={option.label}
-                            />
-                            {option.montant && (
-                              <span className="formulaire-partenariat-page__radio-amount">
-                                {option.montant}
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Input pour montant "Autre" */}
-                          {option.value === "autre" && formData.contributionFinanciere === "autre" && (
-                            <Form.Group className="ms-4 mt-2 mb-3">
-                              <Form.Control
-                                type="text"
-                                name="montantAutre"
-                                value={formData.montantAutre}
-                                onChange={handleChange}
-                                disabled={loading}
-                                placeholder="Autre montant (€)"
-                                className="formulaire-partenariat-page__input text-end"
-                              />
-                            </Form.Group>
+                            onChange={handleChange}
+                            disabled={loading || !showContributionFinanciere}
+                            label={option.label}
+                          />
+                          {option.montant && (
+                            <span className="formulaire-partenariat-page__radio-amount">
+                              {option.montant}
+                            </span>
                           )}
                         </div>
-                      ))}
-                    </div>
-                  </Form.Group>
-                )}
+
+                        {/* Input pour montant "Autre" */}
+                        {option.value === "autre" && formData.contributionFinanciere === "autre" && (
+                          <Form.Group className="ms-4 mt-2 mb-3">
+                            <Form.Control
+                              type="text"
+                              name="montantAutre"
+                              value={formData.montantAutre}
+                              onChange={handleChange}
+                              disabled={loading}
+                              placeholder="Autre montant (€)"
+                              className="formulaire-partenariat-page__input text-end"
+                            />
+                          </Form.Group>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Form.Group>
 
                 {/* Checkbox: Contribuer autrement */}
                 <Form.Group className="mb-3">
@@ -456,72 +457,83 @@ export default function FormulairePartenariat() {
                 </Form.Group>
 
                 {/* Radio buttons Contribution non financière */}
-                {showContribuerAutrement && (
-                  <Form.Group className="mb-4 ms-4">
-                    <div>
-                      {[
-                        {
-                          value: "expertComptable",
-                          label: "Je suis expert-comptable, et je souhaite collaborer pendant la période fiscale autour de la production de données extra-financières",
-                        },
-                        {
-                          value: "entreprise",
-                          label: "Je suis une entreprise, et je souhaite mesurer et publier l'empreinte sociétale de mes activités",
-                        },
-                        {
-                          value: "developpeur",
-                          label: "Je suis développeur et je souhaite contribuer au développement des ressources informatiques",
-                        },
-                        {
-                          value: "autre",
-                          label: "Autre",
-                        },
-                      ].map((option) => (
-                        <div key={option.value}>
-                          <div
-                            className={`formulaire-partenariat-page__radio-option ${formData.contribuerAutrement === option.value
-                                ? "formulaire-partenariat-page__radio-option--selected"
-                                : ""
-                              }`}
-                            onClick={() =>
-                              !loading &&
-                              setFormData({
-                                ...formData,
-                                contribuerAutrement: option.value,
-                              })
-                            }
-                          >
-                            <Form.Check
-                              type="radio"
-                              id={`contribuer-${option.value}`}
-                              name="contribuerAutrement"
-                              value={option.value}
-                              checked={formData.contribuerAutrement === option.value}
+                <Form.Group className="mb-4 ms-4">
+                  <div>
+                    {[
+                      {
+                        value: "expertComptable",
+                        label: "Je suis expert-comptable, et je souhaite collaborer pendant la période fiscale autour de la production de données extra-financières",
+                      },
+                      {
+                        value: "entreprise",
+                        label: "Je suis une entreprise, et je souhaite mesurer et publier l'empreinte sociétale de mes activités",
+                      },
+                      {
+                        value: "developpeur",
+                        label: "Je suis développeur et je souhaite contribuer au développement des ressources informatiques",
+                      },
+                      {
+                        value: "autre",
+                        label: "Autre",
+                      },
+                    ].map((option) => (
+                      <div key={option.value}>
+                        <div
+                          className={`formulaire-partenariat-page__radio-option ${formData.contribuerAutrement === option.value
+                            ? "formulaire-partenariat-page__radio-option--selected"
+                            : ""
+                            }`}
+                          onClick={() =>
+                            !loading && showContribuerAutrement &&
+                            setFormData({
+                              ...formData,
+                              contribuerAutrement: option.value,
+                            })
+                          }
+                        >
+                          <Form.Check
+                            type="radio"
+                            id={`contribuer-${option.value}`}
+                            name="contribuerAutrement"
+                            value={option.value}
+                            checked={formData.contribuerAutrement === option.value}
+                            onChange={handleChange}
+                            disabled={loading || !showContribuerAutrement}
+                            label={option.label}
+                          />
+                        </div>
+
+                        {/* Textarea pour "Autre" */}
+                        {option.value === "autre" && formData.contribuerAutrement === "autre" && (
+                          <Form.Group className="ms-4 mt-2 mb-3">
+                            <Form.Control
+                              as="textarea"
+                              rows={3}
+                              name="autreContributionTexte"
+                              value={formData.autreContributionTexte}
                               onChange={handleChange}
                               disabled={loading}
-                              label={option.label}
+                              placeholder="Précisez comment vous souhaitez contribuer..."
+                              className="formulaire-partenariat-page__input"
                             />
-                          </div>
+                          </Form.Group>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Form.Group>
 
-                          {/* Textarea pour "Autre" */}
-                          {option.value === "autre" && formData.contribuerAutrement === "autre" && (
-                            <Form.Group className="ms-4 mt-2 mb-3">
-                              <Form.Control
-                                as="textarea"
-                                rows={3}
-                                name="autreContributionTexte"
-                                value={formData.autreContributionTexte}
-                                onChange={handleChange}
-                                disabled={loading}
-                                placeholder="Précisez comment vous souhaitez contribuer..."
-                                className="formulaire-partenariat-page__input"
-                              />
-                            </Form.Group>
-                          )}
-                        </div>
-                      ))}
+                {message.text && message.type === "danger" && (
+                  <div
+                    className={`formulaire-partenariat-page__alert formulaire-partenariat-page__alert--${message.type} mb-4`}
+                  >
+                    <div className="d-flex align-items-center">
+                      <i
+                        className={`bi bi-exclamation-triangle-fill formulaire-partenariat-page__alert-icon formulaire-partenariat-page__alert-icon--${message.type}`}
+                      ></i>
+                      <span>{message.text}</span>
                     </div>
-                  </Form.Group>
+                  </div>
                 )}
 
                 <div className="text-center mt-5">
