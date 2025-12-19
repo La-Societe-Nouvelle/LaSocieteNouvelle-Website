@@ -403,16 +403,14 @@ export default function AppelPartenariat() {
                 </Col>
                 <Col xs={6} md={3}>
                   <div className="usage-card">
-                    {/* <Image
-                      src="/logos/enso-rse-logo.png"
-                      alt="Logo Enso RSE"
+                    <Image
+                      src="/logos/logo_comptabilite-carbone-collaborative.png"
+                      alt="Logo CCC"
                       width={200}
                       height={60}
                       style={{ objectFit: 'contain' }}
-                      title="Enso RSE"
-                    /> */}
-                    <i className="bi bi-c-circle"></i>
-                    <div className="usage-card__title">Comptabilité Carbone Collaborative</div>
+                      title="CCC"
+                    />
                   </div>
                 </Col>
               </Row>
@@ -538,27 +536,27 @@ export default function AppelPartenariat() {
                 <div className="why-intro-text">
                   <p>
                     La structuration de l'information extra-financière à l'échelle
-                    de chaque entreprise suppose une <strong>participation de l'ensemble
-                      des acteurs de la comptabilité</strong> (cabinets, éditeurs, etc.).
-                    Cette participation n'est possible que sur la base de
-                    <strong> ressources et de méthodes communes, accessibles à tous et non
-                      propriétaires</strong>, pour éviter tout blocage lié à la dépendance à
-                    un acteur privé concurrent ou ayant un but lucratif.
+                    de chaque entreprise suppose des <strong>ressources communes</strong> pour la mesure 
+                    et la transmission de données, et
+                    des <strong>ressources accessibles à tous</strong> - open data et open source - pour éviter toute dépendance à
+                    des acteurs privés.
                   </p>
-                  <p>
+                  {/* <p>
                     <strong>L'open data et l'open source</strong> constituent ainsi la condition
-                    nécessaire à une <strong>approche collaborative, durable et acceptable
-                      par tous</strong>.
-                  </p>
+                    nécessaire à une approche collaborative, durable et acceptable
+                    par tous.
+                  </p> */}
                   <p>
-                    Ce choix implique cependant une approche différente dans le
-                    financement du développement et de la maintenance des
-                    ressources communes. Nous cherchons à <strong>auto-financer</strong> au maximum
+                    {/* Ce choix implique cependant une approche différente dans le
+                    financement du développement et de la maintenance de ces
+                    ressources.  */}
+                    Nous cherchons à auto-financer au maximum
                     nos activités via des prestations commerciales (études
                     statistiques, développements informatiques, production de
-                    données, etc.) mais pour aller plus loin et plus vite nous
-                    faisons également appel à des sponsors, engagés et souvent
-                    directement bénéficiaires de nos travaux.
+                    données, etc.) mais <strong>pour aller plus loin et plus vite nous
+                    faisons également appel à des sponsors</strong>, ayant souvent un
+                    intérêt direct vis-à-vis de nos travaux et du système d'information
+                    mis en oeuvre.
                   </p>
                 </div>
 
@@ -566,13 +564,13 @@ export default function AppelPartenariat() {
                 <div className="why-arguments-list">
                   <ul>
                     <li>
-                      <strong>Accessibilité universelle :</strong> Garantir un accès libre aux données et outils pour tous les acteurs économiques
+                      <strong>Garantir un accès libre aux données et outils pour tous les acteurs économiques</strong>
                     </li>
                     <li>
-                      <strong>Information d'intérêt général :</strong> Éviter toute captation privée d'une information d'intérêt général
+                      <strong>Éviter toute captation privée d'une information d'intérêt général</strong>
                     </li>
                     <li>
-                      <strong>Diffusion massive :</strong> Permettre une diffusion massive auprès des acteurs économiques
+                      <strong>Permettre une diffusion massive auprès des acteurs économiques</strong>
                     </li>
                   </ul>
                 </div>
