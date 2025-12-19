@@ -25,7 +25,7 @@ export default function AppelPartenariat() {
 
                 <p className="partnership-hero-subtitle">
                   <b>En soutenant nos travaux,</b> vous contribuez à la
-                  production et à la diffusion de <strong>ressources libres et gratuites</strong> essentielle pour la <strong>transition écologique et sociale</strong>.
+                  production et à la diffusion de <strong>ressources libres et gratuites</strong> essentielles pour la <strong>transition écologique et sociale</strong>.
                   <br />
                   Votre soutien contribue à <strong>enrichir les systèmes comptables</strong> pour outiller l'ensemble des entreprises, et notamment les
                   <strong> TPE/PME</strong>, dans le suivi des externalités de leurs activités ;
@@ -174,11 +174,10 @@ export default function AppelPartenariat() {
                   </p> */}
                   <h4 className="presentation-lsn-text__title mt-5">Nos activités</h4>
                   <ul className="fs-6">
-                    <li>Administration d'une base de données ouverte</li>
-                    <li>Développement d'un outils de mesure open source</li>
-                    <li>Réalisation de travaux statistiques</li>
+                    <li>Administration d'une base de données ouverte, incluant le répertoire SINESE</li>
+                    <li>Développement d'outils et scripts de mesure open source, dont Metriz</li>
+                    <li>Production de séries de données statistiques sur les empreintes des activités économiques</li>
                   </ul>
-
                 </div>
               </div>
             </Col>
@@ -269,7 +268,7 @@ export default function AppelPartenariat() {
                   <i className="bi bi-lightbulb"></i>
                 </div>
                 <h4 className="activity-card__title">
-                  Recherche en statistiques publiques
+                  Recherche en statistiques appliquées
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet d'<strong>engager des travaux de recherche</strong> pour améliorer les méthodes de calcul d'empreintes
@@ -290,9 +289,8 @@ export default function AppelPartenariat() {
                 </h4>
                 <p className="activity-card__text">
                   Votre contribution permet <strong>l'amélioration des données
-                    statistiques</strong> que nous produisons et mettons librement à
-                  disposition (moyennes sectorielles, facteurs d'impacts
-                  monétaires, etc.), notamment au niveau de la granularité.
+                    statistiques</strong> que nous produisons et diffusons (moyennes sectorielles, facteurs d'impacts
+                  monétaires, scenarios prospectifs, etc.), notamment au niveau de la granularité.
                 </p>
               </div>
             </Col>
@@ -343,6 +341,7 @@ export default function AppelPartenariat() {
                   éditeurs de solutions, initiatives autour de la comptabilité
                   carbone, chercheurs, universités et organismes
                   institutionnels.
+                  Vous en bénéficiez potentiellement de manière indirecte.
                 </p>
                 {/* <p>
                   Nos ressources interviennent au sein de la plateforme <strong>Impact
@@ -946,10 +945,8 @@ export default function AppelPartenariat() {
                     </p>
                     <p className="mb-0">
                       L'équipe de La Société Nouvelle reste cependant davantage
-                      disponible auprès des structures partenaires, et offre un
-                      <strong> appui prioritairement</strong> à celles-ci, par exemple pour le
-                      traitement de dossier lors de la période fiscale par
-                      exemple.
+                      disponible auprès des structures partenaires, par exemple pour le
+                      traitement de dossiers lors de la période fiscale.
                     </p>
                   </Accordion.Body>
                 </Accordion.Item>
