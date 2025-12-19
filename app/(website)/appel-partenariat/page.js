@@ -172,7 +172,7 @@ export default function AppelPartenariat() {
                       but non lucratif...
                     </em>
                   </p> */}
-                 <h4 className="presentation-lsn-text__title">Nos activités</h4>
+                 <h4 className="presentation-lsn-text__title mt-5">Nos activités</h4>
                   <ul className="fs-6">
                     <li>Administration d'une base de données ouverte</li>
                     <li>Développement d'un outils de mesure open source</li>
@@ -257,7 +257,7 @@ export default function AppelPartenariat() {
               Ce que permet votre contribution
             </h3>
             <p className="section-subtitle">
-              Votre contribution permet d'améliorer l'ensemble des ressources open data et open source.
+              Votre contribution permet d'améliorer l'ensemble des ressources open data et open source que nous mettons à disposition.
             </p>
           </div>
 
@@ -272,8 +272,8 @@ export default function AppelPartenariat() {
                   Recherche en statistiques publiques
                 </h4>
                 <p className="activity-card__text">
-                  Votre contribution permet d'engager des <strong>travaux de recherche</strong> pour améliorer les <strong>méthodes de calcul d'empreintes
-                    macroéconomiques</strong>, telles que pour la prise en compte du
+                  Votre contribution permet d'<strong>engager des travaux de recherche</strong> pour améliorer les méthodes de calcul d'empreintes
+                    macroéconomiques, telles que pour la prise en compte du
                   capital fixe ou la régionalisation.
                 </p>
               </div>
@@ -289,9 +289,9 @@ export default function AppelPartenariat() {
                   Production de <br></br> données statistiques
                 </h4>
                 <p className="activity-card__text">
-                  Votre contribution permet l'amélioration des <strong>données
-                    statistiques</strong> que nous produisons et mettons <strong>librement à
-                      disposition</strong> (moyennes sectorielles, facteurs d'impacts
+                  Votre contribution permet <strong>l'amélioration des données
+                    statistiques</strong> que nous produisons et mettons librement à
+                      disposition (moyennes sectorielles, facteurs d'impacts
                   monétaires, etc.), notamment au niveau de la granularité.
                 </p>
               </div>
@@ -309,8 +309,8 @@ export default function AppelPartenariat() {
                 <p className="activity-card__text">
                   Votre contribution permet le <strong>développement et la maintenance
                     de scripts open source</strong> permettant estimer et d'analyser les
-                  impacts des entreprises à partir des <strong>données comptables et
-                    sociales</strong>.
+                  impacts des entreprises à partir des données comptables et
+                    sociales.
                 </p>
               </div>
             </Col>
@@ -363,7 +363,7 @@ export default function AppelPartenariat() {
           {/* ===== EXEMPLES D'USAGE ===== */}
           <Row className="justify-content-center mb-5 mt-5">
             <Col lg={10}>
-              <h4 className="usage-examples-title">Initiatives et Applications faisant appel à nos ressources</h4>
+              <h4 className="usage-examples-title">Exemples d'initiatives et structures utilisatrices du système d'information national que nous portons</h4>
               <Row className="g-3 usage-examples-grid">
                 <Col xs={6} md={3}>
                   <div className="usage-card">
@@ -392,6 +392,42 @@ export default function AppelPartenariat() {
                 <Col xs={6} md={3}>
                   <div className="usage-card">
                     <Image
+                      src="/logos/logo_comptabilite-carbone-collaborative-2.png"
+                      alt="Logo CCC"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="CCC"
+                    />
+                  </div>
+                </Col>
+                <Col xs={6} md={3}>
+                  <div className="usage-card">
+                    <Image
+                      src="/logos/logo_carbone-sur-facture-3.png"
+                      alt="Logo Carbone sur facture"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Carbone sur facture"
+                    />
+                  </div>
+                </Col>
+                <Col xs={6} md={3}>
+                  <div className="usage-card">
+                    <Image
+                      src="/logos/logo_centrale-iut.png"
+                      alt="Logo Centrale IUT"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Centrale IUT"
+                    />
+                  </div>
+                </Col>
+                <Col xs={6} md={3}>
+                  <div className="usage-card">
+                    <Image
                       src="/logos/enso-rse-logo.png"
                       alt="Logo Enso RSE"
                       width={200}
@@ -404,12 +440,24 @@ export default function AppelPartenariat() {
                 <Col xs={6} md={3}>
                   <div className="usage-card">
                     <Image
-                      src="/logos/logo_comptabilite-carbone-collaborative.png"
-                      alt="Logo CCC"
+                      src="/logos/logo_izzy.svg"
+                      alt="Logo IZZY"
                       width={200}
                       height={60}
                       style={{ objectFit: 'contain' }}
-                      title="CCC"
+                      title="IZZY"
+                    />
+                  </div>
+                </Col>
+                <Col xs={6} md={3}>
+                  <div className="usage-card">
+                    <Image
+                      src="/logos/Logo_Hosmony.png"
+                      alt="Logo Hosmony"
+                      width={200}
+                      height={60}
+                      style={{ objectFit: 'contain' }}
+                      title="Hosmony"
                     />
                   </div>
                 </Col>
