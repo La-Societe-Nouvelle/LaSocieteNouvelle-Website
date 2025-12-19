@@ -1,0 +1,74 @@
+// ===================================
+// PARTNERSHIP BANNER - Call to action
+// ===================================
+
+.partnership-banner {
+  background: linear-gradient(135deg, $primary 0%, lighten($primary, 10%) 100%);
+  padding: 1rem 0;
+
+  .partnership-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    i.bi-megaphone-fill {
+      color: $secondary;
+      font-size: 1.25rem;
+    }
+
+    .partnership-banner-text {
+      color: white;
+      font-size: 0.95rem;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    .partnership-banner-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      background-color: $secondary;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover {
+        background-color: lighten($secondary, 5%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      i {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .partnership-banner {
+    padding: 1.25rem 0;
+
+    .partnership-banner-content {
+      text-align: center;
+
+      .partnership-banner-text {
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+      }
+
+      i.bi-megaphone-fill {
+        display: none;
+      }
+    }
+  }
+}
