@@ -25,7 +25,10 @@ export async function POST(request) {
             fonction,
             tel,
             email,
-            contributionFinanciere
+            contributionFinanciere,
+            montantAutre,
+            contribuerAutrement,
+            autreContributionTexte
         } = body;
 
         // Validation des champs requis
@@ -44,13 +47,22 @@ export async function POST(request) {
             );
         }
 
-        // Mapping des contributions
+        // Mapping des contributions financières
         const contributionLabels = {
             'ca_500': 'CA < 500 k€ (500 €)',
             'ca_500_1M': 'CA compris entre 500 k€ et 1 M€ (1 000 €)',
             'ca_1M_10M': 'CA compris entre 1 M€ et 10 M€ (2 500 €)',
             'ca_10M_50M': 'CA compris entre 10 M€ et 50 M€ (5 000 €)',
-            'ca_50M': 'CA > 50 M€ (7 500 €)'
+            'ca_50M': 'CA > 50 M€ (7 500 €)',
+            'autre': `Autre${montantAutre ? ` (${montantAutre})` : ''}`
+        };
+
+        // Mapping des contributions non financières
+        const contribuerAutrementLabels = {
+            'expertComptable': 'Expert-comptable : collaboration pendant la période fiscale autour de la production de données extra-financières',
+            'entreprise': 'Entreprise : mesurer et publier l\'empreinte sociétale de mes activités',
+            'developpeur': 'Développeur : contribuer au développement des ressources informatiques',
+            'autre': `Autre${autreContributionTexte ? ` : ${autreContributionTexte}` : ''}`
         };
 
         // Email de confirmation envoyé au partenaire potentiel
@@ -91,6 +103,11 @@ export async function POST(request) {
                             ${contributionFinanciere ? `
                             <p style="margin: 10px 0; margin-top: 20px; font-weight: 600; color: #191558;">Contribution financière :</p>
                             <p style="margin: 5px 0; color: #fa595f; font-weight: 600;">${contributionLabels[contributionFinanciere] || contributionFinanciere}</p>
+                            ` : ''}
+
+                            ${contribuerAutrement ? `
+                            <p style="margin: 10px 0; margin-top: 20px; font-weight: 600; color: #191558;">Contribution non financière :</p>
+                            <p style="margin: 5px 0;">${contribuerAutrementLabels[contribuerAutrement] || contribuerAutrement}</p>
                             ` : ''}
                         </div>
 
@@ -147,6 +164,11 @@ export async function POST(request) {
                             ${contributionFinanciere ? `
                             <p style="margin: 10px 0; margin-top: 20px; font-weight: 600; color: #191558;">Contribution financière :</p>
                             <p style="margin: 5px 0; color: #fa595f; font-weight: 600;">${contributionLabels[contributionFinanciere] || contributionFinanciere}</p>
+                            ` : ''}
+
+                            ${contribuerAutrement ? `
+                            <p style="margin: 10px 0; margin-top: 20px; font-weight: 600; color: #191558;">Contribution non financière :</p>
+                            <p style="margin: 5px 0;">${contribuerAutrementLabels[contribuerAutrement] || contribuerAutrement}</p>
                             ` : ''}
                         </div>
 

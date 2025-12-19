@@ -17,7 +17,9 @@ export default function FormulairePartenariat() {
     tel: '',
     email: '',
     contributionFinanciere: '',
-    contribuerAutrement: ''
+    montantAutre: '',
+    contribuerAutrement: '',
+    autreContributionTexte: ''
   });
   const [showContributionFinanciere, setShowContributionFinanciere] = useState(false);
   const [showContribuerAutrement, setShowContribuerAutrement] = useState(false);
@@ -29,7 +31,6 @@ export default function FormulairePartenariat() {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: "", text: "" });
-
     try {
       const response = await fetch("/api/partenariat-contact", {
         method: "POST",
@@ -38,7 +39,7 @@ export default function FormulairePartenariat() {
       });
 
       const data = await response.json();
-
+      
       if (response.ok) {
         setShowSuccessModal(true);
         setFormData({
@@ -54,7 +55,9 @@ export default function FormulairePartenariat() {
           tel: '',
           email: '',
           contributionFinanciere: '',
-          contribuerAutrement: ''
+          montantAutre: '',
+          contribuerAutrement: '',
+          autreContributionTexte: ''
         });
         setShowContributionFinanciere(false);
         setShowContribuerAutrement(false);
@@ -79,9 +82,7 @@ export default function FormulairePartenariat() {
       <Container className="formulaire-partenariat-page__container py-5">
         <Row className="justify-content-center">
           <Col lg={8} md={10}>
-            {/* Card principale */}
             <div className="formulaire-partenariat-page__form-card">
-              {/* Logo en haut */}
               <div className="formulaire-partenariat-page__logo-container mb-4">
                 <Image
                   src="/logo-La-Societe-Nouvelle.svg"
@@ -90,7 +91,6 @@ export default function FormulairePartenariat() {
                 />
               </div>
 
-              {/* Titre */}
               <h2 className="formulaire-partenariat-page__title text-center mb-3">
                 Bulletin de partenariat - 2026
               </h2>
@@ -99,7 +99,6 @@ export default function FormulairePartenariat() {
                 Entreprises, Cabinets comptables, Structures publiques
               </p>
 
-              {/* Séparateur décoratif */}
               <div className="mb-4">
                 <div className="formulaire-partenariat-page__divider" />
               </div>
@@ -350,7 +349,7 @@ export default function FormulairePartenariat() {
                 </Form.Group>
 
                 {/* Radio buttons pour contribution financière */}
-                {(showContributionFinanciere || true) && (
+                {showContributionFinanciere && (
                   <Form.Group className="mb-4 ms-4">
                     <div>
                       {[
@@ -379,37 +378,59 @@ export default function FormulairePartenariat() {
                           label: "CA > 50 M€",
                           montant: "7 500 €",
                         },
+                        {
+                          value: "autre",
+                          label: "Autre",
+                          montant: "",
+                        },
                       ].map((option) => (
-                        <div
-                          key={option.value}
-                          className={`formulaire-partenariat-page__radio-option ${
-                            formData.contributionFinanciere === option.value
-                              ? "formulaire-partenariat-page__radio-option--selected"
-                              : ""
-                          }`}
-                          onClick={() =>
-                            !loading &&
-                            setFormData({
-                              ...formData,
-                              contributionFinanciere: option.value,
-                            })
-                          }
-                        >
-                          <Form.Check
-                            type="radio"
-                            id={option.value}
-                            name="contributionFinanciere"
-                            value={option.value}
-                            checked={
-                              formData.contributionFinanciere === option.value
+                        <div key={option.value}>
+                          <div
+                            className={`formulaire-partenariat-page__radio-option ${formData.contributionFinanciere === option.value
+                                ? "formulaire-partenariat-page__radio-option--selected"
+                                : ""
+                              }`}
+                            onClick={() =>
+                              !loading &&
+                              setFormData({
+                                ...formData,
+                                contributionFinanciere: option.value,
+                              })
                             }
-                            onChange={handleChange}
-                            disabled={loading || !showContributionFinanciere}
-                            label={option.label}
-                          />
-                          <span className="formulaire-partenariat-page__radio-amount">
-                            {option.montant}
-                          </span>
+                          >
+                            <Form.Check
+                              type="radio"
+                              id={option.value}
+                              name="contributionFinanciere"
+                              value={option.value}
+                              checked={
+                                formData.contributionFinanciere === option.value
+                              }
+                              onChange={handleChange}
+                              disabled={loading || !showContributionFinanciere}
+                              label={option.label}
+                            />
+                            {option.montant && (
+                              <span className="formulaire-partenariat-page__radio-amount">
+                                {option.montant}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Input pour montant "Autre" */}
+                          {option.value === "autre" && formData.contributionFinanciere === "autre" && (
+                            <Form.Group className="ms-4 mt-2 mb-3">
+                              <Form.Control
+                                type="text"
+                                name="montantAutre"
+                                value={formData.montantAutre}
+                                onChange={handleChange}
+                                disabled={loading}
+                                placeholder="Autre montant (€)"
+                                className="formulaire-partenariat-page__input text-end"
+                              />
+                            </Form.Group>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -425,7 +446,7 @@ export default function FormulairePartenariat() {
                     onChange={(e) => {
                       setShowContribuerAutrement(e.target.checked);
                       if (!e.target.checked) {
-                        setFormData({ ...formData, contribuerAutrement: "" });
+                        setFormData({ ...formData, contribuerAutrement: "", autreContributionTexte: "" });
                       }
                     }}
                     disabled={loading}
@@ -434,19 +455,72 @@ export default function FormulairePartenariat() {
                   />
                 </Form.Group>
 
-                {/* Textarea pour contribuer autrement */}
+                {/* Radio buttons Contribution non financière */}
                 {showContribuerAutrement && (
                   <Form.Group className="mb-4 ms-4">
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      name="contribuerAutrement"
-                      value={formData.contribuerAutrement}
-                      onChange={handleChange}
-                      disabled={loading}
-                      placeholder="..."
-                      className="formulaire-partenariat-page__input"
-                    />
+                    <div>
+                      {[
+                        {
+                          value: "expertComptable",
+                          label: "Je suis expert-comptable, et je souhaite collaborer pendant la période fiscale autour de la production de données extra-financières",
+                        },
+                        {
+                          value: "entreprise",
+                          label: "Je suis une entreprise, et je souhaite mesurer et publier l'empreinte sociétale de mes activités",
+                        },
+                        {
+                          value: "developpeur",
+                          label: "Je suis développeur et je souhaite contribuer au développement des ressources informatiques",
+                        },
+                        {
+                          value: "autre",
+                          label: "Autre",
+                        },
+                      ].map((option) => (
+                        <div key={option.value}>
+                          <div
+                            className={`formulaire-partenariat-page__radio-option ${formData.contribuerAutrement === option.value
+                                ? "formulaire-partenariat-page__radio-option--selected"
+                                : ""
+                              }`}
+                            onClick={() =>
+                              !loading &&
+                              setFormData({
+                                ...formData,
+                                contribuerAutrement: option.value,
+                              })
+                            }
+                          >
+                            <Form.Check
+                              type="radio"
+                              id={`contribuer-${option.value}`}
+                              name="contribuerAutrement"
+                              value={option.value}
+                              checked={formData.contribuerAutrement === option.value}
+                              onChange={handleChange}
+                              disabled={loading}
+                              label={option.label}
+                            />
+                          </div>
+
+                          {/* Textarea pour "Autre" */}
+                          {option.value === "autre" && formData.contribuerAutrement === "autre" && (
+                            <Form.Group className="ms-4 mt-2 mb-3">
+                              <Form.Control
+                                as="textarea"
+                                rows={3}
+                                name="autreContributionTexte"
+                                value={formData.autreContributionTexte}
+                                onChange={handleChange}
+                                disabled={loading}
+                                placeholder="Précisez comment vous souhaitez contribuer..."
+                                className="formulaire-partenariat-page__input"
+                              />
+                            </Form.Group>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </Form.Group>
                 )}
 
@@ -559,8 +633,8 @@ export default function FormulairePartenariat() {
               Merci pour votre soutien !
             </h3>
             <p className="text-muted mb-4">
-              Le formulaire a bien été envoyé. 
-              <br/>Nous reviendrons
+              Le formulaire a bien été envoyé.
+              <br />Nous reviendrons
               vers vous rapidement pour échanger ensemble.
             </p>
           </div>
@@ -570,8 +644,8 @@ export default function FormulairePartenariat() {
           <div className="mb-4">
             <h5 className="fw-bold mb-3">Partager l'appel à partenaire</h5>
             <p className="text-muted mb-3">
-              Pour nous aider à trouver de nouveaux partenaires, 
-              <br/>n'hésitez pas à republier notre appel au sein de votre réseau.
+              Pour nous aider à trouver de nouveaux partenaires,
+              <br />n'hésitez pas à republier notre appel au sein de votre réseau.
             </p>
           </div>
 
