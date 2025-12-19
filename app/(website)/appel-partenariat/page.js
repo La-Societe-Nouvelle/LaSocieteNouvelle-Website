@@ -172,8 +172,8 @@ export default function AppelPartenariat() {
                       but non lucratif...
                     </em>
                   </p> */}
-                  <h5 className="fw-bold">Nos activités</h5>
-                  <ul>
+                 <h4 className="presentation-lsn-text__title">Nos activités</h4>
+                  <ul className="fs-6">
                     <li>Administration d'une base de données ouverte</li>
                     <li>Développement d'un outils de mesure open source</li>
                     <li>Réalisation de travaux statistiques</li>
@@ -514,42 +514,39 @@ export default function AppelPartenariat() {
             </Col>
           </Row>
 
-          {/* Contenu en 2 colonnes : illustration + texte */}
-          <Row className="align-items-center g-5">
-            {/* Colonne gauche : Illustration */}
-            <Col lg={4} className="d-none d-lg-block">
-              <div className="why-illustration">
-                <Image
-                  src="/illustrations/agreement.svg"
-                  alt="Illustration "
-                  width={500}
-                  height={400}
-                  className="img-fluid"
-                />
+          <Row >
+            {/* Colonne gauche : Points clés  */}
+            <Col lg={4}>
+              <div className="why-arguments-list">
+                <ul>
+                  <li>
+                    <i className="bi bi-unlock me-3"></i>
+                    <strong>Garantir un accès libre aux données et outils pour tous les acteurs économiques</strong>
+                  </li>
+                  <li>
+                    <i className="bi bi-shield-check me-3"></i>
+                    <strong>Éviter toute captation privée d'une information d'intérêt général</strong>
+                  </li>
+                  <li>
+                    <i className="bi bi-broadcast me-3"></i>
+                    <strong>Permettre une diffusion massive auprès des acteurs économiques</strong>
+                  </li>
+                </ul>
               </div>
             </Col>
 
-            {/* Colonne droite : Texte et arguments */}
+            {/* Colonne droite : Texte introductif */}
             <Col lg={8}>
               <div className="why-content">
-                {/* Texte introductif */}
                 <div className="why-intro-text">
                   <p>
                     La structuration de l'information extra-financière à l'échelle
-                    de chaque entreprise suppose des <strong>ressources communes</strong> pour la mesure 
+                    de chaque entreprise suppose des <strong>ressources communes</strong> pour la mesure
                     et la transmission de données, et
                     des <strong>ressources accessibles à tous</strong> - open data et open source - pour éviter toute dépendance à
                     des acteurs privés.
                   </p>
-                  {/* <p>
-                    <strong>L'open data et l'open source</strong> constituent ainsi la condition
-                    nécessaire à une approche collaborative, durable et acceptable
-                    par tous.
-                  </p> */}
                   <p>
-                    {/* Ce choix implique cependant une approche différente dans le
-                    financement du développement et de la maintenance de ces
-                    ressources.  */}
                     Nous cherchons à auto-financer au maximum
                     nos activités via des prestations commerciales (études
                     statistiques, développements informatiques, production de
@@ -558,21 +555,6 @@ export default function AppelPartenariat() {
                     intérêt direct vis-à-vis de nos travaux et du système d'information
                     mis en oeuvre.
                   </p>
-                </div>
-
-                {/* Arguments en bullet points */}
-                <div className="why-arguments-list">
-                  <ul>
-                    <li>
-                      <strong>Garantir un accès libre aux données et outils pour tous les acteurs économiques</strong>
-                    </li>
-                    <li>
-                      <strong>Éviter toute captation privée d'une information d'intérêt général</strong>
-                    </li>
-                    <li>
-                      <strong>Permettre une diffusion massive auprès des acteurs économiques</strong>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </Col>
