@@ -10,6 +10,14 @@ export async function generateMetadata({ params }) {
 
   try {
     const tagName = await getTag(tag);
+
+    // Si le tag n'existe pas, retourner un titre par défaut
+    if (!tagName) {
+      return {
+        title: "Catégorie non trouvée | La Société Nouvelle",
+      };
+    }
+
     return {
       title: `${tagName} | La Société Nouvelle`,
       description: `Articles de la catégorie ${tagName}`,
@@ -29,6 +37,11 @@ export default async function TagPage({ params }) {
     const data = await fetchPostsByTag(tag);
     tagName = await getTag(tag);
     posts = data.posts;
+
+    // Si le tag n'existe pas, afficher la page 404
+    if (!tagName) {
+      notFound();
+    }
   } catch (error) {
     notFound();
   }
