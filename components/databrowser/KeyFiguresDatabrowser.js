@@ -15,9 +15,7 @@ async function fetchKeyFiguresData() {
   try {
     const responses = await Promise.all(
       urls.map((url) =>
-        fetch(url, {
-          next: { revalidate: 86400 } // Cache for 24 hours
-        }).then(res => res.json())
+        fetch(url).then(res => res.json())
       )
     );
 
