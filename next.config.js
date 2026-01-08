@@ -13,6 +13,7 @@ const nextConfig = {
   // Optimisations pour MDX et KaTeX
   experimental: {
     optimizePackageImports: ['react-katex', 'katex', 'chart.js'],
+    isrMemoryCacheSize: 0, // Désactive le cache ISR sur disque (fix EROFS en prod)
   },
 
   // Cache optimisé pour le mode dev
@@ -59,6 +60,9 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 86400, // Cache images for 24 hours
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 }
 
