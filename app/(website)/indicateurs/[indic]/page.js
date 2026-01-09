@@ -50,6 +50,7 @@ function IndicatorPageHeader({ indicData, indic }) {
               alt={`Icône ${indicData.libelle}`}
               width={60}
               height={60}
+              style={{ objectFit: 'contain' }}
             />
           </div>
 
