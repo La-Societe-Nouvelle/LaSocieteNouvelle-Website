@@ -1,15 +1,53 @@
 'use client';
 
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Nav, Accordion } from "react-bootstrap";
 
 import PageHeader from "@/components/PageHeader";
 
 export default function Faq() {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-100px 0px -66%',
+      }
+    );
+
+    // Observer toutes les catégories
+    faqCategories.forEach((category) => {
+      const element = document.getElementById(category.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
   const faqCategories = [
     {
       id: "indicateurs",
-      title: "Les indicateurs de l'Empreinte Sociétale",
+      title: "L'Empreinte Sociétale",
       questions: [
         {
           question: "Qu'est-ce que l'empreinte sociétale ?",
@@ -331,13 +369,13 @@ export default function Faq() {
   return (
     <>
       <PageHeader
-        title="Aide"
-        subtitle="Questions fréquemment posées"
+        title="Foire aux questions"
+        subtitle="Tout ce que vous devez savoir sur le projet de La Société Nouvelle."
         icon="question-circle"
       />
 
       {/* Section Introduction */}
-      <section className="section">
+      <section className="pt-4 pb-2" >
         <Container>
           <Row>
             <Col lg={10}>
@@ -360,27 +398,59 @@ export default function Faq() {
         </Container>
       </section>
 
-      {/* Sections FAQ */}
-      {faqCategories.map((category, categoryIndex) => (
-        <section
-          key={category.id}
-          className={`section ${categoryIndex % 2 === 1 ? 'section--secondary' : ''}`}
-        >
-          <Container>
-            <h2 className="section__title">{category.title}</h2>
-            <Row>
-              <Col lg={12}>
-                {category.questions.map((item, index) => (
-                  <div key={`${category.id}-${index}`} className="faq-item">
-                    <h3 className="faq-item__question">{item.question}</h3>
-                    <div className="faq-item__answer">{item.answer}</div>
-                  </div>
-                ))}
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      ))}
+      {/* Section FAQ avec sidebar */}
+      <section className="section">
+        <Container>
+          <Row>
+            {/* Sidebar */}
+            <Col lg={3} className="d-none d-lg-block">
+              <div className="faq-sidebar">
+                <div className="faq-sidebar-sticky">
+                  <div className="faq-sidebar-title">CATÉGORIES</div>
+                  <Nav className="flex-column faq-sidebar-nav">
+                    {faqCategories.map((category) => (
+                      <Nav.Link
+                        key={category.id}
+                        onClick={() => scrollToSection(category.id)}
+                        className={`faq-sidebar-link ${
+                          activeSection === category.id ? 'active' : ''
+                        }`}
+                      >
+                        {category.title}
+                      </Nav.Link>
+                    ))}
+                  </Nav>
+                </div>
+              </div>
+            </Col>
+
+            {/* Contenu FAQ */}
+            <Col lg={9}>
+              {faqCategories.map((category) => (
+                <div key={category.id} id={category.id} className="faq-category">
+                  <h2 className="faq-category-title">{category.title}</h2>
+                  <Accordion flush>
+                    {category.questions.map((item, index) => (
+                      <Accordion.Item
+                        key={`${category.id}-${index}`}
+                        eventKey={`${category.id}-${index}`}
+                        className="faq-accordion-item"
+                      >
+                        <Accordion.Header className="faq-accordion-header">
+                          {item.question}
+                        </Accordion.Header>
+                        <Accordion.Body className="faq-accordion-body">
+                          {item.answer}
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 }
