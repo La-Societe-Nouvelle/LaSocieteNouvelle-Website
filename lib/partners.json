@@ -1,5 +1,17 @@
 [
   {
+    "name": "A6000",
+    "href": "https://www.a6000expertise.com/",
+    "img": "/partners/logo-a6000.png",
+    "height": 100
+  },
+  {
+    "name": "Sustaincial",
+    "href": "https://sustaincial.fr/",
+    "img": "/partners/logo-sustaincial.png",
+    "height": 100
+  },
+  {
     "name": "Compagnie Fiduciaire",
     "href": "https://www.compagnie-fiduciaire.com/",
     "img": "/partners/logo_compagnie-fiduciaire.png",

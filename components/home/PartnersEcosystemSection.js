@@ -7,7 +7,8 @@ import EmblaCarousel from "../carousel/EmblaCarousel";
 import partners from "../../lib/partners.json";
 import ecosystem from "../../lib/ecosystem.json";
 
-export default function PartnersEcosystemSection() {
+export default function PartnersEcosystemSection() 
+{
   const renderPartnerSlide = (partner) => (
     <Link
       href={partner.href}
