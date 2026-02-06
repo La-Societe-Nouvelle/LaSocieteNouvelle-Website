@@ -8,6 +8,8 @@ import ServicesSection from "../components/home/ServicesSection";
 import NewsSection from "../components/home/NewsSection";
 import KeyFigures from "../components/home/KeyFigures";
 import PartnersEcosystemSection from "../components/home/PartnersEcosystemSection";
+export const revalidate = 60; // Revalider la page toutes les 60 secondes (ISR)
+
 export const metadata = {
   title: "La Société Nouvelle | Informations sur les impacts des entreprises",
   description:
