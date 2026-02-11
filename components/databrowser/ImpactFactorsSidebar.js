@@ -16,7 +16,7 @@ const NOMENCLATURES = [
 ];
 
 
-const YEARS = Array.from({ length: 15 }, (_, i) => 2024 - i); // 2024 to 2010
+const YEARS = Array.from({ length: 15 }, (_, i) => 2025 - i); // 2024 to 2010
 
 export default function ImpactFactorsSidebar({ filters, onFilterChange, onReset }) {
   const [expandedSections, setExpandedSections] = useState({
@@ -97,8 +97,8 @@ export default function ImpactFactorsSidebar({ filters, onFilterChange, onReset 
                   checked={filters.year === year}
                   onChange={(e) => handleFilterChange('year', parseInt(e.target.value))}
                 />
-                <span className={year === 2024 ? 'year-latest' : ''}>{year}</span>
-                {year === 2024 && <span className="badge-latest">Dernières données</span>}
+                <span className={year === 2025 ? 'year-latest' : ''}>{year}</span>
+                {year === 2025 && <span className="badge-latest">Dernières données</span>}
               </label>
             ))}
           </div>

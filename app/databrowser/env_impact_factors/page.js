@@ -11,7 +11,7 @@ export default function ImpactFactorsPage() {
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState({
     indicator: 'GHG',
-    year: 2024,
+    year: 2025,
     nomenclature: 'A88',
   });
   const [isLoading, setIsLoading] = useState(true);
@@ -60,7 +60,7 @@ export default function ImpactFactorsPage() {
   const handleReset = () => {
     setFilters({
       indicator: 'GHG',
-      year: 2024,
+      year: 2025,
       // nomenclature: 'A88',
     });
   };
