@@ -1,6 +1,6 @@
 {
   "macro_fpt": {
-		"label": "Empreintes macroéconomiques par industries (A*64)",
+		"label": "Empreintes macroéconomiques par industrie (A*64)",
 		"docs": "/docs/donnees-statistiques/",
     "endpoint": "/macrodata/macro_fpt",
 		"columnsParameter": "year",
@@ -81,7 +81,7 @@
     ]
   },
 	"macro_fpt_trd": {
-		"label": "Tendances des empreintes macroéconomiques par industries (A*64)",
+		"label": "Tendances des empreintes macroéconomiques par industrie (A*64)",
 		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_trd",
 		"columnsParameter": "year",
@@ -162,7 +162,7 @@
     ]
   },
 	"macro_fpt_tgt": {
-		"label": "Trajectoires cibles des empreintes macroéconomiques par industries (A*64)",
+		"label": "Trajectoires cibles des empreintes macroéconomiques par industrie (A*64)",
 		"docs": "/docs/donnees-statistiques",
     "endpoint": "/macrodata/macro_fpt_tgt",
 		"columnsParameter": "year",
