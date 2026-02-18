@@ -57,7 +57,7 @@ export default function PartnersEcosystemSection()
 
           {/* Partenaires */}
           <div className="subsection">
-            <h6 className="subsection-title">Nos cabinets partenaires</h6>
+            <h6 className="subsection-title">Nos partenaires et sponsors</h6>
             <EmblaCarousel
               items={partners}
               renderSlide={renderPartnerSlide}

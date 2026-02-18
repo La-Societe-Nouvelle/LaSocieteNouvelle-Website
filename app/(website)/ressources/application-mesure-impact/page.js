@@ -160,13 +160,13 @@ export default function Metriz() {
       <section className="section bg-light text-center">
         <Container>
           <h3 className="section__title section__title--center ">Intégrations</h3>
-          <p className="mb-3">
+          <p className="mb-5">
             Des connecteurs sont disponibles pour lier vos outils comptables à Metriz.
             <br />
             Nous travaillons également avec des partenaires pour intégrer d'autres outils comptables.
           </p>
           <Row>
-            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
               <div className="flex-grow-1 d-flex flex-column">
                 <Image
                   src="/logos/acd.png"
@@ -178,7 +178,7 @@ export default function Metriz() {
                 />
               </div>
             </Col>
-            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
               <div className="flex-grow-1 d-flex flex-column">
                 <Image
                   src="/logos/pennylane.png"
@@ -190,7 +190,7 @@ export default function Metriz() {
                 />
               </div>
             </Col>
-            <Col lg={4} className="text-center d-flex flex-column align-items-stretch">
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
               <div className="flex-grow-1 d-flex flex-column">
                 <Image
                   src="/logos/tiime.png"
@@ -202,7 +202,18 @@ export default function Metriz() {
                 />
               </div>
             </Col>
-
+            <Col lg={3} className="text-center d-flex flex-column align-items-stretch">
+              <div className="flex-grow-1 d-flex flex-column">
+                <Image
+                  src="/logos/myunisoft.png"
+                  alt="Logo MyUnisoft"
+                  className=""
+                  width={250}
+                  height={50}
+                  style={{ width: 'auto', height: 'auto', maxHeight: '50px', maxWidth: '250px', margin: 'auto' }}
+                />
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>

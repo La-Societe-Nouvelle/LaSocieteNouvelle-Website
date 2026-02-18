@@ -1,5 +1,11 @@
 [
   {
+    "name": "Compagnie Fiduciaire",
+    "href": "https://www.compagnie-fiduciaire.com/",
+    "img": "/partners/logo_compagnie-fiduciaire.png",
+    "height": 100
+  },
+  {
     "name": "A6000",
     "href": "https://www.a6000expertise.com/",
     "img": "/partners/logo-a6000.png",
@@ -9,12 +15,6 @@
     "name": "Sustaincial",
     "href": "https://sustaincial.fr/",
     "img": "/partners/logo-sustaincial.png",
-    "height": 100
-  },
-  {
-    "name": "Compagnie Fiduciaire",
-    "href": "https://www.compagnie-fiduciaire.com/",
-    "img": "/partners/logo_compagnie-fiduciaire.png",
     "height": 100
   },
   {
@@ -42,6 +42,12 @@
     "height": 100
   },
   {
+    "name": "enso rse",
+    "href": "https://enso-rse.com/",
+    "img": "/partners/logo-enso.png",
+    "height": 100
+  },
+  {
     "name": "ACE4RSE",
     "href": "https://www.ace4rse.fr/",
     "img": "/partners/logo-ace4rse.jpg",
@@ -60,7 +66,7 @@
     "height": 100
   },
   {
-    "name": "Harmonium Experts",
+    "name": "Harmonium",
     "href": "https://www.harmonium-experts.fr/",
     "img": "/partners/logo-harmonium.jpg",
     "height": 100
