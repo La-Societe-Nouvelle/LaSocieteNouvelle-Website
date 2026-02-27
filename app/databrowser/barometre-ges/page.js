@@ -101,7 +101,8 @@ const BarometreGES = () => {
 
     data.forEach((item) => {
       const month = item.mois;
-      const previousYearMonth = month.replace("2025", "2024");
+      const [yyyy, mm] = month.split("-");
+      const previousYearMonth = `${(+yyyy - 1)}-${mm}`;
       const valeur2024 = dataByMonth.get(previousYearMonth);
 
       if (valeur2024) {
@@ -297,7 +298,7 @@ const LatestDataSection = ({ data, getEvolution }) => (
                   {evolution !== null && (
                     <div className={`evolution-badge ${isIncrease ? 'increase' : 'decrease'}`}>
                       <i className={`bi bi-arrow-${isIncrease ? 'up' : 'down'}-right me-2`}></i>
-                      {Math.abs(evolution)}% vs 2024
+                      {Math.abs(evolution)}% vs {monthData.mois.substring(0,4)-1}
                     </div>
                   )}
                 </div>
