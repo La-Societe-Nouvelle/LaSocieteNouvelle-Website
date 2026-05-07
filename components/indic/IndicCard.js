@@ -29,8 +29,9 @@ const IndicCard = React.memo(({ indic, indicData }) => {
             {indicData.section}
           </span>
         )}
+
         <Image
-          src={`/ESE/gen2/illustration-g2-${indic}.png`}
+          src={`/ESE/picto/ese-${indic}-color.svg`}
           alt={`Pictogramme ${indic}`}
           className="indic-visual"
           width={80}
@@ -56,7 +57,6 @@ const IndicCard = React.memo(({ indic, indicData }) => {
 
         {/* Badges d'information */}
         <div className="indic-badges">
-          <span className="badge badge-valid">Valide</span>
           {indicData.esrs && (
             <span className="badge badge-esrs">{indicData.esrs}</span>
           )}

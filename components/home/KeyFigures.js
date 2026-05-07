@@ -5,7 +5,6 @@ const refYear = "2024";
 
 async function fetchKeyFiguresData() {
   const urls = [
-    `${process.env.NEXT_PUBLIC_API_URL}/macrodata/na_cpeb?classification=NNTOTAL&aggregate=B1N&unit=CPMEUR&year=${refYear}`,
     `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GHG&year=${refYear}`,
     `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GEQ&year=${refYear}`,
     'https://api.stats.lasocietenouvelle.org/barometre-ges/derniere-publication',
@@ -18,21 +17,17 @@ async function fetchKeyFiguresData() {
       )
     );
 
-    const data_pin = responses[0].header.code === 200
-      ? (responses[0].data[0].value / 1000).toFixed(2)
+    const data_ghg = responses[0].header.code === 200
+      ? responses[0].data[0].value.toFixed(0)
       : "";
-    const data_ghg = responses[1].header.code === 200
-      ? responses[1].data[0].value.toFixed(0)
-      : "";
-    const data_geq = responses[2].header.code === 200
-      ? responses[2].data[0].value.toFixed(1)
+    const data_geq = responses[1].header.code === 200
+      ? responses[1].data[0].value.toFixed(1)
       : "";
 
     let data_emissions = "";
     let emissions_period = "";
-    if (responses[3].header.code === 200 && responses[3].data.length > 0) {
-      // Trier les données par mois et récupérer la dernière (la plus récente)
-      const sortedData = [...responses[3].data].sort((a, b) => a.mois.localeCompare(b.mois));
+    if (responses[2].header.code === 200 && responses[2].data.length > 0) {
+      const sortedData = [...responses[2].data].sort((a, b) => a.mois.localeCompare(b.mois));
       const lastDataPoint = sortedData[sortedData.length - 1];
       data_emissions = lastDataPoint.valeur.toFixed(1);
 
@@ -43,14 +38,6 @@ async function fetchKeyFiguresData() {
     }
 
     return [
-      {
-        id: 'pin',
-        period: '2024',
-        value: data_pin,
-        unit: 'Mds €',
-        title: 'Production intérieure nette',
-        icon: 'currency-euro'
-      },
       {
         id: 'ghg',
         period: '2024',
@@ -101,13 +88,13 @@ export default async function KeyFigures() {
           </h3>
         </div>
 
-        <Row className="key-figures-grid g-4 ">
+        <Row className="key-figures-grid g-4 justify-content-center">
           {keyFigures.map((keyFigureData) => (
             <Col
               key={keyFigureData.id}
               xs={12}
               sm={6}
-              lg={3}
+              lg={4}
             >
               <KeyFigureCard data={keyFigureData} />
             </Col>

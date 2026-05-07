@@ -12,8 +12,7 @@ const nextConfig = {
 
   // Optimisations pour MDX et KaTeX
   experimental: {
-    optimizePackageImports: ['react-katex', 'katex', 'chart.js'],
-    isrMemoryCacheSize: 0, // Désactive le cache ISR sur disque (fix EROFS en prod)
+    optimizePackageImports: ['react-katex', 'katex', 'chart.js']
   },
 
   // Cache optimisé pour le mode dev

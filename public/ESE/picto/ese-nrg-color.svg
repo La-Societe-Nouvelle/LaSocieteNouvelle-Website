@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 100 100"
+   width="200"
+   height="200"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ese-nrg-color.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="..\..\LSN\LaSocieteNouvelle-METRIZ-SaaS\public\icons-ese\color\logo_ese_nrg.png"
+   inkscape:export-xdpi="33.599998"
+   inkscape:export-ydpi="33.599998"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.6834702"
+     inkscape:cx="17.328309"
+     inkscape:cy="69.685887"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     fill="#ffffff"
+     d="M 58.461539,5.576923 22.5,52.115384 H 43.653846 L 35.192309,94.423077 77.5,43.653847 H 54.23077 L 58.442028,5.576923 Z"
+     id="path1"
+     sodipodi:nodetypes="cccccccc"
+     style="fill:#fcc301;fill-opacity:1;stroke-width:1.05769" />
+</svg>

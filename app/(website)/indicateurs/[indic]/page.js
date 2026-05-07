@@ -46,7 +46,7 @@ function IndicatorPageHeader({ indicData, indic }) {
           {/* Icône SVG de l'indicateur */}
           <div className="page-header-icon">
             <Image
-              src={`/ESE/gen2/illustration-g2-${indic}.png`}
+              src={`/ESE/picto/ese-${indic}-color.svg`}
               alt={`Icône ${indicData.libelle}`}
               width={60}
               height={60}
