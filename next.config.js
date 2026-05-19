@@ -1,8 +1,4 @@
 const path = require('path')
-const remarkMath = require('remark-math')
-const rehypeKatex = require('rehype-katex')
-const { default: remarkGfm } = require('remark-gfm')
-
 const createMDX = require('@next/mdx')
 
 /* --- Config Next --- */
@@ -29,15 +25,15 @@ const nextConfig = {
       config.cache = {
         type: 'filesystem',
         cacheDirectory: path.join(__dirname, '.next/cache/webpack'),
-      };
+      }
 
       // Réduire la verbosité des logs
       config.infrastructureLogging = {
         level: 'error',
-      };
+      }
     }
 
-    return config;
+    return config
   },
 
   sassOptions: {
@@ -49,40 +45,49 @@ const nextConfig = {
       'import',
     ],
   },
+
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'eu-west-2.graphassets.com',
-      },
+      { protocol: 'https', hostname: 'eu-west-2.graphassets.com' },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 86400, // Cache images for 24 hours
+    minimumCacheTTL: 86400,
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 }
 
-/* --- Création du wrapper MDX --- */
-const withMDX = createMDX({
-  options: {
-    mdxOptions: {
-      remarkPlugins: [remarkMath, remarkGfm],
-      rehypePlugins: [
-        [rehypeKatex, {
-          strict: false,
-          trust: true,
-          throwOnError: false,
-          // Optimisation : ne charger que les fontes essentielles
-          output: 'html',
-        }]
-      ],
-    },
-  },
-})
+module.exports = async () => {
+  // Plugins ESM-only -> import() obligatoire
+  const [
+    { default: remarkMath },
+    { default: rehypeKatex },
+    { default: remarkGfm },
+  ] = await Promise.all([
+    import('remark-math'),
+    import('rehype-katex'),
+    import('remark-gfm'),
+  ])
 
-/* --- Export final --- */
-module.exports = withMDX(nextConfig)
+  /* --- Création du wrapper MDX --- */
+  const withMDX = createMDX({
+    options: {
+      mdxOptions: {
+        remarkPlugins: [remarkMath, remarkGfm],
+        rehypePlugins: [
+          [rehypeKatex, {
+            strict: false,
+            trust: true,
+            throwOnError: false,
+            output: 'html',
+          }],
+        ],
+      },
+    },
+  })
+
+  return withMDX(nextConfig)
+}

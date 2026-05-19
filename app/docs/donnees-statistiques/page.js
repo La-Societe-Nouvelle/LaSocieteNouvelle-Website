@@ -17,6 +17,10 @@ const navigation = [
     href: '/docs/donnees-statistiques/sources-impacts-directs',
     title: 'Sources - Impacts directs',
   },
+  {
+    href: '/docs/donnees-statistiques/sources-objectifs',
+    title: 'Sources - Objectifs 2030',
+  }
 ];
 
 export default function DonneesStatistiquesPage() {

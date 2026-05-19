@@ -3,66 +3,21 @@ import { notFound } from 'next/navigation';
 
 // Liste des datasets disponibles
 const datasets = {
-  'macro_fpt_a38': {
-    title: 'Empreintes des branches d\'activité ',
-    code: 'macro_fpt_a38',
-    description: 'Données historiques des empreintes sociétales et environnementales des branches d\'activité (nomenclature A38)',
+  'macro_fpt': {
+    title: 'Empreintes des activités économiques - Données historiques',
+    code: 'macro_fpt',
+    description: 'Données historiques des empreintes sociétales et environnementales des activités économiques',
   },
-  'macro_fpt_a88': {
-    title: 'Empreintes des divisions économiques ',
-    code: 'macro_fpt_a88',
-    description: 'Données historiques des empreintes sociétales et environnementales des divisions économiques (nomenclature A88)',
+  'macro_fpt_trd': {
+    title: 'Empreintes des activités économiques - Tendances',
+    code: 'macro_fpt_trd',
+    description: 'Tendances des empreintes sociétales et environnementales des activités économiques',
   },
-  'macro_fpt_trd_a38': {
-    title: 'Empreintes des branches d\'activité ',
-    code: 'macro_fpt_trd_a38',
-    description: 'Données de tendances des empreintes par branche d\'activité',
-  },
-  'macro_fpt_trd_a88': {
-    title: 'Empreintes des divisions économiques ',
-    code: 'macro_fpt_trd_a88',
-    description: 'Données de tendances des empreintes par division économique',
-  },
-  'macro_fpt_tgt_a38': {
-    title: 'Objectifs annuels par branches d\'activité',
-    code: 'macro_fpt_tgt_a38',
-    description: 'Trajectoires cibles des empreintes par branche d\'activité',
-  },
-  'macro_fpt_tgt_a88': {
-    title: 'Objectifs annuels des divisions économiques',
-    code: 'macro_fpt_tgt_a88',
-    description: 'Trajectoires cibles des empreintes par division économique',
-  },
-  'na_cpeb': {
-    title: 'Comptes de production et d\'exploitation par branche',
-    code: 'na_cpeb',
-    description: 'Données des comptes nationaux - comptes de production et d\'exploitation',
-  },
-  'na_ere': {
-    title: 'Tableau des entrées ressources emplois',
-    code: 'na_ere',
-    description: 'Données des comptes nationaux - tableau entrées-ressources-emplois',
-  },
-  'na_pat_nf': {
-    title: 'Comptes de patrimoine non-financier',
-    code: 'na_pat_nf',
-    description: 'Données des comptes nationaux - patrimoine non-financier',
-  },
-  'na_tei': {
-    title: 'Tableau des entrées intermédiaires',
-    code: 'na_tei',
-    description: 'Données des comptes nationaux - tableau des entrées intermédiaires',
-  },
-  'na_tess': {
-    title: 'Tableau des entrées-sorties symétrique',
-    code: 'na_tess',
-    description: 'Données des comptes nationaux - tableau entrées-sorties symétrique',
-  },
-  'bts_data': {
-    title: 'Indicateurs issus de la base tous salariés',
-    code: 'bts_data',
-    description: 'Données sociales issues de la base tous salariés',
-  },
+  'macro_fpt_tgt': {
+    title: 'Empreintes des activités économiques - Objectifs annuels',
+    code: 'macro_fpt_tgt',
+    description: 'Trajectoires cibles des empreintes sociétales et environnementales des activités économiques',
+  }
 };
 
 export async function generateStaticParams() {
