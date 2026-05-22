@@ -1,0 +1,82 @@
+## Empreintes des activités économiques (macro_fpt_tgt)
+
+### Présentation
+
+Le jeu de données **macro_fpt_tgt** regroupe les trajectoires cibles des empreintes des activités économiques selon la nomenclature FIGARO (A*64).
+
+Les empreintes sont disponibles pour les agrégats suivants : PRD (Production), GVA (Valeur ajoutée brute), IC (Consommations intermédiaires), NVA (Valeur ajoutée nette), CFC (Consommations de capital fixe)
+
+Les dimensions extra-financières disponibles sont celles de l'Empreinte Sociétale.
+
+La période couvre de 2022 à 2030. La date de début de la série correspond à l'année suivante la dernière année observée.
+
+Les empreintes sont exprimées en euro courant, et dans l'unité par défaut de l'indicateur.
+
+---
+### Description de la table
+
+Paramètres du jeu de données :
+
+- **indic** : Code de l'indicateur au sein de l'Empreinte Sociétale
+- **year** : Année
+- **area** : Code du pays (ISO3) ou région du monde
+- **industry** : Code du secteur, selon la NACE Révision 2 (Codes A64, A21 et A10)
+- **aggregate** : Code de l'agrégat économique
+
+Autres colonnes :
+
+- **value** : Valeur observée
+- **flag** : Complément d'information relative à la valeur
+- **lastupdate** : Date de dernière mise à jour
+
+### Contruction des données
+
+Les données sont construites à partir du modèle entrée-sortie multirégional FIGARO et des comptes d'impacts associés aux dimensions de l'Empreinte Sociétale.
+
+*Détails méthodologiques à venir*
+
+### Sources de données utilisées
+
+Sources de données utilisées :
+
+- **MRIO FIGARO** - FIGARO (Eurostat)
+- **Comptes d'impacts relatifs à l'Empreinte Sociétale** - La Société Nouvelle
+
+---
+
+### Paramètres de requête
+
+**Endpoint de l’API :**  
+
+[`https://api.lasocietenouvelle.org/macrodata/macro_fpt_tgt`](https://api.lasocietenouvelle.org/macrodata/macro_fpt_tgt)
+
+---
+
+### Commentaires
+
+Les données sont également disponibles en nomenclature A*38 (branche) A*88 (division).
+
+Jeux de données dérivés :
+- **macro_fpt_tgt_a38** : Empreintes macroéconomiques agrégées par branche (A*38)
+- **macro_fpt_tgt_a88** : Empreintes macroéconomiques étendues par division (A*88)
+
+---
+
+### Licence
+
+Les données sont diffusées sous **licence ouverte Etalab**.
+
+---
+
+### Contact
+
+**Producteur des données :** La Société Nouvelle  
+
+Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)  
+Adresse mail : **contact@lasocietenouvelle.org**
+
+---
+
+### Mise à jour
+
+Dernière mise à jour des métadonnées : **15/07/2025**
