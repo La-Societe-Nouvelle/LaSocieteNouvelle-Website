@@ -49,11 +49,11 @@ const datasets = [
     color: "trend",
     items: [
       {
-        id: "macro_fpt_tgt",
+        id: "macro_fpt_trd",
         title: "Empreintes tendancielles",
         subtitle: "NACE Rév.2 A88",
         description: "Projections tendancielles des empreintes des activités économiques",
-        code: "macro_fpt_tgt",
+        code: "macro_fpt_trd",
         metrics: ["12 indicateurs", "88 divisions", "Projections"]
       }
     ]
@@ -65,11 +65,11 @@ const datasets = [
     color: "target",
     items: [
       {
-        id: "macro_fpt_target",
+        id: "macro_fpt_tgt",
         title: "Trajectoires cibles sectorielles",
         subtitle: "NACE Rév.2 A88",
         description: "Objectifs cibles par secteur pour assurer la compatibilité avec la transition",
-        code: "macro_fpt_target",
+        code: "macro_fpt_tgt",
         metrics: ["12 indicateurs", "88 divisions", "Cibles 2030"]
       }
     ]
