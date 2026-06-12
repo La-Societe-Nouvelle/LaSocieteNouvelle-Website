@@ -16,6 +16,8 @@ function PostPreview({post, path}) {
               width={400}
               height={250}
               className="card-img"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             />
           )}
         </div>

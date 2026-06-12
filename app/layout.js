@@ -1,7 +1,6 @@
 import WebsiteLayout from '../components/WebsiteLayout';
 import '../styles/globals.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'katex/dist/katex.min.css'
 export const metadata = {
   metadataBase: new URL('https://lasocietenouvelle.org'),
   alternates: {

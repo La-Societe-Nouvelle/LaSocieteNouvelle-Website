@@ -13,6 +13,8 @@ export default function FeatureCard({ title, text, img, btn }) {
           width={250}
           height={150}
           style={{ margin: "auto", height: "auto", width: "250px" }}
+          loading="lazy"
+          sizes="250px"
         />
       )}
       {btn && (

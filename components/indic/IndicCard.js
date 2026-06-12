@@ -37,6 +37,7 @@ const IndicCard = React.memo(({ indic, indicData }) => {
           width={80}
           height={80}
           loading="lazy"
+          sizes="80px"
         />
       </div>
 
@@ -51,6 +52,7 @@ const IndicCard = React.memo(({ indic, indicData }) => {
               width={28}
               height={28}
               loading="lazy"
+              sizes="28px"
             />
           ))}
         </div>

@@ -47,6 +47,8 @@ export default function IndicsSection() {
                   alt="Empreinte Sociétale"
                   width={350}
                   height={350}
+                  loading="lazy"
+                  sizes="(max-width: 992px) 100vw, 350px"
                 />
               </div>
             </Col>

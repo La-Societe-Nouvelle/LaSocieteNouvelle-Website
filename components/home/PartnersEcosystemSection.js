@@ -24,6 +24,8 @@ export default function PartnersEcosystemSection()
         height={partner.height}
         className="img-fluid"
         style={{ objectFit: "contain", height: partner.height }}
+        loading="lazy"
+        sizes="(max-width: 768px) 120px, 160px"
       />
     </Link>
   );
@@ -43,6 +45,8 @@ export default function PartnersEcosystemSection()
         height={item.height}
         className="img-fluid"
         style={{ objectFit: "contain", height: item.height }}
+        loading="lazy"
+        sizes="(max-width: 768px) 120px, 160px"
       />
     </a>
   );

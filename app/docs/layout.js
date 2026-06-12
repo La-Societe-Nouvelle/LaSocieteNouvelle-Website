@@ -1,5 +1,6 @@
 import DocsHeader from '../../components/docs/DocsHeader';
 import DocsFooter from '../../components/docs/DocsFooter';
+import 'katex/dist/katex.min.css';
 
 export const metadata = {
   title: 'Documentation - La Société Nouvelle',

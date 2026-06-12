@@ -22,8 +22,8 @@ export default function About() {
 
       <section className="section">
         <Container>
-          <Row className="align-items-center">
-            <Col lg={6}>
+          <Row>
+            <Col lg={8}>
               <h3 className="section__title">
                 Notre mission
               </h3>
@@ -46,18 +46,6 @@ export default function About() {
                 <p>
                   La base de données est, et restera toujours, ouverte.
                 </p>
-              </div>
-            </Col>
-            <Col lg={6} className="text-center mt-4 mt-lg-0">
-              <div className="section__illustration">
-                <Image
-                  src="/images/equipe/photo-equipe.png"
-                  alt="Photo d'équipe"
-                  width={600}
-                  height={500}
-                  className="img"
-                  priority
-                />
               </div>
             </Col>
           </Row>
@@ -209,11 +197,12 @@ export default function About() {
             <Col lg={3}>
               <div className="team-member">
                 <Image
-                  src="/images/equipe/portrait-sylvain.png"
+                  src="/images/equipe/portrait-sylvain-2.jpg"
                   alt="Sylvain Humilière"
-                  width={200}
-                  height={200}
+                  width={900}
+                  height={1125}
                   className="member-image"
+                  sizes="(max-width: 768px) 50vw, 250px"
                 />
                 <h6 className="member-name">Sylvain Humilière</h6>
                 <p className="member-role">Partenariats</p>
@@ -222,11 +211,12 @@ export default function About() {
             <Col lg={3}>
               <div className="team-member">
                 <Image
-                  src="/images/equipe/portrait-laura.png"
+                  src="/images/equipe/portrait-laura-2.jpg"
                   alt="Laura Roost"
-                  width={200}
-                  height={200}
+                  width={900}
+                  height={1125}
                   className="member-image"
+                  sizes="(max-width: 768px) 50vw, 250px"
                 />
                 <h6 className="member-name">Laura Roost</h6>
                 <p className="member-role">Développement informatique</p>
@@ -235,11 +225,12 @@ export default function About() {
             <Col lg={3}>
               <div className="team-member">
                 <Image
-                  src="/images/equipe/portrait-joris.png"
+                  src="/images/equipe/portrait-joris-2.jpg"
                   alt="Joris Blain"
-                  width={200}
-                  height={200}
+                  width={900}
+                  height={1125}
                   className="member-image"
+                  sizes="(max-width: 768px) 50vw, 250px"
                 />
                 <h6 className="member-name">Joris Blain</h6>
                 <p className="member-role">Econométrie</p>
