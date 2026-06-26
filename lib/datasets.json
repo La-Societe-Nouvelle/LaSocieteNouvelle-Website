@@ -80,6 +80,33 @@
       }
     ]
   },
+  "macro_fpt_a732": {
+		"label": "Empreintes macroéconomiques désagrégées par code APE (A*732)",
+		"docs": "/docs/donnees-statistiques/",
+    "endpoint": "/macrodata/macro_fpt_a732",
+		"columnsParameter": "year",
+		"rowsParameter": "code_ape",
+    "parameters": [
+      {
+        "code": "indic",
+				"defaultValue": "GHG",
+        "label": "Empreinte",
+        "mandatory": true
+      },
+      {
+        "code": "aggregate",
+				"defaultValue": "PRD",
+        "label": "Agrégat économique",
+        "mandatory": true
+      },
+			{
+        "code": "area",
+				"defaultValue": "FRA",
+        "label": "Espace économique",
+        "mandatory": true
+      }
+    ]
+  },
 	"macro_fpt_trd": {
 		"label": "Tendances des empreintes macroéconomiques par industrie (A*64)",
 		"docs": "/docs/donnees-statistiques",

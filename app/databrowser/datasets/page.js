@@ -19,7 +19,7 @@ const datasets = [
       {
         id: "macro_fpt",
         title: "Empreintes des industries",
-        subtitle: "NACE Rév.2 A64",
+        subtitle: "Nomenclature FIGARO",
         description: "Données historiques par industrie selon la nomenclature NACE niveau A64",
         code: "macro_fpt",
         metrics: ["12 indicateurs", "64 industries", "Séries historiques"]
@@ -27,7 +27,7 @@ const datasets = [
       {
         id: "macro_fpt_a88",
         title: "Empreintes des divisions",
-        subtitle: "NACE Rév.2 A88",
+        subtitle: "NACE Rév.2 A*88",
         description: "Données historiques par division économique selon la nomenclature NACE niveau A88",
         code: "macro_fpt_a88",
         metrics: ["12 indicateurs", "88 divisions", "Séries historiques"]
@@ -35,10 +35,18 @@ const datasets = [
       {
         id: "macro_fpt_a38",
         title: "Empreintes des branches",
-        subtitle: "NACE Rév.2 A38",
+        subtitle: "NACE Rév.2 A*38",
         description: "Données historiques par branche d'activité selon la nomenclature NACE niveau A38",
         code: "macro_fpt_a38",
         metrics: ["12 indicateurs", "38 branches", "Séries historiques"]
+      },
+      {
+        id: "macro_fpt_a732",
+        title: "BETA - Empreintes désagrégées",
+        subtitle: "NACE Rév.2 A*732",
+        description: "Empreintes carbone désagrégées selon la nomenclature NACE niveau A*732 (Code APE)",
+        code: "macro_fpt_a732",
+        metrics: ["1 indicateur", "732 activités", "Année 2022"]
       }
     ]
   },
@@ -50,11 +58,27 @@ const datasets = [
     items: [
       {
         id: "macro_fpt_trd",
-        title: "Empreintes tendancielles",
-        subtitle: "NACE Rév.2 A88",
-        description: "Projections tendancielles des empreintes des activités économiques",
+        title: "Empreintes tendancielles (A*64)",
+        subtitle: "Nomenclature FIGARO",
+        description: "Projections tendancielles des empreintes des activités économiques selon la nomenclature FIGARO A64",
         code: "macro_fpt_trd",
+        metrics: ["12 indicateurs", "64 industries", "Projections"]
+      },
+      {
+        id: "macro_fpt_trd_a88",
+        title: "Empreintes tendancielles",
+        subtitle: "NACE Rév.2 A*88",
+        description: "Projections tendancielles des empreintes des activités économiques selon la nomenclature NACE niveau A88",
+        code: "macro_fpt_trd_a88",
         metrics: ["12 indicateurs", "88 divisions", "Projections"]
+      },
+      {
+        id: "macro_fpt_trd_a38",
+        title: "Empreintes tendancielles",
+        subtitle: "NACE Rév.2 A*38",
+        description: "Projections tendancielles des empreintes des activités économiques selon la nomenclature NACE niveau A38",
+        code: "macro_fpt_trd_a38",
+        metrics: ["12 indicateurs", "38 branches", "Projections"]
       }
     ]
   },
@@ -67,10 +91,26 @@ const datasets = [
       {
         id: "macro_fpt_tgt",
         title: "Trajectoires cibles sectorielles",
-        subtitle: "NACE Rév.2 A88",
-        description: "Objectifs cibles par secteur pour assurer la compatibilité avec la transition",
+        subtitle: "Nomenclature FIGARO",
+        description: "Trajectoires cibles des empreintes des activités économiques selon la nomenclature FIGARO A64",
         code: "macro_fpt_tgt",
-        metrics: ["12 indicateurs", "88 divisions", "Cibles 2030"]
+        metrics: ["8 indicateurs", "64 industries", "Cibles 2030"]
+      },
+      {
+        id: "macro_fpt_tgt_a88",
+        title: "Trajectoires cibles sectorielles",
+        subtitle: "NACE Rév.2 A*88",
+        description: "Trajectoires cibles des empreintes des activités économiques selon la nomenclature NACE niveau A88",
+        code: "macro_fpt_tgt_a88",
+        metrics: ["8 indicateurs", "88 divisions", "Cibles 2030"]
+      },
+      {
+        id: "macro_fpt_tgt_a38",
+        title: "Trajectoires cibles sectorielles",
+        subtitle: "NACE Rév.2 A*38",
+        description: "Trajectoires cibles des empreintes des activités économiques selon la nomenclature NACE niveau A38",
+        code: "macro_fpt_tgt_a38",
+        metrics: ["8 indicateurs", "38 branches", "Cibles 2030"]
       }
     ]
   }
