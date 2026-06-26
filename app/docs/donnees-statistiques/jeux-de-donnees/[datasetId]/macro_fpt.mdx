@@ -33,7 +33,40 @@ Autres colonnes :
 
 Les données sont construites à partir du modèle entrée-sortie multirégional FIGARO et des comptes d'impacts associés aux dimensions de l'Empreinte Sociétale.
 
-*Détails méthodologiques à venir*
+**Méthodologie**
+
+La production des données s’opère en deux étapes:
+1. La première consiste à construire des *comptes d’impacts directs* également appelés *comptes satellites. 
+2. La seconde vise à calculer les *empreintes macroéconomiques* en combinant les données d’impacts directs avec celles du modèle FIGARO
+
+**Comptes d'impacts**
+
+Les comptes d’impacts directs, aussi appelés comptes satellites, décrivent, pour chaque pays, chaque branche d’activité et chaque année, la valeur ou le volume observée ou estimée d’externalités directes mesurée pour un indicateur. Ils concernent par exemple les émissions directes, la consommation d’énergie ou un indicateur social associé aux effectifs. Ces comptes sont construits à partir de sources statistiques diverses (Eurostat, OCDE, Insee, etc.), propres à chaque indicateur, et sont harmonisés pour être exprimés dans la nomenclature utilisée au sein des tables FIGARO i.e. ventilation en 64 branches et 50 pays/régions du monde). Lorsque des valeurs sont manquantes ou atypiques, des traitements de nettoyage ou de remplacement peuvent être appliqués, afin d’obtenir des séries cohérentes et exploitables.
+
+Pour les séries historiques, les impacts reprennent les données observées et reflètent ce que les sources statistiques permettent de mesurer sur les années passées.
+
+**Construction des empreintes**
+
+Si les comptes d’impacts détaillent les externalités directes des différentes branches d’activité, ces dernières induisent également des impacts indirects en amont, liés à leurs consommations intermédiaires et à leurs consommations de capital fixe (immobilisations). 
+
+Pour prendre en compte ces impacts amont, l’approche mobilise les tables entrées-sorties FIGARO (Eurostat, JRC). Ces tables annuelles décrivent les flux économiques entre branches et pays : qui achète quoi à qui, pour produire quoi. C’est une photographie de l’économie, qui détaille les interactions des agents sur une période et un territoire donnés.  Elles permettent de construire une matrice dite de « Leontief » indiquant l’ensemble des productions nécessaires, directement et indirectement, pour satisfaire une demande ou produire une unité d’activité, pour chaque couple branche/pays. Cette méthodologie est normée et fait l’objet de nombreuses études académiques qui nourrissent nos analyses. 
+
+Pour chaque indicateur, on combine alors cette matrice avec un vecteur d’impact (exprimant pour chaque couple branche/pays, la quantité d’impact associée à une unité de production) pour obtenir une estimation des empreintes des activités : les impacts totaux induits dans l’économie pour produire une unité économique donnée.
+
+Les empreintes sont produites pour plusieurs agrégats économiques : la production, les consommations intermédiaires, la consommation de capital fixe, et la valeur ajoutée nette.
+
+Enfin, les jeux de données sont structurés selon différentes nomenclatures d’activité pour faciliter leur exploitation :
+-	A*64 – Nomenclature FIGARO
+-	A*88 – Empreintes par division économique
+-	A*38 – Empreintes par branche d’activité
+
+**Désagrégations sectorielles**
+
+En complément, un travail de désagrégation sectorielle permet de passer des empreintes produites selon la nomenclature FIGARO (A\*64 activités) à des empreintes plus fines, pour être au plus proche du code APE (A\*732). 
+
+La méthode s’appuie sur plusieurs modèles entrées-sorties environnementaux nationaux (modèles EEIO) plus détaillés, tels que ceux du Royaume-Uni (A\*104), des États-Unis (A\*398), du Canada (A\*108) et du Danemark (A\*117). Pour chaque modèle, on étalonne les données avec la France, et on produit les empreintes des activités économiques, selon les mêmes principes présentés ci-avant. Les données obtenues sont ensuite combinées et rapprochées de la nomenclature française, en donnant plus de poids aux correspondances les plus fiables. 
+
+Cette approche permet d’obtenir des estimations sectorielles plus fines, cohérentes avec les ordres de grandeur des empreintes obtenues via le modèle FIGARO.	
 
 ### Sources de données utilisées
 
@@ -59,6 +92,7 @@ Les données sont également disponibles en nomenclature A*38 (branche) A*88 (di
 Jeux de données dérivés :
 - **macro_fpt_a38** : Empreintes macroéconomiques agrégées par branche (A*38)
 - **macro_fpt_a88** : Empreintes macroéconomiques étendues par division (A*88)
+- **macro_fpt_a732** : Empreintes macroéconomiques désagrégées par code APE (A*732)
 
 ---
 
