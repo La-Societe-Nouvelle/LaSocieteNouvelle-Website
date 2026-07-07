@@ -33,6 +33,10 @@ const allNavigation = [
     href: '/docs/metriz-webapp/lecture-dsn',
     title: 'Lecture des DSN',
   },
+  {
+    href: '/docs/metriz-webapp/integrations',
+    title: 'Intégrations',
+  }
 ];
 
 // Context pour partager title, breadcrumb, navigation
