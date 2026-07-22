@@ -47,7 +47,7 @@ export default function RepertoireSinese() {
                 <Button
                   variant="outline"
                   title="Découvrir l'API"
-                  href="https://api.lasocietenouvelle.org/"
+                  href="https://api.sinese.fr/"
                   target="_blank"
                 >
                   Documentation API

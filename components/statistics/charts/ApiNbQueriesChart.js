@@ -1,38 +1,32 @@
 import { Bar } from "react-chartjs-2";
 
+const YEAR_COLORS = [
+  { backgroundColor: 'rgba(108, 142, 239, 0.4)', hoverBackgroundColor: 'rgba(108, 142, 239, 0.55)' },
+  { backgroundColor: 'rgba(108, 142, 239, 0.7)', hoverBackgroundColor: 'rgba(108, 142, 239, 0.9)' },
+  { backgroundColor: '#191558', hoverBackgroundColor: '#2a2570' },
+];
+
 const ApiNbQueriesChart = ({ analytics }) => {
   const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
+  const years = [...new Set(
+    (analytics?.nombre_requetes_par_mois ?? []).map((item) => item.month.split('-')[0])
+  )].filter((year) => year !== '2024').sort();
+
   const chartData = {
     labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-    datasets: [
-      {
-        label: '2024',
-        data: months.map((month) => analytics?.nombre_requetes_par_mois?.find((item) => item.month == '2024-' + month)?.nombre_requetes ?? 0),
-        backgroundColor: 'rgba(108, 142, 239, 0.7)',
-        hoverBackgroundColor: 'rgba(108, 142, 239, 0.9)',
-        borderRadius: {
-          topLeft: 8,
-          topRight: 8,
-          bottomLeft: 0,
-          bottomRight: 0
-        },
-        borderSkipped: false
+    datasets: years.map((year, i) => ({
+      label: year,
+      data: months.map((month) => analytics?.nombre_requetes_par_mois?.find((item) => item.month == year + '-' + month)?.nombre_requetes ?? 0),
+      ...YEAR_COLORS[YEAR_COLORS.length - years.length + i] ?? YEAR_COLORS[YEAR_COLORS.length - 1],
+      borderRadius: {
+        topLeft: 8,
+        topRight: 8,
+        bottomLeft: 0,
+        bottomRight: 0
       },
-      {
-        label: '2025',
-        data: months.map((month) => analytics?.nombre_requetes_par_mois?.find((item) => item.month == '2025-' + month)?.nombre_requetes ?? 0),
-        backgroundColor: '#191558',
-        hoverBackgroundColor: '#2a2570',
-        borderRadius: {
-          topLeft: 8,
-          topRight: 8,
-          bottomLeft: 0,
-          bottomRight: 0
-        },
-        borderSkipped: false
-      }
-    ]
+      borderSkipped: false
+    }))
   };
 
   const chartOptions = {

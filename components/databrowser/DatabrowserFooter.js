@@ -51,7 +51,7 @@ export default function DatabrowserFooter() {
               <div className="footer-section">
                 <h4 className="footer-title">Ressources</h4>
                 <ul className="footer-links">
-                  <li><a href="https://api.lasocietenouvelle.org" target="_blank" rel="noopener noreferrer">API publique</a></li>
+                  <li><a href="https://api.sinese.fr" target="_blank" rel="noopener noreferrer">API publique</a></li>
                   <li><a href="https://docs.lasocietenouvelle.org" target="_blank" rel="noopener noreferrer">Documentation</a></li>
                   <li><a href="https://github.com/La-Societe-Nouvelle" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 </ul>

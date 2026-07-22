@@ -22,7 +22,7 @@ export default function About() {
 
       <section className="section">
         <Container>
-          <Row>
+          <Row className="align-items-center">
             <Col lg={8}>
               <h3 className="section__title">
                 Notre mission
@@ -47,6 +47,15 @@ export default function About() {
                   La base de données est, et restera toujours, ouverte.
                 </p>
               </div>
+            </Col>
+            <Col lg={4} className="d-none d-lg-block">
+              <Image
+                src="/images/team-spirit.svg"
+                alt="Illustration de notre mission"
+                width={873}
+                height={590}
+                className="img-fluid"
+              />
             </Col>
           </Row>
 

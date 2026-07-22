@@ -59,15 +59,19 @@ export default function DatasetPage() {
           .join("&");
 
         const [dataResponse, metadataResponse] = await Promise.all([
-          fetch(`${process.env.NEXT_PUBLIC_API_URL}/macrodata/${dataset}?${filters}`),
-          fetch(`${process.env.NEXT_PUBLIC_API_URL}/macrodata/metadata/${dataset}`)
+          fetch(`/api/macrodata/${dataset}?${filters}`),
+          fetch(`/api/macrodata/${dataset}/metadata`)
         ]);
+
+        if (!dataResponse.ok || !metadataResponse.ok) {
+          throw new Error("Erreur lors du chargement des données");
+        }
 
         const dataResults = await dataResponse.json();
         const metadataResults = await metadataResponse.json();
 
         setData(dataResults.data);
-        setMetadata(metadataResults.metadata);
+        setMetadata(metadataResults.data?.metadata);
       } catch (err) {
         setError("Erreur lors du chargement des données");
         console.error(err);

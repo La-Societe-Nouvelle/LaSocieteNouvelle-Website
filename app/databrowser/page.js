@@ -42,7 +42,7 @@ export default function DataBrowser() {
                     <i className="bi bi-database me-2"></i>
                     Explorer les données
                   </Link>
-                  <a href="https://api.lasocietenouvelle.org" target="_blank" rel="noopener noreferrer" className="btn-databrowser secondary">
+                  <a href="https://api.sinese.fr" target="_blank" rel="noopener noreferrer" className="btn-databrowser secondary">
                     <i className="bi bi-braces me-2"></i>
                     API Documentation
                   </a>
@@ -236,7 +236,7 @@ export default function DataBrowser() {
               </div>
             </div>
             <a
-              href="https://api.lasocietenouvelle.org/"
+              href="https://api.sinese.fr/"
               target="_blank"
               rel="noopener noreferrer"
               className="api-link"

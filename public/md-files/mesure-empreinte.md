@@ -87,5 +87,5 @@ Les informations saisies restent en interne.
 
 La mesure via un outil interne ou développé par un tiers est possible. L'utilisation des données s'effectue alors via l'API La Société Nouvelle.
 
-URL de l'API : https://api.lasocietenouvelle.org  
+URL de l'API : https://api.sinese.fr  
 [*Documentation*](/documentation-api)

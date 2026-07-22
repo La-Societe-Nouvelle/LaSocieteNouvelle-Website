@@ -30,15 +30,15 @@ const Statistics = () => {
     setLoading(true);
     setError(false);
 
-    const url = `https://api.lasocietenouvelle.org/analytics`;
+    const url = `/api/analytics`;
 
     try {
       const res = await fetch(url);
 
       if (res.ok) {
         const results = await res.json();
-        if (results.header?.code == 200) {
-          setAnalytics(results.body);
+        if (results.data) {
+          setAnalytics(results.data);
         } else {
           setError(true);
         }

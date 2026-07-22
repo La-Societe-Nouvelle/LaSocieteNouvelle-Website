@@ -29,7 +29,7 @@ export default function ImpactFactorsPage() {
       });
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/env_impact_factors?${params}`
+        `/api/impact-factors?${params}`
       );
       if (!response.ok) {
         throw new Error('Erreur lors du chargement des données');

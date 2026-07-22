@@ -42,13 +42,13 @@ La valeur des indicateurs relatifs à la valeur ajoutée nette de l'entreprise s
 
 ### CHARGES EXTERNES
 
-Pour les charges externes, la qualité d'une dépense correspond à la qualité de la valeur produite de l'entreprise bénéficiaire. Les valeurs sont donc accessibles via l'API La Société Nouvelle [(api.lasocietenouvelle.org)](api.lasocietenouvelle.org) à partir du numéro de siren de l'entreprise. Les valeurs sont comptabilisées à hauteur du montant de la dépense.
+Pour les charges externes, la qualité d'une dépense correspond à la qualité de la valeur produite de l'entreprise bénéficiaire. Les valeurs sont donc accessibles via l'API La Société Nouvelle [(api.sinese.fr)](api.sinese.fr) à partir du numéro de siren de l'entreprise. Les valeurs sont comptabilisées à hauteur du montant de la dépense.
 
 Dans le cas où les données ne sont pas publiées par l'entreprise. Des données par défaut sont proposées.
 
 ### DOTATIONS AUX AMORTISSEMENTS SUR IMMOBILISATION
 
-Pour les dotations aux amortissements, la qualité correspond à la qualité de la valeur produite de l'entreprise bénéficiaire de la dépense d'investissement, l'année de l'investissement initial. Les valeurs sont donc accessibles via l'API La Société Nouvelle [(api.lasocietenouvelle.org)](api.lasocietenouvelle.org) à partir du numéro de siren de l'entreprise. Les valeurs sont comptabilisées à hauteur de la dotation.
+Pour les dotations aux amortissements, la qualité correspond à la qualité de la valeur produite de l'entreprise bénéficiaire de la dépense d'investissement, l'année de l'investissement initial. Les valeurs sont donc accessibles via l'API La Société Nouvelle [(api.sinese.fr)](api.sinese.fr) à partir du numéro de siren de l'entreprise. Les valeurs sont comptabilisées à hauteur de la dotation.
 
 Dans le cas où les données ne sont pas publiées par l'entreprise, des données par défaut sont proposées.
 

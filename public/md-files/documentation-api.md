@@ -15,7 +15,7 @@ Le service d’interrogation unitaire permet d’obtenir les données disponible
 Il s’agit d’un service web de type REST. L’invocation du service se fait par l’envoi d’une requête HTTPS de type GET. Le résultat est communiqué dans le contenu de la réponse HTTPS sous format JSON.
 
 URL d’accès au service pour une interrogation unitaire :
-https://api.lasocietenouvelle.org/api/v2/siren/{siren}
+https://api.sinese.fr/v2/legalunits/{siren}/footprint
 
 où {siren} est un numéro à 9 chiffres.
 

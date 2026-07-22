@@ -231,7 +231,7 @@ export default function TravauxStatistiques() {
                   vos applications et systèmes d'information.
                 </p>
                 <a
-                  href="https://api.lasocietenouvelle.org/"
+                  href="https://api.sinese.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary w-100"

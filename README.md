@@ -118,7 +118,7 @@ Les contributions sont les bienvenues ! Pour contribuer :
 - [Documentation Next.js](https://nextjs.org/docs)
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
-- [API La Société Nouvelle](https://api.lasocietenouvelle.org)
+- [API La Société Nouvelle](https://api.sinese.fr)
 
 ## Contact
 

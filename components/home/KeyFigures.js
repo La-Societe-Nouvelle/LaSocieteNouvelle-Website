@@ -5,22 +5,26 @@ const refYear = "2024";
 
 async function fetchKeyFiguresData() {
   const urls = [
-    `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GHG&year=${refYear}`,
-    `${process.env.NEXT_PUBLIC_API_URL}/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GEQ&year=${refYear}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GHG&year=${refYear}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt_trd?industry=TOTAL&country=FRA&aggregate=NVA&indic=GEQ&year=${refYear}`,
     'https://api.stats.lasocietenouvelle.org/barometre-ges/derniere-publication',
   ];
 
   try {
     const responses = await Promise.all(
       urls.map((url) =>
-        fetch(url).then(res => res.json())
+        fetch(url, {
+          headers: url.startsWith(process.env.NEXT_PUBLIC_API_URL)
+            ? { 'Authorization': `Bearer ${process.env.SINESE_API_TOKEN}` }
+            : undefined,
+        }).then(res => res.json())
       )
     );
 
-    const data_ghg = responses[0].header.code === 200
+    const data_ghg = responses[0].data?.length > 0
       ? responses[0].data[0].value.toFixed(0)
       : "";
-    const data_geq = responses[1].header.code === 200
+    const data_geq = responses[1].data?.length > 0
       ? responses[1].data[0].value.toFixed(1)
       : "";
 

@@ -32,7 +32,7 @@ export default function OpenSection() {
                   Toutes les données agrégées sont accessibles librement via notre API publique et notre portail de données statistiques.
                 </p>
                 <div className="feature-list-item-links">
-                  <Link href="https://api.lasocietenouvelle.org/" target="_blank">
+                  <Link href="https://api.sinese.fr/" target="_blank">
                     <i className="bi bi-braces"></i>
                     API publique
                   </Link>

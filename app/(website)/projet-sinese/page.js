@@ -252,7 +252,7 @@ export default function ProjetSinese() {
               </div>
               <div className="section__actions">
                 <Link
-                  href="https://api.lasocietenouvelle.org"
+                  href="https://api.sinese.fr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"

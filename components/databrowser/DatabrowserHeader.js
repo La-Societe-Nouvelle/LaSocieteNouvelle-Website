@@ -34,7 +34,7 @@ export default function DatabrowserHeader() {
             </div>
             <div className="header-actions">
               <a
-                href="https://api.lasocietenouvelle.org"
+                href="https://api.sinese.fr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="api-link"
