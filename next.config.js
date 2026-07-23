@@ -3,7 +3,7 @@ const createMDX = require('@next/mdx')
 
 /* --- Config Next --- */
 const nextConfig = {
-  reactStrictMode: false, // Désactivé pour de meilleures performances en développement
+  reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 
   // Optimisations pour MDX et KaTeX
