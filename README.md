@@ -96,7 +96,7 @@ npm run start    # Démarrer le serveur de production
 ### Redirections
 - `data.lasocietenouvelle.org` → `/databrowser`
 - `docs.lasocietenouvelle.org` → `/docs`
-- `www.lasocietenouvelle.org` → `lasocietenouvelle.org`
+- `lasocietenouvelle.org` → `www.lasocietenouvelle.org`
 
 ## Contribution
 
