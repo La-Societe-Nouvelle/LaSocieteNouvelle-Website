@@ -112,8 +112,41 @@ $dropdown-font-size : 0.85rem;
 $dropdown-border-color : $light;
 $dropdown-border-width : 2px;
 $dropdown-link-hover-bg: $light;
-$pagination-font-size : 0.8rem;
 
 
 /* import bootstrap to set changes */
-@import "~bootstrap/scss/bootstrap";
+// Import sélectif des partials Bootstrap réellement utilisés (react-bootstrap
+// components + classes .badge/.alert en className brut). Exclus car sans
+// usage détecté dans le repo : button-group, pagination, progress,
+// list-group, toasts, tooltip, popover, carousel, offcanvas, placeholders.
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/spinners";
+
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
