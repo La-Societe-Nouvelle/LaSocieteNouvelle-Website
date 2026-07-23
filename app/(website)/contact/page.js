@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Alert, Col, Container, Form, Row } from "react-bootstrap";
 import Link from "next/link";
-import { sendContactMail } from "@/app/api/mail-api";
+import { sendContactMail } from "@/lib/utils/mailApi";
 
 export default function Contact() {
   const [name, setName] = useState("");
