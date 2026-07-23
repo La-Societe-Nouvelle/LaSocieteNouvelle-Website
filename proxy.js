@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware(request) {
+export function proxy(request) {
   const hostname = request.headers.get('host');
 
   // Si on est sur databrowser.lasocietenouvelle.org
