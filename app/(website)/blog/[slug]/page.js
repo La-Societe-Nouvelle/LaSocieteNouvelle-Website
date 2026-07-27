@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 
 import SinglePost from "@/components/posts/SinglePost";
 import fetchPostBySlug from "@/lib/utils/fetchSinglePost";
+import { fetchRelatedPosts } from "@/lib/utils/fetchPosts";
+
+export const revalidate = 86400;
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -29,11 +32,12 @@ export default async function Post({ params }) {
     notFound();
   }
 
+  const relatedPosts = await fetchRelatedPosts(post);
+
   return (
     <div className="single-post-page">
-
       <Container>
-        <SinglePost post={post} />
+        <SinglePost post={post} relatedPosts={relatedPosts} />
       </Container>
     </div>
   );

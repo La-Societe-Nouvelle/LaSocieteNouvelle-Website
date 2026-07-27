@@ -21,6 +21,7 @@ export default function DatabrowserHeader() {
                 width={213}
                 alt="La Société Nouvelle"
                 className="section__logo"
+                priority
               />
             </Link>
             <div className="header-title-section">

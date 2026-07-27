@@ -285,9 +285,9 @@ export default function TravauxStatistiques() {
                 </p>
               </div>
               <div className="d-flex gap-3 flex-wrap">
-                <Link href="/categorie/notes-analyse" className="btn btn-outline-primary">
+                <Link href="/categorie/data-analysis" className="btn btn-outline-primary">
                   <i className="bi bi-file-text me-2"></i>
-                  Notes d'analyse
+                  Données et analyses
                 </Link>
                 <Link href="/categorie/fiches-methodologiques" className="btn btn-outline-primary">
                   <i className="bi bi-book me-2"></i>

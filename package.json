@@ -7,8 +7,9 @@
   },
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
-    "start": "next start"
+    "build": "npm run generate:mdx-image-sizes && next build --webpack",
+    "start": "next start",
+    "generate:mdx-image-sizes": "node scripts/generate-mdx-image-sizes.js"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

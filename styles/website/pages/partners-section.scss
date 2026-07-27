@@ -177,6 +177,10 @@
     border: 2px solid transparent;
     text-decoration: none;
 
+    img {
+      flex-shrink: 0;
+    }
+
     @media (max-width: 768px) {
       min-height: 120px;
       padding: 1.5rem 1rem;

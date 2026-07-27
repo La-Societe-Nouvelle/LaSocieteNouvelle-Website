@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cutString } from "../../lib/utils/utils";
 
-function PostPreview({post, path}) {
+function PostPreview({post, path, priority = false}) {
 
   return (
     <Col key={post.id} lg={3} md={6}>
@@ -16,12 +16,14 @@ function PostPreview({post, path}) {
               width={400}
               height={250}
               className="card-img"
-              loading="lazy"
+              loading={priority ? undefined : "lazy"}
+              priority={priority}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             />
           )}
         </div>
         <div className="post-body">
+          {post.tag && (
           <div className="post-tags mb-2">
             <span className="badge bg-light">
               <Link href={`/categorie/${post.tag.slug}`}>
@@ -29,6 +31,7 @@ function PostPreview({post, path}) {
               </Link>
             </span>
           </div>
+          )}
           <div className="post-title">
             <h3>
               <Link href={`${path}${post.slug}`} title={post.title}>

@@ -27,6 +27,7 @@ export default function Newsletter() {
                     width={500}
                     height={500}
                     className="img fluid"
+                    priority
                   />
               </Col>
             </Row>

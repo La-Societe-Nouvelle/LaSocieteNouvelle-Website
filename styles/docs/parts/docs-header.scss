@@ -123,3 +123,8 @@
     }
   }
 }
+
+// .docs-theme .header ne matche jamais (même élément, pas descendant)
+header.docs-theme .header-brand .brand-logo {
+  flex-shrink: 0;
+}

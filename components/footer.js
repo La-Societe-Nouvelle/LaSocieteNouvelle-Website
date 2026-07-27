@@ -125,8 +125,8 @@ function Footer() {
               <h4 className="footer-section__title">Publications</h4>
               <Nav className="flex-column footer-nav">
                 <Nav.Link href="/blog">Blog</Nav.Link>
-                <Nav.Link href="/categorie/notes-analyse">
-                  Notes d'analyse
+                <Nav.Link href="/categorie/data-analysis">
+                  Données et analyses
                 </Nav.Link>
                 <Nav.Link href="/categorie/fiches-methodologiques">
                   Fiches méthodologiques

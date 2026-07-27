@@ -5,6 +5,8 @@ import { fetchPostsByTag, getTag } from "@/lib/utils/fetchPosts";
 import PageHeader from "@/components/PageHeader";
 import PostPreview from "@/components/posts/PostPreview";
 
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }) {
   const { tag } = await params;
 
@@ -56,8 +58,8 @@ export default async function TagPage({ params }) {
       <section className="section">
         <Container>
           <Row className="g-4">
-            {posts.map((post) => (
-              <PostPreview post={post} key={post.id} path={'/blog/'} />
+            {posts.map((post, index) => (
+              <PostPreview post={post} key={post.id} path={'/blog/'} priority={index === 0} />
             ))}
           </Row>
         </Container>

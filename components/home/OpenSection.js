@@ -14,7 +14,7 @@ export default function OpenSection() {
               src="/icons/logo-licence-etalab.gif"
               alt="Illustration Licence Etalab"
               width={400}
-              height={200}
+              height={221}
               className="section__logo"
             />  
             

@@ -20,10 +20,10 @@ export default function PartnersEcosystemSection()
       <Image
         src={partner.img}
         alt={`Logo ${partner.name}`}
-        width={partner.height * 3}
+        width={partner.width}
         height={partner.height}
         className="img-fluid"
-        style={{ objectFit: "contain", height: partner.height }}
+        style={{ objectFit: "contain", height: partner.height, width: "auto" }}
         loading="lazy"
         sizes="(max-width: 768px) 120px, 160px"
       />
@@ -41,10 +41,10 @@ export default function PartnersEcosystemSection()
       <Image
         src={item.img}
         alt={`Logo ${item.name}`}
-        width={item.height * 3}
+        width={item.width}
         height={item.height}
         className="img-fluid"
-        style={{ objectFit: "contain", height: item.height }}
+        style={{ objectFit: "contain", height: item.height, width: "auto" }}
         loading="lazy"
         sizes="(max-width: 768px) 120px, 160px"
       />

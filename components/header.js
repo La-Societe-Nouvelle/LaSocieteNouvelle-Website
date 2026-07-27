@@ -226,7 +226,7 @@ const Header = () => {
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/ressources/travaux-statistiques">
                       <i className="bi bi-table me-2"></i>
-                     Travaux statistiques
+                      Travaux statistiques
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/ressources/api-publique">
                       <i className="bi bi-braces me-2"></i>
@@ -262,9 +262,10 @@ const Header = () => {
                       <i className="bi bi-file-text me-2"></i>
                       Études & Ressources
                     </NavDropdown.ItemText>
-                    <NavDropdown.Item href="/categorie/notes-analyse" className="dropdown-subsection">
-                      Notes d'analyse
+                    <NavDropdown.Item href="/categorie/data-analysis" className="dropdown-subsection">
+                      Données et analyses
                     </NavDropdown.Item>
+
                     <NavDropdown.Item href="/categorie/fiches-methodologiques" className="dropdown-subsection">
                       Fiches méthodologiques
                     </NavDropdown.Item>

@@ -45,10 +45,10 @@ export default function IndicsSection() {
                 <Image
                   src="/images/F-SDG-Poster 2019_without UN emblem_WEB.png"
                   alt="Empreinte Sociétale"
-                  width={350}
-                  height={350}
-                  loading="lazy"
-                  sizes="(max-width: 992px) 100vw, 350px"
+                  width={320}
+                  height={226}
+                  priority
+                  sizes="320px"
                 />
               </div>
             </Col>

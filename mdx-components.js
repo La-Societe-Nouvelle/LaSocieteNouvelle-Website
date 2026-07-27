@@ -3,8 +3,28 @@
  * Situé à la racine du projet, il est automatiquement détecté par Next.js
  */
 
+import Image from "next/image";
+import { getLocalImageSize } from "@/lib/utils/imageSize";
+
 export function useMDXComponents(components) {
   return {
+    // Images locales optimisées via next/image (srcSet responsive, lazy loading)
+    img: ({ src, alt }) => {
+      const size = src?.startsWith("/") ? getLocalImageSize(src) : null;
+      if (!size) {
+        // eslint-disable-next-line @next/next/no-img-element
+        return <img src={src} alt={alt} />;
+      }
+      return (
+        <Image
+          src={src}
+          alt={alt || ""}
+          width={size.width}
+          height={size.height}
+          sizes="(max-width: 991px) 100vw, 990px"
+        />
+      );
+    },
     // Personnalisation des éléments HTML de base
     h1: ({ children }) => (
       <h1 className="docs-page-title">{children}</h1>

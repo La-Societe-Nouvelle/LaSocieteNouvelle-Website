@@ -245,6 +245,8 @@
 
 // Single post page
 .single-post-page {
+  background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
+
   .breadcrumb-section {
     padding: 1.5rem 0;
     background: linear-gradient(135deg, rgba($primary, 0.02) 0%, rgba($accent, 0.03) 100%);
@@ -280,140 +282,163 @@
   }
 
   .single-post {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-
-    .post-header {
-      margin-bottom: 2rem;
-
-      .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-
-        .post-category {
-          display: inline-block;
-          padding: 0.35rem 0.75rem;
-          background: $light;
-          color: $primary;
-          text-decoration: none;
-          border-radius: 6px;
-          font-size: 0.85rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background: lighten($accent, 35%);
-            color: $accent;
-          }
-        }
-
-        .post-date {
-          color: rgba($primary, 0.6);
-          font-size: 0.9rem;
-        }
-      }
-
-      .post-title {
-        font-size: 2.5rem;
-        font-weight: 600;
-        color: $primary;
-        line-height: 1.2;
-        margin: 0;
-      }
-    }
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1rem;
 
     .post-cover {
-      margin: 2rem 0 3rem 0;
+      max-width: 880px;
+      margin: 0 auto 1rem auto;
       border-radius: $card-border-radius;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
       .cover-image {
         width: 100%;
-        height: auto;
+        height: 320px;
         object-fit: cover;
       }
     }
 
-    .post-content {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: $body-color;
+    .post-text {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: $card-border-radius;
+      padding: 3rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 
-      h2 {
-        font-size: 1.75rem;
-        font-weight: 600;
-        color: $primary;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-      }
+      .post-header {
+        margin-bottom: 2rem;
 
-      h3 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: $primary;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
-      }
+        .post-meta {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
 
-      p {
-        margin-bottom: 1.5rem;
-      }
+          .post-category {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            background: $light;
+            color: $primary;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
 
-      a {
-        color: $accent;
-        text-decoration: underline;
+            &:hover {
+              background: lighten($accent, 35%);
+              color: $accent;
+            }
+          }
 
-        &:hover {
-          color: darken($accent, 10%);
+          .post-date {
+            color: rgba($primary, 0.6);
+            font-size: 0.9rem;
+          }
+        }
+
+        .post-title {
+          font-size: 2.5rem;
+          font-weight: 600;
+          color: $primary;
+          line-height: 1.2;
+          margin: 0;
         }
       }
 
-      img {
-        max-width: 100%;
-        height: auto;
-        border-radius: $card-border-radius-sm;
-        margin: 2rem 0;
-      }
+      .post-content {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: $body-color;
 
-      blockquote {
-        border-left: 4px solid $accent;
-        padding-left: 1.5rem;
-        margin: 2rem 0;
-        color: rgba($primary, 0.8);
-        font-style: italic;
-      }
-
-      ul, ol {
-        margin-bottom: 1.5rem;
-        padding-left: 2rem;
-
-        li {
-          margin-bottom: 0.5rem;
+        h2 {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: $primary;
+          margin-top: 2.5rem;
+          margin-bottom: 1rem;
         }
-      }
 
-      code {
-        background: $light;
-        padding: 0.2rem 0.4rem;
-        border-radius: 4px;
-        font-size: 0.9em;
-      }
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: $primary;
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+        }
 
-      pre {
-        background: $light;
-        padding: 1.5rem;
-        border-radius: 8px;
-        overflow-x: auto;
-        margin: 1.5rem 0;
+        p {
+          margin-bottom: 1.5rem;
+        }
+
+        a {
+          color: $accent;
+          text-decoration: underline;
+
+          &:hover {
+            color: darken($accent, 10%);
+          }
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: $card-border-radius-sm;
+          margin: 2rem 0;
+        }
+
+        blockquote {
+          border-left: 4px solid $accent;
+          padding-left: 1.5rem;
+          margin: 2rem 0;
+          color: rgba($primary, 0.8);
+          font-style: italic;
+        }
+
+        ul, ol {
+          margin-bottom: 1.5rem;
+          padding-left: 2rem;
+
+          li {
+            margin-bottom: 0.5rem;
+          }
+        }
 
         code {
-          background: transparent;
-          padding: 0;
+          background: $light;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+          font-size: 0.9em;
         }
+
+        pre {
+          background: $light;
+          padding: 1.5rem;
+          border-radius: 8px;
+          overflow-x: auto;
+          margin: 1.5rem 0;
+
+          code {
+            background: transparent;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .related-posts {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba($primary, 0.08);
+
+      .related-posts-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary;
+        margin-bottom: 1.5rem;
       }
     }
   }
@@ -423,24 +448,33 @@
 @media (max-width: 768px) {
   .single-post-page {
     .single-post {
-      margin: 2rem auto;
+      margin: 0 auto;
+      padding: 0.5rem;
 
-      .post-header {
-        .post-title {
-          font-size: 1.75rem;
+      .post-text {
+        padding: 1.5rem;
+
+        .post-header {
+          .post-title {
+            font-size: 1.75rem;
+          }
+        }
+
+        .post-content {
+          font-size: 1rem;
+
+          h2 {
+            font-size: 1.5rem;
+          }
+
+          h3 {
+            font-size: 1.25rem;
+          }
         }
       }
 
-      .post-content {
-        font-size: 1rem;
-
-        h2 {
-          font-size: 1.5rem;
-        }
-
-        h3 {
-          font-size: 1.25rem;
-        }
+      .related-posts .related-posts-title {
+        font-size: 1.25rem;
       }
     }
   }

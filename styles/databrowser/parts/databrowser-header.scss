@@ -124,3 +124,8 @@
     }
   }
 }
+
+// même bug que docs-header.scss (même élément, pas descendant)
+header.databrowser-theme .header-brand .brand-logo {
+  flex-shrink: 0;
+}

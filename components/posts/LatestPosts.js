@@ -33,11 +33,13 @@ export default async function LatestPosts() {
                     width={600}
                     height={400}
                     className="post-image"
+                    sizes="(max-width: 992px) 100vw, 50vw"
+                    priority
                   />
                 )}
               </div>
               <div className="post-content">
-                <span className="post-tag">{posts[0].tag.name}</span>
+                <span className="post-tag">{posts[0].tag?.name}</span>
                 <h3 className="post-title">{cutString(posts[0].title, 80)}</h3>
                 <p className="post-excerpt">{cutString(posts[0].excerpt, 150)}</p>
               </div>
@@ -58,26 +60,31 @@ export default async function LatestPosts() {
                       width={120}
                       height={120}
                       className="post-image"
+                      sizes="120px"
                     />
                   )}
                 </div>
                 <div className="post-content">
-                  <span className="post-tag">{posts[1].tag.name}</span>
+                  <span className="post-tag">{posts[1].tag?.name}</span>
                   <h4 className="post-title-small">{cutString(posts[1].title, 80)}</h4>
                   <p className="post-excerpt-small">{cutString(posts[1].excerpt, 100)}</p>
                 </div>
               </Link>
               )}
               {/* Articles compacts */}
+              {posts[2] && (
               <Link href={`/blog/${posts[2].slug}`} className="post-card post-card-compact">
-                <span className="post-tag">{posts[2].tag.name}</span>
+                <span className="post-tag">{posts[2].tag?.name}</span>
                 <h4 className="post-title-small">{posts[2].title}</h4>
               </Link>
+              )}
 
+              {posts[3] && (
               <Link href={`/blog/${posts[3].slug}`} className="post-card post-card-compact">
-                <span className="post-tag">{posts[3].tag.name}</span>
+                <span className="post-tag">{posts[3].tag?.name}</span>
                 <h4 className="post-title-small">{posts[3].title}</h4>
               </Link>
+              )}
             </div>
           </Col>
         </Row>

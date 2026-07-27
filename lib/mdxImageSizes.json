@@ -1,0 +1,54 @@
+{
+  "/illustration-graphique-simplifie-methodologie.png": {
+    "width": 1366,
+    "height": 508
+  },
+  "/screens-webapp-v4/screen-metriz-v4-connexion.png": {
+    "width": 1400,
+    "height": 764
+  },
+  "/screens-webapp-v4/screen-metriz-v4_nouvelle-unite-legale.png": {
+    "width": 1400,
+    "height": 753
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-fec.png": {
+    "width": 1400,
+    "height": 709
+  },
+  "/screens-webapp-v4/screen-metriz-v4_vue-donnees-comptables.png": {
+    "width": 1400,
+    "height": 979
+  },
+  "/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations.png": {
+    "width": 1400,
+    "height": 709
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations.png": {
+    "width": 1400,
+    "height": 709
+  },
+  "/screens-webapp-v4/screen-metriz-v4_categorisation-achats-initial.png": {
+    "width": 1400,
+    "height": 709
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats.png": {
+    "width": 1400,
+    "height": 709
+  },
+  "/screens-webapp-v4/screen-metriz-v4_declaration-profil-entreprise.png": {
+    "width": 1400,
+    "height": 946
+  },
+  "/screens-webapp-v4/screen-metriz-v4_declaration-donnees-sociales.png": {
+    "width": 1400,
+    "height": 931
+  },
+  "/screens-webapp-v4/screen-metriz-v4_declaration-impact-environnemental.png": {
+    "width": 1400,
+    "height": 1627
+  },
+  "/screens-webapp-v4/screen-metriz-v4_tableau-de-bord.png": {
+    "width": 1400,
+    "height": 2250
+  }
+}

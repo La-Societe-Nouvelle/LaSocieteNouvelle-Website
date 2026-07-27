@@ -170,8 +170,8 @@ export default function Entreprises() {
                   <Image
                     src="/images/graphique-donut.png"
                     alt="Graphique Principe de calculs"
-                    width={450}
-                    height={400}
+                    width={600}
+                    height={369}
                   />
                 </div>
               </Col>

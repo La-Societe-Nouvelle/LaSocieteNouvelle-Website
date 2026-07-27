@@ -55,8 +55,6 @@
     display: inline-block;
 
     img {
-      max-width: 100%;
-      height: auto;
       border-radius: $card-border-radius;
       filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08));
     }

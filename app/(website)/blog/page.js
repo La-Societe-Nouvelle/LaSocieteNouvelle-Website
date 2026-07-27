@@ -1,33 +1,26 @@
-'use client';
-
-import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 
 import { fetchPosts } from "@/lib/utils/fetchPosts";
 
 import PageHeader from "@/components/PageHeader";
-import PostPreviewLoading from "@/components/posts/PostPreviewLoading";
 import PostPreview from "@/components/posts/PostPreview";
 
-export default function Posts() {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+export const revalidate = 86400;
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+export const metadata = {
+  title: "Blog | La Société Nouvelle",
+  description: "Découvrez nos actualités",
+};
 
-  const getPosts = async () => {
-    try {
-      setIsLoading(true);
-      const data = await fetchPosts();
-      setPosts(data.posts);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+export default async function Posts() {
+  let posts = [];
+
+  try {
+    const data = await fetchPosts();
+    posts = data.posts;
+  } catch (error) {
+    console.error(error);
+  }
 
   return (
     <div className="blog-page">
@@ -41,8 +34,9 @@ export default function Posts() {
       <section className="section">
         <Container>
           <Row className="g-4">
-            {isLoading && <PostPreviewLoading />}
-            {!isLoading && posts.map((post) => <PostPreview post={post} key={post.id} path={'/blog/'} />)}
+            {posts.map((post, index) => (
+              <PostPreview post={post} key={post.id} path={'/blog/'} priority={index === 0} />
+            ))}
           </Row>
         </Container>
       </section>
