@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Form } from 'react-bootstrap';
 
 const INDICATORS = [
   { code: 'GHG', label: 'Émissions de GES' },
@@ -87,20 +88,20 @@ export default function ImpactFactorsSidebar({ filters, onFilterChange, onReset 
           <span>Année</span>
         </button>
         {expandedSections.year && (
-          <div className="section year-content">
-            {YEARS.map((year) => (
-              <label key={year} className="filter-option">
-                <input
-                  type="radio"
-                  name="year"
-                  value={year}
-                  checked={filters.year === year}
-                  onChange={(e) => handleFilterChange('year', parseInt(e.target.value))}
-                />
-                <span className={year === 2025 ? 'year-latest' : ''}>{year}</span>
-                {year === 2025 && <span className="badge-latest">Dernières données</span>}
-              </label>
-            ))}
+          <div className="section">
+            <Form.Select
+              name="year"
+              value={filters.year}
+              onChange={(e) => handleFilterChange('year', parseInt(e.target.value))}
+              className="filter-select-sidebar"
+              size="sm"
+            >
+              {YEARS.map((year) => (
+                <option key={year} value={year}>
+                  {year}{year === 2025 ? ' (dernières données)' : ''}
+                </option>
+              ))}
+            </Form.Select>
           </div>
         )}
       </div>

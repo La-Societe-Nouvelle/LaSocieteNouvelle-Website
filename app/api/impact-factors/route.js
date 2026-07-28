@@ -16,7 +16,21 @@ export async function GET(request) {
             next: { revalidate: 600 },
         });
 
-        const body = await res.json();
+        const text = await res.text();
+        let body;
+        try {
+            body = text ? JSON.parse(text) : null;
+        } catch {
+            body = null;
+        }
+
+        if (body === null) {
+            return NextResponse.json(
+                { error: 'Réponse invalide de l\'API des facteurs d\'impact' },
+                { status: 502 }
+            );
+        }
+
         return NextResponse.json(body, { status: res.status });
     } catch (error) {
         return NextResponse.json(

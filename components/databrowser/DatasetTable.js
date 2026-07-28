@@ -45,7 +45,9 @@ export default function DatasetTable({
 
                   return (
                     <td key={col.code} className="data-cell">
-                      {value !== undefined && value !== null ? value : ":"}
+                      {value !== undefined && value !== null ? value : (
+                        <span className="no-data" title="Donnée non disponible">n/d</span>
+                      )}
                     </td>
                   );
                 })}

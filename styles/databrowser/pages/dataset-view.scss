@@ -547,23 +547,24 @@
     font-size: 0.75rem;
 
     thead {
-      background: linear-gradient(135deg, rgba($primary, 0.03) 0%, $databrowser-accent-light 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-
       th {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: #fff;
+        background-image: linear-gradient(135deg, rgba($primary, 0.03) 0%, $databrowser-accent-light 100%);
         padding: 1rem;
         font-weight: 700;
         color: $primary;
         border-bottom: 2px solid rgba($databrowser-accent, 0.2);
         white-space: nowrap;
+        transform: translateZ(0);
 
         &.sticky-column {
-          position: sticky;
           left: 0;
           z-index: 11;
-          background: linear-gradient(135deg, rgba($primary, 0.05) 0%, $databrowser-accent-light 100%);
+          background-color: #fff;
+          background-image: linear-gradient(135deg, rgba($primary, 0.05) 0%, $databrowser-accent-light 100%);
           box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
         }
       }
@@ -598,12 +599,18 @@
             box-shadow: 2px 0 4px rgba(0, 0, 0, 0.03);
             font-weight: 600;
             color: $primary;
+            transform: translateZ(0);
           }
 
           &.data-cell {
             text-align: right;
             font-family: 'Courier New', monospace;
             color: rgba($primary, 0.8);
+
+            .no-data {
+              color: rgba($primary, 0.35);
+              font-family: inherit;
+            }
           }
         }
       }
