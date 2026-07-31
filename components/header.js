@@ -265,7 +265,9 @@ const Header = () => {
                     <NavDropdown.Item href="/categorie/data-analysis" className="dropdown-subsection">
                       Données et analyses
                     </NavDropdown.Item>
-
+                    <NavDropdown.Item href="/categorie/sinese" className="dropdown-subsection">
+                      SINESE
+                    </NavDropdown.Item>
                     <NavDropdown.Item href="/categorie/fiches-methodologiques" className="dropdown-subsection">
                       Fiches méthodologiques
                     </NavDropdown.Item>

@@ -57,8 +57,8 @@ export default async function LatestPosts() {
                     <Image
                       src={posts[1].coverImage.url}
                       alt={posts[1].title}
-                      width={120}
-                      height={120}
+                      width={320}
+                      height={320}
                       className="post-image"
                       sizes="120px"
                     />

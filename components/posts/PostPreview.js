@@ -1,15 +1,15 @@
 import { Col } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
-import { cutString } from "../../lib/utils/utils";
+import { cutString, formatDate } from "../../lib/utils/utils";
 
-function PostPreview({post, path, priority = false}) {
+function PostPreview({post, path, priority = false, lg = 4, md = 6}) {
 
   return (
-    <Col key={post.id} lg={3} md={6}>
+    <Col key={post.id} lg={lg} md={md}>
       <div className="post-preview h-100">
         <div className="img-container">
-          {post.coverImage && (
+          {post.coverImage ? (
             <Image
               src={post.coverImage.url}
               alt={post.title}
@@ -20,18 +20,27 @@ function PostPreview({post, path, priority = false}) {
               priority={priority}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             />
+          ) : (
+            <div className="img-placeholder">
+              <i className="bi bi-journal-text" aria-hidden="true"></i>
+            </div>
           )}
         </div>
         <div className="post-body">
-          {post.tag && (
-          <div className="post-tags mb-2">
-            <span className="badge bg-light">
-              <Link href={`/categorie/${post.tag.slug}`}>
-                {post.tag.name}
-              </Link>
-            </span>
+          <div className="post-meta">
+            {post.tag && (
+              <div className="post-tags">
+                <span className="badge">
+                  <Link href={`/categorie/${post.tag.slug}`}>
+                    {post.tag.name}
+                  </Link>
+                </span>
+              </div>
+            )}
+            {post.date && (
+              <span className="post-date">{formatDate(post.date)}</span>
+            )}
           </div>
-          )}
           <div className="post-title">
             <h3>
               <Link href={`${path}${post.slug}`} title={post.title}>
