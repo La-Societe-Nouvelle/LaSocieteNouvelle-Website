@@ -26,29 +26,14 @@
   font-weight: 600;
 }
 
-#latest-posts .border-2 {
-  border-width: 2px;
-}
-
-#latest-posts .post-preview {
-  .img-container {
-    height: 225px;
-  }
-}
-
-.horizontal-preview {
-  .img-container {
-    height: 170px;
-    overflow: hidden;
-  }
-  .card-img {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
+// Badge de catégorie partagé entre l'article à la une et les cartes de la grille
+.post-preview .post-tags .badge,
+.featured-post .featured-foot .badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: lighten($accent, 28%);
+  color: darken($accent, 25%);
 }
 
 .post-preview {
@@ -60,8 +45,12 @@
   @include card-hover-effect;
   @include image-zoom-effect;
 
+  &:hover {
+    border-color: rgba($accent, 0.35);
+  }
+
   .img-container {
-    height: 200px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     border-radius: $card-border-radius-sm $card-border-radius-sm 0 0;
   }
@@ -70,7 +59,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left center;
     transition: transform 0.3s ease;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $light 0%, darken($light, 4%) 100%);
+
+    i {
+      font-size: 2.5rem;
+      color: rgba($primary, 0.35);
+    }
   }
 
   .post-body {
@@ -80,12 +84,23 @@
     flex: 1;
   }
 
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-date {
+    font-size: 0.78rem;
+    color: rgba($primary, 0.55);
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
   .post-tags {
     .badge {
-      font-size: 0.75rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-
       a {
         color: inherit;
         text-decoration: none;
@@ -145,6 +160,149 @@
     }
   }
 
+}
+
+// Article à la une
+.featured-post {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: #fff;
+  border: 1px solid rgba($primary, 0.08);
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  @include card-hover-effect;
+  @include image-zoom-effect;
+
+  &:hover {
+    border-color: rgba($accent, 0.35);
+  }
+
+  .featured-img {
+    position: relative;
+    min-height: 300px;
+
+    .featured-cover {
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    .img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, $light 0%, darken($light, 4%) 100%);
+
+      i {
+        font-size: 3.5rem;
+        color: rgba($primary, 0.35);
+      }
+    }
+  }
+
+  .featured-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .featured-kicker {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $accent;
+  }
+
+  .featured-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $primary;
+    line-height: 1.3;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+
+  &:hover .featured-title {
+    color: $accent;
+  }
+
+  .featured-excerpt {
+    font-size: 0.95rem;
+    color: $body-color;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .featured-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+
+    .read-more-link {
+      color: $accent;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+
+    .featured-img {
+      min-height: 220px;
+    }
+
+    .featured-body {
+      padding: 1.5rem;
+    }
+
+    .featured-title {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Bouton "Afficher plus"
+.load-more-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+
+  .posts-counter {
+    font-size: 0.85rem;
+    color: rgba($primary, 0.55);
+    margin: 0;
+  }
+
+  .load-more-btn {
+    background: $primary;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background: lighten($primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba($primary, 0.2);
+    }
+  }
 }
 
 // Infographic cards

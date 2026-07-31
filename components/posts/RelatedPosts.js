@@ -1,7 +1,5 @@
-import { Row, Col } from "react-bootstrap";
-import Link from "next/link";
-import Image from "next/image";
-import { cutString } from "../../lib/utils/utils";
+import { Row } from "react-bootstrap";
+import PostPreview from "./PostPreview";
 
 export default function RelatedPosts({ posts }) {
   return (
@@ -9,48 +7,7 @@ export default function RelatedPosts({ posts }) {
       <h2 className="related-posts-title">À lire aussi</h2>
       <Row className="g-4">
         {posts.map((post) => (
-          <Col md={4} key={post.id}>
-            <div className="post-preview h-100">
-              <div className="img-container">
-                {post.coverImage && (
-                  <Image
-                    src={post.coverImage.url}
-                    alt={post.title}
-                    width={400}
-                    height={250}
-                    className="card-img"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                )}
-              </div>
-              <div className="post-body">
-                {post.tag && (
-                  <div className="post-tags mb-2">
-                    <span className="badge bg-light">
-                      <Link href={`/categorie/${post.tag.slug}`}>
-                        {post.tag.name}
-                      </Link>
-                    </span>
-                  </div>
-                )}
-                <div className="post-title">
-                  <h3>
-                    <Link href={`/blog/${post.slug}`} title={post.title}>
-                      {cutString(post.title, 70)}
-                    </Link>
-                  </h3>
-                </div>
-                <p className="excerpt">{cutString(post.excerpt, 140)}</p>
-                <div className="mt-auto">
-                  <Link href={`/blog/${post.slug}`} className="read-more-link">
-                    Lire la suite
-                    <i className="bi bi-arrow-right ms-1"></i>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Col>
+          <PostPreview post={post} key={post.id} path="/blog/" md={4} />
         ))}
       </Row>
     </section>

@@ -64,20 +64,20 @@ applications:
 # Configuration des routes
 routes:
   # Route par défaut pour tous les environnements (staging, preview, etc.)
+  # Cache routeur désactivé : Next.js gère déjà le cache des pages (ISR),
+  # un cache routeur en plus empêche la revalidation à la demande d'être visible
   "https://{default}/":
     type: upstream
     upstream: "app:http"
     cache:
-      enabled: true
-      cookies: []
+      enabled: false
 
   # Route principale pour www.lasocietenouvelle.org (production uniquement)
   "https://www.lasocietenouvelle.org/":
     type: upstream
     upstream: "app:http"
     cache:
-      enabled: true
-      cookies: []
+      enabled: false
 
   # Redirection HTTP vers HTTPS pour www (production)
   "http://www.lasocietenouvelle.org/":

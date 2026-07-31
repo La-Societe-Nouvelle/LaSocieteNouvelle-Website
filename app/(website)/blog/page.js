@@ -1,9 +1,9 @@
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import { fetchPosts } from "@/lib/utils/fetchPosts";
 
 import PageHeader from "@/components/PageHeader";
-import PostPreview from "@/components/posts/PostPreview";
+import PostsGrid from "@/components/posts/PostsGrid";
 
 export const revalidate = 86400;
 
@@ -33,11 +33,7 @@ export default async function Posts() {
 
       <section className="section">
         <Container>
-          <Row className="g-4">
-            {posts.map((post, index) => (
-              <PostPreview post={post} key={post.id} path={'/blog/'} priority={index === 0} />
-            ))}
-          </Row>
+          <PostsGrid posts={posts} path="/blog/" featured />
         </Container>
       </section>
     </div>
