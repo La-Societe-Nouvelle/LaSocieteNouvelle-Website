@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { email } = body;
+        const { email, newsletter } = body;
 
         if (!email) {
             return NextResponse.json(
@@ -33,7 +33,7 @@ export async function POST(request) {
         const mailOptions = {
             from: "La Société Nouvelle <no-reply@lasocietenouvelle.org>",
             to: email,
-            subject: "Votre plaquette La Société Nouvelle - Campus 2025",
+            subject: "Votre plaquette La Société Nouvelle - Campus 2026",
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                     <div style="background-color: #191558; padding: 20px; text-align: center;">
@@ -79,7 +79,7 @@ export async function POST(request) {
             `,
             attachments: [
                 {
-                    filename: 'Plaquette_LaSocieteNouvelle_2025.pdf',
+                    filename: 'Plaquette_LaSocieteNouvelle_2026.pdf',
                     path: path.join(process.cwd(), 'public', 'docs', 'Plaquette-congres-2025.pdf'),
                     contentType: 'application/pdf'
                 }
@@ -87,6 +87,34 @@ export async function POST(request) {
         };
 
         await transporter.sendMail(mailOptions);
+
+        // Inscription à la newsletter (Brevo) si l'utilisateur a coché la case
+        if (newsletter === true) {
+            const brevoApiKey = process.env.BREVO_API_KEY;
+            const brevoListId = process.env.BREVO_NEWSLETTER_LIST_ID;
+
+            if (brevoApiKey && brevoListId) {
+                try {
+                    await fetch('https://api.brevo.com/v3/contacts', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'api-key': brevoApiKey,
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            listIds: [Number(brevoListId)],
+                            updateEnabled: true,
+                        }),
+                    });
+                    console.log(`Contact ajouté à la newsletter Brevo: ${email}`);
+                } catch (brevoError) {
+                    console.error('Erreur lors de l\'inscription à la newsletter Brevo:', brevoError);
+                }
+            } else {
+                console.warn('BREVO_API_KEY ou BREVO_NEWSLETTER_LIST_ID non configuré, inscription newsletter ignorée.');
+            }
+        }
 
         // Sauvegarder l'email dans Google Sheets
         const timestamp = new Date().toISOString();
@@ -98,7 +126,8 @@ export async function POST(request) {
                 },
                 body: JSON.stringify({
                     email: email,
-                    timestamp: timestamp
+                    timestamp: timestamp,
+                    newsletter: newsletter === true
                 })
             });
             console.log(`${timestamp} - Email sauvegardé dans Google Sheets: ${email}`);

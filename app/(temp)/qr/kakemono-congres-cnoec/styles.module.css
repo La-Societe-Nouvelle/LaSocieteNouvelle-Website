@@ -5,6 +5,7 @@
   min-height: 100dvh; /* Dynamic viewport height pour mobile */
   position: relative;
   overflow: hidden;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Pattern de fond subtil */
@@ -68,7 +69,7 @@
   padding-top: 40px;
   margin-bottom: 40px;
   box-shadow: 0 25px 80px rgba(25, 21, 88, 0.15);
-  border: 1px solid rgba(250, 89, 95, 0.1);
+  border: 1px solid rgba(247, 148, 29, 0.12);
   position: relative;
   text-align: center;
 }
@@ -76,17 +77,36 @@
 /* Section logos */
 .logosSection {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
-.logosSection img {
-  max-width: 180px;
-  max-height: 80px;
+.logosSection > img {
+  max-height: 72px;
   width: auto;
   height: auto;
+}
+
+/* Lockup officiel du 81e congrès (bandeau large) */
+.logosCongres {
+  width: 100%;
+  max-width: 460px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.logosCongres img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logosSection > img {
+    max-height: 56px;
+  }
 }
 
 /* Titre de remerciement */
@@ -107,12 +127,12 @@
 
 /* Séparateur décoratif */
 .divider {
-  width: 60px;
+  width: 72px;
   height: 3px;
-  background: linear-gradient(45deg, #fa595f, #ff7b81);
+  background: linear-gradient(90deg, #8DC63F 0%, #1AA6A0 45%, #2E7CC4 100%);
   border-radius: 2px;
   margin: 0 auto;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .dividerWrapper {
@@ -181,9 +201,35 @@
 }
 
 .formControl:focus {
-  border-color: #fa595f;
-  box-shadow: 0 0 0 0.2rem rgba(250, 89, 95, 0.15);
+  border-color: #F7941D;
+  box-shadow: 0 0 0 0.2rem rgba(247, 148, 29, 0.18);
   outline: none;
+}
+
+/* Case à cocher newsletter */
+.newsletterCheck {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.newsletterCheck input[type="checkbox"] {
+  margin-top: 0.15rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #6C8EEF;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.newsletterCheckLabel {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
 /* Bouton de soumission */
@@ -193,7 +239,7 @@
   font-size: 16px;
   font-weight: 600;
   border: none;
-  box-shadow: 0 6px 20px rgba(250, 89, 95, 0.3);
+  box-shadow: 0 6px 20px rgba(247, 148, 29, 0.3);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -202,7 +248,7 @@
 }
 
 .submitButtonActive {
-  background: linear-gradient(45deg, #fa595f, #fc6d72ff);
+  background: linear-gradient(45deg, #F7941D, #ffb04d);
   color: white;
 }
 
@@ -213,7 +259,7 @@
 
 .submitButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(250, 89, 95, 0.4);
+  box-shadow: 0 8px 25px rgba(247, 148, 29, 0.4);
 }
 
 /* Section des boutons de contact */
@@ -275,11 +321,11 @@
 }
 
 .calendlyButton {
-  background: #fa595f;
+  background: #F7941D;
 }
 
 .calendlyButton:hover {
-  background: #e83c43;
+  background: #e07d0a;
 }
 
 .socialIcon {

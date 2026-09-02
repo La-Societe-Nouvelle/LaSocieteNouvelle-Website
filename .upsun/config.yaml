@@ -71,6 +71,11 @@ routes:
     upstream: "app:http"
     cache:
       enabled: false
+    redirects:
+      expires: 1d
+      paths:
+        "/qr/kakemono-congres-cnoec-2025":
+          to: "https://{default}/qr/kakemono-congres-cnoec"
 
   # Route principale pour www.lasocietenouvelle.org (production uniquement)
   "https://www.lasocietenouvelle.org/":
@@ -78,6 +83,11 @@ routes:
     upstream: "app:http"
     cache:
       enabled: false
+    redirects:
+      expires: 1d
+      paths:
+        "/qr/kakemono-congres-cnoec-2025":
+          to: "https://www.lasocietenouvelle.org/qr/kakemono-congres-cnoec"
 
   # Redirection HTTP vers HTTPS pour www (production)
   "http://www.lasocietenouvelle.org/":

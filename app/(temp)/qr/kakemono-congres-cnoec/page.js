@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Button, Col, Container, Image, Row, Form, Spinner } from "react-bootstrap";
 import styles from './styles.module.css';
 
-export default function CongresCEC2025() {
+export default function CongresCEC() {
   const [formData, setFormData] = useState({ email: "" });
+  const [newsletter, setNewsletter] = useState(true);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
 
@@ -18,7 +19,7 @@ export default function CongresCEC2025() {
       const response = await fetch("/api/congres-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, newsletter }),
       });
 
       const data = await response.json();
@@ -41,8 +42,8 @@ export default function CongresCEC2025() {
   };
 
   const handleInputFocus = (e) => {
-    e.target.style.borderColor = '#fa595f';
-    e.target.style.boxShadow = '0 0 0 0.2rem rgba(250, 89, 95, 0.15)';
+    e.target.style.borderColor = '#F7941D';
+    e.target.style.boxShadow = '0 0 0 0.2rem rgba(247, 148, 29, 0.18)';
   };
 
   const handleInputBlur = (e) => {
@@ -55,22 +56,6 @@ export default function CongresCEC2025() {
       {/* Pattern de fond subtil */}
       <div className={styles.backgroundPattern} />
 
-      {/* Logo watermark - Desktop */}
-      {/* <div className={`${styles.logoWatermarkDesktop} d-none d-md-block`}>
-        <img
-          src="/logos/campus-haut-de-france.png"
-          alt=""
-        />
-      </div> */}
-
-      {/* Logo watermark - Mobile */}
-      {/* <div className={`${styles.logoWatermarkMobile} d-block d-md-none`}>
-        <img
-          src="/logos/campus-haut-de-france.png"
-          alt=""
-        />
-      </div> */}
-
       <Container className={`${styles.contentWrapper} py-3 py-md-5 mt-5 mt-md-4`}>
         <Row className="justify-content-center">
           <Col lg={8} md={10} xs={11}>
@@ -78,10 +63,17 @@ export default function CongresCEC2025() {
             <div className={`${styles.card} p-3 p-md-5 mt-4 mt-md-3`}>
               {/* Logos en haut */}
               <div className={styles.logosSection}>
+                <div className={styles.logosCongres}>
+                  <Image
+                    src="/images/congres-2026-lockup.png"
+                    alt="81e Congrès de l'Ordre des experts-comptables — [Re]fondation des cabinets. Du 16 au 18 septembre 2026, Paris Expo Porte de Versailles."
+                    fluid
+                  />
+                </div>
                 <Image
                   src="/logo-La-Societe-Nouvelle.svg"
                   alt="Logo La Société Nouvelle"
-                  height={80}
+                  height={72}
                 />
               </div>
 
@@ -117,7 +109,7 @@ export default function CongresCEC2025() {
               {/* Formulaire */}
               <Form onSubmit={handleSubmit}>
                 <Row className="justify-content-center">
-                  <Col md={8} className="mb-4">
+                  <Col md={8} className="mb-3">
                     <Form.Group>
                       <Form.Control
                         type="email"
@@ -131,6 +123,23 @@ export default function CongresCEC2025() {
                         onBlur={handleInputBlur}
                       />
                     </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row className="justify-content-center">
+                  <Col md={8}>
+                    <div className={styles.newsletterCheck}>
+                      <input
+                        type="checkbox"
+                        id="newsletter"
+                        checked={newsletter}
+                        disabled={loading}
+                        onChange={(e) => setNewsletter(e.target.checked)}
+                      />
+                      <label htmlFor="newsletter" className={styles.newsletterCheckLabel}>
+                        Je souhaite recevoir la newsletter de La Société Nouvelle pour suivre l'avancée du projet.
+                      </label>
+                    </div>
                   </Col>
                 </Row>
 
