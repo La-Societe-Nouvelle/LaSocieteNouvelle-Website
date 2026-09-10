@@ -23,7 +23,13 @@ export default function PartnersEcosystemSection()
         width={partner.width}
         height={partner.height}
         className="img-fluid"
-        style={{ objectFit: "contain", height: partner.height, width: "auto" }}
+        style={{
+          objectFit: "contain",
+          height: "auto",
+          width: "auto",
+          maxHeight: partner.height,
+          maxWidth: "100%",
+        }}
         loading="lazy"
         sizes="(max-width: 768px) 120px, 160px"
       />
@@ -44,7 +50,13 @@ export default function PartnersEcosystemSection()
         width={item.width}
         height={item.height}
         className="img-fluid"
-        style={{ objectFit: "contain", height: item.height, width: "auto" }}
+        style={{
+          objectFit: "contain",
+          height: "auto",
+          width: "auto",
+          maxHeight: item.height,
+          maxWidth: "100%",
+        }}
         loading="lazy"
         sizes="(max-width: 768px) 120px, 160px"
       />
