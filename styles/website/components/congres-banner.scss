@@ -5,15 +5,39 @@
 
 .congres-banner {
   position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, $primary 0%, lighten($primary, 10%) 100%);
   padding: 0.6rem 0;
 
+  .congres-banner-inner {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
   .congres-banner-content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    // Réserve la place des éléments calés aux extrémités (image + croix)
+    padding: 0 2.5rem 0 4rem;
+  }
+
+  .congres-banner-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 32px;
+    width: auto;
+    pointer-events: none;
+
+    // Masqué quand la place manque à côté du texte centré
+    @media (max-width: 991px) {
+      display: none;
+    }
   }
 
   .congres-banner-text {
@@ -33,26 +57,28 @@
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 0.4rem 1rem;
-    background-color: $secondary;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    padding: 0.15rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    transition: border-color 0.2s ease;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;
 
     &:hover {
-      background-color: lighten($secondary, 5%);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      border-bottom-color: white;
     }
 
     i {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
   }
 
   .congres-banner-close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background: transparent;
     border: none;
     color: rgba(255, 255, 255, 0.8);
@@ -78,6 +104,11 @@
 
     .congres-banner-content {
       text-align: center;
+      padding: 0 2.25rem;
+    }
+
+    .congres-banner-icon {
+      display: none;
     }
 
     .congres-banner-text {
@@ -92,9 +123,9 @@
     }
 
     .congres-banner-close {
-      position: absolute;
       top: 0.35rem;
       right: 0.75rem;
+      transform: none;
     }
   }
 }

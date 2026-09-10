@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Container } from "react-bootstrap";
 
 // Fermeture mémorisée pour la session en cours uniquement : le bandeau
 // réapparaît à la prochaine ouverture du navigateur.
@@ -38,8 +37,14 @@ export default function CongresBanner() {
 
   return (
     <div className="congres-banner">
-      <Container>
+      <div className="congres-banner-inner">
         <div className="congres-banner-content">
+          <img
+            src="/images/congres-2026-batiment.png"
+            alt=""
+            aria-hidden="true"
+            className="congres-banner-icon"
+          />
           <span className="congres-banner-text">
             <span className="congres-banner-lead">
               La Société Nouvelle sera au Congrès des experts-comptables.
@@ -66,7 +71,7 @@ export default function CongresBanner() {
             <i className="bi bi-x-lg"></i>
           </button>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

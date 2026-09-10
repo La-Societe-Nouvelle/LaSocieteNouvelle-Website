@@ -56,11 +56,11 @@ export default function CongresCEC() {
       {/* Pattern de fond subtil */}
       <div className={styles.backgroundPattern} />
 
-      <Container className={`${styles.contentWrapper} py-3 py-md-5 mt-5 mt-md-4`}>
+      <Container className={`${styles.contentWrapper} py-4 py-md-5`}>
         <Row className="justify-content-center">
-          <Col lg={8} md={10} xs={11}>
+          <Col xl={5} lg={6} md={9} xs={11}>
             {/* Card principale */}
-            <div className={`${styles.card} p-3 p-md-5 mt-4 mt-md-3`}>
+            <div className={styles.card}>
               {/* Logos en haut */}
               <div className={styles.logosSection}>
                 <div className={styles.logosCongres}>
@@ -77,43 +77,65 @@ export default function CongresCEC() {
                 />
               </div>
 
-              {/* Titre de remerciement */}
-              <h2 className={`mb-3 ${styles.title}`}>
-                Bonjour 👋
-              </h2>
-
-              {/* Texte descriptif */}
-              <p className={`mb-4 ${styles.description}`}>
-                Vous souhaitez en savoir plus sur nos ressources ?
-              </p>
-
-              {/* Séparateur décoratif */}
-              <div className={styles.dividerWrapper}>
-                <div className={styles.divider} />
-              </div>
-
-              <p className={`mb-4 small fw-bold ${styles.formLabel}`}>
-                Saisissez votre email et recevez directement notre plaquette.
-              </p>
-
-              {/* Alert / Message */}
-              {message.text && (
-                <div className={`${styles.alert} ${message.type === 'success' ? styles.alertSuccess : styles.alertError} mb-4`}>
-                  <i
-                    className={`bi ${message.type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} ${styles.alertIcon} ${message.type === 'success' ? styles.alertIconSuccess : styles.alertIconError}`}>
-                  </i>
-                  <span>{message.text}</span>
+              {message.type === 'success' ? (
+                /* État de confirmation (remplace le formulaire) */
+                <div className={styles.successState}>
+                  <div className={styles.successIcon}>
+                    <i className="bi bi-check-lg" />
+                  </div>
+                  <h2 className={styles.successTitle}>C'est envoyé !</h2>
+                  <p className={styles.successText}>
+                    Votre plaquette est en route. Vous allez la recevoir par email
+                    d'ici quelques instants.
+                  </p>
+                  <p className={styles.successHint}>
+                    <i className="bi bi-info-circle me-2" />
+                    Pensez à vérifier vos spams si vous ne la voyez pas arriver.
+                  </p>
                 </div>
-              )}
+              ) : (
+                <>
+                  {/* Titre de remerciement */}
+                  <h2 className={`mb-3 ${styles.title}`}>
+                    Bonjour 👋
+                  </h2>
 
-              {/* Formulaire */}
-              <Form onSubmit={handleSubmit}>
+                  {/* Texte descriptif */}
+                  <p className={`mb-4 ${styles.description}`}>
+                    Vous souhaitez en savoir plus sur nos ressources ?
+                  </p>
+
+                  {/* Séparateur décoratif */}
+                  <div className={styles.dividerWrapper}>
+                    <div className={styles.divider} />
+                  </div>
+
+                  <p className={`mb-4 small fw-bold ${styles.formLabel}`}>
+                    Saisissez votre email et recevez directement notre plaquette.
+                  </p>
+
+                  {/* Message d'erreur */}
+                  {message.type === 'danger' && (
+                    <div className={`${styles.alert} ${styles.alertError} mb-4`}>
+                      <i className={`bi bi-exclamation-triangle-fill ${styles.alertIcon} ${styles.alertIconError}`} />
+                      <span>{message.text}</span>
+                    </div>
+                  )}
+
+                  {/* Formulaire */}
+                  <Form onSubmit={handleSubmit}>
                 <Row className="justify-content-center">
-                  <Col md={8} className="mb-3">
+                  <Col md={10} className="mb-3">
                     <Form.Group>
+                      <Form.Label htmlFor="email" className="visually-hidden">
+                        Adresse email
+                      </Form.Label>
                       <Form.Control
+                        id="email"
                         type="email"
                         name="email"
+                        placeholder="votre@email.com"
+                        aria-label="Adresse email"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -127,7 +149,7 @@ export default function CongresCEC() {
                 </Row>
 
                 <Row className="justify-content-center">
-                  <Col md={8}>
+                  <Col md={10}>
                     <div className={styles.newsletterCheck}>
                       <input
                         type="checkbox"
@@ -160,8 +182,10 @@ export default function CongresCEC() {
                       </>
                     )}
                   </Button>
-                </div>
-              </Form>
+                    </div>
+                  </Form>
+                </>
+              )}
             </div>
 
             {/* Section de contact */}
