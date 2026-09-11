@@ -5,6 +5,7 @@
   min-height: 100dvh; /* Dynamic viewport height pour mobile */
   position: relative;
   overflow: hidden;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Pattern de fond subtil */
@@ -57,18 +58,20 @@
 .contentWrapper {
   position: relative;
   z-index: 2;
-  margin-top: 160px;
+  margin-top: 0;
 }
 
 /* Card principale */
 .card {
   background: white;
   border-radius: 24px;
-  padding: 30px;
-  padding-top: 40px;
+  padding: 28px 40px 40px;
   margin-bottom: 40px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 25px 80px rgba(25, 21, 88, 0.15);
-  border: 1px solid rgba(250, 89, 95, 0.1);
+  border: 1px solid rgba(247, 148, 29, 0.12);
   position: relative;
   text-align: center;
 }
@@ -76,17 +79,36 @@
 /* Section logos */
 .logosSection {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  gap: 2rem;
+  margin-bottom: 1.25rem;
+  gap: 1.25rem;
 }
 
-.logosSection img {
-  max-width: 180px;
-  max-height: 80px;
+.logosSection > img {
+  max-height: 72px;
   width: auto;
   height: auto;
+}
+
+/* Lockup officiel du 81e congrès (bandeau large) */
+.logosCongres {
+  width: 100%;
+  max-width: 460px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.logosCongres img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logosSection > img {
+    max-height: 56px;
+  }
 }
 
 /* Titre de remerciement */
@@ -107,12 +129,12 @@
 
 /* Séparateur décoratif */
 .divider {
-  width: 60px;
+  width: 72px;
   height: 3px;
-  background: linear-gradient(45deg, #fa595f, #ff7b81);
+  background: linear-gradient(90deg, #8DC63F 0%, #1AA6A0 45%, #2E7CC4 100%);
   border-radius: 2px;
   margin: 0 auto;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .dividerWrapper {
@@ -167,6 +189,78 @@
   color: #dc3545;
 }
 
+/* État de confirmation (succès) */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+  animation: successFadeIn 0.4s ease both;
+}
+
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.4rem;
+  background: linear-gradient(135deg, #8DC63F 0%, #1AA6A0 100%);
+  box-shadow: 0 10px 26px rgba(26, 166, 160, 0.35);
+  margin-bottom: 1.5rem;
+  animation: successPop 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.1s both;
+}
+
+@keyframes successPop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  color: #191558;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.successText {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 340px;
+  margin-bottom: 1.25rem;
+}
+
+.successHint {
+  color: #1AA6A0;
+  background: rgba(26, 166, 160, 0.08);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
 /* Formulaire */
 .formControl {
   border-radius: 12px;
@@ -181,9 +275,35 @@
 }
 
 .formControl:focus {
-  border-color: #fa595f;
-  box-shadow: 0 0 0 0.2rem rgba(250, 89, 95, 0.15);
+  border-color: #F7941D;
+  box-shadow: 0 0 0 0.2rem rgba(247, 148, 29, 0.18);
   outline: none;
+}
+
+/* Case à cocher newsletter */
+.newsletterCheck {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.newsletterCheck input[type="checkbox"] {
+  margin-top: 0.15rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #6C8EEF;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.newsletterCheckLabel {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
 /* Bouton de soumission */
@@ -193,7 +313,7 @@
   font-size: 16px;
   font-weight: 600;
   border: none;
-  box-shadow: 0 6px 20px rgba(250, 89, 95, 0.3);
+  box-shadow: 0 4px 14px rgba(247, 148, 29, 0.18);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -202,7 +322,7 @@
 }
 
 .submitButtonActive {
-  background: linear-gradient(45deg, #fa595f, #fc6d72ff);
+  background: linear-gradient(45deg, #F7941D, #ffb04d);
   color: white;
 }
 
@@ -213,7 +333,7 @@
 
 .submitButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(250, 89, 95, 0.4);
+  box-shadow: 0 6px 18px rgba(247, 148, 29, 0.28);
 }
 
 /* Section des boutons de contact */
@@ -275,11 +395,14 @@
 }
 
 .calendlyButton {
-  background: #fa595f;
+  background: transparent;
+  border: 2px solid #F7941D;
+  color: #F7941D;
 }
 
 .calendlyButton:hover {
-  background: #e83c43;
+  background: rgba(247, 148, 29, 0.12);
+  color: #F7941D;
 }
 
 .socialIcon {
@@ -297,20 +420,16 @@
 
 .footerText {
   font-size: 14px;
-  line-height: 1.6;
-  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contentWrapper {
-    margin-top: 120px;
-  }
 
   .card {
-    padding: 20px;
-    padding-top: 30px;
+    padding: 20px 20px 28px;
   }
 
   .title {
