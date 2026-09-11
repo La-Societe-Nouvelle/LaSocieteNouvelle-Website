@@ -47,7 +47,7 @@ export default function CongresBanner() {
           />
           <span className="congres-banner-text">
             <span className="congres-banner-lead">
-              La Société Nouvelle sera au Congrès des experts-comptables.
+              La Société Nouvelle sera au Congrès de l'Ordre des Experts-Comptables.
             </span>
             <span className="congres-banner-coords">
               Rendez-vous <b>du 16 au 18 septembre, zone Orange, stand R17</b>.
