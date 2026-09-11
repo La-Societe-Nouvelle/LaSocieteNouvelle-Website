@@ -54,9 +54,7 @@ export default function CongresBanner() {
             </span>
           </span>
           <Link
-            href="https://congres.experts-comptables.com/exposition/recherche-partenaires/detail-partenaire-non-connecte.htm?zoom=c2c42fab-953d-f111-a8da-005056ac07b9"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/blog/81e-congres-ordre-experts-comptables-2026"
             className="congres-banner-link"
           >
             En savoir plus
