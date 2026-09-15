@@ -14,40 +14,6 @@ const transporter = nodemailer.createTransport({
     maxMessages: 100
 })
 
-// Inscription à la newsletter Brevo (non bloquant, exécuté après la réponse)
-async function subscribeNewsletter(email) {
-    const brevoApiKey = process.env.BREVO_API_KEY;
-    const brevoListId = process.env.BREVO_LIST_ID;
-
-    if (!brevoApiKey || !brevoListId) {
-        console.warn('BREVO_API_KEY ou BREVO_LIST_ID non configuré, inscription newsletter ignorée.');
-        return;
-    }
-
-    try {
-        const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'api-key': brevoApiKey,
-            },
-            body: JSON.stringify({
-                email,
-                listIds: [Number(brevoListId)],
-                updateEnabled: true,
-            }),
-        });
-        if (!brevoRes.ok) {
-            const brevoBody = await brevoRes.text();
-            console.error(`Brevo a répondu ${brevoRes.status} pour ${email}:`, brevoBody.slice(0, 500));
-        } else {
-            console.log(`Contact ajouté à la newsletter Brevo: ${email}`);
-        }
-    } catch (brevoError) {
-        console.error('Erreur lors de l\'inscription à la newsletter Brevo:', brevoError);
-    }
-}
-
 // Sauvegarde de l'email dans Google Sheets (non bloquant, exécuté après la réponse)
 async function saveToSheet(email, newsletter) {
     const timestamp = new Date().toISOString();
@@ -202,12 +168,9 @@ export async function POST(request) {
 
         await transporter.sendMail(mailOptions);
 
-        // Étapes non critiques : lancées en parallèle après l'envoi de la réponse
-        // (l'utilisateur n'attend pas Brevo ni Google Sheets)
-        after(() => Promise.allSettled([
-            newsletter === true ? subscribeNewsletter(email) : Promise.resolve(),
-            saveToSheet(email, newsletter),
-        ]));
+        // Étape non critique : lancée après l'envoi de la réponse
+        // (l'utilisateur n'attend pas Google Sheets)
+        after(() => saveToSheet(email, newsletter));
 
         return NextResponse.json({
             success: true,

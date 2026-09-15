@@ -136,6 +136,7 @@ export default function CongresCEC() {
                         name="email"
                         placeholder="votre@email.com"
                         aria-label="Adresse email"
+                        autoComplete="off"
                         value={formData.email}
                         onChange={handleChange}
                         required
