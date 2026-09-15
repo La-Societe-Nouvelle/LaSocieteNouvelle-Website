@@ -160,7 +160,7 @@ export async function POST(request) {
                 },
                 {
                     filename: 'Plaquette_LaSocieteNouvelle_2026.pdf',
-                    path: path.join(process.cwd(), 'public', 'docs', 'Plaquette-congres-2025.pdf'),
+                    path: path.join(process.cwd(), 'public', 'docs', 'Plaquette-congres-2026.pdf'),
                     contentType: 'application/pdf'
                 }
             ]
