@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import Header from './header';
 import Footer from './footer';
-import CongresBanner from './home/CongresBanner';
 
 export default function WebsiteLayout({ children }) {
   const pathname = usePathname();
@@ -16,7 +15,6 @@ export default function WebsiteLayout({ children }) {
 
   return (
     <>
-      <CongresBanner />
       <Header />
       {children}
       <Footer />
