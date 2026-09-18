@@ -15,8 +15,8 @@ async function TrendChart({ indic }) {
     const headers = { 'Authorization': `Bearer ${process.env.SINESE_API_TOKEN}` };
 
     const [historicalResponse, trendResponse] = await Promise.all([
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt?${baseParams}&indic=${indic}`, { headers, cache: 'no-store' }),
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt_trd?${baseParams}&indic=${indic}`, { headers, cache: 'no-store' })
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt?${baseParams}&indic=${indic}`, { headers, next: { revalidate: 86400 } }),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/v2/macrodata/macro_fpt_trd?${baseParams}&indic=${indic}`, { headers, next: { revalidate: 86400 } })
     ]);
 
     if (!historicalResponse.ok || !trendResponse.ok) {
