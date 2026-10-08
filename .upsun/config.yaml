@@ -4,7 +4,7 @@ applications:
       root: "/"
 
     # Version de Node.js
-    type: "nodejs:20"
+    type: "nodejs:24"
 
     build:
       flavor: none
