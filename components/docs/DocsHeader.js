@@ -17,7 +17,7 @@ export default function DocsHeader() {
             <Link href="/" className="brand-logo">
               <Image
                 src="/logo-La-Societe-Nouvelle.svg"
-                height={65}
+                height={81}
                 width={213}
                 alt="La Société Nouvelle"
                 className="section__logo"
