@@ -8,14 +8,9 @@ import "dayjs/locale/fr.js";
 import _ from "lodash";
 
 import { DefaultBarChart } from "../../../components/charts/DefaultBarChart";
+import { BAROMETRE_GES_URL } from "../../../lib/keyFigures";
 
 dayjs.locale("fr");
-
-// ============================================
-// CONSTANTS
-// ============================================
-
-const API_URL = "https://api.stats.lasocietenouvelle.org/barometre-ges/derniere-publication";
 
 // ============================================
 // UTILITY FUNCTIONS
@@ -51,7 +46,7 @@ const BarometreGES = () => {
     setError(null);
 
     try {
-      const res = await fetch(API_URL);
+      const res = await fetch(BAROMETRE_GES_URL);
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
