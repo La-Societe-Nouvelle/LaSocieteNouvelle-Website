@@ -3,7 +3,7 @@
 // ===================================
 
 .docs-theme .docs-content {
-  // Encadrés : fond teinté, sans bordure
+  // Encadrés : fond neutre, seule l'icône porte la couleur du type
   .docs-callout {
     --callout-color: #{$docs-navy};
     display: flex;
@@ -11,13 +11,13 @@
     margin: 1.5rem 0;
     padding: 1rem 1.25rem;
     border-radius: $docs-radius-md;
-    background: $docs-lavender-pale;
+    background: #f5f6f8;
     font-size: 0.95rem;
     line-height: 1.65;
 
-    &-tip { --callout-color: #{$docs-tip}; background: $docs-tip-bg; }
-    &-important { --callout-color: #{$docs-navy}; background: $docs-rose; }
-    &-warning { --callout-color: #{$docs-warning}; background: $docs-warning-bg; }
+    &-tip { --callout-color: #{$docs-tip}; }
+    &-important { --callout-color: #{$docs-coral}; }
+    &-warning { --callout-color: #{$docs-warning}; }
 
     .docs-callout-icon {
       color: var(--callout-color);
@@ -33,7 +33,7 @@
     .docs-callout-title {
       font-weight: 700;
       margin-bottom: 0.25rem;
-      color: var(--callout-color);
+      color: $docs-navy;
     }
   }
 
