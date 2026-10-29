@@ -1,4 +1,4 @@
-import MetrizWebappLayoutClient from './layout-client';
+import DocsSectionLayout from '@/components/docs/DocsSectionLayout';
 
 export const metadata = {
   title: 'Metriz - Application Web',
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function MetrizWebappLayout({ children }) {
-  return <MetrizWebappLayoutClient>{children}</MetrizWebappLayoutClient>;
+  return <DocsSectionLayout>{children}</DocsSectionLayout>;
 }

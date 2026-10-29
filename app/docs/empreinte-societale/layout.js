@@ -1,4 +1,4 @@
-import EmpreinteSocietaleLayoutClient from './layout-client';
+import DocsSectionLayout from '@/components/docs/DocsSectionLayout';
 
 export const metadata = {
   title: 'Empreinte Sociétale - Documentation',
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function EmpreinteSocietaleLayout({ children }) {
-  return <EmpreinteSocietaleLayoutClient>{children}</EmpreinteSocietaleLayoutClient>;
+  return <DocsSectionLayout>{children}</DocsSectionLayout>;
 }

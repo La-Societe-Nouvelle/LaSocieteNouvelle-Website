@@ -61,11 +61,6 @@ export default async function DatasetPage({ params }) {
   return (
     <DocsPageLayout
       title={dataset.title}
-      breadcrumb={[
-        { href: '/docs', title: 'Documentation' },
-        { href: '/docs/donnees-statistiques', title: 'Données statistiques' },
-        { title: dataset.title }
-      ]}
     >
       <Content />
     </DocsPageLayout>

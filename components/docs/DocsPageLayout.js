@@ -5,6 +5,8 @@ import { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import DocsSidebar from './DocsSidebar';
 import DocsBreadcrumb from './DocsBreadcrumb';
+import DocsPrevNext from './DocsPrevNext';
+import { getSection, getBreadcrumb, getPrevNext } from '@/lib/docsConfig';
 
 /**
  * Layout pour les pages de documentation avec sidebar
@@ -15,9 +17,9 @@ import DocsBreadcrumb from './DocsBreadcrumb';
  * @param {Array} navigation - Tableau des liens de navigation (autres pages)
  *   Exemple: [{ href: '/docs/page', title: 'Titre', icon: 'bi-icon' }, ...]
  * @param {string} navigationTitle - Titre de la section de navigation
- * @param {Array} navigationGroups - Menu groupé : [{ title, links: [{ href, title }] }] - optionnel
- * @param {Array} breadcrumb - Tableau des éléments du breadcrumb
- *   Exemple: [{ href: '/docs', title: 'Documentation' }, { title: 'Page actuelle' }]
+ *
+ * Le menu latéral, le fil d'Ariane et les liens « Précédent / Suivant »
+ * sont déduits de l'URL à partir de lib/docsConfig.js.
  * @param {React.ReactNode} children - Contenu de la page
  */
 export default function DocsPageLayout({
@@ -25,8 +27,6 @@ export default function DocsPageLayout({
   sections,
   navigation = [],
   navigationTitle,
-  navigationGroups,
-  breadcrumb = [],
   children
 }) {
   const pathname = usePathname();
@@ -98,6 +98,9 @@ export default function DocsPageLayout({
   }, [pathname]);
 
   const finalSections = sections || autoSections;
+  const navigationGroups = getSection(pathname)?.groups || [];
+  const breadcrumb = getBreadcrumb(pathname, title);
+  const { prev, next } = getPrevNext(pathname);
   return (
     <div className="docs-page-layout">
       {title && (
@@ -130,6 +133,7 @@ export default function DocsPageLayout({
           <Col lg={9}>
             <div className="docs-content" ref={contentRef}>
               {children}
+              <DocsPrevNext prev={prev} next={next} />
             </div>
           </Col>
         </Row>

@@ -1,19 +1,15 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePageContext } from '../layout-client';
+import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
 
 export default function IndicateursPage() {
-  const { setPageTitle, setPageBreadcrumb } = usePageContext();
+  const { setPageTitle } = usePageContext();
 
   useEffect(() => {
     setPageTitle('Liste des indicateurs');
-    setPageBreadcrumb([
-      { href: '/docs/empreinte-societale', title: 'Empreinte Sociétale' },
-      { title: 'Indicateurs' }
-    ]);
-  }, [setPageTitle, setPageBreadcrumb]);
+  }, [setPageTitle]);
 
   return <Content />;
 }

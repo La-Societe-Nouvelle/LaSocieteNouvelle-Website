@@ -1,23 +1,18 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePageContext } from './layout-client';
+import { usePageContext } from '@/components/docs/DocsSectionLayout';
 
 /**
- * Page de documentation standard : renseigne le titre et le fil d'Ariane
- * à partir de la configuration de navigation.
+ * Page de documentation standard : renseigne le titre de la page.
+ * Le fil d'Ariane est déduit de lib/docsConfig.js.
  */
 export default function DocPage({ href, title, children }) {
-  const { setPageTitle, setPageBreadcrumb } = usePageContext();
+  const { setPageTitle } = usePageContext();
 
   useEffect(() => {
     setPageTitle(title);
-    setPageBreadcrumb([
-      { href: '/docs', title: 'Documentation' },
-      { href: '/docs/metriz-webapp', title: 'Metriz' },
-      { title },
-    ]);
-  }, [href, title, setPageTitle, setPageBreadcrumb]);
+  }, [href, title, setPageTitle]);
 
   return children;
 }

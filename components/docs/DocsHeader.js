@@ -4,10 +4,12 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { docsSections, externalLinks, getSection } from "@/lib/docsConfig";
 
 export default function DocsHeader() {
   const pathname = usePathname();
-  const isActive = (path) => pathname?.startsWith(path);
+  const activeSection = getSection(pathname);
+  const isActive = (href) => activeSection?.href === href;
 
   return (
     <header className="header docs-theme">
@@ -51,51 +53,27 @@ export default function DocsHeader() {
                   <i className="bi bi-house-door me-2"></i>
                   Accueil
                 </Nav.Link>
-                <Nav.Link
-                  href="/docs/empreinte-societale"
-                  className={isActive("/docs/empreinte-societale") ? "active" : ""}
-                >
-                  Empreinte Sociétale
-                </Nav.Link>
+                {docsSections.map((section) => (
+                  <Nav.Link
+                    key={section.id}
+                    href={section.href}
+                    className={isActive(section.href) ? "active" : ""}
+                  >
+                    {section.title}
+                  </Nav.Link>
+                ))}
 
-                <Nav.Link
-                  href="/docs/donnees-par-defaut"
-                  className={isActive("/docs/donnees-par-defaut") ? "active" : ""}
-                >
-                  Données par défaut
-                </Nav.Link>
-
-
-
-                <Nav.Link
-                  href="/docs/metriz-webapp"
-                  className={isActive("/docs/metriz-webapp") ? "active" : ""}
-                >
-                  Application Web - Metriz
-                </Nav.Link>
-
-
-
-                <Nav.Link
-                  href="/docs/donnees-statistiques"
-                  className={isActive("/docs/donnees-statistiques") ? "active" : ""}
-                >
-                 Données statistiques
-                </Nav.Link>
-
-                
-
-
-                <Nav.Link
-                  href="https://lasocietenouvelle.readme.io/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                 API SINESE
-                 <i className="bi bi-box-arrow-up-right ms-2"></i>
-                </Nav.Link>
-
-
+                {externalLinks.map((link) => (
+                  <Nav.Link
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.title}
+                    <i className="bi bi-box-arrow-up-right ms-2"></i>
+                  </Nav.Link>
+                ))}
               </Nav>
             </Navbar.Collapse>
           </Navbar>
