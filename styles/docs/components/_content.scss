@@ -5,6 +5,10 @@
 .docs-theme .docs-content {
   font-size: 1rem;
   line-height: 1.75;
+
+  @media (min-width: 1440px) {
+    font-size: 1.0625rem;
+  }
   color: $docs-text;
   overflow-wrap: break-word;
 
@@ -14,13 +18,18 @@
     scroll-margin-top: calc(#{$docs-header-height} + 1.5rem); // Ancres sous le header fixe
   }
 
+  // Titres de section séparés par un filet
   h2 {
-    font-size: 1.65rem;
+    font-size: 1.8rem;
     line-height: 1.25;
-    margin: 3rem 0 1rem;
+    margin: 3.5rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid $docs-border;
 
     &:first-child {
       margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
     }
   }
 
@@ -168,15 +177,19 @@
     }
   }
 
-  // Notes simples
+  // Notes simples : encadré neutre, comme <Callout>
   .note {
-    margin-top: 0.5rem;
-    padding-left: 1rem;
-    font-size: 0.875rem;
-    font-style: italic;
-    line-height: 1.6;
-    color: $docs-muted;
-    box-shadow: inset 2px 0 0 $docs-border-strong;
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: $docs-text;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 
   // Notes de bas de page

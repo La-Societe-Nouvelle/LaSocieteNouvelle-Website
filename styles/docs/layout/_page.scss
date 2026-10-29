@@ -32,6 +32,12 @@
     @media (min-width: 992px) {
       display: block;
     }
+
+    // Marge pour les liens décalés à gauche, sinon rognés par le défilement
+    .docs-sticky {
+      margin-left: -0.75rem;
+      padding-left: 0.75rem;
+    }
   }
 
   .docs-toc {
@@ -49,14 +55,6 @@
     padding: 2rem 0.5rem 2rem 0;
     scrollbar-width: thin;
     scrollbar-color: $docs-border transparent;
-  }
-
-  .docs-sidenav-title {
-    font-family: $docs-font-head;
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: $docs-navy;
-    margin-bottom: 1rem;
   }
 
   // Colonne principale

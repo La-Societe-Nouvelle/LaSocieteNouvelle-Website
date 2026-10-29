@@ -1,6 +1,4 @@
-## Lecture du FEC
-
-### Introduction
+## Introduction
 
 Les écritures comptables constituent la base de calcul de l'empreinte sociétale d'une entreprise. Elles permettent d'avoir le détail de la production : valeur ajoutée nette, flux de consommations intermédiaires, flux de consommations de capital fixe (investissements et amortissements des immobilisations) et variations des stocks.  
 
@@ -12,7 +10,7 @@ Une exploitation des APIs des logiciels comptables est prévue prochainement.
 
 Le fichier est lu pour en extraire les agrégats nécessaires au calcul. Il n'est pas conservé : seuls les résultats de la lecture sont enregistrés.
 
-#### Format du fichier
+### Format du fichier
 
 Le fichier doit respecter les prérequis suivants :  
 - **Format** : ".txt" ou ".csv"  
@@ -23,9 +21,9 @@ Les normes relatives aux fichiers d'écritures comptables sont disponibles ici :
 
 Au-delà d'une certaine taille, le temps de lecture du fichier peut être significatif.
 
-### Données extraites
+## Données extraites
 
-#### Lecture du journal des A-Nouveaux
+### Lecture du journal des A-Nouveaux
 
 L'identification du journal des A-Nouveaux s'effectue via le code journal (`JournalCode`) sélectionné lors de l'import.  
 
@@ -37,7 +35,7 @@ Codes reconnus par défaut : « AN », « RAN », « AA », « AD »
 - Montant initial des comptes de stocks (31x à 37x)  
 - Montant initial des comptes de dépréciations des stocks (39x)  
 
-#### Écritures relatives aux comptes d'immobilisations
+### Écritures relatives aux comptes d'immobilisations
 
 Comptes concernés : 20x à 27x  
 
@@ -46,28 +44,28 @@ Comptes concernés : 20x à 27x
 - Liste des acquisitions (si ligne relative à un compte fournisseur 40x)  
 - Liste des immobilisations de production (si ligne relative à un compte 72x)  
 
-#### Écritures relatives aux comptes d'amortissements et de dépréciations
+### Écritures relatives aux comptes d'amortissements et de dépréciations
 
 Comptes concernés : 28x, 29x  
 
 Éléments lus :  
 - Variations du montant des comptes d'amortissements et de dépréciations  
 
-#### Écritures relatives aux comptes de stocks
+### Écritures relatives aux comptes de stocks
 
 Comptes concernés : 31x à 37x  
 
 Éléments lus :  
 - Variations du montant des comptes de stocks  
 
-#### Écritures relatives aux comptes de dépréciations de stocks
+### Écritures relatives aux comptes de dépréciations de stocks
 
 Comptes concernés : 39x  
 
 Éléments lus :  
 - Variations du montant des comptes de dépréciations de stocks  
 
-#### Écritures relatives aux comptes de charges externes
+### Écritures relatives aux comptes de charges externes
 
 Comptes concernés : 60x (hors 603x), 61x et 62x  
 
@@ -77,7 +75,7 @@ Comptes concernés : 60x (hors 603x), 61x et 62x
 - En l'absence de compte fournisseur, l'écriture est rattachée à un compte auxiliaire par défaut  
 - La présence de deux comptes 40x dans une même écriture peut générer une erreur d'interprétation  
 
-#### Écritures relatives aux comptes de variations de stocks
+### Écritures relatives aux comptes de variations de stocks
 
 Comptes concernés : 603x  
 
@@ -85,7 +83,7 @@ Comptes concernés : 603x
 - Montants des variations de stocks, par compte de variations et par compte de stocks  
 - Plusieurs comptes de variations et plusieurs comptes de stocks dans une même écriture peuvent générer une erreur de lecture  
 
-#### Écritures relatives aux comptes de dotations aux amortissements
+### Écritures relatives aux comptes de dotations aux amortissements
 
 Comptes concernés : 6811x, 6871x  
 
@@ -93,7 +91,7 @@ Comptes concernés : 6811x, 6871x
 - Montants des dotations aux amortissements sur immobilisations, par compte de dotation et par compte d'amortissements  
 - Plusieurs comptes de dotations et d'amortissements dans la même écriture peuvent générer une erreur de lecture  
 
-#### Écritures relatives aux comptes de production
+### Écritures relatives aux comptes de production
 
 Comptes concernés : 70x, 71x, 72x  
 
@@ -102,13 +100,13 @@ Comptes concernés : 70x, 71x, 72x
 - Montant de la production stockée  
 - Montant de la production immobilisée  
 
-#### Autres données extraites
+### Autres données extraites
 
 **Informations relatives à l'évolution des compétences et des connaissances :**  
 - Versements pour la taxe d'apprentissage (6312x)  
 - Versements pour la participation à la formation professionnelle (6313x, 6333x)  
 
-### Erreurs potentielles
+## Erreurs potentielles
 
 **Format du fichier :**  
 - Séparateur incorrect  
