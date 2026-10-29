@@ -1,63 +1,64 @@
-## Étapes de calcul
+L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effectue en **4 étapes** :
 
-L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effectue en 4 étapes :
+1. Import des écritures comptables
+2. Catégorisation des comptes de charges et d'immobilisations
+3. Identification des fournisseurs
+4. Déclaration des impacts directs
 
-Ces étapes peuvent être réalisées une à une ([parcours pas à pas](/docs/metriz-webapp/tutoriel)) ou enchaînées automatiquement ([analyse rapide](/docs/metriz-webapp/analyse-rapide)).
+Ces étapes peuvent être réalisées une à une ([parcours pas à pas](/docs/metriz-webapp/tutoriel)) ou enchaînées automatiquement ([analyse rapide](/docs/metriz-webapp/analyse-rapide)). La méthode de mesure est décrite dans la [méthodologie de l'Empreinte Sociétale](/docs/empreinte-societale/methodologie).
 
-1. Import des écritures comptables  
-2. Catégorisation des comptes de charges et d'immobilisations  
-3. Identification des fournisseurs  
-4. Déclaration des impacts directs  
+## Import des écritures comptables
 
----
+L'importation des écritures comptables s'effectue via un **Fichier d'Écritures Comptables (FEC)**. Voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec).
 
-### Import des écritures comptables
+Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage UTF-8 ou ISO-8859-1, etc.). Le détail est donné dans la page [Lecture du FEC](/docs/metriz-webapp/lecture-fec).
 
-L'importation des écritures comptables s'effectue via un Fichier d'Écritures Comptables (FEC).  
-
-Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage UTF-8 ou ISO-8859-1, etc.).  
+{/* TODO fond : ressources externes sans lien */}
 
 **Ressources externes :**
-- Normes concernant le fichier d'écritures comptables  
-- Outil de test mis à disposition par la DGFiP  
 
-Lors de l'import, une étape intermédiaire permet d'identifier le journal des A-Nouveaux. Dans le cas d'un premier exercice, sans A-Nouveaux, il suffit de valider la sélection sans cocher de case.  
+- Normes concernant le fichier d'écritures comptables
+- Outil de test mis à disposition par la DGFiP
 
-Une fois l'importation effectuée, 5 vues sont mises à disposition pour vérifier la lecture des écritures comptables :  
-- Compte de Résultat  
-- Soldes Intermédiaires de Gestion  
-- Tableau des immobilisations  
-- Tableau des stocks  
-- Liste des montants par compte de charges  
+Lors de l'import, une étape intermédiaire permet d'identifier le journal des A-Nouveaux. Dans le cas d'un **premier exercice, sans A-Nouveaux**, il suffit de valider la sélection sans cocher de case.
 
-Les chiffres clefs à vérifier sont ceux présents au sein des Soldes Intermédiaires de Gestion (deuxième onglet).  
+Une fois l'importation effectuée, 5 vues sont mises à disposition pour vérifier la lecture des écritures comptables :
 
-La lecture des écritures peut entraîner des exceptions (problèmes de lecture) dans le cas où certains flux ne peuvent être tracés. Ces exceptions interviennent notamment lorsque plusieurs opérations sont regroupées au sein d'une même écriture comptable.  
+- Compte de Résultat
+- Soldes Intermédiaires de Gestion
+- Tableau des immobilisations
+- Tableau des stocks
+- Liste des montants par compte de charges
 
-### Catégorisation des comptes de charges et d'immobilisations
+Les chiffres clefs à vérifier sont ceux présents au sein des **Soldes Intermédiaires de Gestion** (deuxième onglet).
 
-La catégorisation des comptes de charges et d'immobilisations permet d'estimer les impacts indirects associés aux dépenses et aux investissements.  
+La lecture des écritures peut entraîner des **exceptions** (problèmes de lecture) dans le cas où certains flux ne peuvent être tracés. Ces exceptions interviennent notamment lorsque plusieurs opérations sont regroupées au sein d'une même écriture comptable.
 
-- Pour les immobilisations, une association est faite par défaut à partir des numéros des comptes.  
-- Pour les charges, il est possible d'effectuer une association via l'utilisation d'une IA générative (voir [utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)), à partir des libellés et des numéros des comptes.  
+## Catégorisation des comptes de charges et d'immobilisations
 
-### Identification des fournisseurs
+La catégorisation des comptes de charges et d'immobilisations permet d'estimer les **impacts indirects** associés aux dépenses et aux investissements.
 
-L'identification des fournisseurs s'effectue via le numéro de siren.  
+- Pour les [immobilisations](/docs/metriz-webapp/immobilisations), une association est faite **par défaut** à partir des numéros des comptes.
+- Pour les [charges](/docs/metriz-webapp/achats), il est possible d'effectuer une association via l'utilisation d'une **IA générative** (voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)), à partir des libellés et des numéros des comptes.
 
-La correspondance entre le numéro de compte auxiliaire présent au sein des écritures comptables et le numéro de siren peut se faire via l'import d'un fichier (.csv ou .xlsx). Le modèle prérempli est disponible au téléchargement.  
+## Identification des fournisseurs
 
-### Évaluation et Déclaration des impacts directs
+L'identification des fournisseurs s'effectue via le **numéro SIREN**.
 
-La déclaration des impacts directs se fait pour chaque indicateur.  
+La correspondance entre le numéro de compte auxiliaire présent au sein des écritures comptables et le numéro SIREN peut se faire via l'**import d'un fichier (.csv ou .xlsx)**. Le modèle prérempli est disponible au téléchargement.
 
-Une fois la déclaration validée, les résultats sont directement accessibles, au sein du tableau de bord.  
+## Évaluation et déclaration des impacts directs
 
-Des outils d'évaluation sont mis à disposition pour la mesure des impacts suivants :  
-- Émissions directes de gaz à effet de serre  
-- Consommation directe d'énergie  
-- Contribution directe à l'évolution des compétences et des connaissances  
-- Indice de répartition des rémunérations  
-- Écart de rémunérations femmes/hommes  
+La déclaration des impacts directs se fait **pour chaque indicateur**. Voir [Déclarer les impacts directs](/docs/metriz-webapp/declarer-impacts-directs).
 
-Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/metriz-webapp/declarations)
+Une fois la déclaration validée, les résultats sont directement accessibles, au sein du tableau de bord.
+
+Des outils d'évaluation sont mis à disposition pour la mesure des impacts suivants :
+
+- [Émissions directes de gaz à effet de serre](/docs/metriz-webapp/declarations/ghg)
+- [Consommation directe d'énergie](/docs/metriz-webapp/declarations/nrg)
+- [Contribution directe à l'évolution des compétences et des connaissances](/docs/metriz-webapp/declarations/knw)
+- [Indice de répartition des rémunérations](/docs/metriz-webapp/declarations/idr)
+- [Écart de rémunérations femmes/hommes](/docs/metriz-webapp/declarations/geq)
+
+Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/metriz-webapp/declarations).

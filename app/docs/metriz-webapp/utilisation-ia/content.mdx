@@ -1,19 +1,17 @@
-METRIZ s'appuie sur l'intelligence artificielle générative pour automatiser certaines tâches et aider à la lecture des résultats. Aucun résultat produit par l'IA n'est définitif : chaque usage ci-dessous doit être vérifié par l'utilisateur.
-
----
+Metriz s'appuie sur l'intelligence artificielle générative pour automatiser certaines tâches et aider à la lecture des résultats. **Aucun résultat produit par l'IA n'est définitif** : chaque usage ci-dessous doit être vérifié par l'utilisateur.
 
 ## Prestataires
 
 - **Mistral AI** est le prestataire principal.
 - **OpenAI** est utilisé en secours lorsque Mistral AI est indisponible ou ne répond pas dans le délai prévu.
 
-Les échanges avec Mistral AI sont effectués sans conservation de la conversation côté prestataire.
-
----
+Les échanges avec Mistral AI sont effectués **sans conservation de la conversation** côté prestataire.
 
 ## Usages
 
 ### 1. Association des comptes de charges
+
+Utilisée à l'étape [Catégoriser les achats](/docs/metriz-webapp/achats).
 
 - **Objectif** : rattacher chaque compte de charges à la division d'activité des fournisseurs, pour estimer les impacts indirects.
 - **Données transmises** : le libellé du compte de charges et la division d'activité de l'unité légale.
@@ -22,10 +20,12 @@ Les échanges avec Mistral AI sont effectués sans conservation de la conversati
 
 ### 2. Estimation des consommations d'eau et d'énergie
 
+Proposée lors de la déclaration des indicateurs [énergie](/docs/metriz-webapp/declarations/nrg), [eau](/docs/metriz-webapp/declarations/wat) et [gaz à effet de serre](/docs/metriz-webapp/declarations/ghg).
+
 - **Objectif** : repérer, dans les charges, les dépenses d'eau, d'électricité, de gaz, de carburant, de fioul ou de biomasse, afin de proposer une estimation des consommations.
 - **Données transmises** : le numéro et le libellé du compte, ainsi que le libellé de l'écriture comptable.
 - **Résultat** : une catégorie par dépense, convertie en consommation estimée.
-- **À vérifier** : les quantités estimées, à remplacer par les valeurs des factures ou des compteurs lorsqu'elles sont disponibles. L'incertitude associée est à ajuster en conséquence (voir [déclarations](/docs/metriz-webapp/declarations)).
+- **À vérifier** : les quantités estimées, à remplacer par les valeurs des factures ou des compteurs lorsqu'elles sont disponibles. L'incertitude associée est à ajuster en conséquence (voir [Incertitudes](/docs/metriz-webapp/declarations#incertitudes)).
 
 ### 3. Analyse par indicateur
 
@@ -40,13 +40,11 @@ Les échanges avec Mistral AI sont effectués sans conservation de la conversati
 - **Données transmises** : le nom de l'entreprise, son secteur, l'exercice, les valeurs des indicateurs, leur position par rapport à la branche et la décomposition de l'empreinte.
 - **Résultat** : une note de synthèse affichée sur le Tableau de bord.
 
----
-
 ## Ce qui n'est pas transmis
 
-- Le fichier FEC et les fichiers DSN ne sont pas envoyés aux prestataires d'IA.
-- Les montants des écritures comptables et les données individuelles de paie ne sont pas transmis.
+- Le fichier FEC et les fichiers DSN **ne sont pas envoyés** aux prestataires d'IA.
+- Les montants des écritures comptables et les données individuelles de paie **ne sont pas transmis**.
 
 ## Indisponibilité
 
-Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les calculs d'empreintes ne dépendent pas de l'IA : ils restent disponibles à partir des associations et des déclarations saisies manuellement.
+Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les **calculs d'empreintes ne dépendent pas de l'IA** : ils restent disponibles à partir des associations et des déclarations saisies manuellement.

@@ -248,24 +248,3 @@
     }
   }
 }
-
-// Ancien bloc de formule (pages non migrées vers <Formula>)
-.docs-theme {
-  .formula-block {
-    margin: 1.5rem 0;
-    padding: 1.25rem;
-    border-radius: $docs-radius-md;
-    background: $docs-lavender-pale;
-    overflow-x: auto;
-  }
-
-  .formula {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border-radius: $docs-radius-sm;
-    background: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-  }
-}
