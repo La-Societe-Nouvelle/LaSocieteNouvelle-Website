@@ -39,6 +39,8 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/docs/empreinte-societale/description', destination: '/docs/empreinte-societale/indicateurs', permanent: true },
+      { source: '/docs/donnees-statistiques/sources-impacts-directs', destination: '/docs/donnees-statistiques/sources', permanent: true },
+      { source: '/docs/donnees-statistiques/sources-objectifs', destination: '/docs/donnees-statistiques/sources', permanent: true },
     ]
   },
 

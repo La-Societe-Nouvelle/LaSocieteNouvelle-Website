@@ -16,8 +16,6 @@ La période d'observation couvre de 2010 à 2023, selon la dimension sociale ou 
 
 Les empreintes sont exprimées **en euros courants**, et **dans l'unité par défaut de l'indicateur**.
 
----
-
 ## Description de la table
 
 Paramètres du jeu de données :
@@ -36,7 +34,7 @@ Autres colonnes :
 
 ## Construction des données
 
-Les données sont construites à partir du modèle entrées-sorties multirégional FIGARO et des [comptes d'impacts](/docs/donnees-statistiques/sources-impacts-directs) associés aux dimensions de l'Empreinte Sociétale. La démarche générale est décrite dans la [méthodologie](/docs/donnees-statistiques/methodologie).
+Les données sont construites à partir du modèle entrées-sorties multirégional FIGARO et des [comptes d'impacts](/docs/donnees-statistiques/sources) associés aux dimensions de l'Empreinte Sociétale. La démarche générale est décrite dans la [méthodologie](/docs/donnees-statistiques/methodologie).
 
 ### Méthodologie
 
@@ -80,9 +78,7 @@ Cette approche permet d’obtenir des estimations sectorielles plus fines, cohé
 - **MRIO FIGARO** - FIGARO (Eurostat)
 - **Comptes d'impacts relatifs à l'Empreinte Sociétale** - La Société Nouvelle
 
----
-
-## Paramètres de requête
+## Accès via l'API
 
 **Endpoint de l’API :**
 
@@ -90,26 +86,23 @@ Cette approche permet d’obtenir des estimations sectorielles plus fines, cohé
 
 **Authentification :** requête à authentifier avec un jeton d'accès (header `Authorization: Bearer <votre_token>`).
 
----
-
-## Commentaires
+## Nomenclatures et jeux dérivés
 
 Les données sont également disponibles en nomenclature A\*38 (branche) et A\*88 (division).
 
 Jeux de données dérivés :
+
 - **macro_fpt_a38** : Empreintes macroéconomiques agrégées par branche (A*38)
 - **macro_fpt_a88** : Empreintes macroéconomiques étendues par division (A*88)
 - **macro_fpt_a732** : Empreintes macroéconomiques désagrégées par code APE (A*732)
 
----
+## Informations
 
-## Licence
+### Licence
 
 Les données sont diffusées sous **licence ouverte Etalab**.
 
----
-
-## Contact
+### Contact
 
 **Producteur des données :** La Société Nouvelle
 
@@ -117,8 +110,6 @@ Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/cont
 
 Adresse e-mail : **contact@lasocietenouvelle.org**
 
----
-
-## Mise à jour
+### Mise à jour
 
 Dernière mise à jour des métadonnées : **19/05/2026**

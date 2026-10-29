@@ -2,9 +2,9 @@ import DocsPageLayout from '../../../../components/docs/DocsPageLayout';
 import Content from './content.mdx';
 import { docsMetadata } from '@/lib/docsConfig';
 
-export const metadata = docsMetadata('/docs/donnees-statistiques/sources-impacts-directs');
+export const metadata = docsMetadata('/docs/donnees-statistiques/sources');
 
-export default function SourcesImpactsDirectsPage() {
+export default function SourcesPage() {
   return (
     <DocsPageLayout>
       <Content />
