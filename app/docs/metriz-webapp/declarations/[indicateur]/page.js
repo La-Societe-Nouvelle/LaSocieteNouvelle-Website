@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${indicator.libelle} - Documentation`,
+    title: indicator.libelle,
     description: indicator.description,
   };
 }

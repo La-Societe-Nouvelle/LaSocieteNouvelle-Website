@@ -1,15 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/metriz-webapp');
 
 export default function MetrizWebappPage() {
-  const { setPageTitle } = usePageContext();
-
-  useEffect(() => {
-    setPageTitle('Application Web - Metriz');
-  }, [setPageTitle]);
-
   return <Content />;
 }

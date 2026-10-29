@@ -5,11 +5,9 @@ import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import metaData from '@/lib/metaData.json';
 
 export default function IndicatorPageClient({ indicatorKey, indicator }) {
-  const { setPageTitle, setCustomNavigation, setCustomNavigationTitle } = usePageContext();
+  const { setCustomNavigation, setCustomNavigationTitle } = usePageContext();
 
   useEffect(() => {
-    setPageTitle(indicator.libelle);
-
     // Configurer la navigation vers les autres indicateurs de la même catégorie
     const isEnvironmental = metaData['indics-env'].indics.includes(indicatorKey);
     const relatedIndics = isEnvironmental
@@ -31,7 +29,7 @@ export default function IndicatorPageClient({ indicatorKey, indicator }) {
       setCustomNavigation(null);
       setCustomNavigationTitle(null);
     };
-  }, [indicatorKey, indicator, setPageTitle, setCustomNavigation, setCustomNavigationTitle]);
+  }, [indicatorKey, indicator, setCustomNavigation, setCustomNavigationTitle]);
 
   return null;
 }

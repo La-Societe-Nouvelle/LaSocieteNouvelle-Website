@@ -1,15 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/metriz-webapp/lecture-fec');
 
 export default function InformationsNecessairesPage() {
-  const { setPageTitle } = usePageContext();
-
-  useEffect(() => {
-    setPageTitle('Lecture du Fichier des Ecritures Comptables (FEC)');
-  }, [setPageTitle]);
-
   return <Content />;
 }

@@ -1,15 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/empreinte-societale/indicateurs');
 
 export default function IndicateursPage() {
-  const { setPageTitle } = usePageContext();
-
-  useEffect(() => {
-    setPageTitle('Liste des indicateurs');
-  }, [setPageTitle]);
-
   return <Content />;
 }

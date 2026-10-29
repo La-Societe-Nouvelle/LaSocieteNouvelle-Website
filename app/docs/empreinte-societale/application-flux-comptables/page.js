@@ -1,20 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
 
+export const metadata = docsMetadata('/docs/empreinte-societale/application-flux-comptables');
 
 export default function ApplicationFluxComptablesPage() {
-
-  const { setPageTitle } = usePageContext();
-
-  useEffect(() => {
-    setPageTitle('Application des indicateurs aux flux comptables');
-  }, [setPageTitle]);
-
-
-  return (
-    <Content />
-  );
+  return <Content />;
 }

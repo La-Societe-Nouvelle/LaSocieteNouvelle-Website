@@ -1,15 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-import { usePageContext } from '@/components/docs/DocsSectionLayout';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/empreinte-societale/methodologie');
 
 export default function MethodologiePage() {
-  const { setPageTitle } = usePageContext();
-
-  useEffect(() => {
-    setPageTitle('Méthodologie');
-  }, [setPageTitle]);
-
   return <Content />;
 }

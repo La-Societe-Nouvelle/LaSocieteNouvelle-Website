@@ -1,12 +1,8 @@
-'use client';
-
-import DocPage from '../DocPage';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/metriz-webapp/creer-unite-legale');
 
 export default function CreerUniteLegalePage() {
-  return (
-    <DocPage href="/docs/metriz-webapp/creer-unite-legale" title="Créer une unité légale">
-      <Content />
-    </DocPage>
-  );
+  return <Content />;
 }

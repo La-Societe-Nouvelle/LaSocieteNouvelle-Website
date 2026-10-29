@@ -1,24 +1,7 @@
 import DocsPageLayout from '../../../../../components/docs/DocsPageLayout';
 import { notFound } from 'next/navigation';
+import { statisticalDatasets as datasets } from '@/lib/docsConfig';
 
-// Liste des datasets disponibles
-const datasets = {
-  'macro_fpt': {
-    title: 'Empreintes des activités économiques - Données historiques',
-    code: 'macro_fpt',
-    description: 'Données historiques des empreintes sociétales et environnementales des activités économiques',
-  },
-  'macro_fpt_trd': {
-    title: 'Empreintes des activités économiques - Tendances',
-    code: 'macro_fpt_trd',
-    description: 'Tendances des empreintes sociétales et environnementales des activités économiques',
-  },
-  'macro_fpt_tgt': {
-    title: 'Empreintes des activités économiques - Objectifs annuels',
-    code: 'macro_fpt_tgt',
-    description: 'Trajectoires cibles des empreintes sociétales et environnementales des activités économiques',
-  }
-};
 
 export async function generateStaticParams() {
   return Object.keys(datasets).map((datasetId) => ({
@@ -37,7 +20,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${dataset.title} - Documentation`,
+    title: dataset.title,
     description: dataset.description,
   };
 }
@@ -59,9 +42,7 @@ export default async function DatasetPage({ params }) {
   }
 
   return (
-    <DocsPageLayout
-      title={dataset.title}
-    >
+    <DocsPageLayout>
       <Content />
     </DocsPageLayout>
   );

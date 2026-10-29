@@ -1,12 +1,8 @@
-'use client';
-
-import DocPage from '../DocPage';
 import Content from './content.mdx';
+import { docsMetadata } from '@/lib/docsConfig';
+
+export const metadata = docsMetadata('/docs/metriz-webapp/declarer-impacts-directs');
 
 export default function DeclarerImpactsDirectsPage() {
-  return (
-    <DocPage href="/docs/metriz-webapp/declarer-impacts-directs" title="Déclarer les impacts directs">
-      <Content />
-    </DocPage>
-  );
+  return <Content />;
 }

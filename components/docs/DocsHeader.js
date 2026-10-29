@@ -27,10 +27,10 @@ export default function DocsHeader() {
               />
             </Link>
             <div className="header-title-section">
-              <h1 className="docs-title">
+              <div className="docs-title">
                 <i className="bi bi-book me-2"></i>
                 Documentation
-              </h1>
+              </div>
               <p className="docs-subtitle">
                 Guides, ressources et références techniques de SINESE
               </p>

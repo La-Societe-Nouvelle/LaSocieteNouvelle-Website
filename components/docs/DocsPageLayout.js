@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 import DocsSidebar from './DocsSidebar';
 import DocsBreadcrumb from './DocsBreadcrumb';
 import DocsPrevNext from './DocsPrevNext';
-import { getSection, getBreadcrumb, getPrevNext } from '@/lib/docsConfig';
+import { getSection, getBreadcrumb, getPrevNext, getPageTitle } from '@/lib/docsConfig';
 
 /**
  * Layout pour les pages de documentation avec sidebar
  *
- * @param {string} title - Titre de la page
+ * @param {string} title - Titre de la page (par défaut : celui de lib/docsConfig.js)
  * @param {Array} sections - Tableau des sections pour la sidebar (ancres) - optionnel, auto-généré si non fourni
  *   Exemple: [{ id: 'introduction', title: 'Empreinte Sociétale - Introduction', level: 1 }, ...]
  * @param {Array} navigation - Tableau des liens de navigation (autres pages)
@@ -23,7 +23,7 @@ import { getSection, getBreadcrumb, getPrevNext } from '@/lib/docsConfig';
  * @param {React.ReactNode} children - Contenu de la page
  */
 export default function DocsPageLayout({
-  title,
+  title: titleProp,
   sections,
   navigation = [],
   navigationTitle,
@@ -97,6 +97,7 @@ export default function DocsPageLayout({
     return () => observer.disconnect();
   }, [pathname]);
 
+  const title = titleProp || getPageTitle(pathname);
   const finalSections = sections || autoSections;
   const navigationGroups = getSection(pathname)?.groups || [];
   const breadcrumb = getBreadcrumb(pathname, title);
@@ -106,7 +107,7 @@ export default function DocsPageLayout({
       {title && (
         <div className="docs-page-header ">
           <Container>
-            <h2 className="docs-page-title">{title}</h2>
+            <h1 className="docs-page-title">{title}</h1>
             {/* Breadcrumb */}
             {breadcrumb && breadcrumb.length > 0 && (
               <DocsBreadcrumb items={breadcrumb} />

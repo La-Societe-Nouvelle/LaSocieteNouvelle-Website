@@ -3,7 +3,10 @@ import DocsFooter from '../../components/docs/DocsFooter';
 import 'katex/dist/katex.min.css';
 
 export const metadata = {
-  title: 'Documentation - La Société Nouvelle',
+  title: {
+    default: 'Documentation - La Société Nouvelle',
+    template: '%s - Documentation',
+  },
   description: 'Guides, ressources et références techniques',
 };
 
