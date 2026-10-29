@@ -74,17 +74,15 @@ module.exports = async () => {
   /* --- Création du wrapper MDX --- */
   const withMDX = createMDX({
     options: {
-      mdxOptions: {
-        remarkPlugins: [remarkMath, remarkGfm],
-        rehypePlugins: [
-          [rehypeKatex, {
-            strict: false,
-            trust: true,
-            throwOnError: false,
-            output: 'html',
-          }],
-        ],
-      },
+      remarkPlugins: [remarkMath, remarkGfm],
+      rehypePlugins: [
+        [rehypeKatex, {
+          strict: false,
+          trust: true,
+          throwOnError: false,
+          output: 'html',
+        }],
+      ],
     },
   })
 

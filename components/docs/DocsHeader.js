@@ -53,14 +53,14 @@ export default function DocsHeader() {
                 </Nav.Link>
                 <Nav.Link
                   href="/docs/empreinte-societale"
-                  className={pathname === "/docs/empreinte-societale" ? "active" : ""}
+                  className={isActive("/docs/empreinte-societale") ? "active" : ""}
                 >
                   Empreinte Sociétale
                 </Nav.Link>
 
                 <Nav.Link
                   href="/docs/donnees-par-defaut"
-                  className={pathname === "/docs/donnees-par-defaut" ? "active" : ""}
+                  className={isActive("/docs/donnees-par-defaut") ? "active" : ""}
                 >
                   Données par défaut
                 </Nav.Link>
@@ -69,7 +69,7 @@ export default function DocsHeader() {
 
                 <Nav.Link
                   href="/docs/metriz-webapp"
-                  className={pathname === "/docs/metriz-webapp" ? "active" : ""}
+                  className={isActive("/docs/metriz-webapp") ? "active" : ""}
                 >
                   Application Web - Metriz
                 </Nav.Link>
@@ -78,7 +78,7 @@ export default function DocsHeader() {
 
                 <Nav.Link
                   href="/docs/donnees-statistiques"
-                  className={pathname === "/docs/donnees-statistiques" ? "active" : ""}
+                  className={isActive("/docs/donnees-statistiques") ? "active" : ""}
                 >
                  Données statistiques
                 </Nav.Link>

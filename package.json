@@ -46,7 +46,7 @@
     "react-paginate": "^8.2.0",
     "react-select": "^5.8.0",
     "rehype-katex": "^7.0.1",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.0",
     "remark-math": "^6.0.0",
     "sass": "^1.80.0",
