@@ -9,6 +9,8 @@ import metaData from '@/lib/metaData.json';
 import { BlockMath, InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
+export { default as Screens } from './Screens';
+
 const isExternal = (href) => /^https?:\/\//.test(href || '');
 
 const SmartLink = ({ href, children, ...props }) => isExternal(href)

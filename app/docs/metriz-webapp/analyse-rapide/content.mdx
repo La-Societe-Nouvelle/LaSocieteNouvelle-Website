@@ -1,53 +1,74 @@
-L'analyse rapide **enchaîne automatiquement les étapes de configuration** d'une analyse, à partir du FEC importé. Elle permet d'obtenir une première version des résultats sans parcourir chaque écran.
+L'analyse rapide **précomplète automatiquement les étapes** d'une analyse, à partir du FEC importé. Elle permet d'obtenir une première version des résultats sans parcourir chaque écran.
 
 Elle est lancée depuis le **Tableau de bord**, avec le bouton **Analyser automatiquement**. Une fenêtre de progression indique l'étape en cours, puis un récapitulatif s'affiche à la fin.
 
-![Tableau de bord avant analyse - Application Metriz](/screens-webapp-v4/screen-metriz-v4_tableau-de-bord-avant-analyse.png)
-
-Le tableau de bord propose aussi de configurer manuellement l'empreinte des immobilisations et des achats.
-
-![Fenêtre de progression de l'analyse rapide en cours - Application Metriz](/screens-webapp-v4/screen-metriz-v4_analyse-rapide-progression.png)
-
----
+<Screens
+  items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_tableau-de-bord-avant-analyse.png', alt: 'Tableau de bord avant analyse - Application Metriz', caption: 'Tableau de bord avant analyse' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_analyse-rapide-progression.png', alt: "Fenêtre de progression de l'analyse rapide en cours - Application Metriz", caption: "Fenêtre de progression de l'analyse rapide en cours" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_analyse-rapide-terminee.png', alt: "Fenêtre de progression de l'analyse rapide - Application Metriz", caption: "Récapitulatif à la fin de l'analyse rapide" },
+  ]}
+/>
 
 ## Étapes réalisées
 
-![Fenêtre de progression de l'analyse rapide - Application Metriz](/screens-webapp-v4/screen-metriz-v4_analyse-rapide-terminee.png)
+<Steps>
 
-1. **Catégorisation des immobilisations** : synchronisation des empreintes associées aux comptes d'immobilisations, à partir de l'association par défaut.
-2. **Catégorisation des comptes de charges** : catégorisation des comptes par l'IA (division d'activité), puis synchronisation des empreintes.
-3. **Récupération de l'empreinte des fournisseurs** : empreintes des fournisseurs identifiés par leur numéro de SIREN.
-4. **Estimation des consommations d'eau et d'énergie** : estimation par l'IA à partir des écritures comptables.
-5. **Déclaration des impacts directs** : reprise des déclarations de l'exercice précédent, ou pré-remplissage à partir des données statistiques de référence lorsqu'il n'y en a pas.
-6. **Calcul des empreintes** : calcul de l'ensemble des empreintes (valeur ajoutée nette, consommations intermédiaires, consommations de capital fixe, production).
+<Step title="Catégorisation des immobilisations">
 
-Les données du [module de base VS](/docs/metriz-webapp/resultats-et-livrables#module-de-base-vs) sont ensuite mises à jour à partir des déclarations.
+Synchronisation des empreintes associées aux comptes d'immobilisations, à partir de l'association par défaut.
+
+</Step>
+
+<Step title="Catégorisation des comptes de charges">
+
+Catégorisation des comptes par l'IA (division d'activité), puis synchronisation des empreintes.
+
+</Step>
+
+<Step title="Récupération de l'empreinte des fournisseurs">
+
+Empreintes des fournisseurs identifiés par leur numéro de SIREN.
+
+</Step>
+
+<Step title="Estimation des consommations d'eau et d'énergie">
+
+Estimation par l'IA à partir des écritures comptables.
+
+</Step>
+
+<Step title="Déclaration des impacts directs">
+
+Reprise des déclarations de l'exercice précédent, ou pré-remplissage à partir des données statistiques de référence lorsqu'il n'y en a pas.
+
+</Step>
+
+<Step title="Mesure de l'empreinte">
+
+Calcul à partir des données obtenues aux étapes précédentes.
+
+</Step>
+
+</Steps>
 
 Pour le détail des usages de l'IA : [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia).
 
 ---
 
-## Ce que l'analyse rapide ne fait pas
+## Données à vérifier et à compléter
 
-L'analyse rapide fournit **un point de départ, pas un résultat définitif**.
+L'analyse rapide fournit **un point de départ, pas un résultat définitif**. Pour obtenir une analyse complète :
 
-- Les associations proposées par l'IA ne sont pas validées : les comptes de charges significatifs sont à vérifier.
-- Les estimations de consommation d'eau et d'énergie sont des estimations : elles sont à comparer aux factures.
-- Les impacts directs repris de l'exercice précédent ou pré-remplis sont à confirmer, indicateur par indicateur.
-- Les fournisseurs sans numéro de SIREN restent associés à une empreinte sectorielle par défaut.
+- Contrôlez les données comptables importées (**Soldes Intermédiaires de Gestion**).
+- Vérifiez les [associations des comptes de charges](/docs/metriz-webapp/achats) proposées par l'IA, en particulier pour les comptes les plus significatifs. Pour les fournisseurs sans numéro de SIREN, l'empreinte des achats est estimée à partir du compte de charges associé, en fonction de son secteur d'activité.
+- Passez en revue les [déclarations d'impacts directs](/docs/metriz-webapp/declarer-impacts-directs) : les consommations d'eau et d'énergie, estimées par l'IA, sont à comparer aux factures, et les impacts repris de l'exercice précédent ou pré-remplis sont à confirmer, indicateur par indicateur.
 
-## Après l'analyse
-
-1. Contrôlez les données comptables importées (**Soldes Intermédiaires de Gestion**).
-2. Vérifiez les [associations des comptes de charges](/docs/metriz-webapp/achats) les plus importants.
-3. Passez en revue les [déclarations d'impacts directs](/docs/metriz-webapp/declarer-impacts-directs), en particulier les valeurs estimées.
-4. Consultez les [résultats](/docs/metriz-webapp/consulter-les-resultats) dans le **Tableau de bord**.
-
-Chaque modification d'une déclaration ou d'une association met à jour les empreintes concernées.
+Les [résultats](/docs/metriz-webapp/consulter-les-resultats) sont consultables dans le **Tableau de bord**. Chaque modification d'une déclaration ou d'une association met à jour les empreintes concernées.
 
 ## Choisir entre analyse rapide et parcours manuel
 
 - **Analyse rapide** : première lecture de l'empreinte, ou renouvellement d'une analyse d'un exercice à l'autre.
 - **Parcours manuel** : maîtrise de chaque étape, voir le [parcours pas à pas](/docs/metriz-webapp/tutoriel).
 
-Les deux parcours aboutissent aux mêmes calculs et peuvent être combinés.
+Les deux parcours reposent sur la même méthode : il est possible de lancer l'analyse rapide, puis de reprendre manuellement les étapes pour les compléter ou les corriger.
