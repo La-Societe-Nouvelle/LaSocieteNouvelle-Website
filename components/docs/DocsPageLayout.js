@@ -1,26 +1,24 @@
 'use client';
 
-import { Container, Row, Col } from 'react-bootstrap';
 import { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import DocsSidebar from './DocsSidebar';
+import DocsNavigationGroups from './DocsNavigationGroups';
+import DocsToc from './DocsToc';
 import DocsBreadcrumb from './DocsBreadcrumb';
 import DocsPrevNext from './DocsPrevNext';
 import { getSection, getBreadcrumb, getPrevNext, getPageTitle } from '@/lib/docsConfig';
 
 /**
- * Layout pour les pages de documentation avec sidebar
+ * Layout des pages de documentation : menu de la section, contenu, sommaire de la page
  *
  * @param {string} title - Titre de la page (par défaut : celui de lib/docsConfig.js)
- * @param {Array} sections - Tableau des sections pour la sidebar (ancres) - optionnel, auto-généré si non fourni
- *   Exemple: [{ id: 'introduction', title: 'Empreinte Sociétale - Introduction', level: 1 }, ...]
- * @param {Array} navigation - Tableau des liens de navigation (autres pages)
- *   Exemple: [{ href: '/docs/page', title: 'Titre', icon: 'bi-icon' }, ...]
- * @param {string} navigationTitle - Titre de la section de navigation
+ * @param {Array} sections - Sommaire de la page [{ id, title, level }] - optionnel, auto-généré depuis les h2/h3
+ * @param {Array} navigation - Liens complémentaires (ex. autres indicateurs) [{ href, title }]
+ * @param {string} navigationTitle - Titre des liens complémentaires
+ * @param {React.ReactNode} children - Contenu de la page
  *
  * Le menu latéral, le fil d'Ariane et les liens « Précédent / Suivant »
  * sont déduits de l'URL à partir de lib/docsConfig.js.
- * @param {React.ReactNode} children - Contenu de la page
  */
 export default function DocsPageLayout({
   title: titleProp,
@@ -32,113 +30,80 @@ export default function DocsPageLayout({
   const pathname = usePathname();
   const contentRef = useRef(null);
   const [autoSections, setAutoSections] = useState([]);
-  const [sidebarTitle, setSidebarTitle] = useState('SOMMAIRE');
 
   useEffect(() => {
     if (sections) return;
 
     const extractSections = () => {
-      if (contentRef.current) {
-        const headings = contentRef.current.querySelectorAll('h3[id], h4[id]');
-        if (headings.length > 0) {
-          const extractedSections = Array.from(headings).map(heading => ({
-            id: heading.id,
-            title: heading.textContent,
-            level: heading.tagName === 'H3' ? 1 : 2
-          }));
-          setAutoSections(extractedSections);
-        }
-      }
+      if (!contentRef.current) return;
+      const headings = contentRef.current.querySelectorAll('h2[id], h3[id]');
+      const extracted = Array.from(headings).map((heading) => ({
+        id: heading.id,
+        title: heading.textContent,
+        level: heading.tagName === 'H2' ? 1 : 2,
+      }));
+      setAutoSections((current) =>
+        JSON.stringify(current) === JSON.stringify(extracted) ? current : extracted
+      );
     };
 
     extractSections();
 
-    // Observer les changements dans le DOM pour détecter quand le contenu est chargé
-    const observer = new MutationObserver(() => {
-      extractSections();
-    });
-
+    // Le contenu peut être complété après le premier rendu
+    const observer = new MutationObserver(extractSections);
     if (contentRef.current) {
-      observer.observe(contentRef.current, {
-        childList: true,
-        subtree: true
-      });
+      observer.observe(contentRef.current, { childList: true, subtree: true });
     }
 
     return () => observer.disconnect();
   }, [pathname, sections]);
 
-  useEffect(() => {
-    const extractTitle = () => {
-      if (contentRef.current) {
-        const h2 = contentRef.current.querySelector('h2');
-        if (h2) {
-          setSidebarTitle(h2.textContent.toUpperCase());
-        } else {
-          setSidebarTitle('SOMMAIRE');
-        }
-      }
-    };
-
-    extractTitle();
-
-    // Observer les changements dans le DOM
-    const observer = new MutationObserver(() => {
-      extractTitle();
-    });
-
-    if (contentRef.current) {
-      observer.observe(contentRef.current, {
-        childList: true,
-        subtree: true
-      });
-    }
-
-    return () => observer.disconnect();
-  }, [pathname]);
-
+  const section = getSection(pathname);
   const title = titleProp || getPageTitle(pathname);
-  const finalSections = sections || autoSections;
-  const navigationGroups = getSection(pathname)?.groups || [];
   const breadcrumb = getBreadcrumb(pathname, title);
   const { prev, next } = getPrevNext(pathname);
+
+  const navigationGroups = [
+    ...(section?.groups || []),
+    ...(navigation.length > 0 ? [{ title: navigationTitle, links: navigation }] : []),
+  ];
+
   return (
     <div className="docs-page-layout">
-      {title && (
-        <div className="docs-page-header ">
-          <Container>
-            <h1 className="docs-page-title">{title}</h1>
-            {/* Breadcrumb */}
-            {breadcrumb && breadcrumb.length > 0 && (
-              <DocsBreadcrumb items={breadcrumb} />
-            )}
-          </Container>
+      <aside className="docs-sidenav" aria-label={`Menu ${section?.title || ''}`}>
+        <div className="docs-sticky">
+          {section && <div className="docs-sidenav-title">{section.title}</div>}
+          <DocsNavigationGroups groups={navigationGroups} />
         </div>
-      )}
+      </aside>
 
+      <main className="docs-main">
+        {navigationGroups.length > 0 && (
+          // key : referme le menu après un changement de page
+          <details className="docs-mobile-nav" key={pathname}>
+            <summary>
+              <i className="bi bi-list" aria-hidden="true"></i>
+              {section ? `Menu : ${section.title}` : 'Menu'}
+            </summary>
+            <DocsNavigationGroups groups={navigationGroups} />
+          </details>
+        )}
 
-      <Container className="py-4">
-        <Row>
-          {/* Sidebar */}
-          <Col lg={3} className="d-none d-lg-block">
-            <DocsSidebar
-              sections={finalSections}
-              navigation={navigation}
-              navigationTitle={navigationTitle}
-              navigationGroups={navigationGroups}
-              sidebarTitle={sidebarTitle}
-            />
-          </Col>
+        <DocsBreadcrumb items={breadcrumb} />
+        {title && <h1 className="docs-page-title">{title}</h1>}
 
-          {/* Contenu principal */}
-          <Col lg={9}>
-            <div className="docs-content" ref={contentRef}>
-              {children}
-              <DocsPrevNext prev={prev} next={next} />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+        <div className="docs-content" ref={contentRef}>
+          {children}
+        </div>
+
+        <DocsPrevNext prev={prev} next={next} />
+      </main>
+
+      <aside className="docs-toc">
+        <div className="docs-sticky">
+          <DocsToc sections={sections || autoSections} />
+        </div>
+      </aside>
     </div>
   );
 }

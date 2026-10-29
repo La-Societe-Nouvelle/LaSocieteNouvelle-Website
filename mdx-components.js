@@ -6,6 +6,17 @@
 import Image from "next/image";
 import { getLocalImageSize } from "@/lib/utils/imageSize";
 
+// Texte brut d'un titre, y compris quand il contient des liens ou de l'emphase
+const textOf = (node) => {
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(textOf).join('');
+  return node?.props?.children ? textOf(node.props.children) : '';
+};
+
+const slugify = (text) => text
+  .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || undefined;
+
 export function useMDXComponents(components) {
   return {
     // Images locales optimisées via next/image (srcSet responsive, lazy loading)
@@ -29,25 +40,10 @@ export function useMDXComponents(components) {
     h1: ({ children }) => (
       <h1 className="docs-page-title">{children}</h1>
     ),
-    h2: ({ children }) => {
-      // Générer un id à partir du texte pour les ancres
-      const id = typeof children === 'string'
-        ? children.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-        : undefined;
-      return <h2 id={id}>{children}</h2>;
-    },
-    h3: ({ children }) => {
-      const id = typeof children === 'string'
-        ? children.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-        : undefined;
-      return <h3 id={id}>{children}</h3>;
-    },
-    h4: ({ children }) => {
-      const id = typeof children === 'string'
-        ? children.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-        : undefined;
-      return <h4 id={id}>{children}</h4>;
-    },
+    // Ids générés à partir du texte pour les ancres et le sommaire
+    h2: ({ children }) => <h2 id={slugify(textOf(children))}>{children}</h2>,
+    h3: ({ children }) => <h3 id={slugify(textOf(children))}>{children}</h3>,
+    h4: ({ children }) => <h4 id={slugify(textOf(children))}>{children}</h4>,
     // Liens externes avec target="_blank"
     a: ({ href, children, ...props }) => {
       const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));

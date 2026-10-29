@@ -1,78 +1,47 @@
 // ===================================
-// Documentation Navigation (liens entre pages)
+// Documentation Navigation (menu de section, Précédent / Suivant)
 // ===================================
 
 .docs-theme {
-  .docs-navigation {
-    margin-top: 1rem;
-  
-
-    .docs-navigation-title {
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: $primary;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid rgba($docs-accent, 0.15);
-    }
-
-  
-  }
-
-     .docs-navigation-link {
-        display: block;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-        text-decoration: none;
-        border-left: 2px solid transparent;
-        margin-bottom: 0.25rem;
-        transition: all 0.2s ease;
-        cursor: pointer;
-
-
-        &:hover {
-          color: $docs-accent;
-          background: rgba($docs-accent, 0.05);
-          border-left-color: rgba($docs-accent, 0.3);
-          padding-left: 1rem;
-        }
-
-        &.sidebar-title {
-          color: $docs-accent;
-          font-weight: 600;
-          background: rgba($docs-accent, 0.1);
-          border-left-color: $docs-accent;
-        }
-      }
-      
-
   // Menu groupé
   .docs-nav-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     .docs-nav-group-title {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.05em;
+      color: rgba($primary, 0.55);
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  .docs-navigation-link {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    margin-left: -0.75rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba($primary, 0.8);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
       color: $primary;
-      margin-bottom: 0.4rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid rgba($docs-accent, 0.15);
+      background: rgba($primary, 0.04);
     }
 
-    .docs-navigation-link.active {
-      color: $docs-accent;
+    &.active {
+      color: $docs-accent-hover;
       font-weight: 600;
-      background: rgba($docs-accent, 0.1);
-      border-left-color: $docs-accent;
+      background: $docs-accent-light;
     }
   }
 
@@ -83,17 +52,18 @@
     gap: 1rem;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba($docs-accent, 0.15);
+    border-top: 1px solid rgba($primary, 0.08);
 
     .docs-prev-next-link {
       display: flex;
       flex-direction: column;
-      max-width: 48%;
-      padding: 0.75rem 1rem;
-      border: 1px solid rgba($docs-accent, 0.15);
-      border-radius: $card-border-radius;
+      gap: 0.15rem;
+      flex: 0 1 48%;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba($primary, 0.12);
+      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: border-color 0.15s ease, background 0.15s ease;
 
       &.next {
         margin-left: auto;
@@ -102,18 +72,18 @@
 
       &:hover {
         border-color: $docs-accent;
-        background: rgba($docs-accent, 0.05);
+        background: rgba($docs-accent, 0.04);
       }
     }
 
     .docs-prev-next-label {
       font-size: 0.75rem;
-      color: #6c757d;
+      color: rgba($primary, 0.6);
     }
 
     .docs-prev-next-title {
       font-weight: 600;
-      color: $docs-accent;
+      color: $primary;
     }
   }
 }

@@ -1,20 +1,27 @@
 @import '../../custom.scss';
 
 .docs-breadcrumb {
-
   ol {
     margin: 0;
     padding: 0;
 
     li {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       margin: 0;
-      font-weight: 600;
+      font-weight: 500;
+
+      a {
+        color: rgba($primary, 0.65);
+        text-decoration: none;
+
+        &:hover {
+          color: $docs-accent;
+        }
+      }
+
+      &.active {
+        color: rgba($primary, 0.9);
+      }
     }
-
-  }
-
-  .active {
-    font-weight: 0 !important;
   }
 }
