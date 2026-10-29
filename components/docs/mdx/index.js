@@ -131,3 +131,44 @@ export function IndicatorGrid({ family }) {
     </div>
   );
 }
+
+const sdgs = {
+  1: ['Pas de pauvreté', 'poverty'],
+  2: ['Faim « zéro »', 'hunger'],
+  3: ['Bonne santé et bien-être', 'health'],
+  4: ['Éducation de qualité', 'education'],
+  5: ['Égalité entre les sexes', 'gender-equality'],
+  6: ['Eau propre et assainissement', 'water-and-sanitation'],
+  7: ["Énergie propre et d'un coût abordable", 'energy'],
+  8: ['Travail décent et croissance économique', 'economic-growth'],
+  9: ['Industrie, innovation et infrastructure', 'infrastructure'],
+  10: ['Inégalités réduites', 'inequality'],
+  11: ['Villes et communautés durables', 'cities'],
+  12: ['Consommation et production responsables', 'sustainable-consumption-production'],
+  13: ['Mesures relatives à la lutte contre les changements climatiques', 'climate-change'],
+  14: ['Vie aquatique', 'oceans'],
+  15: ['Vie terrestre', 'biodiversity'],
+  16: ['Paix, justice et institutions efficaces', 'peace-justice'],
+  17: ['Partenariats pour la réalisation des objectifs', 'globalpartnerships'],
+};
+
+/**
+ * Objectif de Développement Durable : picto, nom, lien, et cibles en contenu
+ * <Sdg goal={13}>- 13.1 : ...</Sdg>
+ */
+export function Sdg({ goal, children }) {
+  const [name, slug] = sdgs[goal];
+  return (
+    <section className="docs-sdg">
+      <a className="docs-sdg-head" href={`https://www.un.org/sustainabledevelopment/fr/${slug}/`} target="_blank" rel="noopener noreferrer">
+        <Image src={`/images/odd/F-WEB-Goal-${String(goal).padStart(2, '0')}.png`} alt="" width={44} height={44} />
+        <span>
+          <span className="docs-sdg-number">ODD {goal}</span>
+          <span className="docs-sdg-name">{name}</span>
+        </span>
+        <i className="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <div className="docs-sdg-targets">{children}</div>
+    </section>
+  );
+}
