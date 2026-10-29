@@ -77,10 +77,14 @@ export default function DocsPageLayout({
         </div>
       </aside>
 
-      <main className="docs-main">
+      <main
+        className="docs-main"
+        data-pagefind-body
+        data-pagefind-meta={section ? `section:${section.title}` : undefined}
+      >
         {navigationGroups.length > 0 && (
           // key : referme le menu après un changement de page
-          <details className="docs-mobile-nav" key={pathname}>
+          <details className="docs-mobile-nav" key={pathname} data-pagefind-ignore="all">
             <summary>
               <i className="bi bi-list" aria-hidden="true"></i>
               {section ? `Menu : ${section.title}` : 'Menu'}
@@ -89,14 +93,18 @@ export default function DocsPageLayout({
           </details>
         )}
 
-        <DocsBreadcrumb items={breadcrumb} />
+        <div data-pagefind-ignore="all">
+          <DocsBreadcrumb items={breadcrumb} />
+        </div>
         {title && <h1 className="docs-page-title">{title}</h1>}
 
         <div className="docs-content" ref={contentRef}>
           {children}
         </div>
 
-        <DocsPrevNext prev={prev} next={next} />
+        <div data-pagefind-ignore="all">
+          <DocsPrevNext prev={prev} next={next} />
+        </div>
       </main>
 
       <aside className="docs-toc">

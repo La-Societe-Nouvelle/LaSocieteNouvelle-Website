@@ -39,3 +39,6 @@ yarn-error.log*
 .vscode/settings.json
 .idea/
 .claudeignore
+
+# index de recherche Pagefind (généré au build)
+/public/pagefind/

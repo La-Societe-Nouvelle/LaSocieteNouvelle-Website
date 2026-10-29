@@ -4,6 +4,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import DocsSearch from "./DocsSearch";
 import { docsSections, externalLinks, getSection } from "@/lib/docsConfig";
 
 export default function DocsHeader() {
@@ -29,6 +30,8 @@ export default function DocsHeader() {
               Documentation
             </Link>
           </div>
+
+          <DocsSearch />
 
           <Navbar.Toggle aria-controls="docs-navigation" />
           <Navbar.Collapse id="docs-navigation">
