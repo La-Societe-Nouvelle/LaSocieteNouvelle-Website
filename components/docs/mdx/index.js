@@ -4,6 +4,8 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
+import metaData from '@/lib/metaData.json';
 import { BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -96,5 +98,23 @@ export function Formula({ math, caption }) {
       <BlockMath math={math} />
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
+  );
+}
+
+/**
+ * Grille des indicateurs avec leurs pictos, socio-économiques puis environnementaux
+ * <IndicatorGrid /> ou <IndicatorGrid family="indics-env" />
+ */
+export function IndicatorGrid({ family }) {
+  const keys = family ? metaData[family].indics : [...metaData['indics-es'].indics, ...metaData['indics-env'].indics];
+  return (
+    <div className="docs-indicators">
+      {keys.map((key) => (
+        <Link key={key} href={`/docs/empreinte-societale/indicateurs/${key}`} className="docs-indicator">
+          <Image src={`/ESE/picto/ese-${key}-color.svg`} alt="" width={40} height={40} />
+          {metaData[key].libelle}
+        </Link>
+      ))}
+    </div>
   );
 }

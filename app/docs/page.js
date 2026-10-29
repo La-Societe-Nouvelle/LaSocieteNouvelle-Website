@@ -1,9 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Cards, Card } from "@/components/docs/mdx";
+import { Cards, Card, IndicatorGrid } from "@/components/docs/mdx";
 import { DocsSearchButton } from "@/components/docs/DocsSearch";
 import { docsSections, externalLinks, statisticalDatasets } from "@/lib/docsConfig";
-import metaData from "@/lib/metaData.json";
 
 // Raccourcis sous la recherche
 const popularLinks = [
@@ -13,8 +11,6 @@ const popularLinks = [
   { href: "/docs/metriz-webapp/analyse-rapide", title: "Démarrage rapide" },
 ];
 
-// Indicateurs, dans l'ordre du référentiel : socio-économiques puis environnementaux
-const indicators = [...metaData["indics-es"].indics, ...metaData["indics-env"].indics];
 
 // Points d'entrée selon le profil du lecteur
 const profiles = [
@@ -23,7 +19,7 @@ const profiles = [
     title: "Je découvre l'Empreinte Sociétale",
     text: "Comprendre la démarche, les 12 indicateurs et leur mode de calcul.",
     links: [
-      { href: "/docs/empreinte-societale/description", title: "Qu'est-ce que l'Empreinte Sociétale ?" },
+      { href: "/docs/empreinte-societale", title: "Qu'est-ce que l'Empreinte Sociétale ?" },
       { href: "/docs/empreinte-societale/indicateurs", title: "Les 12 indicateurs" },
       { href: "/docs/empreinte-societale/methodologie", title: "Méthodologie" },
     ],
@@ -118,14 +114,7 @@ export default function DocsHome() {
             </div>
             <Link href="/docs/empreinte-societale/indicateurs">Voir tous les indicateurs →</Link>
           </div>
-          <div className="docs-home-indicators">
-            {indicators.map((key) => (
-              <Link key={key} href={`/docs/empreinte-societale/indicateurs/${key}`} className="docs-home-indicator">
-                <Image src={`/ESE/picto/ese-${key}-color.svg`} alt="" width={40} height={40} />
-                {metaData[key].libelle}
-              </Link>
-            ))}
-          </div>
+          <IndicatorGrid />
         </section>
 
         <section className="docs-home-sections">

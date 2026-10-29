@@ -167,3 +167,60 @@
     .docs-card-text { font-size: 0.92rem; line-height: 1.55; color: $docs-muted; }
   }
 }
+
+// Grille des indicateurs : lignes toujours complètes (12 = 3 × 4 = 2 × 6)
+.docs-theme {
+  .docs-indicators {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  // Dans une page, colonne plus étroite : 2 colonnes
+  .docs-content .docs-indicators {
+    margin: 1.5rem 0;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .docs-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    color: $docs-navy;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background 0.15s ease;
+
+    img {
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    &:hover {
+      background: $docs-lavender;
+    }
+  }
+
+  // Cartes et indicateurs : pas de soulignement des liens du contenu
+  .docs-content .docs-indicator,
+  .docs-content .docs-card {
+    text-decoration: none;
+    color: $docs-navy;
+  }
+}

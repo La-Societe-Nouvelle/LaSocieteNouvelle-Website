@@ -35,6 +35,13 @@ const nextConfig = {
     return config
   },
 
+  // Anciennes adresses de la documentation
+  async redirects() {
+    return [
+      { source: '/docs/empreinte-societale/description', destination: '/docs/empreinte-societale/indicateurs', permanent: true },
+    ]
+  },
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     silenceDeprecations: [

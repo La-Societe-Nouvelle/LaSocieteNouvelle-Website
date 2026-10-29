@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import metaData from '@/lib/metaData.json';
-import IndicatorPageClient from './IndicatorPageClient';
 
 export async function generateStaticParams() {
   return metaData.indics.map((indic) => ({
@@ -41,13 +40,5 @@ export default async function IndicatorPage({ params }) {
     notFound();
   }
 
-  return (
-    <>
-      <IndicatorPageClient
-        indicatorKey={key}
-        indicator={indicator}
-      />
-      <MDXContent indicator={indicator} />
-    </>
-  );
+  return <MDXContent indicator={indicator} />;
 }

@@ -6,6 +6,7 @@ import DocsNavigationGroups from './DocsNavigationGroups';
 import DocsToc from './DocsToc';
 import DocsBreadcrumb from './DocsBreadcrumb';
 import DocsPrevNext from './DocsPrevNext';
+import DocsPageMeta from './DocsPageMeta';
 import { getSection, getBreadcrumb, getPrevNext, getPageTitle } from '@/lib/docsConfig';
 
 /**
@@ -72,7 +73,6 @@ export default function DocsPageLayout({
     <div className="docs-page-layout">
       <aside className="docs-sidenav" aria-label={`Menu ${section?.title || ''}`}>
         <div className="docs-sticky">
-          {section && <div className="docs-sidenav-title">{section.title}</div>}
           <DocsNavigationGroups groups={navigationGroups} />
         </div>
       </aside>
@@ -103,6 +103,7 @@ export default function DocsPageLayout({
         </div>
 
         <div data-pagefind-ignore="all">
+          <DocsPageMeta pathname={pathname} />
           <DocsPrevNext prev={prev} next={next} />
         </div>
       </main>
