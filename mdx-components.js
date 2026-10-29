@@ -5,6 +5,7 @@
 
 import Image from "next/image";
 import { getLocalImageSize } from "@/lib/utils/imageSize";
+import * as docsComponents from "@/components/docs/mdx";
 
 // Texte brut d'un titre, y compris quand il contient des liens ou de l'emphase
 const textOf = (node) => {
@@ -56,6 +57,8 @@ export function useMDXComponents(components) {
       }
       return <a href={href} {...props}>{children}</a>;
     },
+    // Composants de documentation (encadrés, étapes, cartes, formules)
+    ...docsComponents,
     ...components,
   };
 }
