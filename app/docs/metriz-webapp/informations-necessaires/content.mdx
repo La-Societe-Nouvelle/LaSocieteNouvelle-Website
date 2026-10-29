@@ -3,7 +3,7 @@ Liste des éléments nécessaires à la mesure de l'empreinte sociétale d'une e
 ## Éléments comptables
 
 - **FEC** – Fichier d'Écritures Comptables (voir [Lecture du FEC](/docs/metriz-webapp/lecture-fec))
-- **Numéros SIREN** (9 chiffres) liés aux comptes fournisseurs auxiliaires <sup>[1](#notes)</sup>
+- **Numéros SIREN** (9 chiffres) liés aux comptes fournisseurs auxiliaires[^siren]
 
 ## Éléments relatifs aux impacts directs de l'entreprise
 
@@ -11,24 +11,22 @@ Liste des éléments nécessaires à la mesure de l'empreinte sociétale d'une e
 
 - **Déclarations Sociales Nominatives (DSN) mensuelles** (si l'entreprise est employeuse, voir [Lecture des DSN](/docs/metriz-webapp/lecture-dsn))
 - Présence d'établissement(s) à l'étranger, et le cas échéant, le montant de la valeur ajoutée nette des activités situées à l'étranger
-- Caractère artisanal <sup>[2](#notes)</sup> des activités de l'entreprise
+- Caractère artisanal[^artisanal] des activités de l'entreprise
 - Inscription d'une raison d'être dans les statuts, qualité de société à mission, agrément ESUS, structure de l'ESS
-- Liste des rémunérations annuelles brutes avec nombre d'heures travaillées, sexe, nombre d'heures de formation suivies et s'il s'agit d'un contrat de formation (stage, alternance, etc.) <sup>[3](#notes)</sup>
+- Liste des rémunérations annuelles brutes avec nombre d'heures travaillées, sexe, nombre d'heures de formation suivies et s'il s'agit d'un contrat de formation (stage, alternance, etc.)[^remunerations]
 - Charges brutes (avec cotisations patronales) de personnel liées à des activités de recherche
 - Indemnités de stage, si non incluses dans la liste des rémunérations
 
 ### Pour les indicateurs environnementaux
 
-- Liste des combustibles pour source fixe utilisés (fioul, gaz, bois, etc.) et quantités consommées <sup>[4](#notes)</sup>
-- Liste des carburants (combustibles pour sources mobiles) utilisés et quantités consommées <sup>[5](#notes)</sup>
-- Liste des installations de réfrigération et de climatisation avec dimensions ou type d'installations, et fluide réfrigérant utilisé {/* TODO fond : note 6 vide */}
-
-<sup>6</sup>
+- Liste des combustibles pour source fixe utilisés (fioul, gaz, bois, etc.) et quantités consommées[^combustibles]
+- Liste des carburants (combustibles pour sources mobiles) utilisés et quantités consommées[^carburants]
+- Liste des installations de réfrigération et de climatisation avec dimensions ou type d'installations, et fluide réfrigérant utilisé[^refrigeration]
 - Consommation d'électricité
 - Si raccordement à un réseau de froid/chaleur, consommation de froid ou chaleur
 - Liste des installations de production d'électricité d'origine renouvelable (panneaux photovoltaïques, etc.), et le cas échéant, quantités produites et vendues
-- Quantité de déchets produits <sup>[7](#notes)</sup>
-- Consommation d'eau <sup>[8](#notes)</sup>
+- Quantité de déchets produits[^dechets]
+- Consommation d'eau[^eau]
 - Liste des produits dangereux utilisés et quantités consommées
 - Évolution de l'utilisation des terrains (changements d'affectation) et surfaces concernées
 
@@ -47,22 +45,18 @@ Liste des éléments nécessaires à la mesure de l'empreinte sociétale d'une e
 
 - Quantité produite de ciment, tuiles, briques, dolomie ou chaux
 
-## Notes
+[^siren]: Un fichier Excel est téléchargeable à partir de l'application. Pour les années suivantes, les associations (compte – numéro SIREN) disponibles au sein du fichier de sauvegarde sont récupérées et seuls les numéros SIREN des nouveaux comptes fournisseurs seront à renseigner.
 
-<sup>1</sup> Un fichier Excel est téléchargeable à partir de l'application. Pour les années suivantes, les associations (compte – numéro SIREN) disponibles au sein du fichier de sauvegarde sont récupérées et seuls les numéros SIREN des nouveaux comptes fournisseurs seront à renseigner.
+[^artisanal]: Entreprises inscrites à la CMA, activités enregistrées au registre des métiers. Si une seule partie des activités est concernée : montant de la valeur ajoutée nette des activités artisanales (charges brutes de personnel liées à l'activité).
 
-<sup>2</sup> Entreprises inscrites à la CMA, activités enregistrées au registre des métiers. Si une seule partie des activités est concernée : montant de la valeur ajoutée nette des activités artisanales (charges brutes de personnel liées à l'activité).
+[^remunerations]: Ces informations permettent la mesure de l'indice de Gini, de l'écart de rémunérations femmes/hommes, et d'une partie de la contribution pour l'indicateur relatif à la recherche et à la formation.
 
-<sup>3</sup> Ces informations permettent la mesure de l'indice de GINI, de l'écart de rémunérations femmes/hommes, et d'une partie de la contribution pour l'indicateur relatif à la recherche et à la formation.
+[^combustibles]: Évaluation possible à partir des factures d'achats. Voir la [liste des combustibles](/docs/metriz-webapp/liste-combustibles).
 
-<sup>4</sup> Évaluation possible à partir des factures d'achats.
+[^carburants]: Estimation possible à partir des distances parcourues ou des montants dépensés. Voir la [liste des carburants](/docs/metriz-webapp/liste-carburants).
 
-<sup>5</sup> Estimation possible à partir des distances parcourues ou des montants dépensés.
+[^refrigeration]: Voir la [liste des types d'installations](/docs/metriz-webapp/liste-installations-refrigeration).
 
-{/* TODO fond : note 6 vide */}
+[^dechets]: Estimation possible à partir de la fréquence de ramassage, de la dimension des contenants et du taux de remplissage moyen.
 
-<sup>6</sup>
-
-<sup>7</sup> Estimation possible à partir de la fréquence de ramassage, de la dimension des contenants et du taux de remplissage moyen.
-
-<sup>8</sup> Consommation à partir du réseau d'alimentation et des prélèvements directs (puits, etc.) hors récupération des eaux de pluies.
+[^eau]: Consommation à partir du réseau d'alimentation et des prélèvements directs (puits, etc.) hors récupération des eaux de pluie.

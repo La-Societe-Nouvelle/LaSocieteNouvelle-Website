@@ -92,6 +92,10 @@ module.exports = async () => {
           output: 'html',
         }],
       ],
+      remarkRehypeOptions: {
+        footnoteLabel: 'Notes',
+        footnoteBackLabel: 'Retour au texte',
+      },
     },
   })
 
