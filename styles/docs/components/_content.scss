@@ -114,20 +114,31 @@
     }
   }
 
+  // Citations (extraits ESRS, etc.) : discrètes, filet à gauche
   blockquote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.25rem;
-    border-radius: $docs-radius-md;
-    background: $docs-lavender-pale;
-    color: $docs-navy;
+    margin: 1rem 0 1.5rem;
+    padding: 0.1rem 0 0.1rem 1rem;
+    border-left: 2px solid $docs-border;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: $docs-muted;
+
+    p, li {
+      margin-bottom: 0.5rem;
+    }
 
     > :last-child {
       margin-bottom: 0;
     }
 
-    h4 {
-      margin: 0;
-      text-align: center;
+    ol, ul {
+      margin-bottom: 0.5rem;
+      padding-left: 1.6rem;
+    }
+
+    li::marker {
+      font-weight: 600;
+      font-size: 0.85rem;
     }
   }
 
