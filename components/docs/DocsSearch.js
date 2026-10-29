@@ -5,8 +5,19 @@ import { useRouter } from 'next/navigation';
 
 /**
  * Recherche plein texte dans la documentation (index Pagefind généré au build)
- * Ouverture : bouton du header, Ctrl+K / Cmd+K ou « / »
+ * Ouverture : bouton du header, Ctrl+K / Cmd+K, « / » ou <DocsSearchButton />
  */
+
+const OPEN_EVENT = 'docs-search:open';
+
+// Bouton d'ouverture utilisable ailleurs dans la page (ex. accueil)
+export function DocsSearchButton({ className = '', children }) {
+  return (
+    <button type="button" className={className} onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}>
+      {children}
+    </button>
+  );
+}
 
 // L'index est généré à partir des fichiers .html de .next/server/app
 const toHref = (url) => url.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
@@ -52,7 +63,11 @@ export default function DocsSearch() {
       }
     };
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener(OPEN_EVENT, open);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener(OPEN_EVENT, open);
+    };
   }, [open]);
 
   // Recherche

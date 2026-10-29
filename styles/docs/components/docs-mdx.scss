@@ -87,9 +87,8 @@
     line-height: 2rem;
   }
 
-  // Étape suivante et cartes
-  .docs-next-step,
-  .docs-card {
+  // Étape suivante
+  .docs-next-step {
     display: flex;
     border: 1px solid rgba($primary, 0.12);
     border-radius: 8px;
@@ -121,23 +120,6 @@
     .bi { margin-left: auto; color: $docs-accent; }
   }
 
-  .docs-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  .docs-card {
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 1rem 1.25rem;
-
-    .docs-card-icon { font-size: 1.25rem; color: $docs-accent; }
-    .docs-card-title { font-weight: 600; }
-    .docs-card-text { font-size: 0.9rem; color: rgba($primary, 0.75); }
-  }
-
   // Formules
   .docs-formula {
     margin: 1.5rem 0;
@@ -152,5 +134,37 @@
       color: rgba($primary, 0.65);
       padding-bottom: 0.5rem;
     }
+  }
+}
+
+// Cartes de navigation (contenus MDX et accueil de la documentation)
+.docs-theme {
+  .docs-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .docs-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgba($primary, 0.12);
+    border-radius: 8px;
+    background: white;
+    color: $primary;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      border-color: $docs-accent;
+      background: rgba($docs-accent, 0.04);
+    }
+
+    .docs-card-icon { font-size: 1.25rem; color: $docs-accent; }
+    .docs-card-title { font-weight: 600; }
+    .docs-card-text { font-size: 0.9rem; line-height: 1.5; color: rgba($primary, 0.75); }
   }
 }
