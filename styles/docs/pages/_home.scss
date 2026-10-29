@@ -15,7 +15,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('/illustrations/illustration-docs-hero.svg') no-repeat right -1rem bottom / min(58%, 900px) auto;
+      background: url('/illustrations/illustration-docs-hero.svg') no-repeat right bottom / min(50%, 860px) auto;
       pointer-events: none;
 
       @media (max-width: 1199.98px) {
@@ -33,7 +33,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
     max-width: $docs-shell-width;
     margin: 0 auto;
     padding: 3rem $docs-gutter;
@@ -49,11 +48,12 @@
       letter-spacing: 0.26em;
       text-transform: uppercase;
       color: $docs-on-navy;
+      margin-bottom: 0.85rem;
     }
 
     h1 {
       max-width: 760px;
-      margin: 0;
+      margin: 0 0 1.25rem;
       color: white;
       font-size: 2.9rem;
       line-height: 1.08;
@@ -65,8 +65,8 @@
     }
 
     .docs-home-lead {
-      max-width: 620px;
-      margin: 0;
+      max-width: 700px;
+      margin: 0 0 2.25rem;
       font-size: 1.2rem;
       font-weight: 300;
       line-height: 1.45;
@@ -81,7 +81,7 @@
     width: 100%;
     max-width: 680px;
     height: 56px;
-    margin-top: 0.75rem;
+    margin-bottom: 1rem;
     padding: 0 1.1rem;
     border: none;
     border-radius: $docs-radius-md;
@@ -161,7 +161,7 @@
   .docs-home-section-head {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: baseline;
     gap: 0.5rem 1rem;
     margin-bottom: 1.75rem;
 
@@ -260,51 +260,81 @@
     }
   }
 
-  // Les 12 indicateurs
+  // Les 12 indicateurs : 3 colonnes, une famille d'indicateurs toutes les deux lignes
   .docs-home-indicators {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.75rem;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .docs-home-indicator {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-    padding: 0.85rem 1rem;
+    gap: 0.9rem;
+    padding: 0.75rem 1rem;
     border-radius: $docs-radius-md;
     background: $docs-lavender-pale;
     color: $docs-navy;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.35;
     text-decoration: none;
     transition: background 0.15s ease;
+
+    img {
+      flex-shrink: 0;
+    }
 
     &:hover {
       background: $docs-lavender;
     }
   }
 
-  // Badge de code d'indicateur (accueil et contenus)
-  .docs-indicator-code {
-    display: inline-grid;
-    place-items: center;
-    flex-shrink: 0;
-    min-width: 46px;
-    height: 30px;
-    padding: 0 0.4rem;
-    border-radius: $docs-radius-sm;
-    background: $docs-social-bg;
-    color: $docs-social;
-    font-family: $docs-font-mono;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
+  // Toute la documentation : 5 rubriques, 5 colonnes ou 3 + 2
+  .docs-home-sections .docs-cards {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
 
-    &.env {
-      background: $docs-env-bg;
-      color: $docs-env;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+
+      > :nth-child(-n + 3) { grid-column: span 2; }
+      > :nth-child(n + 4) { grid-column: span 3; }
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+
+      > * { grid-column: auto !important; }
+    }
+  }
+
+  // Cartes de rubrique alignées sur les cartes de parcours
+  .docs-home-sections .docs-card {
+    gap: 0.6rem;
+    padding: 1.5rem;
+
+    .docs-card-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.25rem;
+      border-radius: $docs-radius-md;
+      background: $docs-lavender;
+      font-size: 1.1rem;
+    }
+
+    .docs-card-title {
+      font-size: 1.05rem;
     }
   }
 

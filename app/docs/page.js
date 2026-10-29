@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Cards, Card } from "@/components/docs/mdx";
 import { DocsSearchButton } from "@/components/docs/DocsSearch";
 import { docsSections, externalLinks, statisticalDatasets } from "@/lib/docsConfig";
@@ -12,48 +13,35 @@ const popularLinks = [
   { href: "/docs/metriz-webapp/analyse-rapide", title: "Démarrage rapide" },
 ];
 
-// Indicateurs, dans l'ordre du référentiel
-const indicatorFamilies = [
-  { keys: metaData["indics-es"].indics, env: false },
-  { keys: metaData["indics-env"].indics, env: true },
-];
+// Indicateurs, dans l'ordre du référentiel : socio-économiques puis environnementaux
+const indicators = [...metaData["indics-es"].indics, ...metaData["indics-env"].indics];
 
 // Points d'entrée selon le profil du lecteur
 const profiles = [
   {
     icon: "bi-compass",
     title: "Je découvre l'Empreinte Sociétale",
-    text: "Comprendre le référentiel, ses indicateurs et la façon dont ils sont calculés.",
+    text: "Comprendre la démarche, les 12 indicateurs et leur mode de calcul.",
     links: [
-      { href: "/docs/empreinte-societale/description", title: "Qu'est-ce que l'Empreinte Sociétale ?" },
+      { href: "/docs/empreinte-societale/description", title: "Qu'est-ce que l'Empreinte Sociétale ?" },
       { href: "/docs/empreinte-societale/indicateurs", title: "Les 12 indicateurs" },
       { href: "/docs/empreinte-societale/methodologie", title: "Méthodologie" },
     ],
   },
   {
     icon: "bi-building",
-    title: "Je mesure l'empreinte de mon entreprise",
-    text: "Réaliser une première mesure avec Metriz à partir de ses données comptables.",
+    title: "Je mesure avec Metriz",
+    text: "Entreprises et experts-comptables : mesurer à partir des données comptables et exploiter les livrables.",
     links: [
-      { href: "/docs/metriz-webapp/creer-un-compte", title: "Créer son compte" },
-      { href: "/docs/metriz-webapp/analyse-rapide", title: "Démarrage rapide" },
       { href: "/docs/metriz-webapp/tutoriel", title: "Le parcours pas à pas" },
-    ],
-  },
-  {
-    icon: "bi-people",
-    title: "J'accompagne des entreprises",
-    text: "Experts-comptables et conseils : connecter vos outils et exploiter les livrables.",
-    links: [
-      { href: "/docs/metriz-webapp/integrations", title: "Connecteurs et intégrations" },
-      { href: "/docs/metriz-webapp/lecture-fec", title: "Lecture du FEC" },
+      { href: "/docs/metriz-webapp/integrations", title: "Intégrations avec vos logiciels" },
       { href: "/docs/metriz-webapp/resultats-et-livrables", title: "Résultats et livrables" },
     ],
   },
   {
     icon: "bi-database",
     title: "J'exploite les données",
-    text: "Chercheurs, analystes, développeurs : accéder aux jeux de données et à leurs sources.",
+    text: "Chercheurs, analystes, développeurs : accéder aux jeux de données et à leurs sources.",
     links: [
       ...Object.entries(statisticalDatasets).slice(0, 1).map(([id, dataset]) => ({
         href: `/docs/donnees-statistiques/jeux-de-donnees/${id}`,
@@ -70,11 +58,11 @@ export default function DocsHome() {
     <div className="docs-home">
       <section className="docs-home-hero">
         <div className="docs-home-hero-inner">
-          <div className="docs-home-kicker">Documentation</div>
-          <h1>Mesurer et comprendre l'Empreinte Sociétale des entreprises</h1>
+          <div className="docs-home-kicker">La Société Nouvelle</div>
+          <h1>Bienvenue sur l'espace documentation</h1>
           <p className="docs-home-lead">
-            Guides, méthodologies et données de référence, de la première mesure à
-            l'exploitation des jeux de données.
+            L'ensemble des documentations et informations utiles relatives à l'Empreinte
+            Sociétale de l'Entreprise et au système d'information et de comptabilité associé.
           </p>
           <DocsSearchButton className="docs-home-search">
             <i className="bi bi-search" aria-hidden="true"></i>
@@ -94,8 +82,7 @@ export default function DocsHome() {
         <section>
           <div className="docs-home-section-head">
             <div>
-              <h2>Par où commencer ?</h2>
-              <p>Choisissez le parcours qui vous correspond.</p>
+              <h2>Par où commencer&nbsp;?</h2>
             </div>
           </div>
           <div className="docs-home-profiles">
@@ -128,23 +115,20 @@ export default function DocsHome() {
           <div className="docs-home-section-head">
             <div>
               <h2>Les 12 indicateurs</h2>
-              <p>Définition, unité, méthode de calcul et sources de chaque indicateur.</p>
             </div>
             <Link href="/docs/empreinte-societale/indicateurs">Voir tous les indicateurs →</Link>
           </div>
           <div className="docs-home-indicators">
-            {indicatorFamilies.flatMap(({ keys, env }) =>
-              keys.map((key) => (
-                <Link key={key} href={`/docs/empreinte-societale/indicateurs/${key}`} className="docs-home-indicator">
-                  <span className={`docs-indicator-code${env ? " env" : ""}`}>{key}</span>
-                  {metaData[key].libelle}
-                </Link>
-              ))
-            )}
+            {indicators.map((key) => (
+              <Link key={key} href={`/docs/empreinte-societale/indicateurs/${key}`} className="docs-home-indicator">
+                <Image src={`/ESE/picto/ese-${key}-color.svg`} alt="" width={40} height={40} />
+                {metaData[key].libelle}
+              </Link>
+            ))}
           </div>
         </section>
 
-        <section>
+        <section className="docs-home-sections">
           <div className="docs-home-section-head">
             <div>
               <h2>Toute la documentation</h2>
@@ -152,7 +136,7 @@ export default function DocsHome() {
           </div>
           <Cards>
             {[...docsSections, ...externalLinks].map((item) => (
-              <Card key={item.href} href={item.href} title={item.title} icon={item.icon}>
+              <Card key={item.href} href={item.href} title={item.shortTitle || item.title} icon={item.icon}>
                 {item.description}
               </Card>
             ))}

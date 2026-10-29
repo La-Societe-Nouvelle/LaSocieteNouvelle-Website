@@ -27,7 +27,7 @@
     "section": "Création de la valeur"
   },
   "idr": {
-    "libelle": "Indice d'Ecart des Rémunérations",
+    "libelle": "Indice d'Écart des Rémunérations",
     "description": "Rapport interdécile D9/D1",
     "unitLabel": "Sans unité",
     "unitCode": "",
@@ -43,7 +43,7 @@
     "section": "Empreinte sociale"
   },
   "eco": {
-    "libelle": "Contribution à l'Economie Nationale",
+    "libelle": "Contribution à l'Économie Nationale",
     "description": "Part de la valeur produite en France",
     "unitLabel": "En % de la valeur",
     "unitCode": "%",
@@ -59,7 +59,7 @@
     "section": "Création de la valeur"
   },
   "geq": {
-    "libelle": "Indice d'Ecart des Rémunérations Femmes/Hommes",
+    "libelle": "Indice d'Écart des Rémunérations Femmes/Hommes",
     "description": "Ecart de la rémunération moyenne Femmes/Hommes",
     "unitLabel": "En % de la rémunération moyenne",
     "unitCode": "%",
@@ -75,7 +75,7 @@
     "section": "Empreinte sociale"
   },
   "ghg": {
-    "libelle": "Intensité d'Emission de Gaz à Effet de Serre",
+    "libelle": "Intensité d'Émission de Gaz à Effet de Serre",
     "description": "Quantité émise de gaz à effet de serre par unité de valeur",
     "unitLabel": "En gramme de CO2 équivalent par euro (gCO2e/€)",
     "unitCode": "gCO2e/€",
@@ -107,7 +107,7 @@
     "section": "Empreinte environnementale"
   },
   "knw": {
-    "libelle": "Contribution à l'Evolution des Compétences et des Connaissances",
+    "libelle": "Contribution à l'Évolution des Compétences et des Connaissances",
     "description": "Part de la valeur produite dédiée à la formation, la recherche ou l'enseignement",
     "unitLabel": "En % de la valeur",
     "unitCode": "%",
@@ -139,7 +139,7 @@
     "section": "Empreinte environnementale"
   },
   "nrg": {
-    "libelle": "Intensité de Consommation d'Energie",
+    "libelle": "Intensité de Consommation d'Énergie",
     "description": "Quantité consommée d'énergie par unité de valeur",
     "unitLabel": "En kilojoule par euro (kJ/€)",
     "unitCode": "kJ/€",
