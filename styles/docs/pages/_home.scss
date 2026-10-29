@@ -1,0 +1,356 @@
+// ===================================
+// Accueil de la documentation
+// ===================================
+
+.docs-theme {
+  // Bandeau marine avec recherche
+  .docs-home-hero {
+    position: relative;
+    overflow: hidden;
+    background: $docs-navy;
+    color: white;
+
+    // Illustration de l'accueil du site, recolorée ton sur ton
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/illustrations/illustration-docs-hero.svg') no-repeat right -1rem bottom / min(58%, 900px) auto;
+      pointer-events: none;
+
+      @media (max-width: 1199.98px) {
+        opacity: 0.45;
+      }
+
+      @media (max-width: 767.98px) {
+        display: none;
+      }
+    }
+  }
+
+  .docs-home-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    max-width: $docs-shell-width;
+    margin: 0 auto;
+    padding: 3rem $docs-gutter;
+
+    @media (min-width: 992px) {
+      padding: 4.5rem $docs-gutter-lg 4rem;
+    }
+
+    .docs-home-kicker {
+      font-family: $docs-font-head;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: $docs-on-navy;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: white;
+      font-size: 2.9rem;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+
+      @media (max-width: 767.98px) {
+        font-size: 2rem;
+      }
+    }
+
+    .docs-home-lead {
+      max-width: 620px;
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.45;
+      color: $docs-on-navy;
+    }
+  }
+
+  .docs-home-search {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 680px;
+    height: 56px;
+    margin-top: 0.75rem;
+    padding: 0 1.1rem;
+    border: none;
+    border-radius: $docs-radius-md;
+    background: white;
+    color: $docs-muted;
+    font-size: 1rem;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(black, 0.18);
+
+    .bi {
+      color: $docs-navy;
+      font-size: 1.1rem;
+    }
+
+    span {
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    kbd {
+      margin-left: auto;
+      padding: 0.15rem 0.45rem;
+      border: 1px solid $docs-border;
+      border-radius: 6px;
+      background: $docs-lavender-pale;
+      color: $docs-muted;
+      font-family: $docs-font-mono;
+      font-size: 0.72rem;
+
+      @media (max-width: 575.98px) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 8px 28px rgba(black, 0.26);
+    }
+  }
+
+  .docs-home-popular {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: $docs-on-navy;
+
+    a {
+      padding: 0.3rem 0.8rem;
+      border: 1px solid $docs-navy-line;
+      border-radius: $docs-radius-pill;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        background: rgba(white, 0.08);
+      }
+    }
+  }
+
+  // Corps de la page
+  .docs-home-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    max-width: $docs-shell-width;
+    margin: 0 auto;
+    padding: 3.5rem $docs-gutter 5rem;
+
+    @media (min-width: 992px) {
+      padding: 4.5rem $docs-gutter-lg 5.5rem;
+    }
+  }
+
+  .docs-home-section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1.75rem;
+
+    > div {
+      flex: 1 1 320px;
+    }
+
+    h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.75rem;
+    }
+
+    p {
+      margin: 0;
+      color: $docs-muted;
+    }
+
+    > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  // Parcours par profil
+  .docs-home-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .docs-home-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.75rem;
+    border: 1px solid $docs-border;
+    border-radius: $docs-radius-lg;
+
+    .docs-home-profile-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: $docs-radius-md;
+      background: $docs-lavender;
+      color: $docs-navy;
+      font-size: 1.25rem;
+    }
+
+    &:nth-child(even) .docs-home-profile-icon {
+      background: $docs-rose;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: $docs-muted;
+    }
+
+    ul {
+      list-style: none;
+      margin: auto 0 0;
+      padding: 0.5rem 0 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin: 0 -0.6rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: $docs-radius-sm;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $docs-navy;
+      text-decoration: none;
+
+      .bi {
+        color: $docs-coral;
+        transition: transform 0.15s ease;
+      }
+
+      &:hover {
+        background: $docs-lavender-pale;
+
+        .bi { transform: translateX(3px); }
+      }
+    }
+  }
+
+  // Les 12 indicateurs
+  .docs-home-indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .docs-home-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    color: $docs-navy;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: $docs-lavender;
+    }
+  }
+
+  // Badge de code d'indicateur (accueil et contenus)
+  .docs-indicator-code {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    min-width: 46px;
+    height: 30px;
+    padding: 0 0.4rem;
+    border-radius: $docs-radius-sm;
+    background: $docs-social-bg;
+    color: $docs-social;
+    font-family: $docs-font-mono;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &.env {
+      background: $docs-env-bg;
+      color: $docs-env;
+    }
+  }
+
+  // Bandeau d'aide
+  .docs-home-help {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    padding: 2.25rem 2.5rem;
+    border-radius: 20px;
+    background: $docs-navy;
+    color: white;
+
+    > div {
+      flex: 1 1 320px;
+    }
+
+    h2 {
+      margin: 0 0 0.35rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      color: $docs-on-navy;
+    }
+
+    a {
+      padding: 0.7rem 1.3rem;
+      border: 1.5px solid $docs-navy-line;
+      border-radius: $docs-radius-pill;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+
+      &.primary {
+        border-color: $docs-coral;
+        background: $docs-coral;
+        color: $docs-navy;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      padding: 1.75rem 1.5rem;
+    }
+  }
+}

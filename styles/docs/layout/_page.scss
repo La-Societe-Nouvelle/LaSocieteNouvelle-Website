@@ -1,5 +1,5 @@
 // ===================================
-// Documentation Layout - menu de section | contenu | sommaire
+// Page : menu de section | contenu | sommaire
 // ===================================
 
 .docs-theme {
@@ -10,15 +10,16 @@
     max-width: $docs-shell-width;
     min-height: 60vh;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 $docs-gutter;
 
     @media (min-width: 992px) {
       grid-template-columns: 250px minmax(0, 1fr);
-      padding: 0 2rem;
+      padding: 0 $docs-gutter-lg;
     }
 
     @media (min-width: 1280px) {
-      grid-template-columns: 260px minmax(0, 1fr) 220px;
+      grid-template-columns: 250px minmax(0, 1fr) 220px;
+      gap: 3.5rem;
     }
   }
 
@@ -30,7 +31,6 @@
   .docs-sidenav {
     @media (min-width: 992px) {
       display: block;
-      border-right: 1px solid rgba($primary, 0.08);
     }
   }
 
@@ -46,34 +46,36 @@
     top: $docs-header-height;
     max-height: calc(100vh - #{$docs-header-height});
     overflow-y: auto;
-    padding: 2rem 1rem 2rem 0;
+    padding: 2rem 0.5rem 2rem 0;
     scrollbar-width: thin;
-    scrollbar-color: rgba($primary, 0.15) transparent;
+    scrollbar-color: $docs-border transparent;
   }
 
   .docs-sidenav-title {
+    font-family: $docs-font-head;
     font-size: 0.95rem;
-    font-weight: 700;
-    color: $primary;
+    font-weight: 800;
+    color: $docs-navy;
     margin-bottom: 1rem;
   }
 
   // Colonne principale
   .docs-main {
     min-width: 0;
-    max-width: 780px;
-    padding: 2rem 0 4rem;
+    max-width: $docs-content-width;
+    padding: 2.25rem 0 5rem;
   }
 
   .docs-page-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: $primary;
-    margin: 0.5rem 0 2rem;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0.75rem 0 2rem;
+    overflow-wrap: break-word;
 
     @media (max-width: 991.98px) {
-      font-size: 1.75rem;
+      font-size: 1.9rem;
       margin-bottom: 1.5rem;
     }
   }
@@ -81,8 +83,9 @@
   // Menu de section sur mobile et tablette
   .docs-mobile-nav {
     margin-bottom: 1.5rem;
-    border: 1px solid rgba($primary, 0.12);
-    border-radius: 8px;
+    border: 1px solid $docs-border;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
 
     @media (min-width: 992px) {
       display: none;
@@ -95,7 +98,7 @@
       padding: 0.75rem 1rem;
       font-weight: 600;
       font-size: 0.9rem;
-      color: $primary;
+      color: $docs-navy;
       cursor: pointer;
       list-style: none;
 
@@ -117,50 +120,7 @@
     }
 
     nav {
-      padding: 0 1rem 1rem;
-    }
-  }
-
-  // Sommaire « Sur cette page »
-  .docs-toc-nav {
-    border-left: 1px solid rgba($primary, 0.08);
-    padding-left: 1rem;
-
-    .docs-toc-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: rgba($primary, 0.6);
-      margin-bottom: 0.75rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li.level-2 {
-      padding-left: 0.75rem;
-    }
-
-    a {
-      display: block;
-      padding: 0.25rem 0;
-      font-size: 0.82rem;
-      line-height: 1.4;
-      color: rgba($primary, 0.7);
-      text-decoration: none;
-
-      &:hover {
-        color: $primary;
-      }
-
-      &.active {
-        color: $docs-accent;
-        font-weight: 600;
-      }
+      padding: 0 0.5rem 0.75rem 1.25rem;
     }
   }
 }

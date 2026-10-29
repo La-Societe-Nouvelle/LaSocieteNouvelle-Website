@@ -78,32 +78,15 @@
 @import "databrowser/components/charts.scss";
 
 // ===================================
-// Documentation - Parts
+// Documentation
 // ===================================
-@import "docs/parts/docs-header.scss";
-@import "docs/parts/docs-footer.scss";
-
-// ===================================
-// Documentation - Pages
-// ===================================
-@import "docs/pages/docs-home.scss";
-
-// ===================================
-// Documentation - Components
-// ===================================
-@import "docs/components/docs-layout.scss";
-@import "docs/components/docs-navigation.scss";
-@import "docs/components/docs-breadcrumb.scss";
-@import "docs/components/docs-content.scss";
-@import "docs/components/docs-footnotes.scss";
-@import "docs/components/docs-mdx.scss";
-@import "docs/components/docs-search.scss";
+@import "docs/index.scss";
 
 // ===================================
 // Fonts
 // ===================================
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap");
 
 /* Global */
 

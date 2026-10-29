@@ -1,0 +1,247 @@
+// ===================================
+// Contenu des pages (Markdown / MDX)
+// ===================================
+
+.docs-theme .docs-content {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: $docs-text;
+  overflow-wrap: break-word;
+
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: calc(#{$docs-header-height} + 1.5rem); // Ancres sous le header fixe
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+    margin: 3rem 0 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    margin: 2.25rem 0 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    margin: 1.75rem 0 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    li::marker {
+      color: $docs-muted;
+    }
+  }
+
+  a {
+    color: $docs-link;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: $docs-border-strong;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+    &:hover {
+      color: $docs-navy;
+      text-decoration-color: $docs-coral;
+    }
+  }
+
+  strong {
+    color: $docs-navy;
+  }
+
+  em {
+    font-size: 0.9em;
+  }
+
+  code {
+    padding: 0.15rem 0.4rem;
+    border: 1px solid $docs-border;
+    border-radius: 6px;
+    background: $docs-lavender-pale;
+    color: $docs-navy;
+    font-family: $docs-font-mono;
+    font-size: 0.85em;
+  }
+
+  pre {
+    margin-bottom: 1.5rem;
+    padding: 1.1rem 1.25rem;
+    overflow-x: auto;
+    border-radius: $docs-radius-md;
+    background: $docs-navy;
+    color: #e6e7fb;
+    font-size: 0.85rem;
+    line-height: 1.65;
+
+    code {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    color: $docs-navy;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  // Tableaux larges : défilement horizontal plutôt que débordement
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+
+    th,
+    td {
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      border-bottom: 1px solid $docs-border;
+    }
+
+    th {
+      background: $docs-lavender-pale;
+      font-weight: 600;
+      color: $docs-navy;
+    }
+
+    tr:hover td {
+      background: $docs-lavender-pale;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: $docs-radius-md;
+  }
+
+  .alert {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 0;
+    border-radius: $docs-radius-md;
+
+    &.alert-info {
+      background: $docs-lavender-pale;
+      color: $docs-text;
+    }
+  }
+
+  // Notes simples
+  .note {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: $docs-muted;
+    box-shadow: inset 2px 0 0 $docs-border-strong;
+  }
+
+  // Notes de bas de page
+  sup {
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $docs-border;
+    font-size: 0.9rem;
+    color: $docs-muted;
+
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .data-footnote-backref {
+      margin-left: 0.5rem;
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    h2 {
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Ancien bloc de formule (pages non migrées vers <Formula>)
+.docs-theme {
+  .formula-block {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    overflow-x: auto;
+  }
+
+  .formula {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: $docs-radius-sm;
+    background: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}

@@ -1,0 +1,28 @@
+// ===================================
+// Base : typographie et couleurs de la documentation
+// ===================================
+
+.docs-theme {
+  font-family: $docs-font-body;
+  color: $docs-text;
+  background: white;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $docs-font-head;
+    font-weight: 800;
+    color: $docs-navy;
+  }
+
+  a {
+    color: $docs-link;
+
+    &:hover {
+      color: $docs-navy;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid $docs-link;
+    outline-offset: 2px;
+  }
+}

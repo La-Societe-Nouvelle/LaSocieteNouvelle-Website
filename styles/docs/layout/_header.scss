@@ -1,14 +1,15 @@
 // ===================================
-// Documentation Header - barre compacte et fixe
+// En-tête : barre compacte et fixe
 // ===================================
 
 .docs-header {
   position: sticky;
   top: 0;
   z-index: 1030;
-  background: rgba(white, 0.96);
+  background: rgba(white, 0.94);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba($primary, 0.1);
+  border-bottom: 1px solid $docs-border;
+  font-family: $docs-font-body;
 
   .docs-header-bar {
     padding: 0;
@@ -22,11 +23,11 @@
     width: 100%;
     max-width: $docs-shell-width;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 $docs-gutter;
 
     @media (min-width: 992px) {
       flex-wrap: nowrap;
-      padding: 0 2rem;
+      padding: 0 $docs-gutter-lg;
     }
   }
 
@@ -47,24 +48,21 @@
     .docs-brand-divider {
       width: 1px;
       height: 24px;
-      background: rgba($primary, 0.15);
+      background: $docs-border;
     }
 
     .docs-brand-label {
-      font-weight: 700;
+      font-family: $docs-font-head;
+      font-weight: 800;
       font-size: 1rem;
-      color: $primary;
+      color: $docs-navy;
       text-decoration: none;
-
-      &:hover {
-        color: $docs-accent;
-      }
     }
   }
 
   .navbar-collapse {
     @media (min-width: 992px) {
-      margin-left: 2.5rem;
+      margin-left: 2rem;
     }
   }
 
@@ -73,7 +71,7 @@
     padding: 0.5rem;
 
     &:focus {
-      box-shadow: 0 0 0 2px rgba($docs-accent, 0.4);
+      box-shadow: 0 0 0 2px $docs-border-strong;
     }
   }
 
@@ -81,33 +79,22 @@
     gap: 0.25rem;
 
     .nav-link {
-      position: relative;
       padding: 0.5rem 0.75rem;
       font-size: 0.9rem;
-      font-weight: 600;
-      color: rgba($primary, 0.8);
-      border-radius: 6px;
+      font-weight: 500;
+      color: $docs-text;
+      border-radius: $docs-radius-pill;
       white-space: nowrap;
 
       &:hover {
-        color: $primary;
-        background: rgba($primary, 0.04);
+        color: $docs-navy;
+        background: $docs-lavender-pale;
       }
 
       &.active {
-        color: $docs-accent;
-
-        @media (min-width: 992px) {
-          &::after {
-            content: '';
-            position: absolute;
-            left: 0.75rem;
-            right: 0.75rem;
-            bottom: -0.85rem;
-            height: 2px;
-            background: $docs-accent;
-          }
-        }
+        color: $docs-navy;
+        background: $docs-lavender;
+        font-weight: 600;
       }
 
       i {
@@ -119,17 +106,9 @@
     @media (max-width: 991.98px) {
       padding: 0.5rem 0 1rem;
 
-      .nav-link.active {
-        background: $docs-accent-light;
+      .nav-link {
+        border-radius: $docs-radius-sm;
       }
-    }
-  }
-}
-
-.docs-theme {
-  .section__title {
-    &::after {
-      background-color: $docs-accent;
     }
   }
 }

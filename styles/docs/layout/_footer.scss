@@ -1,0 +1,67 @@
+// ===================================
+// Pied de page : une seule bande compacte
+// ===================================
+
+.docs-theme {
+  .docs-footer {
+    border-top: 1px solid $docs-border;
+    font-size: 0.85rem;
+    color: $docs-muted;
+
+    .docs-footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      max-width: $docs-shell-width;
+      margin: 0 auto;
+      padding: 1.5rem $docs-gutter;
+
+      @media (min-width: 992px) {
+        padding: 1.5rem $docs-gutter-lg;
+      }
+    }
+
+    .docs-footer-copyright {
+      margin: 0 auto 0 0;
+    }
+
+    .docs-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: $docs-muted;
+        text-decoration: none;
+
+        &:hover {
+          color: $docs-navy;
+        }
+      }
+    }
+
+    .docs-footer-socials {
+      display: flex;
+      gap: 0.25rem;
+
+      a {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: $docs-radius-sm;
+        color: $docs-muted;
+        font-size: 1.05rem;
+
+        &:hover {
+          color: $docs-navy;
+          background: $docs-lavender-pale;
+        }
+      }
+    }
+  }
+}
