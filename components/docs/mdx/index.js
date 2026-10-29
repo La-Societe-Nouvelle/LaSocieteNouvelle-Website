@@ -6,7 +6,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import metaData from '@/lib/metaData.json';
-import { BlockMath } from 'react-katex';
+import { BlockMath, InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 const isExternal = (href) => /^https?:\/\//.test(href || '');
@@ -89,14 +89,27 @@ export function Card({ href, title, icon, children }) {
 }
 
 /**
- * Formule centrée, avec légende facultative
- * <Formula math={'L = (I - A)^{-1}'} caption="Matrice de Leontief" />
+ * Formule centrée, avec légende et variables facultatives
+ * <Formula math={'L = (I - A)^{-1}'} caption="Matrice de Leontief"
+ *   vars={[['L', 'Matrice de Leontief'], ...]} />
  */
-export function Formula({ math, caption }) {
+export function Formula({ math, caption, vars }) {
   return (
     <figure className="docs-formula">
-      <BlockMath math={math} />
+      <div className="docs-formula-math">
+        <BlockMath math={math} />
+      </div>
       {caption && <figcaption>{caption}</figcaption>}
+      {vars && (
+        <dl className="docs-formula-vars">
+          {vars.map(([symbol, label]) => (
+            <div key={symbol}>
+              <dt><InlineMath math={symbol} /></dt>
+              <dd>{label}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </figure>
   );
 }

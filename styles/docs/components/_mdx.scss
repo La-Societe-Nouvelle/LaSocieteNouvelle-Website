@@ -119,19 +119,47 @@
     .bi { margin-left: auto; color: $docs-coral; }
   }
 
-  // Formules
+  // Formules : formule en tête, variables en dessous
   .docs-formula {
-    margin: 1.5rem 0;
-    padding: 0.75rem 1rem;
-    overflow-x: auto;
+    margin: 1.75rem 0;
+    border: 1px solid $docs-border;
     border-radius: $docs-radius-md;
-    background: $docs-lavender-pale;
+    overflow: hidden;
+
+    .docs-formula-math {
+      padding: 0.5rem 1.25rem;
+      overflow-x: auto;
+      background: $docs-lavender-pale;
+      color: $docs-navy;
+
+      .katex { font-size: 1.35em; }
+    }
 
     figcaption {
-      padding-bottom: 0.5rem;
+      padding: 0.5rem 1.25rem 0;
       text-align: center;
       font-size: 0.85rem;
       color: $docs-muted;
+    }
+
+    .docs-formula-vars {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 0.6rem 1.25rem;
+      margin: 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+
+      > div { display: contents; }
+
+      dt {
+        font-weight: 400;
+        color: $docs-navy;
+        text-align: right;
+      }
+
+      dd { margin: 0; color: $docs-text; }
     }
   }
 }

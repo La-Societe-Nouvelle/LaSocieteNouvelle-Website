@@ -20,17 +20,14 @@ Ces trois formats sont désignés comme des **Indicateurs de Qualité de la Vale
 
 Les indicateurs de type taux de contribution et intensité peuvent être considérés comme des **facteurs d'impacts monétaires**. Il est possible d'obtenir à partir du volume monétaire (montant), **l'impact brut** de la valeur à laquelle ils sont associés (en euros pour les contributions et selon la grandeur physique utilisée pour les intensités).
 
-<div className="formula-block">
-  <div className="formula">
-    IV<sub>E</sub> = XV<sub>E</sub> × V<sub>e</sub>
-  </div>
-
-  **Où :**
-
-  - **IV<sub>E</sub>** : Impact lié à la valeur économique (dépense, chiffre d'affaires, etc.)
-  - **XV<sub>E</sub>** : Qualité de la valeur économique (IQVE hors indices)
-  - **V<sub>e</sub>** : Valeur économique considérée (volume monétaire : montant de la dépense, du chiffre d'affaires, etc.)
-</div>
+<Formula
+  math={String.raw`\mathit{IV}_E = \mathit{XV}_E \times V_e`}
+  vars={[
+    ['\\mathit{IV}_E', "Impact lié à la valeur économique (dépense, chiffre d'affaires, etc.)"],
+    ['\\mathit{XV}_E', 'Qualité de la valeur économique (IQVE hors indices)'],
+    ['V_e', "Valeur économique considérée : volume monétaire (montant de la dépense, du chiffre d'affaires, etc.)"],
+  ]}
+/>
 
 ### Incertitude
 
