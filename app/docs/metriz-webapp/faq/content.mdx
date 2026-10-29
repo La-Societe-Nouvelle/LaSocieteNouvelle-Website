@@ -1,0 +1,67 @@
+## FAQ et dépannage
+
+### Compte et accès
+
+#### Combien de temps faut-il pour que mon compte soit validé ?
+
+Un administrateur examine chaque demande d'inscription. Vous recevez généralement un email de confirmation sous 24 heures. Voir [Créer son compte](/docs/metriz-webapp/creer-un-compte).
+
+#### Le numéro SIREN de mon unité légale n'est pas reconnu
+
+Prenez contact avec le support. Voir [Créer une unité légale](/docs/metriz-webapp/creer-unite-legale).
+
+#### Puis-je utiliser la version locale de l'application ?
+
+Non, la version locale n'est plus maintenue. L'application est accessible à l'adresse [https://metriz.lasocietenouvelle.org](https://metriz.lasocietenouvelle.org). La version précédente reste disponible en open source, sous licence CeCILL.
+
+### Import du FEC
+
+#### Mon FEC est refusé ou mal lu
+
+Vérifiez d'abord le format du fichier : séparateur (tabulation ou barre verticale), libellés des colonnes, encodage (UTF-8 ou ISO-8859-1). L'outil de test de la DGFiP permet de contrôler le fichier. Les erreurs de format les plus courantes sont un séparateur incorrect et des colonnes manquantes ou mal nommées.
+
+#### J'ai des exceptions de lecture après l'import
+
+Elles apparaissent lorsque certains flux ne peuvent pas être tracés, notamment quand plusieurs opérations sont regroupées dans une même écriture comptable (par exemple plusieurs comptes fournisseurs 40x dans la même écriture). Il est conseillé de ne pas grouper les opérations diverses au sein d'une même écriture. Voir [Lecture du FEC](/docs/metriz-webapp/lecture-fec).
+
+#### Je n'ai pas de journal des A-Nouveaux (premier exercice)
+
+Dans le cas d'un premier exercice, il suffit de valider la sélection sans cocher de case.
+
+#### Comment vérifier que l'import est correct ?
+
+Comparez les chiffres des Soldes Intermédiaires de Gestion (deuxième onglet) avec votre comptabilité.
+
+### Fournisseurs
+
+#### Comment renseigner les numéros de SIREN de mes fournisseurs ?
+
+Un fichier Excel prérempli est téléchargeable depuis l'application. Vous pouvez le compléter puis l'importer (.csv ou .xlsx). Les années suivantes, les associations déjà saisies sont récupérées et seuls les nouveaux comptes fournisseurs sont à renseigner.
+
+#### Que se passe-t-il pour un fournisseur sans SIREN ?
+
+Il reste associé à une empreinte sectorielle par défaut.
+
+### Intelligence artificielle
+
+#### Les associations proposées par l'IA sont-elles fiables ?
+
+Aucun résultat produit par l'IA n'est définitif. Les associations des comptes de charges les plus significatifs sont à vérifier et à corriger manuellement si nécessaire.
+
+#### Mes données comptables sont-elles envoyées à un prestataire d'IA ?
+
+Non : le FEC et les fichiers DSN ne sont pas envoyés, ni les montants des écritures ni les données individuelles de paie. Le détail des données transmises est dans [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia).
+
+#### L'IA ne répond pas
+
+Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les calculs d'empreintes restent disponibles à partir des associations et des déclarations saisies manuellement.
+
+### Déclarations
+
+#### Quelle incertitude renseigner ?
+
+Elle dépend de la qualité de la donnée. Une grille indicative est proposée dans [Incertitudes](/docs/metriz-webapp/declarations).
+
+#### Quelles données dois-je préparer ?
+
+Voir les [prérequis](/docs/metriz-webapp/informations-necessaires).

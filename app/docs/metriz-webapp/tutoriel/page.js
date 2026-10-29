@@ -8,11 +8,11 @@ export default function TutorielPage() {
   const { setPageTitle, setPageBreadcrumb } = usePageContext();
 
   useEffect(() => {
-    setPageTitle('Guide d\'Utilisation');
+    setPageTitle('Vue d\'ensemble du parcours');
     setPageBreadcrumb([
       { href: '/docs', title: 'Documentation' },
       { href: '/docs/metriz-webapp', title: 'Metriz' },
-      { title: 'Guide d\'Utilisation' }
+      { title: 'Vue d\'ensemble du parcours' }
     ]);
   }, [setPageTitle, setPageBreadcrumb]);
 

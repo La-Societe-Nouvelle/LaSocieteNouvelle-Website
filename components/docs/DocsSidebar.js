@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import { Nav } from 'react-bootstrap';
 import DocsNavigation from './DocsNavigation';
+import DocsNavigationGroups from './DocsNavigationGroups';
 
-export default function DocsSidebar({ sections, navigation = [], navigationTitle, sidebarTitle = 'SOMMAIRE' }) {
+export default function DocsSidebar({ sections, navigation = [], navigationTitle, navigationGroups = [], sidebarTitle = 'SOMMAIRE' }) {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
@@ -63,6 +64,13 @@ export default function DocsSidebar({ sections, navigation = [], navigationTitle
           </Nav>
 
         </div>
+
+        {/* Menu groupé de la documentation */}
+        {navigationGroups && navigationGroups.length > 0 && (
+          <div className='docs-navigation'>
+            <DocsNavigationGroups groups={navigationGroups} />
+          </div>
+        )}
 
         {/* Navigation vers les sous-pages */}
         {navigation && navigation.length > 0 && (

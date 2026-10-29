@@ -15,6 +15,7 @@ import DocsBreadcrumb from './DocsBreadcrumb';
  * @param {Array} navigation - Tableau des liens de navigation (autres pages)
  *   Exemple: [{ href: '/docs/page', title: 'Titre', icon: 'bi-icon' }, ...]
  * @param {string} navigationTitle - Titre de la section de navigation
+ * @param {Array} navigationGroups - Menu groupé : [{ title, links: [{ href, title }] }] - optionnel
  * @param {Array} breadcrumb - Tableau des éléments du breadcrumb
  *   Exemple: [{ href: '/docs', title: 'Documentation' }, { title: 'Page actuelle' }]
  * @param {React.ReactNode} children - Contenu de la page
@@ -24,6 +25,7 @@ export default function DocsPageLayout({
   sections,
   navigation = [],
   navigationTitle,
+  navigationGroups,
   breadcrumb = [],
   children
 }) {
@@ -119,6 +121,7 @@ export default function DocsPageLayout({
               sections={finalSections}
               navigation={navigation}
               navigationTitle={navigationTitle}
+              navigationGroups={navigationGroups}
               sidebarTitle={sidebarTitle}
             />
           </Col>

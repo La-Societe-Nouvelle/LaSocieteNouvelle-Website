@@ -1,6 +1,8 @@
-## Etapes de calcul
+## Étapes de calcul
 
 L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effectue en 4 étapes :
+
+Ces étapes peuvent être réalisées une à une ([parcours pas à pas](/docs/metriz-webapp/tutoriel)) ou enchaînées automatiquement ([analyse rapide](/docs/metriz-webapp/analyse-rapide)).
 
 1. Import des écritures comptables  
 2. Catégorisation des comptes de charges et d'immobilisations  
@@ -11,9 +13,9 @@ L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effec
 
 ### Import des écritures comptables
 
-L'importation des écritures comptables s'effectue via un Fichier d'Ecritures Comptables (FEC).  
+L'importation des écritures comptables s'effectue via un Fichier d'Écritures Comptables (FEC).  
 
-Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage ISO 8859-15, etc.).  
+Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage UTF-8 ou ISO-8859-1, etc.).  
 
 **Ressources externes :**
 - Normes concernant le fichier d'écritures comptables  
@@ -37,7 +39,7 @@ La lecture des écritures peut entraîner des exceptions (problèmes de lecture)
 La catégorisation des comptes de charges et d'immobilisations permet d'estimer les impacts indirects associés aux dépenses et aux investissements.  
 
 - Pour les immobilisations, une association est faite par défaut à partir des numéros des comptes.  
-- Pour les charges, il est possible d'effectuer une association via l'utilisation d'une IA générative, à partir des libellés et des numéros des comptes.  
+- Pour les charges, il est possible d'effectuer une association via l'utilisation d'une IA générative (voir [utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)), à partir des libellés et des numéros des comptes.  
 
 ### Identification des fournisseurs
 
@@ -45,17 +47,17 @@ L'identification des fournisseurs s'effectue via le numéro de siren.
 
 La correspondance entre le numéro de compte auxiliaire présent au sein des écritures comptables et le numéro de siren peut se faire via l'import d'un fichier (.csv ou .xlsx). Le modèle prérempli est disponible au téléchargement.  
 
-### Evaluation et Déclaration des impacts directs
+### Évaluation et Déclaration des impacts directs
 
 La déclaration des impacts directs se fait pour chaque indicateur.  
 
 Une fois la déclaration validée, les résultats sont directement accessibles, au sein du tableau de bord.  
 
 Des outils d'évaluation sont mis à disposition pour la mesure des impacts suivants :  
-- Emissions directes de gaz à effet de serre  
+- Émissions directes de gaz à effet de serre  
 - Consommation directe d'énergie  
 - Contribution directe à l'évolution des compétences et des connaissances  
 - Indice de répartition des rémunérations  
-- Ecart de rémunérations femmes/hommes  
+- Écart de rémunérations femmes/hommes  
 
-Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/empreinte-societale/declarations)
+Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/metriz-webapp/declarations)

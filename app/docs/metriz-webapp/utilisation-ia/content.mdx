@@ -1,0 +1,54 @@
+## Utilisation de l'IA
+
+METRIZ s'appuie sur l'intelligence artificielle générative pour automatiser certaines tâches et aider à la lecture des résultats. Aucun résultat produit par l'IA n'est définitif : chaque usage ci-dessous doit être vérifié par l'utilisateur.
+
+---
+
+### Prestataires
+
+- **Mistral AI** est le prestataire principal.
+- **OpenAI** est utilisé en secours lorsque Mistral AI est indisponible ou ne répond pas dans le délai prévu.
+
+Les échanges avec Mistral AI sont effectués sans conservation de la conversation côté prestataire.
+
+---
+
+### Usages
+
+#### 1. Association des comptes de charges
+
+- **Objectif** : rattacher chaque compte de charges à la division d'activité des fournisseurs, pour estimer les impacts indirects.
+- **Données transmises** : le libellé du compte de charges et la division d'activité de l'unité légale.
+- **Résultat** : une division d'activité proposée par compte, avec un niveau de pertinence.
+- **À vérifier** : les associations des comptes les plus significatifs, à corriger manuellement si nécessaire.
+
+#### 2. Estimation des consommations d'eau et d'énergie
+
+- **Objectif** : repérer, dans les charges, les dépenses d'eau, d'électricité, de gaz, de carburant, de fioul ou de biomasse, afin de proposer une estimation des consommations.
+- **Données transmises** : le numéro et le libellé du compte, ainsi que le libellé de l'écriture comptable.
+- **Résultat** : une catégorie par dépense, convertie en consommation estimée.
+- **À vérifier** : les quantités estimées, à remplacer par les valeurs des factures ou des compteurs lorsqu'elles sont disponibles. L'incertitude associée est à ajuster en conséquence (voir [déclarations](/docs/metriz-webapp/declarations)).
+
+#### 3. Analyse par indicateur
+
+- **Objectif** : rédiger, pour un indicateur, une note de lecture contextualisée : diagnostic, comparaison à la moyenne du secteur, sources d'impact et pistes d'action.
+- **Données transmises** : le nom de l'entreprise et son secteur, la valeur de l'indicateur et ses composantes, la moyenne sectorielle, les principaux achats contributeurs et les impacts directs déclarés.
+- **Résultat** : un texte de quelques paragraphes affiché dans la vue de l'indicateur.
+- **À vérifier** : les pistes d'action sont des orientations générales, pas des conseils personnalisés.
+
+#### 4. Analyse générale
+
+- **Objectif** : proposer une synthèse de l'ensemble des indicateurs : points forts, points d'attention et actions prioritaires.
+- **Données transmises** : le nom de l'entreprise, son secteur, l'exercice, les valeurs des indicateurs, leur position par rapport à la branche et la décomposition de l'empreinte.
+- **Résultat** : une note de synthèse affichée sur le Tableau de bord.
+
+---
+
+### Ce qui n'est pas transmis
+
+- Le fichier FEC et les fichiers DSN ne sont pas envoyés aux prestataires d'IA.
+- Les montants des écritures comptables et les données individuelles de paie ne sont pas transmis.
+
+### Indisponibilité
+
+Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les calculs d'empreintes ne dépendent pas de l'IA : ils restent disponibles à partir des associations et des déclarations saisies manuellement.

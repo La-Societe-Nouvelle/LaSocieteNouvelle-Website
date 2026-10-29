@@ -8,11 +8,11 @@ export default function InformationsNecessairesPage() {
   const { setPageTitle, setPageBreadcrumb } = usePageContext();
 
   useEffect(() => {
-    setPageTitle('Déclaration des externalités directes');
+    setPageTitle('Indicateurs et déclarations');
     setPageBreadcrumb([
       { href: '/docs', title: 'Documentation' },
       { href: '/docs/metriz-webapp', title: 'Metriz' },
-      { title: 'Déclaration' }
+      { title: 'Indicateurs et déclarations' }
     ]);
   }, [setPageTitle, setPageBreadcrumb]);
 

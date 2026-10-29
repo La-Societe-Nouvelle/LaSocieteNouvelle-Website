@@ -3,41 +3,8 @@
 import { createContext, useState, useContext } from 'react';
 import { usePathname } from 'next/navigation';
 import DocsPageLayout from '@/components/docs/DocsPageLayout';
-
-const allNavigation = [
-  {
-    href: '/docs/metriz-webapp/',
-    title: 'Présentation',
-  },
-  {
-    href: '/docs/metriz-webapp/tutoriel',
-    title: 'Guide d\'Utilisation',
-  },
-  {
-    href: '/docs/metriz-webapp/informations-necessaires',
-    title: 'Informations nécessaires',
-  },
-  {
-    href: '/docs/metriz-webapp/etapes-de-calcul',
-    title: 'Etapes de calcul',
-  },
-  {
-    href: '/docs/metriz-webapp/declarations',
-    title: 'Déclarations',
-  },
-  {
-    href: '/docs/metriz-webapp/lecture-fec',
-    title: 'Lecture du FEC',
-  },
-  {
-    href: '/docs/metriz-webapp/lecture-dsn',
-    title: 'Lecture des DSN',
-  },
-  {
-    href: '/docs/metriz-webapp/integrations',
-    title: 'Intégrations',
-  }
-];
+import DocsPrevNext from '@/components/docs/DocsPrevNext';
+import { navigationGroups, getPrevNext } from './navigation';
 
 // Context pour partager title, breadcrumb, navigation
 const PageContext = createContext();
@@ -48,16 +15,16 @@ export function usePageContext() {
 
 export default function MetrizWebappLayoutClient({ children }) {
   const pathname = usePathname();
-  const defaultNavigation = allNavigation.filter(item => item.href !== pathname);
+  const { prev, next } = getPrevNext(pathname);
 
   const [pageTitle, setPageTitle] = useState('');
   const [pageBreadcrumb, setPageBreadcrumb] = useState([]);
   const [customNavigation, setCustomNavigation] = useState(null);
   const [customNavigationTitle, setCustomNavigationTitle] = useState(null);
 
-  // Utiliser la navigation personnalisée si définie, sinon la navigation par défaut
-  const navigation = customNavigation || defaultNavigation;
-  const navigationTitle = customNavigationTitle || 'SECTIONS';
+  // Navigation complémentaire (ex. autres indicateurs), en plus du menu groupé
+  const navigation = customNavigation || [];
+  const navigationTitle = customNavigationTitle;
 
   return (
     <PageContext.Provider value={{
@@ -73,8 +40,10 @@ export default function MetrizWebappLayoutClient({ children }) {
         breadcrumb={pageBreadcrumb}
         navigation={navigation}
         navigationTitle={navigationTitle}
+        navigationGroups={navigationGroups}
       >
         {children}
+        <DocsPrevNext prev={prev} next={next} />
       </DocsPageLayout>
     </PageContext.Provider>
   );

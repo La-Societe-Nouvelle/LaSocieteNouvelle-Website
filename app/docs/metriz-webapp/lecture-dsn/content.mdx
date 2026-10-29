@@ -4,7 +4,7 @@
 
 Lors de l'import, seules les données nécessaires à la production des indicateurs sociaux sont extraites du fichier.  
 
-Les données restent dans la page web (au sein du navigateur) et ne font aucunement l'objet d'une collecte.
+Les fichiers sont lus dans le navigateur. Ils ne sont pas conservés : seuls les résultats de la lecture sont enregistrés.
 
 ---
 
@@ -15,35 +15,35 @@ Les données restent dans la page web (au sein du navigateur) et ne font aucunem
 Ces données permettent de vérifier que l'ensemble des déclarations ont bien été déposées, sans doublon.  
 
 **Éléments lus :**  
-- `S20.G00.05.001` — Nature  
-- `S20.G00.05.002` — Type  
-- `S20.G00.05.003` — Fraction  
-- `S20.G00.05.004` — Ordre  
-- `S20.G00.05.005` — Mois  
-- `S20.G00.05.007` — Date  
-- `S20.G00.05.008` — Champ  
-- `S20.G00.05.010` — Devise  
+- `S20.G00.05.001` : Nature  
+- `S20.G00.05.002` : Type  
+- `S20.G00.05.003` : Fraction  
+- `S20.G00.05.004` : Ordre  
+- `S20.G00.05.005` : Mois  
+- `S20.G00.05.007` : Date  
+- `S20.G00.05.008` : Champ  
+- `S20.G00.05.010` : Devise  
 
 #### Éléments relatifs à l’entreprise (`S21.G00.06`)
 
 **Éléments lus :**  
-- `S21.G00.06.001` — Siren  
-- `S21.G00.06.002` — Nic  
+- `S21.G00.06.001` : Siren  
+- `S21.G00.06.002` : Nic  
 
 #### Éléments relatifs à l’établissement (`S21.G00.11`)
 
 **Éléments lus :**  
-- `S21.G00.11.001` — Nic  
+- `S21.G00.11.001` : Nic  
 
 #### Éléments relatifs aux individus (`S21.G00.30`)
 
 **Éléments lus :**  
-- `S21.G00.30.001` — Identifiant  
-- `S21.G00.30.002` — Nom de famille  
-- `S21.G00.30.003` — Nom d’usage  
-- `S21.G00.30.004` — Prénoms  
-- `S21.G00.30.005` — Sexe  
-- `S21.G00.30.020` — Identifiant technique  
+- `S21.G00.30.001` : Identifiant  
+- `S21.G00.30.002` : Nom de famille  
+- `S21.G00.30.003` : Nom d’usage  
+- `S21.G00.30.004` : Prénoms  
+- `S21.G00.30.005` : Sexe  
+- `S21.G00.30.020` : Identifiant technique  
 
 À ces éléments s’ajoutent les éléments relatifs aux **contrats** et aux **versements**.
 
@@ -52,23 +52,23 @@ Ces données permettent de vérifier que l'ensemble des déclarations ont bien �
 ### Éléments relatifs aux contrats (`S21.G00.40`)
 
 **Éléments lus :**  
-- `S21.G00.40.001` — Date de début  
-- `S21.G00.40.002` — Statut conventionnel  
-- `S21.G00.40.004` — PCS ESE  
-- `S21.G00.40.005` — Complément PCS ESE  
-- `S21.G00.40.007` — Nature  
-- `S21.G00.40.009` — Numéro  
-- `S21.G00.40.011` — Unité de mesure  
-- `S21.G00.40.012` — Catégorie de quotité  
-- `S21.G00.40.013` — Quotité  
-- `S21.G00.40.014` — Modalité de temps  
+- `S21.G00.40.001` : Date de début  
+- `S21.G00.40.002` : Statut conventionnel  
+- `S21.G00.40.004` : PCS ESE  
+- `S21.G00.40.005` : Complément PCS ESE  
+- `S21.G00.40.007` : Nature  
+- `S21.G00.40.009` : Numéro  
+- `S21.G00.40.011` : Unité de mesure  
+- `S21.G00.40.012` : Catégorie de quotité  
+- `S21.G00.40.013` : Quotité  
+- `S21.G00.40.014` : Modalité de temps  
 
 ---
 
 ### Éléments relatifs aux versements (`S21.G00.50`)
 
 **Éléments lus :**  
-- `S21.G00.50.001` — Date  
+- `S21.G00.50.001` : Date  
 
 Pour chaque versement sont associés :  
 - les **rémunérations** (`S21.G00.51`),  
@@ -80,12 +80,12 @@ Pour chaque versement sont associés :
 ### Éléments relatifs aux rémunérations (`S21.G00.51`)
 
 **Éléments lus :**  
-- `S21.G00.51.001` — Date de début  
-- `S21.G00.51.002` — Date de fin  
-- `S21.G00.51.010` — Numéro de contrat  
-- `S21.G00.51.011` — Type  
-- `S21.G00.51.012` — Nombre d’heures  
-- `S21.G00.51.013` — Montant  
+- `S21.G00.51.001` : Date de début  
+- `S21.G00.51.002` : Date de fin  
+- `S21.G00.51.010` : Numéro de contrat  
+- `S21.G00.51.011` : Type  
+- `S21.G00.51.012` : Nombre d’heures  
+- `S21.G00.51.013` : Montant  
 
 Pour chaque rémunération sont associées les **activités** (`S21.G00.53`) concernées.
 
@@ -94,25 +94,25 @@ Pour chaque rémunération sont associées les **activités** (`S21.G00.53`) con
 ### Éléments relatifs aux primes (`S21.G00.52`)
 
 **Éléments lus :**  
-- `S21.G00.52.001` — Type  
-- `S21.G00.52.002` — Montant  
+- `S21.G00.52.001` : Type  
+- `S21.G00.52.002` : Montant  
 
 ---
 
 ### Éléments relatifs aux activités (`S21.G00.53`)
 
 **Éléments lus :**  
-- `S21.G00.53.001` — Type  
-- `S21.G00.53.002` — Mesure  
-- `S21.G00.53.003` — Unité  
+- `S21.G00.53.001` : Type  
+- `S21.G00.53.002` : Mesure  
+- `S21.G00.53.003` : Unité  
 
 ---
 
 ### Éléments relatifs aux autres revenus (`S21.G00.54`)
 
 **Éléments lus :**  
-- `S21.G00.54.001` — Type  
-- `S21.G00.54.002` — Montant  
+- `S21.G00.54.001` : Type  
+- `S21.G00.54.002` : Montant  
 
 ---
 

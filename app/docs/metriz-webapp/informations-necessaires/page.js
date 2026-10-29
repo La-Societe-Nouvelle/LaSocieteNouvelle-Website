@@ -8,11 +8,11 @@ export default function InformationsNecessairesPage() {
   const { setPageTitle, setPageBreadcrumb } = usePageContext();
 
   useEffect(() => {
-    setPageTitle('Informations nécessaires');
+    setPageTitle('Prérequis : informations nécessaires');
     setPageBreadcrumb([
       { href: '/docs', title: 'Documentation' },
       { href: '/docs/metriz-webapp', title: 'Metriz' },
-      { title: 'Informations nécessaires' }
+      { title: 'Prérequis : informations nécessaires' }
     ]);
   }, [setPageTitle, setPageBreadcrumb]);
 
