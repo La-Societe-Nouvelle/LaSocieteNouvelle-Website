@@ -50,9 +50,7 @@ Elle se compose de trois principales tables de données :
 
 Pour « augmenter » le modèle économique, on associe à chaque branche un **vecteur d'impact environnemental et social**.
 
-{/* TODO fond : phrase incomplète (« Il peut être facilement [étendu ?] à d'autres dimensions ») */}
-
-L'exercice est réalisé sur les [12 dimensions présentes au sein de l'Empreinte Sociétale](/docs/empreinte-societale/indicateurs) (Émissions de GES, Écart de rémunération femmes/hommes, etc.). Il peut être facilement à d'autres dimensions sociales et environnementales.
+L'exercice est réalisé sur les [12 dimensions présentes au sein de l'Empreinte Sociétale](/docs/empreinte-societale/indicateurs) (Émissions de GES, Écart de rémunération femmes/hommes, etc.). Il peut être facilement étendu à d'autres dimensions sociales et environnementales.
 
 Les sources des impacts directs sont détaillées par indicateur dans la page [Sources des données](/docs/donnees-statistiques/sources).
 
@@ -76,9 +74,9 @@ Elle représente le **niveau total de production requis dans chaque secteur (dir
 
 Afin d'éviter les effets de double comptage dus aux boucles intersectorielles, une **normalisation de la matrice L** est appliquée par sa diagonale :
 
-{/* TODO fond : notation L_\mu ici, L^\mu à l'étape 4 */}
+<Formula math={String.raw`L^\mu = \frac{L}{\operatorname{diag}(L)}`} />
 
-<Formula math={String.raw`L_\mu = \frac{L}{\operatorname{diag}(L)}`} />
+Cette opération permet de conserver uniquement les effets nets dans la chaîne d'approvisionnement, en neutralisant les effets d'auto-dépendance sectorielle. La matrice L<sup>μ</sup> est interprétée comme un multiplicateur économique pur, rapporté à une unité de production totale.
 
 ### 3. Construction du vecteur d'intensité d'impact direct
 
@@ -98,16 +96,14 @@ Chaque élément de la matrice obtenue représente l'ensemble des externalités 
 
 À partir du vecteur d'empreinte totale E, on dérive plusieurs intensités d'empreinte sectorielles, exprimées en **impact par unité monétaire**.
 
-{/* TODO fond : formules E_PRD et E_GVA (« / 1 ») à vérifier, section à compléter (NVA, CFC ?) */}
-
 #### Empreinte de la production
 
-<Formula math={String.raw`E_{\text{PRD}} = \frac{E_{\text{PRD}}}{1}`} />
+<Formula math={String.raw`E_{\text{PRD}} = \frac{E}{PRD}`} />
 
 #### Empreinte de la valeur ajoutée brute (EGVA)
 
-<Formula math={String.raw`E_{\text{GVA}} = \frac{C_{\text{GVA}}}{1}`} />
+<Formula math={String.raw`E_{\text{GVA}} = \frac{C}{GVA}`} />
 
 #### Empreinte des consommations intermédiaires (EIC)
 
-<Formula math={String.raw`E_{\text{IC}} = \frac{E}{C_{\text{IC}}}`} />
+<Formula math={String.raw`E_{\text{IC}} = \frac{E - C}{IC}`} />
