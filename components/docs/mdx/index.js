@@ -116,14 +116,14 @@ export function Formula({ math, caption, vars }) {
 
 /**
  * Grille des indicateurs avec leurs pictos, socio-économiques puis environnementaux
- * <IndicatorGrid /> ou <IndicatorGrid family="indics-env" />
+ * <IndicatorGrid /> ou <IndicatorGrid family="indics-env" /> ou <IndicatorGrid keys={[...]} base="/docs/..." />
  */
-export function IndicatorGrid({ family }) {
-  const keys = family ? metaData[family].indics : [...metaData['indics-es'].indics, ...metaData['indics-env'].indics];
+export function IndicatorGrid({ family, keys: only, base = '/docs/empreinte-societale/indicateurs' }) {
+  const keys = only || (family ? metaData[family].indics : [...metaData['indics-es'].indics, ...metaData['indics-env'].indics]);
   return (
     <div className="docs-indicators">
       {keys.map((key) => (
-        <Link key={key} href={`/docs/empreinte-societale/indicateurs/${key}`} className="docs-indicator">
+        <Link key={key} href={`${base}/${key}`} className="docs-indicator">
           <Image src={`/ESE/picto/ese-${key}-color.svg`} alt="" width={40} height={40} />
           {metaData[key].libelle}
         </Link>
