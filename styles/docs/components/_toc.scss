@@ -6,12 +6,11 @@
   padding-top: 0.5rem;
 
   .docs-toc-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: $docs-muted;
-    margin-bottom: 0.75rem;
+    font-family: $docs-font-head;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: $docs-navy;
+    margin-bottom: 0.6rem;
   }
 
   ul {

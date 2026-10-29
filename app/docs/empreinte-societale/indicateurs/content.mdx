@@ -1,4 +1,4 @@
-L'Empreinte Sociétale de l'Entreprise se compose de 12 indicateurs : 6 indicateurs socio-économiques et 6 indicateurs environnementaux.
+L'Empreinte Sociétale de l'Entreprise se compose de 12 indicateurs : **6 indicateurs socio-économiques et 6 indicateurs environnementaux**.
 
 <IndicatorGrid />
 
@@ -6,31 +6,19 @@ L'Empreinte Sociétale de l'Entreprise se compose de 12 indicateurs : 6 indicate
 
 L'Empreinte Sociétale de l'Entreprise regroupe 3 types d'indicateurs :
 
-### Taux de contribution (en % de la valeur)
+| Type | Grandeur | Exemples |
+|---|---|---|
+| **Taux de contribution** | Part de la valeur fléchée vers des entreprises, des postes de dépenses ou des activités spécifiques (en % de la valeur) | Contribution à l'économie nationale, contribution à l'évolution des compétences |
+| **Intensité** | Grandeur physique par unité de valeur (g/€, kJ/€, etc.) | Intensité énergétique (kJ/€), intensité carbone (gCO2e/€) |
+| **Indice** | Grandeur sans dimension, non exprimée par unité de valeur | Écart de rémunérations F/H, indice de GINI |
 
-Part de la valeur fléchée vers des entreprises, des postes de dépenses ou des activités spécifiques, grandeur monétaire par unité de valeur.
-
-*Ex : contribution à l'économie nationale, contribution à l'évolution des compétences, etc.*
-
-### Intensité (en g/€, m²/€, etc.)
-
-Grandeur physique par unité de valeur
-
-*Ex : intensité énergétique (kJ/€), intensité carbone (gCO2e/€), etc.*
-
-### Indice
-
-Grandeur sans dimension (i.e. non exprimée par unité de valeur)
-
-*Ex : Ecart de rémunérations F/H, Indice de répartition des rémunérations (Indice de GINI), etc.*
-
-Ces trois formats sont désignés comme des **Indicateurs de Qualité de la Valeur Economique (IQVE)** ; ils sont indépendants du volume monétaire auquel ils sont associés. Ils apportent une information sur les externalités liées à la production de la valeur économique en question (impacts générés, conditions de production, etc.).
+Ces trois formats sont désignés comme des **Indicateurs de Qualité de la Valeur Économique (IQVE)** ; ils sont **indépendants du volume monétaire** auquel ils sont associés. Ils apportent une information sur les externalités liées à la production de la valeur économique en question (impacts générés, conditions de production, etc.).
 
 ## Propriétés des indicateurs
 
 ### Impact brut
 
-Les indicateurs de type taux de contribution et intensité peuvent être considérés comme des facteurs d'impacts monétaires. Il est possible d'obtenir à partir du volume monétaire (montant), l'impact brut de la valeur à laquelle ils sont associés (en euros pour les contributions et selon la grandeur physique utilisée pour les intensités).
+Les indicateurs de type taux de contribution et intensité peuvent être considérés comme des **facteurs d'impacts monétaires**. Il est possible d'obtenir à partir du volume monétaire (montant), **l'impact brut** de la valeur à laquelle ils sont associés (en euros pour les contributions et selon la grandeur physique utilisée pour les intensités).
 
 <div className="formula-block">
   <div className="formula">
@@ -46,19 +34,23 @@ Les indicateurs de type taux de contribution et intensité peuvent être consid�
 
 ### Incertitude
 
-Pour chaque valeur (hors valeurs macroéconomiques) est associée une incertitude, exprimée en pourcentage de la valeur.
+Pour chaque valeur (hors valeurs macroéconomiques) est associée **une incertitude, exprimée en pourcentage de la valeur**.
 
-L'utilisation de données par défaut (Cf. Base de données ouverte) issues de statistiques macroéconomiques ne permet pas de définir une incertitude stricto sensu, c'est-à-dire, un intervalle dans lequel la valeur se situe obligatoirement. Il est cependant déterminé un intervalle dans lequel la valeur a de forte probabilité de se situer. Il est important de noter qu'il existe donc une probabilité non nulle pour que la valeur réelle se situe hors de cette « incertitude ».
+L'utilisation de [données par défaut](/docs/donnees-par-defaut) issues de statistiques macroéconomiques ne permet pas de définir une incertitude stricto sensu, c'est-à-dire, un intervalle dans lequel la valeur se situe obligatoirement. Il est cependant déterminé un intervalle dans lequel la valeur a de forte probabilité de se situer. Il est important de noter qu'il existe donc une **probabilité non nulle** pour que la valeur réelle se situe hors de cette « incertitude ».
 
 En l'absence de statistiques suffisantes à l'échelle des entreprises, ces intervalles sont déterminés en fonction des valeurs minimales et maximales qui peuvent être raisonnablement atteintes et de l'amplitude des valeurs disponibles au niveau des branches d'activités. Les choix des intervalles de confiance sont détaillés le plus possible au sein des fiches de chaque indicateur. Pour certains indicateurs, l'incertitude associée peut être fortement élevée.
 
-Ex. Pour certains indicateurs, il existe un facteur supérieur à 10 entre la valeur moyenne à l'échelle de la production intérieure française, et la valeur maximale pouvant être atteinte, soit une incertitude associée supérieure à 1000%.
+<Callout type="warning">
+
+Pour certains indicateurs, il existe un facteur supérieur à 10 entre la valeur moyenne à l'échelle de la production intérieure française, et la valeur maximale pouvant être atteinte, soit une incertitude associée supérieure à 1000 %.
+
+</Callout>
 
 La complétion de la base de données permettra au fur-et-à-mesure d'ajuster les intervalles de confiance grâce aux données disponibles. En parallèle des travaux statistiques ont vocation à consolider les données par défaut proposées et l'estimation des intervalles de confiance qui leur sont associés.
 
 ### Origine de la valeur
 
-Pour chaque valeur, est fournie une indication sur son origine et son mode d'obtention.
+Pour chaque valeur, est fournie **une indication sur son origine et son mode d'obtention**.
 
 Cette information est symbolisée par un code (« flag ») avec les significations suivantes :
 
