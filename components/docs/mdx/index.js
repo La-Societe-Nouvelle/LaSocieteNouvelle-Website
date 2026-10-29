@@ -145,7 +145,7 @@ const sdgs = {
   10: ['Inégalités réduites', 'inequality'],
   11: ['Villes et communautés durables', 'cities'],
   12: ['Consommation et production responsables', 'sustainable-consumption-production'],
-  13: ['Mesures relatives à la lutte contre les changements climatiques', 'climate-change'],
+  13: ['Mesures relatives à la lutte contre les changements climatiques', 'climate-change-2'],
   14: ['Vie aquatique', 'oceans'],
   15: ['Vie terrestre', 'biodiversity'],
   16: ['Paix, justice et institutions efficaces', 'peace-justice'],
