@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Cards, Card, IndicatorGrid } from "@/components/docs/mdx";
 import { DocsSearchButton } from "@/components/docs/DocsSearch";
-import { docsSections, externalLinks, statisticalDatasets } from "@/lib/docsConfig";
+import { docsSections, statisticalDatasets } from "@/lib/docsConfig";
 
 // Raccourcis sous la recherche
 const popularLinks = [
@@ -44,7 +44,7 @@ const profiles = [
         title: dataset.label,
       })),
       { href: "/docs/donnees-statistiques/methodologie", title: "Méthodologie" },
-      { href: "https://lasocietenouvelle.readme.io/", title: "API SINESE" },
+      { href: "https://api.sinese.fr/docs/", title: "API SINESE" },
     ],
   },
 ];
@@ -124,7 +124,7 @@ export default function DocsHome() {
             </div>
           </div>
           <Cards>
-            {[...docsSections, ...externalLinks].map((item) => (
+            {docsSections.map((item) => (
               <Card key={item.href} href={item.href} title={item.shortTitle || item.title} icon={item.icon}>
                 {item.description}
               </Card>
