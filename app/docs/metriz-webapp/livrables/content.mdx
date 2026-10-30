@@ -1,0 +1,88 @@
+Les livrables sont générés depuis le **Tableau de bord**, via le bouton **Exporter les résultats**.
+
+![Menu Exporter les résultats - Application Metriz](/screens-webapp-v4/screen-metriz-v4_export-menu.png)
+
+| Export | Format | Contenu |
+|---|---|---|
+| **Rapport analytique** | PDF ou PowerPoint | Livrable principal de la restitution, au contenu configurable |
+| **Rapports par indicateur** | PDF (archive .zip) | Un rapport détaillé par indicateur sélectionné |
+| **Rapport technique** | PDF | Tableau des résultats de l'exercice |
+| **Données** | .xlsx | Résultats sous forme de données, pour un traitement dans un tableur |
+| **Bon de publication** | PDF | Support pour recueillir l'accord de l'entreprise avant la [publication](/docs/metriz-webapp/publication) |
+
+## Masquer des indicateurs
+
+Chaque indicateur du tableau de bord dispose d'une **case à cocher**. Décochez-la pour masquer l'indicateur dans les livrables, par exemple lorsqu'il n'est pas pertinent pour l'entreprise ou que ses données sont incomplètes.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_dashboard-indicateurs-livrables-inclus.png', alt: 'Indicateur inclus dans les livrables - Tableau de bord - Application Metriz', caption: 'Indicateur inclus dans les livrables' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_dashboard-indicateurs-livrables-exclu.png', alt: 'Indicateur exclu des livrables - Tableau de bord - Application Metriz', caption: 'Indicateur exclu : la carte est grisée' },
+]} />
+
+Une notification confirme le retrait. Cliquez de nouveau sur la case pour réintégrer l'indicateur.
+
+Pour présenter ces livrables à l'entreprise, voir [Analyser et restituer les résultats](/docs/metriz-webapp/analyser-et-restituer-les-resultats).
+
+## Rapport analytique
+
+Le rapport analytique est le support principal de la restitution. Il se configure en deux étapes, identiques en PDF et en PowerPoint.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_export-pdf-etape-1-modale.png', alt: 'Configuration du livrable, étape Charte graphique - Application Metriz', caption: 'Étape 1 : Charte graphique' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_export-pdf-etape-2-modale.png', alt: 'Configuration du livrable, étape Contenu - Application Metriz', caption: 'Étape 2 : Contenu' },
+]} />
+
+<Steps>
+
+<Step title="Charte graphique">
+
+Ajoutez les logos à faire figurer sur le livrable.
+
+</Step>
+<Step title="Contenu">
+
+Cochez les parties à inclure. Certaines sont toujours présentes (page de garde, empreinte sociétale de l'entreprise, comparaison sectorielle, objectifs sectoriels) :
+
+- **Résultats globaux** : empreinte sociétale de l'entreprise, tableau des résultats, note de synthèse ;
+- **Analyse sectorielle** : comparaison à la moyenne de la branche et objectifs à atteindre ;
+- **Collaboration des fournisseurs** : coopération des principaux fournisseurs ;
+- **Détails par indicateurs** : aucun, tous, ou uniquement les enjeux sectoriels, avec ou sans les notes d'analyse. La sélection peut être personnalisée ;
+- **Annexes** : module de base VS, caractéristiques des opérations, note méthodologique.
+
+</Step>
+
+</Steps>
+
+### Contenu du rapport
+
+| Partie | Contenu |
+|---|---|
+| **Empreinte Sociétale de l'Entreprise** | Un graphique par indicateur, comparant l'entreprise à sa branche, avec l'évaluation (Bien, À suivre) et les enjeux sectoriels |
+| **Tableau des résultats** | Empreinte de l'exercice et de l'exercice précédent, avec l'évolution |
+| **Note de synthèse** | Note rédigée dans l'application : points forts, points à améliorer, recommandations |
+| **Publication de l'empreinte sociétale** | Statut de publication de l'empreinte dans SINESE |
+| **Comparaison sectorielle** | Empreinte, moyenne de la branche et écart, par indicateur |
+| **Objectifs à atteindre** | Objectif (personnalisé ou sectoriel 2030) et effort annuel à fournir |
+| **Coopération des principaux fournisseurs** | Compte, SIREN, empreinte publiée ou non, nombre d'indicateurs publiés |
+| **Annexes** | Détails par indicateur, module de base VS, caractéristiques des opérations, description des indicateurs, objectifs sectoriels par indicateur, méthode de mesure et sources |
+
+Les indicateurs non calculés (données manquantes, etc.) apparaissent grisés.
+
+## Rapports par indicateur
+
+Les rapports par indicateur détaillent l'empreinte de chaque indicateur sélectionné. Ils servent à identifier les premiers leviers d'action. Un PDF est généré par indicateur, et l'ensemble est téléchargé dans une archive .zip.
+
+![Fenêtre Rapports par indicateur - Application Metriz](/screens-webapp-v4/screen-metriz-v4_export-pdf-par-indicateur-etape-1.png)
+
+Sélectionnez les indicateurs (tous, ou uniquement les enjeux sectoriels, puis ajustez la sélection), puis le contenu de chaque rapport :
+
+- **toujours inclus** : tableau des résultats, empreintes des soldes intermédiaires de gestion, empreintes des comptes de charges, analyse de la performance (comparaison à la branche et à l'objectif, courbe d'évolution, écarts par solde) ;
+- **en option** : note d'analyse, empreinte des fournisseurs (publiée ou par défaut).
+
+## Rapport technique
+
+Le rapport technique contient uniquement le **tableau des résultats** : l'empreinte de chaque indicateur pour l'exercice et l'exercice précédent, avec l'évolution.
+
+## Données
+
+L'export **.xlsx** fournit les résultats sous forme de données, pour un traitement dans un tableur.

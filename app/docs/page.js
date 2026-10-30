@@ -31,7 +31,7 @@ const profiles = [
     links: [
       { href: "/docs/metriz-webapp/tutoriel", title: "Le parcours pas à pas" },
       { href: "/docs/metriz-webapp/integrations", title: "Intégrations avec vos logiciels" },
-      { href: "/docs/metriz-webapp/resultats-et-livrables", title: "Résultats et livrables" },
+      { href: "/docs/metriz-webapp/livrables", title: "Générer les livrables" },
     ],
   },
   {
