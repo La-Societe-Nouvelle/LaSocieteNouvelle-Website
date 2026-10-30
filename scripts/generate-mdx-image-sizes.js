@@ -5,7 +5,8 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const MANIFEST_PATH = path.join(ROOT, "lib", "mdxImageSizes.json");
-const IMG_REGEX = /!\[[^\]]*\]\((\/[^)]+\.(?:png|jpe?g))\)/g;
+// Images markdown ![...](/...) et captures du carrousel <Screens items={[{ src: '/...' }]} />
+const IMG_REGEX = /(?:!\[[^\]]*\]\(|src:\s*['"])(\/[^)'"]+\.(?:png|jpe?g))/g;
 
 function pngSize(buf) {
   return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };

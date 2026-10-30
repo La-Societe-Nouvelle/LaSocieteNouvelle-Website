@@ -30,30 +30,34 @@ export default function ScreensCarousel({ slides }) {
           hidden={ready && index !== current}
           aria-label={`${index + 1} sur ${slides.length}`}
         >
-          {slide.image}
+          <div className="docs-screens-media">
+            {slide.image}
+            {ready && slides.length > 1 && (
+              <>
+                <button type="button" className="docs-screens-arrow prev" onClick={() => go(current - 1)} aria-label="Capture précédente" disabled={current === 0}>
+                  <i className="bi bi-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" className="docs-screens-arrow next" onClick={() => go(current + 1)} aria-label="Capture suivante" disabled={current === last}>
+                  <i className="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
+              </>
+            )}
+          </div>
           {slide.caption && <figcaption>{slide.caption}</figcaption>}
         </div>
       ))}
       {ready && slides.length > 1 && (
-        <div className="docs-screens-nav">
-          <button type="button" onClick={() => go(current - 1)} aria-label="Capture précédente" disabled={current === 0}>
-            <i className="bi bi-chevron-left" aria-hidden="true"></i>
-          </button>
-          <div className="docs-screens-dots">
-            {slides.map((slide, index) => (
-              <button
-                key={index}
-                type="button"
-                className={index === current ? 'active' : undefined}
-                onClick={() => go(index)}
-                aria-label={`Capture ${index + 1}`}
-                aria-current={index === current}
-              />
-            ))}
-          </div>
-          <button type="button" onClick={() => go(current + 1)} aria-label="Capture suivante" disabled={current === last}>
-            <i className="bi bi-chevron-right" aria-hidden="true"></i>
-          </button>
+        <div className="docs-screens-dots">
+          {slides.map((slide, index) => (
+            <button
+              key={index}
+              type="button"
+              className={index === current ? 'active' : undefined}
+              onClick={() => go(index)}
+              aria-label={`Capture ${index + 1}`}
+              aria-current={index === current}
+            />
+          ))}
         </div>
       )}
     </figure>

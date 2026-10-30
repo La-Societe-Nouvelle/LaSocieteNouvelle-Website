@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getLocalImageSize } from '@/lib/utils/imageSize';
 import ScreensCarousel from './ScreensCarousel';
+import BrowserFrame from './BrowserFrame';
 
 /**
  * Captures d'écran présentées en carrousel
@@ -11,10 +12,14 @@ export default function Screens({ items }) {
     const size = getLocalImageSize(src);
     return {
       caption,
-      image: size
-        ? <Image src={src} alt={alt || caption || ''} width={size.width} height={size.height} sizes="(max-width: 991px) 100vw, 990px" />
-        // eslint-disable-next-line @next/next/no-img-element
-        : <img src={src} alt={alt || caption || ''} />,
+      image: (
+        <BrowserFrame>
+          {size
+            ? <Image src={src} alt={alt || caption || ''} width={size.width} height={size.height} sizes="(max-width: 991px) 100vw, 990px" />
+            // eslint-disable-next-line @next/next/no-img-element
+            : <img src={src} alt={alt || caption || ''} />}
+        </BrowserFrame>
+      ),
     };
   });
   return <ScreensCarousel slides={slides} />;
