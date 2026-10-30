@@ -6,10 +6,12 @@
     "node": ">=22.0.0"
   },
   "scripts": {
+    "predev": "npm run generate:docs-pages",
     "dev": "next dev --webpack",
-    "build": "npm run generate:mdx-image-sizes && next build --webpack",
+    "build": "npm run generate:mdx-image-sizes && npm run generate:docs-pages && next build --webpack",
     "start": "next start",
     "generate:mdx-image-sizes": "node scripts/generate-mdx-image-sizes.js",
+    "generate:docs-pages": "node scripts/generate-docs-pages.js",
     "postbuild": "npm run search:index",
     "search:index": "pagefind --site .next/server/app --glob \"docs/**/*.html\" --output-path public/pagefind"
   },

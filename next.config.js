@@ -35,6 +35,17 @@ const nextConfig = {
     return config
   },
 
+  // Anciennes adresses de la documentation
+  async redirects() {
+    return [
+      { source: '/docs/empreinte-societale/description', destination: '/docs/empreinte-societale/indicateurs', permanent: true },
+      { source: '/docs/donnees-statistiques/sources-impacts-directs', destination: '/docs/donnees-statistiques/sources', permanent: true },
+      { source: '/docs/metriz-webapp/integrations', destination: '/docs/metriz-webapp/connecteurs', permanent: true },
+      { source: '/docs/metriz-webapp/integrations/:slug', destination: '/docs/metriz-webapp/connecteurs/:slug', permanent: true },
+      { source: '/docs/donnees-statistiques/sources-objectifs', destination: '/docs/donnees-statistiques/sources', permanent: true },
+    ]
+  },
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     silenceDeprecations: [
@@ -83,6 +94,10 @@ module.exports = async () => {
           output: 'html',
         }],
       ],
+      remarkRehypeOptions: {
+        footnoteLabel: 'Notes',
+        footnoteBackLabel: 'Retour au texte',
+      },
     },
   })
 

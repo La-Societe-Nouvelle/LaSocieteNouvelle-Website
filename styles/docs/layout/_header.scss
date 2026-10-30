@@ -1,0 +1,182 @@
+// ===================================
+// En-tête : barre compacte et fixe
+// ===================================
+
+.docs-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(white, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $docs-border;
+  font-family: $docs-font-body;
+
+  .docs-header-bar {
+    padding: 0;
+    min-height: $docs-header-height;
+  }
+
+  .docs-header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: $docs-shell-width;
+    margin: 0 auto;
+    padding: 0 $docs-gutter;
+
+    @media (min-width: 992px) {
+      flex-wrap: nowrap;
+      padding: 0 $docs-gutter-lg;
+    }
+  }
+
+  .docs-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: $docs-header-height;
+
+    @media (max-width: 991.98px) {
+      margin-right: auto;
+    }
+
+    .docs-brand-logo {
+      display: flex;
+    }
+
+    .docs-brand-divider {
+      width: 1px;
+      height: 24px;
+      background: $docs-border;
+    }
+
+    .docs-brand-label {
+      font-family: $docs-font-head;
+      font-weight: 800;
+      font-size: 1rem;
+      color: $docs-navy;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-collapse {
+    @media (min-width: 992px) {
+      margin-left: 2rem;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $docs-border-strong;
+    }
+  }
+
+  .docs-header-nav {
+    gap: 0.25rem;
+
+    .nav-link {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $docs-text;
+      border-radius: $docs-radius-pill;
+      white-space: nowrap;
+
+      &:hover {
+        color: $docs-navy;
+        background: $docs-lavender-pale;
+      }
+
+      &.active {
+        color: $docs-navy;
+        background: $docs-lavender;
+        font-weight: 600;
+      }
+
+      i {
+        font-size: 0.75rem;
+        opacity: 0.7;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      padding: 0.5rem 0 1rem;
+
+      .nav-link {
+        border-radius: $docs-radius-sm;
+      }
+    }
+  }
+
+  // Groupe de sections (ex. Données) : onglet actif si une de ses sections l'est
+  .docs-header-group.active > .nav-link {
+    color: $docs-navy;
+    background: $docs-lavender;
+    font-weight: 600;
+  }
+
+  // Menus déroulants : groupes de sections et ressources externes
+  .docs-header-group,
+  .docs-header-resources {
+    .dropdown-menu {
+      min-width: 300px;
+      padding: 0.5rem;
+      border: 1px solid $docs-border;
+      border-radius: $docs-radius-md;
+      box-shadow: 0 8px 24px rgba($docs-navy, 0.08);
+    }
+
+    .dropdown-header {
+      padding: 0.5rem 0.75rem 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $docs-muted;
+    }
+
+    .dropdown-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.5rem 0.75rem;
+      border-radius: $docs-radius-sm;
+      white-space: normal;
+
+      > i {
+        margin-top: 0.15rem;
+        color: $docs-navy;
+      }
+
+      &:hover,
+      &:focus,
+      &.active {
+        background: $docs-lavender-pale;
+      }
+    }
+
+    .docs-resource-title {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: $docs-navy;
+
+      i {
+        font-size: 0.7rem;
+        opacity: 0.6;
+      }
+    }
+
+    .docs-resource-text {
+      display: block;
+      font-size: 0.8rem;
+      color: $docs-muted;
+    }
+  }
+}

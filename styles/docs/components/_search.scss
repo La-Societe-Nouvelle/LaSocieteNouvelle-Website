@@ -1,0 +1,153 @@
+// ===================================
+// Recherche dans la documentation (Pagefind)
+// ===================================
+
+.docs-search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.25rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid $docs-border;
+  border-radius: $docs-radius-pill;
+  background: $docs-lavender-pale;
+  color: $docs-muted;
+  font-size: 0.88rem;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: $docs-border-strong;
+    color: $docs-navy;
+  }
+
+  .docs-search-trigger-label,
+  kbd {
+    display: none;
+  }
+
+  kbd {
+    padding: 0.1rem 0.35rem;
+    border: 1px solid $docs-border;
+    border-radius: 4px;
+    background: white;
+    color: $docs-muted;
+    font-family: $docs-font-mono;
+    font-size: 0.7rem;
+  }
+
+  // Sur grand écran, champ placé à droite de la navigation
+  @media (min-width: 992px) {
+    order: 1;
+    min-width: 220px;
+    margin: 0 0 0 1.5rem;
+
+    .docs-search-trigger-label { display: inline; }
+    kbd { display: inline; margin-left: auto; }
+  }
+}
+
+.docs-search-dialog {
+  width: min(640px, calc(100vw - 2rem));
+  max-height: min(70vh, 600px);
+  margin: 10vh auto auto;
+  padding: 0;
+  border: none;
+  border-radius: $docs-radius-lg;
+  box-shadow: 0 20px 60px rgba($docs-navy, 0.25);
+  font-family: $docs-font-body;
+  overflow: hidden;
+
+  &::backdrop {
+    background: rgba($docs-navy, 0.35);
+    backdrop-filter: blur(2px);
+  }
+
+  .docs-search-panel {
+    display: flex;
+    flex-direction: column;
+    max-height: inherit;
+  }
+
+  .docs-search-field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid $docs-border;
+    color: $docs-muted;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      color: $docs-navy;
+    }
+  }
+
+  .docs-search-close {
+    padding: 0.15rem 0.45rem;
+    border: 1px solid $docs-border;
+    border-radius: 4px;
+    background: $docs-lavender-pale;
+    color: $docs-muted;
+    font-size: 0.72rem;
+  }
+
+  .docs-search-body {
+    overflow-y: auto;
+  }
+
+  .docs-search-message {
+    margin: 0;
+    padding: 1.5rem 1.25rem;
+    font-size: 0.9rem;
+    color: $docs-muted;
+  }
+
+  .docs-search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: $docs-radius-sm;
+      cursor: pointer;
+
+      &.active {
+        background: $docs-lavender;
+      }
+    }
+  }
+
+  .docs-search-result-section {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $docs-muted;
+  }
+
+  .docs-search-result-title {
+    font-weight: 600;
+    color: $docs-navy;
+  }
+
+  .docs-search-result-excerpt {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: $docs-text;
+
+    mark {
+      padding: 0;
+      background: $docs-rose;
+      color: $docs-navy;
+      font-weight: 600;
+    }
+  }
+}

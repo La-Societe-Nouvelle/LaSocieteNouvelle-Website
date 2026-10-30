@@ -1,0 +1,30 @@
+Le connecteur est disponible pour l'ensemble des utilisateurs, **sur simple demande auprès du support technique** (voir [Activer un connecteur](/docs/metriz-webapp/connecteurs#activer-un-connecteur)).
+
+## Services
+
+Le connecteur Inqom permet la récupération de la liste des dossiers clients et le chargement des données comptables.
+
+## Connexion
+
+La connexion à Inqom via Metriz se fait directement à partir de vos identifiants Inqom, sur la page de connexion Inqom.
+
+![Page de connexion Inqom - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integration-inqom-connexion-oauth.png)
+
+## Importer des dossiers clients
+
+Depuis l'accueil, ouvrez le menu **Importer clients** et choisissez Inqom. Confirmez l'import : un résumé indique le nombre de dossiers importés, qui apparaissent ensuite dans la liste de vos entreprises.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-confirmation.png', alt: "Confirmation de l'import des clients Inqom - Application Metriz", caption: "1. Confirmation" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-resume.png', alt: "Résumé de l'import des clients Inqom - Application Metriz", caption: "2. Résumé" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-liste.png', alt: "Liste des dossiers importés depuis Inqom - Application Metriz", caption: "3. Dossiers importés" },
+]} />
+
+## Importer le FEC
+
+Lors d'une nouvelle analyse, cliquez sur le bouton **Inqom** à l'étape d'import du FEC, puis choisissez l'exercice à importer. L'assistant de configuration s'ouvre ensuite comme pour un fichier déposé (voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec)).
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-fec-bouton.png', alt: "Bouton d'import du FEC via Inqom - Application Metriz", caption: "Bouton Inqom" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-fec-exercices.png', alt: "Liste des exercices disponibles sur Inqom - Application Metriz", caption: "Choix de l'exercice" },
+]} />

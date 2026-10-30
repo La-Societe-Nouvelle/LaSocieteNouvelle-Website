@@ -1,0 +1,51 @@
+// ===================================
+// DS Doc - variables de la documentation
+// Synthèse des design systems Metriz (lavande, arrondis, corail)
+// et La Société Nouvelle (marine, rigueur éditoriale)
+// ===================================
+
+// Couleurs
+$docs-navy: $primary;                 // Titres, structure, bandeaux
+$docs-text: #2c3b4a;                  // Texte courant
+$docs-muted: #5b6577;                 // Texte secondaire
+$docs-link: #3f3a9e;                  // Liens
+$docs-on-navy: #dcdaee;               // Texte secondaire sur marine
+$docs-navy-line: #4d49a0;             // Contours sur marine
+
+$docs-coral: #fa595f;                 // Repères visuels uniquement, jamais du texte
+$docs-rose: #fee0e1;                  // Fond d'accent
+
+$docs-lavender: #ededff;              // Élément actif, survol
+$docs-lavender-pale: #f6f6fe;         // Surfaces
+$docs-border: #e3e5f3;                // Filets, cartes
+$docs-border-strong: #d6d9ee;         // Champs, boutons
+
+// Familles d'indicateurs
+$docs-social: $docs-navy;
+$docs-social-bg: #dfe0fb;
+$docs-env: #1f5a3f;
+$docs-env-bg: #d8efe2;
+
+// Encadrés
+$docs-warning: #663f03;
+$docs-warning-bg: #fffaed;
+$docs-tip: $docs-env;
+$docs-tip-bg: #e9f4ee;
+
+// Typographie
+$docs-font-head: 'Raleway', 'Roboto', sans-serif;
+$docs-font-body: 'Roboto', system-ui, sans-serif;
+$docs-font-mono: 'Roboto Mono', ui-monospace, monospace;
+
+// Formes
+$docs-radius-sm: 8px;                 // Badges, liens de menu
+$docs-radius-md: 12px;                // Cartes, encadrés
+$docs-radius-lg: 16px;                // Grandes cartes
+$docs-radius-pill: 999px;             // Boutons, pastilles
+
+// Mise en page
+$docs-header-height: 64px;
+$docs-shell-width: 1440px;
+$docs-content-width: 760px;
+$docs-gutter: 1rem;
+$docs-gutter-lg: 2rem;

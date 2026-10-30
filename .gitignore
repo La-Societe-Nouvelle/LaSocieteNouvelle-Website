@@ -42,3 +42,6 @@ yarn-error.log*
 
 # index de recherche Pagefind (généré au build)
 /public/pagefind/
+
+# Généré par scripts/generate-docs-pages.js
+/lib/docsPages.json

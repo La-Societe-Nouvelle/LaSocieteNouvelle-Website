@@ -1,0 +1,186 @@
+// ===================================
+// Navigation : menu de section, Précédent / Suivant
+// ===================================
+
+.docs-theme {
+  // Menu groupé
+  .docs-nav-group {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .docs-nav-group-title {
+      font-family: $docs-font-head;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: $docs-navy;
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  .docs-navigation-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    margin-left: -0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: $docs-text;
+    text-decoration: none;
+    border-radius: $docs-radius-sm;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      color: $docs-navy;
+      background: $docs-lavender-pale;
+    }
+
+    &.active {
+      color: $docs-navy;
+      font-weight: 500;
+      background: $docs-lavender;
+      border-radius: 0 4px 4px 0;
+      box-shadow: inset 2px 0 0 $docs-navy;
+    }
+  }
+
+  // Dossier dépliable (ex. fiches indicateurs)
+  .docs-nav-folder {
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem 0.75rem;
+      margin-left: -0.75rem;
+      font-size: 0.9rem;
+      color: $docs-text;
+      border-radius: $docs-radius-sm;
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "\F285"; // bi-chevron-right
+        font-family: bootstrap-icons;
+        font-size: 0.7rem;
+        color: $docs-muted;
+        transition: transform 0.15s ease;
+      }
+
+      &:hover {
+        color: $docs-navy;
+        background: $docs-lavender-pale;
+      }
+    }
+
+    &[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    // Fiches en retrait, reliées par un filet
+    .docs-navigation-link {
+      margin-left: 0;
+      padding-left: 0.85rem;
+      font-size: 0.85rem;
+      border-left: 1px solid $docs-border;
+      border-radius: 0 4px 4px 0;
+
+      &.active {
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  // Date de mise à jour, lien « Signaler une erreur »
+  .docs-page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-top: 3.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid $docs-border;
+    font-size: 0.85rem;
+    color: $docs-muted;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: $docs-muted;
+      text-decoration: none;
+
+      &:hover {
+        color: $docs-navy;
+      }
+    }
+
+    + .docs-prev-next {
+      margin-top: 1.25rem;
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  // Liens Précédent / Suivant
+  .docs-prev-next {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $docs-border;
+
+    .docs-prev-next-link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      min-width: 0;
+      padding: 1rem 1.25rem;
+      border: 1px solid $docs-border;
+      border-radius: $docs-radius-md;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+
+      &.next {
+        grid-column: 2;
+        text-align: right;
+      }
+
+      // Lien seul (première ou dernière page) : toute la largeur
+      &:only-of-type {
+        grid-column: 1 / -1;
+      }
+
+      &:hover {
+        border-color: $docs-border-strong;
+        background: $docs-lavender-pale;
+      }
+    }
+
+    .docs-prev-next-label {
+      font-size: 0.8rem;
+      color: $docs-muted;
+    }
+
+    .docs-prev-next-title {
+      font-weight: 600;
+      color: $docs-navy;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 575.98px) {
+      grid-template-columns: minmax(0, 1fr);
+
+      .docs-prev-next-link.next {
+        grid-column: 1;
+      }
+    }
+  }
+}

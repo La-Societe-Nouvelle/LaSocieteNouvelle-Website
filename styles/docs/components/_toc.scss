@@ -1,0 +1,45 @@
+// ===================================
+// Sommaire « Sur cette page »
+// ===================================
+
+.docs-theme .docs-toc-nav {
+  padding-top: 0.5rem;
+
+  .docs-toc-title {
+    font-family: $docs-font-head;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: $docs-navy;
+    margin-bottom: 0.6rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    padding: 0.3rem 0 0.3rem 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: $docs-muted;
+    text-decoration: none;
+    box-shadow: inset 1px 0 0 $docs-border;
+
+    &:hover {
+      color: $docs-navy;
+    }
+
+    &.active {
+      color: $docs-navy;
+      font-weight: 600;
+      box-shadow: inset 2px 0 0 $docs-coral;
+    }
+  }
+
+  li.level-2 a {
+    padding-left: 1.65rem;
+  }
+}

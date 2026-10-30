@@ -1,0 +1,35 @@
+Plusieurs **connecteurs** sont disponibles au sein de Metriz pour faciliter la récupération des données comptables ou sociales.
+
+## Données comptables
+
+Les connecteurs comptables permettent de **récupérer la liste de vos dossiers clients**, pour ajouter une entreprise sans saisie, puis de **charger ses données comptables**.
+
+- [ACD](/docs/metriz-webapp/connecteurs/acd)
+- [Inqom](/docs/metriz-webapp/connecteurs/inqom)
+- [MyUnisoft](/docs/metriz-webapp/connecteurs/myunisoft)
+- [Pennylane](/docs/metriz-webapp/connecteurs/pennylane)
+- [Tiime](/docs/metriz-webapp/connecteurs/tiime)
+
+## Données sociales
+
+- [OpenPaye](/docs/metriz-webapp/connecteurs/openpaye)
+
+## Activer un connecteur
+
+Les connecteurs sont disponibles pour l'ensemble des utilisateurs, **sur simple demande**. Pour activer un connecteur, contactez le [support](/docs/metriz-webapp/aide-et-support) en précisant le logiciel concerné. Une fois activé, le connecteur apparaît dans l'application et la connexion se fait avec les identifiants de votre logiciel (voir la page de chaque connecteur).
+
+![Vue des connecteurs dans l'espace Compte - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integrations-vue-generale.png)
+
+## Utiliser les connecteurs
+
+Une fois un connecteur comptable connecté :
+
+- depuis l'accueil, le menu **Importer clients** permet d'ajouter vos dossiers clients en tant qu'entreprises ;
+- lors d'une **nouvelle analyse**, un bouton par connecteur permet de charger le FEC directement, sans dépôt de fichier.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integrations-importer-clients-menu.png', alt: "Menu Importer clients sur la page d'accueil - Application Metriz", caption: 'Menu Importer clients' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integrations-import-fec-boutons.png', alt: "Boutons d'import du FEC via les connecteurs - Application Metriz", caption: "Import du FEC via un connecteur" },
+]} />
+
+Sans connecteur, les données comptables sont importées via le FEC : voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec).

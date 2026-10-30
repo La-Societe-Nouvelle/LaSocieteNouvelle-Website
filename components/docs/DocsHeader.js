@@ -1,6 +1,6 @@
 'use client';
 
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,8 +36,39 @@ export default function DocsHeader() {
           <Navbar.Toggle aria-controls="docs-navigation" />
           <Navbar.Collapse id="docs-navigation">
             <Nav className="docs-header-nav">
-              {docsSections.map((section) => {
+              {docsSections.map((section, index) => {
                 const isActive = activeSection?.id === section.id;
+
+                // Sections d'un même groupe : un seul menu déroulant, à la place de la première
+                if (section.navGroup) {
+                  if (docsSections.findIndex((s) => s.navGroup === section.navGroup) !== index) return null;
+                  const members = docsSections.filter((s) => s.navGroup === section.navGroup);
+                  const groupActive = members.some((s) => s.id === activeSection?.id);
+                  return (
+                    <NavDropdown
+                      key={section.navGroup}
+                      title={section.navGroup}
+                      id={`docs-nav-${section.id}`}
+                      className={`docs-header-group${groupActive ? " active" : ""}`}
+                    >
+                      {members.map((member) => (
+                        <NavDropdown.Item
+                          as={Link}
+                          key={member.id}
+                          href={member.href}
+                          active={member.id === activeSection?.id}
+                        >
+                          <i className={`bi ${member.icon}`} aria-hidden="true"></i>
+                          <span>
+                            <span className="docs-resource-title">{member.shortTitle || member.title}</span>
+                            <span className="docs-resource-text">{member.description}</span>
+                          </span>
+                        </NavDropdown.Item>
+                      ))}
+                    </NavDropdown>
+                  );
+                }
+
                 return (
                   <Nav.Link
                     as={Link}
@@ -52,18 +83,25 @@ export default function DocsHeader() {
                 );
               })}
 
-              {externalLinks.map((link) => (
-                <Nav.Link
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="docs-header-external"
-                >
-                  {link.title}
-                  <i className="bi bi-box-arrow-up-right ms-1" aria-hidden="true"></i>
-                </Nav.Link>
-              ))}
+              <NavDropdown title="Ressources" id="docs-resources" align="end" className="docs-header-resources">
+                {[...new Set(externalLinks.map((link) => link.group))].map((group) => (
+                  <div key={group}>
+                    <NavDropdown.Header>{group}</NavDropdown.Header>
+                    {externalLinks.filter((link) => link.group === group).map((link) => (
+                      <NavDropdown.Item key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                        <i className={`bi ${link.icon}`} aria-hidden="true"></i>
+                        <span>
+                          <span className="docs-resource-title">
+                            {link.title}
+                            <i className="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                          </span>
+                          <span className="docs-resource-text">{link.description}</span>
+                        </span>
+                      </NavDropdown.Item>
+                    ))}
+                  </div>
+                ))}
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </div>

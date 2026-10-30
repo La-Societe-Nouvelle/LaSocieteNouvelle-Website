@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1482.0463"
+   height="618"
+   viewBox="0 0 1482.0463 618"
+   role="img"
+   aria-label="Calcul des impacts liés à la production à partir du FEC et de l'API publique"
+   version="1.1"
+   id="svg47"
+   sodipodi:docname="schema-empreinte-production.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3">
+    <style
+       id="style1">
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&amp;family=Roboto:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap');
+.h{font-family:'Raleway',Arial,sans-serif;font-weight:700;fill:#191558}
+.xb{font-family:'Raleway',Arial,sans-serif;font-weight:800;fill:#191558}
+.b{font-family:'Roboto',Arial,sans-serif}
+.sub{font-family:'Roboto',Arial,sans-serif;font-style:italic;font-size:13px;fill:#4a4954}
+.sup{font-family:'Roboto',Arial,sans-serif;font-style:italic;font-weight:500;font-size:17px;fill:#191558}
+</style>
+    <marker
+       id="head-navy"
+       orient="auto"
+       markerWidth="5"
+       markerHeight="5"
+       refX="2"
+       refY="2"
+       overflow="visible">
+      <path
+         d="M 0,0 4,2 0,4 Z"
+         fill="#191558"
+         id="path1" />
+    </marker>
+    <marker
+       id="head"
+       orient="auto"
+       markerWidth="5"
+       markerHeight="5"
+       refX="2"
+       refY="2"
+       overflow="visible">
+      <path
+         d="M 0,0 4,2 0,4 Z"
+         fill="#2a2576"
+         id="path2" />
+    </marker>
+    <g
+       id="person">
+      <circle
+         cx="20"
+         cy="15.5"
+         r="5"
+         fill="#ffffff"
+         id="circle2" />
+      <path
+         d="m 11,29 c 1.5,-5 5,-7 9,-7 4,0 7.5,2 9,7 z"
+         fill="#ffffff"
+         id="path3" />
+    </g>
+  </defs>
+  <!-- Barre Production -->
+  <rect
+     x="338"
+     y="60"
+     width="12"
+     height="88"
+     rx="6"
+     fill="#191558"
+     id="rect4" />
+  <rect
+     x="338"
+     y="172"
+     width="12"
+     height="64"
+     rx="6"
+     fill="#6e69b8"
+     id="rect5" />
+  <rect
+     x="338"
+     y="260"
+     width="12"
+     height="64"
+     rx="6"
+     fill="#6e69b8"
+     id="rect6" />
+  <rect
+     x="338"
+     y="348"
+     width="12"
+     height="64"
+     rx="6"
+     fill="#6e69b8"
+     id="rect7" />
+  <rect
+     x="338"
+     y="436"
+     width="12"
+     height="64"
+     rx="6"
+     fill="#6e69b8"
+     id="rect8"
+     style="fill:#6e69b8;fill-opacity:1" />
+  <rect
+     x="256"
+     y="0"
+     width="176"
+     height="48"
+     rx="24"
+     fill="#4d49a0"
+     id="rect9" />
+  <text
+     x="344"
+     y="30"
+     text-anchor="middle"
+     class="h"
+     style="font-size:19px;fill:#ffffff"
+     id="text9">Production</text>
+  <!-- Flèches -->
+  <path
+     d="m 256,292 h 76"
+     stroke="#191558"
+     stroke-width="2.5"
+     marker-end="url(#head-navy)"
+     id="path9"
+     style="fill:none;stroke-linecap:round" />
+  <path
+     d="m 698,204 h 51"
+     id="path11"
+     style="fill:none;stroke:#2a2576;stroke-width:2;stroke-linecap:round;marker-end:url(#head)" />
+  <path
+     d="m 698,292 h 51"
+     id="path12"
+     style="fill:none;stroke:#2a2576;stroke-width:2;stroke-linecap:round;marker-end:url(#head)" />
+  <path
+     d="m 698,380 h 51"
+     id="path13"
+     style="fill:none;stroke:#2a2576;stroke-width:2;stroke-linecap:round;marker-end:url(#head)" />
+  <path
+     d="m 698,468 h 51"
+     id="path14"
+     style="fill:none;stroke:#2a2576;stroke-width:2;stroke-linecap:round;marker-end:url(#head)" />
+  <g
+     stroke="#4d49a0"
+     stroke-width="2"
+     stroke-dasharray="6, 6"
+     stroke-linejoin="round"
+     id="g16"
+     style="fill:none;stroke-linecap:round"
+     transform="translate(-39.999999,-28)">
+    <path
+       d="m 1218,232 h 24 v 264 h -24"
+       id="path15" />
+    <path
+       d="m 1242,364 h 68"
+       id="path16" />
+  </g>
+  <!-- FEC -->
+  <circle
+     cx="132"
+     cy="292"
+     r="100"
+     fill="#f0eff8"
+     id="circle17" />
+  <g
+     transform="translate(90.000001,240)"
+     fill="none"
+     stroke="#191558"
+     stroke-width="7"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g19">
+    <path
+       d="M 8,4 H 54 L 78,28 V 98 H 8 Z"
+       id="path17" />
+    <path
+       d="M 54,4 V 28 H 78"
+       fill="#191558"
+       id="path18" />
+    <path
+       d="M 22,46 H 36 M 22,60 H 64 M 22,72 H 64 M 22,84 h 42"
+       id="path19" />
+  </g>
+  <rect
+     x="9.541285e-07"
+     y="408"
+     width="264"
+     height="92"
+     rx="24"
+     fill="#f0eff8"
+     id="rect19" />
+  <text
+     x="132"
+     y="452"
+     text-anchor="middle"
+     class="xb"
+     style="font-size:30px"
+     id="text19">FEC</text>
+  <text
+     x="132"
+     y="478"
+     text-anchor="middle"
+     class="b"
+     style="font-style:italic;font-size:14px;fill:#2a2576"
+     id="text20">Fichier des écritures comptables</text>
+  <!-- Lignes : libellés -->
+  <rect
+     x="374"
+     y="172"
+     width="300"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect28" />
+  <g
+     transform="translate(390,184)"
+     id="g29">
+    <circle
+       cx="20"
+       cy="20"
+       r="20"
+       fill="#4d49a0"
+       id="circle28" />
+    <use
+       href="#person"
+       id="use28" />
+  </g>
+  <text
+     x="444"
+     y="210"
+     class="sup"
+     id="text29">Fournisseur A</text>
+  <rect
+     x="374"
+     y="260"
+     width="300"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect29" />
+  <g
+     transform="translate(390,272)"
+     id="g30">
+    <circle
+       cx="20"
+       cy="20"
+       r="20"
+       fill="#4d49a0"
+       id="circle29" />
+    <use
+       href="#person"
+       id="use29" />
+  </g>
+  <text
+     x="444"
+     y="298"
+     class="sup"
+     id="text30">Fournisseur B</text>
+  <rect
+     x="374"
+     y="348"
+     width="300"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect30" />
+  <g
+     transform="translate(390,360)"
+     id="g31">
+    <circle
+       cx="20"
+       cy="20"
+       r="20"
+       fill="#4d49a0"
+       id="circle30" />
+    <use
+       href="#person"
+       id="use30" />
+  </g>
+  <text
+     x="444"
+     y="386"
+     class="sup"
+     id="text31">Fournisseur C</text>
+  <rect
+     x="374"
+     y="436"
+     width="300"
+     height="64"
+     rx="16"
+     fill="#faf9f6"
+     id="rect31"
+     style="fill:#efeff7;fill-opacity:0.511435" />
+  <g
+     transform="translate(390,448)"
+     id="g35">
+    <circle
+       cx="20"
+       cy="20"
+       r="20"
+       fill="#76747f"
+       id="circle31"
+       style="fill:#f0eff8;fill-opacity:1" />
+    <g
+       fill="#ffffff"
+       id="g34"
+       style="fill:#4d49a0;fill-opacity:1">
+      <circle
+         cx="13.5"
+         cy="20"
+         r="2.3"
+         id="circle32"
+         style="fill:#4d49a0;fill-opacity:1" />
+      <circle
+         cx="20"
+         cy="20"
+         r="2.3"
+         id="circle33"
+         style="fill:#4d49a0;fill-opacity:1" />
+      <circle
+         cx="26.5"
+         cy="20"
+         r="2.3"
+         id="circle34"
+         style="fill:#4d49a0;fill-opacity:1" />
+    </g>
+  </g>
+  <text
+     x="444"
+     y="474"
+     class="b"
+     style="font-size:17px;fill:#76747f"
+     id="text35">…</text>
+  <!-- Lignes : impacts -->
+  <g
+     id="g48"
+     transform="translate(-39.999999,-40)">
+    <path
+       d="m 738,144 h 51"
+       id="path10"
+       style="fill:none;stroke:#2a2576;stroke-width:2;stroke-linecap:round;marker-end:url(#head)" />
+    <rect
+       x="414"
+       y="112"
+       width="300"
+       height="64"
+       rx="16"
+       fill="#dcdaee"
+       id="rect20" />
+    <g
+       transform="translate(430,124)"
+       id="g28">
+      <circle
+         cx="20"
+         cy="20"
+         r="20"
+         fill="#191558"
+         id="circle20" />
+      <rect
+         x="13"
+         y="10"
+         width="14"
+         height="20"
+         rx="2.5"
+         fill="#ffffff"
+         id="rect21" />
+      <rect
+         x="15.5"
+         y="12.5"
+         width="9"
+         height="4"
+         rx="1"
+         fill="#191558"
+         id="rect22" />
+      <g
+         fill="#191558"
+         id="g27">
+        <circle
+           cx="17"
+           cy="20.5"
+           r="1.3"
+           id="circle22" />
+        <circle
+           cx="20"
+           cy="20.5"
+           r="1.3"
+           id="circle23" />
+        <circle
+           cx="23"
+           cy="20.5"
+           r="1.3"
+           id="circle24" />
+        <circle
+           cx="17"
+           cy="24.5"
+           r="1.3"
+           id="circle25" />
+        <circle
+           cx="20"
+           cy="24.5"
+           r="1.3"
+           id="circle26" />
+        <circle
+           cx="23"
+           cy="24.5"
+           r="1.3"
+           id="circle27" />
+      </g>
+    </g>
+    <text
+       x="484"
+       y="150"
+       class="h"
+       style="font-size:17px"
+       id="text28">Valeur ajoutée</text>
+    <rect
+       x="794"
+       y="112"
+       width="400"
+       height="64"
+       rx="16"
+       fill="#dcdaee"
+       id="rect35" />
+    <text
+       x="818"
+       y="140"
+       class="h"
+       style="font-size:17px"
+       id="text36">Impacts directs de l'entreprise</text>
+    <text
+       x="818"
+       y="161"
+       class="sub"
+       id="text37">ex. 500 ktCO2e</text>
+  </g>
+  <rect
+     x="754"
+     y="172"
+     width="400"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect37" />
+  <text
+     x="778"
+     y="200"
+     class="h"
+     style="font-size:17px"
+     id="text38">Montant × coef. entreprise A</text>
+  <text
+     x="778"
+     y="221"
+     class="sub"
+     id="text39">ex. 100 € × 50 gCO2e/€ = 5 kgCO2e</text>
+  <rect
+     x="754"
+     y="260"
+     width="400"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect39" />
+  <text
+     x="778"
+     y="298"
+     class="h"
+     style="font-size:17px"
+     id="text40">Montant × coef. entreprise B</text>
+  <rect
+     x="754"
+     y="348"
+     width="400"
+     height="64"
+     rx="16"
+     fill="#f0eff8"
+     id="rect40" />
+  <text
+     x="778"
+     y="386"
+     class="h"
+     style="font-size:17px"
+     id="text41">Montant × coef. entreprise C</text>
+  <rect
+     x="754"
+     y="436"
+     width="400"
+     height="64"
+     rx="16"
+     fill="#faf9f6"
+     id="rect41"
+     style="fill:#efeff7;fill-opacity:0.509804" />
+  <text
+     x="778"
+     y="474"
+     class="b"
+     style="font-size:17px;fill:#76747f"
+     id="text42">…</text>
+  <!-- Total -->
+  <rect
+     x="754"
+     y="524"
+     width="448"
+     height="3"
+     rx="1.5"
+     fill="#4d49a0"
+     id="rect42" />
+  <text
+     x="726"
+     y="593"
+     text-anchor="middle"
+     class="xb"
+     style="font-size:34px"
+     id="text43">=</text>
+  <rect
+     x="754"
+     y="542"
+     width="448"
+     height="76"
+     rx="20"
+     fill="#f0eff8"
+     id="rect43" />
+  <text
+     x="778"
+     y="575"
+     class="xb"
+     style="font-size:20px"
+     id="text44">Total des impacts liés à la production</text>
+  <text
+     x="778"
+     y="599"
+     class="sub"
+     style="font-size:14px"
+     id="text45">ex. 890 ktCO2e, soit 83 gCO2e/€</text>
+  <!-- API -->
+  <circle
+     cx="1367.8102"
+     cy="249.82721"
+     r="34.179993"
+     fill="#f0eff8"
+     id="circle45"
+     style="stroke-width:0.534062" />
+  <g
+     transform="matrix(2.6667,0,0,2.6667,1302,256)"
+     fill="none"
+     stroke="#191558"
+     stroke-width="2.6"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g46">
+    <g
+       id="g49"
+       transform="translate(-0.02425523,0.07215509)">
+      <circle
+         cx="24.702765"
+         cy="-2.3869226"
+         r="3.8238809"
+         id="circle46"
+         style="stroke-width:3.31403" />
+      <path
+         d="m 28.654825,-0.78473578 a 0.88120291,0.88120291 0 0 0 0.17624,0.971994 l 0.03204,0.03204 A 1.0687191,1.0687191 0 1 1 27.351708,1.7306952 l -0.03204,-0.03204 a 0.88120291,0.88120291 0 0 0 -0.971994,-0.17624 0.88120291,0.88120291 0 0 0 -0.534062,0.806434 v 0.09079 a 1.068125,1.068125 0 1 1 -2.13625,0 v -0.04807 a 0.88120291,0.88120291 0 0 0 -0.576787,-0.806434 0.88120291,0.88120291 0 0 0 -0.971994,0.17624 l -0.03204,0.03204 A 1.0687187,1.0687187 0 1 1 20.585142,0.26202622 l 0.03204,-0.03204 a 0.88120291,0.88120291 0 0 0 0.17624,-1.014722 0.88120291,0.88120291 0 0 0 -0.806434,-0.53406202 h -0.09079 a 1.068125,1.068125 0 1 1 0,-2.13625 h 0.04807 a 0.88120291,0.88120291 0 0 0 0.806434,-0.534062 0.88120291,0.88120291 0 0 0 -0.17624,-0.9719935 l -0.03204,-0.032044 a 1.0687189,1.0687189 0 1 1 1.511397,-1.5113965 l 0.03204,0.032044 a 0.88120291,0.88120291 0 0 0 1.014718,0.1762406 0.88120291,0.88120291 0 0 0 0.534062,-0.8064342 v -0.090791 a 1.068125,1.068125 0 1 1 2.13625,0 v 0.048066 a 0.88120291,0.88120291 0 0 0 0.534062,0.8064342 0.88120291,0.88120291 0 0 0 0.971994,-0.1762406 l 0.03204,-0.032044 a 1.0687189,1.0687189 0 1 1 1.511397,1.5113965 l -0.03204,0.032044 a 0.88120291,0.88120291 0 0 0 -0.133515,1.0147183 0.88120291,0.88120291 0 0 0 0.806434,0.534062 h 0.04807 a 1.068125,1.068125 0 1 1 0,2.13625 h -0.04807 a 0.88120291,0.88120291 0 0 0 -0.806434,0.53406202 z"
+         id="path46"
+         style="stroke-width:1.38856" />
+    </g>
+  </g>
+  <g
+     id="g47"
+     transform="translate(-39.999999,-22.709625)">
+    <rect
+       x="1302.0463"
+       y="316.70963"
+       width="220"
+       height="84"
+       rx="22"
+       fill="#f0eff8"
+       id="rect46" />
+    <text
+       x="1412.0463"
+       y="354.70963"
+       text-anchor="middle"
+       class="xb"
+       style="font-size:21px"
+       id="text46">API publique</text>
+    <text
+       x="1412.0463"
+       y="378.70963"
+       text-anchor="middle"
+       class="b"
+       style="font-size:14px;fill:#2a2576"
+       id="text47">api.sinese.fr</text>
+  </g>
+  </svg>

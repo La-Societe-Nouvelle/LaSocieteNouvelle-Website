@@ -6,6 +6,9 @@
 import Image from "next/image";
 import { getLocalImageSize } from "@/lib/utils/imageSize";
 import * as docsComponents from "@/components/docs/mdx";
+import BrowserFrame from "@/components/docs/mdx/BrowserFrame";
+
+const SCREENS_DIR = "/screens-webapp-v4/";
 
 // Texte brut d'un titre, y compris quand il contient des liens ou de l'emphase
 const textOf = (node) => {
@@ -21,21 +24,24 @@ const slugify = (text) => text
 export function useMDXComponents(components) {
   return {
     // Images locales optimisées via next/image (srcSet responsive, lazy loading)
-    img: ({ src, alt }) => {
+    // ![alt](/image.png "eager") : chargement immédiat, pour une image en haut de page (LCP)
+    img: ({ src, alt, title }) => {
       const size = src?.startsWith("/") ? getLocalImageSize(src) : null;
-      if (!size) {
-        // eslint-disable-next-line @next/next/no-img-element
-        return <img src={src} alt={alt} />;
-      }
-      return (
+      const image = size ? (
         <Image
           src={src}
           alt={alt || ""}
           width={size.width}
           height={size.height}
           sizes="(max-width: 991px) 100vw, 990px"
+          loading={title === "eager" ? "eager" : undefined}
         />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={alt} />
       );
+      // Captures de l'application Metriz : présentées dans une fenêtre de navigateur
+      return src?.startsWith(SCREENS_DIR) ? <BrowserFrame>{image}</BrowserFrame> : image;
     },
     // Personnalisation des éléments HTML de base
     h1: ({ children }) => (

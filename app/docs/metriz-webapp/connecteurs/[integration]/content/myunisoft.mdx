@@ -1,0 +1,32 @@
+Le connecteur est disponible pour l'ensemble des utilisateurs, **sur simple demande auprès du support technique** (voir [Activer un connecteur](/docs/metriz-webapp/connecteurs#activer-un-connecteur)).
+
+## Services
+
+Le connecteur MyUnisoft permet la récupération de la liste des dossiers clients et le chargement des données comptables.
+
+L'API MyUnisoft permet également la récupération des numéros SIREN des fournisseurs.
+
+## Connexion
+
+La connexion à MyUnisoft via Metriz se fait à partir d'une clé API (à générer depuis l'espace MyUnisoft).
+
+## Importer des dossiers clients
+
+Depuis l'accueil, ouvrez le menu **Importer clients** et choisissez MyUnisoft. Confirmez ensuite l'import des dossiers.
+
+![Confirmation de l'import des clients MyUnisoft - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-clients-confirmation.png)
+
+## Importer le FEC
+
+Lors d'une nouvelle analyse, cliquez sur le bouton **MyUnisoft** à l'étape d'import du FEC, puis choisissez l'exercice à importer. L'assistant de configuration s'ouvre ensuite comme pour un fichier déposé (voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec)).
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-fec-bouton.png', alt: "Bouton d'import du FEC via MyUnisoft - Application Metriz", caption: "Bouton MyUnisoft" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-fec-exercices.png', alt: "Liste des exercices disponibles sur MyUnisoft - Application Metriz", caption: "Choix de l'exercice" },
+]} />
+
+## Récupérer les SIREN des fournisseurs
+
+Dans la page des fournisseurs, le menu **Importer depuis** permet de récupérer les numéros SIREN des fournisseurs depuis MyUnisoft.
+
+![Menu Importer depuis de la page fournisseurs - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-fournisseurs-importer-depuis.png)

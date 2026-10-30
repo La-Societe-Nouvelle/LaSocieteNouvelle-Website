@@ -1,52 +1,60 @@
-METRIZ s'appuie sur l'intelligence artificielle générative pour automatiser certaines tâches et aider à la lecture des résultats. Aucun résultat produit par l'IA n'est définitif : chaque usage ci-dessous doit être vérifié par l'utilisateur.
+Metriz s'appuie sur l'intelligence artificielle générative pour automatiser certaines tâches et aider à la lecture des résultats. **Aucun résultat produit par l'IA n'est définitif** : chaque usage ci-dessous doit être vérifié par l'utilisateur.
 
----
-
-### Prestataires
+## Prestataires
 
 - **Mistral AI** est le prestataire principal.
 - **OpenAI** est utilisé en secours lorsque Mistral AI est indisponible ou ne répond pas dans le délai prévu.
 
-Les échanges avec Mistral AI sont effectués sans conservation de la conversation côté prestataire.
+Pour l'association des comptes de charges et l'estimation des consommations, les échanges avec Mistral AI sont effectués **sans conservation de la conversation** côté prestataire.
 
----
+## Usages
 
-### Usages
+### 1. Association des comptes de charges
 
-#### 1. Association des comptes de charges
+Utilisée à l'étape [Empreinte des achats](/docs/metriz-webapp/achats).
 
 - **Objectif** : rattacher chaque compte de charges à la division d'activité des fournisseurs, pour estimer les impacts indirects.
-- **Données transmises** : le libellé du compte de charges et la division d'activité de l'unité légale.
+- **Données transmises** : le numéro et le libellé du compte de charges, et la division d'activité de l'unité légale.
 - **Résultat** : une division d'activité proposée par compte, avec un niveau de pertinence.
 - **À vérifier** : les associations des comptes les plus significatifs, à corriger manuellement si nécessaire.
 
-#### 2. Estimation des consommations d'eau et d'énergie
+### 2. Estimation des consommations d'eau et d'énergie
+
+Proposée lors de la déclaration des indicateurs [énergie](/docs/metriz-webapp/declarations/nrg), [eau](/docs/metriz-webapp/declarations/wat) et [gaz à effet de serre](/docs/metriz-webapp/declarations/ghg).
 
 - **Objectif** : repérer, dans les charges, les dépenses d'eau, d'électricité, de gaz, de carburant, de fioul ou de biomasse, afin de proposer une estimation des consommations.
-- **Données transmises** : le numéro et le libellé du compte, ainsi que le libellé de l'écriture comptable.
-- **Résultat** : une catégorie par dépense, convertie en consommation estimée.
-- **À vérifier** : les quantités estimées, à remplacer par les valeurs des factures ou des compteurs lorsqu'elles sont disponibles. L'incertitude associée est à ajuster en conséquence (voir [déclarations](/docs/metriz-webapp/declarations)).
+- **Données transmises** : le numéro et le libellé du compte, ainsi que le libellé de l'écriture comptable. Le montant de l'écriture n'est pas transmis.
+- **Résultat** : une catégorie par dépense. La conversion en consommation estimée est faite par l'application, à partir du montant de la dépense.
+- **À vérifier** : les quantités estimées, à remplacer par les valeurs des factures ou des compteurs lorsqu'elles sont disponibles. L'incertitude associée est à ajuster en conséquence (voir [Incertitudes](/docs/metriz-webapp/declarations#incertitudes)).
 
-#### 3. Analyse par indicateur
+### 3. Analyse par indicateur
 
 - **Objectif** : rédiger, pour un indicateur, une note de lecture contextualisée : diagnostic, comparaison à la moyenne du secteur, sources d'impact et pistes d'action.
-- **Données transmises** : le nom de l'entreprise et son secteur, la valeur de l'indicateur et ses composantes, la moyenne sectorielle, les principaux achats contributeurs et les impacts directs déclarés.
+- **Données transmises** : la division d'activité de l'entreprise, les empreintes par euro de ses agrégats et la moyenne sectorielle, le libellé et l'empreinte des cinq principaux comptes d'achats, et les impacts directs déclarés pour l'indicateur.
 - **Résultat** : un texte de quelques paragraphes affiché dans la vue de l'indicateur.
 - **À vérifier** : les pistes d'action sont des orientations générales, pas des conseils personnalisés.
 
-#### 4. Analyse générale
+### 4. Analyse générale
 
 - **Objectif** : proposer une synthèse de l'ensemble des indicateurs : points forts, points d'attention et actions prioritaires.
-- **Données transmises** : le nom de l'entreprise, son secteur, l'exercice, les valeurs des indicateurs, leur position par rapport à la branche et la décomposition de l'empreinte.
+- **Données transmises** : la dénomination de l'entreprise, son activité et l'exercice, puis pour chaque indicateur : l'empreinte par euro et son incertitude, la valeur de l'exercice précédent, la moyenne de la branche, l'objectif 2030, les écarts en % et la décomposition de l'empreinte en %.
 - **Résultat** : une note de synthèse affichée sur le Tableau de bord.
 
----
+## Ce qui n'est pas transmis
 
-### Ce qui n'est pas transmis
+Les prestataires d'IA ne reçoivent que les données listées pour chaque usage ci-dessus. En particulier, ne sont **jamais transmis** :
 
-- Le fichier FEC et les fichiers DSN ne sont pas envoyés aux prestataires d'IA.
-- Les montants des écritures comptables et les données individuelles de paie ne sont pas transmis.
+- les **fichiers importés** (FEC et DSN) ;
+- les **montants des écritures et des comptes**, ni le chiffre d'affaires, la valeur ajoutée ou les montants des agrégats : les analyses de résultats reçoivent des empreintes par euro, des pourcentages et les impacts directs déclarés ;
+- le **numéro SIREN** de l'entreprise, ni le nom ou le SIREN de ses fournisseurs ;
+- les **données individuelles de paie** : seuls les indicateurs déclarés, déjà agrégés (écart de rémunérations, indice de répartition), peuvent être repris dans l'analyse.
 
-### Indisponibilité
+<Callout type="important" title="Libellés comptables">
 
-Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les calculs d'empreintes ne dépendent pas de l'IA : ils restent disponibles à partir des associations et des déclarations saisies manuellement.
+Les libellés des comptes et des écritures sont transmis tels qu'ils figurent dans le FEC. S'ils contiennent un nom de fournisseur, un numéro de facture ou une date, ces informations sont transmises avec eux.
+
+</Callout>
+
+## Indisponibilité
+
+Si aucun des deux prestataires ne répond, l'analyse ou l'estimation n'est pas produite et un message l'indique. Les **calculs d'empreintes ne dépendent pas de l'IA** : ils restent disponibles à partir des associations et des déclarations saisies manuellement.

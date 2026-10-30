@@ -1,160 +1,197 @@
-## Lecture des Déclarations Sociales Nominatives (DSN)
+Les Déclarations Sociales Nominatives (DSN) permettent de calculer automatiquement les indicateurs sociaux suivants :
 
-### Introduction
+<IndicatorGrid keys={["idr", "geq", "knw"]} base="/docs/metriz-webapp/declarations" />
 
-Lors de l'import, seules les données nécessaires à la production des indicateurs sociaux sont extraites du fichier.  
+Lors de l'import, **seules les données nécessaires** à la production de ces indicateurs sont extraites du fichier.
 
-Les fichiers sont lus dans le navigateur. Ils ne sont pas conservés : seuls les résultats de la lecture sont enregistrés.
+Les fichiers sont **lus dans le navigateur**. Ils **ne sont pas conservés** : seuls les résultats de la lecture sont enregistrés. Les données individuelles (nom, prénoms, sexe, etc.) servent uniquement à rattacher les contrats et les versements à une même personne : elles ne sont ni conservées, ni transmises.
 
----
+## Connecteur OpenPaye
 
-### Données extraites
+Pour les entreprises dont la paie est gérée sur **OpenPaye**, les DSN peuvent être importées directement via le connecteur, sans téléverser les fichiers. Elles sont ensuite lues de la même manière. Voir [Connecteur OpenPaye](/docs/metriz-webapp/connecteurs/openpaye).
 
-#### Éléments relatifs à la déclaration (`S20.G00.05`)
+## Taux horaire de chaque personne
 
-Ces données permettent de vérifier que l'ensemble des déclarations ont bien été déposées, sans doublon.  
+Les deux indices de rémunération s'appuient sur le **taux horaire brut** de chaque personne : la somme de ses rémunérations brutes divisée par la somme de ses heures travaillées.
 
-**Éléments lus :**  
-- `S20.G00.05.001` : Nature  
-- `S20.G00.05.002` : Type  
-- `S20.G00.05.003` : Fraction  
-- `S20.G00.05.004` : Ordre  
-- `S20.G00.05.005` : Mois  
-- `S20.G00.05.007` : Date  
-- `S20.G00.05.008` : Champ  
-- `S20.G00.05.010` : Devise  
+<Formula math={String.raw`t_i = \frac{\text{rémunérations brutes}_i}{\text{heures}_i}`} />
 
-#### Éléments relatifs à l’entreprise (`S21.G00.06`)
+Les contrats et les versements sont regroupés par personne à partir du **matricule**, sur l'ensemble des mois et des établissements importés.
 
-**Éléments lus :**  
-- `S21.G00.06.001` : Siren  
-- `S21.G00.06.002` : Nic  
+### Rémunérations prises en compte
 
-#### Éléments relatifs à l’établissement (`S21.G00.11`)
+| Type | Libellé |
+|---|---|
+| 001 | Rémunérations brutes non plafonnées |
+| 012 | Heures d'équivalence |
+| 013 | Heures d'habillage, déshabillage, pause |
+| 017 | Heures supplémentaires ou complémentaires aléatoires |
+| 018 | Heures supplémentaires structurelles |
 
-**Éléments lus :**  
-- `S21.G00.11.001` : Nic  
+### Primes prises en compte
 
-#### Éléments relatifs aux individus (`S21.G00.30`)
+| Type | Libellé |
+|---|---|
+| 026 | Primes exceptionnelles liées à l'activité avec période de rattachement spécifique |
+| 027 | Primes liées à l'activité avec période de rattachement spécifique |
+| 028 | Primes non liées à l'activité |
+| 029 | Primes liées au rachat de jours RTT |
+| 030 | Primes rachat CET |
 
-**Éléments lus :**  
-- `S21.G00.30.001` : Identifiant  
-- `S21.G00.30.002` : Nom de famille  
-- `S21.G00.30.003` : Nom d’usage  
-- `S21.G00.30.004` : Prénoms  
-- `S21.G00.30.005` : Sexe  
-- `S21.G00.30.020` : Identifiant technique  
+### Autres revenus pris en compte
 
-À ces éléments s’ajoutent les éléments relatifs aux **contrats** et aux **versements**.
+| Type | Libellé |
+|---|---|
+| 02, 03, 04, 05, 06 | Avantages en nature |
+| 10 | Déduction forfaitaire spécifique |
+| 11 | Participations |
+| 12 | Intéressements |
+| 14, 15, 16 | Abonnements aux plans d'épargne |
+| 17, 18, 19 | Participations patronales |
+| 25 | Droits d'auteur |
+| 26 | Droits de doublage |
+| 27 | Droits de rediffusion |
+| 31 | Avantages de préretraite versés par l'employeur |
+| 33 | Sommes provenant d'un CET réaffectées à un PERCO ou à un régime de retraite supplémentaire |
+| 90 | Participation au financement des services à la personne |
+| 91 | Participation de l'employeur aux chèques vacances |
+| 92 | Cotisations frais de santé |
+| 93 | Cotisations prévoyance et retraite supplémentaire |
 
----
+### Heures prises en compte
+
+- les **heures d'activité** de travail rémunéré (`S21.G00.53`, type 01). Les mesures exprimées en jours sont converties à raison de 7 heures par jour ;
+- les **heures** déclarées sur les rémunérations de types 012, 013, 017 et 018.
+
+Pour un **cadre** sans heures déclarées (forfait jours), une durée de 150,5 heures par mois est retenue. Les autres personnes sans heures déclarées sont écartées du calcul.
+
+Les dirigeants saisis manuellement dans l'application sont inclus dans les calculs, avec une durée par défaut de 1 607 heures par an.
+
+## Indice d'écart des rémunérations (D9/D1)
+
+Les taux horaires sont ordonnés par ordre croissant et **pondérés par les heures travaillées** : D1 est le taux horaire atteint à 10 % du total des heures, D9 celui atteint à 90 %. L'indice est le rapport D9/D1.
+
+<Formula math={String.raw`\text{Indice} = \frac{D9}{D1}`} />
+
+Avec moins de deux personnes, l'indice est égal à 1.
+
+## Écart de rémunérations femmes/hommes
+
+L'écart correspond à l'**écart absolu** entre le taux horaire moyen des femmes et celui des hommes, rapporté au taux horaire moyen de l'ensemble des effectifs. Chaque taux moyen est la somme des rémunérations brutes du groupe divisée par la somme de ses heures, ce qui revient à pondérer par les heures travaillées.
+
+<Formula math={String.raw`\text{Écart} = \frac{\left| \bar{t}_{F} - \bar{t}_{H} \right|}{\bar{t}} \qquad \text{avec } \bar{t}_{G} = \frac{\sum_{i \in G} \text{rémunérations brutes}_i}{\sum_{i \in G} \text{heures}_i}`} />
+
+Le sexe est lu dans la rubrique `S21.G00.30.005`. Si les effectifs ne comptent que des femmes ou que des hommes, l'écart est égal à 0 %.
+
+## Évolution des compétences et des connaissances
+
+La lecture des DSN alimente deux postes de l'indicateur :
+
+- les **rémunérations des personnes en contrat de formation** (stage, apprentissage, professionnalisation, etc.) ;
+- les **compensations pour les heures de formation** des autres salariés. Ces heures sont à saisir dans l'application.
+
+Les autres postes (taxe d'apprentissage, formation professionnelle) proviennent du FEC ou sont saisis manuellement.
+
+## Données extraites
+
+<div className="docs-code-tables">
+
+### Éléments relatifs à la déclaration (`S20.G00.05`)
+
+Ces données permettent de vérifier que l'ensemble des déclarations ont bien été déposées, sans doublon.
+
+| Rubrique | Libellé |
+|---|---|
+| `S20.G00.05.001` | Nature |
+| `S20.G00.05.002` | Type |
+| `S20.G00.05.003` | Fraction |
+| `S20.G00.05.004` | Ordre |
+| `S20.G00.05.005` | Mois |
+| `S20.G00.05.007` | Date |
+| `S20.G00.05.008` | Champ |
+| `S20.G00.05.010` | Devise |
+
+### Éléments relatifs à l'entreprise (`S21.G00.06`)
+
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.06.001` | SIREN |
+| `S21.G00.06.002` | NIC |
+
+### Éléments relatifs à l'établissement (`S21.G00.11`)
+
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.11.001` | NIC |
+
+### Éléments relatifs aux individus (`S21.G00.30`)
+
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.30.001` | Identifiant |
+| `S21.G00.30.002` | Nom de famille |
+| `S21.G00.30.003` | Nom d'usage |
+| `S21.G00.30.004` | Prénoms |
+| `S21.G00.30.005` | Sexe |
+| `S21.G00.30.019` | Matricule |
+| `S21.G00.30.020` | Identifiant technique |
 
 ### Éléments relatifs aux contrats (`S21.G00.40`)
 
-**Éléments lus :**  
-- `S21.G00.40.001` : Date de début  
-- `S21.G00.40.002` : Statut conventionnel  
-- `S21.G00.40.004` : PCS ESE  
-- `S21.G00.40.005` : Complément PCS ESE  
-- `S21.G00.40.007` : Nature  
-- `S21.G00.40.009` : Numéro  
-- `S21.G00.40.011` : Unité de mesure  
-- `S21.G00.40.012` : Catégorie de quotité  
-- `S21.G00.40.013` : Quotité  
-- `S21.G00.40.014` : Modalité de temps  
-
----
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.40.001` | Date de début |
+| `S21.G00.40.002` | Statut conventionnel |
+| `S21.G00.40.004` | PCS ESE |
+| `S21.G00.40.005` | Complément PCS ESE |
+| `S21.G00.40.007` | Nature |
+| `S21.G00.40.009` | Numéro |
+| `S21.G00.40.011` | Unité de mesure |
+| `S21.G00.40.012` | Catégorie de quotité |
+| `S21.G00.40.013` | Quotité |
+| `S21.G00.40.014` | Modalité de temps |
 
 ### Éléments relatifs aux versements (`S21.G00.50`)
 
-**Éléments lus :**  
-- `S21.G00.50.001` : Date  
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.50.001` | Date |
 
-Pour chaque versement sont associés :  
-- les **rémunérations** (`S21.G00.51`),  
-- les **primes** (`S21.G00.52`),  
-- et les **autres revenus** (`S21.G00.54`).
-
----
+Chaque versement regroupe des **rémunérations** (`S21.G00.51`), des **primes** (`S21.G00.52`) et des **autres revenus** (`S21.G00.54`).
 
 ### Éléments relatifs aux rémunérations (`S21.G00.51`)
 
-**Éléments lus :**  
-- `S21.G00.51.001` : Date de début  
-- `S21.G00.51.002` : Date de fin  
-- `S21.G00.51.010` : Numéro de contrat  
-- `S21.G00.51.011` : Type  
-- `S21.G00.51.012` : Nombre d’heures  
-- `S21.G00.51.013` : Montant  
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.51.001` | Date de début |
+| `S21.G00.51.002` | Date de fin |
+| `S21.G00.51.010` | Numéro de contrat |
+| `S21.G00.51.011` | Type |
+| `S21.G00.51.012` | Nombre d'heures |
+| `S21.G00.51.013` | Montant |
 
-Pour chaque rémunération sont associées les **activités** (`S21.G00.53`) concernées.
-
----
+Chaque rémunération est rattachée aux **activités** (`S21.G00.53`) concernées.
 
 ### Éléments relatifs aux primes (`S21.G00.52`)
 
-**Éléments lus :**  
-- `S21.G00.52.001` : Type  
-- `S21.G00.52.002` : Montant  
-
----
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.52.001` | Type |
+| `S21.G00.52.002` | Montant |
 
 ### Éléments relatifs aux activités (`S21.G00.53`)
 
-**Éléments lus :**  
-- `S21.G00.53.001` : Type  
-- `S21.G00.53.002` : Mesure  
-- `S21.G00.53.003` : Unité  
-
----
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.53.001` | Type |
+| `S21.G00.53.002` | Mesure |
+| `S21.G00.53.003` | Unité |
 
 ### Éléments relatifs aux autres revenus (`S21.G00.54`)
 
-**Éléments lus :**  
-- `S21.G00.54.001` : Type  
-- `S21.G00.54.002` : Montant  
+| Rubrique | Libellé |
+|---|---|
+| `S21.G00.54.001` | Type |
+| `S21.G00.54.002` | Montant |
 
----
-
-## Calcul de l’écart D9/D1
-
-Le calcul de l’écart D9/D1 se fait à partir du **nombre d’heures de travail** et du **taux horaire** de chaque personne.
-
-### Rémunérations prises en compte 
-- Rémunérations brutes non plafonnées (`type 001`)  
-- Heures d’équivalence (`type 012`)  
-- Heures d’habillage, déshabillage, pause (`type 013`)  
-- Heures supplémentaires ou complémentaires aléatoires (`type 017`)  
-- Heures supplémentaires structurelles (`type 018`)  
-
-### Primes prises en compte 
-- Primes exceptionnelles liées à l’activité avec période de rattachement spécifique (`type 026`)  
-- Primes liées à l’activité avec période de rattachement spécifique (`type 027`)  
-- Primes non liées à l’activité (`type 028`)  
-- Primes liées au rachat de jours RTT (`type 029`)  
-- Primes rachat CET (`type 030`)  
-
-### Autres revenus pris en compte
-- Avantages en nature (`types 02, 03, 04, 05, 06`)  
-- Participations (`type 11`)  
-- Intéressements (`type 12`)  
-- Abonnements aux plans d’épargne (`types 14, 15, 16`)  
-- Participations patronales (`types 17, 18, 19`)  
-- Droits d’auteur (`type 25`)  
-- Droits de doublage (`type 26`)  
-- Droits de rediffusion (`type 27`)  
-- Avantages de préretraite versés par l’employeur (`type 31`)  
-- Sommes provenant d’un CET réaffectées à un PERCO ou à un régime de retraite supplémentaire (`type 33`)  
-- Participation de l’employeur aux chèques vacances (`type 91`)  
-- Cotisations frais de santé (`type 92`)  
-- Cotisations prévoyance et retraite supplémentaire (`type 93`)  
-
-> Le rapport interdécile est obtenu en ordonnant les taux horaires par ordre croissant, puis en calculant le **rapport du taux horaire maximal du premier décile sur le taux horaire minimal du dernier décile**.
-
----
-
-## Calcul de l’écart de rémunération femmes/hommes
-
-La valeur correspond à **l’écart entre le taux horaire moyen des femmes et celui des hommes**, rapporté au taux horaire moyen global.  
-
-Chaque taux horaire est **pondéré par le nombre d’heures travaillées**.
+</div>

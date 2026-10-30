@@ -1,83 +1,95 @@
-## Empreintes des activités économiques (macro_fpt_trd)
+## Présentation
 
-### Présentation
+Le jeu de données `macro_fpt_trd` regroupe les tendances des empreintes des activités économiques selon la nomenclature FIGARO (A*64).
 
-Le jeu de données **macro_fpt_trd** regroupe les tendances des empreintes des activités économiques selon la nomenclature FIGARO (A*64).
+Les empreintes sont disponibles pour les agrégats suivants :
 
-Les empreintes sont disponibles pour les agrégats suivants : PRD (Production), GVA (Valeur ajoutée brute), IC (Consommations intermédiaires), NVA (Valeur ajoutée nette), CFC (Consommations de capital fixe)
+| Code | Agrégat |
+|---|---|
+| `PRD` | Production |
+| `GVA` | Valeur ajoutée brute |
+| `IC` | Consommations intermédiaires |
+| `NVA` | Valeur ajoutée nette |
+| `CFC` | Consommations de capital fixe |
 
-Les dimensions extra-financières disponibles sont celles de l'Empreinte Sociétale.
+Les dimensions extra-financières disponibles sont celles de l'[Empreinte Sociétale](/docs/empreinte-societale/indicateurs).
 
-La période de tedance couvre de 2022 à 2030. La date de début de la série correspond à l'année suivante la dernière année observée.
+La période de tendance couvre de 2022 à 2030. La date de début de la série correspond à l'année suivant la dernière année observée.
 
-Les empreintes sont exprimées en euro courant, et dans l'unité par défaut de l'indicateur.
+Les empreintes sont exprimées **en euros courants**, et **dans l'unité par défaut de l'indicateur**.
 
----
-### Description de la table
+## Description de la table
 
-Paramètres du jeu de données :
+| Colonne | Type | Description |
+|---|---|---|
+| `indic` | Paramètre | Code de l'indicateur au sein de l'Empreinte Sociétale |
+| `year` | Paramètre | Année |
+| `country` | Paramètre | Code du pays (ISO3) ou région du monde |
+| `industry` | Paramètre | Code du secteur, selon la NACE Révision 2 (codes A64, A21 et A10) |
+| `aggregate` | Paramètre | Code de l'agrégat économique |
+| `currency` | Paramètre | Devise : `CPEUR` (base euro courant) |
+| `trend` | Paramètre | Scénario de tendance : `BL` (base de référence) |
+| `value` | Donnée | Valeur observée |
+| `flag` | Donnée | Complément d'information relative à la valeur |
+| `lastupdate` | Donnée | Date de dernière mise à jour |
 
-- **indic** : Code de l'indicateur au sein de l'Empreinte Sociétale
-- **year** : Année
-- **area** : Code du pays (ISO3) ou région du monde
-- **industry** : Code du secteur, selon la NACE Révision 2 (Codes A64, A21 et A10)
-- **aggregate** : Code de l'agrégat économique
+## Construction des données
 
-Autres colonnes :
-
-- **value** : Valeur observée
-- **flag** : Complément d'information relative à la valeur
-- **lastupdate** : Date de dernière mise à jour
-
-### Contruction des données
-
-Les données sont construites à partir du modèle entrée-sortie multirégional FIGARO et des comptes d'impacts associés aux dimensions de l'Empreinte Sociétale.
+Les données sont construites à partir du modèle entrées-sorties multirégional FIGARO et des [comptes d'impacts](/docs/donnees-statistiques/sources) associés aux dimensions de l'Empreinte Sociétale. La démarche générale est décrite dans la [méthodologie](/docs/donnees-statistiques/methodologie).
 
 *Détails méthodologiques à venir*
 
-### Sources de données utilisées
-
-Sources de données utilisées :
+## Sources de données utilisées
 
 - **MRIO FIGARO** - FIGARO (Eurostat)
 - **Comptes d'impacts relatifs à l'Empreinte Sociétale** - La Société Nouvelle
 
----
+## Accès via l'API
 
-### Paramètres de requête
-
-**Endpoint de l’API :**  
+**Endpoint :**
 
 [`https://api.sinese.fr/v2/macrodata/macro_fpt_trd`](https://api.sinese.fr/v2/macrodata/macro_fpt_trd)
 
-**Authentification :** requête à authentifier avec un jeton d'accès (header `Authorization: Bearer <votre_token>`).
+Les paramètres de la table s'utilisent comme filtres de requête. Plusieurs valeurs peuvent être séparées par des virgules (ex. `year=2020,2021`). Les résultats sont paginés avec `page` et `limit` (**5 000 résultats maximum** par page).
 
----
+**Exemple :** tendance de l'intensité d'émission de gaz à effet de serre (`GHG`) pour la production (`PRD`) de l'industrie chimique (`C20`) en France (`FRA`) en 2030.
 
-### Commentaires
+```bash
+curl "https://api.sinese.fr/v2/macrodata/macro_fpt_trd?indic=GHG&year=2030&industry=C20&country=FRA&aggregate=PRD"
+```
 
-Les données sont également disponibles en nomenclature A*38 (branche) A*88 (division).
+Les paramètres et leurs valeurs possibles sont disponibles via l'endpoint de métadonnées :
+
+```bash
+curl "https://api.sinese.fr/v2/macrodata/macro_fpt_trd/metadata"
+```
+
+La documentation complète de l'API est disponible sur [api.sinese.fr/docs](https://api.sinese.fr/docs/).
+
+## Nomenclatures et jeux dérivés
+
+Les données sont également disponibles en nomenclature A\*38 (branche) et A\*88 (division).
 
 Jeux de données dérivés :
-- **macro_fpt_trd_a38** : Empreintes macroéconomiques agrégées par branche (A*38)
-- **macro_fpt_trd_a88** : Empreintes macroéconomiques étendues par division (A*88)
 
----
+| Jeu de données | Description |
+|---|---|
+| `macro_fpt_trd_a38` | Empreintes macroéconomiques agrégées par branche (A\*38) |
+| `macro_fpt_trd_a88` | Empreintes macroéconomiques étendues par division (A\*88) |
+
+## Informations
 
 ### Licence
 
 Les données sont diffusées sous **licence ouverte Etalab**.
 
----
-
 ### Contact
 
-**Producteur des données :** La Société Nouvelle  
+**Producteur des données :** La Société Nouvelle
 
-Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)  
-Adresse mail : **contact@lasocietenouvelle.org**
+Pour toute question : [formulaire de contact](https://lasocietenouvelle.org/contact)
 
----
+Adresse e-mail : **contact@lasocietenouvelle.org**
 
 ### Mise à jour
 

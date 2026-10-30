@@ -1,122 +1,122 @@
-## Lecture du FEC
+Les écritures comptables constituent la base de calcul de l'empreinte sociétale d'une entreprise. Elles permettent d'avoir le détail de la production : valeur ajoutée nette, flux de consommations intermédiaires, flux de consommations de capital fixe (investissements et amortissements des immobilisations) et variations des stocks.
 
-### Introduction
+Pour en savoir plus sur la méthodologie de mesure : [documentation de la méthodologie](/docs/empreinte-societale/methodologie).
 
-Les écritures comptables constituent la base de calcul de l'empreinte sociétale d'une entreprise. Elles permettent d'avoir le détail de la production : valeur ajoutée nette, flux de consommations intermédiaires, flux de consommations de capital fixe (investissements et amortissements des immobilisations) et variations des stocks.  
+L'application web s'appuie sur le Fichier d'Écritures Comptables (FEC) pour l'exploitation de ces données.
 
-Pour en savoir plus sur la méthodologie de mesure : [documentation de la méthodologie](/docs/empreinte-societale/methodologie)  
+Certains logiciels comptables permettent aussi de récupérer le FEC directement via un connecteur (voir [Connecteurs](/docs/metriz-webapp/connecteurs)).
 
-L'application web s'appuie sur le Fichier d'Écritures Comptables (FEC) pour l'exploitation de ces données.  
+Le fichier est lu pour en extraire les agrégats nécessaires au calcul. Il est stocké temporairement le temps de sa lecture, puis **supprimé** : seuls les résultats de la lecture sont enregistrés.
 
-Une exploitation des APIs des logiciels comptables est prévue prochainement.  
+## Format du fichier
 
-Le fichier est lu pour en extraire les agrégats nécessaires au calcul. Il n'est pas conservé : seuls les résultats de la lecture sont enregistrés.
+Le fichier doit respecter les prérequis suivants :
+- **Format :** `.txt` ou `.csv`
+- **Encodage :** détecté automatiquement (UTF-8 ou ISO-8859-1)
+- **Séparateur :** `\t` (tabulation) ou `|` (pipe)
 
-#### Format du fichier
-
-Le fichier doit respecter les prérequis suivants :  
-- **Format** : ".txt" ou ".csv"  
-- **Encodage** : détecté automatiquement (UTF-8 ou ISO-8859-1)  
-- **Séparateur** : "\t" (tabulation) ou "|" (pipe)  
-
-Les normes relatives aux fichiers d'écritures comptables sont disponibles ici : [Article A.47 A-1 du livre des procédures fiscales](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775)  
+Les normes relatives aux fichiers d'écritures comptables sont disponibles ici : [Article A.47 A-1 du livre des procédures fiscales](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775)
 
 Au-delà d'une certaine taille, le temps de lecture du fichier peut être significatif.
 
-### Données extraites
+## Données extraites
 
-#### Lecture du journal des A-Nouveaux
+### Lecture du journal des A-Nouveaux
 
-L'identification du journal des A-Nouveaux s'effectue via le code journal (`JournalCode`) sélectionné lors de l'import.  
+L'identification du journal des A-Nouveaux s'effectue via le code journal (`JournalCode`) sélectionné lors de l'import.
 
-Codes reconnus par défaut : « AN », « RAN », « AA », « AD »  
+Codes reconnus par défaut : **« AN », « RAN », « AA », « AD »**
 
-Éléments lus :  
-- Montant initial des comptes d'immobilisations (20x à 27x)  
-- Montant initial des comptes d'amortissements et de dépréciations (28x, 29x)  
-- Montant initial des comptes de stocks (31x à 37x)  
-- Montant initial des comptes de dépréciations des stocks (39x)  
+**Éléments lus :**
+- Montant initial des comptes d'immobilisations (20x à 27x)
+- Montant initial des comptes d'amortissements et de dépréciations (28x, 29x)
+- Montant initial des comptes de stocks (31x à 37x)
+- Montant initial des comptes de dépréciations des stocks (39x)
 
-#### Écritures relatives aux comptes d'immobilisations
+### Écritures relatives aux comptes d'immobilisations
 
-Comptes concernés : 20x à 27x  
+**Comptes concernés :** 20x à 27x
 
-Éléments lus :  
-- Variations du montant des comptes d'immobilisations  
-- Liste des acquisitions (si ligne relative à un compte fournisseur 40x)  
-- Liste des immobilisations de production (si ligne relative à un compte 72x)  
+**Éléments lus :**
+- Variations du montant des comptes d'immobilisations
+- Liste des acquisitions (si ligne relative à un compte fournisseur 40x)
+- Liste des immobilisations de production (si ligne relative à un compte 72x)
 
-#### Écritures relatives aux comptes d'amortissements et de dépréciations
+### Écritures relatives aux comptes d'amortissements et de dépréciations
 
-Comptes concernés : 28x, 29x  
+**Comptes concernés :** 28x, 29x
 
-Éléments lus :  
-- Variations du montant des comptes d'amortissements et de dépréciations  
+**Éléments lus :**
+- Variations du montant des comptes d'amortissements et de dépréciations
 
-#### Écritures relatives aux comptes de stocks
+### Écritures relatives aux comptes de stocks
 
-Comptes concernés : 31x à 37x  
+**Comptes concernés :** 31x à 37x
 
-Éléments lus :  
-- Variations du montant des comptes de stocks  
+**Éléments lus :**
+- Variations du montant des comptes de stocks
 
-#### Écritures relatives aux comptes de dépréciations de stocks
+### Écritures relatives aux comptes de dépréciations de stocks
 
-Comptes concernés : 39x  
+**Comptes concernés :** 39x
 
-Éléments lus :  
-- Variations du montant des comptes de dépréciations de stocks  
+**Éléments lus :**
+- Variations du montant des comptes de dépréciations de stocks
 
-#### Écritures relatives aux comptes de charges externes
+### Écritures relatives aux comptes de charges externes
 
-Comptes concernés : 60x (hors 603x), 61x et 62x  
+**Comptes concernés :** 60x (hors 603x), 61x et 62x
 
-Éléments lus :  
-- Liste des charges externes  
-- Pour chaque charge externe, le compte fournisseur auxiliaire (ligne relative à un compte 40x)  
-- En l'absence de compte fournisseur, l'écriture est rattachée à un compte auxiliaire par défaut  
-- La présence de deux comptes 40x dans une même écriture peut générer une erreur d'interprétation  
+**Éléments lus :**
+- Liste des charges externes
+- Pour chaque charge externe, le compte fournisseur auxiliaire (ligne relative à un compte 40x)
+- En l'absence de compte fournisseur, l'écriture est rattachée à un compte auxiliaire par défaut
+- La présence de deux comptes 40x dans une même écriture peut générer une erreur d'interprétation
 
-#### Écritures relatives aux comptes de variations de stocks
+### Écritures relatives aux comptes de variations de stocks
 
-Comptes concernés : 603x  
+**Comptes concernés :** 603x
 
-Éléments lus :  
-- Montants des variations de stocks, par compte de variations et par compte de stocks  
-- Plusieurs comptes de variations et plusieurs comptes de stocks dans une même écriture peuvent générer une erreur de lecture  
+**Éléments lus :**
+- Montants des variations de stocks, par compte de variations et par compte de stocks
+- Plusieurs comptes de variations et plusieurs comptes de stocks dans une même écriture peuvent générer une erreur de lecture
 
-#### Écritures relatives aux comptes de dotations aux amortissements
+### Écritures relatives aux comptes de dotations aux amortissements
 
-Comptes concernés : 6811x, 6871x  
+**Comptes concernés :** 6811x, 6871x
 
-Éléments lus :  
-- Montants des dotations aux amortissements sur immobilisations, par compte de dotation et par compte d'amortissements  
-- Plusieurs comptes de dotations et d'amortissements dans la même écriture peuvent générer une erreur de lecture  
+**Éléments lus :**
+- Montants des dotations aux amortissements sur immobilisations, par compte de dotation et par compte d'amortissements
+- Plusieurs comptes de dotations et d'amortissements dans la même écriture peuvent générer une erreur de lecture
 
-#### Écritures relatives aux comptes de production
+### Écritures relatives aux comptes de production
 
-Comptes concernés : 70x, 71x, 72x  
+**Comptes concernés :** 70x, 71x, 72x
 
-Éléments lus :  
-- Montant total des ventes  
-- Montant de la production stockée  
-- Montant de la production immobilisée  
+**Éléments lus :**
+- Montant total des ventes
+- Montant de la production stockée
+- Montant de la production immobilisée
 
-#### Autres données extraites
+### Autres données extraites
 
-**Informations relatives à l'évolution des compétences et des connaissances :**  
-- Versements pour la taxe d'apprentissage (6312x)  
-- Versements pour la participation à la formation professionnelle (6313x, 6333x)  
+**Informations relatives à l'évolution des compétences et des connaissances :**
+- Versements pour la taxe d'apprentissage (6312x)
+- Versements pour la participation à la formation professionnelle (6313x, 6333x)
 
-### Erreurs potentielles
+## Erreurs potentielles
 
-**Format du fichier :**  
-- Séparateur incorrect  
-- Colonnes manquantes ou libellés incorrects  
+**Format du fichier :**
+- Séparateur incorrect
+- Colonnes manquantes ou libellés incorrects
 
-**Lecture des écritures :**  
-- Plusieurs comptes fournisseur (40x) dans la même écriture  
-- Plusieurs comptes de variation de stock (603x) et plusieurs comptes de stocks (3x) dans la même écriture, regroupement infructueux  
-- Plusieurs comptes de dotation aux amortissements (68x) et plusieurs comptes d'amortissement (28x), regroupement infructueux  
+**Lecture des écritures :**
+- Plusieurs comptes fournisseur (40x) dans la même écriture
+- Plusieurs comptes de variation de stock (603x) et plusieurs comptes de stocks (3x) dans la même écriture, regroupement infructueux
+- Plusieurs comptes de dotation aux amortissements (68x) et plusieurs comptes d'amortissement (28x), regroupement infructueux
 
-> Pour assurer une meilleure lecture des écritures comptables, il est conseillé de ne pas grouper les opérations diverses au sein d'une même écriture comptable.
+<Callout type="tip">
+
+Pour assurer une meilleure lecture des écritures comptables, il est conseillé de **ne pas grouper les opérations diverses au sein d'une même écriture comptable**.
+
+</Callout>

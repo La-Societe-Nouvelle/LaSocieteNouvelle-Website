@@ -1,55 +1,52 @@
-## Déclaration
+<DeclarationHeader indic="nrg" unit="MJ" uncertainty="25 %" />
 
-[Lien vers la documentation de l'indicateur](/docs/empreinte-societale/indicateurs/nrg)
+## Formulaire de déclaration
 
-### Formulaire de déclaration
+La déclaration concerne la consommation directe d'énergie primaire (en MJ), accompagnée de son incertitude.
 
-La déclaration concerne la consommation directe d'énergie primaire (en MJ) et l'incertitude relative. Par défaut, l'incertitude est de 25%.
+## Aide à la déclaration
 
-L'outil d'évaluation mis à disposition permet de décomposer la déclaration selon les différents produits énergétiques consommés.
+Une fonctionnalité est disponible pour estimer la consommation directe d'énergie à partir des données comptables. La fonctionnalité s'appuie sur l'IA générative pour catégoriser les dépenses (électricité, carburants, gaz, fioul, biomasse) et sur des prix moyens (voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)).
 
-#### Aide à la déclaration
+## Sources de l'information
 
-Une fonctionnalité est disponible pour estimer la consomamtion directe d'énergie à partir des données comptables. La fonctionnalité s'appuie sur l'IA générative pour catégoriser les dépenses (électricité, carburants, gaz, fioul, biomasse) et sur des prix moyens.
-
-### Sources de l'information
-
-Liste des documents utiles :
+Documents à rassembler :
 
 - Factures de combustibles (gaz, carburants, fioul, biomasse, etc.)
+{/* TODO fond : parenthèse des factures d'électricité reprise des combustibles ; deux lignes « fioul » dans les coefficients */}
+
 - Factures d'électricité (gaz, carburants, fioul, biomasse, etc.)
 - Fichier avec les indemnités kilométriques
 
-Coefficients monétaires (utilisation à éviter) :
+Coefficients monétaires (**utilisation à éviter**) :
 
-- Pour la consommation d'électricité : de 4.08 kWh/€ à 13.53 kWh/€ selon le niveau de consommation
-- Pour la consommation de carburant : 0.668 L/€
-- Pour la consommation de gaz : de 9.69 kWh/€ à 29.27 kWh/€ selon le niveau de consommation
-- Pour la consommation de fioul : 0.999 L/€
-- Pour la consommation de fioul : 2.739 kg/€
+- Pour la consommation d'électricité : de 4,08 kWh/€ à 13,53 kWh/€ selon le niveau de consommation
+- Pour la consommation de carburant : 0,668 L/€
+- Pour la consommation de gaz : de 9,69 kWh/€ à 29,27 kWh/€ selon le niveau de consommation
+- Pour la consommation de fioul : 0,999 L/€
+- Pour la consommation de fioul : 2,739 kg/€
 
 Source : SDES
 
-### Outil d'évaluation
+## Outil d'évaluation
 
-L'outil d'évaluation reprend les 5 produits énergétiques comptabilisés :
+L'outil d'évaluation permet de décomposer la déclaration selon les **5 produits énergétiques** comptabilisés. Les produits proposés pour les énergies fossiles et la biomasse sont listés dans la [liste des combustibles](/docs/metriz-webapp/liste-combustibles) et la [liste des carburants](/docs/metriz-webapp/liste-carburants).
+### Électricité
 
-#### Electricité
+Déclaration de la consommation totale (en MJ ou kWh), valeur disponible à partir des relevés d'électricité.
 
-Déclaration de la consommation totale (en MJ ou kWh), valeur disponible à partir des relevés d'électricité
+### Produits énergétiques fossiles (gaz, carburant, etc.)
 
-#### Produits énergétiques fossiles (gaz, carburant, etc.)
+Éléments repris de l'outil d'évaluation des émissions de gaz à effet de serre / ajout des produits énergétiques consommés via le menu déroulant et déclaration de la quantité consommée selon les unités disponibles.
 
-Eléments repris de l'outil d'évaluation des émissions de gaz à effet de serre / ajout des produits énergétiques consommés via le menu déroulant et déclaration de la quantité consommée selon les unités disponibles.
+### Biomasse (bois, biocarburant, etc.)
 
-#### Biomasse (bois, biocarburant, etc.)
+Éléments repris de l'outil d'évaluation des émissions de gaz à effet de serre / ajout des produits énergétiques consommés via le menu déroulant et déclaration de la quantité consommée selon les unités disponibles.
 
-Eléments repris de l'outil d'évaluation des émissions de gaz à effet de serre / ajout des produits énergétiques consommés via le menu déroulant et déclaration de la quantité consommée selon les unités disponibles.
+### Chaleur
 
-#### Chaleur
+Déclaration de la quantité totale d'énergie consommée (en MJ ou kWh), valeur disponible à partir des relevés (réseaux de chaleur).
 
-Déclaration de la quantité totale d'énergie consommée (en MJ ou kWh), valeur disponible à partir des relevés (réseaux de chaleur)
-
-#### Energie renouvelable transformée (panneaux photovoltaïques, etc.)
+### Énergie renouvelable transformée (panneaux photovoltaïques, etc.)
 
 Déclaration de la quantité totale d'énergie transformée et consommée (en MJ ou kWh), valeur disponible à partir des relevés du transformateur

@@ -1,25 +1,37 @@
-![Vue catégorisation des immobilisations - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations.png)
+## Catégorisation des immobilisations
 
-### Catégorisation des immobilisations
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations.png', alt: 'Vue catégorisation des immobilisations - Application Metriz', caption: 'Association par défaut' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations-synchronisee.png', alt: 'Vue catégorisation des immobilisations après synchronisation - Application Metriz', caption: 'Empreintes synchronisées' },
+]} />
 
-Pour estimer les impacts liés à l'amortissement des immobilisations :
+Pour estimer les impacts liés à l'amortissement des immobilisations, **catégorisez les comptes d'immobilisations** :
 
-1. **Catégorisez les comptes** par :
-   - **Branche d'activité**
-   - **Espace économique**
-2. Une **association par défaut** est proposée
-   - Basée sur les numéros de compte du Plan Comptable Général (PCG)
-   - À vérifier et corriger si nécessaire
-3. **Synchronisez les données**
-   - Récupère les empreintes associées aux activités et espaces économiques sélectionnés
+- par **branche d'activité**
+- par **espace économique**
 
-### Identification des fournisseurs d'immobilisations
+## Association par défaut
 
-![Vue identification des fournisseurs d'immobilisations - Application METRIZ](/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations.png)
+L'application propose une association par défaut, basée sur les numéros de compte du **Plan Comptable Général** (PCG).
 
-Pour affiner l'empreinte des immobilisations :
+<Callout type="important" title="À vérifier">
 
-1. **Identifiez les fournisseurs d'immobilisations** via leur numéro SIREN, pour les investissements réalisés pendant l'exercice
-2. L'estimation de l'empreinte associée aux investissements est alors plus précise
+Contrôlez les associations proposées et corrigez-les si nécessaire.
 
-<NextStep href="/docs/metriz-webapp/achats">Catégoriser les achats</NextStep>
+</Callout>
+
+## Synchronisation des données
+
+Une fois les associations faites, cliquez sur **Synchroniser les données** : l'application récupère les empreintes correspondant aux activités et espaces économiques sélectionnés.
+
+## Identification des fournisseurs d'immobilisations
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations.png', alt: "Vue identification des fournisseurs d'immobilisations - Application Metriz", caption: 'Fournisseurs à identifier' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations-renseignes.png', alt: "Fournisseurs d'immobilisations avec numéros SIREN renseignés - Application Metriz", caption: 'Numéros SIREN renseignés' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations-synchronises.png', alt: "Fournisseurs d'immobilisations synchronisés - Application Metriz", caption: 'Empreintes synchronisées' },
+]} />
+
+Pour affiner l'empreinte des immobilisations, **identifiez les fournisseurs** des investissements réalisés pendant l'exercice via leur **numéro SIREN** : l'estimation de l'empreinte associée à ces investissements est alors plus précise.
+
+<NextStep href="/docs/metriz-webapp/achats">Empreinte des achats</NextStep>

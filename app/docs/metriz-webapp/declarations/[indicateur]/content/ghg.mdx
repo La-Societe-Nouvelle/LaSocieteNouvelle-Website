@@ -1,60 +1,62 @@
-## Déclaration
+<DeclarationHeader indic="ghg" unit="kgCO₂e" uncertainty="25 %" />
 
-[Lien vers la documentation de l'indicateur](/docs/empreinte-societale/indicateurs/ghg)
+## Formulaire de déclaration
 
-### Formulaire de déclaration
+La déclaration concerne les émissions directes de gaz à effet de serre (en kgCO2e), accompagnée de son incertitude.
 
-La déclaration concerne les émissions directes de gaz à effet de serre (en kgCO2e) et l'incertitude relative. Par défaut, l'incertitude est de 25%.
+## Aide à la déclaration
 
-L'outil d'évaluation mis à disposition permet de calculer les émissions directes à partir des consommations de combustibles, des installations de refroidissement et d'autres données d'activités.
+Une fonctionnalité est disponible pour estimer les émissions directes de gaz à effet de serre à partir des données comptables. La fonctionnalité s'appuie sur l'IA générative pour catégoriser les dépenses (carburants, gaz, fioul, biomasse) et sur des prix moyens (voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)).
 
-### Aide à la déclaration
+<Callout type="note">
 
-Une fonctionnalité est disponible pour estimer les émissions directes de gaz à effet de serre à partir des données comptables. La fonctionnalité s'appuie sur l'IA générative pour catégoriser les dépenses (carburants, gaz, fioul, biomasse) et sur des prix moyens.
+La solution ne remplace en aucun cas un outil pour la réalisation d'un Bilan Carbone.
 
-> La solution ne remplace en aucun cas un outil pour la réalisation d'un Bilan Carbone.
+</Callout>
 
-### Sources de l'information
+## Sources de l'information
 
-Liste des documents utiles :
+Documents à rassembler :
 
 - Factures de combustibles (gaz, carburants, fioul, biomasse, etc.)
 - Fichier avec les indemnités kilométriques
-- Fiches d'intervention concernant la maintenance/réparation des appareils utilisant des fluides frigorigènes - Cerfa Formulaire 15497*04
+- Fiches d'intervention concernant la maintenance/réparation des appareils utilisant des fluides frigorigènes - Cerfa Formulaire 15497\*04
 - Permis de construire
 
-Coefficients monétaires (utilisation à éviter) :
+{/* TODO fond : deux lignes « fioul » (L/€ et kg/€) */}
 
-- Pour la consommation de carburant : 0.668 L/€
-- Pour la consommation de gaz : de 9.69 kWh/€ à 29.27 kWh/€ selon le niveau de consommation
-- Pour la consommation de fioul : 0.999 L/€
-- Pour la consommation de fioul : 2.739 kg/€
+Coefficients monétaires (**utilisation à éviter**) :
+
+- Pour la consommation de carburant : 0,668 L/€
+- Pour la consommation de gaz : de 9,69 kWh/€ à 29,27 kWh/€ selon le niveau de consommation
+- Pour la consommation de fioul : 0,999 L/€
+- Pour la consommation de fioul : 2,739 kg/€
 
 Source : SDES
 
-### Outil d'évaluation
+## Outil d'évaluation
 
-L'outil d'évaluation est décomposé en 6 postes d'émissions :
+L'outil d'évaluation calcule les émissions directes à partir des consommations de combustibles, des installations de refroidissement et d'autres données d'activités. Il est décomposé en **6 postes d'émissions** :
 
-#### 1 - Emissions directes des sources fixes de combustion
+### 1. Émissions directes des sources fixes de combustion
 
-Evaluation à partir des quantités de combustibles consommées. La liste des combustibles et les coefficients utilisés sont issus de la Base Carbone.
+Évaluation à partir des quantités de combustibles consommées. La [liste des combustibles](/docs/metriz-webapp/liste-combustibles) et les coefficients utilisés sont issus de la Base Carbone.
 
-#### 2 - Emissions directes des sources mobiles de combustion
+### 2. Émissions directes des sources mobiles de combustion
 
-Evaluation à partir des quantités de combustibles consommées. La liste des combustibles et les coefficients utilisés sont issus de la Base Carbone. Les coefficients monétaires pour l'essence SP95-E10 et le gazole B7 sont obtenus à partir des coefficents par litre et du prix moyen à la pompe sur l'année 2021 calculé par l'INSEE.
+Évaluation à partir des quantités de carburants consommées. La [liste des carburants](/docs/metriz-webapp/liste-carburants) et les coefficients utilisés sont issus de la Base Carbone. Les coefficients monétaires pour l'essence SP95-E10 et le gazole B7 sont obtenus à partir des coefficients par litre et du prix moyen à la pompe sur l'année 2021 calculé par l'INSEE.
 
-#### 3 - Emissions directes des procédés industriels (hors énergie)
+### 3. Émissions directes des procédés industriels (hors énergie)
 
-Emissions liées à la décarbonation dans la fabrication de produits de construction (ciment, tuiles, etc.) obtenue à partir de la quantité produite.
+Émissions liées à la décarbonation dans la fabrication de produits de construction (ciment, tuiles, etc.) obtenue à partir de la quantité produite.
 
-#### 4 - Emissions directes des procédés agricoles (hors énergie)
+### 4. Émissions directes des procédés agricoles (hors énergie)
 
-Emissions liées aux cheptels et aux activités de drainage et d'épandage.
+Émissions liées aux cheptels et aux activités de drainage et d'épandage.
 
-#### 5 - Emissions directes fugitives
+### 5. Émissions directes fugitives
 
-Les émissions directes fugitives correspondent aux fuites de fluides frigorigènes présents au sein des installations de réfrigération et de climatisation.
+Les émissions directes fugitives correspondent aux fuites de fluides frigorigènes présents au sein des installations de réfrigération et de climatisation (voir la [liste des installations](/docs/metriz-webapp/liste-installations-refrigeration)).
 
 Plusieurs méthodes sont possibles pour estimer ces fuites :
 
@@ -62,45 +64,61 @@ Plusieurs méthodes sont possibles pour estimer ces fuites :
 - Dimensionnement des installations et application d'un taux de fuite moyen
 - Utilisation de données standard
 
-##### Méthode 1 - Obtention de la quantité de fluide remplacé
+#### Méthode 1 : Obtention de la quantité de fluide remplacé
 
-Extrait - Plan Carbone Général
+{/* TODO fond : phrase répétée ci-dessous ; Cerfa n°15497*03 ici, 15497*04 plus haut */}
 
-<div className="alert-info mt-1 mb-2">
-  <div>
-    <p className="mb-1"><b>Description</b></p>
-    <p>Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir des quantités de fluide remplacés en moyenne chaque année. A chaque opération de maintenance, s'il y a une différence entre le fluide retiré et le fluide rajouté dans le système : ce delta représente donc la quantité de fuite.</p>
-    <p className="mb-1 mt-2"><b>Contexte d'utilisation</b></p>
-    <p>Cette méthode est utilisée lorsque l'organisation a accès à ses factures d'entretien de climatisation, sur lesquelles doivent figurer le poids de fluide remplacés.</p>
-    <p>Cette méthode est utilisée lorsque l'organisation a accès à ses factures d'entretien de climatisation, sur lesquelles doivent figurer le poids de fluide remplacés. Ces « Fiches d'intervention pour les opérations nécessitant une manipulation de fluides frigorigènes effectuées sur un équipement » doivent obligatoirement être complétées selon le [Cerfa n°15497*03](https://entreprendre.service-public.fr/vosdroits/R43122) par l'agent d'entretien. Toute organisation doit donc pouvoir avoir accès à ces documents et ces informations.</p>
-    <p className="mb-1 mt-2"><b>Méthode de calcul</b></p>
-    <p>On prend le poids total de fluide remplacé sur l'année de référence (ou une moyenne annuelle si le remplacement a lieu de manière moins récurrente). On calcule le poids de fluide « manquant » dans l'installation : c'est-à-dire la différence entre la quantité de fluide récupérée et la quantité de fluide chargée. Ce delta représente la quantité de fluide ayant fui, entre la dernière recharge et celle effectuée.</p>
-    <p>Le fluide récupéré est destiné au traitement : on ne considère pas d'émissions de GES associées, car (si la manipulation est correctement effectuée), ce fluide retraité est remis sur le marché ou bien détruit en substances stables pour l'atmosphère.</p>
-    <p>On associe ensuite à cette masse le PRG (Pouvoir de Réchauffement Global) du fluide concerné, afin de convertir la masse en CO2e.</p>
-    <p>Si le poids de fluide remplacé n'est pas connu, on prend la charge totale de fluide contenue dans le climatiseur, à laquelle on applique le taux de fuite moyen annuel donné par l'ADEME pour la climatisation à air dans le secteur tertiaire (10% par an).</p>
-  </div>
-</div>
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
 
-[Lien vers la documentation complète](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
+> **Description**
+>
+> Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir des quantités de fluide remplacés en moyenne chaque année. À chaque opération de maintenance, s'il y a une différence entre le fluide retiré et le fluide rajouté dans le système : ce delta représente donc la quantité de fuite.
+>
+> **Contexte d'utilisation**
+>
+> Cette méthode est utilisée lorsque l'organisation a accès à ses factures d'entretien de climatisation, sur lesquelles doivent figurer le poids de fluide remplacés.
+>
+> Cette méthode est utilisée lorsque l'organisation a accès à ses factures d'entretien de climatisation, sur lesquelles doivent figurer le poids de fluide remplacés. Ces « Fiches d'intervention pour les opérations nécessitant une manipulation de fluides frigorigènes effectuées sur un équipement » doivent obligatoirement être complétées selon le [Cerfa n°15497\*03](https://entreprendre.service-public.fr/vosdroits/R43122) par l'agent d'entretien. Toute organisation doit donc pouvoir avoir accès à ces documents et ces informations.
+>
+> **Méthode de calcul**
+>
+> On prend le poids total de fluide remplacé sur l'année de référence (ou une moyenne annuelle si le remplacement a lieu de manière moins récurrente). On calcule le poids de fluide « manquant » dans l'installation : c'est-à-dire la différence entre la quantité de fluide récupérée et la quantité de fluide chargée. Ce delta représente la quantité de fluide ayant fui, entre la dernière recharge et celle effectuée.
+>
+> Le fluide récupéré est destiné au traitement : on ne considère pas d'émissions de GES associées, car (si la manipulation est correctement effectuée), ce fluide retraité est remis sur le marché ou bien détruit en substances stables pour l'atmosphère.
+>
+> On associe ensuite à cette masse le PRG (Pouvoir de Réchauffement Global) du fluide concerné, afin de convertir la masse en CO₂e.
+>
+> Si le poids de fluide remplacé n'est pas connu, on prend la charge totale de fluide contenue dans le climatiseur, à laquelle on applique le taux de fuite moyen annuel donné par l'ADEME pour la climatisation à air dans le secteur tertiaire (10 % par an).
 
-##### Méthode 2 - Dimensionnement des installations et application d'un taux de fuite moyen
+» [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
 
-Extrait - Plan Carbone Général
+</details>
 
-<div className="alert-info mt-1 mb-2">
-  <div>
-    <p className="mb-1"><b>Description</b></p>
-    <p>Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir de la puissance frigorifique des climatiseurs.</p>
-    <p className="mb-1 mt-2"><b>Contexte d'utilisation</b></p>
-    <p>Cette méthode est utilisée lorsque l'organisation n'a pas accès à ses factures d'entretien de climatisation, mais peut trouver les caractéristiques techniques de ses climatiseurs.</p>
-    <p className="mb-1 mt-2"><b>Méthode de calcul</b></p>
-    <p>L'ADEME donne un facteur de conversion qui permet d'estimer le volume de fluide frigorigène contenu dans un climatiseur en fonction de sa puissance frigorifique (0,3 kg de fluide par kW frigorifique pour une climatisation à air).</p>
-    <p>On connaît donc la charge frigorigène de la climatisation, à laquelle on associe un taux de fuite moyen pour une climatisation du secteur tertiaire (10% par an).</p>
-    <p>On multiplie enfin cette masse avec le PRG (Pouvoir de Réchauffement Global) du fluide concerné, afin de la convertir en CO2e.</p>
-  </div>
-</div>
+#### Méthode 2 : Dimensionnement des installations et application d'un taux de fuite moyen
 
-[Lien vers la documentation complète](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
+
+> **Description**
+>
+> Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir de la puissance frigorifique des climatiseurs.
+>
+> **Contexte d'utilisation**
+>
+> Cette méthode est utilisée lorsque l'organisation n'a pas accès à ses factures d'entretien de climatisation, mais peut trouver les caractéristiques techniques de ses climatiseurs.
+>
+> **Méthode de calcul**
+>
+> L'ADEME donne un facteur de conversion qui permet d'estimer le volume de fluide frigorigène contenu dans un climatiseur en fonction de sa puissance frigorifique (0,3 kg de fluide par kW frigorifique pour une climatisation à air).
+>
+> On connaît donc la charge frigorigène de la climatisation, à laquelle on associe un taux de fuite moyen pour une climatisation du secteur tertiaire (10 % par an).
+>
+> On multiplie enfin cette masse avec le PRG (Pouvoir de Réchauffement Global) du fluide concerné, afin de la convertir en CO₂e.
+
+» [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
+
+</details>
 
 L'ensemble des facteurs de dimensionnement des installations sont disponibles au sein de l'application.
 
@@ -113,28 +131,33 @@ Ils sont répartis en 6 groupes :
 - Réfrigération fret
 - Transport de personnes
 
-##### Méthode 3 - Utilisation de données standard
+#### Méthode 3 : Utilisation de données standard
 
-Extrait - Plan Carbone Général
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
 
-<div className="alert-info mt-1 mb-2">
-  <div>
-    <p className="mb-1"><b>Description</b></p>
-    <p>Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir de données standard pour la climatisation de bureaux.</p>
-    <p className="mb-1 mt-2"><b>Contexte d'utilisation</b></p>
-    <p>Cette méthode est utilisée lorsque l'organisation n'a pas accès aux informations techniques sur sa climatisation.</p>
-    <p className="mb-1 mt-2"><b>Méthode de calcul</b></p>
-    <p>On demande au client la surface de bureaux climatisée, à laquelle on associe une donnée moyenne de kW frigorifiques par m² climatisé (0,1 kW frigorifique/m²). On multiplie ensuite cette donnée par le taux de fuite moyen de climatisation du tertiaire (10%), et par le PRG du fluide frigorigène.</p>
-    <p>Si le type de fluide frigorigène n'est pas connu, on prend par défaut le R410a, qui est aujourd'hui le plus utilisé dans les bâtiments de bureau (ADEME).</p>
-  </div>
-</div>
+> **Description**
+>
+> Cette méthode consiste à évaluer les émissions liées aux fuites de fluide frigorigène à partir de données standard pour la climatisation de bureaux.
+>
+> **Contexte d'utilisation**
+>
+> Cette méthode est utilisée lorsque l'organisation n'a pas accès aux informations techniques sur sa climatisation.
+>
+> **Méthode de calcul**
+>
+> On demande au client la surface de bureaux climatisée, à laquelle on associe une donnée moyenne de kW frigorifiques par m² climatisé (0,1 kW frigorifique/m²). On multiplie ensuite cette donnée par le taux de fuite moyen de climatisation du tertiaire (10 %), et par le PRG du fluide frigorigène.
+>
+> Si le type de fluide frigorigène n'est pas connu, on prend par défaut le R410a, qui est aujourd'hui le plus utilisé dans les bâtiments de bureau (ADEME).
 
-[Lien vers la documentation complète](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
+» [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
 
-#### 6 - Emissions issues de la biomasse
+</details>
 
-Emissions liées au changement d'affectation des sols, évaluées à partir des surfaces concernées et du changement opéré (forêt vers prairie, etc.).
+### 6. Émissions issues de la biomasse
+
+Émissions liées au changement d'affectation des sols, évaluées à partir des surfaces concernées et du changement opéré (forêt vers prairie, etc.).
 
 ---
 
-L'écart entre l'incertitude liée à la valeur saisie (consommation, etc.) et celle liée aux émissions provient de l'incertitude associé au facteur d'émissions de gaz à effet de serre utilisé.
+L'écart entre l'incertitude liée à la valeur saisie (consommation, etc.) et celle liée aux émissions provient de l'incertitude associée au facteur d'émissions de gaz à effet de serre utilisé.

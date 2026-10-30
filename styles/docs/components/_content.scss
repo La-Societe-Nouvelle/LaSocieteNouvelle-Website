@@ -1,0 +1,267 @@
+// ===================================
+// Contenu des pages (Markdown / MDX)
+// ===================================
+
+.docs-theme .docs-content {
+  font-size: 1rem;
+  line-height: 1.75;
+
+  @media (min-width: 1440px) {
+    font-size: 1.0625rem;
+  }
+  color: $docs-text;
+  overflow-wrap: break-word;
+
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: calc(#{$docs-header-height} + 1.5rem); // Ancres sous le header fixe
+  }
+
+  // Titres de section séparés par un filet
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin: 3.5rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid $docs-border;
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    margin: 2.25rem 0 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    margin: 1.75rem 0 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    li::marker {
+      color: $docs-muted;
+    }
+  }
+
+  a {
+    color: $docs-link;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: $docs-border-strong;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+    &:hover {
+      color: $docs-navy;
+      text-decoration-color: $docs-coral;
+    }
+  }
+
+  strong {
+    color: $docs-navy;
+  }
+
+  em {
+    font-size: 0.9em;
+  }
+
+  code {
+    padding: 0.15rem 0.4rem;
+    border: 1px solid $docs-border;
+    border-radius: 6px;
+    background: $docs-lavender-pale;
+    color: $docs-navy;
+    font-family: $docs-font-mono;
+    font-size: 0.85em;
+  }
+
+  pre {
+    margin-bottom: 1.5rem;
+    padding: 1.1rem 1.25rem;
+    overflow-x: auto;
+    border-radius: $docs-radius-md;
+    background: $docs-navy;
+    color: #e6e7fb;
+    font-size: 0.85rem;
+    line-height: 1.65;
+
+    code {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+
+  // Citations (extraits ESRS, etc.) : discrètes, filet à gauche
+  blockquote {
+    margin: 1rem 0 1.5rem;
+    padding: 0.1rem 0 0.1rem 1rem;
+    border-left: 2px solid $docs-border;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: $docs-muted;
+
+    p, li {
+      margin-bottom: 0.5rem;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    ol, ul {
+      margin-bottom: 0.5rem;
+      padding-left: 1.6rem;
+    }
+
+    li::marker {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+  }
+
+  // Tableaux larges : défilement horizontal plutôt que débordement
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+
+    th,
+    td {
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      border-bottom: 1px solid $docs-border;
+    }
+
+    th {
+      background: $docs-lavender-pale;
+      font-weight: 600;
+      color: $docs-navy;
+    }
+
+    tr:hover td {
+      background: $docs-lavender-pale;
+    }
+  }
+
+  // Tableaux de rubriques (codes + libellé) : même largeur et mêmes colonnes d'un tableau à l'autre
+  .docs-code-tables table {
+    display: table;
+    table-layout: fixed;
+
+    th:first-child,
+    td:first-child {
+      width: 11rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: $docs-radius-md;
+  }
+
+  .alert {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 0;
+    border-radius: $docs-radius-md;
+
+    &.alert-info {
+      background: $docs-lavender-pale;
+      color: $docs-text;
+    }
+  }
+
+  // Notes simples : encadré neutre, comme <Callout>
+  .note {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-radius: $docs-radius-md;
+    background: $docs-lavender-pale;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: $docs-text;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Notes de bas de page
+  sup {
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $docs-border;
+    font-size: 0.9rem;
+    color: $docs-muted;
+
+    > h2 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: inherit;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .data-footnote-backref {
+      margin-left: 0.5rem;
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    h2 {
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}
