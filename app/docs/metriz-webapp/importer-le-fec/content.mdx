@@ -1,44 +1,49 @@
-![Page d'import du FEC - Application Metriz](/screens-webapp-v4/screen-metriz-v4_import-fec.png)
-
 ## Import des données comptables
+
+![Page d'import du FEC - Application Metriz](/screens-webapp-v4/screen-metriz-v4_import-fec.png)
 
 La première étape de l'analyse consiste à **importer les données comptables via le FEC** (Fichier d'Écritures Comptables).
 
-1. Déposez le fichier FEC de votre exercice
-2. L'application valide le fichier et affiche les données
+1. Déposez le FEC de votre exercice
+2. L'application lit les écritures comptables et, si la lecture ne rencontre pas d'erreur, ouvre l'assistant de configuration
 
-Le format attendu et les données extraites sont décrits dans la page [Lecture du FEC](/docs/metriz-webapp/lecture-fec). Si le fichier est refusé ou mal lu, consultez la [FAQ](/docs/metriz-webapp/faq#import-du-fec).
+<Callout type="note" title="Récupérer le FEC depuis un connecteur">
+
+Si l'entreprise a été importée depuis un [connecteur](/docs/metriz-webapp/integrations), certains logiciels comptables permettent aussi de récupérer son FEC directement, sans dépôt de fichier.
+
+</Callout>
+
+Le format attendu et les données extraites sont décrits dans la page [Lecture du FEC](/docs/metriz-webapp/lecture-fec). Si le fichier est refusé ou mal lu, contactez le [support](/docs/metriz-webapp/aide-et-support).
 
 ## Étapes intermédiaires de configuration
 
 Après le dépôt du fichier, l'assistant « Importer et préparer votre FEC » vous guide en **4 étapes**. Utilisez **Suivant** et **Retour** pour naviguer entre elles.
 
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-1.png', alt: "Assistant d'import du FEC - Étape 1 : identification des A-Nouveaux", caption: "1. A-nouveaux" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-2.png', alt: "Assistant d'import du FEC - Étape 2 : associations entre amortissements et immobilisations", caption: "2. Immobilisations et amortissements" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-3.png', alt: "Assistant d'import du FEC - Étape 3 : associations entre stocks et charges", caption: "3. Stocks et charges" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-4.png', alt: "Assistant d'import du FEC - Étape 4 : gestion des comptes fournisseurs", caption: "4. Fournisseurs" },
+]} />
+
 <Steps>
 
 <Step title="A-nouveaux">
-
-![Assistant d'import du FEC - Étape 1 : identification des A-Nouveaux](/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-1.png)
 
 Cochez le journal regroupant les comptes de bilan en début d'exercice. Dans le cas d'un **premier exercice**, passez directement à l'étape suivante.
 
 </Step>
 <Step title="Immobilisations et amortissements">
 
-![Assistant d'import du FEC - Étape 2 : associations entre amortissements et immobilisations](/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-2.png)
-
 Associez les comptes d'amortissements aux comptes d'immobilisations. Les associations proposées peuvent être ajustées via les menus déroulants.
 
 </Step>
 <Step title="Stocks et charges">
 
-![Assistant d'import du FEC - Étape 3 : associations entre stocks et charges](/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-3.png)
-
 Associez les comptes de stocks aux comptes de charges. Un compte de stock doit être lié à **au moins un compte de charges**.
 
 </Step>
 <Step title="Fournisseurs">
-
-![Assistant d'import du FEC - Étape 4 : gestion des comptes fournisseurs](/screens-webapp-v4/screen-metriz-v4_import-fec-assistant-4.png)
 
 Choisissez le mode de gestion des fournisseurs : par compte fournisseur auxiliaire ou par compte fournisseur. Cliquez ensuite sur **Commencez votre analyse**.
 
@@ -50,13 +55,14 @@ Choisissez le mode de gestion des fournisseurs : par compte fournisseur auxiliai
 
 ![Page de visualisation des données comptables - Application Metriz](/screens-webapp-v4/screen-metriz-v4_vue-donnees-comptables.png)
 
-Une fois l'import finalisé, les données comptables s'affichent :
+Une fois l'import finalisé, les données comptables s'affichent en plusieurs onglets :
 
-- Compte de résultat
-- Soldes Intermédiaires de Gestion (SIG)
-- Tableau des immobilisations
-- Tableau des stocks
-- Liste des charges
+- **Compte de résultat**
+- **Soldes intermédiaires de gestion** (SIG)
+- **Immobilisations**
+- **Charges externes**
+- **Stocks**
+- **Paramètres FEC** : les choix retenus dans l'assistant d'import (A-nouveaux, associations, gestion des fournisseurs)
 
 <Callout type="warning" title="À vérifier">
 
@@ -64,4 +70,4 @@ Comparez les agrégats affichés, en particulier les Soldes Intermédiaires de G
 
 </Callout>
 
-<NextStep href="/docs/metriz-webapp/immobilisations">Catégoriser les immobilisations</NextStep>
+<NextStep href="/docs/metriz-webapp/immobilisations">Empreinte des immobilisations</NextStep>

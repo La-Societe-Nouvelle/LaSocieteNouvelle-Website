@@ -22,7 +22,7 @@ Synchronisation des empreintes associées aux comptes d'immobilisations, à part
 
 <Step title="Catégorisation des comptes de charges">
 
-Catégorisation des comptes par l'IA (division d'activité), puis synchronisation des empreintes.
+Catégorisation des comptes par l'IA, puis synchronisation des empreintes.
 
 </Step>
 
@@ -40,7 +40,7 @@ Estimation par l'IA à partir des écritures comptables.
 
 <Step title="Déclaration des impacts directs">
 
-Reprise des déclarations de l'exercice précédent, ou pré-remplissage à partir des données statistiques de référence lorsqu'il n'y en a pas.
+Reprise des déclarations de l'exercice précédent, ou pré-remplissage à partir des caractéristiques connues de l'entreprise.
 
 </Step>
 
@@ -58,17 +58,16 @@ Pour le détail des usages de l'IA : [Utilisation de l'IA](/docs/metriz-webapp/u
 
 ## Données à vérifier et à compléter
 
-L'analyse rapide fournit **un point de départ, pas un résultat définitif**. Pour obtenir une analyse complète :
+L'analyse rapide fournit **une première estimation**, à affiner avec vos propres données. Pour obtenir une analyse complète :
 
-- Contrôlez les données comptables importées (**Soldes Intermédiaires de Gestion**).
 - Vérifiez les [associations des comptes de charges](/docs/metriz-webapp/achats) proposées par l'IA, en particulier pour les comptes les plus significatifs. Pour les fournisseurs sans numéro de SIREN, l'empreinte des achats est estimée à partir du compte de charges associé, en fonction de son secteur d'activité.
-- Passez en revue les [déclarations d'impacts directs](/docs/metriz-webapp/declarer-impacts-directs) : les consommations d'eau et d'énergie, estimées par l'IA, sont à comparer aux factures, et les impacts repris de l'exercice précédent ou pré-remplis sont à confirmer, indicateur par indicateur.
+- Passez en revue les indicateurs déclarés automatiquement dans [la partie Impacts Directs](/docs/metriz-webapp/declarer-impacts-directs).
 
-Les [résultats](/docs/metriz-webapp/consulter-les-resultats) sont consultables dans le **Tableau de bord**. Chaque modification d'une déclaration ou d'une association met à jour les empreintes concernées.
+Les [résultats](/docs/metriz-webapp/consulter-les-resultats) sont consultables dans le **Tableau de bord**. Toute modification manuelle recalcule automatiquement les empreintes.
 
 ## Choisir entre analyse rapide et parcours manuel
 
-- **Analyse rapide** : première lecture de l'empreinte, ou renouvellement d'une analyse d'un exercice à l'autre.
+- **Analyse rapide** : première estimation de l'empreinte, ou renouvellement d'une analyse d'un exercice à l'autre.
 - **Parcours manuel** : maîtrise de chaque étape, voir le [parcours pas à pas](/docs/metriz-webapp/tutoriel).
 
 Les deux parcours reposent sur la même méthode : il est possible de lancer l'analyse rapide, puis de reprendre manuellement les étapes pour les compléter ou les corriger.

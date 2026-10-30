@@ -1,64 +1,86 @@
-L'obtention de l'Empreinte Sociétale d'une Entreprise via l'application s'effectue en **4 étapes** :
+L'Empreinte Sociétale d'une Entreprise est la somme de trois composantes : les **impacts directs** de l'entreprise, et les impacts indirects liés à ses **consommations intermédiaires** (achats) et à ses **consommations de capital fixe** (immobilisations). L'application les obtient en **4 étapes**, décrites dans la [méthodologie de l'Empreinte Sociétale](/docs/empreinte-societale/methodologie).
 
-1. Import des écritures comptables
-2. Catégorisation des comptes de charges et d'immobilisations
-3. Identification des fournisseurs
-4. Déclaration des impacts directs
+<Steps>
 
-Ces étapes peuvent être réalisées une à une ([parcours pas à pas](/docs/metriz-webapp/tutoriel)) ou enchaînées automatiquement ([analyse rapide](/docs/metriz-webapp/analyse-rapide)). La méthode de mesure est décrite dans la [méthodologie de l'Empreinte Sociétale](/docs/empreinte-societale/methodologie).
+<Step title="Importer le FEC">
 
-## Import des écritures comptables
+Les écritures comptables fournissent les montants de chaque agrégat : production, achats, immobilisations, valeur ajoutée.
 
-L'importation des écritures comptables s'effectue via un **Fichier d'Écritures Comptables (FEC)**. Voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec).
+</Step>
+<Step title="Empreinte des immobilisations">
 
-Le fichier doit respecter les normes relatives à la structure du fichier (libellés des colonnes, séparateur tabulation ou barre verticale, encodage UTF-8 ou ISO-8859-1, etc.). Le détail est donné dans la page [Lecture du FEC](/docs/metriz-webapp/lecture-fec).
+Chaque compte d'immobilisation est associé à une empreinte, pour calculer l'empreinte des consommations de capital fixe.
 
-{/* TODO fond : ressources externes sans lien */}
+</Step>
+<Step title="Empreinte des achats">
+
+Chaque compte de charges et chaque fournisseur est associé à une empreinte, pour calculer l'empreinte des consommations intermédiaires.
+
+</Step>
+<Step title="Déclarer les impacts directs">
+
+Les impacts propres à l'entreprise sont déclarés pour chaque indicateur, et déterminent l'empreinte de la valeur ajoutée.
+
+</Step>
+
+</Steps>
+
+Ces étapes peuvent être réalisées une à une ([parcours pas à pas](/docs/metriz-webapp/tutoriel)) ou enchaînées automatiquement ([analyse rapide](/docs/metriz-webapp/analyse-rapide)).
+
+## Importer le FEC
+
+Les écritures comptables sont importées via le **Fichier des Écritures Comptables (FEC)**. Voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec).
+
+Le fichier doit respecter les normes relatives à sa structure (libellés des colonnes, séparateur tabulation ou barre verticale, encodage UTF-8 ou ISO-8859-1, etc.). Le détail est donné dans la page [Lecture du FEC](/docs/metriz-webapp/lecture-fec).
 
 **Ressources externes :**
 
-- Normes concernant le fichier d'écritures comptables
-- Outil de test mis à disposition par la DGFiP
+- [Normes du fichier des écritures comptables](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775) (article A.47 A-1 du livre des procédures fiscales)
+- [Outil de test des FEC](https://www.economie.gouv.fr/dgfip/outil-test-des-fichiers-des-ecritures-comptables-fec) mis à disposition par la DGFiP
 
-Lors de l'import, une étape intermédiaire permet d'identifier le journal des A-Nouveaux. Dans le cas d'un **premier exercice, sans A-Nouveaux**, il suffit de valider la sélection sans cocher de case.
+Lors de l'import, une étape intermédiaire permet d'identifier le journal des A-Nouveaux.
 
-Une fois l'importation effectuée, 5 vues sont mises à disposition pour vérifier la lecture des écritures comptables :
+<Callout type="note" title="Premier exercice">
 
-- Compte de Résultat
-- Soldes Intermédiaires de Gestion
-- Tableau des immobilisations
-- Tableau des stocks
-- Liste des montants par compte de charges
+Dans le cas d'un **premier exercice, sans A-Nouveaux**, il suffit de valider la sélection sans cocher de case.
 
-Les chiffres clefs à vérifier sont ceux présents au sein des **Soldes Intermédiaires de Gestion** (deuxième onglet).
+</Callout>
 
-La lecture des écritures peut entraîner des **exceptions** (problèmes de lecture) dans le cas où certains flux ne peuvent être tracés. Ces exceptions interviennent notamment lorsque plusieurs opérations sont regroupées au sein d'une même écriture comptable.
+Une fois l'import effectué, les onglets suivants permettent de vérifier la lecture des écritures :
 
-## Catégorisation des comptes de charges et d'immobilisations
+- Compte de résultat
+- Soldes intermédiaires de gestion
+- Immobilisations
+- Charges externes
+- Stocks
+- Paramètres FEC
 
-La catégorisation des comptes de charges et d'immobilisations permet d'estimer les **impacts indirects** associés aux dépenses et aux investissements.
+Les chiffres clés à vérifier sont ceux des **soldes intermédiaires de gestion**.
 
-- Pour les [immobilisations](/docs/metriz-webapp/immobilisations), une association est faite **par défaut** à partir des numéros des comptes.
-- Pour les [charges](/docs/metriz-webapp/achats), il est possible d'effectuer une association via l'utilisation d'une **IA générative** (voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)), à partir des libellés et des numéros des comptes.
+La lecture des écritures peut entraîner des **exceptions** (problèmes de lecture) lorsque certains flux ne peuvent être tracés, notamment lorsque plusieurs opérations sont regroupées au sein d'une même écriture comptable.
 
-## Identification des fournisseurs
+## Empreinte des immobilisations
 
-L'identification des fournisseurs s'effectue via le **numéro SIREN**.
+L'empreinte des consommations de capital fixe repose sur l'empreinte des immobilisations amorties sur l'exercice. Voir [Empreinte des immobilisations](/docs/metriz-webapp/immobilisations).
 
-La correspondance entre le numéro de compte auxiliaire présent au sein des écritures comptables et le numéro SIREN peut se faire via l'**import d'un fichier (.csv ou .xlsx)**. Le modèle prérempli est disponible au téléchargement.
+- **Catégorisation** : chaque compte d'immobilisation est associé **par défaut** à une catégorie, à partir de son numéro de compte.
+- **Fournisseurs** : les fournisseurs d'immobilisations identifiés par leur **numéro SIREN** permettent de reprendre leur empreinte publiée.
 
-## Évaluation et déclaration des impacts directs
+## Empreinte des achats
 
-La déclaration des impacts directs se fait **pour chaque indicateur**. Voir [Déclarer les impacts directs](/docs/metriz-webapp/declarer-impacts-directs).
+L'empreinte des consommations intermédiaires repose sur l'empreinte des achats de l'exercice. Voir [Empreinte des achats](/docs/metriz-webapp/achats).
 
-Une fois la déclaration validée, les résultats sont directement accessibles, au sein du tableau de bord.
+- **Catégorisation** : chaque compte de charges peut être associé à une catégorie via une **IA générative**, à partir des libellés et des numéros de comptes (voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)).
+- **Fournisseurs** : les fournisseurs sont identifiés par leur **numéro SIREN**. La correspondance entre comptes auxiliaires et numéros SIREN peut se faire par **import d'un fichier (.csv ou .xlsx)**, dont le modèle prérempli est disponible au téléchargement.
 
-Des outils d'évaluation sont mis à disposition pour la mesure des impacts suivants :
+## Déclarer les impacts directs
 
-- [Émissions directes de gaz à effet de serre](/docs/metriz-webapp/declarations/ghg)
-- [Consommation directe d'énergie](/docs/metriz-webapp/declarations/nrg)
-- [Contribution directe à l'évolution des compétences et des connaissances](/docs/metriz-webapp/declarations/knw)
-- [Indice de répartition des rémunérations](/docs/metriz-webapp/declarations/idr)
-- [Écart de rémunérations femmes/hommes](/docs/metriz-webapp/declarations/geq)
+Les impacts directs sont déclarés **pour chaque indicateur** et déterminent l'empreinte de la valeur ajoutée. Voir [Déclarer les impacts directs](/docs/metriz-webapp/declarer-impacts-directs) et le détail des [déclarations par indicateur](/docs/metriz-webapp/declarations).
 
-Pour plus d'information sur la déclaration des impacts : [description des déclarations](/docs/metriz-webapp/declarations).
+Des outils d'évaluation sont disponibles pour les indicateurs suivants :
+
+<IndicatorGrid keys={["ghg", "nrg", "knw", "idr", "geq"]} base="/docs/metriz-webapp/declarations" />
+
+Une fois les déclarations validées, les résultats sont accessibles dans le tableau de bord.
+
+<NextStep href="/docs/metriz-webapp/consulter-les-resultats">Consulter les résultats</NextStep>

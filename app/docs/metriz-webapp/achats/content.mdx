@@ -1,6 +1,10 @@
-![Page de catégorisation des achats - Application Metriz](/screens-webapp-v4/screen-metriz-v4_categorisation-achats-initial.png)
-
 ## Catégorisation des achats
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_categorisation-achats-initial.png', alt: 'Page de catégorisation des achats - Application Metriz', caption: 'Comptes à catégoriser' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_categorisation-achats-associee.png', alt: 'Comptes de charges associés - Application Metriz', caption: 'Comptes associés' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_categorisation-achats-synchronisee.png', alt: 'Comptes de charges après synchronisation - Application Metriz', caption: 'Empreintes synchronisées' },
+]} />
 
 Pour estimer les impacts liés aux achats, **catégorisez les comptes de charges** :
 
@@ -9,34 +13,28 @@ Pour estimer les impacts liés aux achats, **catégorisez les comptes de charges
 
 ## Association automatique avec l'IA
 
-L'application propose une association automatique :
+Cliquez sur **Associer automatiquement** : l'IA générative (**Mistral AI**, ou **OpenAI** en cas d'indisponibilité) analyse les libellés des comptes de charges et propose une association pour chacun.
 
-1. Cliquez sur **Associer automatiquement**
-2. L'IA générative (**Mistral AI**, ou **OpenAI** en cas d'indisponibilité) traite les libellés des comptes de charges
-3. Une proposition d'association s'affiche
+<Callout type="important" title="À vérifier">
 
-<Callout type="important">
-
-- **Vérifiez attentivement** les associations proposées par l'IA
-- Corrigez manuellement si nécessaire
-- Accordez une attention particulière aux **comptes significatifs**
-- Détail des usages de l'IA : [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia)
+Contrôlez les associations proposées et corrigez-les si nécessaire, en particulier pour les **comptes les plus significatifs**. Pour le détail des usages de l'IA, voir [Utilisation de l'IA](/docs/metriz-webapp/utilisation-ia).
 
 </Callout>
 
 ## Synchronisation des données
 
-Une fois les associations faites :
-
-1. **Synchronisez les données**
-2. L'application récupère les empreintes correspondant aux activités et espaces sélectionnés
+Une fois les associations faites, cliquez sur **Synchroniser les données** : l'application récupère les empreintes correspondant aux activités et espaces économiques sélectionnés.
 
 ## Identification des fournisseurs d'achats
 
-![Vue identification des fournisseurs d'achats - Application Metriz](/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats.png)
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats.png', alt: "Vue identification des fournisseurs d'achats - Application Metriz", caption: 'Fournisseurs à identifier' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats-renseignes.png', alt: "Fournisseurs d'achats avec numéros SIREN renseignés - Application Metriz", caption: 'Numéros SIREN renseignés' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats-synchronises.png', alt: "Fournisseurs d'achats synchronisés - Application Metriz", caption: 'Empreintes synchronisées' },
+]} />
 
-Pour affiner l'empreinte des achats, **identifiez les fournisseurs** via leur **numéro SIREN** : l'application améliore l'estimation de l'empreinte en utilisant les données réelles des fournisseurs.
+Pour affiner l'empreinte des achats, **identifiez les fournisseurs** via leur **numéro SIREN** : l'application utilise alors les données réelles des fournisseurs.
 
-La correspondance entre comptes auxiliaires et numéros SIREN peut aussi se faire par **import d'un fichier (.csv ou .xlsx)**, dont le modèle prérempli est téléchargeable dans l'application.
+La correspondance entre comptes auxiliaires et numéros SIREN peut aussi se faire par **import d'un fichier** (.csv ou .xlsx), dont le modèle prérempli est téléchargeable dans l'application.
 
 <NextStep href="/docs/metriz-webapp/declarer-impacts-directs">Déclarer les impacts directs</NextStep>

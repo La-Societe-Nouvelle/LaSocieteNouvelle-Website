@@ -1,13 +1,25 @@
 {
-  "/illustration-graphique-simplifie-methodologie.png": {
-    "width": 1366,
-    "height": 508
-  },
   "/screens-webapp-v4/screen-metriz-v4_categorisation-achats-initial.png": {
     "width": 1440,
     "height": 900
   },
+  "/screens-webapp-v4/screen-metriz-v4_categorisation-achats-associee.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_categorisation-achats-synchronisee.png": {
+    "width": 1440,
+    "height": 900
+  },
   "/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats-renseignes.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-achats-synchronises.png": {
     "width": 1440,
     "height": 900
   },
@@ -27,13 +39,33 @@
     "width": 1920,
     "height": 1080
   },
+  "/screens-webapp-v4/screen-metriz-v4_resultat-indicateur-ghg.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_resultat-indicateur-ghg-page-entiere.png": {
+    "width": 1920,
+    "height": 3277
+  },
   "/screens-webapp-v4/screen-metriz-v4-connexion.png": {
+    "width": 1221,
+    "height": 711
+  },
+  "/screens-webapp-v4/screen-metriz-v4_inscription.png": {
+    "width": 1607,
+    "height": 934
+  },
+  "/screens-webapp-v4/screen-metriz-v4_ajouter-une-entreprise-curseur.png": {
     "width": 1440,
     "height": 900
   },
-  "/screens-webapp-v4/screen-metriz-v4_nouvelle-unite-legale.png": {
-    "width": 450,
-    "height": 300
+  "/screens-webapp-v4/screen-metriz-v4_ajouter-une-entreprise-modale-vue-entiere.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_commencer-analyse-menu.png": {
+    "width": 1440,
+    "height": 900
   },
   "/screens-webapp-v4/screen-metriz-v4_declaration-profil-entreprise.png": {
     "width": 1440,
@@ -51,7 +83,19 @@
     "width": 1440,
     "height": 900
   },
+  "/screens-webapp-v4/screen-metriz-v4_categorisation-immobilisations-synchronisee.png": {
+    "width": 1440,
+    "height": 900
+  },
   "/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations-renseignes.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_fournisseurs-immobilisations-synchronises.png": {
     "width": 1440,
     "height": 900
   },
@@ -78,6 +122,38 @@
   "/screens-webapp-v4/screen-metriz-v4_vue-donnees-comptables.png": {
     "width": 1440,
     "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-bouton.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-1.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_export-menu.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_dashboard-indicateurs-livrables-inclus.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_dashboard-indicateurs-livrables-exclu.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_export-pdf-etape-1-modale.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_export-pdf-etape-2-modale.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_export-pdf-par-indicateur-etape-1.png": {
+    "width": 1920,
+    "height": 1080
   },
   "/screens-webapp-v4/screen-metriz-v4_reporting-vs.png": {
     "width": 1440,
