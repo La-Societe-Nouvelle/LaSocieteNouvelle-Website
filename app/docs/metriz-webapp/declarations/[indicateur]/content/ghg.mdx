@@ -1,12 +1,8 @@
-» [Documentation de l'indicateur](/docs/empreinte-societale/indicateurs/ghg)
-
-**Unité :** kgCO₂e
+<DeclarationHeader indic="ghg" unit="kgCO₂e" uncertainty="25 %" />
 
 ## Formulaire de déclaration
 
-La déclaration concerne les émissions directes de gaz à effet de serre (en kgCO2e) et l\'incertitude relative. Par défaut, l'incertitude est de **25 %**.
-
-L'outil d'évaluation mis à disposition permet de calculer les émissions directes à partir des consommations de combustibles, des installations de refroidissement et d'autres données d'activités.
+La déclaration concerne les émissions directes de gaz à effet de serre (en kgCO2e), accompagnée de son incertitude.
 
 ## Aide à la déclaration
 
@@ -20,7 +16,7 @@ La solution ne remplace en aucun cas un outil pour la réalisation d'un Bilan Ca
 
 ## Sources de l'information
 
-Liste des documents utiles :
+Documents à rassembler :
 
 - Factures de combustibles (gaz, carburants, fioul, biomasse, etc.)
 - Fichier avec les indemnités kilométriques
@@ -40,15 +36,15 @@ Source : SDES
 
 ## Outil d'évaluation
 
-L'outil d'évaluation est décomposé en **6 postes d'émissions** :
+L'outil d'évaluation calcule les émissions directes à partir des consommations de combustibles, des installations de refroidissement et d'autres données d'activités. Il est décomposé en **6 postes d'émissions** :
 
 ### 1. Émissions directes des sources fixes de combustion
 
-Évaluation à partir des quantités de combustibles consommées. La liste des combustibles et les coefficients utilisés sont issus de la Base Carbone.
+Évaluation à partir des quantités de combustibles consommées. La [liste des combustibles](/docs/metriz-webapp/liste-combustibles) et les coefficients utilisés sont issus de la Base Carbone.
 
 ### 2. Émissions directes des sources mobiles de combustion
 
-Évaluation à partir des quantités de combustibles consommées. La liste des combustibles et les coefficients utilisés sont issus de la Base Carbone. Les coefficients monétaires pour l'essence SP95-E10 et le gazole B7 sont obtenus à partir des coefficients par litre et du prix moyen à la pompe sur l'année 2021 calculé par l'INSEE.
+Évaluation à partir des quantités de carburants consommées. La [liste des carburants](/docs/metriz-webapp/liste-carburants) et les coefficients utilisés sont issus de la Base Carbone. Les coefficients monétaires pour l'essence SP95-E10 et le gazole B7 sont obtenus à partir des coefficients par litre et du prix moyen à la pompe sur l'année 2021 calculé par l'INSEE.
 
 ### 3. Émissions directes des procédés industriels (hors énergie)
 
@@ -60,7 +56,7 @@ L'outil d'évaluation est décomposé en **6 postes d'émissions** :
 
 ### 5. Émissions directes fugitives
 
-Les émissions directes fugitives correspondent aux fuites de fluides frigorigènes présents au sein des installations de réfrigération et de climatisation.
+Les émissions directes fugitives correspondent aux fuites de fluides frigorigènes présents au sein des installations de réfrigération et de climatisation (voir la [liste des installations](/docs/metriz-webapp/liste-installations-refrigeration)).
 
 Plusieurs méthodes sont possibles pour estimer ces fuites :
 
@@ -72,7 +68,8 @@ Plusieurs méthodes sont possibles pour estimer ces fuites :
 
 {/* TODO fond : phrase répétée ci-dessous ; Cerfa n°15497*03 ici, 15497*04 plus haut */}
 
-*Extrait – Plan Carbone Général*
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
 
 > **Description**
 >
@@ -96,9 +93,12 @@ Plusieurs méthodes sont possibles pour estimer ces fuites :
 
 » [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
 
+</details>
+
 #### Méthode 2 : Dimensionnement des installations et application d'un taux de fuite moyen
 
-*Extrait – Plan Carbone Général*
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
 
 > **Description**
 >
@@ -118,6 +118,8 @@ Plusieurs méthodes sont possibles pour estimer ces fuites :
 
 » [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
 
+</details>
+
 L'ensemble des facteurs de dimensionnement des installations sont disponibles au sein de l'application.
 
 Ils sont répartis en 6 groupes :
@@ -131,7 +133,8 @@ Ils sont répartis en 6 groupes :
 
 #### Méthode 3 : Utilisation de données standard
 
-*Extrait – Plan Carbone Général*
+<details className="docs-extract">
+<summary>Extrait du Plan Carbone Général</summary>
 
 > **Description**
 >
@@ -148,6 +151,8 @@ Ils sont répartis en 6 groupes :
 > Si le type de fluide frigorigène n'est pas connu, on prend par défaut le R410a, qui est aujourd'hui le plus utilisé dans les bâtiments de bureau (ADEME).
 
 » [Documentation complète du Plan Carbone Général](https://www.plancarbonegeneral.com/perimetre-collaborateurs/locaux/exploitation/fluides-climatisation)
+
+</details>
 
 ### 6. Émissions issues de la biomasse
 

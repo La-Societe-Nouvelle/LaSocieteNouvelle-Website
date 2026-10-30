@@ -134,6 +134,57 @@ export function IndicatorGrid({ family, keys: only, base = '/docs/empreinte-soci
   );
 }
 
+// Sections de la déclaration des impacts directs dans l'application
+const declarationSections = {
+  eco: "Profil de l'entreprise", art: "Profil de l'entreprise", soc: "Profil de l'entreprise",
+  geq: 'Données sociales', idr: 'Données sociales', knw: 'Données sociales',
+  ghg: 'Impact environnemental', nrg: 'Impact environnemental', wat: 'Impact environnemental',
+  haz: 'Impact environnemental', mat: 'Impact environnemental', was: 'Impact environnemental',
+};
+
+/**
+ * En-tête d'une fiche de déclaration : picto, section, unité et lien vers la fiche de l'indicateur
+ * <DeclarationHeader indic="ghg" unit="kgCO₂e" uncertainty="25 %" />
+ */
+export function DeclarationHeader({ indic, unit, uncertainty }) {
+  return (
+    <div className="docs-declaration-header">
+      <div className="docs-declaration-meta">
+        <Image src={`/ESE/picto/ese-${indic}-color.svg`} alt="" width={56} height={56} />
+        <dl>
+          <div>
+            <dt>Section</dt>
+            <dd>{declarationSections[indic]}</dd>
+          </div>
+          {unit && (
+            <div>
+              <dt>Unité de déclaration</dt>
+              <dd>{unit}</dd>
+            </div>
+          )}
+          {uncertainty && (
+            <div>
+              <dt>Incertitude par défaut</dt>
+              <dd>
+                {uncertainty}
+                <Link href="/docs/metriz-webapp/declarations#incertitudes" className="docs-declaration-more">En savoir plus</Link>
+              </dd>
+            </div>
+          )}
+        </dl>
+      </div>
+      <Link href={`/docs/empreinte-societale/indicateurs/${indic}`} className="docs-declaration-doc">
+        <i className="bi bi-book" aria-hidden="true"></i>
+        <span>
+          <span className="docs-declaration-doc-label">Documentation de l'indicateur</span>
+          <span className="docs-declaration-doc-title">{metaData[indic].libelle}</span>
+        </span>
+        <i className="bi bi-arrow-right" aria-hidden="true"></i>
+      </Link>
+    </div>
+  );
+}
+
 const sdgs = {
   1: ['Pas de pauvreté', 'poverty'],
   2: ['Faim « zéro »', 'hunger'],
