@@ -35,6 +35,142 @@
     "width": 1440,
     "height": 900
   },
+  "/screens-webapp-v4/screen-metriz-v4_integrations-vue-generale.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integrations-importer-clients-menu.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integrations-import-fec-boutons.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-connexion.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-modes.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-filtres.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-confirmation.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-import-fec-bouton.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-acd-import-fec-exercices.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-connexion-oauth.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-confirmation.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-resume.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-clients-liste.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-fec-bouton.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-inqom-import-fec-exercices.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-clients-confirmation.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-fec-bouton.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-import-fec-exercices.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-myunisoft-fournisseurs-importer-depuis.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-bouton.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-1.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-2.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-openpaye-deconnexion.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-connexion-oauth.png": {
+    "width": 1440,
+    "height": 900
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-import-clients-confirmation.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-import-fec-bouton.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-import-fec-exercices.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-import-fec-attente.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-fournisseurs.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-pennylane-fournisseurs-importer-depuis.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-tiime-import-clients-confirmation.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-tiime-import-clients-resume.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-tiime-import-clients-liste.png": {
+    "width": 1440,
+    "height": 844
+  },
+  "/screens-webapp-v4/screen-metriz-v4_integration-tiime-import-fec-bouton.png": {
+    "width": 1440,
+    "height": 844
+  },
   "/screens-webapp-v4/screen-metriz-v4_tableau-de-bord.png": {
     "width": 1920,
     "height": 1080
@@ -122,14 +258,6 @@
   "/screens-webapp-v4/screen-metriz-v4_vue-donnees-comptables.png": {
     "width": 1440,
     "height": 900
-  },
-  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-bouton.png": {
-    "width": 1920,
-    "height": 1080
-  },
-  "/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-1.png": {
-    "width": 1920,
-    "height": 1080
   },
   "/screens-webapp-v4/screen-metriz-v4_export-menu.png": {
     "width": 1920,

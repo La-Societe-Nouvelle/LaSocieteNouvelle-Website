@@ -30,7 +30,7 @@ const profiles = [
     text: "Entreprises et experts-comptables : mesurer à partir des données comptables et exploiter les livrables.",
     links: [
       { href: "/docs/metriz-webapp/tutoriel", title: "Le parcours pas à pas" },
-      { href: "/docs/metriz-webapp/integrations", title: "Intégrations avec vos logiciels" },
+      { href: "/docs/metriz-webapp/connecteurs", title: "Connecteurs avec vos logiciels" },
       { href: "/docs/metriz-webapp/livrables", title: "Générer les livrables" },
     ],
   },

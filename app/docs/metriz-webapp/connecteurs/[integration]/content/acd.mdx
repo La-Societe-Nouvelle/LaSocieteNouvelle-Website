@@ -1,0 +1,34 @@
+Le connecteur est disponible pour l'ensemble des utilisateurs, **sur simple demande auprès du support technique** (voir [Activer un connecteur](/docs/metriz-webapp/connecteurs#activer-un-connecteur)).
+
+## Services
+
+Le connecteur ACD - Comptabilité Expert permet la récupération de la liste des dossiers clients en comptabilité, et le chargement des données comptables.
+
+## Prérequis
+
+Pour la récupération des données comptables, les dossiers doivent être publiés sur i-Suite.
+
+## Connexion
+
+La connexion à ACD via Metriz se fait à partir de l'**URL publique d'i-Suite Expert**, de votre **identifiant** et de votre **mot de passe** ACD.
+
+![Connexion au connecteur ACD - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integration-acd-connexion.png)
+
+## Importer des dossiers clients
+
+Depuis l'accueil, ouvrez le menu **Importer clients** et choisissez ACD. Vous pouvez importer **tous les clients**, ou filtrer les dossiers par **nom** ou **SIRET**, puis confirmer l'import.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-modes.png', alt: "Choix du mode d'import des clients ACD - Application Metriz", caption: "1. Mode d'import" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-filtres.png', alt: "Filtres d'import des clients ACD - Application Metriz", caption: "2. Filtres par nom ou SIRET" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-acd-import-clients-confirmation.png', alt: "Confirmation de l'import des clients ACD - Application Metriz", caption: "3. Confirmation" },
+]} />
+
+## Importer le FEC
+
+Lors d'une nouvelle analyse, cliquez sur le bouton **ACD** à l'étape d'import du FEC, puis choisissez l'exercice à importer. L'assistant de configuration s'ouvre ensuite comme pour un fichier déposé (voir [Importer le FEC](/docs/metriz-webapp/importer-le-fec)).
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-acd-import-fec-bouton.png', alt: "Bouton d'import du FEC via ACD - Application Metriz", caption: "Bouton ACD" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_integration-acd-import-fec-exercices.png', alt: "Liste des exercices disponibles sur ACD - Application Metriz", caption: "Choix de l'exercice" },
+]} />

@@ -1,0 +1,25 @@
+Le connecteur est disponible pour l'ensemble des utilisateurs, **sur simple demande auprès du support technique** (voir [Activer un connecteur](/docs/metriz-webapp/connecteurs#activer-un-connecteur)).
+
+## Services
+
+Le connecteur OpenPaye permet d'importer les **DSN** directement, sans téléverser les fichiers. Elles sont ensuite lues comme un fichier téléversé (voir [Lecture des DSN](/docs/metriz-webapp/lecture-dsn)).
+
+## Connexion
+
+La connexion à OpenPaye via Metriz se fait à partir de l'identifiant et du mot de passe API (accessible depuis l'espace OpenPaye).
+
+## Importer les DSN
+
+Dans la fenêtre **Gestion des données sociales**, onglet **Import des DSN**, cliquez sur **Importer via OpenPaye**. Un assistant guide l'import en 3 étapes : choix du **dossier**, de l'**établissement**, puis **import** des déclarations.
+
+<Screens items={[
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-bouton.png', alt: 'Import des DSN via OpenPaye - Application Metriz', caption: 'Bouton Importer via OpenPaye' },
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-1.png', alt: "Assistant d'import des DSN via OpenPaye, étape Dossier - Application Metriz", caption: "Assistant d'import, étape 1 : choix du dossier" },
+    { src: '/screens-webapp-v4/screen-metriz-v4_import-dsn-openpaye-assistant-etape-2.png', alt: "Assistant d'import des DSN via OpenPaye, étape Établissement - Application Metriz", caption: "Assistant d'import, étape 2 : choix de l'établissement" },
+]} />
+
+## Se déconnecter
+
+La déconnexion d'OpenPaye se fait depuis la vue des connecteurs, après confirmation.
+
+![Fenêtre de déconnexion d'OpenPaye - Application Metriz](/screens-webapp-v4/screen-metriz-v4_integration-openpaye-deconnexion.png)
